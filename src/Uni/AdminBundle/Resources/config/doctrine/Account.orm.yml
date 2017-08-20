@@ -1,0 +1,72 @@
+Uni\AdminBundle\Entity\Account:
+    type: entity
+    table: uni_account
+    repositoryClass: Uni\AdminBundle\Entity\AccountRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    oneToMany:
+        issuers:
+            targetEntity: Uni\AdminBundle\Entity\Issuer
+            mappedBy: account
+        providers:
+            targetEntity: Uni\AdminBundle\Entity\Provider
+            mappedBy: account
+        sellers:
+            targetEntity: Uni\AdminBundle\Entity\Seller
+            mappedBy: account
+        clients:
+            targetEntity: Uni\AdminBundle\Entity\Client
+            mappedBy: account
+        budgets:
+            targetEntity: Uni\AdminBundle\Entity\Budget
+            mappedBy: account
+        products:
+            targetEntity: Uni\AdminBundle\Entity\Product
+            mappedBy: account
+        notes:
+            targetEntity: Uni\AdminBundle\Entity\Note
+            mappedBy: account
+        users:
+            targetEntity: Uni\AdminBundle\Entity\User
+            mappedBy: account
+        categories:
+            targetEntity: Uni\AdminBundle\Entity\Category
+            mappedBy: account
+        subcategories:
+            targetEntity: Uni\AdminBundle\Entity\Subcategory
+            mappedBy: account
+        features:
+            targetEntity: Uni\AdminBundle\Entity\Feature
+            mappedBy: account
+        photographies:
+            targetEntity: Uni\AdminBundle\Entity\Photography
+            mappedBy: account
+    fields:
+        name:
+            type: string
+            length: 200
+        budget_note:
+            type: text
+            nullable: true
+        created_at:
+            type: datetime
+            gedmo:
+                timestampable:
+                    on: create
+        updated_at:
+            type: datetime
+            gedmo:
+                timestampable:
+                    on: update
+        deleted_at:
+            type: datetime
+            nullable: true
+    gedmo:
+        soft_deleteable:
+            field_name: deleted_at
+            time_aware: false
+    lifecycleCallbacks: {  }

@@ -1,0 +1,73 @@
+Uni\AdminBundle\Entity\Client:
+    type: entity
+    table: uni_client
+    repositoryClass: Uni\AdminBundle\Entity\ClientRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    manyToOne:
+        user:
+            targetEntity: Uni\AdminBundle\Entity\User
+            inversedBy: clients
+        account:
+            targetEntity: Uni\AdminBundle\Entity\Account
+            inversedBy: clients
+        commune:
+            targetEntity: Uni\AdminBundle\Entity\Commune
+    oneToMany:
+        budgets:
+            targetEntity: Uni\AdminBundle\Entity\Budget
+            mappedBy: client
+    fields:
+        name:
+            type: string
+            length: 100
+            nullable: true
+        rut:
+            type: string
+            length: 30
+            nullable: true
+        contactname:
+            type: string
+            length: 30
+            nullable: true
+        phone:
+            type: string
+            length: 30
+            nullable: true
+        email:
+            type: string
+            length: 30
+            nullable: true
+        address_street:
+            type: string
+            length: 100
+            nullable: true
+        address_number:
+            type: string
+            length: 10
+            nullable: true
+        comment:
+            type: text
+            nullable: true
+        created_at:
+            type: datetime
+            gedmo:
+                timestampable:
+                    on: create
+        updated_at:
+            type: datetime
+            gedmo:
+                timestampable:
+                    on: update
+        deleted_at:
+            type: datetime
+            nullable: true
+    gedmo:
+        soft_deleteable:
+            field_name: deleted_at
+            time_aware: false
+    lifecycleCallbacks: {  }

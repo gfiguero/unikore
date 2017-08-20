@@ -1,0 +1,16 @@
+{% extends 'UniFrontBundle:Front:base.html.twig' %}
+{% use 'UniFrontBundle:Front:navbar.html.twig' %}
+{% use 'UniFrontBundle:Front:header.html.twig' %}
+{% use 'UniFrontBundle:Front:catalog.html.twig' %}
+{% use 'UniFrontBundle:Front:recommended.html.twig' %}
+{% use 'UniFrontBundle:Front:footer.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+    {% block navbar %}{{ parent() }}{% endblock %}
+    {% block header %}{{ parent() }}{% endblock %}
+    {% block catalog %}{{ parent() }}{% endblock %}  
+    {% block recommended %}{{ parent() }}{% endblock %}    
+    {% block footer %}{{ parent() }}{% endblock %}
+{% endblock %}

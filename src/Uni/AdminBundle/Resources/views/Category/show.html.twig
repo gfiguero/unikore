@@ -1,0 +1,83 @@
+{% extends 'UniAdminBundle:Base:layout.html.twig' %}
+{% use 'UniAdminBundle:Base:icons.html.twig' %}
+{% use 'UniAdminBundle:Base:flashbag.html.twig' %}
+
+{% trans_default_domain 'UniAdminBundle' %}
+
+{% block title %}&nbsp;-&nbsp;{{ 'category.show.title'|trans({'%id%':category.id}) }}{% endblock %}
+
+{% block admin %}
+    <div id="page-wrapper">
+        <div class="row" id="page-header">
+            <div class="col-lg-12">
+                <h1 class="page-header">{% block icons %}{{ parent() }}{% endblock %}{{ 'category.show.title'|trans({'%id%':category.id}) }}</h1>
+                {% block flashbag %}{{ parent() }}{% endblock %}
+            </div>
+        </div>
+        <!-- /#page-header -->
+
+        <div class="row" id="page-toolbar">
+            <div class="col-lg-12">
+                <div class="btn-toolbar">
+                    <a type="button" class="btn btn-default" href="{{ path('admin_category_index') }}">{{ icon('list fa-fw') }}&nbsp;{{ 'category.index.link'|trans }}</a>
+                    <a type="button" class="btn btn-primary" href="{{ path('admin_category_edit', { 'id': category.id }) }}">{{ icon('edit fa-fw') }}&nbsp;{{ 'category.edit.link'|trans }}</a>
+                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalDelete">{{ icon('trash-o fa-fw') }}&nbsp;{{ 'category.delete.link'|trans }}</button>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-toolbar -->
+
+        <div class="row" id="page-show">
+            <div class="col-lg-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">{{ 'category.show.data'|trans }}</h2>
+                    </div>
+                    <div class="panel-body">
+                        <dl class="dl-horizontal">
+                            <dt>{{ 'category.form.id'|trans }}</dt>
+                                <dd>{% if category.id %}{{ category.id }}{% endif %}</dd>
+                            <dt>{{ 'category.form.name'|trans }}</dt>
+                                <dd>{% if category.name %}{{ category.name }}{% endif %}</dd>
+                            <dt>{{ 'category.form.slug'|trans }}</dt>
+                                <dd>{% if category.slug %}{{ category.slug }}{% endif %}</dd>
+                            <dt>{{ 'category.form.createdAt'|trans }}</dt>
+                                <dd>{% if category.createdAt %}{{ category.createdAt|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "d 'de' LLLL 'de' y - HH:mm") }}&nbsp;({{ category.createdAt|ago }}){% endif %}</dd>
+                            <dt>{{ 'category.form.updatedAt'|trans }}</dt>
+                                <dd>{% if category.updatedAt %}{{ category.updatedAt|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "d 'de' LLLL 'de' y - HH:mm") }}&nbsp;({{ category.updatedAt|ago }}){% endif %}</dd>                        </dl>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-show -->
+
+        <div id="page-modal">
+            <div class="modal fade" id="modalDelete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog modal-md" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">{{ icon('times') }}</button>
+                            <h4 class="modal-title" id="myModalLabel">{{ 'category.delete.title'|trans }}</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-xs-2 text-center">{{ icon('exclamation-triangle fa-5x') }}</div>
+                                <div class="col-xs-10"><p>{{ 'category.delete.message'|trans }}</p></div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            {{ form_start(deleteForm) }}
+                                <button type="submit" class="btn btn-danger pull-right">{{ icon('trash-o fa-fw') }}&nbsp;{{ 'category.delete.submit'|trans }}</button>
+                            {{ form_end(deleteForm) }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- /#page-modal -->
+
+    </div>
+    <!-- /#page-wrapper -->
+{% endblock %}
+

@@ -1,0 +1,79 @@
+uni_admin_feature:
+    resource: "@UniAdminBundle/Resources/config/routing/feature.yml"
+    prefix:   /feature
+
+uni_admin_photography:
+    resource: "@UniAdminBundle/Resources/config/routing/photography.yml"
+    prefix:   /photography
+
+uni_admin_category:
+    resource: "@UniAdminBundle/Resources/config/routing/category.yml"
+    prefix:   /category
+
+uni_admin_subcategory:
+    resource: "@UniAdminBundle/Resources/config/routing/subcategory.yml"
+    prefix:   /subcategory
+
+uni_admin_account:
+    resource: "@UniAdminBundle/Resources/config/routing/account.yml"
+    prefix:   /account
+
+uni_admin_issuer:
+    resource: "@UniAdminBundle/Resources/config/routing/issuer.yml"
+    prefix:   /issuer
+
+uni_admin_commune:
+    resource: "@UniAdminBundle/Resources/config/routing/commune.yml"
+    prefix:   /commune
+
+uni_admin_province:
+    resource: "@UniAdminBundle/Resources/config/routing/province.yml"
+    prefix:   /province
+
+uni_admin_region:
+    resource: "@UniAdminBundle/Resources/config/routing/region.yml"
+    prefix:   /region
+
+uni_admin_user:
+    resource: "@UniAdminBundle/Resources/config/routing/user.yml"
+    prefix:   /user
+
+uni_admin_budget:
+    resource: "@UniAdminBundle/Resources/config/routing/budget.yml"
+    prefix:   /budget
+
+uni_admin_client:
+    resource: "@UniAdminBundle/Resources/config/routing/client.yml"
+    prefix:   /client
+
+uni_admin_item:
+    resource: "@UniAdminBundle/Resources/config/routing/item.yml"
+    prefix:   /item
+
+uni_admin_product:
+    resource: "@UniAdminBundle/Resources/config/routing/product.yml"
+    prefix:   /product
+
+uni_admin_provider:
+    resource: "@UniAdminBundle/Resources/config/routing/provider.yml"
+    prefix:   /provider
+
+uni_admin_seller:
+    resource: "@UniAdminBundle/Resources/config/routing/seller.yml"
+    prefix:   /seller
+
+uni_admin_note:
+    resource: "@UniAdminBundle/Resources/config/routing/note.yml"
+    prefix:   /note
+
+uni_admin_registration:
+    resource: "@UniAdminBundle/Resources/config/routing/registration.yml"
+    prefix: /register
+
+fos_user_group:
+    resource: "@FOSUserBundle/Resources/config/routing/group.xml"
+    prefix: /group
+
+uni_admin_root:
+    resource: "@UniAdminBundle/Resources/config/routing/root.yml"
+    prefix:   /

@@ -1,0 +1,24 @@
+admin_feature_index:
+    path:     /
+    defaults: { _controller: "UniAdminBundle:Feature:index" }
+    methods:  GET
+
+admin_feature_show:
+    path:     /{id}/show
+    defaults: { _controller: "UniAdminBundle:Feature:show" }
+    methods:  GET
+
+admin_feature_new:
+    path:     /new
+    defaults: { _controller: "UniAdminBundle:Feature:new" }
+    methods:  [GET, POST]
+
+admin_feature_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "UniAdminBundle:Feature:edit" }
+    methods:  [GET, POST]
+
+admin_feature_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "UniAdminBundle:Feature:delete" }
+    methods:  DELETE

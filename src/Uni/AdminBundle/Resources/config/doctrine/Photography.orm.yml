@@ -1,0 +1,24 @@
+Uni\AdminBundle\Entity\Photography:
+    type: entity
+    table: uni_photography
+    repositoryClass: Uni\AdminBundle\Entity\PhotographyRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    manyToOne:
+        account:
+            targetEntity: Uni\AdminBundle\Entity\Account
+            inversedBy: photographies
+    fields:
+        image:
+            type: string
+            length: 200
+        created_at:
+            type: datetime
+            gedmo:
+                timestampable:
+                    on: create
+    lifecycleCallbacks: {  }

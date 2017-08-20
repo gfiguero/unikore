@@ -1,0 +1,65 @@
+Uni\AdminBundle\Entity\Budget:
+    type: entity
+    table: uni_budget
+    repositoryClass: Uni\AdminBundle\Entity\BudgetRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    manyToOne:
+        client:
+            targetEntity: Uni\AdminBundle\Entity\Client
+            inversedBy: budgets
+        seller:
+            targetEntity: Uni\AdminBundle\Entity\Seller
+            inversedBy: budgets
+        issuer:
+            targetEntity: Uni\AdminBundle\Entity\Issuer
+            inversedBy: budgets
+        user:
+            targetEntity: Uni\AdminBundle\Entity\User
+            inversedBy: budgets
+        account:
+            targetEntity: Uni\AdminBundle\Entity\Account
+            inversedBy: budgets
+    oneToMany:
+        items:
+            targetEntity: Uni\AdminBundle\Entity\Item
+            mappedBy: budget
+            cascade: ['persist', 'remove']
+    manyToMany:
+        notes:
+            targetEntity: Uni\AdminBundle\Entity\Note
+            inversedBy: budgets
+    fields:
+        name:
+            type: string
+            length: 100
+            nullable: true
+        note:
+            type: text
+            nullable: true
+        adjudicated_at:
+            type: datetime
+        expired_at:
+            type: datetime
+        created_at:
+            type: datetime
+            gedmo:
+                timestampable:
+                    on: create
+        updated_at:
+            type: datetime
+            gedmo:
+                timestampable:
+                    on: update
+        deleted_at:
+            type: datetime
+            nullable: true
+    gedmo:
+        soft_deleteable:
+            field_name: deleted_at
+            time_aware: false
+    lifecycleCallbacks: {  }

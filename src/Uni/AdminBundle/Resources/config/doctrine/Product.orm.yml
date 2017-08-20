@@ -1,0 +1,169 @@
+Uni\AdminBundle\Entity\Product:
+    type: entity
+    table: uni_product
+    repositoryClass: Uni\AdminBundle\Entity\ProductRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    manyToOne:
+        provider:
+            targetEntity: Uni\AdminBundle\Entity\Provider
+            inversedBy: products
+        user:
+            targetEntity: Uni\AdminBundle\Entity\User
+            inversedBy: products
+        account:
+            targetEntity: Uni\AdminBundle\Entity\Account
+            inversedBy: products
+        subcategory:
+            targetEntity: Uni\AdminBundle\Entity\Subcategory
+            inversedBy: products
+    oneToMany:
+        items:
+            targetEntity: Uni\AdminBundle\Entity\Item
+            mappedBy: product
+    fields:
+        name:
+            type: string
+            length: 100
+            nullable: true
+        short:
+            type: string
+            length: 200
+            nullable: true
+        description:
+            type: text
+            nullable: true
+        image:
+            type: string
+            length: 200
+            nullable: true
+
+        cost:
+            type: integer
+            nullable: true
+        price:
+            type: integer
+            nullable: true
+        code:
+            type: string
+            length: 30
+            nullable: true
+        cm_code:
+            type: string
+            length: 30
+            nullable: true
+
+        height:
+            type: integer
+            nullable: true
+        width:
+            type: integer
+            nullable: true
+        length:
+            type: integer
+            nullable: true
+        weight:
+            type: integer
+            nullable: true
+        thickness:
+            type: integer
+            nullable: true
+
+        brand:
+            type: string
+            length: 100
+            nullable: true            
+        origin:
+            type: string
+            length: 100
+            nullable: true
+        resistance:
+            type: string
+            length: 100
+            nullable: true
+        warranty:
+            type: string
+            length: 100
+            nullable: true
+        certification:
+            type: string
+            length: 100
+            nullable: true
+
+        consumer_name:
+            type: string
+            length: 100
+            nullable: true
+        consumer_age:
+            type: string
+            length: 100
+            nullable: true
+        consumer_capacity:
+            type: string
+            length: 100
+            nullable: true
+        consumer_traffic:
+            type: string
+            length: 100
+            nullable: true
+
+        structure_main:
+            type: string
+            length: 300
+            nullable: true
+        structure_side:
+            type: string
+            length: 300
+            nullable: true
+        structure_instalation:
+            type: string
+            length: 300
+            nullable: true
+        structure_anchorage:
+            type: string
+            length: 300
+            nullable: true
+        structure_assembly:
+            type: string
+            length: 300
+            nullable: true
+        structure_protection:
+            type: string
+            length: 300
+            nullable: true
+        structure_termination:
+            type: string
+            length: 300
+            nullable: true
+        structure_color:
+            type: string
+            length: 100
+            nullable: true
+        structure_size:
+            type: string
+            length: 100
+            nullable: true
+
+
+        created_at:
+            type: datetime
+            gedmo:
+                timestampable:
+                    on: create
+        updated_at:
+            type: datetime
+            gedmo:
+                timestampable:
+                    on: update
+        deleted_at:
+            type: datetime
+            nullable: true
+    gedmo:
+        soft_deleteable:
+            field_name: deleted_at
+            time_aware: false
+    lifecycleCallbacks: {  }

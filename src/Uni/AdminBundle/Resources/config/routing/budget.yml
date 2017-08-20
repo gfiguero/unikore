@@ -1,0 +1,24 @@
+admin_budget_index:
+    path:     /
+    defaults: { _controller: "UniAdminBundle:Budget:index" }
+    methods:  GET
+
+admin_budget_show:
+    path:     /{id}/show
+    defaults: { _controller: "UniAdminBundle:Budget:show" }
+    methods:  GET
+
+admin_budget_new:
+    path:     /new
+    defaults: { _controller: "UniAdminBundle:Budget:new" }
+    methods:  [GET, POST]
+
+admin_budget_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "UniAdminBundle:Budget:edit" }
+    methods:  [GET, POST]
+
+admin_budget_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "UniAdminBundle:Budget:delete" }
+    methods:  DELETE

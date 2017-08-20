@@ -1,0 +1,113 @@
+<?php
+
+namespace Uni\AdminBundle\Entity;
+
+/**
+ * Photography
+ */
+class Photography
+{
+    /**
+     * @var integer
+     */
+    private $id;
+
+    /**
+     * @var string
+     */
+    private $image;
+
+    /**
+     * @var \DateTime
+     */
+    private $created_at;
+
+    /**
+     * @var \Uni\AdminBundle\Entity\Account
+     */
+    private $account;
+
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set image
+     *
+     * @param string $image
+     *
+     * @return Photography
+     */
+    public function setImage($image)
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
+    /**
+     * Get image
+     *
+     * @return string
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    /**
+     * Set createdAt
+     *
+     * @param \DateTime $createdAt
+     *
+     * @return Photography
+     */
+    public function setCreatedAt($createdAt)
+    {
+        $this->created_at = $createdAt;
+
+        return $this;
+    }
+
+    /**
+     * Get createdAt
+     *
+     * @return \DateTime
+     */
+    public function getCreatedAt()
+    {
+        return $this->created_at;
+    }
+
+    /**
+     * Set account
+     *
+     * @param \Uni\AdminBundle\Entity\Account $account
+     *
+     * @return Photography
+     */
+    public function setAccount(\Uni\AdminBundle\Entity\Account $account = null)
+    {
+        $this->account = $account;
+
+        return $this;
+    }
+
+    /**
+     * Get account
+     *
+     * @return \Uni\AdminBundle\Entity\Account
+     */
+    public function getAccount()
+    {
+        return $this->account;
+    }
+}
+

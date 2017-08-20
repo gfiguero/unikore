@@ -1,0 +1,21 @@
+{% extends 'UniFrontBundle:Front:base.html.twig' %}
+{% use 'UniFrontBundle:Front:navbar.html.twig' %}
+{% use 'UniFrontBundle:Front:header.html.twig' %}
+{% use 'UniFrontBundle:Front:about.html.twig' %}
+{% use 'UniFrontBundle:Front:feature.html.twig' %}
+{% use 'UniFrontBundle:Front:brand.html.twig' %}
+{% use 'UniFrontBundle:Front:contact.html.twig' %}
+{% use 'UniFrontBundle:Front:footer.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+    {% block navbar %}{{ parent() }}{% endblock %}
+    {% block header %}{{ parent() }}{% endblock %}
+    {% block about %}{{ parent() }}{% endblock %}
+    {% block brand %}{{ parent() }}{% endblock %}
+    {% block feature %}{{ parent() }}{% endblock %}
+    {% block contact %}{{ parent() }}{% endblock %}
+    {% block footer %}{{ parent() }}{% endblock %}
+{% endblock %}
+

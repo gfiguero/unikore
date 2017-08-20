@@ -1,0 +1,9 @@
+services:
+#    uni_admin.example:
+#        class: Uni\AdminBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]
+    uni_front.menu_builder:
+            class: Uni\FrontBundle\Menu\Builder
+            arguments: 
+                - "@knp_menu.factory"
+                - "@router"

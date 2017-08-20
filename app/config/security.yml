@@ -1,0 +1,48 @@
+security:
+    encoders:
+        Symfony\Component\Security\Core\User\User: bcrypt
+        Uni\AdminBundle\Entity\User: bcrypt
+
+    role_hierarchy:
+        ROLE_LEADER: ROLE_USER
+        ROLE_ADMIN: ROLE_LEADER
+        ROLE_SUPER_ADMIN: ROLE_ADMIN
+
+    providers:
+        chain_provider:
+            chain:
+                providers: [in_memory, fos_userbundle]
+        in_memory:
+            memory:
+                users:
+                    root: { password: %root_password%, roles: 'ROLE_USER' }
+        fos_userbundle:
+            id: fos_user.user_provider.username_email
+
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+        main:
+            anonymous: ~
+            pattern:   ^/
+            anonymous: true
+            form_login:
+                login_path: fos_user_security_login 
+                check_path: fos_user_security_check
+                failure_path: fos_user_security_login
+                default_target_path: agent_budget_index
+                use_referer: true
+                csrf_token_generator: security.csrf.token_manager
+                failure_path: fos_user_security_login
+            remember_me:
+                secret: '%secret%'
+            logout:
+                path:   /logout
+                target: /login
+
+    access_control:
+        - { path: ^/login, roles: [IS_AUTHENTICATED_ANONYMOUSLY] }
+        - { path: ^/admin, roles: [IS_AUTHENTICATED_ANONYMOUSLY] }
+        - { path: ^/logout, roles: [ROLE_USER] }
+        - { path: ^/agent, roles: [ROLE_USER] }

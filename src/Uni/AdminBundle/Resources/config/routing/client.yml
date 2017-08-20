@@ -1,0 +1,24 @@
+admin_client_index:
+    path:     /
+    defaults: { _controller: "UniAdminBundle:Client:index" }
+    methods:  GET
+
+admin_client_show:
+    path:     /{id}/show
+    defaults: { _controller: "UniAdminBundle:Client:show" }
+    methods:  GET
+
+admin_client_new:
+    path:     /new
+    defaults: { _controller: "UniAdminBundle:Client:new" }
+    methods:  [GET, POST]
+
+admin_client_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "UniAdminBundle:Client:edit" }
+    methods:  [GET, POST]
+
+admin_client_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "UniAdminBundle:Client:delete" }
+    methods:  DELETE

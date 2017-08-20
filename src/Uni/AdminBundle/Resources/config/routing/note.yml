@@ -1,0 +1,24 @@
+admin_note_index:
+    path:     /
+    defaults: { _controller: "UniAdminBundle:Note:index" }
+    methods:  GET
+
+admin_note_show:
+    path:     /{id}/show
+    defaults: { _controller: "UniAdminBundle:Note:show" }
+    methods:  GET
+
+admin_note_new:
+    path:     /new
+    defaults: { _controller: "UniAdminBundle:Note:new" }
+    methods:  [GET, POST]
+
+admin_note_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "UniAdminBundle:Note:edit" }
+    methods:  [GET, POST]
+
+admin_note_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "UniAdminBundle:Note:delete" }
+    methods:  DELETE

@@ -1,0 +1,24 @@
+agent_client_index:
+    path:     /
+    defaults: { _controller: "UniAgentBundle:Client:index" }
+    methods:  GET
+
+agent_client_show:
+    path:     /{id}/show
+    defaults: { _controller: "UniAgentBundle:Client:show" }
+    methods:  GET
+
+agent_client_new:
+    path:     /new
+    defaults: { _controller: "UniAgentBundle:Client:new" }
+    methods:  [GET, POST]
+
+agent_client_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "UniAgentBundle:Client:edit" }
+    methods:  [GET, POST]
+
+agent_client_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "UniAgentBundle:Client:delete" }
+    methods:  DELETE

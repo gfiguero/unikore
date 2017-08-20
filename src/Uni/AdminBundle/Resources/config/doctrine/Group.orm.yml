@@ -1,0 +1,33 @@
+Uni\AdminBundle\Entity\Group:
+    type: entity
+    table: uni_group
+    repositoryClass: Uni\AdminBundle\Entity\GroupRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    manyToMany:
+        users:
+            targetEntity: Uni\AdminBundle\Entity\User
+            mappedBy: groups
+    fields:
+        created_at:
+            type: datetime
+            gedmo:
+                timestampable:
+                    on: create
+        updated_at:
+            type: datetime
+            gedmo:
+                timestampable:
+                    on: update
+        deleted_at:
+            type: datetime
+            nullable: true
+    gedmo:
+        soft_deleteable:
+            field_name: deleted_at
+            time_aware: false
+    lifecycleCallbacks: {  }

@@ -1,0 +1,24 @@
+admin_subcategory_index:
+    path:     /
+    defaults: { _controller: "UniAdminBundle:Subcategory:index" }
+    methods:  GET
+
+admin_subcategory_show:
+    path:     /{id}/show
+    defaults: { _controller: "UniAdminBundle:Subcategory:show" }
+    methods:  GET
+
+admin_subcategory_new:
+    path:     /new
+    defaults: { _controller: "UniAdminBundle:Subcategory:new" }
+    methods:  [GET, POST]
+
+admin_subcategory_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "UniAdminBundle:Subcategory:edit" }
+    methods:  [GET, POST]
+
+admin_subcategory_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "UniAdminBundle:Subcategory:delete" }
+    methods:  DELETE

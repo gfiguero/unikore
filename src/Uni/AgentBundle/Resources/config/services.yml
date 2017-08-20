@@ -1,0 +1,12 @@
+services:
+    uni_agent.form.item:
+        class: Uni\AgentBundle\Form\ItemType
+        arguments: ["@security.token_storage"]
+        tags:
+            - { name: form.type, alias: uni_agentbundle_item }
+
+    uni_agent.form.budget:
+        class: Uni\AgentBundle\Form\BudgetType
+        arguments: ["@security.token_storage"]
+        tags:
+            - { name: form.type, alias: uni_agentbundle_budget }

@@ -1,0 +1,60 @@
+Uni\AdminBundle\Entity\User:
+    type: entity
+    table: uni_user
+    repositoryClass: Uni\AdminBundle\Entity\UserRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    manyToOne:
+        account:
+            targetEntity: Uni\AdminBundle\Entity\Account
+            mappedBy: users
+    oneToMany:
+        providers:
+            targetEntity: Uni\AdminBundle\Entity\Provider
+            mappedBy: user
+        sellers:
+            targetEntity: Uni\AdminBundle\Entity\Seller
+            mappedBy: user
+        clients:
+            targetEntity: Uni\AdminBundle\Entity\Client
+            mappedBy: user
+        budgets:
+            targetEntity: Uni\AdminBundle\Entity\Budget
+            mappedBy: user
+        products:
+            targetEntity: Uni\AdminBundle\Entity\Product
+            mappedBy: user
+        notes:
+            targetEntity: Uni\AdminBundle\Entity\Note
+            mappedBy: user
+    manyToMany:
+        groups:
+            targetEntity: Uni\AdminBundle\Entity\Group
+            inversedBy: users
+    fields:
+        name:
+            type: string
+            length: 100
+            nullable: true
+        created_at:
+            type: datetime
+            gedmo:
+                timestampable:
+                    on: create
+        updated_at:
+            type: datetime
+            gedmo:
+                timestampable:
+                    on: update
+        deleted_at:
+            type: datetime
+            nullable: true
+    gedmo:
+        soft_deleteable:
+            field_name: deleted_at
+            time_aware: false
+    lifecycleCallbacks: {  }

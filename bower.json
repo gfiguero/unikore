@@ -1,0 +1,28 @@
+{
+  "name": "composer-extra-asssets",
+  "authors": [
+    "Garri <gfiguero@gmail.com>"
+  ],
+  "license": "UNLICENSED",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor/bower_components",
+    "test",
+    "tests"
+  ],
+  "homepage": "https://github.com/gfiguero/kore",
+  "description": "",
+  "main": "",
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "font-awesome": "^4.7.0",
+    "jquery-ui": "jqueryui#^1.12.1",
+    "metismenu": "^2.7.0",
+    "summernote": "^0.8.6",
+    "bootstrap-multiselect": "^0.9.13",
+    "bootstrap-fileinput": "^4.4.2"
+  }
+}

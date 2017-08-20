@@ -1,0 +1,9 @@
+{% extends 'UniUserBundle:Base:base.html.twig' %}
+{% use 'UniUserBundle:Base:flashbag.html.twig' %}
+{% use 'UniUserBundle:Base:header.html.twig' %}
+
+{% block body %}
+    {% block header %}{{ parent() }}{% endblock %}
+    {% block user %}{% endblock %}
+    {% block footer %}{{ parent() }}{% endblock %}
+{% endblock %}

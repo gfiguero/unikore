@@ -1,0 +1,22 @@
+Uni\AdminBundle\Entity\Province:
+    type: entity
+    table: utils_province
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    manyToOne:
+        region:
+            targetEntity: Uni\AdminBundle\Entity\Region
+            inversedBy: provinces
+    oneToMany:
+        communes:
+            targetEntity: Uni\AdminBundle\Entity\Commune
+            mappedBy: province
+    fields:
+        name:
+            type: string
+            length: 23
+    lifecycleCallbacks: {  }

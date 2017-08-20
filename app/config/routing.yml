@@ -1,0 +1,22 @@
+_liip_imagine:
+    resource: "@LiipImagineBundle/Resources/config/routing.xml"
+
+uni_admin:
+    resource: "@UniAdminBundle/Resources/config/routing.yml"
+    prefix:   /admin
+
+uni_agent:
+    resource: "@UniAgentBundle/Resources/config/routing.yml"
+    prefix:   /agent
+
+uni_user:
+    resource: "@UniUserBundle/Resources/config/routing.yml"
+    prefix:   /
+
+root:
+    path: /
+    defaults:
+        _controller: FrameworkBundle:Redirect:redirect
+        route: agent_root
+        permanent: true
+

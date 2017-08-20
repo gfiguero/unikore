@@ -1,0 +1,62 @@
+php app/console doctrine:generate:entities UniAdminBundle:Budget --path=src
+php app/console doctrine:generate:entities UniAdminBundle:Client --path=src
+php app/console doctrine:generate:entities UniAdminBundle:Item --path=src
+php app/console doctrine:generate:entities UniAdminBundle:Product --path=src
+php app/console doctrine:generate:entities UniAdminBundle:Provider --path=src
+php app/console doctrine:generate:entities UniAdminBundle:Seller --path=src
+php app/console doctrine:generate:entities UniAdminBundle:Note --path=src
+php app/console doctrine:generate:entities UniAdminBundle:Issuer --path=src
+php app/console doctrine:generate:entities UniAdminBundle:Commune --path=src
+php app/console doctrine:generate:entities UniAdminBundle:Province --path=src
+php app/console doctrine:generate:entities UniAdminBundle:Region --path=src
+php app/console doctrine:generate:entities UniAdminBundle:Group --path=src
+php app/console doctrine:generate:entities UniAdminBundle:User --path=src
+php app/console doctrine:generate:entities UniAdminBundle:Account --path=src
+php app/console doctrine:generate:entities UniAdminBundle:Feature --path=src
+php app/console doctrine:generate:entities UniAdminBundle:Photography --path=src
+php app/console doctrine:generate:entities UniAdminBundle:Category --path=src
+php app/console doctrine:generate:entities UniAdminBundle:Subcategory --path=src
+
+php app/console uni:admingenerate:crud --overwrite --format=yml --with-write --no-interaction --entity=UniAdminBundle:Budget --route-prefix=admin_budget
+php app/console uni:admingenerate:crud --overwrite --format=yml --with-write --no-interaction --entity=UniAdminBundle:Client --route-prefix=admin_client
+php app/console uni:admingenerate:crud --overwrite --format=yml --with-write --no-interaction --entity=UniAdminBundle:Item --route-prefix=admin_item
+php app/console uni:admingenerate:crud --overwrite --format=yml --with-write --no-interaction --entity=UniAdminBundle:Product --route-prefix=admin_product
+php app/console uni:admingenerate:crud --overwrite --format=yml --with-write --no-interaction --entity=UniAdminBundle:Provider --route-prefix=admin_provider
+php app/console uni:admingenerate:crud --overwrite --format=yml --with-write --no-interaction --entity=UniAdminBundle:Seller --route-prefix=admin_seller
+php app/console uni:admingenerate:crud --overwrite --format=yml --with-write --no-interaction --entity=UniAdminBundle:Note --route-prefix=admin_note
+php app/console uni:admingenerate:crud --overwrite --format=yml --with-write --no-interaction --entity=UniAdminBundle:Issuer --route-prefix=admin_issuer
+php app/console uni:admingenerate:crud --overwrite --format=yml --with-write --no-interaction --entity=UniAdminBundle:Commune --route-prefix=admin_commune
+php app/console uni:admingenerate:crud --overwrite --format=yml --with-write --no-interaction --entity=UniAdminBundle:Province --route-prefix=admin_province
+php app/console uni:admingenerate:crud --overwrite --format=yml --with-write --no-interaction --entity=UniAdminBundle:Region --route-prefix=admin_region
+php app/console uni:admingenerate:crud --overwrite --format=yml --with-write --no-interaction --entity=UniAdminBundle:User --route-prefix=admin_user
+php app/console uni:admingenerate:crud --overwrite --format=yml --with-write --no-interaction --entity=UniAdminBundle:Group --route-prefix=admin_group
+php app/console uni:admingenerate:crud --overwrite --format=yml --with-write --no-interaction --entity=UniAdminBundle:Account --route-prefix=admin_account
+php app/console uni:admingenerate:crud --overwrite --format=yml --with-write --no-interaction --entity=UniAdminBundle:Feature --route-prefix=admin_feature
+php app/console uni:admingenerate:crud --overwrite --format=yml --with-write --no-interaction --entity=UniAdminBundle:Photography --route-prefix=admin_photography
+php app/console uni:admingenerate:crud --overwrite --format=yml --with-write --no-interaction --entity=UniAdminBundle:Category --route-prefix=admin_category
+php app/console uni:admingenerate:crud --overwrite --format=yml --with-write --no-interaction --entity=UniAdminBundle:Subcategory --route-prefix=admin_subcategory
+
+php app/console uni:admingenerate:crud --format=yml --with-write --no-interaction --entity=UniAdminBundle:Budget --route-prefix=admin_budget
+php app/console uni:admingenerate:crud --format=yml --with-write --no-interaction --entity=UniAdminBundle:Client --route-prefix=admin_client
+php app/console uni:admingenerate:crud --format=yml --with-write --no-interaction --entity=UniAdminBundle:Item --route-prefix=admin_item
+php app/console uni:admingenerate:crud --format=yml --with-write --no-interaction --entity=UniAdminBundle:Product --route-prefix=admin_product
+php app/console uni:admingenerate:crud --format=yml --with-write --no-interaction --entity=UniAdminBundle:Provider --route-prefix=admin_provider
+php app/console uni:admingenerate:crud --format=yml --with-write --no-interaction --entity=UniAdminBundle:Seller --route-prefix=admin_seller
+php app/console uni:admingenerate:crud --format=yml --with-write --no-interaction --entity=UniAdminBundle:Note --route-prefix=admin_note
+
+find src/Uni/AdminBundle/* -type f -print0 | xargs -0 sed -i 's/rutum/ruta/g'
+find src/Uni/AdminBundle/Resources/config/doctrine/* -type f -print0 | xargs -0 sed -i 's/createdAt/created_at/g'
+
+find src/Uni/AdminBundle/Entity/* -type f -print0 | xargs -0 sed -i 's/createdAt/created_at/g'
+find src/Uni/AdminBundle/Entity/* -type f -print0 | xargs -0 sed -i 's/updatedAt/updated_at/g'
+find src/Uni/AdminBundle/Entity/* -type f -print0 | xargs -0 sed -i 's/deletedAt/deleted_at/g'
+
+SELECT id, MAX(id) FROM `Solicitud` GROUP BY `domicilio_id`
+
+SELECT * FROM `Solicitud`, `Solicitud` S1 WHERE `Solicitud`.id < S1.id AND `Solicitud`.`domicilio_id` = S1.`domicilio_id`
+
+SELECT id FROM `Solicitud` WHERE id IN (SELECT `Solicitud`.id FROM `Solicitud`, `Solicitud` S1 WHERE `Solicitud`.id < S1.id AND `Solicitud`.`domicilio_id` = S1.`domicilio_id`)
+
+SELECT CONCAT(`calle`, ' ', `numero`, ' ', `poblacion`, ' ', `edificio`, ' ', `departamento`, ' ', `casa`, ' ', `chacra`, ' ', `parcela`, ' ', `paradero`, ' ', `sector`, ' ', `unidad`) FROM `Solicitud` WHERE 1
+
+

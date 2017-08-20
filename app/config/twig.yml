@@ -1,0 +1,8 @@
+twig:
+    debug: '%kernel.debug%'
+    strict_variables: '%kernel.debug%'
+    form:
+        resources:
+            - :Form:bootstrap.html.twig
+            - :Form:vichuploader.html.twig
+            - :Form:prototype.html.twig

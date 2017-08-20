@@ -1,0 +1,26 @@
+{% extends 'UniFrontBundle:Front:base.html.twig' %}
+{% use 'UniFrontBundle:Front:navbar-product.html.twig' %}
+{% use 'UniFrontBundle:Front:header-product.html.twig' %}
+{% use 'UniFrontBundle:Front:low-text-product.html.twig' %}
+{% use 'UniFrontBundle:Front:catalog.html.twig' %}
+{% use 'UniFrontBundle:Front:recommended.html.twig' %}
+{% use 'UniFrontBundle:Front:footer-product.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+
+    {% block navbarproduct %}{{ parent() }}{% endblock %}
+    {% block headerproduct %}{{ parent() }}{% endblock %}
+    {% block lowtextproduct %}{{ parent() }}{% endblock %} 
+    {% block catalog %}{{ parent() }}{% endblock %}  
+    {% block recommended %}{{ parent() }}{% endblock %}    
+    {% block footerproduct %}{{ parent() }}{% endblock %}
+      
+{% endblock %}
+
+{% block javascript %}
+    <script>
+        
+    </script>
+{% endblock %}

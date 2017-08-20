@@ -1,0 +1,246 @@
+<?php
+
+namespace Uni\AdminBundle\Entity;
+
+/**
+ * Category
+ */
+class Category
+{
+    /**
+     * @var integer
+     */
+    private $id;
+
+    /**
+     * @var string
+     */
+    private $name;
+
+    /**
+     * @var string
+     */
+    private $slug;
+
+    /**
+     * @var \DateTime
+     */
+    private $createdAt;
+
+    /**
+     * @var \DateTime
+     */
+    private $updatedAt;
+
+    /**
+     * @var \DateTime
+     */
+    private $deleted_at;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $subcategories;
+
+    /**
+     * @var \Uni\AdminBundle\Entity\Account
+     */
+    private $account;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->subcategories = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     *
+     * @return Category
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Set slug
+     *
+     * @param string $slug
+     *
+     * @return Category
+     */
+    public function setSlug($slug)
+    {
+        $this->slug = $slug;
+
+        return $this;
+    }
+
+    /**
+     * Get slug
+     *
+     * @return string
+     */
+    public function getSlug()
+    {
+        return $this->slug;
+    }
+
+    /**
+     * Set createdAt
+     *
+     * @param \DateTime $createdAt
+     *
+     * @return Category
+     */
+    public function setCreatedAt($createdAt)
+    {
+        $this->createdAt = $createdAt;
+
+        return $this;
+    }
+
+    /**
+     * Get createdAt
+     *
+     * @return \DateTime
+     */
+    public function getCreatedAt()
+    {
+        return $this->createdAt;
+    }
+
+    /**
+     * Set updatedAt
+     *
+     * @param \DateTime $updatedAt
+     *
+     * @return Category
+     */
+    public function setUpdatedAt($updatedAt)
+    {
+        $this->updatedAt = $updatedAt;
+
+        return $this;
+    }
+
+    /**
+     * Get updatedAt
+     *
+     * @return \DateTime
+     */
+    public function getUpdatedAt()
+    {
+        return $this->updatedAt;
+    }
+
+    /**
+     * Set deletedAt
+     *
+     * @param \DateTime $deletedAt
+     *
+     * @return Category
+     */
+    public function setDeletedAt($deletedAt)
+    {
+        $this->deleted_at = $deletedAt;
+
+        return $this;
+    }
+
+    /**
+     * Get deletedAt
+     *
+     * @return \DateTime
+     */
+    public function getDeletedAt()
+    {
+        return $this->deleted_at;
+    }
+
+    /**
+     * Add subcategory
+     *
+     * @param \Uni\AdminBundle\Entity\Subcategory $subcategory
+     *
+     * @return Category
+     */
+    public function addSubcategory(\Uni\AdminBundle\Entity\Subcategory $subcategory)
+    {
+        $this->subcategories[] = $subcategory;
+
+        return $this;
+    }
+
+    /**
+     * Remove subcategory
+     *
+     * @param \Uni\AdminBundle\Entity\Subcategory $subcategory
+     */
+    public function removeSubcategory(\Uni\AdminBundle\Entity\Subcategory $subcategory)
+    {
+        $this->subcategories->removeElement($subcategory);
+    }
+
+    /**
+     * Get subcategories
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getSubcategories()
+    {
+        return $this->subcategories;
+    }
+
+    /**
+     * Set account
+     *
+     * @param \Uni\AdminBundle\Entity\Account $account
+     *
+     * @return Category
+     */
+    public function setAccount(\Uni\AdminBundle\Entity\Account $account = null)
+    {
+        $this->account = $account;
+
+        return $this;
+    }
+
+    /**
+     * Get account
+     *
+     * @return \Uni\AdminBundle\Entity\Account
+     */
+    public function getAccount()
+    {
+        return $this->account;
+    }
+}
+

@@ -1,0 +1,35 @@
+services:
+    uni_user.form.change_password:
+        class: Uni\UserBundle\Form\ChangePasswordType
+        tags:
+            - { name: form.type, alias: uni_user_change_password }
+    uni_user.form.group:
+        class: Uni\UserBundle\Form\GroupType
+        tags:
+            - { name: form.type, alias: uni_user_group }
+    uni_user.form.profile:
+        class: Uni\UserBundle\Form\ProfileType
+        tags:
+            - { name: form.type, alias: uni_user_profile }
+    uni_user.form.registration:
+        class: Uni\UserBundle\Form\RegistrationType
+        tags:
+            - { name: form.type, alias: uni_user_registration }
+    uni_user.form.resetting:
+        class: Uni\UserBundle\Form\ResettingType
+        tags:
+            - { name: form.type, alias: uni_user_resetting }
+    uni_user.form.username:
+        class: Uni\UserBundle\Form\UsernameType
+        tags:
+            - { name: form.type, alias: uni_user_username }
+#    uni_user.example:
+#        class: Uni\UserBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]
+
+    uni_user.form.type.roles:
+        class: Uni\UserBundle\Form\Type\RoleType
+        arguments:
+            - "%roles%"
+        tags:
+            - { name: form.type, alias: uni_user_role }

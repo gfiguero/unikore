@@ -1,0 +1,620 @@
+<?php
+
+namespace Uni\AdminBundle\Entity;
+
+/**
+ * Budget
+ */
+class Budget
+{
+    /**
+     * @var integer
+     */
+    private $id;
+
+    /**
+     * @var \DateTime
+     */
+    private $created_at;
+
+    /**
+     * @var \DateTime
+     */
+    private $updated_at;
+
+    /**
+     * @var \DateTime
+     */
+    private $deleted_at;
+
+    public function __toString()
+    {
+        return (string) $this->name;
+    }
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set createdAt
+     *
+     * @param \DateTime $createdAt
+     *
+     * @return Budget
+     */
+    public function setCreatedAt($createdAt)
+    {
+        $this->created_at = $createdAt;
+
+        return $this;
+    }
+
+    /**
+     * Get createdAt
+     *
+     * @return \DateTime
+     */
+    public function getCreatedAt()
+    {
+        return $this->created_at;
+    }
+
+    /**
+     * Set updatedAt
+     *
+     * @param \DateTime $updatedAt
+     *
+     * @return Budget
+     */
+    public function setUpdatedAt($updatedAt)
+    {
+        $this->updated_at = $updatedAt;
+
+        return $this;
+    }
+
+    /**
+     * Get updatedAt
+     *
+     * @return \DateTime
+     */
+    public function getUpdatedAt()
+    {
+        return $this->updated_at;
+    }
+
+    /**
+     * Set deletedAt
+     *
+     * @param \DateTime $deletedAt
+     *
+     * @return Budget
+     */
+    public function setDeletedAt($deletedAt)
+    {
+        $this->deleted_at = $deletedAt;
+
+        return $this;
+    }
+
+    /**
+     * Get deletedAt
+     *
+     * @return \DateTime
+     */
+    public function getDeletedAt()
+    {
+        return $this->deleted_at;
+    }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $items;
+
+    /**
+     * @var \Uni\AdminBundle\Entity\Client
+     */
+    private $client;
+
+    /**
+     * @var \Uni\AdminBundle\Entity\Seller
+     */
+    private $seller;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->items = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add item
+     *
+     * @param \Uni\AdminBundle\Entity\Item $item
+     *
+     * @return Budget
+     */
+    public function addItem(\Uni\AdminBundle\Entity\Item $item)
+    {
+        $item->setBudget($this);
+
+        $this->items[] = $item;
+
+        return $this;
+    }
+
+    /**
+     * Remove item
+     *
+     * @param \Uni\AdminBundle\Entity\Item $item
+     */
+    public function removeItem(\Uni\AdminBundle\Entity\Item $item)
+    {
+        $this->items->removeElement($item);
+    }
+
+    /**
+     * Get items
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getItems()
+    {
+        return $this->items;
+    }
+
+    /**
+     * Set client
+     *
+     * @param \Uni\AdminBundle\Entity\Client $client
+     *
+     * @return Budget
+     */
+    public function setClient(\Uni\AdminBundle\Entity\Client $client = null)
+    {
+        $this->client = $client;
+
+        return $this;
+    }
+
+    /**
+     * Get client
+     *
+     * @return \Uni\AdminBundle\Entity\Client
+     */
+    public function getClient()
+    {
+        return $this->client;
+    }
+
+    /**
+     * Set seller
+     *
+     * @param \Uni\AdminBundle\Entity\Seller $seller
+     *
+     * @return Budget
+     */
+    public function setSeller(\Uni\AdminBundle\Entity\Seller $seller = null)
+    {
+        $this->seller = $seller;
+
+        return $this;
+    }
+
+    /**
+     * Get seller
+     *
+     * @return \Uni\AdminBundle\Entity\Seller
+     */
+    public function getSeller()
+    {
+        return $this->seller;
+    }
+
+    /**
+     * Get totalFullPrice
+     *
+     * @return integer
+     */
+    public function getTotalFullPrice()
+    {
+        $totalFullPrice = 0;
+        foreach ($this->items as $item) {
+            $totalFullPrice += $item->getTotalFullPrice();
+        }
+        return $totalFullPrice;
+    }
+
+    /**
+     * Get totalNetPrice
+     *
+     * @return integer
+     */
+    public function getTotalNetPrice()
+    {
+        $totalNetPrice = 0;
+        foreach ($this->items as $item) {
+            $totalNetPrice += $item->getTotalNetPrice();
+        }
+        return $totalNetPrice;
+    }
+
+    /**
+     * Get totalDiscountPrice
+     *
+     * @return integer
+     */
+    public function getTotalDiscountPrice()
+    {
+        $totalDiscountPrice = 0;
+        foreach ($this->items as $item) {
+            $totalDiscountPrice += $item->getTotalDiscountPrice();
+        }
+        return $totalDiscountPrice;
+    }
+
+    /**
+     * Get totalNewNetPrice
+     *
+     * @return integer
+     */
+    public function getTotalNewNetPrice()
+    {
+        $totalNewNetPrice = 0;
+        foreach ($this->items as $item) {
+            $totalNewNetPrice += $item->getTotalNewNetPrice();
+        }
+        return $totalNewNetPrice;
+    }
+
+    /**
+     * Get totalIva
+     */
+    public function getTotalIva()
+    {
+        $totalIva = 0;
+        foreach ($this->items as $item) {
+            $totalIva += $item->getTotalIva();
+        }
+        return $totalIva;
+    }
+
+    /**
+     * Get totalPrice
+     *
+     * @return integer
+     */
+    public function getTotalPrice()
+    {
+        $totalPrice = 0;
+        foreach ($this->items as $item) {
+            $totalPrice += $item->getTotalPrice();
+        }
+        return $totalPrice;
+    }
+
+    /**
+     * Get total
+     */
+    public function getTotal()
+    {
+        return $this->getTotalPrice();
+    }
+
+    public function setReferencePrices()
+    {
+        foreach ($this->items as $item) {
+            $item->setReferencePrice();
+        }
+    }
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $notes;
+
+
+    /**
+     * Add note
+     *
+     * @param \Uni\AdminBundle\Entity\Note $note
+     *
+     * @return Budget
+     */
+    public function addNote(\Uni\AdminBundle\Entity\Note $note)
+    {
+        $this->notes[] = $note;
+
+        return $this;
+    }
+
+    /**
+     * Remove note
+     *
+     * @param \Uni\AdminBundle\Entity\Note $note
+     */
+    public function removeNote(\Uni\AdminBundle\Entity\Note $note)
+    {
+        $this->notes->removeElement($note);
+    }
+
+    /**
+     * Get notes
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getNotes()
+    {
+        return $this->notes;
+    }
+    /**
+     * @var string
+     */
+    private $code;
+
+    /**
+     * @var string
+     */
+    private $note;
+
+
+    /**
+     * Set code
+     *
+     * @param string $code
+     *
+     * @return Budget
+     */
+    public function setCode($code)
+    {
+        $this->code = $code;
+
+        return $this;
+    }
+
+    /**
+     * Get code
+     *
+     * @return string
+     */
+    public function getCode()
+    {
+        return $this->code;
+    }
+
+    /**
+     * Set note
+     *
+     * @param string $note
+     *
+     * @return Budget
+     */
+    public function setNote($note)
+    {
+        $this->note = $note;
+
+        return $this;
+    }
+
+    /**
+     * Get note
+     *
+     * @return string
+     */
+    public function getNote()
+    {
+        return $this->note;
+    }
+    /**
+     * @var \Uni\AdminBundle\Entity\User
+     */
+    private $user;
+
+
+    /**
+     * Set user
+     *
+     * @param \Uni\AdminBundle\Entity\User $user
+     *
+     * @return Budget
+     */
+    public function setUser(\Uni\AdminBundle\Entity\User $user = null)
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * Get user
+     *
+     * @return \Uni\AdminBundle\Entity\User
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+    /**
+     * @var \Uni\AdminBundle\Entity\Group
+     */
+    private $group;
+
+
+    /**
+     * Set group
+     *
+     * @param \Uni\AdminBundle\Entity\Group $group
+     *
+     * @return Budget
+     */
+    public function setGroup(\Uni\AdminBundle\Entity\Group $group = null)
+    {
+        $this->group = $group;
+
+        return $this;
+    }
+
+    /**
+     * Get group
+     *
+     * @return \Uni\AdminBundle\Entity\Group
+     */
+    public function getGroup()
+    {
+        return $this->group;
+    }
+    /**
+     * @var string
+     */
+    private $name;
+
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     *
+     * @return Budget
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+    /**
+     * @var \DateTime
+     */
+    private $adjudicated_at;
+
+    /**
+     * @var \DateTime
+     */
+    private $expired_at;
+
+    /**
+     * @var \Uni\AdminBundle\Entity\Issuer
+     */
+    private $issuer;
+
+
+    /**
+     * Set adjudicatedAt
+     *
+     * @param \DateTime $adjudicatedAt
+     *
+     * @return Budget
+     */
+    public function setAdjudicatedAt($adjudicatedAt)
+    {
+        $this->adjudicated_at = $adjudicatedAt;
+
+        return $this;
+    }
+
+    /**
+     * Get adjudicatedAt
+     *
+     * @return \DateTime
+     */
+    public function getAdjudicatedAt()
+    {
+        return $this->adjudicated_at;
+    }
+
+    /**
+     * Set expiredAt
+     *
+     * @param \DateTime $expiredAt
+     *
+     * @return Budget
+     */
+    public function setExpiredAt($expiredAt)
+    {
+        $this->expired_at = $expiredAt;
+
+        return $this;
+    }
+
+    /**
+     * Get expiredAt
+     *
+     * @return \DateTime
+     */
+    public function getExpiredAt()
+    {
+        return $this->expired_at;
+    }
+
+    /**
+     * Set issuer
+     *
+     * @param \Uni\AdminBundle\Entity\Issuer $issuer
+     *
+     * @return Budget
+     */
+    public function setIssuer(\Uni\AdminBundle\Entity\Issuer $issuer = null)
+    {
+        $this->issuer = $issuer;
+
+        return $this;
+    }
+
+    /**
+     * Get issuer
+     *
+     * @return \Uni\AdminBundle\Entity\Issuer
+     */
+    public function getIssuer()
+    {
+        return $this->issuer;
+    }
+    /**
+     * @var \Uni\AdminBundle\Entity\Account
+     */
+    private $account;
+
+
+    /**
+     * Set account
+     *
+     * @param \Uni\AdminBundle\Entity\Account $account
+     *
+     * @return Budget
+     */
+    public function setAccount(\Uni\AdminBundle\Entity\Account $account = null)
+    {
+        $this->account = $account;
+
+        return $this;
+    }
+
+    /**
+     * Get account
+     *
+     * @return \Uni\AdminBundle\Entity\Account
+     */
+    public function getAccount()
+    {
+        return $this->account;
+    }
+}

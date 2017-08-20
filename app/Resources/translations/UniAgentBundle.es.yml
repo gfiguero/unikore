@@ -1,0 +1,395 @@
+topmenu:
+    profile: Perfil de Usuario
+    logout: Salir
+    changepassword: Cambiar Password
+
+sidemenu:
+    seller:
+        root: Vendedores
+    client:
+        root: Clientes
+    provider:
+        root: Proveedores
+    product:
+        root: Productos
+    item:
+        root: Ítems
+    budget:
+        root: Presupuestos
+    note:
+        root: Notas
+
+seller:
+    index:
+        title: Vendedores
+        list: Lista de vendedores
+        link: Lista de vendedores
+    new:
+        title: Vendedores
+        link: Nuevo vendedor
+        form: Formulario de registro de vendedor
+        submit: Registrar vendedor
+        flash: Nuevo vendedor registrado satisfactoriamente.
+    show:
+        title: Vendedores
+        link: Mostrar datos
+        data: Datos de vendedor
+    edit:
+        title: Vendedores
+        link: Editar datos
+        form: Formulario de edición de vendedor
+        submit: Guardar cambios
+        flash: Los cambios en el vendedor fueron registrados satisfactoriamente.
+    delete:
+        link: Borrar vendedor
+        title: Borrado de vendedor
+        message: Los datos borrados no podrán ser recuperados.
+        submit: Confirmar borrado
+        flash: El vendedor fué borrado totalmente.
+    form:
+        id: ID
+        rut: Rut
+        name: Nombre
+        email: Email
+        phone: Teléfono
+        created_at: Registro
+        updated_at: Actualización
+
+issuer:
+    index:
+        title: Emisores
+        list: Lista de emisores
+        link: Lista de emisores
+    new:
+        title: Emisores
+        link: Nuevo emisor
+        form: Formulario de registro de emisor
+        submit: Registrar emisor
+        flash: Nuevo emisor registrado satisfactoriamente.
+    show:
+        title: Emisores
+        link: Mostrar datos
+        data: Datos de emisor
+    edit:
+        title: Emisores
+        link: Editar datos
+        form: Formulario de edición de emisor
+        submit: Guardar cambios
+        flash: Los cambios en el emisor fueron registrados satisfactoriamente.
+    delete:
+        link: Borrar emisor
+        title: Borrado de emisor
+        message: Los datos borrados no podrán ser recuperados.
+        submit: Confirmar borrado
+        flash: El emisor fué borrado totalmente.
+    form:
+        id: ID
+        rut: Rut
+        name: Nombre
+        image: Logo de Empresa
+        email: Email
+        phone: Teléfono
+        address_street: Calle
+        address_number: Número
+        commune: Comuna
+        created_at: Registro
+        updated_at: Actualización
+
+client:
+    index:
+        title: Clientes
+        list: Lista de clientes
+        link: Lista de clientes
+    new:
+        title: Clientes
+        link: Nuevo cliente
+        form: Formulario de registro de cliente
+        submit: Registrar cliente
+        flash: Nuevo cliente registrado satisfactoriamente.
+    show:
+        title: Clientes
+        link: Mostrar datos
+        data: Datos de cliente
+    edit:
+        title: Clientes
+        link: Editar datos
+        form: Formulario de edición de cliente
+        submit: Guardar cambios
+        flash: Los cambios en el cliente fueron registrados satisfactoriamente.
+    delete:
+        link: Borrar cliente
+        title: Borrado de cliente
+        message: Los datos borrados no podrán ser recuperados.
+        submit: Confirmar borrado
+        flash: El cliente fué borrado totalmente.
+    form:
+        id: ID
+        rut: Rut
+        name: Nombre o Razón Social
+        contactname: Nombre Contacto
+        email: Email
+        phone: Teléfono
+        address_street: Calle
+        address_number: Número
+        commune: Comuna
+        comment: Comentario
+        created_at: Registro
+        updated_at: Actualización
+
+provider:
+    index:
+        title: Proveedores
+        list: Lista de proveedores
+        link: Lista de proveedores
+    new:
+        title: Proveedores
+        link: Nuevo proveedor
+        form: Formulario de registro de proveedor
+        submit: Registrar proveedor
+        flash: Nuevo proveedor registrado satisfactoriamente.
+    show:
+        title: Proveedores
+        link: Mostrar datos
+        data: Datos de proveedor
+    edit:
+        title: Proveedores
+        link: Editar datos
+        form: Formulario de edición de proveedor
+        submit: Guardar cambios
+        flash: Los cambios en el proveedor fueron registrados satisfactoriamente.
+    delete:
+        link: Borrar proveedor
+        title: Borrado de proveedor
+        message: Los datos borrados no podrán ser recuperados.
+        submit: Confirmar borrado
+        flash: El proveedor fué borrado totalmente.
+    form:
+        id: ID
+        rut: Rut
+        name: Nombre o Razón Social
+        contactname: Nombre Contacto
+        email: Email
+        phone: Teléfono
+        address_street: Calle
+        address_number: Número
+        commune: Comuna
+        comment: Comentario
+        created_at: Registro
+        updated_at: Actualización
+
+product:
+    index:
+        title: Productos
+        list: Lista de productos
+        link: Lista de productos
+    new:
+        title: Productos
+        link: Nuevo producto
+        form: Formulario de registro de producto
+        submit: Registrar producto
+        flash: Nuevo producto registrado satisfactoriamente.
+    show:
+        title: Productos
+        link: Mostrar datos
+        data: Datos de producto
+    edit:
+        title: Productos
+        link: Editar datos
+        form: Formulario de edición de producto
+        submit: Guardar cambios
+        flash: Los cambios en el producto fueron registrados satisfactoriamente.
+    delete:
+        link: Borrar producto
+        title: Borrado de producto
+        message: Los datos borrados no podrán ser recuperados.
+        submit: Confirmar borrado
+        flash: El producto fué borrado totalmente.
+    section:
+        identification: Itentificación del Producto
+        features: Características del Producto
+        trading: Información Comercial
+        branding: Información de Marketing
+        consumer: Información del Comsumidor
+        structure: Información de Fabricación
+    form:
+        id: ID
+        features: Características
+        dimensions: Dimensiones
+        size: Volumen [m3]
+        density: Densidad [Kg/m3]
+        image: Imagen
+        margin: Margen
+        name: Nombre
+        short: Descripción Corta
+        description: Descripción
+        imagefile: Archivo de Imagen
+        provider: Proveedor
+        height: Atura [cm]
+        weight: Peso [Kg]
+        width: Ancho [cm]
+        length: Largo [cm]
+        thickness: Espesor [mm]
+        cost: Costo
+        price: Precio
+        netprice: Neto
+        newnetprice: Neto
+        code: Código
+        cm_code: Código CM
+        brand: Marca
+        origin: Procedencia
+        resistance: Resistencia
+        warranty: Garantía
+        certification: Certificación
+        consumer_name: Usuario
+        consumer_age: Edad
+        consumer_capacity: Capacidad
+        structure_main: Estructura Principal
+        structure_side: Estructura Secundaria
+        structure_instalation: Instalación
+        structure_anchorage: Anclaje
+        structure_assembly: Ensamblado
+        structure_protection: Protección
+        structure_termination: Terminación
+        structure_color: Color
+        structure_size: Tamaño
+        created_at: Registro
+        updated_at: Actualización
+
+
+item:
+    index:
+        title: Ítems
+        list: Lista de ítems
+        link: Lista de ítems
+    new:
+        title: Ítems
+        link: Nuevo ítem
+        form: Formulario de registro de ítem
+        submit: Registrar ítem
+        flash: Nuevo ítem registrado satisfactoriamente.
+    show:
+        title: Ítems
+        link: Mostrar datos
+        data: Datos de ítem
+    edit:
+        title: Ítems
+        link: Editar datos
+        form: Formulario de edición de ítem
+        submit: Guardar cambios
+        flash: Los cambios en el ítem fueron registrados satisfactoriamente.
+    delete:
+        link: Borrar ítem
+        title: Borrado de ítem
+        message: Los datos borrados no podrán ser recuperados.
+        submit: Confirmar borrado
+        flash: El ítem fué borrado totalmente.
+    form:
+        id: ID
+        quantity: Cantidad
+        discount: Descuento %
+        discountprice: Descuento
+        totaldiscountprice: Descuento
+        price: Precio
+        netprice: Neto
+        totalprice: Precio Total
+        totalnetprice: Total Neto
+        totaliva: IVA
+        total: Total
+        budget: Cotización
+        product: Producto
+        created_at: Registro
+        updated_at: Actualización
+        placeholder:
+            product: Seleccione Producto
+
+budget:
+    index:
+        title: Presupuestos
+        list: Lista de presupuestos
+        link: Lista de presupuestos
+    new:
+        title: Presupuestos
+        link: Nuevo presupuesto
+        form: Formulario de registro de presupuesto
+        submit: Registrar presupuesto
+        flash: Nuevo presupuesto registrado satisfactoriamente.
+    show:
+        title: Cotización N° %id%
+        link: Mostrar datos
+        data: Datos de presupuesto
+        client: Cliente
+        seller: Ejecutivo
+        items: Productos
+        total: Totales
+        notes: Notas importantes
+        cmpdf: Generar PDF CM
+        export: Exportar a PDF
+    edit:
+        title: Presupuestos
+        link: Editar datos
+        form: Formulario de edición de presupuesto
+        submit: Guardar cambios
+        flash: Los cambios en el presupuesto fueron registrados satisfactoriamente.
+    delete:
+        link: Borrar presupuesto
+        title: Borrado de presupuesto
+        message: Los datos borrados no podrán ser recuperados.
+        submit: Confirmar borrado
+        flash: El presupuesto fué borrado totalmente.
+    form:
+        id: ID
+        name: Título
+        code: Código
+        client: Cliente
+        seller: Vendedor
+        issuer: Emisor
+        adjudicatedAt: Fecha de Revisión
+        expiredAt: Fecha de Descarte
+        items: Ítems
+        notes: Notas reutilizables
+        note: Nota única
+        additem: Agregar Ítem
+        totalfullprice: Precio Normal
+        totaldiscountprice: Total Descuentos
+        totalnetprice: Total Neto
+        totaliva: IVA
+        total: Total
+        deleteitem: Eliminar Ítem
+        created_at: Registro
+        updated_at: Actualización
+
+note:
+    index:
+        title: Notas
+        list: Lista de notas
+        link: Lista de notas
+    new:
+        title: Notas
+        link: Nueva nota
+        form: Formulario de registro de nota
+        submit: Registrar nota
+        flash: Nueva nota registrado satisfactoriamente.
+    show:
+        title: Notas
+        link: Mostrar datos
+        data: Datos de nota
+    edit:
+        title: Notas
+        link: Editar datos
+        form: Formulario de edición de nota
+        submit: Guardar cambios
+        flash: Los cambios en la nota fueron registrados satisfactoriamente.
+    delete:
+        link: Borrar nota
+        title: Borrado de nota
+        message: Los datos borrados no podrán ser recuperados.
+        submit: Confirmar borrado
+        flash: La nota fué borrado totalmente.
+    form:
+        id: ID
+        name: Nombre Identificador
+        title: Título
+        description: Descripción
+        created_at: Registro
+        updated_at: Actualización
+

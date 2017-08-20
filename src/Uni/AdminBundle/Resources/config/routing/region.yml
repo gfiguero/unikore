@@ -1,0 +1,24 @@
+admin_region_index:
+    path:     /
+    defaults: { _controller: "UniAdminBundle:Region:index" }
+    methods:  GET
+
+admin_region_show:
+    path:     /{id}/show
+    defaults: { _controller: "UniAdminBundle:Region:show" }
+    methods:  GET
+
+admin_region_new:
+    path:     /new
+    defaults: { _controller: "UniAdminBundle:Region:new" }
+    methods:  [GET, POST]
+
+admin_region_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "UniAdminBundle:Region:edit" }
+    methods:  [GET, POST]
+
+admin_region_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "UniAdminBundle:Region:delete" }
+    methods:  DELETE

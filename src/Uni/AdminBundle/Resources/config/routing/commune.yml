@@ -1,0 +1,24 @@
+admin_commune_index:
+    path:     /
+    defaults: { _controller: "UniAdminBundle:Commune:index" }
+    methods:  GET
+
+admin_commune_show:
+    path:     /{id}/show
+    defaults: { _controller: "UniAdminBundle:Commune:show" }
+    methods:  GET
+
+admin_commune_new:
+    path:     /new
+    defaults: { _controller: "UniAdminBundle:Commune:new" }
+    methods:  [GET, POST]
+
+admin_commune_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "UniAdminBundle:Commune:edit" }
+    methods:  [GET, POST]
+
+admin_commune_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "UniAdminBundle:Commune:delete" }
+    methods:  DELETE
