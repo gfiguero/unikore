@@ -1,0 +1,74 @@
+{% block contact %}
+    {% trans_default_domain 'UniPageBundle' %}
+    {% if page.contacttitle %}
+        <section id="contact">
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="section-header">
+                            <h1 class="section-title contact-title">{{ page.contacttitle|raw }}</h1>
+                            {% if page.contactcontent %}<p class="section-content contact-content">{{ page.contactcontent|raw }}</p>{% endif %}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+
+                    {% if page.contactphone %}
+                        <a href="tel:{{ '+569' ~ page.contactphone|raw }}">
+                            <div class="panel panel-primary-fade contact-panel">
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-xs-3 text-left">{{ icon('phone fa-fw fa-2x') }}</div>
+                                        <div class="col-xs-9 text-right"><p>{{ page.contactphone|raw }}</p></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    {% endif %}
+
+                    {% if page.contactemail %}
+                        <a href="mailto:{{ page.contactemail|raw }}">
+                            <div class="panel panel-primary-fade contact-panel">
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-xs-3 text-left">{{ icon('envelope fa-fw fa-2x') }}</div>
+                                        <div class="col-xs-9 text-right"><p>{{ page.contactemail|raw }}</p></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    {% endif %}
+
+                    {% if page.contactaddress %}
+                        <div class="panel panel-primary-fade contact-panel">
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-xs-3 text-left">{{ icon('map-marker fa-fw fa-2x') }}</div>
+                                    <div class="col-xs-9 text-right"><p>{{ page.contactaddress|raw }}</p></div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+
+                    {% if page.contactschedule %}
+                        <div class="panel panel-primary-fade contact-panel">
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-xs-3 text-left">{{ icon('clock-o fa-fw fa-2x') }}</div>
+                                    <div class="col-xs-9 text-right"><p>{{ page.contactschedule|raw }}</p></div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    {% endif %}
+{% endblock %}

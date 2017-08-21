@@ -19,10 +19,78 @@ Uni\AdminBundle\Entity\Page:
         photographies:
             targetEntity:  Uni\AdminBundle\Entity\Photography
             mappedBy: page
+        socialmedia:
+            targetEntity:  Uni\AdminBundle\Entity\SocialMedia
+            mappedBy: page
     fields:
         name:
             type: string
             length: 100
+            nullable: true
+        domain:
+            type: string
+            length: 100
+            nullable: true
+        brand:
+            type: string
+            length: 100
+            nullable: true
+        brand_primary_color:
+            type: string
+            length: 10
+            nullable: true
+        brand_secondary_color:
+            type: string
+            length: 10
+            nullable: true
+        maintitle:
+            type: string
+            length: 20
+            nullable: true
+        mainsubtitle:
+            type: string
+            length: 100
+            nullable: true
+        maincalltoaction:
+            type: string
+            length: 20
+            nullable: true
+        abouttitle:
+            type: string
+            length: 20
+            nullable: true
+        aboutcontent:
+            type: text
+            nullable: true
+        featuretitle:
+            type: string
+            length: 20
+            nullable: true
+        featurecontent:
+            type: text
+            nullable: true
+        contacttitle:
+            type: string
+            length: 20
+            nullable: true
+        contactcontent:
+            type: text
+            nullable: true
+        contactphone:
+            type: string
+            length: 20
+            nullable: true
+        contactemail:
+            type: string
+            length: 100
+            nullable: true
+        contactaddress:
+            type: string
+            length: 100
+            nullable: true
+        contactschedule:
+            type: string
+            length: 50
             nullable: true
         created_at:
             type: datetime

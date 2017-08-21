@@ -1,0 +1,36 @@
+{% extends 'UniPageBundle:Page:base.html.twig' %}
+{% use 'UniPageBundle:Page:header.html.twig' %}
+{% use 'UniPageBundle:Page:main.html.twig' %}
+{% use 'UniPageBundle:Page:about.html.twig' %}
+{% use 'UniPageBundle:Page:feature.html.twig' %}
+{% use 'UniPageBundle:Page:location.html.twig' %}
+{% use 'UniPageBundle:Page:contact.html.twig' %}
+{% use 'UniPageBundle:Page:socialmedia.html.twig' %}
+{% use 'UniPageBundle:Page:footer.html.twig' %}
+{% use 'UniPageBundle:Page:style.html.twig' %}
+{% use 'UniPageBundle:Page:script.html.twig' %}
+
+{% block title %}{% if page %}{% if page.brand %}{{ page.brand|raw }}{% endif %}{% endif %}{% endblock %}
+
+{% block body %}
+    {% if page %}
+        {% block header %}{{ parent() }}{% endblock %}
+        {% block main %}{{ parent() }}{% endblock %}
+        {% block about %}{{ parent() }}{% endblock %}
+        {% block feature %}{{ parent() }}{% endblock %}
+        {% block socialmedia %}{{ parent() }}{% endblock %}
+        {% block location %}{{ parent() }}{% endblock %}
+        {% block contact %}{{ parent() }}{% endblock %}
+        {% block footer %}{{ parent() }}{% endblock %}
+    {% else %}
+        {{ 'Inactive Host' }}
+    {% endif %}
+{% endblock %}
+
+{% block stylesheet %}
+    {% block style %}{{ parent() }}{% endblock %}
+{% endblock %}
+
+{% block javascript %}
+    {% block script %}{{ parent() }}{% endblock %}
+{% endblock %}

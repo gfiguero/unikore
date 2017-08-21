@@ -32,6 +32,13 @@ assetic:
                 - less
                 - cssrewrite
             output: src/Uni/AgentBundle/Resources/public/css/agent.css
+        uni_page_css:
+            inputs:
+                - src/Uni/PageBundle/Resources/less/build.less
+            filters:
+                - less
+                - cssrewrite
+            output: src/Uni/PageBundle/Resources/public/css/page.css
         uni_agentexport_css:
             inputs:
                 - src/Uni/AgentBundle/Resources/less/export/build.less

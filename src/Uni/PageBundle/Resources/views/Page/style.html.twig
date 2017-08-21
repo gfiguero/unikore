@@ -1,0 +1,150 @@
+{% block style %}
+    {% if photographies is not empty %}
+        {% set photography1 = attribute(photographies, 0) %}
+        <style type="text/css">#main {background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('{{ vich_uploader_asset(photography1, 'imagefile', 'Uni\\AdminBundle\\Entity\\Photography')|imagine_filter('main_photography') }}');}</style>
+        {% if photographies|length > 1 %}
+            {% set photography2 = attribute(photographies, 1) %}
+            <style type="text/css">#contact {background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('{{ vich_uploader_asset(photography2, 'imagefile', 'Uni\\AdminBundle\\Entity\\Photography')|imagine_filter('main_photography') }}');}</style>
+        {% endif %}
+    {% endif %}
+    {% if page.brandprimarycolor %}
+        <style type="text/css">
+        .navbar-default .navbar-brand {
+            color: #fff;
+        }
+        .navbar-default .navbar-brand:hover,
+        .navbar-default .navbar-brand:focus {
+            color: #e6e6e6;
+            background-color: transparent;
+        }
+        .navbar-default .navbar-text {
+            color: #777;
+        }
+        .navbar-default .navbar-nav > li > a {
+            color: #fff;
+        }
+        .navbar-default .navbar-nav > li > a:hover,
+        .navbar-default .navbar-nav > li > a:focus {
+            color: #fff;
+            background-color: {{ page.brandprimarycolor }};
+        }
+        .navbar-default .navbar-nav > .active > a,
+        .navbar-default .navbar-nav > .active > a:hover,
+        .navbar-default .navbar-nav > .active > a:focus {
+            color: #eee;
+            background-color: {{ color_darken(page.brandprimarycolor, 20) }};
+        }
+        .navbar-default .navbar-nav > .disabled > a,
+        .navbar-default .navbar-nav > .disabled > a:hover,
+        .navbar-default .navbar-nav > .disabled > a:focus {
+            color: #ccc;
+            background-color: transparent;
+        }
+        .navbar-default .navbar-toggle {
+            border-color: #fff;
+        }
+        .navbar-default .navbar-toggle:hover,
+        .navbar-default .navbar-toggle:focus {
+            background-color: {{ page.brandprimarycolor }};
+        }
+        .navbar-default .navbar-toggle .icon-bar {
+            background-color: #fff;
+        }
+        .navbar-default .navbar-collapse,
+        .navbar-default .navbar-form {
+            border-color: {{ color_darken(page.brandprimarycolor, 20) }};
+        }
+        .navbar-default .navbar-nav > .open > a,
+        .navbar-default .navbar-nav > .open > a:hover,
+        .navbar-default .navbar-nav > .open > a:focus {
+            background-color: {{ color_darken(page.brandprimarycolor, 20) }};
+            color: #eee;
+        }
+        @media (max-width: 767px) {
+            .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+                color: #fff;
+            }
+            .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+            .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+                color: {{ page.brandprimarycolor }};
+                background-color: transparent;
+            }
+            .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
+            .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
+            .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+                color: #eee;
+                background-color: {{ color_darken(page.brandprimarycolor, 20) }};
+            }
+            .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a,
+            .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a:hover,
+            .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a:focus {
+                color: #ccc;
+                background-color: transparent;
+            }
+        }
+        .navbar-default .navbar-link {
+            color: #fff;
+        }
+        .navbar-default .navbar-link:hover {
+            color: {{ page.brandprimarycolor }};
+        }
+        .navbar-default .btn-link {
+            color: #fff;
+        }
+        .navbar-default .btn-link:hover,
+        .navbar-default .btn-link:focus {
+            color: {{ page.brandprimarycolor }};
+        }
+        .navbar-default .btn-link[disabled]:hover,
+        fieldset[disabled] .navbar-default .btn-link:hover,
+        .navbar-default .btn-link[disabled]:focus,
+        fieldset[disabled] .navbar-default .btn-link:focus {
+            color: #ccc;
+        }
+        .main-calltoaction {
+            background-color: {{ page.brandprimarycolor }};
+        }
+        .main-calltoaction:hover,
+        .main-calltoaction:focus,
+        .main-calltoaction:active:focus,
+        .main-calltoaction:active {
+            background-color: {{ color_darken(page.brandprimarycolor, 20) }};
+        }
+        .feature-thumbnail:hover {
+            background-color: {{ color_darken(page.brandprimarycolor, 40) }};
+        }
+        .overlay {
+            background-color: {{ color_alpha(page.brandprimarycolor, 50) }}; 
+        }
+
+        </style>
+    {% endif %}
+    {% if page.brandsecondarycolor %}
+        <style type="text/css">
+            .contact-panel {
+                background-color: {{ color_alpha(page.brandsecondarycolor, 50) }};
+            }
+            #about {
+                background-color: {{ color_darken(page.brandprimarycolor, 20) }};
+            }
+            #socialmedia {
+                background-color: {{ color_darken(page.brandsecondarycolor, 20) }};
+            }
+        </style>
+    {% endif %}
+    {% if socialmedialist is not empty %}
+        <style type="text/css">
+        {% for key, socialmedia in socialmedialist %}
+            #socialmedia .social-{{ socialmedia.socialmedia.name|lower }} {
+                background-color: {{ socialmedia.socialmedia.hexcolor }};
+            }
+            #socialmedia .social-{{ socialmedia.socialmedia.name|lower }}:hover,
+            #socialmedia .social-{{ socialmedia.socialmedia.name|lower }}:active,
+            #socialmedia .social-{{ socialmedia.socialmedia.name|lower }}:active:focus,
+            #socialmedia .social-{{ socialmedia.socialmedia.name|lower }}:focus {
+                background-color: {{ color_darken(socialmedia.socialmedia.hexcolor, 20) }};
+            }
+        {% endfor %}
+        </style>
+    {% endif %}
+{% endblock %}

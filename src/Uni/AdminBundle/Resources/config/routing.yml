@@ -1,3 +1,11 @@
+uni_admin_socialmedia:
+    resource: "@UniAdminBundle/Resources/config/routing/socialmedia.yml"
+    prefix:   /socialmedia
+
+uni_admin_socialnetwork:
+    resource: "@UniAdminBundle/Resources/config/routing/socialnetwork.yml"
+    prefix:   /socialnetwork
+
 uni_admin_page:
     resource: "@UniAdminBundle/Resources/config/routing/page.yml"
     prefix:   /page

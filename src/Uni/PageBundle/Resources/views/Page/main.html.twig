@@ -1,0 +1,15 @@
+{% block main %}
+    <main id="main">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="main-header">
+                        {% if page.maintitle %}<h1 class="main-title">{{ page.maintitle|raw }}</h1>{% endif %}
+                        {% if page.mainsubtitle %}<h2 class="main-subtitle">{{ page.mainsubtitle|raw }}</h2>{% endif %}
+                        {% if page.maincalltoaction %}<a type="button" href="#about" class="btn btn-primary btn-lg main-calltoaction page-scroll">{{ page.maincalltoaction|raw }}</a>{% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock %}

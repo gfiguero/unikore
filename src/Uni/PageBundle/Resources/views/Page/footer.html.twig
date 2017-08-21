@@ -1,0 +1,14 @@
+{% block footer %}
+    <footer id="footer">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-md-12">
+{#}                    <p class="footer-content">uniPage ha sido desarrollado por uniSign utilizando el framework Symfony</p>{#}
+                    <p class="footer-content">{% if page.brand %}{{ page.brand|raw }}&nbsp;{{ 'now'|date('Y') }}{% endif %}</p>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+{% endblock %}
