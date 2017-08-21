@@ -9,9 +9,6 @@ Uni\AdminBundle\Entity\Issuer:
             generator:
                 strategy: AUTO
     manyToOne:
-        user:
-            targetEntity: Uni\AdminBundle\Entity\User
-            inversedBy: issuers
         account:
             targetEntity: Uni\AdminBundle\Entity\Account
             inversedBy: issuers

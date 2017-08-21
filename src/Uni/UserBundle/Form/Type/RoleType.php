@@ -11,7 +11,7 @@ class RoleType extends AbstractType
 
     private $roles;
 
-    public function __construct(array $roles)
+    public function __construct(array $roles = array())
     {
         $this->roles = $roles;
     }

@@ -61,6 +61,11 @@ class ProductType extends AbstractType
                 'attr'  => array( 'label_col' => 3, 'widget_col' => 9 ),
                 'translation_domain' => 'UniAgentBundle',
             ))
+            ->add('diameter', null, array(
+                'label' => 'product.form.diameter',
+                'attr'  => array( 'label_col' => 3, 'widget_col' => 9 ),
+                'translation_domain' => 'UniAgentBundle',
+            ))
             ->add('cost', null, array(
                 'label' => 'product.form.cost',
                 'attr'  => array( 'label_col' => 3, 'widget_col' => 9 ),

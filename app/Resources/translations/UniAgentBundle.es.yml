@@ -2,6 +2,9 @@ topmenu:
     profile: Perfil de Usuario
     logout: Salir
     changepassword: Cambiar Password
+    settings: Configuración
+    issuer: Emisores
+    user: Usuarios
 
 sidemenu:
     seller:
@@ -229,6 +232,7 @@ product:
         width: Ancho [cm]
         length: Largo [cm]
         thickness: Espesor [mm]
+        diameter: Diámetro [cm]
         cost: Costo
         price: Precio
         netprice: Neto

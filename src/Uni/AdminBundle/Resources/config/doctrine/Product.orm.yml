@@ -72,6 +72,9 @@ Uni\AdminBundle\Entity\Product:
         thickness:
             type: integer
             nullable: true
+        diameter:
+            type: integer
+            nullable: true
 
         brand:
             type: string

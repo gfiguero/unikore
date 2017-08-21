@@ -5,6 +5,7 @@ namespace Uni\AdminBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Evence\Bundle\SoftDeleteableExtensionBundle\Mapping\Annotation as Evence;
 
 /**
  * Product
@@ -1326,5 +1327,36 @@ class Product
     public function getStructureAnchorage()
     {
         return $this->structure_anchorage;
+    }
+    /**
+     * @var \Uni\AdminBundle\Entity\Subcategory
+     * @ORM\ManyToOne(targetEntity="Uni\AdminBundle\Entity\Subcategory")
+     * @Evence\onSoftDelete(type="SET NULL")
+     */
+    private $subcategory;
+
+
+    /**
+     * Set subcategory
+     *
+     * @param \Uni\AdminBundle\Entity\Subcategory $subcategory
+     *
+     * @return Product
+     */
+    public function setSubcategory(\Uni\AdminBundle\Entity\Subcategory $subcategory = null)
+    {
+        $this->subcategory = $subcategory;
+
+        return $this;
+    }
+
+    /**
+     * Get subcategory
+     *
+     * @return \Uni\AdminBundle\Entity\Subcategory
+     */
+    public function getSubcategory()
+    {
+        return $this->subcategory;
     }
 }

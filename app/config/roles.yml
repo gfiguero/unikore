@@ -1,5 +1,6 @@
 parameters:
     roles:
         ROLE_USER: role.user
+        ROLE_AGENT: role.agent
         ROLE_LEADER: role.leader
         ROLE_ADMIN: role.admin

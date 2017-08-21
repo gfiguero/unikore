@@ -11,7 +11,7 @@ Uni\AdminBundle\Entity\User:
     manyToOne:
         account:
             targetEntity: Uni\AdminBundle\Entity\Account
-            mappedBy: users
+            inversedBy: users
     oneToMany:
         providers:
             targetEntity: Uni\AdminBundle\Entity\Provider

@@ -68,7 +68,7 @@
     },
     "repositories" : [{
         "type" : "vcs",
-        "url" : "https://github.com/gfiguero/korepagebundle.git"
+        "url" : "https://github.com/gfiguero/unikore.git"
     }],
     "config": {
         "bin-dir": "bin",
