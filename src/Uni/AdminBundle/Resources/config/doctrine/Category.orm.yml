@@ -12,16 +12,15 @@ Uni\AdminBundle\Entity\Category:
         account:
             targetEntity: Uni\AdminBundle\Entity\Account
             inversedBy: categories
+        catalog:
+            targetEntity: Uni\AdminBundle\Entity\Catalog
+            inversedBy: categories
     oneToMany:
         subcategories:
             targetEntity:  Uni\AdminBundle\Entity\Subcategory
             mappedBy: category
     fields:
         name:
-            type: string
-            length: 100
-            nullable: true
-        slug:
             type: string
             length: 100
             nullable: true
@@ -39,7 +38,6 @@ Uni\AdminBundle\Entity\Category:
             type: datetime
             nullable: true
     gedmo:
-        referenceIntegrity: nullify
         soft_deleteable:
             field_name: deleted_at
             time_aware: false

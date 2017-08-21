@@ -39,12 +39,10 @@
                                 <dd>{% if category.id %}{{ category.id }}{% endif %}</dd>
                             <dt>{{ 'category.form.name'|trans }}</dt>
                                 <dd>{% if category.name %}{{ category.name }}{% endif %}</dd>
-                            <dt>{{ 'category.form.slug'|trans }}</dt>
-                                <dd>{% if category.slug %}{{ category.slug }}{% endif %}</dd>
-                            <dt>{{ 'category.form.createdAt'|trans }}</dt>
-                                <dd>{% if category.createdAt %}{{ category.createdAt|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "d 'de' LLLL 'de' y - HH:mm") }}&nbsp;({{ category.createdAt|ago }}){% endif %}</dd>
-                            <dt>{{ 'category.form.updatedAt'|trans }}</dt>
-                                <dd>{% if category.updatedAt %}{{ category.updatedAt|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "d 'de' LLLL 'de' y - HH:mm") }}&nbsp;({{ category.updatedAt|ago }}){% endif %}</dd>                        </dl>
+                            <dt>{{ 'category.form.created_at'|trans }}</dt>
+                                <dd>{% if category.createdat %}{{ category.createdat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "d 'de' LLLL 'de' y - HH:mm") }}&nbsp;({{ category.createdat|ago }}){% endif %}</dd>
+                            <dt>{{ 'category.form.updated_at'|trans }}</dt>
+                                <dd>{% if category.updatedat %}{{ category.updatedat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "d 'de' LLLL 'de' y - HH:mm") }}&nbsp;({{ category.updatedat|ago }}){% endif %}</dd>                        </dl>
                     </div>
                 </div>
             </div>

@@ -654,4 +654,82 @@ class Account
     {
         return $this->photographies;
     }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $catalogs;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $pages;
+
+
+    /**
+     * Add catalog
+     *
+     * @param \Uni\AdminBundle\Entity\Catalogs $catalog
+     *
+     * @return Account
+     */
+    public function addCatalog(\Uni\AdminBundle\Entity\Catalogs $catalog)
+    {
+        $this->catalogs[] = $catalog;
+
+        return $this;
+    }
+
+    /**
+     * Remove catalog
+     *
+     * @param \Uni\AdminBundle\Entity\Catalogs $catalog
+     */
+    public function removeCatalog(\Uni\AdminBundle\Entity\Catalogs $catalog)
+    {
+        $this->catalogs->removeElement($catalog);
+    }
+
+    /**
+     * Get catalogs
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getCatalogs()
+    {
+        return $this->catalogs;
+    }
+
+    /**
+     * Add page
+     *
+     * @param \Uni\AdminBundle\Entity\Page $page
+     *
+     * @return Account
+     */
+    public function addPage(\Uni\AdminBundle\Entity\Page $page)
+    {
+        $this->pages[] = $page;
+
+        return $this;
+    }
+
+    /**
+     * Remove page
+     *
+     * @param \Uni\AdminBundle\Entity\Page $page
+     */
+    public function removePage(\Uni\AdminBundle\Entity\Page $page)
+    {
+        $this->pages->removeElement($page);
+    }
+
+    /**
+     * Get pages
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getPages()
+    {
+        return $this->pages;
+    }
 }

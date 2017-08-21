@@ -42,6 +42,8 @@
                                     </th>
                                     <th>{{ knp_pagination_sortable(subcategories, 'subcategory.form.id'|trans, 'id') }}{% if sort == 'id' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
                                     <th>{{ knp_pagination_sortable(subcategories, 'subcategory.form.name'|trans, 'name') }}{% if sort == 'name' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
+                                    <th>{{ knp_pagination_sortable(subcategories, 'subcategory.form.created_at'|trans, 'created_at') }}{% if sort == 'created_at' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
+                                    <th>{{ knp_pagination_sortable(subcategories, 'subcategory.form.updated_at'|trans, 'updated_at') }}{% if sort == 'updated_at' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -54,6 +56,8 @@
                                     </td>
                                     <td>{% if subcategory.id %}{{ subcategory.id }}{% endif %}</td>
                                     <td>{% if subcategory.name %}{{ subcategory.name }}{% endif %}</td>
+                                    <td><span class="fa fa-calendar-o" data-toggle="tooltip" data-placement="left" title="{{ subcategory.createdat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "dd LLLL y HH:mm") }}"></span>&nbsp;{{ subcategory.createdat|ago }}</td>
+                                    <td><span class="fa fa-calendar-o" data-toggle="tooltip" data-placement="left" title="{{ subcategory.updatedat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "dd LLLL y HH:mm") }}"></span>&nbsp;{{ subcategory.updatedat|ago }}</td>
                                 </tr>
                             {% endfor %}
                             </tbody>

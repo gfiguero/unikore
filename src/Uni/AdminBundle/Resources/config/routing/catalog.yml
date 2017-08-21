@@ -1,0 +1,24 @@
+admin_catalog_index:
+    path:     /
+    defaults: { _controller: "UniAdminBundle:Catalog:index" }
+    methods:  GET
+
+admin_catalog_show:
+    path:     /{id}/show
+    defaults: { _controller: "UniAdminBundle:Catalog:show" }
+    methods:  GET
+
+admin_catalog_new:
+    path:     /new
+    defaults: { _controller: "UniAdminBundle:Catalog:new" }
+    methods:  [GET, POST]
+
+admin_catalog_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "UniAdminBundle:Catalog:edit" }
+    methods:  [GET, POST]
+
+admin_catalog_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "UniAdminBundle:Catalog:delete" }
+    methods:  DELETE

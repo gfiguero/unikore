@@ -1359,4 +1359,33 @@ class Product
     {
         return $this->subcategory;
     }
+    /**
+     * @var integer
+     */
+    private $diameter;
+
+
+    /**
+     * Set diameter
+     *
+     * @param integer $diameter
+     *
+     * @return Product
+     */
+    public function setDiameter($diameter)
+    {
+        $this->diameter = $diameter;
+
+        return $this;
+    }
+
+    /**
+     * Get diameter
+     *
+     * @return integer
+     */
+    public function getDiameter()
+    {
+        return $this->diameter;
+    }
 }

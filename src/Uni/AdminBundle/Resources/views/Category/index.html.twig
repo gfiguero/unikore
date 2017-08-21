@@ -42,6 +42,8 @@
                                     </th>
                                     <th>{{ knp_pagination_sortable(categories, 'category.form.id'|trans, 'id') }}{% if sort == 'id' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
                                     <th>{{ knp_pagination_sortable(categories, 'category.form.name'|trans, 'name') }}{% if sort == 'name' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
+                                    <th>{{ knp_pagination_sortable(categories, 'category.form.created_at'|trans, 'created_at') }}{% if sort == 'created_at' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
+                                    <th>{{ knp_pagination_sortable(categories, 'category.form.updated_at'|trans, 'updated_at') }}{% if sort == 'updated_at' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -54,6 +56,8 @@
                                     </td>
                                     <td>{% if category.id %}{{ category.id }}{% endif %}</td>
                                     <td>{% if category.name %}{{ category.name }}{% endif %}</td>
+                                    <td><span class="fa fa-calendar-o" data-toggle="tooltip" data-placement="left" title="{{ category.createdat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "dd LLLL y HH:mm") }}"></span>&nbsp;{{ category.createdat|ago }}</td>
+                                    <td><span class="fa fa-calendar-o" data-toggle="tooltip" data-placement="left" title="{{ category.updatedat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "dd LLLL y HH:mm") }}"></span>&nbsp;{{ category.updatedat|ago }}</td>
                                 </tr>
                             {% endfor %}
                             </tbody>

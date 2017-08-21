@@ -25,12 +25,12 @@ class Category
     /**
      * @var \DateTime
      */
-    private $createdAt;
+    private $created_at;
 
     /**
      * @var \DateTime
      */
-    private $updatedAt;
+    private $updated_at;
 
     /**
      * @var \DateTime
@@ -46,6 +46,11 @@ class Category
      * @var \Uni\AdminBundle\Entity\Account
      */
     private $account;
+
+    public function __toString()
+    {
+        return (string) $this->name;
+    }
 
     /**
      * Constructor
@@ -116,13 +121,13 @@ class Category
     /**
      * Set createdAt
      *
-     * @param \DateTime $createdAt
+     * @param \DateTime $created_at
      *
      * @return Category
      */
-    public function setCreatedAt($createdAt)
+    public function setCreatedAt($created_at)
     {
-        $this->createdAt = $createdAt;
+        $this->created_at = $created_at;
 
         return $this;
     }
@@ -134,19 +139,19 @@ class Category
      */
     public function getCreatedAt()
     {
-        return $this->createdAt;
+        return $this->created_at;
     }
 
     /**
      * Set updatedAt
      *
-     * @param \DateTime $updatedAt
+     * @param \DateTime $updated_at
      *
      * @return Category
      */
-    public function setUpdatedAt($updatedAt)
+    public function setUpdatedAt($updated_at)
     {
-        $this->updatedAt = $updatedAt;
+        $this->updated_at = $updated_at;
 
         return $this;
     }
@@ -158,19 +163,19 @@ class Category
      */
     public function getUpdatedAt()
     {
-        return $this->updatedAt;
+        return $this->updated_at;
     }
 
     /**
      * Set deletedAt
      *
-     * @param \DateTime $deletedAt
+     * @param \DateTime $deleted_at
      *
      * @return Category
      */
-    public function setDeletedAt($deletedAt)
+    public function setDeletedAt($deleted_at)
     {
-        $this->deleted_at = $deletedAt;
+        $this->deleted_at = $deleted_at;
 
         return $this;
     }
@@ -243,4 +248,3 @@ class Category
         return $this->account;
     }
 }
-

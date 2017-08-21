@@ -19,23 +19,13 @@ class CategoryType extends AbstractType
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
                 'translation_domain' => 'UniAdminBundle',
             )) 
-            ->add('slug', null, array(
-                'label' => 'category.form.slug',
-                'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
-                'translation_domain' => 'UniAdminBundle',
-            )) 
-            ->add('createdAt', null, array(
-                'label' => 'category.form.createdAt',
-                'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
-                'translation_domain' => 'UniAdminBundle',
-            )) 
-            ->add('updatedAt', null, array(
-                'label' => 'category.form.updatedAt',
-                'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
-                'translation_domain' => 'UniAdminBundle',
-            )) 
             ->add('account', null, array(
                 'label' => 'category.form.account',
+                'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
+                'translation_domain' => 'UniAdminBundle',
+            )) 
+            ->add('catalog', null, array(
+                'label' => 'category.form.catalog',
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
                 'translation_domain' => 'UniAdminBundle',
             ))

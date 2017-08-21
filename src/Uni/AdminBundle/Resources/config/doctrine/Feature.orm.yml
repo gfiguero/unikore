@@ -12,6 +12,9 @@ Uni\AdminBundle\Entity\Feature:
         account:
             targetEntity: Uni\AdminBundle\Entity\Account
             inversedBy: features
+        page:
+            targetEntity: Uni\AdminBundle\Entity\Page
+            inversedBy: features
     fields:
         name:
             type: string

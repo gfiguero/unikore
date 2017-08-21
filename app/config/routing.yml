@@ -13,6 +13,18 @@ uni_user:
     resource: "@UniUserBundle/Resources/config/routing.yml"
     prefix:   /
 
+uni_catalog:
+    resource: "@UniCatalogBundle/Resources/config/routing.yml"
+    prefix:   /catalog
+
+uni_page:
+    resource: "@UniPageBundle/Resources/config/routing.yml"
+    prefix:   /
+
+uni_control_panel:
+    resource: "@UniControlPanelBundle/Resources/config/routing.yml"
+    prefix:   /controlpanel
+
 root:
     path: /
     defaults:

@@ -2,6 +2,9 @@
 
 namespace Uni\AdminBundle\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
+use Evence\Bundle\SoftDeleteableExtensionBundle\Mapping\Annotation as Evence;
+
 /**
  * Subcategory
  */
@@ -25,12 +28,12 @@ class Subcategory
     /**
      * @var \DateTime
      */
-    private $createdAt;
+    private $created_at;
 
     /**
      * @var \DateTime
      */
-    private $updatedAt;
+    private $updated_at;
 
     /**
      * @var \DateTime
@@ -48,9 +51,16 @@ class Subcategory
     private $account;
 
     /**
-     * @var \Uni\AdminBundle\Entity\ProductCategory
+     * @var \Uni\AdminBundle\Entity\Category
+     * @ORM\ManyToOne(targetEntity="Uni\AdminBundle\Entity\Category")
+     * @Evence\onSoftDelete(type="SET NULL")
      */
     private $category;
+
+    public function __toString()
+    {
+        return (string) $this->name;
+    }
 
     /**
      * Constructor
@@ -121,13 +131,13 @@ class Subcategory
     /**
      * Set createdAt
      *
-     * @param \DateTime $createdAt
+     * @param \DateTime $created_at
      *
      * @return Subcategory
      */
-    public function setCreatedAt($createdAt)
+    public function setCreatedAt($created_at)
     {
-        $this->createdAt = $createdAt;
+        $this->created_at = $created_at;
 
         return $this;
     }
@@ -139,19 +149,19 @@ class Subcategory
      */
     public function getCreatedAt()
     {
-        return $this->createdAt;
+        return $this->created_at;
     }
 
     /**
      * Set updatedAt
      *
-     * @param \DateTime $updatedAt
+     * @param \DateTime $updated_at
      *
      * @return Subcategory
      */
-    public function setUpdatedAt($updatedAt)
+    public function setUpdatedAt($updated_at)
     {
-        $this->updatedAt = $updatedAt;
+        $this->updated_at = $updated_at;
 
         return $this;
     }
@@ -163,19 +173,19 @@ class Subcategory
      */
     public function getUpdatedAt()
     {
-        return $this->updatedAt;
+        return $this->updated_at;
     }
 
     /**
      * Set deletedAt
      *
-     * @param \DateTime $deletedAt
+     * @param \DateTime $deleted_at
      *
      * @return Subcategory
      */
-    public function setDeletedAt($deletedAt)
+    public function setDeletedAt($deleted_at)
     {
-        $this->deleted_at = $deletedAt;
+        $this->deleted_at = $deleted_at;
 
         return $this;
     }
@@ -251,11 +261,11 @@ class Subcategory
     /**
      * Set category
      *
-     * @param \Uni\AdminBundle\Entity\ProductCategory $category
+     * @param \Uni\AdminBundle\Entity\Category $category
      *
      * @return Subcategory
      */
-    public function setCategory(\Uni\AdminBundle\Entity\ProductCategory $category = null)
+    public function setCategory(\Uni\AdminBundle\Entity\Category $category = null)
     {
         $this->category = $category;
 
@@ -265,7 +275,7 @@ class Subcategory
     /**
      * Get category
      *
-     * @return \Uni\AdminBundle\Entity\ProductCategory
+     * @return \Uni\AdminBundle\Entity\Category
      */
     public function getCategory()
     {

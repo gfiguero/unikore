@@ -52,6 +52,11 @@ class Feature
      */
     private $account;
 
+    public function __toString()
+    {
+        return (string) $this->name;
+    }
+
 
     /**
      * Get id
@@ -255,4 +260,3 @@ class Feature
         return $this->account;
     }
 }
-

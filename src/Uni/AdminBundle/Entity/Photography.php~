@@ -27,6 +27,11 @@ class Photography
      */
     private $account;
 
+    public function __toString()
+    {
+        return (string) $this->image;
+    }
+
 
     /**
      * Get id
@@ -110,4 +115,3 @@ class Photography
         return $this->account;
     }
 }
-

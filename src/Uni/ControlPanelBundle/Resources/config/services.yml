@@ -1,0 +1,4 @@
+services:
+#    uni_control_panel.example:
+#        class: Uni\ControlPanelBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

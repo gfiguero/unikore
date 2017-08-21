@@ -247,4 +247,33 @@ class Category
     {
         return $this->account;
     }
+    /**
+     * @var \Uni\AdminBundle\Entity\Catalog
+     */
+    private $catalog;
+
+
+    /**
+     * Set catalog
+     *
+     * @param \Uni\AdminBundle\Entity\Catalog $catalog
+     *
+     * @return Category
+     */
+    public function setCatalog(\Uni\AdminBundle\Entity\Catalog $catalog = null)
+    {
+        $this->catalog = $catalog;
+
+        return $this;
+    }
+
+    /**
+     * Get catalog
+     *
+     * @return \Uni\AdminBundle\Entity\Catalog
+     */
+    public function getCatalog()
+    {
+        return $this->catalog;
+    }
 }

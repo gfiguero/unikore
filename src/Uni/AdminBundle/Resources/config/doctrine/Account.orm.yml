@@ -33,17 +33,23 @@ Uni\AdminBundle\Entity\Account:
         users:
             targetEntity: Uni\AdminBundle\Entity\User
             mappedBy: account
-        categories:
-            targetEntity: Uni\AdminBundle\Entity\Category
+        catalogs:
+            targetEntity: Uni\AdminBundle\Entity\Catalogs
             mappedBy: account
-        subcategories:
-            targetEntity: Uni\AdminBundle\Entity\Subcategory
+        pages:
+            targetEntity: Uni\AdminBundle\Entity\Page
             mappedBy: account
         features:
             targetEntity: Uni\AdminBundle\Entity\Feature
             mappedBy: account
         photographies:
             targetEntity: Uni\AdminBundle\Entity\Photography
+            mappedBy: account
+        categories:
+            targetEntity: Uni\AdminBundle\Entity\Category
+            mappedBy: account
+        subcategories:
+            targetEntity: Uni\AdminBundle\Entity\Subcategory
             mappedBy: account
     fields:
         name:

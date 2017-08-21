@@ -1,0 +1,3 @@
+uni_page_homepage:
+    path:     /
+    defaults: { _controller: UniPageBundle:Default:index }

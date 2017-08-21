@@ -498,4 +498,160 @@ class Account
     {
         return $this->users;
     }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $categories;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $subcategories;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $features;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $photographies;
+
+
+    /**
+     * Add category
+     *
+     * @param \Uni\AdminBundle\Entity\Category $category
+     *
+     * @return Account
+     */
+    public function addCategory(\Uni\AdminBundle\Entity\Category $category)
+    {
+        $this->categories[] = $category;
+
+        return $this;
+    }
+
+    /**
+     * Remove category
+     *
+     * @param \Uni\AdminBundle\Entity\Category $category
+     */
+    public function removeCategory(\Uni\AdminBundle\Entity\Category $category)
+    {
+        $this->categories->removeElement($category);
+    }
+
+    /**
+     * Get categories
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getCategories()
+    {
+        return $this->categories;
+    }
+
+    /**
+     * Add subcategory
+     *
+     * @param \Uni\AdminBundle\Entity\Subcategory $subcategory
+     *
+     * @return Account
+     */
+    public function addSubcategory(\Uni\AdminBundle\Entity\Subcategory $subcategory)
+    {
+        $this->subcategories[] = $subcategory;
+
+        return $this;
+    }
+
+    /**
+     * Remove subcategory
+     *
+     * @param \Uni\AdminBundle\Entity\Subcategory $subcategory
+     */
+    public function removeSubcategory(\Uni\AdminBundle\Entity\Subcategory $subcategory)
+    {
+        $this->subcategories->removeElement($subcategory);
+    }
+
+    /**
+     * Get subcategories
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getSubcategories()
+    {
+        return $this->subcategories;
+    }
+
+    /**
+     * Add feature
+     *
+     * @param \Uni\AdminBundle\Entity\Feature $feature
+     *
+     * @return Account
+     */
+    public function addFeature(\Uni\AdminBundle\Entity\Feature $feature)
+    {
+        $this->features[] = $feature;
+
+        return $this;
+    }
+
+    /**
+     * Remove feature
+     *
+     * @param \Uni\AdminBundle\Entity\Feature $feature
+     */
+    public function removeFeature(\Uni\AdminBundle\Entity\Feature $feature)
+    {
+        $this->features->removeElement($feature);
+    }
+
+    /**
+     * Get features
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getFeatures()
+    {
+        return $this->features;
+    }
+
+    /**
+     * Add photography
+     *
+     * @param \Uni\AdminBundle\Entity\Photography $photography
+     *
+     * @return Account
+     */
+    public function addPhotography(\Uni\AdminBundle\Entity\Photography $photography)
+    {
+        $this->photographies[] = $photography;
+
+        return $this;
+    }
+
+    /**
+     * Remove photography
+     *
+     * @param \Uni\AdminBundle\Entity\Photography $photography
+     */
+    public function removePhotography(\Uni\AdminBundle\Entity\Photography $photography)
+    {
+        $this->photographies->removeElement($photography);
+    }
+
+    /**
+     * Get photographies
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getPhotographies()
+    {
+        return $this->photographies;
+    }
 }

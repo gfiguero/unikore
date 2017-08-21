@@ -23,6 +23,11 @@ class PhotographyType extends AbstractType
                 'label' => 'photography.form.account',
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
                 'translation_domain' => 'UniAdminBundle',
+            )) 
+            ->add('page', null, array(
+                'label' => 'photography.form.page',
+                'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
+                'translation_domain' => 'UniAdminBundle',
             ))
         ;
     }

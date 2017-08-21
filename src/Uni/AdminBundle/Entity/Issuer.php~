@@ -65,11 +65,6 @@ class Issuer
      */
     private $deleted_at;
 
-    /**
-     * @var \Uni\AdminBundle\Entity\User
-     */
-    private $user;
-
     public function __toString()
     {
         return (string) $this->name;
@@ -254,58 +249,6 @@ class Issuer
         return $this->deleted_at;
     }
 
-    /**
-     * Set user
-     *
-     * @param \Uni\AdminBundle\Entity\User $user
-     *
-     * @return Issuer
-     */
-    public function setUser(\Uni\AdminBundle\Entity\User $user = null)
-    {
-        $this->user = $user;
-
-        return $this;
-    }
-
-    /**
-     * Get user
-     *
-     * @return \Uni\AdminBundle\Entity\User
-     */
-    public function getUser()
-    {
-        return $this->user;
-    }
-    /**
-     * @var \Uni\AdminBundle\Entity\Group
-     */
-    private $group;
-
-
-    /**
-     * Set group
-     *
-     * @param \Uni\AdminBundle\Entity\Group $group
-     *
-     * @return Issuer
-     */
-    public function setGroup(\Uni\AdminBundle\Entity\Group $group = null)
-    {
-        $this->group = $group;
-
-        return $this;
-    }
-
-    /**
-     * Get group
-     *
-     * @return \Uni\AdminBundle\Entity\Group
-     */
-    public function getGroup()
-    {
-        return $this->group;
-    }
     /**
      * @var \Doctrine\Common\Collections\Collection
      */

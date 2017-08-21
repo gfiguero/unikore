@@ -1,0 +1,3 @@
+uni_catalog_homepage:
+    path:     /
+    defaults: { _controller: UniCatalogBundle:Default:index }

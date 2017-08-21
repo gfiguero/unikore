@@ -41,10 +41,10 @@
                                 <dd>{% if subcategory.name %}{{ subcategory.name }}{% endif %}</dd>
                             <dt>{{ 'subcategory.form.slug'|trans }}</dt>
                                 <dd>{% if subcategory.slug %}{{ subcategory.slug }}{% endif %}</dd>
-                            <dt>{{ 'subcategory.form.createdAt'|trans }}</dt>
-                                <dd>{% if subcategory.createdAt %}{{ subcategory.createdAt|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "d 'de' LLLL 'de' y - HH:mm") }}&nbsp;({{ subcategory.createdAt|ago }}){% endif %}</dd>
-                            <dt>{{ 'subcategory.form.updatedAt'|trans }}</dt>
-                                <dd>{% if subcategory.updatedAt %}{{ subcategory.updatedAt|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "d 'de' LLLL 'de' y - HH:mm") }}&nbsp;({{ subcategory.updatedAt|ago }}){% endif %}</dd>                        </dl>
+                            <dt>{{ 'subcategory.form.created_at'|trans }}</dt>
+                                <dd>{% if subcategory.createdat %}{{ subcategory.createdat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "d 'de' LLLL 'de' y - HH:mm") }}&nbsp;({{ subcategory.createdat|ago }}){% endif %}</dd>
+                            <dt>{{ 'subcategory.form.updated_at'|trans }}</dt>
+                                <dd>{% if subcategory.updatedat %}{{ subcategory.updatedat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "d 'de' LLLL 'de' y - HH:mm") }}&nbsp;({{ subcategory.updatedat|ago }}){% endif %}</dd>                        </dl>
                     </div>
                 </div>
             </div>

@@ -38,6 +38,11 @@ class FeatureType extends AbstractType
                 'label' => 'feature.form.account',
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
                 'translation_domain' => 'UniAdminBundle',
+            )) 
+            ->add('page', null, array(
+                'label' => 'feature.form.page',
+                'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
+                'translation_domain' => 'UniAdminBundle',
             ))
         ;
     }

@@ -6,10 +6,13 @@ HTTPDUSER=`ps axo user,comm | grep -E '[a]pache|[h]ttpd|[_]www|[w]ww-data|[n]gin
 setfacl -R -m u:"$HTTPDUSER":rwX -m u:`whoami`:rwX web/uploads web/media
 setfacl -dR -m u:"$HTTPDUSER":rwX -m u:`whoami`:rwX web/uploads web/media
 
-php app/console generate:bundle --namespace Kore/AdminGeneratorBundle --dir src --bundle-name KoreAdminGeneratorBundle --format yml --shared --no-interaction
-php app/console generate:bundle --namespace Kore/AdminBundle --dir src --bundle-name KoreAdminBundle --format yml --shared --no-interaction
-php app/console generate:bundle --namespace Kore/AgentBundle --dir src --bundle-name KoreAgentBundle --format yml --shared --no-interaction
-php app/console generate:bundle --namespace Kore/UserBundle --dir src --bundle-name KoreUserBundle --format yml --shared --no-interaction
+php app/console generate:bundle --namespace Uni/AdminGeneratorBundle --dir src --bundle-name UniAdminGeneratorBundle --format yml --shared --no-interaction
+php app/console generate:bundle --namespace Uni/AdminBundle --dir src --bundle-name UniAdminBundle --format yml --shared --no-interaction
+php app/console generate:bundle --namespace Uni/AgentBundle --dir src --bundle-name UniAgentBundle --format yml --shared --no-interaction
+php app/console generate:bundle --namespace Uni/UserBundle --dir src --bundle-name UniUserBundle --format yml --shared --no-interaction
+php app/console generate:bundle --namespace Uni/ControlPanelBundle --dir src --bundle-name UniControlPanelBundle --format yml --shared --no-interaction
+php app/console generate:bundle --namespace Uni/PageBundle --dir src --bundle-name UniPageBundle --format yml --shared --no-interaction
+php app/console generate:bundle --namespace Uni/CatalogBundle --dir src --bundle-name UniCatalogBundle --format yml --shared --no-interaction
 
 
 php app/console doctrine:generate:entities KlanPageBundle:Testing --path=src

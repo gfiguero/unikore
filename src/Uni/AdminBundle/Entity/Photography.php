@@ -114,4 +114,33 @@ class Photography
     {
         return $this->account;
     }
+    /**
+     * @var \Uni\AdminBundle\Entity\Page
+     */
+    private $page;
+
+
+    /**
+     * Set page
+     *
+     * @param \Uni\AdminBundle\Entity\Page $page
+     *
+     * @return Photography
+     */
+    public function setPage(\Uni\AdminBundle\Entity\Page $page = null)
+    {
+        $this->page = $page;
+
+        return $this;
+    }
+
+    /**
+     * Get page
+     *
+     * @return \Uni\AdminBundle\Entity\Page
+     */
+    public function getPage()
+    {
+        return $this->page;
+    }
 }

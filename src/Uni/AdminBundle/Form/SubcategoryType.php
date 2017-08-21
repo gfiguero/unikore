@@ -24,16 +24,6 @@ class SubcategoryType extends AbstractType
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
                 'translation_domain' => 'UniAdminBundle',
             )) 
-            ->add('created_at', null, array(
-                'label' => 'subcategory.form.created_at',
-                'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
-                'translation_domain' => 'UniAdminBundle',
-            )) 
-            ->add('updated_at', null, array(
-                'label' => 'subcategory.form.updated_at',
-                'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
-                'translation_domain' => 'UniAdminBundle',
-            )) 
             ->add('account', null, array(
                 'label' => 'subcategory.form.account',
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),

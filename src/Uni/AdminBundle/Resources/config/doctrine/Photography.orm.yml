@@ -12,6 +12,9 @@ Uni\AdminBundle\Entity\Photography:
         account:
             targetEntity: Uni\AdminBundle\Entity\Account
             inversedBy: photographies
+        page:
+            targetEntity: Uni\AdminBundle\Entity\Page
+            inversedBy: photographies
     fields:
         image:
             type: string
