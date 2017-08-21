@@ -21,10 +21,6 @@ Uni\AdminBundle\Entity\Catalog:
             type: string
             length: 100
             nullable: true
-        slug:
-            type: string
-            length: 100
-            nullable: true
         created_at:
             type: datetime
             gedmo:

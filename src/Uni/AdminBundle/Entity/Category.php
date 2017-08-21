@@ -18,11 +18,6 @@ class Category
     private $name;
 
     /**
-     * @var string
-     */
-    private $slug;
-
-    /**
      * @var \DateTime
      */
     private $created_at;
@@ -92,30 +87,6 @@ class Category
     public function getName()
     {
         return $this->name;
-    }
-
-    /**
-     * Set slug
-     *
-     * @param string $slug
-     *
-     * @return Category
-     */
-    public function setSlug($slug)
-    {
-        $this->slug = $slug;
-
-        return $this;
-    }
-
-    /**
-     * Get slug
-     *
-     * @return string
-     */
-    public function getSlug()
-    {
-        return $this->slug;
     }
 
     /**

@@ -34,7 +34,7 @@ Uni\AdminBundle\Entity\Account:
             targetEntity: Uni\AdminBundle\Entity\User
             mappedBy: account
         catalogs:
-            targetEntity: Uni\AdminBundle\Entity\Catalogs
+            targetEntity: Uni\AdminBundle\Entity\Catalog
             mappedBy: account
         pages:
             targetEntity: Uni\AdminBundle\Entity\Page

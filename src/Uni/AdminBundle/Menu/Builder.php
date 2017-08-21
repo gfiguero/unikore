@@ -139,6 +139,18 @@ class Builder implements ContainerAwareInterface
             'admin_subcategory_show',
             'admin_subcategory_edit',
         )));
+        $sidemenu->addChild('sidemenu.catalog.root', array('route' => 'admin_catalog_index'))->setExtras(array('translation_domain' => 'UniAdminBundle', 'routes' => array(
+            'admin_catalog_index',
+            'admin_catalog_new',
+            'admin_catalog_show',
+            'admin_catalog_edit',
+        )));
+        $sidemenu->addChild('sidemenu.page.root', array('route' => 'admin_page_index'))->setExtras(array('translation_domain' => 'UniAdminBundle', 'routes' => array(
+            'admin_page_index',
+            'admin_page_new',
+            'admin_page_show',
+            'admin_page_edit',
+        )));
 
         return $sidemenu;
     }
