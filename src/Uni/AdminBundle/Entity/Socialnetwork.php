@@ -3,9 +3,9 @@
 namespace Uni\AdminBundle\Entity;
 
 /**
- * SocialNetwork
+ * Socialnetwork
  */
-class SocialNetwork
+class Socialnetwork
 {
     /**
      * @var integer
@@ -48,7 +48,7 @@ class SocialNetwork
      *
      * @param string $name
      *
-     * @return SocialNetwork
+     * @return Socialnetwork
      */
     public function setName($name)
     {
@@ -72,7 +72,7 @@ class SocialNetwork
      *
      * @param string $icon
      *
-     * @return SocialNetwork
+     * @return Socialnetwork
      */
     public function setIcon($icon)
     {
@@ -96,7 +96,7 @@ class SocialNetwork
      *
      * @param string $hexcolor
      *
-     * @return SocialNetwork
+     * @return Socialnetwork
      */
     public function setHexcolor($hexcolor)
     {

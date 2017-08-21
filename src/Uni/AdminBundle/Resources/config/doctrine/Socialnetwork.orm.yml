@@ -1,4 +1,4 @@
-Uni\AdminBundle\Entity\SocialNetwork:
+Uni\AdminBundle\Entity\Socialnetwork:
     type: entity
     table: utils_socialnetwork
     id:

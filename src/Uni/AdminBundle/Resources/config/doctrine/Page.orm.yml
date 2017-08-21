@@ -20,7 +20,7 @@ Uni\AdminBundle\Entity\Page:
             targetEntity:  Uni\AdminBundle\Entity\Photography
             mappedBy: page
         socialmedia:
-            targetEntity:  Uni\AdminBundle\Entity\SocialMedia
+            targetEntity:  Uni\AdminBundle\Entity\Socialmedia
             mappedBy: page
     fields:
         name:

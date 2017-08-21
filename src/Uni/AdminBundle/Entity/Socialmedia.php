@@ -3,9 +3,9 @@
 namespace Uni\AdminBundle\Entity;
 
 /**
- * SocialMedia
+ * Socialmedia
  */
-class SocialMedia
+class Socialmedia
 {
     /**
      * @var integer
@@ -43,7 +43,7 @@ class SocialMedia
     private $page;
 
     /**
-     * @var \Uni\AdminBundle\Entity\SocialNetwork
+     * @var \Uni\AdminBundle\Entity\Socialnetwork
      */
     private $socialnetwork;
 
@@ -63,7 +63,7 @@ class SocialMedia
      *
      * @param string $url
      *
-     * @return SocialMedia
+     * @return Socialmedia
      */
     public function setUrl($url)
     {
@@ -87,7 +87,7 @@ class SocialMedia
      *
      * @param \DateTime $createdAt
      *
-     * @return SocialMedia
+     * @return Socialmedia
      */
     public function setCreatedAt($createdAt)
     {
@@ -111,7 +111,7 @@ class SocialMedia
      *
      * @param \DateTime $updatedAt
      *
-     * @return SocialMedia
+     * @return Socialmedia
      */
     public function setUpdatedAt($updatedAt)
     {
@@ -135,7 +135,7 @@ class SocialMedia
      *
      * @param \DateTime $deletedAt
      *
-     * @return SocialMedia
+     * @return Socialmedia
      */
     public function setDeletedAt($deletedAt)
     {
@@ -159,7 +159,7 @@ class SocialMedia
      *
      * @param \Uni\AdminBundle\Entity\Account $account
      *
-     * @return SocialMedia
+     * @return Socialmedia
      */
     public function setAccount(\Uni\AdminBundle\Entity\Account $account = null)
     {
@@ -183,7 +183,7 @@ class SocialMedia
      *
      * @param \Uni\AdminBundle\Entity\Page $page
      *
-     * @return SocialMedia
+     * @return Socialmedia
      */
     public function setPage(\Uni\AdminBundle\Entity\Page $page = null)
     {
@@ -205,11 +205,11 @@ class SocialMedia
     /**
      * Set socialnetwork
      *
-     * @param \Uni\AdminBundle\Entity\SocialNetwork $socialnetwork
+     * @param \Uni\AdminBundle\Entity\Socialnetwork $socialnetwork
      *
-     * @return SocialMedia
+     * @return Socialmedia
      */
-    public function setSocialnetwork(\Uni\AdminBundle\Entity\SocialNetwork $socialnetwork = null)
+    public function setSocialnetwork(\Uni\AdminBundle\Entity\Socialnetwork $socialnetwork = null)
     {
         $this->socialnetwork = $socialnetwork;
 
@@ -219,7 +219,7 @@ class SocialMedia
     /**
      * Get socialnetwork
      *
-     * @return \Uni\AdminBundle\Entity\SocialNetwork
+     * @return \Uni\AdminBundle\Entity\Socialnetwork
      */
     public function getSocialnetwork()
     {

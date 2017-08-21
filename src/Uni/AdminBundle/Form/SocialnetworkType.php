@@ -6,7 +6,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class SocialMediaType extends AbstractType
+class SocialnetworkType extends AbstractType
 {
     /**
      * {@inheritdoc}
@@ -14,23 +14,18 @@ class SocialMediaType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder 
-            ->add('url', null, array(
-                'label' => 'socialmedia.form.url',
+            ->add('name', null, array(
+                'label' => 'socialnetwork.form.name',
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
                 'translation_domain' => 'UniAdminBundle',
             )) 
-            ->add('account', null, array(
-                'label' => 'socialmedia.form.account',
+            ->add('icon', null, array(
+                'label' => 'socialnetwork.form.icon',
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
                 'translation_domain' => 'UniAdminBundle',
             )) 
-            ->add('page', null, array(
-                'label' => 'socialmedia.form.page',
-                'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
-                'translation_domain' => 'UniAdminBundle',
-            )) 
-            ->add('socialnetwork', null, array(
-                'label' => 'socialmedia.form.socialnetwork',
+            ->add('hexcolor', null, array(
+                'label' => 'socialnetwork.form.hexcolor',
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
                 'translation_domain' => 'UniAdminBundle',
             ))
@@ -43,7 +38,7 @@ class SocialMediaType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'Uni\AdminBundle\Entity\SocialMedia'
+            'data_class' => 'Uni\AdminBundle\Entity\Socialnetwork'
         ));
     }
 
@@ -52,7 +47,7 @@ class SocialMediaType extends AbstractType
      */
     public function getBlockPrefix()
     {
-        return 'uni_adminbundle_socialmedia';
+        return 'uni_adminbundle_socialnetwork';
     }
 
 

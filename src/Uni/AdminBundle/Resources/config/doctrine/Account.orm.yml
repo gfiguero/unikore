@@ -43,7 +43,7 @@ Uni\AdminBundle\Entity\Account:
             targetEntity: Uni\AdminBundle\Entity\Feature
             mappedBy: account
         socialmedia:
-            targetEntity: Uni\AdminBundle\Entity\SocialMedia
+            targetEntity: Uni\AdminBundle\Entity\Socialmedia
             mappedBy: account
         photographies:
             targetEntity: Uni\AdminBundle\Entity\Photography

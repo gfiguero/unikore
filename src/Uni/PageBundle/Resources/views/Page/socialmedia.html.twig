@@ -9,7 +9,7 @@
                         <ul class="list-inline">
                             {% for key, socialmedia in socialmedialist %}
                                 <li>
-                                    <a class="socialmedia-link social-{{ socialmedia.socialmedia.name|lower }}" href="{{ socialmedia.url|raw }}" target="_blank" >{{ icon(socialmedia.socialmedia.icon) }}</a>
+                                    <a class="socialmedia-link social-{{ socialmedia.socialnetwork.name|lower }}" href="{{ socialmedia.url|raw }}" target="_blank" >{{ icon(socialmedia.socialnetwork.icon) }}</a>
                                 </li>
                             {% endfor %}
                         </ul>

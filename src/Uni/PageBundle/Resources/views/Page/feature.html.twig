@@ -23,7 +23,7 @@
                         {% if feature.title %}
                         <div class="caption">
                             <h3 class="feature-item-title">{{ feature.title|raw }}</h3>
-                            {% if feature.content %}<p class="feature-item-content">{{ feature.content|raw }}</p>{% endif %}
+                            {% if feature.description %}<p class="feature-item-content">{{ feature.description|raw }}</p>{% endif %}
                         </div>
                         {% endif %}
                     </div>
@@ -48,7 +48,7 @@
                             <div class="modal-footer">
                             {% if feature.title %}
                                 <h4 class="modal-title">{{ feature.title|raw }}</h4>
-                                {% if feature.content %}<p>{{ feature.content|raw }}</p>{% endif %}
+                                {% if feature.description %}<p>{{ feature.description|raw }}</p>{% endif %}
                             {% endif %}
                             </div>
                         </div>

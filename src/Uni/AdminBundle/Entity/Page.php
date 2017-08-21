@@ -760,11 +760,11 @@ class Page
     /**
      * Add socialmedia
      *
-     * @param \Uni\AdminBundle\Entity\SocialMedia $socialmedia
+     * @param \Uni\AdminBundle\Entity\Socialmedia $socialmedia
      *
      * @return Page
      */
-    public function addSocialmedia(\Uni\AdminBundle\Entity\SocialMedia $socialmedia)
+    public function addSocialmedia(\Uni\AdminBundle\Entity\Socialmedia $socialmedia)
     {
         $this->socialmedia[] = $socialmedia;
 
@@ -774,9 +774,9 @@ class Page
     /**
      * Remove socialmedia
      *
-     * @param \Uni\AdminBundle\Entity\SocialMedia $socialmedia
+     * @param \Uni\AdminBundle\Entity\Socialmedia $socialmedia
      */
-    public function removeSocialmedia(\Uni\AdminBundle\Entity\SocialMedia $socialmedia)
+    public function removeSocialmedia(\Uni\AdminBundle\Entity\Socialmedia $socialmedia)
     {
         $this->socialmedia->removeElement($socialmedia);
     }

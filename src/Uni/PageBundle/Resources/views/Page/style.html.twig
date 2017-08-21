@@ -135,14 +135,14 @@
     {% if socialmedialist is not empty %}
         <style type="text/css">
         {% for key, socialmedia in socialmedialist %}
-            #socialmedia .social-{{ socialmedia.socialmedia.name|lower }} {
-                background-color: {{ socialmedia.socialmedia.hexcolor }};
+            #socialmedia .social-{{ socialmedia.socialnetwork.name|lower }} {
+                background-color: {{ socialmedia.socialnetwork.hexcolor }};
             }
-            #socialmedia .social-{{ socialmedia.socialmedia.name|lower }}:hover,
-            #socialmedia .social-{{ socialmedia.socialmedia.name|lower }}:active,
-            #socialmedia .social-{{ socialmedia.socialmedia.name|lower }}:active:focus,
-            #socialmedia .social-{{ socialmedia.socialmedia.name|lower }}:focus {
-                background-color: {{ color_darken(socialmedia.socialmedia.hexcolor, 20) }};
+            #socialmedia .social-{{ socialmedia.socialnetwork.name|lower }}:hover,
+            #socialmedia .social-{{ socialmedia.socialnetwork.name|lower }}:active,
+            #socialmedia .social-{{ socialmedia.socialnetwork.name|lower }}:active:focus,
+            #socialmedia .social-{{ socialmedia.socialnetwork.name|lower }}:focus {
+                background-color: {{ color_darken(socialmedia.socialnetwork.hexcolor, 20) }};
             }
         {% endfor %}
         </style>

@@ -19,12 +19,12 @@ class PageController extends Controller
         $page = $em->getRepository('UniAdminBundle:Page')->findOneByDomain($this->getRequest()->getHost());
         $photographies = $em->getRepository('UniAdminBundle:Photography')->findByPage($page);
         $features = $em->getRepository('UniAdminBundle:Feature')->findByPage($page);
-//        $socialmedialist = $em->getRepository('UniAdminBundle:SocialMediaEnabled')->findByUser($page);
+        $socialmedialist = $em->getRepository('UniAdminBundle:Socialmedia')->findByPage($page);
         shuffle($photographies);
         return $this->render('UniPageBundle:Page:index.html.twig', array(
             'features' => $features,
             'photographies' => $photographies,
-            'socialmedialist' => array(),
+            'socialmedialist' => $socialmedialist,
             'page' => $page,
         ));
     }

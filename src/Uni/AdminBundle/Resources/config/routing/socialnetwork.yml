@@ -1,24 +1,24 @@
 admin_socialnetwork_index:
     path:     /
-    defaults: { _controller: "UniAdminBundle:SocialNetwork:index" }
+    defaults: { _controller: "UniAdminBundle:Socialnetwork:index" }
     methods:  GET
 
 admin_socialnetwork_show:
     path:     /{id}/show
-    defaults: { _controller: "UniAdminBundle:SocialNetwork:show" }
+    defaults: { _controller: "UniAdminBundle:Socialnetwork:show" }
     methods:  GET
 
 admin_socialnetwork_new:
     path:     /new
-    defaults: { _controller: "UniAdminBundle:SocialNetwork:new" }
+    defaults: { _controller: "UniAdminBundle:Socialnetwork:new" }
     methods:  [GET, POST]
 
 admin_socialnetwork_edit:
     path:     /{id}/edit
-    defaults: { _controller: "UniAdminBundle:SocialNetwork:edit" }
+    defaults: { _controller: "UniAdminBundle:Socialnetwork:edit" }
     methods:  [GET, POST]
 
 admin_socialnetwork_delete:
     path:     /{id}/delete
-    defaults: { _controller: "UniAdminBundle:SocialNetwork:delete" }
+    defaults: { _controller: "UniAdminBundle:Socialnetwork:delete" }
     methods:  DELETE

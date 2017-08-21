@@ -1,7 +1,7 @@
-Uni\AdminBundle\Entity\SocialMedia:
+Uni\AdminBundle\Entity\Socialmedia:
     type: entity
     table: uni_socialmedia
-    repositoryClass: Uni\AdminBundle\Entity\SocialMediaRepository
+    repositoryClass: Uni\AdminBundle\Entity\SocialmediaRepository
     id:
         id:
             type: integer
@@ -16,7 +16,7 @@ Uni\AdminBundle\Entity\SocialMedia:
             targetEntity: Uni\AdminBundle\Entity\Page
             inversedBy: socialmedia
         socialnetwork:
-            targetEntity: Uni\AdminBundle\Entity\SocialNetwork
+            targetEntity: Uni\AdminBundle\Entity\Socialnetwork
     fields:
         url:
             type: string
