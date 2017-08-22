@@ -1,3 +1,27 @@
-uni_control_panel_homepage:
-    path:     /
-    defaults: { _controller: UniControlPanelBundle:Default:index }
+uni_controlpanel_page:
+    resource: "@UniControlPanelBundle/Resources/config/routing/page.yml"
+    prefix:   /page
+uni_controlpanel_catalog:
+    resource: "@UniControlPanelBundle/Resources/config/routing/catalog.yml"
+    prefix:   /catalog
+uni_controlpanel_feature:
+    resource: "@UniControlPanelBundle/Resources/config/routing/feature.yml"
+    prefix:   /feature
+uni_controlpanel_photography:
+    resource: "@UniControlPanelBundle/Resources/config/routing/photography.yml"
+    prefix:   /photography
+uni_controlpanel_category:
+    resource: "@UniControlPanelBundle/Resources/config/routing/category.yml"
+    prefix:   /category
+uni_controlpanel_subcategory:
+    resource: "@UniControlPanelBundle/Resources/config/routing/subcategory.yml"
+    prefix:   /subcategory
+uni_controlpanel_account:
+    resource: "@UniControlPanelBundle/Resources/config/routing/account.yml"
+    prefix:   /account
+uni_controlpanel_user:
+    resource: "@UniControlPanelBundle/Resources/config/routing/user.yml"
+    prefix:   /user
+uni_controlpanel_product:
+    resource: "@UniControlPanelBundle/Resources/config/routing/product.yml"
+    prefix:   /product

@@ -39,6 +39,13 @@ assetic:
                 - less
                 - cssrewrite
             output: src/Uni/AgentBundle/Resources/public/css/agentexport.css
+        uni_controlpanel_css:
+            inputs:
+                - src/Uni/ControlPanelBundle/Resources/less/build.less
+            filters:
+                - less
+                - cssrewrite
+            output: src/Uni/ControlPanelBundle/Resources/public/css/controlpanel.css
 #        frontend_css:
 #            inputs:
 #                - src/Uni/AgentBundle/Resources/less/build.less
