@@ -1,4 +1,4 @@
-{% extends 'UniPageBundle:Page:base.html.twig' %}
+{% extends 'UniPageBundle:Page:layout.html.twig' %}
 {% use 'UniPageBundle:Page:header.html.twig' %}
 {% use 'UniPageBundle:Page:main.html.twig' %}
 {% use 'UniPageBundle:Page:about.html.twig' %}
@@ -7,12 +7,10 @@
 {% use 'UniPageBundle:Page:contact.html.twig' %}
 {% use 'UniPageBundle:Page:socialmedia.html.twig' %}
 {% use 'UniPageBundle:Page:footer.html.twig' %}
-{% use 'UniPageBundle:Page:style.html.twig' %}
-{% use 'UniPageBundle:Page:script.html.twig' %}
 
-{% block title %}{% if page %}{% if page.brand %}{{ page.brand|raw }}{% endif %}{% endif %}{% endblock %}
+{% block title %}{% if page and page.brand %}{{ page.brand|raw }}{% endif %}{% endblock %}
 
-{% block body %}
+{% block page %}
     {% if page %}
         {% block header %}{{ parent() }}{% endblock %}
         {% block main %}{{ parent() }}{% endblock %}
@@ -25,12 +23,4 @@
     {% else %}
         {{ 'Inactive Host' }}
     {% endif %}
-{% endblock %}
-
-{% block stylesheet %}
-    {% block style %}{{ parent() }}{% endblock %}
-{% endblock %}
-
-{% block javascript %}
-    {% block script %}{{ parent() }}{% endblock %}
 {% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'UniPageBundle:Page:base.html.twig' %}
+{% use 'UniPageBundle:Page:style.html.twig' %}
+{% use 'UniPageBundle:Page:script.html.twig' %}
+
+{% block body %}
+    {% block page %}{% endblock %}
+{% endblock %}
+
+{% block stylesheet %}
+    {% block style %}{{ parent() }}{% endblock %}
+{% endblock %}
+
+{% block javascript %}
+    {% block script %}{{ parent() }}{% endblock %}
+{% endblock %}

@@ -24,3 +24,9 @@ uni_page:
 uni_control_panel:
     resource: "@UniControlPanelBundle/Resources/config/routing.yml"
     prefix:   /controlpanel
+root:
+    path: /
+    defaults:
+        _controller: FrameworkBundle:Redirect:urlRedirect
+        path: fos_user_security_login
+        permanent: true
