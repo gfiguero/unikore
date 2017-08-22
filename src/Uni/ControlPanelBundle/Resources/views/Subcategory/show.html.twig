@@ -1,0 +1,83 @@
+{% extends 'UniControlPanelBundle:Base:layout.html.twig' %}
+{% use 'UniControlPanelBundle:Base:icons.html.twig' %}
+{% use 'UniControlPanelBundle:Base:flashbag.html.twig' %}
+
+{% trans_default_domain 'UniControlPanelBundle' %}
+
+{% block title %}&nbsp;-&nbsp;{{ 'subcategory.show.title'|trans({'%id%':subcategory.id}) }}{% endblock %}
+
+{% block controlpanel %}
+    <div id="page-wrapper">
+        <div class="row" id="page-header">
+            <div class="col-lg-12">
+                <h1 class="page-header">{% block icons %}{{ parent() }}{% endblock %}{{ 'subcategory.show.title'|trans({'%id%':subcategory.id}) }}</h1>
+                {% block flashbag %}{{ parent() }}{% endblock %}
+            </div>
+        </div>
+        <!-- /#page-header -->
+
+        <div class="row" id="page-toolbar">
+            <div class="col-lg-12">
+                <div class="btn-toolbar">
+                    <a type="button" class="btn btn-default" href="{{ path('controlpanel_subcategory_index') }}">{{ icon('list fa-fw') }}&nbsp;{{ 'subcategory.index.link'|trans }}</a>
+                    <a type="button" class="btn btn-primary" href="{{ path('controlpanel_subcategory_edit', { 'id': subcategory.id }) }}">{{ icon('edit fa-fw') }}&nbsp;{{ 'subcategory.edit.link'|trans }}</a>
+                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalDelete">{{ icon('trash-o fa-fw') }}&nbsp;{{ 'subcategory.delete.link'|trans }}</button>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-toolbar -->
+
+        <div class="row" id="page-show">
+            <div class="col-lg-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">{{ 'subcategory.show.data'|trans }}</h2>
+                    </div>
+                    <div class="panel-body">
+                        <dl class="dl-horizontal">
+                            <dt>{{ 'subcategory.form.id'|trans }}</dt>
+                                <dd>{% if subcategory.id %}{{ subcategory.id }}{% endif %}</dd>
+                            <dt>{{ 'subcategory.form.name'|trans }}</dt>
+                                <dd>{% if subcategory.name %}{{ subcategory.name }}{% endif %}</dd>
+                            <dt>{{ 'subcategory.form.slug'|trans }}</dt>
+                                <dd>{% if subcategory.slug %}{{ subcategory.slug }}{% endif %}</dd>
+                            <dt>{{ 'subcategory.form.created_at'|trans }}</dt>
+                                <dd>{% if subcategory.createdat %}{{ subcategory.createdat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "d 'de' LLLL 'de' y - HH:mm") }}&nbsp;({{ subcategory.createdat|ago }}){% endif %}</dd>
+                            <dt>{{ 'subcategory.form.updated_at'|trans }}</dt>
+                                <dd>{% if subcategory.updatedat %}{{ subcategory.updatedat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "d 'de' LLLL 'de' y - HH:mm") }}&nbsp;({{ subcategory.updatedat|ago }}){% endif %}</dd>                        </dl>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-show -->
+
+        <div id="page-modal">
+            <div class="modal fade" id="modalDelete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog modal-md" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">{{ icon('times') }}</button>
+                            <h4 class="modal-title" id="myModalLabel">{{ 'subcategory.delete.title'|trans }}</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-xs-2 text-center">{{ icon('exclamation-triangle fa-5x') }}</div>
+                                <div class="col-xs-10"><p>{{ 'subcategory.delete.message'|trans }}</p></div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            {{ form_start(deleteForm) }}
+                                <button type="submit" class="btn btn-danger pull-right">{{ icon('trash-o fa-fw') }}&nbsp;{{ 'subcategory.delete.submit'|trans }}</button>
+                            {{ form_end(deleteForm) }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- /#page-modal -->
+
+    </div>
+    <!-- /#page-wrapper -->
+{% endblock %}
+

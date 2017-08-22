@@ -1,0 +1,24 @@
+controlpanel_user_index:
+    path:     /
+    defaults: { _controller: "UniControlPanelBundle:User:index" }
+    methods:  GET
+
+controlpanel_user_show:
+    path:     /{id}/show
+    defaults: { _controller: "UniControlPanelBundle:User:show" }
+    methods:  GET
+
+controlpanel_user_new:
+    path:     /new
+    defaults: { _controller: "UniControlPanelBundle:User:new" }
+    methods:  [GET, POST]
+
+controlpanel_user_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "UniControlPanelBundle:User:edit" }
+    methods:  [GET, POST]
+
+controlpanel_user_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "UniControlPanelBundle:User:delete" }
+    methods:  DELETE

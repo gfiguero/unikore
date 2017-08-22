@@ -1,0 +1,24 @@
+controlpanel_catalog_index:
+    path:     /
+    defaults: { _controller: "UniControlPanelBundle:Catalog:index" }
+    methods:  GET
+
+controlpanel_catalog_show:
+    path:     /{id}/show
+    defaults: { _controller: "UniControlPanelBundle:Catalog:show" }
+    methods:  GET
+
+controlpanel_catalog_new:
+    path:     /new
+    defaults: { _controller: "UniControlPanelBundle:Catalog:new" }
+    methods:  [GET, POST]
+
+controlpanel_catalog_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "UniControlPanelBundle:Catalog:edit" }
+    methods:  [GET, POST]
+
+controlpanel_catalog_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "UniControlPanelBundle:Catalog:delete" }
+    methods:  DELETE
