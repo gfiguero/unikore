@@ -1,0 +1,19 @@
+Uni\AdminBundle\Entity\Socialnetwork:
+    type: entity
+    table: utils_socialnetwork
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 100
+        icon:
+            type: string
+            length: 100
+        hexcolor:
+            type: string
+            length: 10

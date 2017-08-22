@@ -151,6 +151,18 @@ class Builder implements ContainerAwareInterface
             'admin_page_show',
             'admin_page_edit',
         )));
+//        $sidemenu->addChild('sidemenu.socialnetwork.root', array('route' => 'admin_socialnetwork_index'))->setExtras(array('translation_domain' => 'UniAdminBundle', 'routes' => array(
+//            'admin_socialnetwork_index',
+//            'admin_socialnetwork_new',
+//            'admin_socialnetwork_show',
+//            'admin_socialnetwork_edit',
+//        )));
+        $sidemenu->addChild('sidemenu.socialmedia.root', array('route' => 'admin_socialmedia_index'))->setExtras(array('translation_domain' => 'UniAdminBundle', 'routes' => array(
+            'admin_socialmedia_index',
+            'admin_socialmedia_new',
+            'admin_socialmedia_show',
+            'admin_socialmedia_edit',
+        )));
 
         return $sidemenu;
     }

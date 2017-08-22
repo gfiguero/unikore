@@ -15,3 +15,7 @@ services:
         class: Twig_Extensions_Extension_Text
         tags:
             - { name: twig.extension }
+    twig.extension.color:
+        class: Uni\AdminBundle\Twig\ColorExtension
+        tags:
+            - { name: twig.extension }

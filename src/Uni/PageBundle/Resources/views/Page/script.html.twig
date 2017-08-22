@@ -1,0 +1,25 @@
+{% block script %}
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBvqD3pcje01o5H1x5dD_M04R67pLc01X0&callback=initMap"></script>
+    <script>
+        function initMap() {
+            var address = '{{ page.contactaddress }}';
+            var geocoder = new google.maps.Geocoder()
+            var latlng = new google.maps.LatLng(-33.000, -70.000);
+            var mapOptions = { zoom: 8, scrollwheel: false, draggable: false, center: latlng }
+            var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+            var marker;
+            geocoder.geocode( {'address': address}, function(results, status) {
+                if (status == 'OK') {
+                    map.setCenter(results[0].geometry.location);
+                    map.setZoom(16);
+                    marker = new google.maps.Marker({
+                        map: map,
+                        position: results[0].geometry.location
+                    });
+                } else {
+                    console.log('Geocode was not successful for the following reason: ' + status);
+                }
+            });
+        }
+    </script>
+{% endblock %}

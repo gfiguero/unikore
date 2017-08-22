@@ -1,0 +1,19 @@
+{% block about %}
+    {% trans_default_domain 'UniPageBundle' %}
+    {% if page.abouttitle %}
+    <section id="about">
+         <div class="container">
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-header">
+                        <h1 class="section-title about-title">{{ page.abouttitle|raw }}</h1>
+                        {% if page.aboutcontent %}<p class="section-content about-content">{{ page.aboutcontent|raw }}</p>{% endif %}
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    {% endif %}
+{% endblock %}

@@ -42,6 +42,9 @@ Uni\AdminBundle\Entity\Account:
         features:
             targetEntity: Uni\AdminBundle\Entity\Feature
             mappedBy: account
+        socialmedia:
+            targetEntity: Uni\AdminBundle\Entity\Socialmedia
+            mappedBy: account
         photographies:
             targetEntity: Uni\AdminBundle\Entity\Photography
             mappedBy: account

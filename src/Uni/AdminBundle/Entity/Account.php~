@@ -668,11 +668,11 @@ class Account
     /**
      * Add catalog
      *
-     * @param \Uni\AdminBundle\Entity\Catalogs $catalog
+     * @param \Uni\AdminBundle\Entity\Catalog $catalog
      *
      * @return Account
      */
-    public function addCatalog(\Uni\AdminBundle\Entity\Catalogs $catalog)
+    public function addCatalog(\Uni\AdminBundle\Entity\Catalog $catalog)
     {
         $this->catalogs[] = $catalog;
 
@@ -682,9 +682,9 @@ class Account
     /**
      * Remove catalog
      *
-     * @param \Uni\AdminBundle\Entity\Catalogs $catalog
+     * @param \Uni\AdminBundle\Entity\Catalog $catalog
      */
-    public function removeCatalog(\Uni\AdminBundle\Entity\Catalogs $catalog)
+    public function removeCatalog(\Uni\AdminBundle\Entity\Catalog $catalog)
     {
         $this->catalogs->removeElement($catalog);
     }
