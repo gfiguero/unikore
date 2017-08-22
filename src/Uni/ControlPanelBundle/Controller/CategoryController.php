@@ -20,11 +20,14 @@ class CategoryController extends Controller
      */
     public function indexAction(Request $request)
     {
+        $user = $this->getUser();
+        $account = $user->getAccount();
+
         $sort = $request->query->get('sort');
         $direction = $request->query->get('direction');
         $em = $this->getDoctrine()->getManager();
-        if($sort) $categories = $em->getRepository('UniAdminBundle:Category')->findBy(array(), array($sort => $direction));
-        else $categories = $em->getRepository('UniAdminBundle:Category')->findAll();
+        if($sort) $categories = $em->getRepository('UniAdminBundle:Category')->findBy(array('account' => $account), array($sort => $direction));
+        else $categories = $em->getRepository('UniAdminBundle:Category')->findBy(array('account' => $account));
         $paginator = $this->get('knp_paginator');
         $categories = $paginator->paginate($categories, $request->query->getInt('page', 1), 100);
 
@@ -47,12 +50,17 @@ class CategoryController extends Controller
      */
     public function newAction(Request $request)
     {
+        $user = $this->getUser();
+        $account = $user->getAccount();
+
         $category = new Category();
         $newForm = $this->createNewForm($category);
         $newForm->handleRequest($request);
 
         if ($newForm->isSubmitted()) {
             if($newForm->isValid()) {
+                $category->setUser($user);
+                $category->setAccount($account);
                 $em = $this->getDoctrine()->getManager();
                 $em->persist($category);
                 $em->flush();
@@ -86,6 +94,10 @@ class CategoryController extends Controller
      */
     public function showAction(Category $category)
     {
+        $user = $this->getUser();
+        $account = $user->getAccount();
+        if ($account != $category->getAccount()) return $this->redirect($this->generateUrl('controlpanel_category_index'));
+
         $editForm = $this->createEditForm($category);
         $deleteForm = $this->createDeleteForm($category);
 
@@ -102,6 +114,10 @@ class CategoryController extends Controller
      */
     public function editAction(Request $request, Category $category)
     {
+        $user = $this->getUser();
+        $account = $user->getAccount();
+        if ($account != $category->getAccount()) return $this->redirect($this->generateUrl('controlpanel_category_index'));
+
         $editForm = $this->createEditForm($category);
         $deleteForm = $this->createDeleteForm($category);
         $editForm->handleRequest($request);
@@ -143,6 +159,10 @@ class CategoryController extends Controller
      */
     public function deleteAction(Request $request, Category $category)
     {
+        $user = $this->getUser();
+        $account = $user->getAccount();
+        if ($account != $category->getAccount()) return $this->redirect($this->generateUrl('controlpanel_category_index'));
+
         $deleteForm = $this->createDeleteForm($category);
         $deleteForm->handleRequest($request);
 

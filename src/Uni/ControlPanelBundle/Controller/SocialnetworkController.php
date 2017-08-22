@@ -20,11 +20,14 @@ class SocialnetworkController extends Controller
      */
     public function indexAction(Request $request)
     {
+        $user = $this->getUser();
+        $account = $user->getAccount();
+
         $sort = $request->query->get('sort');
         $direction = $request->query->get('direction');
         $em = $this->getDoctrine()->getManager();
-        if($sort) $socialnetworks = $em->getRepository('UniAdminBundle:Socialnetwork')->findBy(array(), array($sort => $direction));
-        else $socialnetworks = $em->getRepository('UniAdminBundle:Socialnetwork')->findAll();
+        if($sort) $socialnetworks = $em->getRepository('UniAdminBundle:Socialnetwork')->findBy(array('account' => $account), array($sort => $direction));
+        else $socialnetworks = $em->getRepository('UniAdminBundle:Socialnetwork')->findBy(array('account' => $account));
         $paginator = $this->get('knp_paginator');
         $socialnetworks = $paginator->paginate($socialnetworks, $request->query->getInt('page', 1), 100);
 
@@ -47,12 +50,17 @@ class SocialnetworkController extends Controller
      */
     public function newAction(Request $request)
     {
+        $user = $this->getUser();
+        $account = $user->getAccount();
+
         $socialnetwork = new Socialnetwork();
         $newForm = $this->createNewForm($socialnetwork);
         $newForm->handleRequest($request);
 
         if ($newForm->isSubmitted()) {
             if($newForm->isValid()) {
+                $socialnetwork->setUser($user);
+                $socialnetwork->setAccount($account);
                 $em = $this->getDoctrine()->getManager();
                 $em->persist($socialnetwork);
                 $em->flush();
@@ -86,6 +94,11 @@ class SocialnetworkController extends Controller
      */
     public function showAction(Socialnetwork $socialnetwork)
     {
+        $user = $this->getUser();
+        $account = $user->getAccount();
+        if ($account != $socialnetwork->getAccount()) return $this->redirect($this->generateUrl('controlpanel_socialnetwork_index'));
+
+
         $editForm = $this->createEditForm($socialnetwork);
         $deleteForm = $this->createDeleteForm($socialnetwork);
 
@@ -102,6 +115,11 @@ class SocialnetworkController extends Controller
      */
     public function editAction(Request $request, Socialnetwork $socialnetwork)
     {
+        $user = $this->getUser();
+        $account = $user->getAccount();
+        if ($account != $socialnetwork->getAccount()) return $this->redirect($this->generateUrl('controlpanel_socialnetwork_index'));
+
+
         $editForm = $this->createEditForm($socialnetwork);
         $deleteForm = $this->createDeleteForm($socialnetwork);
         $editForm->handleRequest($request);
@@ -143,6 +161,10 @@ class SocialnetworkController extends Controller
      */
     public function deleteAction(Request $request, Socialnetwork $socialnetwork)
     {
+        $user = $this->getUser();
+        $account = $user->getAccount();
+        if ($account != $socialnetwork->getAccount()) return $this->redirect($this->generateUrl('controlpanel_socialnetwork_index'));
+
         $deleteForm = $this->createDeleteForm($socialnetwork);
         $deleteForm->handleRequest($request);
 

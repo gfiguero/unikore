@@ -20,11 +20,14 @@ class SocialmediaController extends Controller
      */
     public function indexAction(Request $request)
     {
+        $user = $this->getUser();
+        $account = $user->getAccount();
+
         $sort = $request->query->get('sort');
         $direction = $request->query->get('direction');
         $em = $this->getDoctrine()->getManager();
-        if($sort) $socialmedias = $em->getRepository('UniAdminBundle:Socialmedia')->findBy(array(), array($sort => $direction));
-        else $socialmedias = $em->getRepository('UniAdminBundle:Socialmedia')->findAll();
+        if($sort) $socialmedias = $em->getRepository('UniAdminBundle:Socialmedia')->findBy(array('account' => $account), array($sort => $direction));
+        else $socialmedias = $em->getRepository('UniAdminBundle:Socialmedia')->findBy(array('account' => $account));
         $paginator = $this->get('knp_paginator');
         $socialmedias = $paginator->paginate($socialmedias, $request->query->getInt('page', 1), 100);
 
@@ -47,12 +50,17 @@ class SocialmediaController extends Controller
      */
     public function newAction(Request $request)
     {
+        $user = $this->getUser();
+        $account = $user->getAccount();
+
         $socialmedia = new Socialmedia();
         $newForm = $this->createNewForm($socialmedia);
         $newForm->handleRequest($request);
 
         if ($newForm->isSubmitted()) {
             if($newForm->isValid()) {
+                $socialmedia->setUser($user);
+                $socialmedia->setAccount($account);
                 $em = $this->getDoctrine()->getManager();
                 $em->persist($socialmedia);
                 $em->flush();
@@ -86,6 +94,10 @@ class SocialmediaController extends Controller
      */
     public function showAction(Socialmedia $socialmedia)
     {
+        $user = $this->getUser();
+        $account = $user->getAccount();
+        if ($account != $socialmedia->getAccount()) return $this->redirect($this->generateUrl('controlpanel_socialmedia_index'));
+
         $editForm = $this->createEditForm($socialmedia);
         $deleteForm = $this->createDeleteForm($socialmedia);
 
@@ -102,6 +114,10 @@ class SocialmediaController extends Controller
      */
     public function editAction(Request $request, Socialmedia $socialmedia)
     {
+        $user = $this->getUser();
+        $account = $user->getAccount();
+        if ($account != $socialmedia->getAccount()) return $this->redirect($this->generateUrl('controlpanel_socialmedia_index'));
+
         $editForm = $this->createEditForm($socialmedia);
         $deleteForm = $this->createDeleteForm($socialmedia);
         $editForm->handleRequest($request);
@@ -143,6 +159,10 @@ class SocialmediaController extends Controller
      */
     public function deleteAction(Request $request, Socialmedia $socialmedia)
     {
+        $user = $this->getUser();
+        $account = $user->getAccount();
+        if ($account != $socialmedia->getAccount()) return $this->redirect($this->generateUrl('controlpanel_socialmedia_index'));
+
         $deleteForm = $this->createDeleteForm($socialmedia);
         $deleteForm->handleRequest($request);
 

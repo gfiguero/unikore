@@ -20,11 +20,14 @@ class PhotographyController extends Controller
      */
     public function indexAction(Request $request)
     {
+        $user = $this->getUser();
+        $account = $user->getAccount();
+
         $sort = $request->query->get('sort');
         $direction = $request->query->get('direction');
         $em = $this->getDoctrine()->getManager();
-        if($sort) $photographies = $em->getRepository('UniAdminBundle:Photography')->findBy(array(), array($sort => $direction));
-        else $photographies = $em->getRepository('UniAdminBundle:Photography')->findAll();
+        if($sort) $photographies = $em->getRepository('UniAdminBundle:Photography')->findBy(array('account' => $account), array($sort => $direction));
+        else $photographies = $em->getRepository('UniAdminBundle:Photography')->findBy(array('account' => $account));
         $paginator = $this->get('knp_paginator');
         $photographies = $paginator->paginate($photographies, $request->query->getInt('page', 1), 100);
 
@@ -47,12 +50,17 @@ class PhotographyController extends Controller
      */
     public function newAction(Request $request)
     {
+        $user = $this->getUser();
+        $account = $user->getAccount();
+
         $photography = new Photography();
         $newForm = $this->createNewForm($photography);
         $newForm->handleRequest($request);
 
         if ($newForm->isSubmitted()) {
             if($newForm->isValid()) {
+                $photography->setUser($user);
+                $photography->setAccount($account);
                 $em = $this->getDoctrine()->getManager();
                 $em->persist($photography);
                 $em->flush();
@@ -102,6 +110,10 @@ class PhotographyController extends Controller
      */
     public function editAction(Request $request, Photography $photography)
     {
+        $user = $this->getUser();
+        $account = $user->getAccount();
+        if ($account != $photography->getAccount()) return $this->redirect($this->generateUrl('controlpanel_photography_index'));
+
         $editForm = $this->createEditForm($photography);
         $deleteForm = $this->createDeleteForm($photography);
         $editForm->handleRequest($request);
@@ -143,6 +155,10 @@ class PhotographyController extends Controller
      */
     public function deleteAction(Request $request, Photography $photography)
     {
+        $user = $this->getUser();
+        $account = $user->getAccount();
+        if ($account != $photography->getAccount()) return $this->redirect($this->generateUrl('controlpanel_photography_index'));
+
         $deleteForm = $this->createDeleteForm($photography);
         $deleteForm->handleRequest($request);
 
