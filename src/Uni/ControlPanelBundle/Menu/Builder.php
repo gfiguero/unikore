@@ -103,6 +103,18 @@ class Builder implements ContainerAwareInterface
             'controlpanel_page_show',
             'controlpanel_page_edit',
         )));
+//        $sidemenu->addChild('sidemenu.socialnetwork.root', array('route' => 'controlpanel_socialnetwork_index'))->setExtras(array('translation_domain' => 'UniControlPanelBundle', 'routes' => array(
+//            'controlpanel_socialnetwork_index',
+//            'controlpanel_socialnetwork_new',
+//            'controlpanel_socialnetwork_show',
+//            'controlpanel_socialnetwork_edit',
+//        )));
+        $sidemenu->addChild('sidemenu.socialmedia.root', array('route' => 'controlpanel_socialmedia_index'))->setExtras(array('translation_domain' => 'UniControlPanelBundle', 'routes' => array(
+            'controlpanel_socialmedia_index',
+            'controlpanel_socialmedia_new',
+            'controlpanel_socialmedia_show',
+            'controlpanel_socialmedia_edit',
+        )));
 
         return $sidemenu;
     }

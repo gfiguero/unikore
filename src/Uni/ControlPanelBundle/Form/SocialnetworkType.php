@@ -5,9 +5,8 @@ namespace Uni\ControlPanelBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Vich\UploaderBundle\Form\Type\VichFileType;
 
-class FeatureType extends AbstractType
+class SocialnetworkType extends AbstractType
 {
     /**
      * {@inheritdoc}
@@ -16,28 +15,17 @@ class FeatureType extends AbstractType
     {
         $builder 
             ->add('name', null, array(
-                'label' => 'feature.form.name',
+                'label' => 'socialnetwork.form.name',
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
                 'translation_domain' => 'UniControlPanelBundle',
             )) 
-            ->add('title', null, array(
-                'label' => 'feature.form.title',
+            ->add('icon', null, array(
+                'label' => 'socialnetwork.form.icon',
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
                 'translation_domain' => 'UniControlPanelBundle',
             )) 
-            ->add('description', null, array(
-                'label' => 'feature.form.description',
-                'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
-                'translation_domain' => 'UniControlPanelBundle',
-            )) 
-            ->add('imagefile', 'file', array(
-                'label' => 'feature.form.imagefile',
-                'attr'  => array( 'label_col' => 3, 'widget_col' => 9, 'class' => 'fileinput' ),
-                'translation_domain' => 'UniControlPanelBundle',
-                'required' => false,
-            ))
-            ->add('page', null, array(
-                'label' => 'feature.form.page',
+            ->add('hexcolor', null, array(
+                'label' => 'socialnetwork.form.hexcolor',
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
                 'translation_domain' => 'UniControlPanelBundle',
             ))
@@ -50,7 +38,7 @@ class FeatureType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'Uni\AdminBundle\Entity\Feature'
+            'data_class' => 'Uni\AdminBundle\Entity\Socialnetwork'
         ));
     }
 
@@ -59,7 +47,7 @@ class FeatureType extends AbstractType
      */
     public function getBlockPrefix()
     {
-        return 'uni_controlpanelbundle_feature';
+        return 'uni_controlpanelbundle_socialnetwork';
     }
 
 

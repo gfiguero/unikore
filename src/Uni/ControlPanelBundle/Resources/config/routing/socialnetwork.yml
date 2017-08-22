@@ -1,0 +1,24 @@
+controlpanel_socialnetwork_index:
+    path:     /
+    defaults: { _controller: "UniControlPanelBundle:Socialnetwork:index" }
+    methods:  GET
+
+controlpanel_socialnetwork_show:
+    path:     /{id}/show
+    defaults: { _controller: "UniControlPanelBundle:Socialnetwork:show" }
+    methods:  GET
+
+controlpanel_socialnetwork_new:
+    path:     /new
+    defaults: { _controller: "UniControlPanelBundle:Socialnetwork:new" }
+    methods:  [GET, POST]
+
+controlpanel_socialnetwork_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "UniControlPanelBundle:Socialnetwork:edit" }
+    methods:  [GET, POST]
+
+controlpanel_socialnetwork_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "UniControlPanelBundle:Socialnetwork:delete" }
+    methods:  DELETE

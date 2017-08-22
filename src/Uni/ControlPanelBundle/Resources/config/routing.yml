@@ -1,3 +1,10 @@
+uni_controlpanel_socialmedia:
+    resource: "@UniControlPanelBundle/Resources/config/routing/socialmedia.yml"
+    prefix:   /socialmedia
+
+uni_controlpanel_socialnetwork:
+    resource: "@UniControlPanelBundle/Resources/config/routing/socialnetwork.yml"
+    prefix:   /socialnetwork
 uni_controlpanel_page:
     resource: "@UniControlPanelBundle/Resources/config/routing/page.yml"
     prefix:   /page

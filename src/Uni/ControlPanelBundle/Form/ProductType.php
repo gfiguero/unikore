@@ -5,6 +5,7 @@ namespace Uni\ControlPanelBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Vich\UploaderBundle\Form\Type\VichFileType;
 
 class ProductType extends AbstractType
 {
@@ -29,11 +30,12 @@ class ProductType extends AbstractType
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
                 'translation_domain' => 'UniControlPanelBundle',
             )) 
-            ->add('image', null, array(
-                'label' => 'product.form.image',
-                'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
+            ->add('imagefile', 'file', array(
+                'label' => 'product.form.imagefile',
+                'attr'  => array( 'label_col' => 3, 'widget_col' => 9, 'class' => 'fileinput' ),
                 'translation_domain' => 'UniControlPanelBundle',
-            )) 
+                'required' => false,
+            ))
             ->add('cost', null, array(
                 'label' => 'product.form.cost',
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
@@ -171,21 +173,6 @@ class ProductType extends AbstractType
             )) 
             ->add('structure_size', null, array(
                 'label' => 'product.form.structure_size',
-                'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
-                'translation_domain' => 'UniControlPanelBundle',
-            )) 
-            ->add('provider', null, array(
-                'label' => 'product.form.provider',
-                'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
-                'translation_domain' => 'UniControlPanelBundle',
-            )) 
-            ->add('user', null, array(
-                'label' => 'product.form.user',
-                'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
-                'translation_domain' => 'UniControlPanelBundle',
-            )) 
-            ->add('account', null, array(
-                'label' => 'product.form.account',
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
                 'translation_domain' => 'UniControlPanelBundle',
             )) 

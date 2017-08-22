@@ -20,11 +20,14 @@ class FeatureController extends Controller
      */
     public function indexAction(Request $request)
     {
+        $user = $this->getUser();
+        $account = $user->getAccount();
+
         $sort = $request->query->get('sort');
         $direction = $request->query->get('direction');
         $em = $this->getDoctrine()->getManager();
-        if($sort) $features = $em->getRepository('UniAdminBundle:Feature')->findBy(array(), array($sort => $direction));
-        else $features = $em->getRepository('UniAdminBundle:Feature')->findAll();
+        if($sort) $features = $em->getRepository('UniAdminBundle:Feature')->findBy(array('account' => $account), array($sort => $direction));
+        else $features = $em->getRepository('UniAdminBundle:Feature')->findBy(array('account' => $account));
         $paginator = $this->get('knp_paginator');
         $features = $paginator->paginate($features, $request->query->getInt('page', 1), 100);
 
@@ -47,12 +50,17 @@ class FeatureController extends Controller
      */
     public function newAction(Request $request)
     {
+        $user = $this->getUser();
+        $account = $user->getAccount();
+
         $feature = new Feature();
         $newForm = $this->createNewForm($feature);
         $newForm->handleRequest($request);
 
         if ($newForm->isSubmitted()) {
             if($newForm->isValid()) {
+                $feature->setUser($user);
+                $feature->setAccount($account);
                 $em = $this->getDoctrine()->getManager();
                 $em->persist($feature);
                 $em->flush();
@@ -86,6 +94,10 @@ class FeatureController extends Controller
      */
     public function showAction(Feature $feature)
     {
+        $user = $this->getUser();
+        $account = $user->getAccount();
+        if ($account != $feature->getAccount()) return $this->redirect($this->generateUrl('controlpanel_feature_index'));
+
         $editForm = $this->createEditForm($feature);
         $deleteForm = $this->createDeleteForm($feature);
 
@@ -102,6 +114,10 @@ class FeatureController extends Controller
      */
     public function editAction(Request $request, Feature $feature)
     {
+        $user = $this->getUser();
+        $account = $user->getAccount();
+        if ($account != $feature->getAccount()) return $this->redirect($this->generateUrl('controlpanel_feature_index'));
+
         $editForm = $this->createEditForm($feature);
         $deleteForm = $this->createDeleteForm($feature);
         $editForm->handleRequest($request);
@@ -143,6 +159,10 @@ class FeatureController extends Controller
      */
     public function deleteAction(Request $request, Feature $feature)
     {
+        $user = $this->getUser();
+        $account = $user->getAccount();
+        if ($account != $feature->getAccount()) return $this->redirect($this->generateUrl('controlpanel_feature_index'));
+
         $deleteForm = $this->createDeleteForm($feature);
         $deleteForm->handleRequest($request);
 
