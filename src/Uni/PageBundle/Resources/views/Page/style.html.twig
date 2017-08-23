@@ -14,7 +14,7 @@
         }
         .navbar-default .navbar-brand:hover,
         .navbar-default .navbar-brand:focus {
-            color: #e6e6e6;
+            color: {{ page.brandprimarycolor }};
             background-color: transparent;
         }
         .navbar-default .navbar-text {
@@ -110,6 +110,9 @@
         .main-calltoaction:active {
             background-color: {{ color_darken(page.brandprimarycolor, 20) }};
         }
+        #about {
+            background-color: {{ page.brandprimarycolor }};
+        }
         .feature-thumbnail:hover {
             background-color: {{ color_darken(page.brandprimarycolor, 40) }};
         }
@@ -124,11 +127,8 @@
             .contact-panel {
                 background-color: {{ color_alpha(page.brandsecondarycolor, 50) }};
             }
-            #about {
-                background-color: {{ color_darken(page.brandprimarycolor, 20) }};
-            }
             #socialmedia {
-                background-color: {{ color_darken(page.brandsecondarycolor, 20) }};
+                background-color: {{ page.brandsecondarycolor }};
             }
         </style>
     {% endif %}

@@ -9,6 +9,10 @@ vich_uploader:
             dir: '%kernel.cache_dir%/vich_uploader'
         auto_detection: true
     mappings:
+        main_photography:
+            uri_prefix: uploads/mainphotography
+            upload_destination: %kernel.root_dir%/../web/uploads/mainphotography
+            namer: vich_uploader.namer_origname
         product_image:
             uri_prefix: uploads/product
             upload_destination: %kernel.root_dir%/../web/uploads/product
@@ -16,4 +20,8 @@ vich_uploader:
         issuer_image:
             uri_prefix: uploads/issuer
             upload_destination: %kernel.root_dir%/../web/uploads/issuer
+            namer: vich_uploader.namer_origname
+        feature_image:
+            uri_prefix: uploads/feature
+            upload_destination: %kernel.root_dir%/../web/uploads/feature
             namer: vich_uploader.namer_origname

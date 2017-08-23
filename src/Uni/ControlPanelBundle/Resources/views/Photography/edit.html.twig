@@ -1,6 +1,8 @@
 {% extends 'UniControlPanelBundle:Base:layout.html.twig' %}
 {% use 'UniControlPanelBundle:Base:icons.html.twig' %}
 {% use 'UniControlPanelBundle:Base:flashbag.html.twig' %}
+{% use 'UniControlPanelBundle:Base:wysiwyg.html.twig' %}
+{% use 'UniControlPanelBundle:Base:fileinput.html.twig' %}
 
 {% trans_default_domain 'UniControlPanelBundle' %}
 
@@ -35,7 +37,7 @@
                     <div class="panel-body">
                         {{ form_start(editForm, { 'style': 'horizontal' }) }}
                             {{ form_widget(editForm) }}
-                                <div class="form-group"><div class="col-lg-offset-4 col-lg-8">
+                                <div class="form-group"><div class="col-lg-offset-3 col-lg-9">
                                     <button type="submit" class="btn btn-primary">{{ icon('save fa-fw') }}&nbsp;{{ 'photography.edit.submit'|trans }}</button>
                                 </div></div>
                         {{ form_end(editForm) }}
@@ -73,5 +75,15 @@
     </div>
     <!-- /#page-wrapper -->
 
+{% endblock %}
+
+{% block stylesheet %}
+    {% block wysiwygcss %}{{ parent() }}{% endblock %}
+    {% block fileinputcss %}{{ parent() }}{% endblock %}
+{% endblock %}
+
+{% block javascript %}
+    {% block wysiwygjs %}{{ parent() }}{% endblock %}
+    {% block fileinputjs %}{{ parent() }}{% endblock %}
 {% endblock %}
 

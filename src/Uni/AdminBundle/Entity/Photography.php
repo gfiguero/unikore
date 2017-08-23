@@ -2,8 +2,15 @@
 
 namespace Uni\AdminBundle\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Evence\Bundle\SoftDeleteableExtensionBundle\Mapping\Annotation as Evence;
+
 /**
  * Photography
+ * @ORM\Entity
+ * @Vich\Uploadable
  */
 class Photography
 {
@@ -18,9 +25,20 @@ class Photography
     private $image;
 
     /**
+     * @Vich\UploadableField(mapping="product_image", fileNameProperty="image")
+     * @var File
+     */
+    private $imagefile;
+
+    /**
      * @var \DateTime
      */
     private $created_at;
+
+    /**
+     * @var \Uni\AdminBundle\Entity\User
+     */
+    private $user;
 
     /**
      * @var \Uni\AdminBundle\Entity\Account
@@ -64,7 +82,31 @@ class Photography
      */
     public function getImage()
     {
-        return $this->image;
+        if ($this->image) return $this->image; else return 'default';
+    }
+
+    /**
+     * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile $image
+     *
+     * @return Product
+     */
+    public function setImagefile(File $image = null)
+    {
+        $this->imagefile = $image;
+
+        if ($image) {
+            $this->updated_at = new \DateTime();
+        }
+        
+        return $this;
+    }
+
+    /**
+     * @return File|null
+     */
+    public function getImagefile()
+    {
+        return $this->imagefile;
     }
 
     /**
@@ -89,6 +131,30 @@ class Photography
     public function getCreatedAt()
     {
         return $this->created_at;
+    }
+
+    /**
+     * Set user
+     *
+     * @param \Uni\AdminBundle\Entity\User $user
+     *
+     * @return Product
+     */
+    public function setUser(\Uni\AdminBundle\Entity\User $user = null)
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * Get user
+     *
+     * @return \Uni\AdminBundle\Entity\User
+     */
+    public function getUser()
+    {
+        return $this->user;
     }
 
     /**

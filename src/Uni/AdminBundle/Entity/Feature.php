@@ -2,8 +2,16 @@
 
 namespace Uni\AdminBundle\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Evence\Bundle\SoftDeleteableExtensionBundle\Mapping\Annotation as Evence;
+
+
 /**
  * Feature
+ * @ORM\Entity
+ * @Vich\Uploadable
  */
 class Feature
 {
@@ -31,6 +39,12 @@ class Feature
      * @var string
      */
     private $image;
+
+    /**
+     * @Vich\UploadableField(mapping="feature_image", fileNameProperty="image")
+     * @var File
+     */
+    private $imagefile;
 
     /**
      * @var \DateTime
@@ -161,7 +175,31 @@ class Feature
      */
     public function getImage()
     {
-        return $this->image;
+        if ($this->image) return $this->image; else return 'default';
+    }
+
+    /**
+     * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile $image
+     *
+     * @return Feature
+     */
+    public function setImagefile(File $image = null)
+    {
+        $this->imagefile = $image;
+
+        if ($image) {
+            $this->updated_at = new \DateTime();
+        }
+        
+        return $this;
+    }
+
+    /**
+     * @return File|null
+     */
+    public function getImagefile()
+    {
+        return $this->imagefile;
     }
 
     /**

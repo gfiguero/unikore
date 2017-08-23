@@ -4,12 +4,27 @@ liip_imagine:
             web_path: ~
     filter_sets:
         cache: ~
+        main_photography:
+            quality: 75
+            filters:
+                upscale: { min: [1920, 1080] }
+                thumbnail: { size: [1366, 900], mode: outbound }
+        main_photography_small:
+            quality: 75
+            filters:
+                upscale: { min: [160, 120] }
+                thumbnail: { size: [160, 120], mode: outbound }
         product_export_small:
             quality: 75
             default_image: default.png
             filters:
                 upscale: { min: [120, 120] }
                 thumbnail: { size: [120, 120], mode: inset }
+        product_image_small:
+            quality: 75
+            filters:
+                upscale: { min: [120, 120] }
+                thumbnail: { size: [120, 120], mode: outbound }
         product_show_medium:
             quality: 75
             default_image: default.png
@@ -39,3 +54,31 @@ liip_imagine:
             filters:
                 upscale: { min: [256, 160] }
                 thumbnail: { size: [256, 160], mode: inset }
+
+        feature_edit_preview:
+            quality: 75
+            default_image: default.png
+            filters:
+                upscale: { min: [256, 160] }
+                thumbnail: { size: [256, 160], mode: inset }
+        feature_image_small:
+            quality: 75
+            filters:
+                upscale: { min: [120, 120] }
+                thumbnail: { size: [120, 120], mode: outbound }
+        feature_image:
+            quality: 75
+            filters:
+                upscale: { min: [800, 600] }
+                thumbnail: { size: [800, 600], mode: outbound }
+        feature_image_large:
+            quality: 75
+            filters:
+                upscale: { min: [1366, 768] }
+                thumbnail: { size: [1366, 768], mode: outbound }
+
+        photography_image_small:
+            quality: 75
+            filters:
+                upscale: { min: [120, 120] }
+                thumbnail: { size: [120, 120], mode: outbound }

@@ -1,6 +1,7 @@
 {% extends 'UniControlPanelBundle:Base:layout.html.twig' %}
 {% use 'UniControlPanelBundle:Base:icons.html.twig' %}
 {% use 'UniControlPanelBundle:Base:flashbag.html.twig' %}
+{% use 'UniControlPanelBundle:Base:wysiwyg.html.twig' %}
 
 {% trans_default_domain 'UniControlPanelBundle' %}
 
@@ -33,11 +34,75 @@
                         <h2 class="panel-title">{{ 'page.edit.form'|trans }}</h2>
                     </div>
                     <div class="panel-body">
-                        {{ form_start(editForm, { 'style': 'horizontal' }) }}
-                            {{ form_widget(editForm) }}
-                                <div class="form-group"><div class="col-lg-offset-4 col-lg-8">
-                                    <button type="submit" class="btn btn-primary">{{ icon('save fa-fw') }}&nbsp;{{ 'page.edit.submit'|trans }}</button>
-                                </div></div>
+                        {{ form_start(editForm, {'style' : 'horizontal' }) }}
+                            <div class="form-group">
+                                <div class="col-md-8 col-md-offset-4">
+                                    <h2>{{ 'controlpanel.page.brandinfo'|trans }}</h2>
+                                </div>
+                            </div>
+                            {{ form_row(editForm.brand) }}
+                            {{ form_row(editForm.name) }}
+                            {{ form_row(editForm.domain) }}
+                            {{ form_row(editForm.brand_primary_color) }}
+                            {{ form_row(editForm.brand_secondary_color) }}
+                            <div class="form-group">
+                                <div class="col-md-8 col-md-offset-4">
+                                    <button class="btn btn-default btn-primary" type="submit">{{ icon('save fa-fw') }}&nbsp;{{ 'controlpanel.page.submit'|trans }}</button>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-8 col-md-offset-4">
+                                    <h2>{{ 'controlpanel.page.maininfo'|trans }}</h2>
+                                </div>
+                            </div>
+                            {{ form_row(editForm.maintitle) }}
+                            {{ form_row(editForm.mainsubtitle) }}
+                            {{ form_row(editForm.maincalltoaction) }}
+                            <div class="form-group">
+                                <div class="col-md-8 col-md-offset-4">
+                                    <button class="btn btn-default btn-primary" type="submit">{{ icon('save fa-fw') }}&nbsp;{{ 'controlpanel.page.submit'|trans }}</button>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-8 col-md-offset-4">
+                                    <h2>{{ 'controlpanel.page.aboutinfo'|trans }}</h2>
+                                </div>
+                            </div>
+                            {{ form_row(editForm.abouttitle) }}
+                            {{ form_row(editForm.aboutcontent) }}
+                            <div class="form-group">
+                                <div class="col-md-8 col-md-offset-4">
+                                    <button class="btn btn-default btn-primary" type="submit">{{ icon('save fa-fw') }}&nbsp;{{ 'controlpanel.page.submit'|trans }}</button>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-8 col-md-offset-4">
+                                    <h2>{{ 'controlpanel.page.featureinfo'|trans }}</h2>
+                                </div>
+                            </div>
+                            {{ form_row(editForm.featuretitle) }}
+                            {{ form_row(editForm.featurecontent) }}
+                            <div class="form-group">
+                                <div class="col-md-8 col-md-offset-4">
+                                    <button class="btn btn-default btn-primary" type="submit">{{ icon('save fa-fw') }}&nbsp;{{ 'controlpanel.page.submit'|trans }}</button>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-8 col-md-offset-4">
+                                    <h2>{{ 'controlpanel.page.contactinfo'|trans }}</h2>
+                                </div>
+                            </div>
+                            {{ form_row(editForm.contacttitle) }}
+                            {{ form_row(editForm.contactcontent) }}
+                            {{ form_row(editForm.contactphone) }}
+                            {{ form_row(editForm.contactemail) }}
+                            {{ form_row(editForm.contactaddress) }}
+                            {{ form_row(editForm.contactschedule) }}
+                            <div class="form-group">
+                                <div class="col-md-8 col-md-offset-4">
+                                    <button class="btn btn-default btn-primary" type="submit">{{ icon('save fa-fw') }}&nbsp;{{ 'controlpanel.page.submit'|trans }}</button>
+                                </div>
+                            </div>
                         {{ form_end(editForm) }}
                     </div>
                 </div>
@@ -73,5 +138,18 @@
     </div>
     <!-- /#page-wrapper -->
 
+{% endblock %}
+
+{% block stylesheet %}
+    {% block wysiwygcss %}{{ parent() }}{% endblock %}
+{% endblock %}
+
+{% block javascript %}
+    {% block wysiwygjs %}{{ parent() }}{% endblock %}
+    <script type="text/javascript">
+        minicolorsOptions = {theme: 'bootstrap'};
+        $('#uni_controlpanelbundle_page_brand_primary_color').minicolors(minicolorsOptions);
+        $('#uni_controlpanelbundle_page_brand_secondary_color').minicolors(minicolorsOptions);
+    </script>
 {% endblock %}
 

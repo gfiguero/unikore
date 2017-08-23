@@ -5,6 +5,7 @@ namespace Uni\ControlPanelBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Vich\UploaderBundle\Form\Type\VichFileType;
 
 class PhotographyType extends AbstractType
 {
@@ -14,21 +15,12 @@ class PhotographyType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder 
-            ->add('image', null, array(
-                'label' => 'photography.form.image',
-                'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
+            ->add('imagefile', 'file', array(
+                'label' => 'photography.form.imagefile',
+                'attr'  => array( 'label_col' => 3, 'widget_col' => 9, 'class' => 'fileinput' ),
                 'translation_domain' => 'UniControlPanelBundle',
+                'required' => false,
             )) 
-            ->add('account', null, array(
-                'label' => 'photography.form.account',
-                'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
-                'translation_domain' => 'UniControlPanelBundle',
-            )) 
-            ->add('page', null, array(
-                'label' => 'photography.form.page',
-                'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
-                'translation_domain' => 'UniControlPanelBundle',
-            ))
         ;
     }
     

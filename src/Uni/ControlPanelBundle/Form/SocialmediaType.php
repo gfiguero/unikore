@@ -19,11 +19,6 @@ class SocialmediaType extends AbstractType
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
                 'translation_domain' => 'UniControlPanelBundle',
             )) 
-            ->add('account', null, array(
-                'label' => 'socialmedia.form.account',
-                'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
-                'translation_domain' => 'UniControlPanelBundle',
-            )) 
             ->add('page', null, array(
                 'label' => 'socialmedia.form.page',
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),

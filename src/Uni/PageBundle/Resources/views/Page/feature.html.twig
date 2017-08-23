@@ -18,7 +18,7 @@
                 <div class="col-sm-6 col-md-4 feature-col">
                     <div class="thumbnail feature-thumbnail" data-toggle="modal" data-target="#featureModal{{ k }}">
                         {% if feature.image %}
-                            <img class="feature-item-image" src="{{ vich_uploader_asset(feature, 'imagefile', 'Uni\\AdminBundle\\Entity\\Feature')|imagine_filter('feature_photography') }}">
+                            <img class="feature-item-image" src="{{ vich_uploader_asset(feature, 'imagefile', 'Uni\\AdminBundle\\Entity\\Feature')|imagine_filter('feature_image') }}">
                         {% endif %}
                         {% if feature.title %}
                         <div class="caption">
@@ -43,7 +43,7 @@
                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                             </div>
                             <div class="modal-body">
-                                <img class="feature-item-image img-responsive" src="{{ vich_uploader_asset(feature, 'imagefile', 'Uni\\AdminBundle\\Entity\\Feature')|imagine_filter('feature_photography_large') }}">
+                                <img class="feature-item-image img-responsive" src="{{ vich_uploader_asset(feature, 'imagefile', 'Uni\\AdminBundle\\Entity\\Feature')|imagine_filter('feature_image_large') }}">
                             </div>
                             <div class="modal-footer">
                             {% if feature.title %}

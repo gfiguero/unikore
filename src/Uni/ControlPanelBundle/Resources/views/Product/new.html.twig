@@ -1,6 +1,8 @@
 {% extends 'UniControlPanelBundle:Base:layout.html.twig' %}
 {% use 'UniControlPanelBundle:Base:icons.html.twig' %}
 {% use 'UniControlPanelBundle:Base:flashbag.html.twig' %}
+{% use 'UniControlPanelBundle:Base:wysiwyg.html.twig' %}
+{% use 'UniControlPanelBundle:Base:fileinput.html.twig' %}
 
 {% trans_default_domain 'UniControlPanelBundle' %}
 
@@ -33,10 +35,59 @@
                     </div>
                     <div class="panel-body">
                         {{ form_start(newForm, { 'style': 'horizontal' }) }}
-                            {{ form_widget(newForm) }}
-                                <div class="form-group"><div class="col-lg-offset-4 col-lg-8">
-                                    <button type="submit" class="btn btn-primary">{{ icon('save fa-fw') }}&nbsp;{{ 'product.new.submit'|trans }}</button>
-                                </div></div>
+                            <div class="form-group"><div class="col-lg-offset-3 col-lg-9">
+                                <h2>{{ 'product.section.identification'|trans }}</h2>
+                            </div></div>
+                            {{ form_row(newForm.name) }}
+                            {{ form_row(newForm.short) }}
+                            {{ form_row(newForm.description) }}
+                            {{ form_row(newForm.imagefile) }}
+                            {{ form_row(newForm.provider) }}
+                            <div class="form-group"><div class="col-lg-offset-3 col-lg-9">
+                                <h2>{{ 'product.section.features'|trans }}</h2>
+                            </div></div>
+                            {{ form_row(newForm.height) }}
+                            {{ form_row(newForm.width) }}
+                            {{ form_row(newForm.length) }}
+                            {{ form_row(newForm.diameter) }}
+                            {{ form_row(newForm.thickness) }}
+                            {{ form_row(newForm.weight) }}
+                            <div class="form-group"><div class="col-lg-offset-3 col-lg-9">
+                                <h2>{{ 'product.section.trading'|trans }}</h2>
+                            </div></div>
+                            {{ form_row(newForm.cost) }}
+                            {{ form_row(newForm.price) }}
+                            {{ form_row(newForm.code) }}
+                            {{ form_row(newForm.cm_code) }}
+                            <div class="form-group"><div class="col-lg-offset-3 col-lg-9">
+                                <h2>{{ 'product.section.branding'|trans }}</h2>
+                            </div></div>
+                            {{ form_row(newForm.brand) }}
+                            {{ form_row(newForm.origin) }}
+                            {{ form_row(newForm.resistance) }}
+                            {{ form_row(newForm.warranty) }}
+                            {{ form_row(newForm.certification) }}
+                            <div class="form-group"><div class="col-lg-offset-3 col-lg-9">
+                                <h2>{{ 'product.section.consumer'|trans }}</h2>
+                            </div></div>
+                            {{ form_row(newForm.consumer_name) }}
+                            {{ form_row(newForm.consumer_age) }}
+                            {{ form_row(newForm.consumer_capacity) }}
+                            <div class="form-group"><div class="col-lg-offset-3 col-lg-9">
+                                <h2>{{ 'product.section.structure'|trans }}</h2>
+                            </div></div>
+                            {{ form_row(newForm.structure_main) }}
+                            {{ form_row(newForm.structure_side) }}
+                            {{ form_row(newForm.structure_instalation) }}
+                            {{ form_row(newForm.structure_anchorage) }}
+                            {{ form_row(newForm.structure_assembly) }}
+                            {{ form_row(newForm.structure_protection) }}
+                            {{ form_row(newForm.structure_termination) }}
+                            {{ form_row(newForm.structure_color) }}
+                            {{ form_row(newForm.structure_size) }}
+                            <div class="form-group"><div class="col-lg-offset-3 col-lg-9">
+                                <button type="submit" class="btn btn-primary">{{ icon('save fa-fw') }}&nbsp;{{ 'product.edit.submit'|trans }}</button>
+                            </div></div>
                         {{ form_end(newForm) }}
                     </div>
                 </div>
@@ -47,6 +98,16 @@
     </div>
     <!-- /#page-wrapper -->
 
+{% endblock %}
+
+{% block stylesheet %}
+    {% block wysiwygcss %}{{ parent() }}{% endblock %}
+    {% block fileinputcss %}{{ parent() }}{% endblock %}
+{% endblock %}
+
+{% block javascript %}
+    {% block wysiwygjs %}{{ parent() }}{% endblock %}
+    {% block fileinputjs %}{{ parent() }}{% endblock %}
 {% endblock %}
 
 

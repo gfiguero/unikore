@@ -61,7 +61,7 @@ class PageType extends AbstractType
             )) 
             ->add('aboutcontent', null, array(
                 'label' => 'page.form.aboutcontent',
-                'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
+                'attr'  => array( 'label_col' => 4, 'widget_col' => 8, 'class' => 'wysiwyg' ),
                 'translation_domain' => 'UniControlPanelBundle',
             )) 
             ->add('featuretitle', null, array(
@@ -71,7 +71,7 @@ class PageType extends AbstractType
             )) 
             ->add('featurecontent', null, array(
                 'label' => 'page.form.featurecontent',
-                'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
+                'attr'  => array( 'label_col' => 4, 'widget_col' => 8, 'class' => 'wysiwyg' ),
                 'translation_domain' => 'UniControlPanelBundle',
             )) 
             ->add('contacttitle', null, array(
@@ -81,7 +81,7 @@ class PageType extends AbstractType
             )) 
             ->add('contactcontent', null, array(
                 'label' => 'page.form.contactcontent',
-                'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
+                'attr'  => array( 'label_col' => 4, 'widget_col' => 8, 'class' => 'wysiwyg' ),
                 'translation_domain' => 'UniControlPanelBundle',
             )) 
             ->add('contactphone', null, array(
@@ -104,11 +104,6 @@ class PageType extends AbstractType
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
                 'translation_domain' => 'UniControlPanelBundle',
             )) 
-            ->add('account', null, array(
-                'label' => 'page.form.account',
-                'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
-                'translation_domain' => 'UniControlPanelBundle',
-            ))
         ;
     }
     
@@ -127,7 +122,7 @@ class PageType extends AbstractType
      */
     public function getBlockPrefix()
     {
-        return 'uni_controlpanel_page';
+        return 'uni_controlpanelbundle_page';
     }
 
 
