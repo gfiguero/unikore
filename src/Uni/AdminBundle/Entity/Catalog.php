@@ -18,11 +18,6 @@ class Catalog
     private $name;
 
     /**
-     * @var string
-     */
-    private $slug;
-
-    /**
      * @var \DateTime
      */
     private $created_at;
@@ -41,6 +36,11 @@ class Catalog
      * @var \Doctrine\Common\Collections\Collection
      */
     private $categories;
+
+    /**
+     * @var \Uni\AdminBundle\Entity\User
+     */
+    private $user;
 
     /**
      * @var \Uni\AdminBundle\Entity\Account
@@ -92,30 +92,6 @@ class Catalog
     public function getName()
     {
         return $this->name;
-    }
-
-    /**
-     * Set slug
-     *
-     * @param string $slug
-     *
-     * @return Catalog
-     */
-    public function setSlug($slug)
-    {
-        $this->slug = $slug;
-
-        return $this;
-    }
-
-    /**
-     * Get slug
-     *
-     * @return string
-     */
-    public function getSlug()
-    {
-        return $this->slug;
     }
 
     /**
@@ -224,6 +200,30 @@ class Catalog
     public function getCategories()
     {
         return $this->categories;
+    }
+
+    /**
+     * Set user
+     *
+     * @param \Uni\AdminBundle\Entity\User $user
+     *
+     * @return Product
+     */
+    public function setUser(\Uni\AdminBundle\Entity\User $user = null)
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * Get user
+     *
+     * @return \Uni\AdminBundle\Entity\User
+     */
+    public function getUser()
+    {
+        return $this->user;
     }
 
     /**

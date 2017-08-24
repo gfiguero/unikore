@@ -20,11 +20,14 @@ class CatalogController extends Controller
      */
     public function indexAction(Request $request)
     {
+        $user = $this->getUser();
+        $account = $user->getAccount();
+
         $sort = $request->query->get('sort');
         $direction = $request->query->get('direction');
         $em = $this->getDoctrine()->getManager();
-        if($sort) $catalogs = $em->getRepository('UniAdminBundle:Catalog')->findBy(array(), array($sort => $direction));
-        else $catalogs = $em->getRepository('UniAdminBundle:Catalog')->findAll();
+        if($sort) $catalogs = $em->getRepository('UniAdminBundle:Catalog')->findBy(array('account' => $account), array($sort => $direction));
+        else $catalogs = $em->getRepository('UniAdminBundle:Catalog')->findBy(array('account' => $account));
         $paginator = $this->get('knp_paginator');
         $catalogs = $paginator->paginate($catalogs, $request->query->getInt('page', 1), 100);
 
@@ -47,12 +50,17 @@ class CatalogController extends Controller
      */
     public function newAction(Request $request)
     {
+        $user = $this->getUser();
+        $account = $user->getAccount();
+
         $catalog = new Catalog();
         $newForm = $this->createNewForm($catalog);
         $newForm->handleRequest($request);
 
         if ($newForm->isSubmitted()) {
             if($newForm->isValid()) {
+                $catalog->setUser($user);
+                $catalog->setAccount($account);
                 $em = $this->getDoctrine()->getManager();
                 $em->persist($catalog);
                 $em->flush();
@@ -86,6 +94,10 @@ class CatalogController extends Controller
      */
     public function showAction(Catalog $catalog)
     {
+        $user = $this->getUser();
+        $account = $user->getAccount();
+        if ($account != $catalog->getAccount()) return $this->redirect($this->generateUrl('controlpanel_catalog_index'));
+
         $editForm = $this->createEditForm($catalog);
         $deleteForm = $this->createDeleteForm($catalog);
 
@@ -102,6 +114,10 @@ class CatalogController extends Controller
      */
     public function editAction(Request $request, Catalog $catalog)
     {
+        $user = $this->getUser();
+        $account = $user->getAccount();
+        if ($account != $catalog->getAccount()) return $this->redirect($this->generateUrl('controlpanel_catalog_index'));
+
         $editForm = $this->createEditForm($catalog);
         $deleteForm = $this->createDeleteForm($catalog);
         $editForm->handleRequest($request);
@@ -145,6 +161,10 @@ class CatalogController extends Controller
      */
     public function deleteAction(Request $request, Catalog $catalog)
     {
+        $user = $this->getUser();
+        $account = $user->getAccount();
+        if ($account != $catalog->getAccount()) return $this->redirect($this->generateUrl('controlpanel_catalog_index'));
+
         $deleteForm = $this->createDeleteForm($catalog);
         $deleteForm->handleRequest($request);
 

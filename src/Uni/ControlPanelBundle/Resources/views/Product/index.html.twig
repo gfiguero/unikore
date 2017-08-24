@@ -42,6 +42,9 @@
                                     </th>
                                     <th>{{ knp_pagination_sortable(products, 'product.form.id'|trans, 'id') }}{% if sort == 'id' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
                                     <th>{{ knp_pagination_sortable(products, 'product.form.name'|trans, 'name') }}{% if sort == 'name' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
+                                    <th>{{ knp_pagination_sortable(products, 'product.form.price'|trans, 'price') }}{% if sort == 'price' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
+                                    <th>{{ knp_pagination_sortable(products, 'product.form.image'|trans, 'image') }}{% if sort == 'image' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
+                                    <th>{{ knp_pagination_sortable(products, 'product.form.subcategory'|trans, 'subcategory') }}{% if sort == 'subcategory' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
                                     <th>{{ knp_pagination_sortable(products, 'product.form.created_at'|trans, 'created_at') }}{% if sort == 'created_at' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
                                     <th>{{ knp_pagination_sortable(products, 'product.form.updated_at'|trans, 'updated_at') }}{% if sort == 'updated_at' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
                                 </tr>
@@ -56,6 +59,9 @@
                                     </td>
                                     <td>{% if product.id %}{{ product.id }}{% endif %}</td>
                                     <td>{% if product.name %}{{ product.name }}{% endif %}</td>
+                                    <td>{% if product.price %}{{ product.price|raw|number_format(0, ',', '.') }}{% endif %}</td>
+                                    <td>{% if product.image %}<img class="product-item-image" src="{{ vich_uploader_asset(product, 'imagefile', 'Uni\\AdminBundle\\Entity\\Product')|imagine_filter('product_image_small') }}">{% endif %}</td>
+                                    <td>{% if product.subcategory %}{{ product.subcategory }}{% endif %}</td>                                  
                                     <td><span class="fa fa-calendar-o" data-toggle="tooltip" data-placement="left" title="{{ product.createdat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "dd LLLL y HH:mm") }}"></span>&nbsp;{{ product.createdat|ago }}</td>
                                     <td><span class="fa fa-calendar-o" data-toggle="tooltip" data-placement="left" title="{{ product.updatedat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "dd LLLL y HH:mm") }}"></span>&nbsp;{{ product.updatedat|ago }}</td>
                                 </tr>

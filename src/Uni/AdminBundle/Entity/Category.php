@@ -38,6 +38,11 @@ class Category
     private $subcategories;
 
     /**
+     * @var \Uni\AdminBundle\Entity\User
+     */
+    private $user;
+
+    /**
      * @var \Uni\AdminBundle\Entity\Account
      */
     private $account;
@@ -202,6 +207,30 @@ class Category
         return $this->subcategories;
     }
 
+    /**
+     * Set user
+     *
+     * @param \Uni\AdminBundle\Entity\User $user
+     *
+     * @return Product
+     */
+    public function setUser(\Uni\AdminBundle\Entity\User $user = null)
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * Get user
+     *
+     * @return \Uni\AdminBundle\Entity\User
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+    
     /**
      * Set account
      *

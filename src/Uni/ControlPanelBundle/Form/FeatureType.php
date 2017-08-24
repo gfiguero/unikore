@@ -17,17 +17,17 @@ class FeatureType extends AbstractType
         $builder 
             ->add('name', null, array(
                 'label' => 'feature.form.name',
-                'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
+                'attr'  => array( 'label_col' => 3, 'widget_col' => 9 ),
                 'translation_domain' => 'UniControlPanelBundle',
             )) 
             ->add('title', null, array(
                 'label' => 'feature.form.title',
-                'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
+                'attr'  => array( 'label_col' => 3, 'widget_col' => 9 ),
                 'translation_domain' => 'UniControlPanelBundle',
             )) 
             ->add('description', null, array(
                 'label' => 'feature.form.description',
-                'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
+                'attr'  => array( 'label_col' => 3, 'widget_col' => 9, 'class' => 'wysiwyg' ),
                 'translation_domain' => 'UniControlPanelBundle',
             )) 
             ->add('imagefile', 'file', array(
@@ -35,11 +35,6 @@ class FeatureType extends AbstractType
                 'attr'  => array( 'label_col' => 3, 'widget_col' => 9, 'class' => 'fileinput' ),
                 'translation_domain' => 'UniControlPanelBundle',
                 'required' => false,
-            ))
-            ->add('page', null, array(
-                'label' => 'feature.form.page',
-                'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
-                'translation_domain' => 'UniControlPanelBundle',
             ))
         ;
     }

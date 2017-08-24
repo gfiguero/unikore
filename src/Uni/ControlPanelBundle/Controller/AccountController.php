@@ -33,7 +33,7 @@ class AccountController extends Controller
             $deleteForms[] = $this->createDeleteForm($account)->createView();
         }
 
-        return $this->render('UniControlPanel:Account:index.html.twig', array(
+        return $this->render('UniControlPanelBundle:Account:index.html.twig', array(
             'accounts' => $accounts,
             'direction' => $direction,
             'sort' => $sort,

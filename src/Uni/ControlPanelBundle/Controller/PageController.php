@@ -20,11 +20,14 @@ class PageController extends Controller
      */
     public function indexAction(Request $request)
     {
+        $user = $this->getUser();
+        $account = $user->getAccount();
+
         $sort = $request->query->get('sort');
         $direction = $request->query->get('direction');
         $em = $this->getDoctrine()->getManager();
-        if($sort) $pages = $em->getRepository('UniAdminBundle:Page')->findBy(array(), array($sort => $direction));
-        else $pages = $em->getRepository('UniAdminBundle:Page')->findAll();
+        if($sort) $pages = $em->getRepository('UniAdminBundle:Page')->findBy(array('account' => $account), array($sort => $direction));
+        else $pages = $em->getRepository('UniAdminBundle:Page')->findBy(array('account' => $account));
         $paginator = $this->get('knp_paginator');
         $pages = $paginator->paginate($pages, $request->query->getInt('page', 1), 100);
 
@@ -47,12 +50,17 @@ class PageController extends Controller
      */
     public function newAction(Request $request)
     {
+        $user = $this->getUser();
+        $account = $user->getAccount();
+
         $page = new Page();
         $newForm = $this->createNewForm($page);
         $newForm->handleRequest($request);
 
         if ($newForm->isSubmitted()) {
             if($newForm->isValid()) {
+                $page->setUser($user);
+                $page->setAccount($account);
                 $em = $this->getDoctrine()->getManager();
                 $em->persist($page);
                 $em->flush();
@@ -86,6 +94,10 @@ class PageController extends Controller
      */
     public function showAction(Page $page)
     {
+        $user = $this->getUser();
+        $account = $user->getAccount();
+        if ($account != $page->getAccount()) return $this->redirect($this->generateUrl('controlpanel_page_index'));
+
         $editForm = $this->createEditForm($page);
         $deleteForm = $this->createDeleteForm($page);
 
@@ -102,6 +114,10 @@ class PageController extends Controller
      */
     public function editAction(Request $request, Page $page)
     {
+        $user = $this->getUser();
+        $account = $user->getAccount();
+        if ($account != $page->getAccount()) return $this->redirect($this->generateUrl('controlpanel_page_index'));
+
         $editForm = $this->createEditForm($page);
         $deleteForm = $this->createDeleteForm($page);
         $editForm->handleRequest($request);
@@ -143,6 +159,10 @@ class PageController extends Controller
      */
     public function deleteAction(Request $request, Page $page)
     {
+        $user = $this->getUser();
+        $account = $user->getAccount();
+        if ($account != $page->getAccount()) return $this->redirect($this->generateUrl('controlpanel_page_index'));
+
         $deleteForm = $this->createDeleteForm($page);
         $deleteForm->handleRequest($request);
 
