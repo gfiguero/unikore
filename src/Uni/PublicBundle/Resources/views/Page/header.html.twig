@@ -12,7 +12,7 @@
                     {% if page.brand %}<a class="navbar-brand page-scroll" href="#main">{{ page.brand|raw }}</a>{% endif %}
                 </div>
                 <div class="collapse navbar-collapse" id="topbar">
-                    {% set topMenu = knp_menu_get( 'UniPageBundle:Builder:topMenu' , [], {'page':page}) %}
+                    {% set topMenu = knp_menu_get( 'UniPublicBundle:Builder:topMenu' , [], {'page':page}) %}
                     {{ knp_menu_render(topMenu) }}
                 </div>
             </div>   
