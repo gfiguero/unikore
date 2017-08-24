@@ -1,0 +1,26 @@
+{% extends 'UniPublicBundle:Base:layout.html.twig' %}
+{% use 'UniPublicBundle:Page:header.html.twig' %}
+{% use 'UniPublicBundle:Page:main.html.twig' %}
+{% use 'UniPublicBundle:Page:about.html.twig' %}
+{% use 'UniPublicBundle:Page:feature.html.twig' %}
+{% use 'UniPublicBundle:Page:location.html.twig' %}
+{% use 'UniPublicBundle:Page:contact.html.twig' %}
+{% use 'UniPublicBundle:Page:socialmedia.html.twig' %}
+{% use 'UniPublicBundle:Page:footer.html.twig' %}
+
+{% block title %}{% if page and page.brand %}{{ page.brand|raw }}{% endif %}{% endblock %}
+
+{% block page %}
+    {% if page %}
+        {% block header %}{{ parent() }}{% endblock %}
+        {% block main %}{{ parent() }}{% endblock %}
+        {% block about %}{{ parent() }}{% endblock %}
+        {% block feature %}{{ parent() }}{% endblock %}
+        {% block socialmedia %}{{ parent() }}{% endblock %}
+        {% block location %}{{ parent() }}{% endblock %}
+        {% block contact %}{{ parent() }}{% endblock %}
+        {% block footer %}{{ parent() }}{% endblock %}
+    {% else %}
+        {{ 'Inactive Host' }}
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,24 @@
+offer_client_index:
+    path:     /
+    defaults: { _controller: "UniOfferBundle:Client:index" }
+    methods:  GET
+
+offer_client_show:
+    path:     /{id}/show
+    defaults: { _controller: "UniOfferBundle:Client:show" }
+    methods:  GET
+
+offer_client_new:
+    path:     /new
+    defaults: { _controller: "UniOfferBundle:Client:new" }
+    methods:  [GET, POST]
+
+offer_client_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "UniOfferBundle:Client:edit" }
+    methods:  [GET, POST]
+
+offer_client_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "UniOfferBundle:Client:delete" }
+    methods:  DELETE

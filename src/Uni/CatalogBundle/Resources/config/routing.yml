@@ -1,3 +1,24 @@
+uni_catalog_dashboard:
+    resource: "@UniCatalogBundle/Resources/config/routing/dashboard.yml"
+    prefix:   /dashboard
+
+uni_catalog_catalog:
+    resource: "@UniCatalogBundle/Resources/config/routing/catalog.yml"
+    prefix:   /catalog
+
+uni_catalog_category:
+    resource: "@UniCatalogBundle/Resources/config/routing/category.yml"
+    prefix:   /category
+
+uni_catalog_subcategory:
+    resource: "@UniCatalogBundle/Resources/config/routing/subcategory.yml"
+    prefix:   /subcategory
+
 uni_catalog_product:
-    path: /
-    defaults: { _controller: UniCatalogBundle:Catalog:product }
+    resource: "@UniCatalogBundle/Resources/config/routing/product.yml"
+    prefix:   /product
+
+uni_catalog_root:
+    resource: "@UniCatalogBundle/Resources/config/routing/root.yml"
+    prefix:   /
+

@@ -1,0 +1,24 @@
+offer_seller_index:
+    path:     /
+    defaults: { _controller: "UniOfferBundle:Seller:index" }
+    methods:  GET
+
+offer_seller_show:
+    path:     /{id}/show
+    defaults: { _controller: "UniOfferBundle:Seller:show" }
+    methods:  GET
+
+offer_seller_new:
+    path:     /new
+    defaults: { _controller: "UniOfferBundle:Seller:new" }
+    methods:  [GET, POST]
+
+offer_seller_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "UniOfferBundle:Seller:edit" }
+    methods:  [GET, POST]
+
+offer_seller_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "UniOfferBundle:Seller:delete" }
+    methods:  DELETE

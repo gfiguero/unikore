@@ -1,0 +1,24 @@
+page_socialmedia_index:
+    path:     /
+    defaults: { _controller: "UniPageBundle:Socialmedia:index" }
+    methods:  GET
+
+page_socialmedia_show:
+    path:     /{id}/show
+    defaults: { _controller: "UniPageBundle:Socialmedia:show" }
+    methods:  GET
+
+page_socialmedia_new:
+    path:     /new
+    defaults: { _controller: "UniPageBundle:Socialmedia:new" }
+    methods:  [GET, POST]
+
+page_socialmedia_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "UniPageBundle:Socialmedia:edit" }
+    methods:  [GET, POST]
+
+page_socialmedia_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "UniPageBundle:Socialmedia:delete" }
+    methods:  DELETE

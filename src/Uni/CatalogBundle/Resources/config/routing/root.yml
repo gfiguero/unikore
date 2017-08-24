@@ -1,0 +1,6 @@
+catalog_root:
+    path: /
+    defaults:
+        _controller: FrameworkBundle:Redirect:redirect
+        route: catalog_dashboard_index
+        permanent: true

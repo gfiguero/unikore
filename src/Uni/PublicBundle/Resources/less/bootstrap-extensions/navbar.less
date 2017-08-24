@@ -1,0 +1,50 @@
+.navbar-scroll { 
+    background-color: fade(@gray-base, 50%);
+    border: none;
+    .navbar-brand {
+        .transition(all 0.3s ease);
+        border: none;
+        height: @navbar-height;
+        &:hover,
+        &:focus {
+            color: @brand-primary;
+        }
+    }
+    .navbar-nav > li > a {
+        .transition(all 0.3s ease);
+        &:hover,
+        &:focus {
+            background-color: @brand-primary;
+            color: white;
+        }
+    }
+    @media (min-width: @screen-sm-min) {
+        .navbar-brand {
+            font-size: @font-size-extralarge;
+        }
+        .navbar-brand, .navbar-nav > li > a {
+            height: @navbar-height-affix-top;
+            padding-top: @navbar-padding-vertical-affix-top;
+            padding-bottom: @navbar-padding-vertical-affix-top;
+        }
+        .navbar-toggle {
+            .transition(all 0.3s ease);
+            padding-top: @navbar-padding-vertical-affix-top;
+            padding-bottom: @navbar-padding-vertical-affix-top;
+        }
+        &.affix {
+            .navbar-brand {
+                font-size: @font-size-large;
+            }
+            .navbar-brand, .navbar-nav > li > a {
+                height: @navbar-height-affix;
+                padding-top: @navbar-padding-vertical-affix;
+                padding-bottom: @navbar-padding-vertical-affix;
+            }
+            .navbar-toggle {
+                padding-top: @navbar-padding-vertical-affix;
+                padding-bottom: @navbar-padding-vertical-affix;
+            }
+        }
+    }
+}

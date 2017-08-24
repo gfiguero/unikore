@@ -1,34 +1,28 @@
-uni_controlpanel_socialmedia:
-    resource: "@UniControlPanelBundle/Resources/config/routing/socialmedia.yml"
-    prefix:   /socialmedia
+uni_controlpanel_dashboard:
+    resource: "@UniControlPanelBundle/Resources/config/routing/dashboard.yml"
+    prefix:   /dashboard
 
 uni_controlpanel_socialnetwork:
     resource: "@UniControlPanelBundle/Resources/config/routing/socialnetwork.yml"
     prefix:   /socialnetwork
-uni_controlpanel_page:
-    resource: "@UniControlPanelBundle/Resources/config/routing/page.yml"
-    prefix:   /page
-uni_controlpanel_catalog:
-    resource: "@UniControlPanelBundle/Resources/config/routing/catalog.yml"
-    prefix:   /catalog
-uni_controlpanel_feature:
-    resource: "@UniControlPanelBundle/Resources/config/routing/feature.yml"
-    prefix:   /feature
-uni_controlpanel_photography:
-    resource: "@UniControlPanelBundle/Resources/config/routing/photography.yml"
-    prefix:   /photography
-uni_controlpanel_category:
-    resource: "@UniControlPanelBundle/Resources/config/routing/category.yml"
-    prefix:   /category
-uni_controlpanel_subcategory:
-    resource: "@UniControlPanelBundle/Resources/config/routing/subcategory.yml"
-    prefix:   /subcategory
+
 uni_controlpanel_account:
     resource: "@UniControlPanelBundle/Resources/config/routing/account.yml"
     prefix:   /account
+
 uni_controlpanel_user:
     resource: "@UniControlPanelBundle/Resources/config/routing/user.yml"
     prefix:   /user
-uni_controlpanel_product:
-    resource: "@UniControlPanelBundle/Resources/config/routing/product.yml"
-    prefix:   /product
+
+uni_controlpanel_profile:
+    resource: "@FOSUserBundle/Resources/config/routing/profile.xml"
+    prefix:   /profile
+
+uni_controlpanel_change_password:
+    resource: "@FOSUserBundle/Resources/config/routing/change_password.xml"
+    prefix:   /profile
+
+uni_controlpanel_root:
+    resource: "@UniControlPanelBundle/Resources/config/routing/root.yml"
+    prefix:   /
+

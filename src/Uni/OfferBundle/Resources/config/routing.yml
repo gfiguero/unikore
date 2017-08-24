@@ -1,0 +1,51 @@
+uni_offer_issuer:
+    resource: "@UniOfferBundle/Resources/config/routing/issuer.yml"
+    prefix:   /issuer
+
+uni_offer_account:
+    resource: "@UniOfferBundle/Resources/config/routing/account.yml"
+    prefix:   /account
+
+uni_offer_user:
+    resource: "@UniOfferBundle/Resources/config/routing/user.yml"
+    prefix:   /user
+
+uni_offer_test:
+    resource: "@UniOfferBundle/Resources/config/routing/test.yml"
+    prefix:   /test
+
+uni_offer_budget:
+    resource: "@UniOfferBundle/Resources/config/routing/budget.yml"
+    prefix:   /budget
+
+uni_offer_client:
+    resource: "@UniOfferBundle/Resources/config/routing/client.yml"
+    prefix:   /client
+
+uni_offer_item:
+    resource: "@UniOfferBundle/Resources/config/routing/item.yml"
+    prefix:   /item
+
+uni_offer_product:
+    resource: "@UniOfferBundle/Resources/config/routing/product.yml"
+    prefix:   /product
+
+uni_offer_provider:
+    resource: "@UniOfferBundle/Resources/config/routing/provider.yml"
+    prefix:   /provider
+
+uni_offer_seller:
+    resource: "@UniOfferBundle/Resources/config/routing/seller.yml"
+    prefix:   /seller
+
+uni_offer_note:
+    resource: "@UniOfferBundle/Resources/config/routing/note.yml"
+    prefix:   /note
+
+uni_offer_search:
+    resource: "@UniOfferBundle/Resources/config/routing/search.yml"
+    prefix:   /search
+
+uni_offer_root:
+    resource: "@UniOfferBundle/Resources/config/routing/root.yml"
+    prefix:   /

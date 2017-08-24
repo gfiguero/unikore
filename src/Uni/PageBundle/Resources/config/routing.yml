@@ -1,3 +1,19 @@
-uni_page_index:
-    path: /
-    defaults: { _controller: UniPageBundle:Page:index }
+uni_page_socialmedia:
+    resource: "@UniPageBundle/Resources/config/routing/socialmedia.yml"
+    prefix:   /socialmedia
+
+uni_page_page:
+    resource: "@UniPageBundle/Resources/config/routing/page.yml"
+    prefix:   /page
+
+uni_page_feature:
+    resource: "@UniPageBundle/Resources/config/routing/feature.yml"
+    prefix:   /feature
+
+uni_page_photography:
+    resource: "@UniPageBundle/Resources/config/routing/photography.yml"
+    prefix:   /photography
+
+uni_page_root:
+    resource: "@UniPageBundle/Resources/config/routing/root.yml"
+    prefix:   /

@@ -1,0 +1,131 @@
+{% extends 'UniPageBundle:Base:layout.html.twig' %}
+{% use 'UniPageBundle:Base:icons.html.twig' %}
+{% use 'UniPageBundle:Base:flashbag.html.twig' %}
+{% use 'UniPageBundle:Base:wysiwyg.html.twig' %}
+{% use 'UniPageBundle:Base:fileinput.html.twig' %}
+
+{% trans_default_domain 'UniPageBundle' %}
+
+{% block title %}&nbsp;-&nbsp;{{ 'page.edit.title'|trans({'%id%':page.id}) }}{% endblock %}
+
+{% block page %}
+    <div id="page-wrapper">
+        <div class="row" id="page-header">
+            <div class="col-lg-12">
+                <h1 class="page-header">{% block icons %}{{ parent() }}{% endblock %}{{ 'page.edit.title'|trans({'%id%':page.id}) }}</h1>
+                {% block flashbag %}{{ parent() }}{% endblock %}
+            </div>
+        </div>
+        <!-- /#page-header -->
+
+        <div class="row" id="page-toolbar">
+            <div class="col-lg-12">
+                <div class="btn-toolbar">
+                    <a type="button" class="btn btn-default" href="{{ path('page_page_index') }}">{{ icon('list fa-fw') }}&nbsp;{{ 'page.index.link'|trans }}</a>
+                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalDelete">{{ icon('trash-o fa-fw') }}&nbsp;{{ 'page.delete.link'|trans }}</button>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-toolbar -->
+
+        <div class="row" id="page-edit">
+            <div class="col-lg-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">{{ 'page.edit.form'|trans }}</h2>
+                    </div>
+                    <div class="panel-body">
+                        <ul class="nav nav-pills">
+                            <li role="presentation" class="active"><a data-toggle="tab" href="#brand">{{ 'page.section.brand'|trans }}</a></li>
+                            <li role="presentation"><a data-toggle="tab" href="#main">{{ 'page.section.main'|trans }}</a></li>
+                            <li role="presentation"><a data-toggle="tab" href="#about">{{ 'page.section.about'|trans }}</a></li>
+                            <li role="presentation"><a data-toggle="tab" href="#feature">{{ 'page.section.feature'|trans }}</a></li>
+                            <li role="presentation"><a data-toggle="tab" href="#contact">{{ 'page.section.contact'|trans }}</a></li>
+                        </ul>
+                    </div>
+                    <div class="panel-body">
+                        {{ form_start(editForm, {'style' : 'horizontal' }) }}
+                        <div class="tab-content">
+                            <div id="brand" class="tab-pane fade in active" >
+                                {{ form_row(editForm.brand) }}
+                                {{ form_row(editForm.name) }}
+                                {{ form_row(editForm.domain) }}
+                                {{ form_row(editForm.brand_primary_color) }}
+                                {{ form_row(editForm.brand_secondary_color) }}
+                            </div>
+                            <div id="main" class="tab-pane fade" >
+                                {{ form_row(editForm.maintitle) }}
+                                {{ form_row(editForm.mainsubtitle) }}
+                                {{ form_row(editForm.maincalltoaction) }}
+                            </div>
+                            <div id="about" class="tab-pane fade" >
+                                {{ form_row(editForm.abouttitle) }}
+                                {{ form_row(editForm.aboutcontent) }}
+                            </div>
+                            <div id="feature" class="tab-pane fade" >
+                                {{ form_row(editForm.featuretitle) }}
+                                {{ form_row(editForm.featurecontent) }}
+                            </div>
+                            <div id="contact" class="tab-pane fade" >
+                                {{ form_row(editForm.contacttitle) }}
+                                {{ form_row(editForm.contactcontent) }}
+                                {{ form_row(editForm.contactphone) }}
+                                {{ form_row(editForm.contactemail) }}
+                                {{ form_row(editForm.contactaddress) }}
+                                {{ form_row(editForm.contactschedule) }}
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-8 col-md-offset-4">
+                                <button class="btn btn-default btn-primary" type="submit">{{ icon('save fa-fw') }}&nbsp;{{ 'page.edit.submit'|trans }}</button>
+                            </div>
+                        </div>
+                        {{ form_end(editForm) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-edit -->
+
+        <div id="page-modal">
+            <div class="modal fade" id="modalDelete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog modal-md" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">{{ icon('times') }}</button>
+                            <h4 class="modal-title" id="myModalLabel">{{ 'page.delete.title'|trans }}</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-xs-2 text-center">{{ icon('exclamation-triangle fa-5x') }}</div>
+                                <div class="col-xs-10"><p>{{ 'page.delete.message'|trans }}</p></div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            {{ form_start(deleteForm) }}
+                                <button type="submit" class="btn btn-danger pull-right">{{ icon('trash fa-fw') }}&nbsp;{{ 'page.delete.submit'|trans }}</button>
+                            {{ form_end(deleteForm) }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-modal -->
+
+    </div>
+    <!-- /#page-wrapper -->
+
+{% endblock %}
+
+{% block stylesheet %}
+    {% block wysiwygcss %}{{ parent() }}{% endblock %}
+    {% block fileinputcss %}{{ parent() }}{% endblock %}
+    {% block minicolorscss %}{{ parent() }}{% endblock %}
+{% endblock %}
+
+{% block javascript %}
+    {% block wysiwygjs %}{{ parent() }}{% endblock %}
+    {% block fileinputjs_edit %}{{ parent() }}{% endblock %}
+    {% block minicolorsjs %}{{ parent() }}{% endblock %}
+{% endblock %}
+

@@ -1,0 +1,4 @@
+services:
+#    uni_public.example:
+#        class: Uni\PublicBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

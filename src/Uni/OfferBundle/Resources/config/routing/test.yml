@@ -1,0 +1,34 @@
+offer_test_index:
+    path:     /
+    defaults: { _controller: "UniOfferBundle:Test:index" }
+    methods:  GET
+
+offer_test_show:
+    path:     /{id}/show
+    defaults: { _controller: "UniOfferBundle:Test:show" }
+    methods:  GET
+
+offer_test_export:
+    path:     /{id}/export
+    defaults: { _controller: "UniOfferBundle:Test:export" }
+    methods:  GET
+
+offer_test_pdf:
+    path:     /{id}/pdf
+    defaults: { _controller: "UniOfferBundle:Test:pdf" }
+    methods:  GET
+
+offer_test_new:
+    path:     /new
+    defaults: { _controller: "UniOfferBundle:Test:new" }
+    methods:  [GET, POST]
+
+offer_test_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "UniOfferBundle:Test:edit" }
+    methods:  [GET, POST]
+
+offer_test_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "UniOfferBundle:Test:delete" }
+    methods:  DELETE

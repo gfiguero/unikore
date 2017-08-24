@@ -1,0 +1,24 @@
+catalog_subcategory_index:
+    path:     /
+    defaults: { _controller: "UniCatalogBundle:Subcategory:index" }
+    methods:  GET
+
+catalog_subcategory_show:
+    path:     /{id}/show
+    defaults: { _controller: "UniCatalogBundle:Subcategory:show" }
+    methods:  GET
+
+catalog_subcategory_new:
+    path:     /new
+    defaults: { _controller: "UniCatalogBundle:Subcategory:new" }
+    methods:  [GET, POST]
+
+catalog_subcategory_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "UniCatalogBundle:Subcategory:edit" }
+    methods:  [GET, POST]
+
+catalog_subcategory_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "UniCatalogBundle:Subcategory:delete" }
+    methods:  DELETE

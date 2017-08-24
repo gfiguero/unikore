@@ -1,0 +1,24 @@
+page_photography_index:
+    path:     /
+    defaults: { _controller: "UniPageBundle:Photography:index" }
+    methods:  GET
+
+page_photography_show:
+    path:     /{id}/show
+    defaults: { _controller: "UniPageBundle:Photography:show" }
+    methods:  GET
+
+page_photography_new:
+    path:     /new
+    defaults: { _controller: "UniPageBundle:Photography:new" }
+    methods:  [GET, POST]
+
+page_photography_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "UniPageBundle:Photography:edit" }
+    methods:  [GET, POST]
+
+page_photography_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "UniPageBundle:Photography:delete" }
+    methods:  DELETE

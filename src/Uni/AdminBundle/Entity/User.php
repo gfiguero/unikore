@@ -451,4 +451,149 @@ class User extends BaseUser
     {
         return $this->account;
     }
+    /**
+     * @var string
+     */
+    private $phone_number;
+
+    /**
+     * @var string
+     */
+    private $rut;
+
+    /**
+     * @var string
+     */
+    private $address_street;
+
+    /**
+     * @var string
+     */
+    private $address_number;
+
+    /**
+     * @var \Uni\AdminBundle\Entity\Commune
+     */
+    private $address_commune;
+
+
+    /**
+     * Set phoneNumber
+     *
+     * @param string $phoneNumber
+     *
+     * @return User
+     */
+    public function setPhoneNumber($phoneNumber)
+    {
+        $this->phone_number = $phoneNumber;
+
+        return $this;
+    }
+
+    /**
+     * Get phoneNumber
+     *
+     * @return string
+     */
+    public function getPhoneNumber()
+    {
+        return $this->phone_number;
+    }
+
+    /**
+     * Set rut
+     *
+     * @param string $rut
+     *
+     * @return User
+     */
+    public function setRut($rut)
+    {
+        $this->rut = $rut;
+
+        return $this;
+    }
+
+    /**
+     * Get rut
+     *
+     * @return string
+     */
+    public function getRut()
+    {
+        return $this->rut;
+    }
+
+    /**
+     * Set addressStreet
+     *
+     * @param string $addressStreet
+     *
+     * @return User
+     */
+    public function setAddressStreet($addressStreet)
+    {
+        $this->address_street = $addressStreet;
+
+        return $this;
+    }
+
+    /**
+     * Get addressStreet
+     *
+     * @return string
+     */
+    public function getAddressStreet()
+    {
+        return $this->address_street;
+    }
+
+    /**
+     * Set addressNumber
+     *
+     * @param string $addressNumber
+     *
+     * @return User
+     */
+    public function setAddressNumber($addressNumber)
+    {
+        $this->address_number = $addressNumber;
+
+        return $this;
+    }
+
+    /**
+     * Get addressNumber
+     *
+     * @return string
+     */
+    public function getAddressNumber()
+    {
+        return $this->address_number;
+    }
+
+    /**
+     * Set addressCommune
+     *
+     * @param \Uni\AdminBundle\Entity\Commune $addressCommune
+     *
+     * @return User
+     */
+    public function setAddressCommune(\Uni\AdminBundle\Entity\Commune $addressCommune = null)
+    {
+        $this->address_commune = $addressCommune;
+
+        return $this;
+    }
+
+    /**
+     * Get addressCommune
+     *
+     * @return \Uni\AdminBundle\Entity\Commune
+     */
+    public function getAddressCommune()
+    {
+        return $this->address_commune;
+    }
 }

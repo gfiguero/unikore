@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Uni">
+    <meta name="language" content="es">
+    <title>Cotizador</title>
+    <link href="{{ absolute_url(asset('vendor/font-awesome/css/font-awesome.min.css')) }}" rel="stylesheet" type="text/css">
+    <link href="{{ absolute_url(asset('vendor/jquery-ui/themes/base/jquery-ui.min.css')) }}" rel="stylesheet">
+    <link href="{{ absolute_url(asset('bundles/unioffer/css/offerexport.css')) }}" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+{% trans_default_domain 'UniOfferBundle' %}
+
+<body>
+    <div class="container-fluid">
+
+        <div class="row" id="page-header">
+            <div class="col-md-6">
+                <h1 class="page-header">
+                    {{ icon('check-square-o fa-fw') }}&nbsp;{{ 'budget.show.title'|trans({'%id%':budget.id}) }}
+                </h1>
+            </div>
+            <div class="col-md-6">
+                <h3 class="text-right">{{ 'IMPORT PLANET LTDA' }}</h3>
+                <h5 class="text-right">{{ budget.updatedat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "d 'de' LLLL 'de' Y") }}</h5>
+            </div>
+        </div>
+        <!-- /#page-header -->
+
+        <div class="row" id="page-client-seller">
+
+            {% if budget.client %}
+            <div class="col-lg-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">{{ 'budget.show.client'|trans }}</h2>
+                    </div>
+                    <div class="panel-body">
+                        <dl class="dl-horizontal">
+                            {% if budget.client.name %}<dt>{{ 'client.form.name'|trans }}</dt>
+                                <dd>{{ budget.client.name }}</dd>{% endif %}
+                            {% if budget.client.contactname %}<dt>{{ 'client.form.contactname'|trans }}</dt>
+                                <dd>{{ budget.client.contactname }}</dd>{% endif %}
+                            {% if budget.client.phone %}<dt>{{ 'client.form.phone'|trans }}</dt>
+                                <dd>{{ budget.client.phone }}</dd>{% endif %}
+                            {% if budget.client.email %}<dt>{{ 'client.form.email'|trans }}</dt>
+                                <dd>{{ budget.client.email }}</dd>{% endif %}
+                            {% if budget.client.address %}<dt>{{ 'client.form.address'|trans }}</dt>
+                                <dd>{{ budget.client.address }}</dd>{% endif %}
+                        </dl>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+
+            {% if budget.seller %}
+            <div class="col-lg-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">{{ 'budget.show.seller'|trans }}</h2>
+                    </div>
+                    <div class="panel-body">
+                        <dl class="dl-horizontal">
+                            <dt>{{ 'seller.form.name'|trans }}</dt>
+                                <dd>{% if budget.seller.name %}{{ budget.seller.name }}{% endif %}</dd>
+                            <dt>{{ 'seller.form.phone'|trans }}</dt>
+                                <dd>{% if budget.seller.phone %}{{ budget.seller.phone }}{% endif %}</dd>
+                            <dt>{{ 'seller.form.email'|trans }}</dt>
+                                <dd>{% if budget.seller.email %}{{ budget.seller.email }}{% endif %}</dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+
+        </div>
+        <!-- /#page-client-seller -->
+
+        <div class="row" id="page-items">
+            <div class="col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">{{ 'budget.show.items'|trans }}</h2>
+                    </div>
+                    <table class="table table-middle table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th width="100">{{'product.form.image'|trans }}</th>
+                                <th>{{ '#' }}</th>
+                                <th>{{ 'product.form.description'|trans }}</th>
+                                <th>{{ 'product.form.dimensions'|trans }}</th>
+{#}
+                                <th>{{ 'product.form.provider'|trans }}</th>
+                                <th>{{ 'product.form.cm_code'|trans }}</th>
+{#}
+                                <th width="90">{{ 'item.form.totalprice'|trans }}</th>
+                                <th width="90">{{ 'item.form.totaldiscountprice'|trans }}</th>
+                                <th width="90">{{ 'item.form.totalnetprice'|trans }}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        {% for k, item in budget.items %}
+                            <tr>
+                                <td><img class="img-responsive" src="{{ vich_uploader_asset(item.product, 'imagefile', 'Uni\\AdminBundle\\Entity\\Product')|imagine_filter('product_export_small') }}" /></td>
+                                <td class="text-right">{{ item.quantity }}</td>
+                                <td>{{ item.product.description|truncate(170, true) }}</td>
+                                <td style="white-space: nowrap;">
+                                    {% if item.product.height %}{{ 'product.form.height'|trans }}:&nbsp;{{ item.product.height|number_format(0, ',', '.') }}<br>{% endif %}
+                                    {% if item.product.width %}{{ 'product.form.width'|trans }}:&nbsp;{{ item.product.width|number_format(0, ',', '.') }}<br>{% endif %}
+                                    {% if item.product.length %}{{ 'product.form.length'|trans }}:&nbsp;{{ item.product.length|number_format(0, ',', '.') }}<br>{% endif %}
+                                    {% if item.product.weight %}{{ 'product.form.weight'|trans }}:&nbsp;{{ item.product.weight|number_format(0, ',', '.') }}<br>{% endif %}
+{#}
+                                    {{ 'product.form.size'|trans }}:&nbsp;{{ item.product.size|number_format(3, ',', '.') }}<br>
+                                    {{ 'product.form.density'|trans }}:&nbsp;{{ item.product.density|number_format(3, ',', '.') }}<br>
+{#}
+                                </td>
+{#}
+                                <td class="provider">{{ item.product.provider }}<br>{{ item.product.provider.rut }}</td>
+                                <td>{{ item.product.cmcode }}</td>
+{#}
+                                <td class="text-right">$&nbsp;{{ item.totalprice|number_format(0, ',', '.') }}</td>
+                                <td class="text-right">$&nbsp;{{ item.totaldiscountprice|number_format(0, ',', '.') }}</td>
+                                <td class="text-right">$&nbsp;{{ item.totalnetprice|number_format(0, ',', '.') }}</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-items -->
+
+        <div class="row" id="page-total">
+            <div class="col-md-8">
+                {% if budget.note %}
+                <div class="panel panel-default">
+                    <div class="panel-body">{{ budget.note|raw }}</div>
+                </div>
+                {% endif %}
+            </div>
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <table class="table table-middle table-bordered">
+                        <tbody>
+                            <tr>
+                                <td>{{ 'budget.form.totalprice'|trans }}</td>
+                                <td class="text-right">$&nbsp;{{ budget.totalprice|number_format(0, ',', '.') }}</td>
+                            </tr>
+                            <tr>
+                                <td>{{ 'budget.form.totaldiscountprice'|trans }}</td>
+                                <td class="text-right">$&nbsp;{{ budget.totaldiscountprice|number_format(0, ',', '.') }}</td>
+                            </tr>
+                            <tr>
+                                <td>{{ 'budget.form.totalnetprice'|trans }}</td>
+                                <td class="text-right">$&nbsp;{{ budget.totalnetprice|number_format(0, ',', '.') }}</td>
+                            </tr>
+                            <tr>
+                                <td>{{ 'budget.form.totaliva'|trans }}</td>
+                                <td class="text-right">$&nbsp;{{ budget.totaliva|number_format(0, ',', '.') }}</td>
+                            </tr>
+                            <tr class="active">
+                                <td><strong>{{ 'budget.form.total'|trans }}</strong></td>
+                                <td class="text-right"><strong>$&nbsp;{{ budget.total|number_format(0, ',', '.') }}</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        {% if budget.notes is not empty %}
+        <div class="row" id="page-notas">
+            <div class="col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">{{ 'budget.show.notas'|trans }}</h2>
+                    </div>
+                    <table class="table table-middle">
+                        <tbody>
+                            {% for note in budget.notes %}
+                            <tr>
+                                <td><strong style="white-space: nowrap;">{{ note.title }}</strong></td>
+                                <td>{{ note.description|raw }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+
+    </div>
+</body>
+</html>
+
+{% block stylesheet %}
+<style type="text/css">
+thead { display: table-header-group }
+tfoot { display: table-row-group }
+.panel, tr { page-break-inside: avoid }
+</style>
+{% endblock %}

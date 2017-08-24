@@ -39,6 +39,16 @@
                                 <dd>{% if account.id %}{{ account.id }}{% endif %}</dd>
                             <dt>{{ 'account.form.name'|trans }}</dt>
                                 <dd>{% if account.name %}{{ account.name }}{% endif %}</dd>
+                            <dt>{{ 'account.form.business_name'|trans }}</dt>
+                                <dd>{% if account.businessname %}{{ account.businessname }}{% endif %}</dd>
+                            <dt>{{ 'account.form.business_rut'|trans }}</dt>
+                                <dd>{% if account.businessrut %}{{ account.businessrut }}{% endif %}</dd>
+                            <dt>{{ 'account.form.business_turn'|trans }}</dt>
+                                <dd>{% if account.businessturn %}{{ account.businessturn }}{% endif %}</dd>
+                            <dt>{{ 'account.form.business_address_street'|trans }}</dt>
+                                <dd>{% if account.businessaddressstreet %}{{ account.businessaddressstreet }}{% endif %}</dd>
+                            <dt>{{ 'account.form.business_address_number'|trans }}</dt>
+                                <dd>{% if account.businessaddressnumber %}{{ account.businessaddressnumber }}{% endif %}</dd>
                             <dt>{{ 'account.form.budget_note'|trans }}</dt>
                                 <dd>{% if account.budgetnote %}{{ account.budgetnote }}{% endif %}</dd>
                             <dt>{{ 'account.form.created_at'|trans }}</dt>

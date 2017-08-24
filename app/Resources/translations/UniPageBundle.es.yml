@@ -1,0 +1,48 @@
+page:
+    index:
+        title: Páginas
+        list: Lista de páginas
+        link: Volver a la lista
+    new:
+        link: Agregar página
+        title: Nueva página
+        form: Página
+        submit: Guardar
+    edit:
+        title: Editar página
+        form: Página
+        submit: Guardar cambios
+    delete:
+        link: Borrar página
+        title: Borrado de página
+        message: Los datos borrados no podrán ser recuperados.
+        submit: Confirmar borrado
+        flash: La página fue borrada totalmente.
+    form:
+        id: ID
+        name: Nombre
+        created_at: Creado
+        updated_at: Actualizado
+        domain: Dominio
+        brand: Marca
+        brand_primary_color: Color primario
+        brand_secondary_color: Color secundario
+        maintitle: Título portada
+        mainsubtitle: Subtítulo portada
+        maincalltoaction: Botón
+        abouttitle: Título sección acerca de
+        aboutcontent: Contenido sección acerca de
+        featuretitle: Título sección características
+        featurecontent: Contenido sección características
+        contacttitle: Título sección contacto
+        contactcontent: Contenido sección contacto
+        contactphone: Teléfono de contacto
+        contactemail: Email de contacto
+        contactaddress: Dirección de contacto
+        contactschedule: Horario de atención
+    section:
+        brand: Marca
+        main: Principal
+        about: Sobre Nosotros
+        feature: Catacterísticas del Negocio
+        contact: Información de Contacto

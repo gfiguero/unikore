@@ -54,10 +54,28 @@ Uni\AdminBundle\Entity\Account:
         subcategories:
             targetEntity: Uni\AdminBundle\Entity\Subcategory
             mappedBy: account
+    manyToOne:
+        business_address_commune:
+            targetEntity: Uni\AdminBundle\Entity\Commune
     fields:
         name:
             type: string
             length: 200
+        business_name:
+            type: string
+            length: 200
+        business_rut:
+            type: string
+            length: 200
+        business_turn:
+            type: string
+            length: 200
+        business_address_street:
+            type: string
+            length: 200
+        business_address_number:
+            type: string
+            length: 20
         budget_note:
             type: text
             nullable: true

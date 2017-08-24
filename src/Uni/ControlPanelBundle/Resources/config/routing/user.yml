@@ -22,3 +22,4 @@ controlpanel_user_delete:
     path:     /{id}/delete
     defaults: { _controller: "UniControlPanelBundle:User:delete" }
     methods:  DELETE
+

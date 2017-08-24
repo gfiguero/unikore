@@ -771,4 +771,178 @@ class Account
     {
         return $this->socialmedia;
     }
+    /**
+     * @var string
+     */
+    private $business_name;
+
+    /**
+     * @var string
+     */
+    private $business_rut;
+
+    /**
+     * @var string
+     */
+    private $business_turn;
+
+    /**
+     * @var string
+     */
+    private $business_address_street;
+
+    /**
+     * @var string
+     */
+    private $business_address_number;
+
+    /**
+     * @var \Uni\AdminBundle\Entity\Commune
+     */
+    private $business_address_commune;
+
+
+    /**
+     * Set businessName
+     *
+     * @param string $businessName
+     *
+     * @return Account
+     */
+    public function setBusinessName($businessName)
+    {
+        $this->business_name = $businessName;
+
+        return $this;
+    }
+
+    /**
+     * Get businessName
+     *
+     * @return string
+     */
+    public function getBusinessName()
+    {
+        return $this->business_name;
+    }
+
+    /**
+     * Set businessRut
+     *
+     * @param string $businessRut
+     *
+     * @return Account
+     */
+    public function setBusinessRut($businessRut)
+    {
+        $this->business_rut = $businessRut;
+
+        return $this;
+    }
+
+    /**
+     * Get businessRut
+     *
+     * @return string
+     */
+    public function getBusinessRut()
+    {
+        return $this->business_rut;
+    }
+
+    /**
+     * Set businessTurn
+     *
+     * @param string $businessTurn
+     *
+     * @return Account
+     */
+    public function setBusinessTurn($businessTurn)
+    {
+        $this->business_turn = $businessTurn;
+
+        return $this;
+    }
+
+    /**
+     * Get businessTurn
+     *
+     * @return string
+     */
+    public function getBusinessTurn()
+    {
+        return $this->business_turn;
+    }
+
+    /**
+     * Set businessAddressStreet
+     *
+     * @param string $businessAddressStreet
+     *
+     * @return Account
+     */
+    public function setBusinessAddressStreet($businessAddressStreet)
+    {
+        $this->business_address_street = $businessAddressStreet;
+
+        return $this;
+    }
+
+    /**
+     * Get businessAddressStreet
+     *
+     * @return string
+     */
+    public function getBusinessAddressStreet()
+    {
+        return $this->business_address_street;
+    }
+
+    /**
+     * Set businessAddressNumber
+     *
+     * @param string $businessAddressNumber
+     *
+     * @return Account
+     */
+    public function setBusinessAddressNumber($businessAddressNumber)
+    {
+        $this->business_address_number = $businessAddressNumber;
+
+        return $this;
+    }
+
+    /**
+     * Get businessAddressNumber
+     *
+     * @return string
+     */
+    public function getBusinessAddressNumber()
+    {
+        return $this->business_address_number;
+    }
+
+    /**
+     * Set businessAddressCommune
+     *
+     * @param \Uni\AdminBundle\Entity\Commune $businessAddressCommune
+     *
+     * @return Account
+     */
+    public function setBusinessAddressCommune(\Uni\AdminBundle\Entity\Commune $businessAddressCommune = null)
+    {
+        $this->business_address_commune = $businessAddressCommune;
+
+        return $this;
+    }
+
+    /**
+     * Get businessAddressCommune
+     *
+     * @return \Uni\AdminBundle\Entity\Commune
+     */
+    public function getBusinessAddressCommune()
+    {
+        return $this->business_address_commune;
+    }
 }

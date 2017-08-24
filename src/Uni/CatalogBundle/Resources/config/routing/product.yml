@@ -1,0 +1,24 @@
+catalog_product_index:
+    path:     /
+    defaults: { _controller: "UniCatalogBundle:Product:index" }
+    methods:  GET
+
+catalog_product_show:
+    path:     /{id}/show
+    defaults: { _controller: "UniCatalogBundle:Product:show" }
+    methods:  GET
+
+catalog_product_new:
+    path:     /new
+    defaults: { _controller: "UniCatalogBundle:Product:new" }
+    methods:  [GET, POST]
+
+catalog_product_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "UniCatalogBundle:Product:edit" }
+    methods:  [GET, POST]
+
+catalog_product_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "UniCatalogBundle:Product:delete" }
+    methods:  DELETE

@@ -39,6 +39,14 @@
                                 <dd>{% if user.id %}{{ user.id }}{% endif %}</dd>
                             <dt>{{ 'user.form.name'|trans }}</dt>
                                 <dd>{% if user.name %}{{ user.name }}{% endif %}</dd>
+                            <dt>{{ 'user.form.phone_number'|trans }}</dt>
+                                <dd>{% if user.phonenumber %}{{ user.phonenumber }}{% endif %}</dd>
+                            <dt>{{ 'user.form.rut'|trans }}</dt>
+                                <dd>{% if user.rut %}{{ user.rut }}{% endif %}</dd>
+                            <dt>{{ 'user.form.address_street'|trans }}</dt>
+                                <dd>{% if user.addressstreet %}{{ user.addressstreet }}{% endif %}</dd>
+                            <dt>{{ 'user.form.address_number'|trans }}</dt>
+                                <dd>{% if user.addressnumber %}{{ user.addressnumber }}{% endif %}</dd>
                             <dt>{{ 'user.form.created_at'|trans }}</dt>
                                 <dd>{% if user.createdat %}{{ user.createdat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "d 'de' LLLL 'de' y - HH:mm") }}&nbsp;({{ user.createdat|ago }}){% endif %}</dd>
                             <dt>{{ 'user.form.updated_at'|trans }}</dt>

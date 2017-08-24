@@ -1,0 +1,6 @@
+page_root:
+    path: /
+    defaults:
+        _controller: FrameworkBundle:Redirect:redirect
+        route: page_page_index
+        permanent: true

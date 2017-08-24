@@ -1,4 +1,4 @@
-{% extends 'UniUserBundle:Base:layout.html.twig' %}
+{% extends 'UniControlPanelBundle:Base:layout.html.twig' %}
 {% use 'UniUserBundle:Base:icons.html.twig' %}
 {% use 'UniUserBundle:Base:flashbag.html.twig' %}
 
@@ -6,7 +6,7 @@
 
 {% block title %}&nbsp;-&nbsp;{{ 'profile.edit.title'|trans }}{% endblock %}
 
-{% block user %}
+{% block controlpanel %}
     <div id="page-wrapper">
         <div class="row" id="page-header">
             <div class="col-lg-12">
@@ -15,15 +15,6 @@
             </div>
         </div>
         <!-- /#page-header -->
-
-        <div class="row" id="page-toolbar">
-            <div class="col-lg-12">
-                <div class="btn-toolbar">
-                    <a type="button" class="btn btn-default" href="{{ path('fos_user_profile_show') }}">{{ icon('arrow-left fa-fw') }}&nbsp;{{ 'profile.show.link'|trans }}</a>
-                </div>
-            </div>
-        </div>
-        <!-- /#page-toolbar -->
 
         <div class="row" id="page-registration">
             <div class="col-lg-12">

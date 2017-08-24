@@ -1,0 +1,6 @@
+controlpanel_root:
+    path: /
+    defaults:
+        _controller: FrameworkBundle:Redirect:redirect
+        route: controlpanel_dashboard_index
+        permanent: true

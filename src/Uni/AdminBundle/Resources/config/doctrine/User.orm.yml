@@ -12,6 +12,8 @@ Uni\AdminBundle\Entity\User:
         account:
             targetEntity: Uni\AdminBundle\Entity\Account
             inversedBy: users
+        address_commune:
+            targetEntity: Uni\AdminBundle\Entity\Commune
     oneToMany:
         providers:
             targetEntity: Uni\AdminBundle\Entity\Provider
@@ -40,6 +42,19 @@ Uni\AdminBundle\Entity\User:
             type: string
             length: 100
             nullable: true
+        phone_number:
+            type: string
+            length: 100
+            nullable: true
+        rut:
+            type: string
+            length: 200
+        address_street:
+            type: string
+            length: 200
+        address_number:
+            type: string
+            length: 20
         created_at:
             type: datetime
             gedmo:

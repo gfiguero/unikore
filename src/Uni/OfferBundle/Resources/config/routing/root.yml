@@ -1,0 +1,6 @@
+offer_root:
+    path: /
+    defaults:
+        _controller: FrameworkBundle:Redirect:redirect
+        route: offer_budget_index
+        permanent: true

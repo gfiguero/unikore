@@ -1,0 +1,29 @@
+offer_user_index:
+    path:     /index
+    defaults: { _controller: "UniOfferBundle:User:index" }
+    methods:  GET
+
+offer_user_show:
+    path:     /{id}/show
+    defaults: { _controller: "UniOfferBundle:User:show" }
+    methods:  GET
+
+offer_user_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "UniOfferBundle:User:edit" }
+    methods:  [GET, POST]
+
+offer_user_change_password:
+    path:     /changepassword
+    defaults: { _controller: "UniOfferBundle:User:changepassword" }
+    methods:  [GET, POST]
+
+offer_user_register:
+    path:     /register
+    defaults: { _controller: "UniOfferBundle:User:register" }
+    methods:  [GET, POST]
+
+offer_user_check_email:
+    path:     /check-email
+    defaults: { _controller: "UniOfferBundle:User:checkEmail" }
+    methods:  GET

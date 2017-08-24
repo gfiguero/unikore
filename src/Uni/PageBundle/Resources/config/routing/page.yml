@@ -1,0 +1,24 @@
+page_page_index:
+    path:     /
+    defaults: { _controller: "UniPageBundle:Page:index" }
+    methods:  GET
+
+page_page_show:
+    path:     /{id}/show
+    defaults: { _controller: "UniPageBundle:Page:show" }
+    methods:  GET
+
+page_page_new:
+    path:     /new
+    defaults: { _controller: "UniPageBundle:Page:new" }
+    methods:  [GET, POST]
+
+page_page_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "UniPageBundle:Page:edit" }
+    methods:  [GET, POST]
+
+page_page_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "UniPageBundle:Page:delete" }
+    methods:  DELETE

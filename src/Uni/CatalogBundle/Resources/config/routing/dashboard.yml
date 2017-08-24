@@ -1,0 +1,4 @@
+catalog_dashboard_index:
+    path:     /
+    defaults: { _controller: "UniCatalogBundle:Dashboard:index" }
+    methods:  GET

@@ -57,6 +57,30 @@ class ProfileType extends AbstractType
                 'translation_domain' => 'UniUserBundle',
                 'attr' => array('label_col' => 4, 'widget_col' => 8),
             ))
+            ->add('rut', null, array(
+                'label' => 'security.form.rut',
+                'translation_domain' => 'UniUserBundle',
+                'attr' => array('label_col' => 4, 'widget_col' => 8),
+                'required' => false,
+            ))
+            ->add('address_street', null, array(
+                'label' => 'security.form.address_street',
+                'translation_domain' => 'UniUserBundle',
+                'attr' => array('label_col' => 4, 'widget_col' => 8),
+                'required' => false,
+            ))
+            ->add('address_number', null, array(
+                'label' => 'security.form.address_number',
+                'translation_domain' => 'UniUserBundle',
+                'attr' => array('label_col' => 4, 'widget_col' => 8),
+                'required' => false,
+            ))
+            ->add('address_commune', null, array(
+                'label' => 'security.form.address_commune',
+                'translation_domain' => 'UniUserBundle',
+                'attr' => array('label_col' => 4, 'widget_col' => 8),
+                'required' => false,
+            ))
         ;
     }
 

@@ -1,0 +1,34 @@
+offer_budget_index:
+    path:     /
+    defaults: { _controller: "UniOfferBundle:Budget:index" }
+    methods:  GET
+
+offer_budget_show:
+    path:     /{id}/show
+    defaults: { _controller: "UniOfferBundle:Budget:show" }
+    methods:  GET
+
+offer_budget_export:
+    path:     /{id}/export
+    defaults: { _controller: "UniOfferBundle:Budget:export" }
+    methods:  [GET, POST]
+
+offer_budget_pdf:
+    path:     /{id}/pdf
+    defaults: { _controller: "UniOfferBundle:Budget:pdf" }
+    methods:  GET
+
+offer_budget_new:
+    path:     /new
+    defaults: { _controller: "UniOfferBundle:Budget:new" }
+    methods:  [GET, POST]
+
+offer_budget_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "UniOfferBundle:Budget:edit" }
+    methods:  [GET, POST]
+
+offer_budget_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "UniOfferBundle:Budget:delete" }
+    methods:  DELETE

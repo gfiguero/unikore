@@ -68,3 +68,4 @@ SELECT id FROM `Solicitud` WHERE id IN (SELECT `Solicitud`.id FROM `Solicitud`, 
 SELECT CONCAT(`calle`, ' ', `numero`, ' ', `poblacion`, ' ', `edificio`, ' ', `departamento`, ' ', `casa`, ' ', `chacra`, ' ', `parcela`, ' ', `paradero`, ' ', `sector`, ' ', `unidad`) FROM `Solicitud` WHERE 1
 
 
+find . -type f -print0 | xargs -0 sed -i 's/ControlPanel/Page/g'

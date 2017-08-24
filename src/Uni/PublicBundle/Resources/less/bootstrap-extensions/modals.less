@@ -1,0 +1,41 @@
+@import "../../../../../vendor/bower_components/bootstrap/less/modals.less";
+
+.modal-image {
+    
+    .modal-content {
+        border: 0px;
+    }
+
+    .modal-header {
+        background-color: transparent;
+        border-bottom: 0px;
+        position: fixed;
+        top: 0;
+        z-index: 1030;
+        width: 100%;
+    }
+
+    .modal-title {
+        margin: 0;
+        line-height: @modal-title-line-height;
+    }
+
+    .modal-body {
+        position: relative;
+        padding: @modal-inner-padding;
+    }
+
+    .modal-footer {
+        background-color: @gray-base;
+        padding: @modal-title-padding;
+        border-top: 0px;
+        bottom: 0;
+        z-index: 1030;
+        width: 100%;
+        @media(min-width: 992px) {
+            background-color: fade(@gray-base, 50%);
+            position: fixed;
+        }
+    }
+}
+

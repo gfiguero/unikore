@@ -1,0 +1,105 @@
+{% extends 'UniPageBundle:Base:layout.html.twig' %}
+{% use 'UniPageBundle:Base:icons.html.twig' %}
+{% use 'UniPageBundle:Base:flashbag.html.twig' %}
+{% use 'UniPageBundle:Base:wysiwyg.html.twig' %}
+{% use 'UniPageBundle:Base:fileinput.html.twig' %}
+
+{% trans_default_domain 'UniPageBundle' %}
+
+{% block title %}&nbsp;-&nbsp;{{ 'page.new.title'|trans }}{% endblock %}
+
+{% block page %}
+    <div id="page-wrapper">
+        <div class="row" id="page-header">
+            <div class="col-lg-12">
+                <h1 class="page-header">{% block icons %}{{ parent() }}{% endblock %}{{ 'page.new.title'|trans }}</h1>
+                {% block flashbag %}{{ parent() }}{% endblock %}
+            </div>
+        </div>
+        <!-- /#page-header -->
+
+        <div class="row" id="page-toolbar">
+            <div class="col-lg-12">
+                <div class="btn-toolbar">
+                    <a type="button" class="btn btn-default" href="{{ path('page_page_index') }}">{{ icon('list fa-fw') }}&nbsp;{{ 'page.index.link'|trans }}</a>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-toolbar -->
+
+        <div class="row" id="page-new">
+            <div class="col-lg-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">{{ 'page.new.form'|trans }}</h2>
+                    </div>
+                    <div class="panel-body">
+                        <ul class="nav nav-pills">
+                            <li role="presentation" class="active"><a data-toggle="tab" href="#brand">{{ 'page.section.brand'|trans }}</a></li>
+                            <li role="presentation"><a data-toggle="tab" href="#main">{{ 'page.section.main'|trans }}</a></li>
+                            <li role="presentation"><a data-toggle="tab" href="#about">{{ 'page.section.about'|trans }}</a></li>
+                            <li role="presentation"><a data-toggle="tab" href="#feature">{{ 'page.section.feature'|trans }}</a></li>
+                            <li role="presentation"><a data-toggle="tab" href="#contact">{{ 'page.section.contact'|trans }}</a></li>
+                        </ul>
+                    </div>
+                    <div class="panel-body">
+                        {{ form_start(newForm, {'style' : 'horizontal' }) }}
+                        <div class="tab-content">
+                            <div id="brand" class="tab-pane fade in active" >
+                                {{ form_row(newForm.brand) }}
+                                {{ form_row(newForm.name) }}
+                                {{ form_row(newForm.domain) }}
+                                {{ form_row(newForm.brand_primary_color) }}
+                                {{ form_row(newForm.brand_secondary_color) }}
+                            </div>
+                            <div id="main" class="tab-pane fade" >
+                                {{ form_row(newForm.maintitle) }}
+                                {{ form_row(newForm.mainsubtitle) }}
+                                {{ form_row(newForm.maincalltoaction) }}
+                            </div>
+                            <div id="about" class="tab-pane fade" >
+                                {{ form_row(newForm.abouttitle) }}
+                                {{ form_row(newForm.aboutcontent) }}
+                            </div>
+                            <div id="feature" class="tab-pane fade" >
+                                {{ form_row(newForm.featuretitle) }}
+                                {{ form_row(newForm.featurecontent) }}
+                            </div>
+                            <div id="contact" class="tab-pane fade" >
+                                {{ form_row(newForm.contacttitle) }}
+                                {{ form_row(newForm.contactcontent) }}
+                                {{ form_row(newForm.contactphone) }}
+                                {{ form_row(newForm.contactemail) }}
+                                {{ form_row(newForm.contactaddress) }}
+                                {{ form_row(newForm.contactschedule) }}
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-8 col-md-offset-4">
+                                <button class="btn btn-default btn-primary" type="submit">{{ icon('save fa-fw') }}&nbsp;{{ 'page.edit.submit'|trans }}</button>
+                            </div>
+                        </div>
+                        {{ form_end(newForm) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-new -->
+
+    </div>
+    <!-- /#page-wrapper -->
+
+{% endblock %}
+
+{% block stylesheet %}
+    {% block wysiwygcss %}{{ parent() }}{% endblock %}
+    {% block fileinputcss %}{{ parent() }}{% endblock %}
+    {% block minicolorscss %}{{ parent() }}{% endblock %}
+{% endblock %}
+
+{% block javascript %}
+    {% block wysiwygjs %}{{ parent() }}{% endblock %}
+    {% block fileinputjs_edit %}{{ parent() }}{% endblock %}
+    {% block minicolorsjs %}{{ parent() }}{% endblock %}
+{% endblock %}
+

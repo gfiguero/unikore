@@ -1,0 +1,4 @@
+controlpanel_dashboard_index:
+    path:     /
+    defaults: { _controller: "UniControlPanelBundle:Dashboard:index" }
+    methods:  GET

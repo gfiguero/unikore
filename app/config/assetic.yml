@@ -25,13 +25,13 @@ assetic:
                 - less
                 - cssrewrite
             output: src/Uni/UserBundle/Resources/public/css/user.css
-        uni_agent_css:
+        uni_offer_css:
             inputs:
-                - src/Uni/AgentBundle/Resources/less/build.less
+                - src/Uni/OfferBundle/Resources/less/build.less
             filters:
                 - less
                 - cssrewrite
-            output: src/Uni/AgentBundle/Resources/public/css/agent.css
+            output: src/Uni/OfferBundle/Resources/public/css/offer.css
         uni_page_css:
             inputs:
                 - src/Uni/PageBundle/Resources/less/build.less
@@ -39,13 +39,13 @@ assetic:
                 - less
                 - cssrewrite
             output: src/Uni/PageBundle/Resources/public/css/page.css
-        uni_agentexport_css:
+        uni_offerexport_css:
             inputs:
-                - src/Uni/AgentBundle/Resources/less/export/build.less
+                - src/Uni/OfferBundle/Resources/less/export/build.less
             filters:
                 - less
                 - cssrewrite
-            output: src/Uni/AgentBundle/Resources/public/css/agentexport.css
+            output: src/Uni/OfferBundle/Resources/public/css/offerexport.css
         uni_controlpanel_css:
             inputs:
                 - src/Uni/ControlPanelBundle/Resources/less/build.less
@@ -53,10 +53,17 @@ assetic:
                 - less
                 - cssrewrite
             output: src/Uni/ControlPanelBundle/Resources/public/css/controlpanel.css
+        uni_public_css:
+            inputs:
+                - src/Uni/PublicBundle/Resources/less/build.less
+            filters:
+                - less
+                - cssrewrite
+            output: src/Uni/PublicBundle/Resources/public/css/public.css
 #        frontend_css:
 #            inputs:
-#                - src/Uni/AgentBundle/Resources/less/build.less
+#                - src/Uni/OfferBundle/Resources/less/build.less
 #            filters:
 #                - less
 #                - cssrewrite
-#            output: src/Uni/AgentBundle/Resources/public/css/agent.css
+#            output: src/Uni/OfferBundle/Resources/public/css/offer.css

@@ -732,4 +732,43 @@ class Account
     {
         return $this->pages;
     }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $socialmedia;
+
+
+    /**
+     * Add socialmedia
+     *
+     * @param \Uni\AdminBundle\Entity\Socialmedia $socialmedia
+     *
+     * @return Account
+     */
+    public function addSocialmedia(\Uni\AdminBundle\Entity\Socialmedia $socialmedia)
+    {
+        $this->socialmedia[] = $socialmedia;
+
+        return $this;
+    }
+
+    /**
+     * Remove socialmedia
+     *
+     * @param \Uni\AdminBundle\Entity\Socialmedia $socialmedia
+     */
+    public function removeSocialmedia(\Uni\AdminBundle\Entity\Socialmedia $socialmedia)
+    {
+        $this->socialmedia->removeElement($socialmedia);
+    }
+
+    /**
+     * Get socialmedia
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getSocialmedia()
+    {
+        return $this->socialmedia;
+    }
 }

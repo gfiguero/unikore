@@ -1,0 +1,24 @@
+page_feature_index:
+    path:     /
+    defaults: { _controller: "UniPageBundle:Feature:index" }
+    methods:  GET
+
+page_feature_show:
+    path:     /{id}/show
+    defaults: { _controller: "UniPageBundle:Feature:show" }
+    methods:  GET
+
+page_feature_new:
+    path:     /new
+    defaults: { _controller: "UniPageBundle:Feature:new" }
+    methods:  [GET, POST]
+
+page_feature_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "UniPageBundle:Feature:edit" }
+    methods:  [GET, POST]
+
+page_feature_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "UniPageBundle:Feature:delete" }
+    methods:  DELETE

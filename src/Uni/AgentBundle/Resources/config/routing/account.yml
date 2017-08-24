@@ -1,9 +1,0 @@
-agent_account_show:
-    path:     /show
-    defaults: { _controller: "UniAgentBundle:Account:show" }
-    methods:  GET
-
-agent_account_edit:
-    path:     /edit
-    defaults: { _controller: "UniAgentBundle:Account:edit" }
-    methods:  [GET, POST]

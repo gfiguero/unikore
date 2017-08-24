@@ -1,24 +1,9 @@
-controlpanel_account_index:
-    path:     /
-    defaults: { _controller: "UniControlPanelBundle:Account:index" }
-    methods:  GET
-
 controlpanel_account_show:
     path:     /{id}/show
     defaults: { _controller: "UniControlPanelBundle:Account:show" }
     methods:  GET
 
-controlpanel_account_new:
-    path:     /new
-    defaults: { _controller: "UniControlPanelBundle:Account:new" }
-    methods:  [GET, POST]
-
 controlpanel_account_edit:
-    path:     /{id}/edit
+    path:     /edit
     defaults: { _controller: "UniControlPanelBundle:Account:edit" }
     methods:  [GET, POST]
-
-controlpanel_account_delete:
-    path:     /{id}/delete
-    defaults: { _controller: "UniControlPanelBundle:Account:delete" }
-    methods:  DELETE

@@ -27,11 +27,12 @@ class AppKernel extends Kernel
             new Liip\ImagineBundle\LiipImagineBundle(),
             new FOS\UserBundle\FOSUserBundle(),
             new Uni\AdminBundle\UniAdminBundle(),
-            new Uni\AgentBundle\UniAgentBundle(),
+            new Uni\OfferBundle\UniOfferBundle(),
             new Uni\UserBundle\UniUserBundle(),
             new Uni\ControlPanelBundle\UniControlPanelBundle(),
             new Uni\PageBundle\UniPageBundle(),
             new Uni\CatalogBundle\UniCatalogBundle(),
+            new Uni\PublicBundle\UniPublicBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'), true)) {

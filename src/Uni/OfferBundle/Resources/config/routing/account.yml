@@ -1,0 +1,9 @@
+offer_account_show:
+    path:     /show
+    defaults: { _controller: "UniOfferBundle:Account:show" }
+    methods:  GET
+
+offer_account_edit:
+    path:     /edit
+    defaults: { _controller: "UniOfferBundle:Account:edit" }
+    methods:  [GET, POST]

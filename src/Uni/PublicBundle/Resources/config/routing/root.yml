@@ -1,0 +1,3 @@
+public_root:
+    path:     /
+    defaults: { _controller: UniPublicBundle:Page:index }

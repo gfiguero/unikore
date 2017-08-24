@@ -5,13 +5,13 @@ uni_admin:
     resource: "@UniAdminBundle/Resources/config/routing.yml"
     prefix:   /admin
 
-uni_agent:
-    resource: "@UniAgentBundle/Resources/config/routing.yml"
-    prefix:   /agent
+uni_offer:
+    resource: "@UniOfferBundle/Resources/config/routing.yml"
+    prefix:   /offer
 
 uni_user:
     resource: "@UniUserBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /user
 
 uni_catalog:
     resource: "@UniCatalogBundle/Resources/config/routing.yml"
@@ -19,11 +19,16 @@ uni_catalog:
 
 uni_page:
     resource: "@UniPageBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /page
 
-uni_control_panel:
+uni_controlpanel:
     resource: "@UniControlPanelBundle/Resources/config/routing.yml"
     prefix:   /controlpanel
+
+uni_public:
+    resource: "@UniPublicBundle/Resources/config/routing.yml"
+    prefix:   /
+
 root:
     path: /
     defaults:
