@@ -42,10 +42,10 @@ class Category
      */
     private $account;
 
-    public function __toString()
-    {
-        return (string) $this->name;
-    }
+    /**
+     * @var \Uni\AdminBundle\Entity\Catalog
+     */
+    private $catalog;
 
     /**
      * Constructor
@@ -53,6 +53,11 @@ class Category
     public function __construct()
     {
         $this->subcategories = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    public function __toString()
+    {
+        return (string) $this->name;
     }
 
     /**
@@ -92,13 +97,13 @@ class Category
     /**
      * Set createdAt
      *
-     * @param \DateTime $created_at
+     * @param \DateTime $createdAt
      *
      * @return Category
      */
-    public function setCreatedAt($created_at)
+    public function setCreatedAt($createdAt)
     {
-        $this->created_at = $created_at;
+        $this->created_at = $createdAt;
 
         return $this;
     }
@@ -116,13 +121,13 @@ class Category
     /**
      * Set updatedAt
      *
-     * @param \DateTime $updated_at
+     * @param \DateTime $updatedAt
      *
      * @return Category
      */
-    public function setUpdatedAt($updated_at)
+    public function setUpdatedAt($updatedAt)
     {
-        $this->updated_at = $updated_at;
+        $this->updated_at = $updatedAt;
 
         return $this;
     }
@@ -140,13 +145,13 @@ class Category
     /**
      * Set deletedAt
      *
-     * @param \DateTime $deleted_at
+     * @param \DateTime $deletedAt
      *
      * @return Category
      */
-    public function setDeletedAt($deleted_at)
+    public function setDeletedAt($deletedAt)
     {
-        $this->deleted_at = $deleted_at;
+        $this->deleted_at = $deletedAt;
 
         return $this;
     }
@@ -170,6 +175,8 @@ class Category
      */
     public function addSubcategory(\Uni\AdminBundle\Entity\Subcategory $subcategory)
     {
+        $subcategory->setCategory($this);
+
         $this->subcategories[] = $subcategory;
 
         return $this;
@@ -218,11 +225,6 @@ class Category
     {
         return $this->account;
     }
-    /**
-     * @var \Uni\AdminBundle\Entity\Catalog
-     */
-    private $catalog;
-
 
     /**
      * Set catalog
@@ -248,3 +250,4 @@ class Category
         return $this->catalog;
     }
 }
+

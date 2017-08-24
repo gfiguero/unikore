@@ -34,10 +34,52 @@
                     </div>
                     <div class="panel-body">
                         {{ form_start(editForm, { 'style': 'horizontal' }) }}
-                            {{ form_widget(editForm) }}
-                                <div class="form-group"><div class="col-lg-offset-4 col-lg-8">
-                                    <button type="submit" class="btn btn-primary">{{ icon('save fa-fw') }}&nbsp;{{ 'page.edit.submit'|trans }}</button>
-                                </div></div>
+                        <div class="form-group">
+                            <div class="col-lg-offset-4 col-lg-8">
+                                <ul class="nav nav-pills">
+                                    <li role="presentation" class="active"><a href="#brand" data-toggle="tab">Marca</a></li>
+                                    <li role="presentation"><a href="#main" data-toggle="tab">Principal</a></li>
+                                    <li role="presentation"><a href="#about" data-toggle="tab">Sobre Nosotros</a></li>
+                                    <li role="presentation"><a href="#feature" data-toggle="tab">Características</a></li>
+                                    <li role="presentation"><a href="#contact" data-toggle="tab">Contacto</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="tab-content">
+                            <div class="tab-pane fade in active" id="brand" role="tabpanel">
+                                {{ form_row(editForm.name) }}
+                                {{ form_row(editForm.domain) }}
+                                {{ form_row(editForm.brand) }}
+                                {{ form_row(editForm.brand_primary_color) }}
+                                {{ form_row(editForm.brand_secondary_color) }}
+                            </div>
+                            <div class="tab-pane fade" id="main" role="tabpanel">
+                                {{ form_row(editForm.maintitle) }}
+                                {{ form_row(editForm.mainsubtitle) }}
+                                {{ form_row(editForm.maincalltoaction) }}
+                            </div>
+                            <div class="tab-pane fade" id="about" role="tabpanel">
+                                {{ form_row(editForm.abouttitle) }}
+                                {{ form_row(editForm.aboutcontent) }}
+                            </div>
+                            <div class="tab-pane fade" id="feature" role="tabpanel">
+                                {{ form_row(editForm.featuretitle) }}
+                                {{ form_row(editForm.featurecontent) }}
+                            </div>
+                            <div class="tab-pane fade" id="contact" role="tabpanel">
+                                {{ form_row(editForm.contacttitle) }}
+                                {{ form_row(editForm.contactcontent) }}
+                                {{ form_row(editForm.contactphone) }}
+                                {{ form_row(editForm.contactemail) }}
+                                {{ form_row(editForm.contactaddress) }}
+                                {{ form_row(editForm.contactschedule) }}
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-lg-offset-4 col-lg-8">
+                                <button type="submit" class="btn btn-primary">{{ icon('save fa-fw') }}&nbsp;{{ 'page.edit.submit'|trans }}</button>
+                            </div>
+                        </div>
                         {{ form_end(editForm) }}
                     </div>
                 </div>
