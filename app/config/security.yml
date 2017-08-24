@@ -4,6 +4,9 @@ security:
         Uni\AdminBundle\Entity\User: bcrypt
 
     role_hierarchy:
+        ROLE_PAGE: ROLE_USER
+        ROLE_CATALOG: ROLE_USER
+        ROLE_BUDGET: ROLE_USER
         ROLE_LEADER: ROLE_USER
         ROLE_ADMIN: ROLE_LEADER
         ROLE_SUPER_ADMIN: ROLE_ADMIN
@@ -15,7 +18,7 @@ security:
         in_memory:
             memory:
                 users:
-                    root: { password: %root_password%, roles: 'ROLE_USER' }
+                    root: { password: %root_password%, roles: 'ROLE_SUPER_ADMIN' }
         fos_userbundle:
             id: fos_user.user_provider.username_email
 
@@ -45,5 +48,5 @@ security:
         - { path: ^/login, roles: [IS_AUTHENTICATED_ANONYMOUSLY] }
         - { path: ^/admin, roles: [IS_AUTHENTICATED_ANONYMOUSLY] }
         - { path: ^/logout, roles: [ROLE_USER] }
-        - { path: ^/agent, roles: [ROLE_AGENT] }
+        - { path: ^/agent, roles: [ROLE_USER] }
         - { path: ^/controlpanel, roles: [ROLE_USER] }

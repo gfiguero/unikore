@@ -1,6 +1,8 @@
 parameters:
     roles:
         ROLE_USER: role.user
-        ROLE_AGENT: role.agent
+        ROLE_PAGE: role.page
+        ROLE_CATALOG: role.catalog
+        ROLE_BUDGET: role.budget
         ROLE_LEADER: role.leader
         ROLE_ADMIN: role.admin

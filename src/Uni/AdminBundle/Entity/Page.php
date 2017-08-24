@@ -210,6 +210,8 @@ class Page
      */
     public function addPhotography(\Uni\AdminBundle\Entity\Photography $photography)
     {
+        $photography->setPage($this);
+
         $this->photographies[] = $photography;
 
         return $this;

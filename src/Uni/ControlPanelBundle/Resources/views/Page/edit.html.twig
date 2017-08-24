@@ -2,6 +2,7 @@
 {% use 'UniControlPanelBundle:Base:icons.html.twig' %}
 {% use 'UniControlPanelBundle:Base:flashbag.html.twig' %}
 {% use 'UniControlPanelBundle:Base:wysiwyg.html.twig' %}
+{% use 'UniControlPanelBundle:Base:fileinput.html.twig' %}
 
 {% trans_default_domain 'UniControlPanelBundle' %}
 
@@ -43,6 +44,7 @@
                             {{ form_row(editForm.brand) }}
                             {{ form_row(editForm.name) }}
                             {{ form_row(editForm.domain) }}
+                            {{ form_row(editForm.photographies) }}
                             {{ form_row(editForm.brand_primary_color) }}
                             {{ form_row(editForm.brand_secondary_color) }}
                             <div class="form-group">
@@ -142,14 +144,13 @@
 
 {% block stylesheet %}
     {% block wysiwygcss %}{{ parent() }}{% endblock %}
+    {% block fileinputcss %}{{ parent() }}{% endblock %}
+    {% block minicolorscss %}{{ parent() }}{% endblock %}
 {% endblock %}
 
 {% block javascript %}
     {% block wysiwygjs %}{{ parent() }}{% endblock %}
-    <script type="text/javascript">
-        minicolorsOptions = {theme: 'bootstrap'};
-        $('#uni_controlpanelbundle_page_brand_primary_color').minicolors(minicolorsOptions);
-        $('#uni_controlpanelbundle_page_brand_secondary_color').minicolors(minicolorsOptions);
-    </script>
+    {% block fileinputjs_edit %}{{ parent() }}{% endblock %}
+    {% block minicolorsjs %}{{ parent() }}{% endblock %}
 {% endblock %}
 

@@ -19,6 +19,7 @@ Uni\AdminBundle\Entity\Page:
         photographies:
             targetEntity:  Uni\AdminBundle\Entity\Photography
             mappedBy: page
+            cascade: ['persist', 'merge', 'remove']
         socialmedia:
             targetEntity:  Uni\AdminBundle\Entity\Socialmedia
             mappedBy: page

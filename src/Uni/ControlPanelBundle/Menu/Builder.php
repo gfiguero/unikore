@@ -12,24 +12,74 @@ class Builder implements ContainerAwareInterface
 
     public function topMenu(FactoryInterface $factory, array $options)
     {
+        $checker = $this->container->get('security.authorization_checker');
+        $user = $this->container->get('security.token_storage')->getToken()->getUser();
+
         $topmenu = $factory->createItem('root');
         $topmenu->setChildrenAttribute('class', 'nav navbar-nav navbar-right');
         $topmenu->setChildrenAttribute('id', 'top-menu');
 
+        if (!$checker->isGranted('ROLE_USER')) {
+            $topmenu->addChild('topmenu.login', array('route' => 'fos_user_security_login'))->setExtras(array('icon' => 'sign-in fa-fw', 'translation_domain' => 'UniControlPanelBundle'));
+            $topmenu->addChild('topmenu.reset', array('route' => 'fos_user_resetting_request'))->setExtras(array('icon' => 'repeat fa-fw', 'translation_domain' => 'UniControlPanelBundle'));            
+        }
+
+        if ($checker->isGranted('ROLE_AGENT')) {
+            $topmenu->addChild('topmenu.agent', array('route' => 'agent_budget_index'))->setExtras(array('translation_domain' => 'UniControlPanelBundle'));            
+        }
+
+        if ($checker->isGranted('ROLE_LEADER')) {
+            $topmenu->addChild('topmenu.account');
+            $topmenu['topmenu.account']->setUri('#');
+            $topmenu['topmenu.account']->setLabel($user->getAccount());
+            $topmenu['topmenu.account']->setLinkAttributes(array('class' => 'dropdown-toggle', 'data-toggle' => 'dropdown', 'role' => 'button', 'aria-haspopup' => 'true', 'aria-expanded' => 'false'));
+            $topmenu['topmenu.account']->setExtras(array('dropdown' => true, 'translation_domain' => 'UniControlPanelBundle'));
+            $topmenu['topmenu.account']->setChildrenAttributes(array('class' => 'dropdown-menu'));
+
+            $topmenu['topmenu.account']->addChild('topmenu.settings', array('route' => 'agent_account_edit'));
+            $topmenu['topmenu.account']['topmenu.settings']->setExtras(array('translation_domain' => 'UniControlPanelBundle', 'icon' => 'gears fa-fw'));
+
+            $topmenu['topmenu.account']->addChild('topmenu.issuer', array('route' => 'agent_issuer_index'));
+            $topmenu['topmenu.account']['topmenu.issuer']->setExtras(array('translation_domain' => 'UniControlPanelBundle', 'icon' => 'flag fa-fw'));
+
+            $topmenu['topmenu.account']->addChild('topmenu.user', array('route' => 'agent_user_index'));
+            $topmenu['topmenu.account']['topmenu.user']->setExtras(array('translation_domain' => 'UniControlPanelBundle', 'icon' => 'users fa-fw'));
+        }
+
+        if ($checker->isGranted('ROLE_USER')) {
+            $topmenu->addChild('topmenu.user');
+            $topmenu['topmenu.user']->setUri('#');
+            $topmenu['topmenu.user']->setLabel($user->getName());
+            $topmenu['topmenu.user']->setLinkAttributes(array('class' => 'dropdown-toggle', 'data-toggle' => 'dropdown', 'role' => 'button', 'aria-haspopup' => 'true', 'aria-expanded' => 'false'));
+            $topmenu['topmenu.user']->setExtras(array('dropdown' => true, 'translation_domain' => 'UniControlPanelBundle'));
+            $topmenu['topmenu.user']->setChildrenAttributes(array('class' => 'dropdown-menu'));
+
+            $topmenu['topmenu.user']->addChild('topmenu.profile', array('route' => 'fos_user_profile_show'));
+            $topmenu['topmenu.user']['topmenu.profile']->setExtras(array('translation_domain' => 'UniControlPanelBundle', 'icon' => 'user fa-fw'));
+
+            $topmenu['topmenu.user']->addChild('topmenu.changepassword', array('route' => 'agent_user_change_password'));
+            $topmenu['topmenu.user']['topmenu.changepassword']->setExtras(array('translation_domain' => 'UniControlPanelBundle', 'icon' => 'unlock-alt fa-fw'));
+
+            $topmenu['topmenu.user']->addChild('topmenu.logout', array('route' => 'fos_user_security_logout'));
+            $topmenu['topmenu.user']['topmenu.logout']->setExtras(array('translation_domain' => 'UniControlPanelBundle', 'icon' => 'sign-out fa-fw'));
+
+        }
+
+
 //        $topmenu->addChild('topmenu.header', array('route' => 'admin_header_index'))->setAttributes(array('icon' => 'database fa-fw', 'translation_domain' => 'UniAdminBundle'));
 //        $topmenu->addChild('topmenu.logout', array('route' => 'front_logout'))->setAttributes(array('icon' => 'sign-out fa-fw', 'translation_domain' => 'UniFrontBundle'));
-        $topmenu->addChild('topmenu.account.root', array('route' => 'controlpanel_account_index'))->setExtras(array('translation_domain' => 'UniControlPanelBundle', 'routes' => array(
-            'controlpanel_account_index',
-            'controlpanel_account_new',
-            'controlpanel_account_show',
-            'controlpanel_account_edit',
-        )));
-        $topmenu->addChild('topmenu.user.root', array('route' => 'controlpanel_user_index'))->setExtras(array('translation_domain' => 'UniControlPanelBundle', 'routes' => array(
-            'controlpanel_user_index',
-            'controlpanel_user_new',
-            'controlpanel_user_show',
-            'controlpanel_user_edit',
-        )));
+//        $topmenu->addChild('topmenu.account.root', array('route' => 'controlpanel_account_index'))->setExtras(array('translation_domain' => 'UniControlPanelBundle', 'routes' => array(
+//            'controlpanel_account_index',
+//            'controlpanel_account_new',
+//            'controlpanel_account_show',
+//            'controlpanel_account_edit',
+//        )));
+//        $topmenu->addChild('topmenu.user.root', array('route' => 'controlpanel_user_index'))->setExtras(array('translation_domain' => 'UniControlPanelBundle', 'routes' => array(
+//            'controlpanel_user_index',
+//            'controlpanel_user_new',
+//            'controlpanel_user_show',
+//            'controlpanel_user_edit',
+//        )));
 
         return $topmenu;
     }
@@ -60,12 +110,12 @@ class Builder implements ContainerAwareInterface
             'admin_region_show',
             'admin_region_edit',
         )));
-*/      
-        $sidemenu->addChild('sidemenu.page.root', array('route' => 'controlpanel_page_index'))->setExtras(array('translation_domain' => 'UniControlPanelBundle', 'routes' => array(
-            'controlpanel_page_index',
-            'controlpanel_page_new',
-            'controlpanel_page_show',
-            'controlpanel_page_edit',
+*/
+        $sidemenu->addChild('sidemenu.product.root', array('route' => 'controlpanel_product_index'))->setExtras(array('translation_domain' => 'UniControlPanelBundle', 'routes' => array(
+            'controlpanel_product_index',
+            'controlpanel_product_new',
+            'controlpanel_product_show',
+            'controlpanel_product_edit',
         )));
         $sidemenu->addChild('sidemenu.feature.root', array('route' => 'controlpanel_feature_index'))->setExtras(array('translation_domain' => 'UniControlPanelBundle', 'routes' => array(
             'controlpanel_feature_index',
@@ -73,29 +123,11 @@ class Builder implements ContainerAwareInterface
             'controlpanel_feature_show',
             'controlpanel_feature_edit',
         )));
-//        $sidemenu->addChild('sidemenu.socialnetwork.root', array('route' => 'controlpanel_socialnetwork_index'))->setExtras(array('translation_domain' => 'UniControlPanelBundle', 'routes' => array(
-//            'controlpanel_socialnetwork_index',
-//            'controlpanel_socialnetwork_new',
-//            'controlpanel_socialnetwork_show',
-//            'controlpanel_socialnetwork_edit',
-//        )));
-        $sidemenu->addChild('sidemenu.socialmedia.root', array('route' => 'controlpanel_socialmedia_index'))->setExtras(array('translation_domain' => 'UniControlPanelBundle', 'routes' => array(
-            'controlpanel_socialmedia_index',
-            'controlpanel_socialmedia_new',
-            'controlpanel_socialmedia_show',
-            'controlpanel_socialmedia_edit',
-        )));
         $sidemenu->addChild('sidemenu.photography.root', array('route' => 'controlpanel_photography_index'))->setExtras(array('translation_domain' => 'UniControlPanelBundle', 'routes' => array(
             'controlpanel_photography_index',
             'controlpanel_photography_new',
             'controlpanel_photography_show',
             'controlpanel_photography_edit',
-        )));
-        $sidemenu->addChild('sidemenu.catalog.root', array('route' => 'controlpanel_catalog_index'))->setExtras(array('translation_domain' => 'UniControlPanelBundle', 'routes' => array(
-            'controlpanel_catalog_index',
-            'controlpanel_catalog_new',
-            'controlpanel_catalog_show',
-            'controlpanel_catalog_edit',
         )));
         $sidemenu->addChild('sidemenu.category.root', array('route' => 'controlpanel_category_index'))->setExtras(array('translation_domain' => 'UniControlPanelBundle', 'routes' => array(
             'controlpanel_category_index',
@@ -109,12 +141,31 @@ class Builder implements ContainerAwareInterface
             'controlpanel_subcategory_show',
             'controlpanel_subcategory_edit',
         )));
-        $sidemenu->addChild('sidemenu.product.root', array('route' => 'controlpanel_product_index'))->setExtras(array('translation_domain' => 'UniControlPanelBundle', 'routes' => array(
-            'controlpanel_product_index',
-            'controlpanel_product_new',
-            'controlpanel_product_show',
-            'controlpanel_product_edit',
+        $sidemenu->addChild('sidemenu.catalog.root', array('route' => 'controlpanel_catalog_index'))->setExtras(array('translation_domain' => 'UniControlPanelBundle', 'routes' => array(
+            'controlpanel_catalog_index',
+            'controlpanel_catalog_new',
+            'controlpanel_catalog_show',
+            'controlpanel_catalog_edit',
         )));
+        $sidemenu->addChild('sidemenu.page.root', array('route' => 'controlpanel_page_index'))->setExtras(array('translation_domain' => 'UniControlPanelBundle', 'routes' => array(
+            'controlpanel_page_index',
+            'controlpanel_page_new',
+            'controlpanel_page_show',
+            'controlpanel_page_edit',
+        )));
+//        $sidemenu->addChild('sidemenu.socialnetwork.root', array('route' => 'controlpanel_socialnetwork_index'))->setExtras(array('translation_domain' => 'UniControlPanelBundle', 'routes' => array(
+//            'controlpanel_socialnetwork_index',
+//            'controlpanel_socialnetwork_new',
+//            'controlpanel_socialnetwork_show',
+//            'controlpanel_socialnetwork_edit',
+//        )));
+        $sidemenu->addChild('sidemenu.socialmedia.root', array('route' => 'controlpanel_socialmedia_index'))->setExtras(array('translation_domain' => 'UniControlPanelBundle', 'routes' => array(
+            'controlpanel_socialmedia_index',
+            'controlpanel_socialmedia_new',
+            'controlpanel_socialmedia_show',
+            'controlpanel_socialmedia_edit',
+        )));
+
         return $sidemenu;
     }
 

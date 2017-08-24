@@ -97,3 +97,27 @@
     $('.fileinput').fileinput(optionsFileipnut);
     </script>
 {% endblock %}
+
+{% block fileinputjs_edit %}
+    <script src="{{ asset('vendor/fileinput/js/fileinput.min.js') }}"></script>
+    <script type="text/javascript">
+    var optionsFileipnut = {
+        overwriteInitial: true,
+        showClose: false,
+        showUpload: false,
+        showZoom: false,
+        showCaption: false,
+        browseLabel: '',
+        removeLabel: '',
+        browseIcon: '<i class="glyphicon glyphicon-folder-open"></i>',
+        removeIcon: '<i class="glyphicon glyphicon-remove"></i>',
+        removeTitle: 'Cancelar Cambios',
+        elErrorContainer: '#kv-avatar-errors-1',
+        msgErrorClass: 'alert alert-block alert-danger',
+        layoutTemplates: {footer:''},
+        allowedFileExtensions: ["jpg", "png", "gif"]
+    };
+    $('.fileinput').fileinput(optionsFileipnut);
+    </script>
+{% endblock %}
+

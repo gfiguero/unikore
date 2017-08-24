@@ -1,0 +1,12 @@
+{% block minicolorscss %}
+    <link href="{{ asset('vendor/minicolors/jquery.minicolors.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block minicolorsjs %}
+    <script src="{{ asset('vendor/minicolors/jquery.minicolors.min.js') }}"></script>
+    <script type="text/javascript">
+        minicolorsOptions = {theme: 'bootstrap'};
+        $('#uni_controlpanelbundle_page_brand_primary_color').minicolors(minicolorsOptions);
+        $('#uni_controlpanelbundle_page_brand_secondary_color').minicolors(minicolorsOptions);
+    </script>
+{% endblock %}
