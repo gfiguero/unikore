@@ -16,6 +16,32 @@ sidemenu:
     product:
         root: Productos
 
+dashboard:
+    index:
+        title: Dashboard
+    user:
+        title: Información de Usuario
+    account:
+        title: Información de la Cuenta
+
+user:
+    form:
+        name: Nombre
+        rut: RUT
+        phone_number: Teléfono
+        address_street: Calle
+        address_number: Número
+        address_commune: Comuna
+
+account:
+    form:
+        business_name: Nombre o razón social
+        business_rut: RUT
+        business_turn: Negocio o giro
+        business_address_street: Calle
+        business_address_number: Número
+        business_address_commune: Comuna
+
 product:
     index: 
         title: Productos

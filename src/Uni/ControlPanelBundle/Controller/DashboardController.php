@@ -8,6 +8,12 @@ class DashboardController extends Controller
 {
     public function indexAction()
     {
-        return $this->render('UniControlPanelBundle:Dashboard:index.html.twig');
+        $user = $this->getUser();
+        $account = $user->getAccount();
+
+        return $this->render('UniControlPanelBundle:Dashboard:index.html.twig', array(
+            'user' => $user,
+            'account' => $account,
+        ));
     }
 }

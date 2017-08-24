@@ -2,17 +2,9 @@ uni_controlpanel_dashboard:
     resource: "@UniControlPanelBundle/Resources/config/routing/dashboard.yml"
     prefix:   /dashboard
 
-uni_controlpanel_socialnetwork:
-    resource: "@UniControlPanelBundle/Resources/config/routing/socialnetwork.yml"
-    prefix:   /socialnetwork
-
 uni_controlpanel_account:
     resource: "@UniControlPanelBundle/Resources/config/routing/account.yml"
     prefix:   /account
-
-uni_controlpanel_user:
-    resource: "@UniControlPanelBundle/Resources/config/routing/user.yml"
-    prefix:   /user
 
 uni_controlpanel_profile:
     resource: "@FOSUserBundle/Resources/config/routing/profile.xml"
@@ -21,6 +13,10 @@ uni_controlpanel_profile:
 uni_controlpanel_change_password:
     resource: "@FOSUserBundle/Resources/config/routing/change_password.xml"
     prefix:   /profile
+
+uni_controlpanel_user:
+    resource: "@UniControlPanelBundle/Resources/config/routing/user.yml"
+    prefix:   /user
 
 uni_controlpanel_root:
     resource: "@UniControlPanelBundle/Resources/config/routing/root.yml"

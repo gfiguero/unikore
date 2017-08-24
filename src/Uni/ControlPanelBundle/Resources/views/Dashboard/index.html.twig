@@ -16,6 +16,78 @@
         </div>
         <!-- /#page-header -->
 
+        <div class="row" id="page-dashboard">
+            <div class="col-md-6">
+                <fieldset>
+                    <legend>{{ 'dashboard.user.title'|trans }}</legend>
+                    <dl class="dl-horizontal">
+                        {% if user.name %}
+                            <dt>{{ 'user.form.name'|trans }}</dt>
+                            <dd>{{ user.name|raw }}</dd>
+                        {% endif %}
+                        {% if user.rut %}
+                            <dt>{{ 'user.form.rut'|trans }}</dt>
+                            <dd>{{ user.rut|raw }}</dd>
+                        {% endif %}
+                        {% if user.email %}
+                            <dt>{{ 'user.form.email'|trans }}</dt>
+                            <dd>{{ user.email|raw }}</dd>
+                        {% endif %}
+                        {% if user.phonenumber %}
+                            <dt>{{ 'user.form.phone_number'|trans }}</dt>
+                            <dd>{{ user.phonenumber|raw }}</dd>
+                        {% endif %}
+                        {% if user.addressstreet %}
+                            <dt>{{ 'user.form.address_street'|trans }}</dt>
+                            <dd>{{ user.addressstreet|raw }}</dd>
+                        {% endif %}
+                        {% if user.addressnumber %}
+                            <dt>{{ 'user.form.address_number'|trans }}</dt>
+                            <dd>{{ user.addressnumber|raw }}</dd>
+                        {% endif %}
+                        {% if user.addresscommune %}
+                            <dt>{{ 'user.form.address_commune'|trans }}</dt>
+                            <dd>{{ user.addresscommune|raw }}</dd>
+                        {% endif %}
+                    </dl>
+                </fieldset>
+            </div>
+
+            <div class="col-md-6">
+                <fieldset>
+                    <legend>{{ 'dashboard.account.title'|trans }}</legend>
+                    <dl class="dl-horizontal">
+                        {% if account.businessname %}
+                            <dt>{{ 'account.form.business_name'|trans }}</dt>
+                            <dd>{{ account.name|raw }}</dd>
+                        {% endif %}
+                        {% if account.businessrut %}
+                            <dt>{{ 'account.form.business_rut'|trans }}</dt>
+                            <dd>{{ account.businessrut|raw }}</dd>
+                        {% endif %}
+                        {% if account.businessturn %}
+                            <dt>{{ 'account.form.business_turn'|trans }}</dt>
+                            <dd>{{ account.businessturn|raw }}</dd>
+                        {% endif %}
+                        {% if account.businessaddressstreet %}
+                            <dt>{{ 'account.form.business_address_street'|trans }}</dt>
+                            <dd>{{ account.businessaddressstreet|raw }}</dd>
+                        {% endif %}
+                        {% if account.businessaddressnumber %}
+                            <dt>{{ 'account.form.business_address_number'|trans }}</dt>
+                            <dd>{{ account.businessaddressnumber|raw }}</dd>
+                        {% endif %}
+                        {% if account.businessaddresscommune %}
+                            <dt>{{ 'account.form.business_address_commune'|trans }}</dt>
+                            <dd>{{ account.businessaddresscommune|raw }}</dd>
+                        {% endif %}
+                    </dl>
+                </fieldset>
+            </div>
+
+        </div>
+        <!-- /#page-dashboard -->
+
     </div>
     <!-- /#page-wrapper -->
 
