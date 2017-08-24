@@ -128,7 +128,9 @@ class CatalogController extends Controller
                 $em->persist($catalog);
                 $em->flush();
                 $request->getSession()->getFlashBag()->add( 'success', 'catalog.edit.flash' );
-                return $this->redirect($this->generateUrl('controlpanel_catalog_index'));
+//                return $this->redirect($this->generateUrl('controlpanel_catalog_index'));
+                return $this->redirect($this->generateUrl('controlpanel_catalog_edit', array('id' => $catalog->getId())));
+                dump($catalog);die();
             }
         }
 

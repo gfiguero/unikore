@@ -6,6 +6,8 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
+use Uni\AdminBundle\Entity\Subcategory;
+
 class SubcategoryType extends AbstractType
 {
     /**
@@ -16,14 +18,9 @@ class SubcategoryType extends AbstractType
         $builder 
             ->add('name', null, array(
                 'label' => 'subcategory.form.name',
-                'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
+                'attr'  => array( 'label_col' => 2, 'widget_col' => 10 ),
                 'translation_domain' => 'UniControlPanelBundle',
             )) 
-            ->add('category', null, array(
-                'label' => 'subcategory.form.category',
-                'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
-                'translation_domain' => 'UniControlPanelBundle',
-            ))
         ;
     }
     
@@ -33,7 +30,8 @@ class SubcategoryType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'Uni\AdminBundle\Entity\Subcategory'
+//            'data_class' => Subcategory::class,
+            'data_class' => 'Uni\AdminBundle\Entity\Subcategory',
         ));
     }
 

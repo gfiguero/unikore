@@ -175,6 +175,8 @@ class Catalog
      */
     public function addCategory(\Uni\AdminBundle\Entity\Category $category)
     {
+        $category->setCatalog($this);
+
         $this->categories[] = $category;
 
         return $this;

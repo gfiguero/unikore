@@ -19,6 +19,7 @@ Uni\AdminBundle\Entity\Category:
         subcategories:
             targetEntity:  Uni\AdminBundle\Entity\Subcategory
             mappedBy: category
+            cascade: ['persist', 'remove']
     fields:
         name:
             type: string

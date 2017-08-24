@@ -16,6 +16,7 @@ Uni\AdminBundle\Entity\Catalog:
         categories:
             targetEntity:  Uni\AdminBundle\Entity\Category
             mappedBy: catalog
+            cascade: ['persist', 'merge']
     fields:
         name:
             type: string

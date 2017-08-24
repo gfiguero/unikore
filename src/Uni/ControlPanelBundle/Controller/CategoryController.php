@@ -128,7 +128,8 @@ class CategoryController extends Controller
                 $em->persist($category);
                 $em->flush();
                 $request->getSession()->getFlashBag()->add( 'success', 'category.edit.flash' );
-                return $this->redirect($this->generateUrl('controlpanel_category_index'));
+//                return $this->redirect($this->generateUrl('controlpanel_category_index'));
+                return $this->redirect($this->generateUrl('controlpanel_category_edit', array('id' => $category->getId())));
             }
         }
 
