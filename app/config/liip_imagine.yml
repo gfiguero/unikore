@@ -8,12 +8,12 @@ liip_imagine:
             quality: 75
             filters:
                 upscale: { min: [1920, 1080] }
-                thumbnail: { size: [1366, 900], mode: outbound }
+                thumbnail: { size: [1366, 900], mode: inset }
         main_photography_small:
             quality: 75
             filters:
                 upscale: { min: [160, 120] }
-                thumbnail: { size: [160, 120], mode: outbound }
+                thumbnail: { size: [160, 120], mode: inset }
         product_export_small:
             quality: 75
             default_image: default.png

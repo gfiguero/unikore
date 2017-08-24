@@ -60,48 +60,18 @@ class Builder implements ContainerAwareInterface
             'admin_region_show',
             'admin_region_edit',
         )));
-*/
-        $sidemenu->addChild('sidemenu.product.root', array('route' => 'controlpanel_product_index'))->setExtras(array('translation_domain' => 'UniControlPanelBundle', 'routes' => array(
-            'controlpanel_product_index',
-            'controlpanel_product_new',
-            'controlpanel_product_show',
-            'controlpanel_product_edit',
+*/      
+        $sidemenu->addChild('sidemenu.page.root', array('route' => 'controlpanel_page_index'))->setExtras(array('translation_domain' => 'UniControlPanelBundle', 'routes' => array(
+            'controlpanel_page_index',
+            'controlpanel_page_new',
+            'controlpanel_page_show',
+            'controlpanel_page_edit',
         )));
         $sidemenu->addChild('sidemenu.feature.root', array('route' => 'controlpanel_feature_index'))->setExtras(array('translation_domain' => 'UniControlPanelBundle', 'routes' => array(
             'controlpanel_feature_index',
             'controlpanel_feature_new',
             'controlpanel_feature_show',
             'controlpanel_feature_edit',
-        )));
-        $sidemenu->addChild('sidemenu.photography.root', array('route' => 'controlpanel_photography_index'))->setExtras(array('translation_domain' => 'UniControlPanelBundle', 'routes' => array(
-            'controlpanel_photography_index',
-            'controlpanel_photography_new',
-            'controlpanel_photography_show',
-            'controlpanel_photography_edit',
-        )));
-        $sidemenu->addChild('sidemenu.category.root', array('route' => 'controlpanel_category_index'))->setExtras(array('translation_domain' => 'UniControlPanelBundle', 'routes' => array(
-            'controlpanel_category_index',
-            'controlpanel_category_new',
-            'controlpanel_category_show',
-            'controlpanel_category_edit',
-        )));
-        $sidemenu->addChild('sidemenu.subcategory.root', array('route' => 'controlpanel_subcategory_index'))->setExtras(array('translation_domain' => 'UniControlPanelBundle', 'routes' => array(
-            'controlpanel_subcategory_index',
-            'controlpanel_subcategory_new',
-            'controlpanel_subcategory_show',
-            'controlpanel_subcategory_edit',
-        )));
-        $sidemenu->addChild('sidemenu.catalog.root', array('route' => 'controlpanel_catalog_index'))->setExtras(array('translation_domain' => 'UniControlPanelBundle', 'routes' => array(
-            'controlpanel_catalog_index',
-            'controlpanel_catalog_new',
-            'controlpanel_catalog_show',
-            'controlpanel_catalog_edit',
-        )));
-        $sidemenu->addChild('sidemenu.page.root', array('route' => 'controlpanel_page_index'))->setExtras(array('translation_domain' => 'UniControlPanelBundle', 'routes' => array(
-            'controlpanel_page_index',
-            'controlpanel_page_new',
-            'controlpanel_page_show',
-            'controlpanel_page_edit',
         )));
 //        $sidemenu->addChild('sidemenu.socialnetwork.root', array('route' => 'controlpanel_socialnetwork_index'))->setExtras(array('translation_domain' => 'UniControlPanelBundle', 'routes' => array(
 //            'controlpanel_socialnetwork_index',
@@ -115,7 +85,36 @@ class Builder implements ContainerAwareInterface
             'controlpanel_socialmedia_show',
             'controlpanel_socialmedia_edit',
         )));
-
+        $sidemenu->addChild('sidemenu.photography.root', array('route' => 'controlpanel_photography_index'))->setExtras(array('translation_domain' => 'UniControlPanelBundle', 'routes' => array(
+            'controlpanel_photography_index',
+            'controlpanel_photography_new',
+            'controlpanel_photography_show',
+            'controlpanel_photography_edit',
+        )));
+        $sidemenu->addChild('sidemenu.catalog.root', array('route' => 'controlpanel_catalog_index'))->setExtras(array('translation_domain' => 'UniControlPanelBundle', 'routes' => array(
+            'controlpanel_catalog_index',
+            'controlpanel_catalog_new',
+            'controlpanel_catalog_show',
+            'controlpanel_catalog_edit',
+        )));
+        $sidemenu->addChild('sidemenu.category.root', array('route' => 'controlpanel_category_index'))->setExtras(array('translation_domain' => 'UniControlPanelBundle', 'routes' => array(
+            'controlpanel_category_index',
+            'controlpanel_category_new',
+            'controlpanel_category_show',
+            'controlpanel_category_edit',
+        )));
+        $sidemenu->addChild('sidemenu.subcategory.root', array('route' => 'controlpanel_subcategory_index'))->setExtras(array('translation_domain' => 'UniControlPanelBundle', 'routes' => array(
+            'controlpanel_subcategory_index',
+            'controlpanel_subcategory_new',
+            'controlpanel_subcategory_show',
+            'controlpanel_subcategory_edit',
+        )));
+        $sidemenu->addChild('sidemenu.product.root', array('route' => 'controlpanel_product_index'))->setExtras(array('translation_domain' => 'UniControlPanelBundle', 'routes' => array(
+            'controlpanel_product_index',
+            'controlpanel_product_new',
+            'controlpanel_product_show',
+            'controlpanel_product_edit',
+        )));
         return $sidemenu;
     }
 

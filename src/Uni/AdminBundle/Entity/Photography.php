@@ -25,7 +25,7 @@ class Photography
     private $image;
 
     /**
-     * @Vich\UploadableField(mapping="product_image", fileNameProperty="image")
+     * @Vich\UploadableField(mapping="main_photography", fileNameProperty="image")
      * @var File
      */
     private $imagefile;

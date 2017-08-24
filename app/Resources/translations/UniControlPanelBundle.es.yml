@@ -1,0 +1,299 @@
+sidemenu:
+    page:
+        root: Páginas
+    feature:
+        root: Características
+    socialmedia:
+        root: Redes sociales
+    photography:
+        root: Fotografías
+    catalog:
+        root: Catálogos
+    category:
+        root: Categorías
+    subcategory:
+        root: Subcategorías
+    product:
+        root: Productos
+
+product:
+    index: 
+        title: Productos
+        list: Lista de productos
+        link: Volver a la lista
+    new:
+        link: Nuevo producto
+        title: Nuevo producto
+        form: Producto
+        submit: Guardar
+    form:
+        id: ID
+        name: Nombre
+        price: Precio
+        image: Imagen
+        subcategory: Subcategoría
+        created_at: Creado 
+        updated_at: Actualizado 
+        short: Descripción corta
+        description: Descripción
+        imagefile: Imagen
+        provider: Proveedor
+        height: Alto
+        width: Ancho
+        length: Largo
+        diameter: Diámetro
+        thickness: Espesor
+        weight: Peso
+        cost: Costo
+        code: Código
+        cm_code: Código CM
+        brand: Marca
+        origin: Origen
+        resistence: Resistencia
+        warranty: Garantía
+        certification: Certificación
+        consumer_name: Nombre del consumidor
+        consumer_age: Edad del consumidor
+        consumer_capacity: Capacidad del consumidor
+        structure_main: Estructura principal
+        structure_side: Lado de la estrucutura
+        structure_instalation: Instalación de la estructura
+        structure_anchorage: Anclaje
+        structure_assembly: Ensamblaje
+        structure_protection: Protección de la estructura
+        structure_termination: Terminación de la estructura
+        structure_color: Color de la estructura
+        structure_size: Tamaño de la estructura
+    section:
+        identification: Identificación del producto
+        features: Características del producto
+        trading: Comercialización del producto
+        branding: Branding del producto
+        consumer: Consumidor del producto
+        structure: Estructura del producto
+    edit:
+        submit: Guardar cambios
+        title: Editar producto
+        form: Producto
+    delete:
+        link: Borrar producto
+        title: Borrado de producto
+        message: Los datos borrados no podrán ser recuperados.
+        submit: Confirmar borrado
+        flash: El producto fue borrado totalmente.
+
+feature:
+    index:
+        title: Características
+        list: Lista de características
+        link: Volver a la lista
+    new: 
+        link: Nueva característica
+        title: Nueva característica
+        form: Característica
+        submit: Guardar
+    form:
+        id: ID
+        name: Nombre
+        image: Imagen
+        created_at: Creado
+        updated_at: Actualizado
+        title: Título
+        description: Descripción
+        imagefile: Imagen
+    edit:
+        title: Editar característica
+        form: Característica
+        submit: Guardar cambios
+    delete:
+        link: Borrar característica
+        title: Borrado de característica
+        message: Los datos borrados no podrán ser recuperados.
+        submit: Confirmar borrado
+        flash: La característica fue borrada totalmente.
+
+photography:
+    index:
+        title: Fotografías
+        list: Lista de fotografías
+        link: Volver a la lista
+    new:
+        link: Nueva fotografía
+        title: Nueva fotografía
+        form: Fotografía
+        submit: Guardar
+    form: 
+        id: ID
+        image: Imagen
+        created_at: Creado
+        imagefile: Imagen
+    edit:
+        title: Editar Fotografía
+        form: Fotografía
+        submit: Guardar cambios
+    delete: 
+        link: Borrar fotografía
+        title: Borrado de fotografía
+        message: Los datos borrados no podrán ser recuperados.
+        submit: Confirmar borrado
+        flash: La fotografía fue borrada totalmente.
+
+category: 
+    index: 
+        title: Categorías
+        list: Lista de categorías
+        link: Volver a la lista
+    new:
+        link: Nueva categoría
+        title: Nueva categoría
+        form: Categoría
+        submit: Guardar
+    form:
+        id: ID
+        name: Nombre
+        created_at: Creado
+        updated_at: Actualizado
+    edit:
+        title: Editar categoría
+        form: Categoría
+        submit: Guardar cambios
+    delete:
+        link: Borrar categoría
+        title: Borrado de categoría
+        message: Los datos borrados no podrán ser recuperados.
+        submit: Confirmar borrado
+        flash: La categoría fue borrada totalmente.
+
+subcategory: 
+    index: 
+        title: Subcategorías
+        list: Lista de subcategorías
+        link: Volver a la lista
+    new:
+        link: Nueva subcategoría
+        title: Nueva subcategoría
+        form: Subcategoría
+        submit: Guardar
+    form:
+        id: ID
+        name: Nombre
+        created_at: Creado
+        updated_at: Actualizado
+        category: Categoría
+    edit:
+        title: Editar subcategoría
+        form: Subcategoría
+        submit: Guardar cambios
+    delete:
+        link: Borrar subcategoría
+        title: Borrado de subcategoría
+        message: Los datos borrados no podrán ser recuperados.
+        submit: Confirmar borrado
+        flash: La subcategoría fue borrada totalmente.
+
+catalog: 
+    index: 
+        title: Catálogos
+        list: Lista de catálogos
+        link: Volver a la lista
+    new:
+        link: Nuevo catálogo
+        title: Nuevo catálogo
+        form: Catálogo
+        submit: Guardar
+    form:
+        id: ID
+        name: Nombre
+        created_at: Creado
+        updated_at: Actualizado
+    edit:
+        title: Editar catálogo
+        form: Catálogo
+        submit: Guardar cambios
+    delete:
+        link: Borrar catálogo
+        title: Borrado de catálogo
+        message: Los datos borrados no podrán ser recuperados.
+        submit: Confirmar borrado
+        flash: El catálogo fue borrado totalmente.
+
+page:
+    brandinfo: Información de la marca
+    maininfo: Portada
+    aboutinfo: Sección Acerca de
+    featureinfo: Sección Características
+    contactinfo: Sección Contacto 
+    index:
+        title: Páginas
+        list: Lista de páginas
+        link: Volver a la lista
+    new:
+        link: Agregar página
+        title: Nueva página
+        form: Página
+        submit: Guardar
+    form:
+        id: ID
+        name: Nombre
+        created_at: Creado
+        updated_at: Actualizado
+        domain: Dominio
+        brand: Marca
+        brand_primary_color: Color primario
+        brand_secondary_color: Color secundario
+        maintitle: Título portada
+        mainsubtitle: Subtítulo portada
+        maincalltoaction: Botón
+        abouttitle: Título sección acerca de
+        aboutcontent: Contenido sección acerca de
+        featuretitle: Título sección características
+        featurecontent: Contenido sección características
+        contacttitle: Título sección contacto
+        contactcontent: Contenido sección contacto
+        contactphone: Teléfono de contacto
+        contactemail: Email de contacto
+        contactaddress: Dirección de contacto
+        contactschedule: Horario de atención
+
+    edit:
+        title: Editar página
+        form: Página
+        submit: Guardar cambios
+    delete:
+        link: Borrar página
+        title: Borrado de página
+        message: Los datos borrados no podrán ser recuperados.
+        submit: Confirmar borrado
+        flash: La página fue borrada totalmente.
+
+socialmedia: 
+    index: 
+        title: Redes sociales
+        list: Lista de redes sociales
+        link: Volver a la lista
+    new:
+        link: Nueva red social
+        title: Nueva Red social
+        form: Red social
+        submit: Guardar
+    form:
+        id: ID
+        created_at: Creado
+        updated_at: Actualizado
+        url: URL
+        page: ¿A qué página la desea agregar?
+        socialnetwork: Red social
+    edit:
+        title: Editar red social
+        form: Red social
+        submit: Guardar cambios
+    delete:
+        link: Borrar red social
+        title: Borrado de red social
+        message: Los datos borrados no podrán ser recuperados.
+        submit: Confirmar borrado
+        flash: La red social fue borrada totalmente.
+
+
+
+

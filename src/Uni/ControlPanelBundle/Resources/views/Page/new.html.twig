@@ -33,11 +33,75 @@
                         <h2 class="panel-title">{{ 'page.new.form'|trans }}</h2>
                     </div>
                     <div class="panel-body">
-                        {{ form_start(newForm, { 'style': 'horizontal' }) }}
-                            {{ form_widget(newForm) }}
-                                <div class="form-group"><div class="col-lg-offset-4 col-lg-8">
-                                    <button type="submit" class="btn btn-primary">{{ icon('save fa-fw') }}&nbsp;{{ 'page.new.submit'|trans }}</button>
-                                </div></div>
+                        {{ form_start(newForm, {'style' : 'horizontal' }) }}
+                            <div class="form-group">
+                                <div class="col-md-8 col-md-offset-4">
+                                    <h2>{{ 'page.brandinfo'|trans }}</h2>
+                                </div>
+                            </div>
+                            {{ form_row(newForm.brand) }}
+                            {{ form_row(newForm.name) }}
+                            {{ form_row(newForm.domain) }}
+                            {{ form_row(newForm.brand_primary_color) }}
+                            {{ form_row(newForm.brand_secondary_color) }}
+                            <div class="form-group">
+                                <div class="col-md-8 col-md-offset-4">
+                                    <button class="btn btn-default btn-primary" type="submit">{{ icon('save fa-fw') }}&nbsp;{{ 'page.new.submit'|trans }}</button>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-8 col-md-offset-4">
+                                    <h2>{{ 'page.maininfo'|trans }}</h2>
+                                </div>
+                            </div>
+                            {{ form_row(newForm.maintitle) }}
+                            {{ form_row(newForm.mainsubtitle) }}
+                            {{ form_row(newForm.maincalltoaction) }}
+                            <div class="form-group">
+                                <div class="col-md-8 col-md-offset-4">
+                                    <button class="btn btn-default btn-primary" type="submit">{{ icon('save fa-fw') }}&nbsp;{{ 'page.new.submit'|trans }}</button>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-8 col-md-offset-4">
+                                    <h2>{{ 'page.aboutinfo'|trans }}</h2>
+                                </div>
+                            </div>
+                            {{ form_row(newForm.abouttitle) }}
+                            {{ form_row(newForm.aboutcontent) }}
+                            <div class="form-group">
+                                <div class="col-md-8 col-md-offset-4">
+                                    <button class="btn btn-default btn-primary" type="submit">{{ icon('save fa-fw') }}&nbsp;{{ 'page.new.submit'|trans }}</button>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-8 col-md-offset-4">
+                                    <h2>{{ 'page.featureinfo'|trans }}</h2>
+                                </div>
+                            </div>
+                            {{ form_row(newForm.featuretitle) }}
+                            {{ form_row(newForm.featurecontent) }}
+                            <div class="form-group">
+                                <div class="col-md-8 col-md-offset-4">
+                                    <button class="btn btn-default btn-primary" type="submit">{{ icon('save fa-fw') }}&nbsp;{{ 'page.new.submit'|trans }}</button>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-8 col-md-offset-4">
+                                    <h2>{{ 'page.contactinfo'|trans }}</h2>
+                                </div>
+                            </div>
+                            {{ form_row(newForm.contacttitle) }}
+                            {{ form_row(newForm.contactcontent) }}
+                            {{ form_row(newForm.contactphone) }}
+                            {{ form_row(newForm.contactemail) }}
+                            {{ form_row(newForm.contactaddress) }}
+                            {{ form_row(newForm.contactschedule) }}
+                            <div class="form-group">
+                                <div class="col-md-8 col-md-offset-4">
+                                    <button class="btn btn-default btn-primary" type="submit">{{ icon('save fa-fw') }}&nbsp;{{ 'page.new.submit'|trans }}</button>
+                                </div>
+                            </div>
                         {{ form_end(newForm) }}
                     </div>
                 </div>
