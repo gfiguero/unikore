@@ -41,6 +41,8 @@
                                         <div class="btn-group" role="group"><a type="button" class="btn btn-xs btn-default disabled">{{ icon('trash fa-fw') }}</a></div>
                                     </th>
                                     <th>{{ knp_pagination_sortable(socialmedias, 'socialmedia.form.id'|trans, 'id') }}{% if sort == 'id' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
+                                    <th>{{ knp_pagination_sortable(socialmedias, 'socialmedia.form.socialnetwork'|trans, 'socialnetwork') }}{% if sort == 'socialnetwork' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
+                                    <th>{{ knp_pagination_sortable(socialmedias, 'socialmedia.form.url'|trans, 'url') }}{% if sort == 'url' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
                                     <th>{{ knp_pagination_sortable(socialmedias, 'socialmedia.form.created_at'|trans, 'created_at') }}{% if sort == 'created_at' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
                                     <th>{{ knp_pagination_sortable(socialmedias, 'socialmedia.form.updated_at'|trans, 'updated_at') }}{% if sort == 'updated_at' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
                                 </tr>
@@ -54,6 +56,8 @@
                                         <div class="btn-group" role="group"><button type="button" class="btn btn-xs btn-danger" data-toggle="modal" data-target="#modalDelete{{ socialmedia.id }}">{{ icon('trash fa-fw') }}</button></div>
                                     </td>
                                     <td>{% if socialmedia.id %}{{ socialmedia.id }}{% endif %}</td>
+                                    <td>{% if socialmedia.socialnetwork %}{{ socialmedia.socialnetwork }}{% endif %}</td>
+                                    <td>{% if socialmedia.url %}{{ socialmedia.url }}{% endif %}</td>
                                     <td><span class="fa fa-calendar-o" data-toggle="tooltip" data-placement="left" title="{{ socialmedia.createdat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "dd LLLL y HH:mm") }}"></span>&nbsp;{{ socialmedia.createdat|ago }}</td>
                                     <td><span class="fa fa-calendar-o" data-toggle="tooltip" data-placement="left" title="{{ socialmedia.updatedat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "dd LLLL y HH:mm") }}"></span>&nbsp;{{ socialmedia.updatedat|ago }}</td>
                                 </tr>

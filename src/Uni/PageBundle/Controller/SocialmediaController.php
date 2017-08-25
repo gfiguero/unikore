@@ -59,7 +59,6 @@ class SocialmediaController extends Controller
 
         if ($newForm->isSubmitted()) {
             if($newForm->isValid()) {
-                $socialmedia->setUser($user);
                 $socialmedia->setAccount($account);
                 $em = $this->getDoctrine()->getManager();
                 $em->persist($socialmedia);

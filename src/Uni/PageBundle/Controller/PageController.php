@@ -59,7 +59,6 @@ class PageController extends Controller
 
         if ($newForm->isSubmitted()) {
             if($newForm->isValid()) {
-                $page->setUser($user);
                 $page->setAccount($account);
                 $em = $this->getDoctrine()->getManager();
                 $em->persist($page);
