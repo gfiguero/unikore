@@ -25,7 +25,7 @@ class PhotographyType extends AbstractType
                 'label' => 'photography.form.page',
                 'attr'  => array( 'label_col' => 3, 'widget_col' => 9 ),
                 'translation_domain' => 'UniPageBundle',
-                'required' => false,
+                'required' => true,
             ))
         ;
     }
