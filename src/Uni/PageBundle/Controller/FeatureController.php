@@ -59,7 +59,6 @@ class FeatureController extends Controller
 
         if ($newForm->isSubmitted()) {
             if($newForm->isValid()) {
-                $feature->setUser($user);
                 $feature->setAccount($account);
                 $em = $this->getDoctrine()->getManager();
                 $em->persist($feature);
