@@ -17,6 +17,12 @@ class Builder implements ContainerAwareInterface
         $sidemenu->setChildrenAttribute('class', 'metismenu');
         $sidemenu->setChildrenAttribute('id', 'side-menu');
 
+        $sidemenu->addChild('sidemenu.dashboard.root', array('route' => 'offer_dashboard_index'))->setExtras(array('translation_domain' => 'UniOfferBundle', 'routes' => array(
+            'offer_dashboard_index',
+        )));
+        $sidemenu->addChild('sidemenu.account.root', array('route' => 'offer_account_edit'))->setExtras(array('translation_domain' => 'UniOfferBundle', 'routes' => array(
+            'offer_account_edit',
+        )));
         $sidemenu->addChild('sidemenu.issuer.root', array('route' => 'offer_issuer_index'))->setExtras(array('translation_domain' => 'UniOfferBundle', 'routes' => array(
             'offer_issuer_index',
             'offer_issuer_new',

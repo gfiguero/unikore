@@ -11,14 +11,9 @@ class AccountType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('name', null, array(
-                'label' => 'account.form.name',
-                'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
-                'translation_domain' => 'UniOfferBundle',
-            ))
             ->add('budget_note', null, array(
                 'label' => 'account.form.budget_note',
-                'attr'  => array( 'label_col' => 4, 'widget_col' => 8, 'class' => 'wysiwyg' ),
+                'attr'  => array( 'label_col' => 2, 'widget_col' => 10, 'class' => 'wysiwyg' ),
                 'translation_domain' => 'UniOfferBundle',
             ))
         ;

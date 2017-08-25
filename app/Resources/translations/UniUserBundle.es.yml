@@ -8,11 +8,12 @@ topmenu:
 
 security:
     login:
-        title: Formulario de ingreso
+        title: Ingreso de Usuarios
         submit: Ingresar
     changepassword:
-        title: Cambiar Password
+        title: Password
         submit: Cambiar Password
+        form: Cambiar Password
     form:
         name: Nombre Completo
         account: Cuenta
@@ -27,7 +28,10 @@ security:
         new_password_confirmation: Repetir Password
         invalid_current_password: Password inválida
         mismatch_password: Password no coincide
-
+        rut: RUT
+        address_street: Calle
+        address_number: Número
+        address_commune: Comuna
 
 registration:
     register:
@@ -89,3 +93,4 @@ profile:
         link: Editar Perfil
         submit: Guardar Cambios
         cancel: Cancelar
+        form: Editar Perfil

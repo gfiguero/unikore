@@ -1,5 +1,6 @@
 {% block icons %}
     {% if app.request.attributes.get( '_route' ) starts with 'home' %}{{ icon('home fa-fw') }}
+    {% elseif '_dashboard_' in app.request.attributes.get( '_route' ) %}{{ icon('dashboard fa-fw') }}
     {% elseif '_client_' in app.request.attributes.get( '_route' ) %}{{ icon('handshake-o fa-fw') }}
     {% elseif '_item_' in app.request.attributes.get( '_route' ) %}{{ icon('dollar fa-fw') }}
     {% elseif '_product_' in app.request.attributes.get( '_route' ) %}{{ icon('cube fa-fw') }}

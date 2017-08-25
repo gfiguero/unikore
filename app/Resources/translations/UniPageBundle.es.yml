@@ -1,3 +1,13 @@
+sidemenu:
+    page:
+        root: Páginas
+    feature:
+        root: Catacterísticas
+    photography:
+        root: Fotografías
+    socialmedia:
+        root: Redes Sociales
+
 page:
     index:
         title: Páginas
@@ -46,3 +56,87 @@ page:
         about: Sobre Nosotros
         feature: Catacterísticas del Negocio
         contact: Información de Contacto
+
+feature:
+    index:
+        title: Características
+        list: Lista de características
+        link: Volver a la lista
+    new: 
+        link: Nueva característica
+        title: Nueva característica
+        form: Característica
+        submit: Guardar
+    form:
+        id: ID
+        name: Nombre
+        image: Imagen
+        created_at: Creado
+        updated_at: Actualizado
+        title: Título
+        description: Descripción
+        imagefile: Imagen
+    edit:
+        title: Editar característica
+        form: Característica
+        submit: Guardar cambios
+    delete:
+        link: Borrar característica
+        title: Borrado de característica
+        message: Los datos borrados no podrán ser recuperados.
+        submit: Confirmar borrado
+        flash: La característica fue borrada totalmente.
+
+photography:
+    index:
+        title: Fotografías
+        list: Lista de fotografías
+        link: Volver a la lista
+    new:
+        link: Nueva fotografía
+        title: Nueva fotografía
+        form: Fotografía
+        submit: Guardar
+    form: 
+        id: ID
+        image: Imagen
+        created_at: Creado
+        imagefile: Imagen
+    edit:
+        title: Editar Fotografía
+        form: Fotografía
+        submit: Guardar cambios
+    delete: 
+        link: Borrar fotografía
+        title: Borrado de fotografía
+        message: Los datos borrados no podrán ser recuperados.
+        submit: Confirmar borrado
+        flash: La fotografía fue borrada totalmente.
+
+socialmedia: 
+    index: 
+        title: Redes sociales
+        list: Lista de redes sociales
+        link: Volver a la lista
+    new:
+        link: Nueva red social
+        title: Nueva Red social
+        form: Red social
+        submit: Guardar
+    form:
+        id: ID
+        created_at: Creado
+        updated_at: Actualizado
+        url: URL
+        page: ¿A qué página la desea agregar?
+        socialnetwork: Red social
+    edit:
+        title: Editar red social
+        form: Red social
+        submit: Guardar cambios
+    delete:
+        link: Borrar red social
+        title: Borrado de red social
+        message: Los datos borrados no podrán ser recuperados.
+        submit: Confirmar borrado
+        flash: La red social fue borrada totalmente.

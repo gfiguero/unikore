@@ -1,14 +1,18 @@
-{% extends 'UniOfferBundle:Base:layout.html.twig' %}
+{% extends 'UniCatalogBundle:Base:layout.html.twig' %}
+{% use 'UniCatalogBundle:Base:icons.html.twig' %}
+{% use 'UniCatalogBundle:Base:flashbag.html.twig' %}
+{% use 'UniCatalogBundle:Base:wysiwyg.html.twig' %}
+{% use 'UniCatalogBundle:Base:fileinput.html.twig' %}
 
-{% trans_default_domain 'UniOfferBundle' %}
+{% trans_default_domain 'UniCatalogBundle' %}
 
-{% block title %}&nbsp;-&nbsp;{{ 'budget.edit.title'|trans({'%id%':budget.id}) }}{% endblock %}
+{% block title %}&nbsp;-&nbsp;{{ 'product.edit.title'|trans({'%id%':product.id}) }}{% endblock %}
 
-{% block offer %}
+{% block catalog %}
     <div id="page-wrapper">
         <div class="row" id="page-header">
             <div class="col-lg-12">
-                <h1 class="page-header">{% block icons %}{{ parent() }}{% endblock %}{{ 'budget.edit.title'|trans({'%id%':budget.id}) }}</h1>
+                <h1 class="page-header">{% block icons %}{{ parent() }}{% endblock %}{{ 'product.edit.title'|trans({'%id%':product.id}) }}</h1>
                 {% block flashbag %}{{ parent() }}{% endblock %}
             </div>
         </div>
@@ -17,8 +21,8 @@
         <div class="row" id="page-toolbar">
             <div class="col-lg-12">
                 <div class="btn-toolbar">
-                    <a type="button" class="btn btn-default" href="{{ path('offer_budget_index') }}">{{ icon('list fa-fw') }}&nbsp;{{ 'budget.index.link'|trans }}</a>
-                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalDelete">{{ icon('trash-o fa-fw') }}&nbsp;{{ 'budget.delete.link'|trans }}</button>
+                    <a type="button" class="btn btn-default" href="{{ path('catalog_product_index') }}">{{ icon('list fa-fw') }}&nbsp;{{ 'product.index.link'|trans }}</a>
+                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalDelete">{{ icon('trash-o fa-fw') }}&nbsp;{{ 'product.delete.link'|trans }}</button>
                 </div>
             </div>
         </div>
@@ -28,14 +32,14 @@
             <div class="col-lg-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h2 class="panel-title">{{ 'budget.edit.form'|trans }}</h2>
+                        <h2 class="panel-title">{{ 'product.edit.form'|trans }}</h2>
                     </div>
                     <div class="panel-body">
                         {{ form_start(editForm, { 'style': 'horizontal' }) }}
                             {{ form_widget(editForm) }}
                             <div class="form-group">
-                                <div class="col-md-10 col-md-offset-2">
-                                    <button type="submit" class="btn btn-primary">{{ icon('save fa-fw') }}&nbsp;{{ 'budget.edit.submit'|trans }}</button>
+                                <div class="col-lg-offset-3 col-lg-9">
+                                    <button type="submit" class="btn btn-primary">{{ icon('save fa-fw') }}&nbsp;{{ 'product.edit.submit'|trans }}</button>
                                 </div>
                             </div>
                         {{ form_end(editForm) }}
@@ -51,17 +55,17 @@
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">{{ icon('times') }}</button>
-                            <h4 class="modal-title" id="myModalLabel">{{ 'budget.delete.title'|trans }}</h4>
+                            <h4 class="modal-title" id="myModalLabel">{{ 'product.delete.title'|trans }}</h4>
                         </div>
                         <div class="modal-body">
                             <div class="row">
                                 <div class="col-xs-2 text-center">{{ icon('exclamation-triangle fa-5x') }}</div>
-                                <div class="col-xs-10"><p>{{ 'budget.delete.message'|trans }}</p></div>
+                                <div class="col-xs-10"><p>{{ 'product.delete.message'|trans }}</p></div>
                             </div>
                         </div>
                         <div class="modal-footer">
                             {{ form_start(deleteForm) }}
-                                <button type="submit" class="btn btn-danger pull-right">{{ icon('trash fa-fw') }}&nbsp;{{ 'budget.delete.submit'|trans }}</button>
+                                <button type="submit" class="btn btn-danger pull-right">{{ icon('trash fa-fw') }}&nbsp;{{ 'product.delete.submit'|trans }}</button>
                             {{ form_end(deleteForm) }}
                         </div>
                     </div>
@@ -77,11 +81,10 @@
 
 {% block stylesheet %}
     {% block wysiwygcss %}{{ parent() }}{% endblock %}
-    {% block multiselectcss %}{{ parent() }}{% endblock %}
+    {% block fileinputcss %}{{ parent() }}{% endblock %}
 {% endblock %}
 
 {% block javascript %}
-    <script src="{{ asset('bundles/unioffer/js/budget.item.js') }}"></script>
     {% block wysiwygjs %}{{ parent() }}{% endblock %}
-    {% block multiselectjs %}{{ parent() }}{% endblock %}
+    {% block fileinputjs %}{{ parent() }}{% endblock %}
 {% endblock %}

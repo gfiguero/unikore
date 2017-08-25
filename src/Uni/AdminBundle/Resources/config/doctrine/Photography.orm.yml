@@ -19,9 +19,22 @@ Uni\AdminBundle\Entity\Photography:
         image:
             type: string
             length: 200
+
         created_at:
             type: datetime
             gedmo:
                 timestampable:
                     on: create
+        updated_at:
+            type: datetime
+            gedmo:
+                timestampable:
+                    on: update
+        deleted_at:
+            type: datetime
+            nullable: true
+    gedmo:
+        soft_deleteable:
+            field_name: deleted_at
+            time_aware: false
     lifecycleCallbacks: {  }

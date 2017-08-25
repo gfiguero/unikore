@@ -2,5 +2,5 @@ offer_root:
     path: /
     defaults:
         _controller: FrameworkBundle:Redirect:redirect
-        route: offer_budget_index
+        route: offer_dashboard_index
         permanent: true

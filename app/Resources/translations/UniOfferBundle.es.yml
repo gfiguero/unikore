@@ -1,4 +1,8 @@
 sidemenu:
+    dashboard:
+        root: Vista General
+    account:
+        root: Configuración
     issuer:
         root: Emisores
     seller:
@@ -15,6 +19,22 @@ sidemenu:
         root: Presupuestos
     note:
         root: Notas
+
+dashboard:
+    index:
+        title: Vista General
+    user:
+        title: Información de Usuario
+    account:
+        title: Información de la Cuenta
+
+account:
+    edit:
+        title: Configuración de Presupuestos
+        form: Editar configuración
+        submit: Guardar Cambios
+    form:
+        budget_note: Nota Estándar
 
 seller:
     index:
@@ -284,7 +304,8 @@ item:
     form:
         id: ID
         quantity: Cantidad
-        discount: Descuento %
+        discount: Descuento
+        surcharge: Recargo
         discountprice: Descuento
         totaldiscountprice: Descuento
         price: Precio

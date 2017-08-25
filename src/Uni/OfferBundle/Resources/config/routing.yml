@@ -1,3 +1,7 @@
+uni_offer_dashboard:
+    resource: "@UniOfferBundle/Resources/config/routing/dashboard.yml"
+    prefix:   /dashboard
+
 uni_offer_issuer:
     resource: "@UniOfferBundle/Resources/config/routing/issuer.yml"
     prefix:   /issuer

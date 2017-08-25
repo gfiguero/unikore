@@ -3,27 +3,27 @@ _liip_imagine:
 
 uni_admin:
     resource: "@UniAdminBundle/Resources/config/routing.yml"
-    prefix:   /admin
+    prefix:   /backend/admin
 
 uni_offer:
     resource: "@UniOfferBundle/Resources/config/routing.yml"
-    prefix:   /offer
+    prefix:   /backend/offer
 
 uni_user:
     resource: "@UniUserBundle/Resources/config/routing.yml"
-    prefix:   /user
+    prefix:   /backend/user
 
 uni_catalog:
     resource: "@UniCatalogBundle/Resources/config/routing.yml"
-    prefix:   /catalog
+    prefix:   /backend/catalog
 
 uni_page:
     resource: "@UniPageBundle/Resources/config/routing.yml"
-    prefix:   /page
+    prefix:   /backend/page
 
 uni_controlpanel:
     resource: "@UniControlPanelBundle/Resources/config/routing.yml"
-    prefix:   /controlpanel
+    prefix:   /backend/controlpanel
 
 uni_public:
     resource: "@UniPublicBundle/Resources/config/routing.yml"

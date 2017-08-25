@@ -24,6 +24,11 @@ class ItemType extends AbstractType
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
                 'translation_domain' => 'UniAdminBundle',
             )) 
+            ->add('surcharge', null, array(
+                'label' => 'item.form.surcharge',
+                'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
+                'translation_domain' => 'UniAdminBundle',
+            )) 
             ->add('price', null, array(
                 'label' => 'item.form.price',
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),

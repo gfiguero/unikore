@@ -59,6 +59,9 @@ find src/Uni/AdminBundle/Entity/* -type f -print0 | xargs -0 sed -i 's/createdAt
 find src/Uni/AdminBundle/Entity/* -type f -print0 | xargs -0 sed -i 's/updatedAt/updated_at/g'
 find src/Uni/AdminBundle/Entity/* -type f -print0 | xargs -0 sed -i 's/deletedAt/deleted_at/g'
 
+find . -type f -print0 | xargs -0 sed -i 's/controlpanel/catalog/g'
+find . -type f -print0 | xargs -0 sed -i 's/ControlPanel/Catalog/g'
+
 SELECT id, MAX(id) FROM `Solicitud` GROUP BY `domicilio_id`
 
 SELECT * FROM `Solicitud`, `Solicitud` S1 WHERE `Solicitud`.id < S1.id AND `Solicitud`.`domicilio_id` = S1.`domicilio_id`

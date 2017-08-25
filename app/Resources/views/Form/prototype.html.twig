@@ -1,60 +1,3 @@
-{% block _uni_agentbundle_budget_items_widget %}
-    {% spaceless %}
-        {% if prototype is defined %}
-            {% set prototype_vars = {} %}
-            {% if style is defined %}
-                {% set prototype_vars = prototype_vars|merge({'style': 'inline', 'label_col' : 0}) %}
-            {% endif %}
-            {% set prototype_html = '<td><a href="#" class="btn btn-danger btn-sm" data-removefield="collection" data-field="__id__">' ~ icon('times fa-fw') ~ '</a></td>' %}
-            {% set prototype_html = prototype_html ~ '<td>' ~ form_widget(prototype.product) ~ '</td>' %}
-            {% set prototype_html = prototype_html ~ '<td>' ~ form_widget(prototype.quantity) ~ '</td>' %}
-            {% set prototype_html = prototype_html ~ '<td>' ~ form_widget(prototype.discount) ~ '</td>' %}
-            {% set prototype_html = prototype_html ~ '<script type="text/javascript">' %}
-            {% set prototype_html = prototype_html ~ 'var options = { enableFiltering: true, maxHeight: 600, enableCaseInsensitiveFiltering: true, filterPlaceholder: "Buscar" };' %}
-            {% set prototype_html = prototype_html ~ '$("#__id__").multiselect(options);' %}
-            {% set prototype_html = prototype_html ~ '</script>' %}
-
-            {% set attr = attr|merge({'data-prototype': prototype_html }) %}
-            {% set attr = attr|merge({'data-prototype-name': prototype_name }) %}
-        {% endif %}
-        {% if form.vars.allow_add %}
-            {{ form_label(form) }}
-            <div class="form-group">
-                <label class="control-label col-lg-{{ attr.label_col }}" for="uni_agentbundle_budget_seller">{{'budget.form.items'|trans({}, translation_domain) }}</label>
-                <div class="col-lg-{{ attr.widget_col }}">
-                    <a type="button" href="#" class="btn btn-success" data-addfield="collection" data-collection="{{ form.vars.id }}" data-prototype-name="{{ prototype_name }}">{{ icon('plus fa-fw') }}&nbsp;{{ form.vars.add_button_text|trans({}, translation_domain)|parse_icons|raw }}</a>
-                </div>
-            </div>
-        {% endif %}
-        <div class="form-group">
-            <div class="col-lg-{{ attr.widget_col }} col-lg-offset-{{ attr.label_col }}">
-                <div class="panel panel-default">
-                    <div {{ block('widget_container_attributes') }} >
-                        <table class="table table-middle">
-                            <thead>
-                                <tr>
-                                    <th width="40"><a class="btn btn-default btn-sm disabled">{{ icon('times fa-fw') }}</a></th>
-                                    <th width="200">{{'item.form.product'|trans({}, translation_domain) }}</th>
-                                    <th width="100">{{'item.form.quantity'|trans({}, translation_domain) }}</th>
-                                    <th width="100">{{'item.form.discount'|trans({}, translation_domain) }}</th>
-                                </tr>
-                            </thead>
-                            {% for field in form %}
-                                <tr>
-                                    <td><a href="#" class="btn btn-danger btn-sm" data-removefield="collection" data-field="{{ field.vars.id }}">{{ icon('times fa-fw') }}</a></td>
-                                    <td>{{ form_widget(field.product) }}</td>
-                                    <td>{{ form_widget(field.quantity) }}</td>
-                                    <td>{{ form_widget(field.discount) }}</td>
-                                </tr>
-                            {% endfor %}
-                        </table>
-                    </div>
-                </div>
-            </div> 
-        </div> 
-    {% endspaceless %}
-{% endblock _uni_agentbundle_budget_items_widget %}
-
 {% block bootstrap_collection_widget %}
     {% spaceless %}
         {% if prototype is defined %}
@@ -99,4 +42,64 @@
         </div>
     {% endspaceless %}
 {% endblock bootstrap_collection_widget %}
+
+{% block _uni_offerbundle_budget_items_widget %}
+    {% spaceless %}
+        {% if prototype is defined %}
+            {% set prototype_vars = {} %}
+            {% if style is defined %}
+                {% set prototype_vars = prototype_vars|merge({'style': 'inline', 'label_col' : 0}) %}
+            {% endif %}
+            {% set prototype_html = '<td><a href="#" class="btn btn-danger btn-sm" data-removefield="collection" data-field="__id__">' ~ icon('times fa-fw') ~ '</a></td>' %}
+            {% set prototype_html = prototype_html ~ '<td>' ~ form_widget(prototype.product) ~ '</td>' %}
+            {% set prototype_html = prototype_html ~ '<td>' ~ form_widget(prototype.quantity, {'attr': {'value': 1}}) ~ '</td>' %}
+            {% set prototype_html = prototype_html ~ '<td>' ~ form_widget(prototype.discount, {'attr': {'value': 0}}) ~ '</td>' %}
+            {% set prototype_html = prototype_html ~ '<td>' ~ form_widget(prototype.surcharge, {'attr': {'value': 0}}) ~ '</td>' %}
+            {% set prototype_html = prototype_html ~ '<script type="text/javascript">' %}
+            {% set prototype_html = prototype_html ~ 'var options = { enableFiltering: true, maxHeight: 600, enableCaseInsensitiveFiltering: true, filterPlaceholder: "Buscar" };' %}
+            {% set prototype_html = prototype_html ~ '$("#__id__").multiselect(options);' %}
+            {% set prototype_html = prototype_html ~ '</script>' %}
+
+            {% set attr = attr|merge({'data-prototype': prototype_html }) %}
+            {% set attr = attr|merge({'data-prototype-name': prototype_name }) %}
+        {% endif %}
+        {% if form.vars.allow_add %}
+            {{ form_label(form) }}
+            <div class="form-group">
+                <label class="control-label col-lg-{{ attr.label_col }}" for="uni_agentbundle_budget_seller">{{'budget.form.items'|trans({}, translation_domain) }}</label>
+                <div class="col-lg-{{ attr.widget_col }}">
+                    <a type="button" href="#" class="btn btn-success" data-addfield="collection" data-collection="{{ form.vars.id }}" data-prototype-name="{{ prototype_name }}">{{ icon('plus fa-fw') }}&nbsp;{{ form.vars.add_button_text|trans({}, translation_domain)|parse_icons|raw }}</a>
+                </div>
+            </div>
+        {% endif %}
+        <div class="form-group">
+            <div class="col-lg-{{ attr.widget_col }} col-lg-offset-{{ attr.label_col }}">
+                <div class="panel panel-default">
+                    <div {{ block('widget_container_attributes') }} >
+                        <table class="table table-middle">
+                            <thead>
+                                <tr>
+                                    <th width="40"><a class="btn btn-default btn-sm disabled">{{ icon('times fa-fw') }}</a></th>
+                                    <th width="200">{{'item.form.product'|trans({}, translation_domain) }}</th>
+                                    <th width="100">{{'item.form.quantity'|trans({}, translation_domain) }}</th>
+                                    <th width="100">{{'item.form.discount'|trans({}, translation_domain) }}</th>
+                                    <th width="100">{{'item.form.surcharge'|trans({}, translation_domain) }}</th>
+                                </tr>
+                            </thead>
+                            {% for field in form %}
+                                <tr>
+                                    <td><a href="#" class="btn btn-danger btn-sm" data-removefield="collection" data-field="{{ field.vars.id }}">{{ icon('times fa-fw') }}</a></td>
+                                    <td>{{ form_widget(field.product) }}</td>
+                                    <td>{{ form_widget(field.quantity) }}</td>
+                                    <td>{{ form_widget(field.discount) }}</td>
+                                    <td>{{ form_widget(field.surcharge) }}</td>
+                                </tr>
+                            {% endfor %}
+                        </table>
+                    </div>
+                </div>
+            </div> 
+        </div> 
+    {% endspaceless %}
+{% endblock _uni_offerbundle_budget_items_widget %}
 

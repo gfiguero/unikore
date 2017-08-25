@@ -46,6 +46,11 @@ class ItemType extends AbstractType
                 'required' => true,
                 'empty_data' => 0
             ))
+            ->add('surcharge', null, array(
+                'label' => false,
+                'required' => true,
+                'empty_data' => 0
+            ))
         ;
     }
     

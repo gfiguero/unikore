@@ -1,7 +1,4 @@
 {% extends 'UniOfferBundle:Base:layout.html.twig' %}
-{% use 'UniOfferBundle:Base:icons.html.twig' %}
-{% use 'UniOfferBundle:Base:flashbag.html.twig' %}
-{% use 'UniOfferBundle:Base:wysiwyg.html.twig' %}
 
 {% trans_default_domain 'UniOfferBundle' %}
 
@@ -26,8 +23,8 @@
                     <div class="panel-body">
                         {{ form_start(editForm, { 'style': 'horizontal' }) }}
                             {{ form_widget(editForm) }}
-                            <div class="form-account">
-                                <div class="col-lg-offset-4 col-lg-8">
+                            <div class="form-group">
+                                <div class="col-lg-offset-2 col-lg-10">
                                     <button type="submit" class="btn btn-primary">{{ icon('save fa-fw') }}&nbsp;{{ 'account.edit.submit'|trans }}</button>
                                 </div>
                             </div>

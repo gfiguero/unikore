@@ -22,6 +22,9 @@ Uni\AdminBundle\Entity\Item:
         discount:
             type: integer
             nullable: true
+        surcharge:
+            type: integer
+            nullable: true
         price:
             type: integer
             nullable: true

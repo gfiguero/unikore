@@ -1,6 +1,4 @@
 {% extends 'UniOfferBundle:Base:layout.html.twig' %}
-{% use 'UniOfferBundle:Base:icons.html.twig' %}
-{% use 'UniOfferBundle:Base:flashbag.html.twig' %}
 
 {% trans_default_domain 'UniOfferBundle' %}
 
@@ -132,24 +130,36 @@
                         <table class="table table-middle table-bordered">
                             <thead>
                                 <tr>
-                                    <th>{{'item.form.product'|trans }}</th>
-                                    <th>{{'product.form.price'|trans }}</th>
-                                    <th>{{'product.form.cost'|trans }}</th>
-                                    <th>{{'product.form.netprice'|trans }}</th>
-                                    <th>{{'product.form.margin'|trans }}</th>
-                                    <th>{{'item.form.discount'|trans }}</th>
-                                    <th>{{'item.form.discountprice'|trans }}</th>
-                                    <th>{{'item.form.netprice'|trans }}</th>
+                                    <th rowspan="2">{{'item.form.product'|trans }}</th>
+                                    <th rowspan="2">{{'product.form.price'|trans }}</th>
+                                    <th rowspan="2">{{'product.form.cost'|trans }}</th>
+                                    <th rowspan="2">{{'product.form.netprice'|trans }}</th>
+                                    <th colspan="2">{{'product.form.margin'|trans }}</th>
+                                    <th colspan="2">{{'item.form.discount'|trans }}</th>
+                                    <th rowspan="2">{{'item.form.surcharge'|trans }}</th>
+                                    <th rowspan="2">{{'item.form.netprice'|trans }}</th>
 {#}
                                     <th>{{'item.form.totaldiscountprice'|trans }}</th>
                                     <th>{{'item.form.totalnetprice'|trans }}</th>
                                     <th>{{'item.form.totaliva'|trans }}</th>
                                     <th>{{'item.form.price'|trans }}</th>
 {#}
-                                    <th>{{'item.form.quantity'|trans }}</th>
+                                    <th rowspan="2">{{'item.form.quantity'|trans }}</th>
+                                    <th rowspan="2">{{'item.form.totalnetprice'|trans }}</th>
+                                    <th rowspan="2">{{'item.form.totaliva'|trans }}</th>
+                                    <th rowspan="2">{{'item.form.total'|trans }}</th>
+                                </tr>
+                                <tr>
+                                    <th>{{'%'}}</th>
+                                    <th>{{'$'}}</th>
+                                    <th>{{'%'}}</th>
+                                    <th>{{'$'}}</th>
+{#}
+                                    <th>{{'item.form.totaldiscountprice'|trans }}</th>
                                     <th>{{'item.form.totalnetprice'|trans }}</th>
                                     <th>{{'item.form.totaliva'|trans }}</th>
-                                    <th>{{'item.form.total'|trans }}</th>
+                                    <th>{{'item.form.price'|trans }}</th>
+{#}
                                 </tr>
                             </thead>
                             {% for item in budget.items %}
@@ -159,8 +169,10 @@
                                     <td class="text-right">{{ item.product.cost|number_format(0, ',', '.') }}</td>
                                     <td class="text-right">{{ item.product.netprice|number_format(0, ',', '.') }}</td>
                                     <td class="text-right">{{ (100 * item.product.margin)|number_format(0, ',', '.') ~ '%' }}</td>
-                                    <td class="info text-right">{{ item.discount ~ '%' }}</td>
-                                    <td class="info text-right">{{ item.discountprice|number_format(0, ',', '.') }}</td>
+                                    <td class="text-right">{{ item.product.marginAmount|number_format(0, ',', '.') }}</td>
+                                    <td class="danger text-right">{{ item.discount ~ '%' }}</td>
+                                    <td class="danger text-right">{{ item.discountprice|number_format(0, ',', '.') }}</td>
+                                    <td class="info text-right">{{ item.surcharge|number_format(0, ',', '.') }}</td>
                                     <td class="info text-right">{{ item.netprice|number_format(0, ',', '.') }}</td>
 {#}
                                     <td class="danger text-right">{{ item.totaldiscountprice|number_format(0, ',', '.') }}</td>

@@ -1,0 +1,131 @@
+sidemenu:
+    dashboard:
+        root: Vista General
+    catalog:
+        root: Catálogos
+    category:
+        root: Categorías
+    subcategory:
+        root: Subcategorías
+    product:
+        root: Productos
+
+dashboard:
+    index:
+        title: Vista General
+    user:
+        title: Información de Usuario
+    account:
+        title: Información de la Cuenta
+
+catalog: 
+    index: 
+        title: Catálogos
+        list: Lista de catálogos
+        link: Volver a la lista
+    new:
+        link: Nuevo catálogo
+        title: Nuevo catálogo
+        form: Catálogo
+        submit: Guardar
+    form:
+        id: ID
+        name: Nombre
+        created_at: Creado
+        updated_at: Actualizado
+    edit:
+        title: Editar catálogo
+        form: Catálogo
+        submit: Guardar cambios
+    delete:
+        link: Borrar catálogo
+        title: Borrado de catálogo
+        message: Los datos borrados no podrán ser recuperados.
+        submit: Confirmar borrado
+        flash: El catálogo fue borrado totalmente.
+
+product:
+    index: 
+        title: Productos
+        list: Lista de productos
+        link: Volver a la lista
+    new:
+        link: Nuevo producto
+        title: Nuevo producto
+        form: Producto
+        submit: Guardar
+    form:
+        id: ID
+        name: Nombre
+        price: Precio
+        image: Imagen
+        subcategory: Subcategoría
+        created_at: Creado 
+        updated_at: Actualizado 
+        short: Descripción corta
+        description: Descripción
+        imagefile: Imagen
+    edit:
+        submit: Guardar cambios
+        title: Editar producto
+        form: Producto
+    delete:
+        link: Borrar producto
+        title: Borrado de producto
+        message: Los datos borrados no podrán ser recuperados.
+        submit: Confirmar borrado
+        flash: El producto fue borrado totalmente.
+
+category: 
+    index: 
+        title: Categorías
+        list: Lista de categorías
+        link: Volver a la lista
+    new:
+        link: Nueva categoría
+        title: Nueva categoría
+        form: Categoría
+        submit: Guardar
+    form:
+        id: ID
+        name: Nombre
+        created_at: Creado
+        updated_at: Actualizado
+    edit:
+        title: Editar categoría
+        form: Categoría
+        submit: Guardar cambios
+    delete:
+        link: Borrar categoría
+        title: Borrado de categoría
+        message: Los datos borrados no podrán ser recuperados.
+        submit: Confirmar borrado
+        flash: La categoría fue borrada totalmente.
+
+subcategory: 
+    index: 
+        title: Subcategorías
+        list: Lista de subcategorías
+        link: Volver a la lista
+    new:
+        link: Nueva subcategoría
+        title: Nueva subcategoría
+        form: Subcategoría
+        submit: Guardar
+    form:
+        id: ID
+        name: Nombre
+        created_at: Creado
+        updated_at: Actualizado
+        category: Categoría
+    edit:
+        title: Editar subcategoría
+        form: Subcategoría
+        submit: Guardar cambios
+    delete:
+        link: Borrar subcategoría
+        title: Borrado de subcategoría
+        message: Los datos borrados no podrán ser recuperados.
+        submit: Confirmar borrado
+        flash: La subcategoría fue borrada totalmente.
+

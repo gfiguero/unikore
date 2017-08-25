@@ -36,27 +36,31 @@ class Builder implements ContainerAwareInterface
             $topmenu->addChild('topmenu.page', array('route' => 'page_root'))->setExtras(array('translation_domain' => 'UniControlPanelBundle'));
         }
 
+        if ($checker->isGranted('ROLE_CATALOG')) {
+            $topmenu->addChild('topmenu.catalog', array('route' => 'catalog_root'))->setExtras(array('translation_domain' => 'UniControlPanelBundle'));
+        }
+
         if ($checker->isGranted('ROLE_USER')) {
             $topmenu->addChild('topmenu.controlpanel', array('route' => 'controlpanel_root'))->setExtras(array('translation_domain' => 'UniControlPanelBundle'));
         }
 
-        if ($checker->isGranted('ROLE_LEADER')) {
-            $topmenu->addChild('topmenu.account');
-            $topmenu['topmenu.account']->setUri('#');
-            $topmenu['topmenu.account']->setLabel($user->getAccount());
-            $topmenu['topmenu.account']->setLinkAttributes(array('class' => 'dropdown-toggle', 'data-toggle' => 'dropdown', 'role' => 'button', 'aria-haspopup' => 'true', 'aria-expanded' => 'false'));
-            $topmenu['topmenu.account']->setExtras(array('dropdown' => true, 'translation_domain' => 'UniControlPanelBundle'));
-            $topmenu['topmenu.account']->setChildrenAttributes(array('class' => 'dropdown-menu'));
-
-            $topmenu['topmenu.account']->addChild('topmenu.settings', array('route' => 'offer_account_edit'));
-            $topmenu['topmenu.account']['topmenu.settings']->setExtras(array('translation_domain' => 'UniControlPanelBundle', 'icon' => 'gears fa-fw'));
-
-            $topmenu['topmenu.account']->addChild('topmenu.issuer', array('route' => 'offer_issuer_index'));
-            $topmenu['topmenu.account']['topmenu.issuer']->setExtras(array('translation_domain' => 'UniControlPanelBundle', 'icon' => 'flag fa-fw'));
-
-            $topmenu['topmenu.account']->addChild('topmenu.user', array('route' => 'offer_user_index'));
-            $topmenu['topmenu.account']['topmenu.user']->setExtras(array('translation_domain' => 'UniControlPanelBundle', 'icon' => 'users fa-fw'));
-        }
+//        if ($checker->isGranted('ROLE_LEADER')) {
+//            $topmenu->addChild('topmenu.account');
+//            $topmenu['topmenu.account']->setUri('#');
+//            $topmenu['topmenu.account']->setLabel($user->getAccount());
+//            $topmenu['topmenu.account']->setLinkAttributes(array('class' => 'dropdown-toggle', 'data-toggle' => 'dropdown', 'role' => 'button', 'aria-haspopup' => 'true', 'aria-expanded' => 'false'));
+//            $topmenu['topmenu.account']->setExtras(array('dropdown' => true, 'translation_domain' => 'UniControlPanelBundle'));
+//            $topmenu['topmenu.account']->setChildrenAttributes(array('class' => 'dropdown-menu'));
+//
+//            $topmenu['topmenu.account']->addChild('topmenu.settings', array('route' => 'offer_account_edit'));
+//            $topmenu['topmenu.account']['topmenu.settings']->setExtras(array('translation_domain' => 'UniControlPanelBundle', 'icon' => 'gears fa-fw'));
+//
+//            $topmenu['topmenu.account']->addChild('topmenu.issuer', array('route' => 'offer_issuer_index'));
+//            $topmenu['topmenu.account']['topmenu.issuer']->setExtras(array('translation_domain' => 'UniControlPanelBundle', 'icon' => 'flag fa-fw'));
+//
+//            $topmenu['topmenu.account']->addChild('topmenu.user', array('route' => 'offer_user_index'));
+//            $topmenu['topmenu.account']['topmenu.user']->setExtras(array('translation_domain' => 'UniControlPanelBundle', 'icon' => 'users fa-fw'));
+//        }
 
         if ($checker->isGranted('ROLE_USER')) {
             $topmenu->addChild('topmenu.user');
@@ -66,14 +70,17 @@ class Builder implements ContainerAwareInterface
             $topmenu['topmenu.user']->setExtras(array('dropdown' => true, 'translation_domain' => 'UniControlPanelBundle'));
             $topmenu['topmenu.user']->setChildrenAttributes(array('class' => 'dropdown-menu'));
 
-            $topmenu['topmenu.user']->addChild('topmenu.controlpanel', array('route' => 'controlpanel_root'));
-            $topmenu['topmenu.user']['topmenu.controlpanel']->setExtras(array('translation_domain' => 'UniControlPanelBundle', 'icon' => 'user fa-fw'));
+            $topmenu['topmenu.user']->addChild('topmenu.dashboard', array('route' => 'controlpanel_dashboard_index'));
+            $topmenu['topmenu.user']['topmenu.dashboard']->setExtras(array('translation_domain' => 'UniControlPanelBundle', 'icon' => 'dashboard fa-fw'));
 
-            $topmenu['topmenu.user']->addChild('topmenu.profile', array('route' => 'fos_user_profile_show'));
+            $topmenu['topmenu.user']->addChild('topmenu.profile', array('route' => 'fos_user_profile_edit'));
             $topmenu['topmenu.user']['topmenu.profile']->setExtras(array('translation_domain' => 'UniControlPanelBundle', 'icon' => 'user fa-fw'));
 
-            $topmenu['topmenu.user']->addChild('topmenu.changepassword', array('route' => 'offer_user_change_password'));
-            $topmenu['topmenu.user']['topmenu.changepassword']->setExtras(array('translation_domain' => 'UniControlPanelBundle', 'icon' => 'unlock-alt fa-fw'));
+            $topmenu['topmenu.user']->addChild('topmenu.password', array('route' => 'offer_user_change_password'));
+            $topmenu['topmenu.user']['topmenu.password']->setExtras(array('translation_domain' => 'UniControlPanelBundle', 'icon' => 'unlock-alt fa-fw'));
+
+            $topmenu['topmenu.user']->addChild('topmenu.account', array('route' => 'controlpanel_account_edit'));
+            $topmenu['topmenu.user']['topmenu.account']->setExtras(array('translation_domain' => 'UniControlPanelBundle', 'icon' => 'cloud fa-fw'));
 
             $topmenu['topmenu.user']->addChild('topmenu.logout', array('route' => 'fos_user_security_logout'));
             $topmenu['topmenu.user']['topmenu.logout']->setExtras(array('translation_domain' => 'UniControlPanelBundle', 'icon' => 'sign-out fa-fw'));

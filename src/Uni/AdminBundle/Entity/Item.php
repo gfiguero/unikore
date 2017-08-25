@@ -268,7 +268,7 @@ class Item
      */
     public function getDiscountPrice()
     {
-        return round( $this->getPrice() * ($this->getDiscount() / 100));
+        return round(($this->getPrice()/1.19) * ($this->getDiscount()/100));
     }
 
     /**
@@ -278,7 +278,7 @@ class Item
      */
     public function getTotalDiscountPrice()
     {
-        return $this->getQuantity() * ($this->getPrice() * ($this->getDiscount() / 100));
+        return $this->getQuantity() * (($this->getPrice()/1.19) * ($this->getDiscount()/100));
     }
 
     /**
@@ -288,7 +288,7 @@ class Item
      */
     public function getNetPrice()
     {
-        return round(($this->getProduct()->getPrice() / 1.19) - ($this->getPrice() * ($this->getDiscount() / 100)));
+        return round(($this->getPrice()/1.19) - (($this->getPrice()/1.19) * ($this->getDiscount()/100)) + $this->getSurcharge());
     }
 
     /**
@@ -298,7 +298,7 @@ class Item
      */
     public function getTotalNetPrice()
     {
-        return round($this->getQuantity() * (($this->getProduct()->getPrice() / 1.19) - ($this->getPrice() * ($this->getDiscount() / 100))));
+        return round($this->getQuantity() * (($this->getPrice()/1.19) - (($this->getPrice()/1.19) * ($this->getDiscount()/100)) + $this->getSurcharge()));
     }
 
     /**
@@ -308,7 +308,7 @@ class Item
      */
     public function getIva()
     {
-        return round((($this->getProduct()->getPrice() / 1.19) - ($this->getPrice() * ($this->getDiscount() / 100))) * 0.19);
+        return round((($this->getPrice()/1.19) - (($this->getPrice()/1.19) * ($this->getDiscount()/100)) + $this->getSurcharge()) * 0.19);
     }
 
     /**
@@ -318,7 +318,7 @@ class Item
      */
     public function getTotalIva()
     {
-        return round($this->getQuantity() * ((($this->getProduct()->getPrice() / 1.19) - ($this->getPrice() * ($this->getDiscount() / 100))) * 0.19));
+        return round($this->getQuantity() * ((($this->getPrice()/1.19) - (($this->getPrice()/1.19) * ($this->getDiscount()/100)) + $this->getSurcharge()) * 0.19));
     }
 
     /**
@@ -328,7 +328,7 @@ class Item
      */
     public function getTotalFullPrice()
     {
-        return round($this->getQuantity() * ($this->getProduct()->getPrice() / 1.19));
+        return round($this->getQuantity() * ($this->getPrice()/1.19));
     }
 
     /**
@@ -338,7 +338,7 @@ class Item
      */
     public function getTotalPrice()
     {
-        return round(($this->getQuantity() * (($this->getProduct()->getPrice() / 1.19) - ($this->getPrice() * ($this->getDiscount() / 100)))) * 1.19);
+        return round(($this->getQuantity() * (($this->getPrice()/1.19) - (($this->getPrice()/1.19) * ($this->getDiscount()/100)) + $this->getSurcharge())) * 1.19);
     }
 
     public function setReferencePrice()
@@ -350,5 +350,34 @@ class Item
         }
 
         return $this;
+    }
+    /**
+     * @var integer
+     */
+    private $surcharge;
+
+
+    /**
+     * Set surcharge
+     *
+     * @param integer $surcharge
+     *
+     * @return Item
+     */
+    public function setSurcharge($surcharge)
+    {
+        $this->surcharge = $surcharge;
+
+        return $this;
+    }
+
+    /**
+     * Get surcharge
+     *
+     * @return integer
+     */
+    public function getSurcharge()
+    {
+        return $this->surcharge;
     }
 }

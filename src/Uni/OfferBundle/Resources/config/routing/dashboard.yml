@@ -1,0 +1,4 @@
+offer_dashboard_index:
+    path:     /
+    defaults: { _controller: "UniOfferBundle:Dashboard:index" }
+    methods:  GET

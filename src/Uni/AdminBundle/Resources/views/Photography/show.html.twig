@@ -40,7 +40,9 @@
                             <dt>{{ 'photography.form.image'|trans }}</dt>
                                 <dd>{% if photography.image %}{{ photography.image }}{% endif %}</dd>
                             <dt>{{ 'photography.form.created_at'|trans }}</dt>
-                                <dd>{% if photography.createdat %}{{ photography.createdat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "d 'de' LLLL 'de' y - HH:mm") }}&nbsp;({{ photography.createdat|ago }}){% endif %}</dd>                        </dl>
+                                <dd>{% if photography.createdat %}{{ photography.createdat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "d 'de' LLLL 'de' y - HH:mm") }}&nbsp;({{ photography.createdat|ago }}){% endif %}</dd>
+                            <dt>{{ 'photography.form.updated_at'|trans }}</dt>
+                                <dd>{% if photography.updatedat %}{{ photography.updatedat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "d 'de' LLLL 'de' y - HH:mm") }}&nbsp;({{ photography.updatedat|ago }}){% endif %}</dd>                        </dl>
                     </div>
                 </div>
             </div>

@@ -303,8 +303,21 @@ class Product
      */
     public function getMargin()
     {
-        if ($this->getCost() and $this->getNetPrice()) {
-            return (float) ( 1 - ( $this->getCost() / $this->getNetPrice() ));
+        if ($this->getCost() and $this->getPrice()) {
+            return (float) (1 - ($this->getCost()/($this->getPrice()/1.19)));
+        }
+        return null;
+    }
+
+    /**
+     * Get marginAmount
+     *
+     * @return float
+     */
+    public function getMarginAmount()
+    {
+        if ($this->getCost() and $this->getPrice()) {
+            return round(($this->getPrice()/1.19) - $this->getCost());
         }
         return null;
     }

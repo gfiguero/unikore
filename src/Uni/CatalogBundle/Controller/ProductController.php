@@ -3,7 +3,7 @@
 namespace Uni\CatalogBundle\Controller;
 
 use Uni\AdminBundle\Entity\Product;
-use Uni\ControlPanelBundle\Form\ProductType;
+use Uni\CatalogBundle\Form\ProductType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -36,7 +36,7 @@ class ProductController extends Controller
             $deleteForms[] = $this->createDeleteForm($product)->createView();
         }
 
-        return $this->render('UniControlPanelBundle:Product:index.html.twig', array(
+        return $this->render('UniCatalogBundle:Product:index.html.twig', array(
             'products' => $products,
             'direction' => $direction,
             'sort' => $sort,
@@ -65,11 +65,11 @@ class ProductController extends Controller
                 $em->persist($product);
                 $em->flush();
                 $request->getSession()->getFlashBag()->add( 'success', 'product.new.flash' );
-                return $this->redirect($this->generateUrl('controlpanel_product_index'));
+                return $this->redirect($this->generateUrl('catalog_product_index'));
             }
         }
 
-        return $this->render('UniControlPanelBundle:Product:new.html.twig', array(
+        return $this->render('UniCatalogBundle:Product:new.html.twig', array(
             'newForm' => $newForm->createView(),
         ));
     }
@@ -84,7 +84,7 @@ class ProductController extends Controller
     private function createNewForm(Product $product)
     {
         return $this->createForm(new ProductType(), $product, array(
-            'action' => $this->generateUrl('controlpanel_product_new'),
+            'action' => $this->generateUrl('catalog_product_new'),
         ));
     }
 
@@ -96,12 +96,12 @@ class ProductController extends Controller
     {
         $user = $this->getUser();
         $account = $user->getAccount();
-        if ($account != $product->getAccount()) return $this->redirect($this->generateUrl('controlpanel_product_index'));
+        if ($account != $product->getAccount()) return $this->redirect($this->generateUrl('catalog_product_index'));
 
         $editForm = $this->createEditForm($product);
         $deleteForm = $this->createDeleteForm($product);
 
-        return $this->render('UniControlPanelBundle:Product:show.html.twig', array(
+        return $this->render('UniCatalogBundle:Product:show.html.twig', array(
             'product' => $product,
             'editForm' => $editForm->createView(),
             'deleteForm' => $deleteForm->createView(),
@@ -116,7 +116,7 @@ class ProductController extends Controller
     {
         $user = $this->getUser();
         $account = $user->getAccount();
-        if ($account != $product->getAccount()) return $this->redirect($this->generateUrl('controlpanel_product_index'));
+        if ($account != $product->getAccount()) return $this->redirect($this->generateUrl('catalog_product_index'));
 
         $editForm = $this->createEditForm($product);
         $deleteForm = $this->createDeleteForm($product);
@@ -128,11 +128,11 @@ class ProductController extends Controller
                 $em->persist($product);
                 $em->flush();
                 $request->getSession()->getFlashBag()->add( 'success', 'product.edit.flash' );
-                return $this->redirect($this->generateUrl('controlpanel_product_index'));
+                return $this->redirect($this->generateUrl('catalog_product_index'));
             }
         }
 
-        return $this->render('UniControlPanelBundle:Product:edit.html.twig', array(
+        return $this->render('UniCatalogBundle:Product:edit.html.twig', array(
             'product' => $product,
             'editForm' => $editForm->createView(),
             'deleteForm' => $deleteForm->createView(),
@@ -149,7 +149,7 @@ class ProductController extends Controller
     private function createEditForm(Product $product)
     {
         return $this->createForm(new ProductType(), $product, array(
-            'action' => $this->generateUrl('controlpanel_product_edit', array('id' => $product->getId())),
+            'action' => $this->generateUrl('catalog_product_edit', array('id' => $product->getId())),
         ));
     }
 
@@ -161,7 +161,7 @@ class ProductController extends Controller
     {
         $user = $this->getUser();
         $account = $user->getAccount();
-        if ($account != $product->getAccount()) return $this->redirect($this->generateUrl('controlpanel_product_index'));
+        if ($account != $product->getAccount()) return $this->redirect($this->generateUrl('catalog_product_index'));
 
         $deleteForm = $this->createDeleteForm($product);
         $deleteForm->handleRequest($request);
@@ -173,7 +173,7 @@ class ProductController extends Controller
             $request->getSession()->getFlashBag()->add( 'danger', 'product.delete.flash' );
         }
 
-        return $this->redirect($this->generateUrl('controlpanel_product_index'));
+        return $this->redirect($this->generateUrl('catalog_product_index'));
     }
 
     /**
@@ -186,7 +186,7 @@ class ProductController extends Controller
     private function createDeleteForm(Product $product)
     {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('controlpanel_product_delete', array('id' => $product->getId())))
+            ->setAction($this->generateUrl('catalog_product_delete', array('id' => $product->getId())))
             ->setMethod('DELETE')
             ->getForm()
         ;
