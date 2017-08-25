@@ -36,6 +36,12 @@ class FeatureType extends AbstractType
                 'translation_domain' => 'UniPageBundle',
                 'required' => false,
             ))
+            ->add('page', null, array(
+                'label' => 'feature.form.page',
+                'attr'  => array( 'label_col' => 3, 'widget_col' => 9 ),
+                'translation_domain' => 'UniPageBundle',
+                'required' => true,
+            ))
         ;
     }
     
