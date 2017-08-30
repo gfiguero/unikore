@@ -310,4 +310,43 @@ class Subcategory
     {
         return $this->slug;
     }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $catalogitems;
+
+
+    /**
+     * Add catalogitem
+     *
+     * @param \Uni\AdminBundle\Entity\CatalogItem $catalogitem
+     *
+     * @return Subcategory
+     */
+    public function addCatalogitem(\Uni\AdminBundle\Entity\CatalogItem $catalogitem)
+    {
+        $this->catalogitems[] = $catalogitem;
+
+        return $this;
+    }
+
+    /**
+     * Remove catalogitem
+     *
+     * @param \Uni\AdminBundle\Entity\CatalogItem $catalogitem
+     */
+    public function removeCatalogitem(\Uni\AdminBundle\Entity\CatalogItem $catalogitem)
+    {
+        $this->catalogitems->removeElement($catalogitem);
+    }
+
+    /**
+     * Get catalogitems
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getCatalogitems()
+    {
+        return $this->catalogitems;
+    }
 }

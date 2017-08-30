@@ -303,6 +303,9 @@ item:
         flash: El ítem fué borrado totalmente.
     form:
         id: ID
+        cost: Costo
+        name: Nombre
+        margin: Margen
         quantity: Cantidad
         discount: Descuento
         surcharge: Recargo
@@ -338,7 +341,7 @@ budget:
         data: Datos de presupuesto
         client: Cliente
         seller: Ejecutivo
-        items: Productos
+        items: Ítems
         total: Totales
         notes: Notas importantes
         cmpdf: Generar PDF CM
@@ -368,9 +371,15 @@ budget:
         notes: Notas reutilizables
         note: Nota única
         additem: Agregar Ítem
+        totallistprice: Precio Lista
+        totalnormalprice: Neto Inicial
+        totalsurcharge: Recargo
+        totalnormalfullprice: Neto Parcial
+        totalcost: Costo
+        totalmarginamount: Margen
         totalfullprice: Precio Normal
-        totaldiscountprice: Total Descuentos
-        totalnetprice: Total Neto
+        totaldiscountprice: Descuento
+        totalnetprice: Neto Final
         totaliva: IVA
         total: Total
         deleteitem: Eliminar Ítem

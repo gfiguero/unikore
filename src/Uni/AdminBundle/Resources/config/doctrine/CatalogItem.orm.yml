@@ -1,7 +1,7 @@
-Uni\AdminBundle\Entity\Subcategory:
+Uni\AdminBundle\Entity\CatalogItem:
     type: entity
-    table: uni_subcategory
-    repositoryClass: Uni\AdminBundle\Entity\SubcategoryRepository
+    table: uni_catalogitem
+    repositoryClass: Uni\AdminBundle\Entity\CatalogItemRepository
     id:
         id:
             type: integer
@@ -9,24 +9,24 @@ Uni\AdminBundle\Entity\Subcategory:
             generator:
                 strategy: AUTO
     manyToOne:
-        account:
-            targetEntity: Uni\AdminBundle\Entity\Account
-            inversedBy: subcategories
-        category:
-            targetEntity: Uni\AdminBundle\Entity\Category
-            inversedBy: subcategories
-    oneToMany:
-        catalogitems:
-            targetEntity: Uni\AdminBundle\Entity\CatalogItem
-            mappedBy: subcategory
+        subcategory:
+            targetEntity: Uni\AdminBundle\Entity\Subcategory
+            inversedBy: catalogitems
+        product:
+            targetEntity: Uni\AdminBundle\Entity\Product
+            inversedBy: catalogitems
     fields:
-        name:
-            type: string
-            length: 100
+        quantity:
+            type: integer
             nullable: true
-        slug:
-            type: string
-            length: 100
+        discount:
+            type: integer
+            nullable: true
+        surcharge:
+            type: integer
+            nullable: true
+        price:
+            type: integer
             nullable: true
         created_at:
             type: datetime

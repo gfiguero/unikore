@@ -322,13 +322,73 @@ class Item
     }
 
     /**
-     * Get totalFullPrice
+     * Get totalNormalFullPrice
      *
      * @return integer
      */
-    public function getTotalFullPrice()
+    public function getTotalNormalFullPrice()
+    {
+        return round($this->getQuantity() * (($this->getPrice()/1.19) + $this->getSurcharge()));
+    }
+
+    /**
+     * Get totalNormalPrice
+     *
+     * @return integer
+     */
+    public function getTotalNormalPrice()
     {
         return round($this->getQuantity() * ($this->getPrice()/1.19));
+    }
+
+    /**
+     * Get totalListPrice
+     *
+     * @return integer
+     */
+    public function getTotalListPrice()
+    {
+        return round($this->getQuantity() * $this->getPrice());
+    }
+
+    /**
+     * Get totalSurcharge
+     *
+     * @return integer
+     */
+    public function getTotalSurcharge()
+    {
+        return round($this->getQuantity() * ($this->getSurcharge()));
+    }
+
+    /**
+     * Get margin
+     *
+     * @return integer
+     */
+    public function getMargin()
+    {
+        return round($this->getProduct()->getMargin()*100 - $this->getDiscount());
+    }
+
+    /**
+     * Get marginAmount
+     *
+     * @return integer
+     */
+    public function getMarginAmount()
+    {
+        return round((($this->getPrice()/1.19) * ((100 - $this->getDiscount())/100)) - ($this->getProduct()->getCost()));
+    }
+
+    /**
+     * Get totalMarginAmount
+     *
+     * @return integer
+     */
+    public function getTotalMarginAmount()
+    {
+        return round($this->getQuantity() * ((($this->getPrice()/1.19) * ((100 - $this->getDiscount())/100)) - ($this->getProduct()->getCost())));
     }
 
     /**
@@ -338,7 +398,18 @@ class Item
      */
     public function getTotalPrice()
     {
-        return round(($this->getQuantity() * (($this->getPrice()/1.19) - (($this->getPrice()/1.19) * ($this->getDiscount()/100)) + $this->getSurcharge())) * 1.19);
+        // Quantity * (Price * Discount + Surcharge) * IVA
+        return round(($this->getQuantity() * ((($this->getPrice()/1.19) * ((100 - $this->getDiscount())/100)) + $this->getSurcharge())) * 1.19);
+    }
+
+    /**
+     * Get totalCost
+     *
+     * @return integer
+     */
+    public function getTotalCost()
+    {
+        return round($this->getQuantity() * $this->getProduct()->getCost());
     }
 
     public function setReferencePrice()
@@ -355,7 +426,6 @@ class Item
      * @var integer
      */
     private $surcharge;
-
 
     /**
      * Set surcharge

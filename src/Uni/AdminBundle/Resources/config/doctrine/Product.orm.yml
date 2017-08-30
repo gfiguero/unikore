@@ -25,6 +25,9 @@ Uni\AdminBundle\Entity\Product:
         items:
             targetEntity: Uni\AdminBundle\Entity\Item
             mappedBy: product
+        catalogitems:
+            targetEntity: Uni\AdminBundle\Entity\CatalogItem
+            mappedBy: product
     fields:
         name:
             type: string

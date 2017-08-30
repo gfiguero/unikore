@@ -1,6 +1,7 @@
 php app/console doctrine:generate:entities UniAdminBundle:Budget --path=src
 php app/console doctrine:generate:entities UniAdminBundle:Client --path=src
 php app/console doctrine:generate:entities UniAdminBundle:Item --path=src
+php app/console doctrine:generate:entities UniAdminBundle:CatalogItem --path=src
 php app/console doctrine:generate:entities UniAdminBundle:Product --path=src
 php app/console doctrine:generate:entities UniAdminBundle:Provider --path=src
 php app/console doctrine:generate:entities UniAdminBundle:Seller --path=src
@@ -24,6 +25,7 @@ php app/console doctrine:generate:entities UniAdminBundle:Subcategory --path=src
 php app/console uni:admingenerate:crud --overwrite --format=yml --with-write --no-interaction --entity=UniAdminBundle:Budget --route-prefix=admin_budget
 php app/console uni:admingenerate:crud --overwrite --format=yml --with-write --no-interaction --entity=UniAdminBundle:Client --route-prefix=admin_client
 php app/console uni:admingenerate:crud --overwrite --format=yml --with-write --no-interaction --entity=UniAdminBundle:Item --route-prefix=admin_item
+php app/console uni:admingenerate:crud --overwrite --format=yml --with-write --no-interaction --entity=UniAdminBundle:CatalogItem --route-prefix=admin_catalogitem
 php app/console uni:admingenerate:crud --overwrite --format=yml --with-write --no-interaction --entity=UniAdminBundle:Product --route-prefix=admin_product
 php app/console uni:admingenerate:crud --overwrite --format=yml --with-write --no-interaction --entity=UniAdminBundle:Provider --route-prefix=admin_provider
 php app/console uni:admingenerate:crud --overwrite --format=yml --with-write --no-interaction --entity=UniAdminBundle:Seller --route-prefix=admin_seller

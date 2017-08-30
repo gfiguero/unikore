@@ -25,6 +25,20 @@ sidemenu:
         root: Presupuestos
     note:
         root: Notas
+    feature:
+        root: Características
+    photography:
+        root: Fotografías
+    category:
+        root: Categoría
+    subcategory:
+        root: Subcategoría
+    catalog:
+        root: Catálogo
+    page:
+        root: Página
+    socialmedia:
+        root: Redes Sociales
 
 seller:
     index:
@@ -241,6 +255,41 @@ budget:
         message: Los datos borrados no podrán ser recuperados.
         submit: Confirmar borrado
         flash: El presupuesto fué borrado totalmente.
+    form:
+        id: ID
+        nota: Nota
+        client: Cliente
+        seller: Vendedor
+        created_at: Registro
+        updated_at: Actualización
+
+feature:
+    index:
+        title: Características
+        list: Lista de catacterísticas
+        link: Lista de catacterísticas
+    new:
+        title: Características
+        link: Nueva característica
+        form: Formulario de registro de característica
+        submit: Registrar característica
+        flash: Nueva característica registrado satisfactoriamente.
+    show:
+        title: Características
+        link: Mostrar datos
+        data: Datos de característica
+    edit:
+        title: Características
+        link: Editar datos
+        form: Formulario de edición de característica
+        submit: Guardar cambios
+        flash: Los cambios en la característica fueron registrados satisfactoriamente.
+    delete:
+        link: Borrar característica
+        title: Borrado de característica
+        message: Los datos borrados no podrán ser recuperados.
+        submit: Confirmar borrado
+        flash: La característica fué borrada totalmente.
     form:
         id: ID
         nota: Nota

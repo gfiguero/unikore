@@ -6,7 +6,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class SubcategoryType extends AbstractType
+class CatalogItemType extends AbstractType
 {
     /**
      * {@inheritdoc}
@@ -14,23 +14,33 @@ class SubcategoryType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder 
-            ->add('name', null, array(
-                'label' => 'subcategory.form.name',
+            ->add('quantity', null, array(
+                'label' => 'catalogitem.form.quantity',
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
                 'translation_domain' => 'UniAdminBundle',
             )) 
-            ->add('slug', null, array(
-                'label' => 'subcategory.form.slug',
+            ->add('discount', null, array(
+                'label' => 'catalogitem.form.discount',
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
                 'translation_domain' => 'UniAdminBundle',
             )) 
-            ->add('account', null, array(
-                'label' => 'subcategory.form.account',
+            ->add('surcharge', null, array(
+                'label' => 'catalogitem.form.surcharge',
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
                 'translation_domain' => 'UniAdminBundle',
             )) 
-            ->add('category', null, array(
-                'label' => 'subcategory.form.category',
+            ->add('price', null, array(
+                'label' => 'catalogitem.form.price',
+                'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
+                'translation_domain' => 'UniAdminBundle',
+            )) 
+            ->add('subcategory', null, array(
+                'label' => 'catalogitem.form.subcategory',
+                'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
+                'translation_domain' => 'UniAdminBundle',
+            )) 
+            ->add('product', null, array(
+                'label' => 'catalogitem.form.product',
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
                 'translation_domain' => 'UniAdminBundle',
             ))
@@ -43,7 +53,7 @@ class SubcategoryType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'Uni\AdminBundle\Entity\Subcategory'
+            'data_class' => 'Uni\AdminBundle\Entity\CatalogItem'
         ));
     }
 
@@ -52,7 +62,7 @@ class SubcategoryType extends AbstractType
      */
     public function getBlockPrefix()
     {
-        return 'uni_adminbundle_subcategory';
+        return 'uni_adminbundle_catalogitem';
     }
 
 

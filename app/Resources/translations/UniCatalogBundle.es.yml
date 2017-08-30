@@ -30,7 +30,8 @@ catalog:
         submit: Guardar
     form:
         id: ID
-        name: Nombre
+        name: Nombre de Catálogo
+        categories: Categorías
         created_at: Creado
         updated_at: Actualizado
     edit:
@@ -88,7 +89,8 @@ category:
         submit: Guardar
     form:
         id: ID
-        name: Nombre
+        name: Nombre de Categoría
+        subcategories: Subcategorías
         created_at: Creado
         updated_at: Actualizado
     edit:
@@ -114,7 +116,7 @@ subcategory:
         submit: Guardar
     form:
         id: ID
-        name: Nombre
+        name: Nombre de Subcategoría
         created_at: Creado
         updated_at: Actualizado
         category: Categoría

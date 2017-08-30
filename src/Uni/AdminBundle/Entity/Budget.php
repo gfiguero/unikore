@@ -221,17 +221,59 @@ class Budget
     }
 
     /**
-     * Get totalFullPrice
+     * Get totalNormalFullPrice
      *
      * @return integer
      */
-    public function getTotalFullPrice()
+    public function getTotalNormalFullPrice()
     {
-        $totalFullPrice = 0;
+        $totalNormalFullPrice = 0;
         foreach ($this->items as $item) {
-            $totalFullPrice += $item->getTotalFullPrice();
+            $totalNormalFullPrice += $item->getTotalNormalFullPrice();
         }
-        return $totalFullPrice;
+        return $totalNormalFullPrice;
+    }
+
+    /**
+     * Get totalNormalPrice
+     *
+     * @return integer
+     */
+    public function getTotalNormalPrice()
+    {
+        $totalNormalPrice = 0;
+        foreach ($this->items as $item) {
+            $totalNormalPrice += $item->getTotalNormalPrice();
+        }
+        return $totalNormalPrice;
+    }
+
+    /**
+     * Get totalListPrice
+     *
+     * @return integer
+     */
+    public function getTotalListPrice()
+    {
+        $totalListPrice = 0;
+        foreach ($this->items as $item) {
+            $totalListPrice += $item->getTotalListPrice();
+        }
+        return $totalListPrice;
+    }
+
+    /**
+     * Get totalCost
+     *
+     * @return integer
+     */
+    public function getTotalCost()
+    {
+        $totalCost = 0;
+        foreach ($this->items as $item) {
+            $totalCost += $item->getTotalCost();
+        }
+        return $totalCost;
     }
 
     /**
@@ -300,6 +342,34 @@ class Budget
             $totalPrice += $item->getTotalPrice();
         }
         return $totalPrice;
+    }
+
+    /**
+     * Get totalMarginAmount
+     *
+     * @return integer
+     */
+    public function getTotalMarginAmount()
+    {
+        $totalMarginAmount = 0;
+        foreach ($this->items as $item) {
+            $totalMarginAmount += $item->getTotalMarginAmount();
+        }
+        return $totalMarginAmount;
+    }
+
+    /**
+     * Get totalSurcharge
+     *
+     * @return integer
+     */
+    public function getTotalSurcharge()
+    {
+        $totalSurcharge = 0;
+        foreach ($this->items as $item) {
+            $totalSurcharge += $item->getTotalSurcharge();
+        }
+        return $totalSurcharge;
     }
 
     /**
