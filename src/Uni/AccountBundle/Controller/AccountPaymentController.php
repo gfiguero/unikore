@@ -1,9 +1,9 @@
 <?php
 
-namespace Uni\AdminBundle\Controller;
+namespace Uni\AccountBundle\Controller;
 
 use Uni\AdminBundle\Entity\AccountPayment;
-use Uni\AdminBundle\Form\AccountPaymentType;
+use Uni\AccountBundle\Form\AccountPaymentType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
