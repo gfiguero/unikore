@@ -59,7 +59,6 @@ class IssuerController extends Controller
 
         if ($newForm->isSubmitted()) {
             if($newForm->isValid()) {
-                $issuer->setUser($user);
                 $issuer->setAccount($account);
                 $em = $this->getDoctrine()->getManager();
                 $em->persist($issuer);

@@ -36,11 +36,6 @@ class Subcategory
     private $deleted_at;
 
     /**
-     * @var \Doctrine\Common\Collections\Collection
-     */
-    private $products;
-
-    /**
      * @var \Uni\AdminBundle\Entity\User
      */
     private $user;
@@ -60,14 +55,6 @@ class Subcategory
     public function __toString()
     {
         return (string) $this->name;
-    }
-
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->products = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -174,40 +161,6 @@ class Subcategory
     public function getDeletedAt()
     {
         return $this->deleted_at;
-    }
-
-    /**
-     * Add product
-     *
-     * @param \Uni\AdminBundle\Entity\Product $product
-     *
-     * @return Subcategory
-     */
-    public function addProduct(\Uni\AdminBundle\Entity\Product $product)
-    {
-        $this->products[] = $product;
-
-        return $this;
-    }
-
-    /**
-     * Remove product
-     *
-     * @param \Uni\AdminBundle\Entity\Product $product
-     */
-    public function removeProduct(\Uni\AdminBundle\Entity\Product $product)
-    {
-        $this->products->removeElement($product);
-    }
-
-    /**
-     * Get products
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getProducts()
-    {
-        return $this->products;
     }
 
     /**
@@ -349,4 +302,12 @@ class Subcategory
     {
         return $this->catalogitems;
     }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->catalogitems = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
 }

@@ -5,14 +5,16 @@
 {% block header %}
     <div class="row" id="page-header">
         <div class="col-md-2">
-            <img class="img img-responsive" src="{{ vich_uploader_asset(issuer, "imagefile")|imagine_filter("issuer_export_medium") }}">
+            {% if issuer %}<img class="img img-responsive" src="{{ vich_uploader_asset(issuer, "imagefile")|imagine_filter("issuer_export_medium") }}">{% endif %}
         </div>
         <div class="col-md-5">
             <div class="issuer-header">
+                {% if issuer %}
                 <div class="issuer-name">{% if issuer.name %}{{ issuer.name }}{% endif %}</div>
                 <div class="issuer-rut">{% if issuer.rut %}{{ issuer.rut }}{% endif %}</div>
                 <div class="issuer-address">{% if issuer.address %}{{ issuer.address }}{% endif %}</div>
                 <div class="issuer-address">{% if issuer.region %}{{ issuer.region }}{% endif %}</div>
+                {% endif %}
             </div>
         </div>
         <div class="col-md-5">
@@ -22,20 +24,6 @@
             </div>
         </div>
     </div>
-{#}
-                    <div class="navbar-header">
-                        <h1>{{ group.name }}</h1>
-                        <h1>{{ budget.name }}</h1>
-                        <h4 class="text-right">{{ budget.updatedat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "d 'de' LLLL 'de' y") }}</h4>
-                        <div class="navbar-brand">
-                            <img alt="Brand" src="...">
-                        </div>
-                    </div>
-                </div>
-            </nav>
-        </div>
-    </div>
-{#}
     <!-- /#page-header -->
 
 {% endblock %}
@@ -153,8 +141,8 @@
                 <table class="table table-middle table-bordered">
                     <tbody>
                         <tr>
-                            <td>{{ 'budget.form.totalfullprice'|trans }}</td>
-                            <td class="text-right">{{ icon('dollar fa-fw') }}{{ budget.totalfullprice|number_format(0, ',', '.') }}</td>
+                            <td>{{ 'budget.form.totalnormalfullprice'|trans }}</td>
+                            <td class="text-right">{{ icon('dollar fa-fw') }}{{ budget.totalnormalfullprice|number_format(0, ',', '.') }}</td>
                         </tr>
                         <tr>
                             <td>{{ 'budget.form.totaldiscountprice'|trans }}</td>

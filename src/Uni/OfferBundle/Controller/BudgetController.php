@@ -123,7 +123,6 @@ class BudgetController extends Controller
         $user = $this->getUser();
         $account = $user->getAccount();
         if ($account != $budget->getAccount()) return $this->redirect($this->generateUrl('offer_budget_index'));
-
         $items = $budget->getItems();
         $seller = $budget->getSeller();
         $client = $budget->getClient();

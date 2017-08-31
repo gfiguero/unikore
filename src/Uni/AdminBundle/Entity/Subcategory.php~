@@ -36,11 +36,6 @@ class Subcategory
     private $deleted_at;
 
     /**
-     * @var \Doctrine\Common\Collections\Collection
-     */
-    private $products;
-
-    /**
      * @var \Uni\AdminBundle\Entity\User
      */
     private $user;
@@ -60,14 +55,6 @@ class Subcategory
     public function __toString()
     {
         return (string) $this->name;
-    }
-
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->products = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -177,40 +164,6 @@ class Subcategory
     }
 
     /**
-     * Add product
-     *
-     * @param \Uni\AdminBundle\Entity\Product $product
-     *
-     * @return Subcategory
-     */
-    public function addProduct(\Uni\AdminBundle\Entity\Product $product)
-    {
-        $this->products[] = $product;
-
-        return $this;
-    }
-
-    /**
-     * Remove product
-     *
-     * @param \Uni\AdminBundle\Entity\Product $product
-     */
-    public function removeProduct(\Uni\AdminBundle\Entity\Product $product)
-    {
-        $this->products->removeElement($product);
-    }
-
-    /**
-     * Get products
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getProducts()
-    {
-        return $this->products;
-    }
-
-    /**
      * Set user
      *
      * @param \Uni\AdminBundle\Entity\User $user
@@ -309,5 +262,44 @@ class Subcategory
     public function getSlug()
     {
         return $this->slug;
+    }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $catalogitems;
+
+
+    /**
+     * Add catalogitem
+     *
+     * @param \Uni\AdminBundle\Entity\CatalogItem $catalogitem
+     *
+     * @return Subcategory
+     */
+    public function addCatalogitem(\Uni\AdminBundle\Entity\CatalogItem $catalogitem)
+    {
+        $this->catalogitems[] = $catalogitem;
+
+        return $this;
+    }
+
+    /**
+     * Remove catalogitem
+     *
+     * @param \Uni\AdminBundle\Entity\CatalogItem $catalogitem
+     */
+    public function removeCatalogitem(\Uni\AdminBundle\Entity\CatalogItem $catalogitem)
+    {
+        $this->catalogitems->removeElement($catalogitem);
+    }
+
+    /**
+     * Get catalogitems
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getCatalogitems()
+    {
+        return $this->catalogitems;
     }
 }

@@ -18,9 +18,6 @@ Uni\AdminBundle\Entity\Product:
         account:
             targetEntity: Uni\AdminBundle\Entity\Account
             inversedBy: products
-        subcategory:
-            targetEntity: Uni\AdminBundle\Entity\Subcategory
-            inversedBy: products
     oneToMany:
         items:
             targetEntity: Uni\AdminBundle\Entity\Item
