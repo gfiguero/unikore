@@ -24,12 +24,13 @@ class Builder implements ContainerAwareInterface
             $topmenu->addChild('topmenu.reset', array('route' => 'fos_user_resetting_request'))->setExtras(array('icon' => 'repeat fa-fw', 'translation_domain' => 'UniControlPanelBundle'));
         }
 
-        if ($checker->isGranted('ROLE_OFFER')) {
-            $topmenu->addChild('topmenu.offer', array('route' => 'offer_root'))->setExtras(array('translation_domain' => 'UniControlPanelBundle'));
-        }
-
         if ($checker->isGranted('ROLE_ADMIN')) {
             $topmenu->addChild('topmenu.admin', array('route' => 'admin_root'))->setExtras(array('translation_domain' => 'UniControlPanelBundle'));
+            $topmenu->addChild('topmenu.adminaccount', array('route' => 'account_root'))->setExtras(array('translation_domain' => 'UniControlPanelBundle'));
+        }
+
+        if ($checker->isGranted('ROLE_OFFER')) {
+            $topmenu->addChild('topmenu.offer', array('route' => 'offer_root'))->setExtras(array('translation_domain' => 'UniControlPanelBundle'));
         }
 
         if ($checker->isGranted('ROLE_PAGE')) {

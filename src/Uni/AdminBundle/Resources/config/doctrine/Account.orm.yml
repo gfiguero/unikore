@@ -54,6 +54,9 @@ Uni\AdminBundle\Entity\Account:
         subcategories:
             targetEntity: Uni\AdminBundle\Entity\Subcategory
             mappedBy: account
+        payments:
+            targetEntity: Uni\AdminBundle\Entity\AccountPayment
+            mappedBy: account
     manyToOne:
         business_address_commune:
             targetEntity: Uni\AdminBundle\Entity\Commune
@@ -64,18 +67,23 @@ Uni\AdminBundle\Entity\Account:
         business_name:
             type: string
             length: 200
+            nullable: true
         business_rut:
             type: string
             length: 200
+            nullable: true
         business_turn:
             type: string
             length: 200
+            nullable: true
         business_address_street:
             type: string
             length: 200
+            nullable: true
         business_address_number:
             type: string
             length: 20
+            nullable: true
         budget_note:
             type: text
             nullable: true

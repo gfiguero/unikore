@@ -47,7 +47,8 @@ security:
     access_control:
         - { path: ^/login, roles: [IS_AUTHENTICATED_ANONYMOUSLY] }
         - { path: ^/logout, roles: [ROLE_USER] }
-        - { path: ^/backend/admin, roles: [IS_AUTHENTICATED_ANONYMOUSLY] }
+        - { path: ^/backend/account, roles: [ROLE_ADMIN] }
+        - { path: ^/backend/admin, roles: [ROLE_ADMIN] }
         - { path: ^/backend/controlpanel, roles: [ROLE_USER] }
         - { path: ^/backend/offer, roles: [ROLE_OFFER] }
         - { path: ^/backend/page, roles: [ROLE_PAGE] }

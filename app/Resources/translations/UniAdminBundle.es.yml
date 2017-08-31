@@ -1,14 +1,10 @@
 sidemenu:
-    commune:
-        root: Comunas
-    province:
-        root: Provincias
-    region:
-        root: Regiones
-    group:
-        root: Grupos
+    account:
+        root: Cuentas
     user:
         root: Usuarios
+    group:
+        root: Grupos
     issuer:
         root: Emisores
     seller:
@@ -39,6 +35,150 @@ sidemenu:
         root: Página
     socialmedia:
         root: Redes Sociales
+
+account:
+    index:
+        title: Cuentas
+        list: Lista de cuentas
+        link: Lista de cuentas
+    new:
+        title: Cuentas
+        link: Nueva cuenta
+        form: Formulario de registro de cuenta
+        submit: Registrar cuenta
+        flash: Nueva cuenta registrada satisfactoriamente.
+    show:
+        title: Cuentas
+        link: Mostrar datos
+        data: Datos de cuenta
+    edit:
+        title: Cuentas
+        link: Editar datos
+        form: Formulario de edición de cuenta
+        submit: Guardar cambios
+        flash: Los cambios en la cuenta fueron registrados satisfactoriamente.
+    delete:
+        link: Borrar cuenta
+        title: Borrado de cuenta
+        message: Los datos borrados no podrán ser recuperados.
+        submit: Confirmar borrado
+        flash: La cuenta fué borrada totalmente.
+    form:
+        id: ID
+        name: Nombre de cuenta
+        business_name: Nombre o Razón social
+        business_rut: RUT
+        business_turn: Giro o Negocio
+        business_address_street: Calle
+        business_address_number: Número
+        business_address_commune: Comuna
+        budget_note: Nota de Presupuestos
+        created_at: Registro
+        updated_at: Actualización
+
+user:
+    index:
+        title: Usuarios
+        list: Lista de usuarios
+        link: Lista de usuarios
+    new:
+        title: Usuarios
+        link: Nuevo usuario
+        form: Formulario de registro de usuario
+        submit: Registrar usuario
+        flash: Nuevo usuario registrado satisfactoriamente.
+    show:
+        title: Usuarios
+        link: Mostrar datos
+        data: Datos de usuario
+    edit:
+        title: Usuarios
+        link: Editar datos
+        form: Formulario de edición de usuario
+        submit: Guardar cambios
+        flash: Los cambios en el usuario fueron registrados satisfactoriamente.
+    delete:
+        link: Borrar usuario
+        title: Borrado de usuario
+        message: Los datos borrados no podrán ser recuperados.
+        submit: Confirmar borrado
+        flash: El usuario fué borrado totalmente.
+    form:
+        id: ID
+        name: Nombre
+        rut: Rut
+        phone_number: Teléfono
+        address_street: Calle
+        address_number: Número
+        address_commune: Comuna
+        account: Cuenta
+        groups: Grupos
+        created_at: Registro
+        updated_at: Actualización
+
+group:
+    index:
+        title: Grupos
+        list: Lista de grupos
+        link: Lista de grupos
+    new:
+        title: Grupos
+        link: Nuevo grupo
+        form: Formulario de registro de grupo
+        submit: Registrar grupo
+        flash: Nuevo grupo registrado satisfactoriamente.
+    show:
+        title: Grupos
+        link: Mostrar datos
+        data: Datos de grupo
+    edit:
+        title: Grupos
+        link: Editar datos
+        form: Formulario de edición de grupo
+        submit: Guardar cambios
+        flash: Los cambios en el grupo fueron registrados satisfactoriamente.
+    delete:
+        link: Borrar grupo
+        title: Borrado de grupo
+        message: Los datos borrados no podrán ser recuperados.
+        submit: Confirmar borrado
+        flash: El grupo fué borrado totalmente.
+    form:
+        id: ID
+        created_at: Registro
+        updated_at: Actualización
+
+issuer:
+    index:
+        title: Emisores
+        list: Lista de emisores
+        link: Lista de emisores
+    new:
+        title: Emisores
+        link: Nuevo emisor
+        form: Formulario de registro de emisor
+        submit: Registrar emisor
+        flash: Nuevo emisor registrado satisfactoriamente.
+    show:
+        title: Emisores
+        link: Mostrar datos
+        data: Datos de emisor
+    edit:
+        title: Emisores
+        link: Editar datos
+        form: Formulario de edición de emisor
+        submit: Guardar cambios
+        flash: Los cambios en el emisor fueron registrados satisfactoriamente.
+    delete:
+        link: Borrar emisor
+        title: Borrado de emisor
+        message: Los datos borrados no podrán ser recuperados.
+        submit: Confirmar borrado
+        flash: El emisor fué borrado totalmente.
+    form:
+        id: ID
+        created_at: Registro
+        updated_at: Actualización
 
 seller:
     index:
@@ -263,6 +403,38 @@ budget:
         created_at: Registro
         updated_at: Actualización
 
+note:
+    index:
+        title: Notas
+        list: Lista de notas
+        link: Lista de notas
+    new:
+        title: Notas
+        link: Nueva nota
+        form: Formulario de registro de nota
+        submit: Registrar nota
+        flash: Nueva nota registrada satisfactoriamente.
+    show:
+        title: Notas
+        link: Mostrar datos
+        data: Datos de nota
+    edit:
+        title: Notas
+        link: Editar datos
+        form: Formulario de edición de nota
+        submit: Guardar cambios
+        flash: Los cambios en la nota fueron registrados satisfactoriamente.
+    delete:
+        link: Borrar nota
+        title: Borrado de nota
+        message: Los datos borrados no podrán ser recuperados.
+        submit: Confirmar borrado
+        flash: La nota fué borrada totalmente.
+    form:
+        id: ID
+        created_at: Registro
+        updated_at: Actualización
+
 feature:
     index:
         title: Características
@@ -273,7 +445,7 @@ feature:
         link: Nueva característica
         form: Formulario de registro de característica
         submit: Registrar característica
-        flash: Nueva característica registrado satisfactoriamente.
+        flash: Nueva característica registrada satisfactoriamente.
     show:
         title: Características
         link: Mostrar datos
@@ -292,9 +464,197 @@ feature:
         flash: La característica fué borrada totalmente.
     form:
         id: ID
-        nota: Nota
-        client: Cliente
-        seller: Vendedor
         created_at: Registro
         updated_at: Actualización
 
+photography:
+    index:
+        title: Fotografías
+        list: Lista de fotografías
+        link: Lista de fotografías
+    new:
+        title: Fotografías
+        link: Nueva fotografía
+        form: Formulario de registro de fotografía
+        submit: Registrar fotografía
+        flash: Nueva fotografía registrada satisfactoriamente.
+    show:
+        title: Fotografías
+        link: Mostrar datos
+        data: Datos de fotografía
+    edit:
+        title: Fotografías
+        link: Editar datos
+        form: Formulario de edición de fotografía
+        submit: Guardar cambios
+        flash: Los cambios en la fotografía fueron registrados satisfactoriamente.
+    delete:
+        link: Borrar fotografía
+        title: Borrado de fotografía
+        message: Los datos borrados no podrán ser recuperados.
+        submit: Confirmar borrado
+        flash: La fotografía fué borrada totalmente.
+    form:
+        id: ID
+        created_at: Registro
+        updated_at: Actualización
+
+category:
+    index:
+        title: Categorías
+        list: Lista de categorías
+        link: Lista de categorías
+    new:
+        title: Categorías
+        link: Nueva categoría
+        form: Formulario de registro de categoría
+        submit: Registrar categoría
+        flash: Nueva categoría registrada satisfactoriamente.
+    show:
+        title: Categorías
+        link: Mostrar datos
+        data: Datos de categoría
+    edit:
+        title: Categorías
+        link: Editar datos
+        form: Formulario de edición de categoría
+        submit: Guardar cambios
+        flash: Los cambios en la categoría fueron registrados satisfactoriamente.
+    delete:
+        link: Borrar categoría
+        title: Borrado de categoría
+        message: Los datos borrados no podrán ser recuperados.
+        submit: Confirmar borrado
+        flash: La categoría fué borrada totalmente.
+    form:
+        id: ID
+        created_at: Registro
+        updated_at: Actualización
+
+subcategory:
+    index:
+        title: Subcategoría
+        list: Lista de subcategoría
+        link: Lista de subcategoría
+    new:
+        title: Subcategoría
+        link: Nueva subcategoría
+        form: Formulario de registro de subcategoría
+        submit: Registrar subcategoría
+        flash: Nueva subcategoría registrada satisfactoriamente.
+    show:
+        title: Subcategoría
+        link: Mostrar datos
+        data: Datos de subcategoría
+    edit:
+        title: Subcategoría
+        link: Editar datos
+        form: Formulario de edición de subcategoría
+        submit: Guardar cambios
+        flash: Los cambios en la subcategoría fueron registrados satisfactoriamente.
+    delete:
+        link: Borrar subcategoría
+        title: Borrado de subcategoría
+        message: Los datos borrados no podrán ser recuperados.
+        submit: Confirmar borrado
+        flash: La subcategoría fué borrada totalmente.
+    form:
+        id: ID
+        created_at: Registro
+        updated_at: Actualización
+
+catalog:
+    index:
+        title: Catálogos
+        list: Lista de catálogos
+        link: Lista de catálogos
+    new:
+        title: Catálogos
+        link: Nuevo catálogo
+        form: Formulario de registro de catálogo
+        submit: Registrar catálogo
+        flash: Nuevo catálogo registrado satisfactoriamente.
+    show:
+        title: Catálogos
+        link: Mostrar datos
+        data: Datos de catálogo
+    edit:
+        title: Catálogos
+        link: Editar datos
+        form: Formulario de edición de catálogo
+        submit: Guardar cambios
+        flash: Los cambios en el catálogo fueron registrados satisfactoriamente.
+    delete:
+        link: Borrar catálogo
+        title: Borrado de catálogo
+        message: Los datos borrados no podrán ser recuperados.
+        submit: Confirmar borrado
+        flash: El catálogo fué borrado totalmente.
+    form:
+        id: ID
+        created_at: Registro
+        updated_at: Actualización
+
+page:
+    index:
+        title: Página
+        list: Lista de páginas
+        link: Lista de páginas
+    new:
+        title: Página
+        link: Nueva página
+        form: Formulario de registro de página
+        submit: Registrar página
+        flash: Nueva página registrada satisfactoriamente.
+    show:
+        title: Página
+        link: Mostrar datos
+        data: Datos de página
+    edit:
+        title: Página
+        link: Editar datos
+        form: Formulario de edición de página
+        submit: Guardar cambios
+        flash: Los cambios en la página fueron registrados satisfactoriamente.
+    delete:
+        link: Borrar página
+        title: Borrado de página
+        message: Los datos borrados no podrán ser recuperados.
+        submit: Confirmar borrado
+        flash: La página fué borrada totalmente.
+    form:
+        id: ID
+        created_at: Registro
+        updated_at: Actualización
+
+socialmedia:
+    index:
+        title: Redes Sociales
+        list: Lista de redes sociales
+        link: Lista de redes sociales
+    new:
+        title: Redes Sociales
+        link: Nueva red social
+        form: Formulario de registro de red social
+        submit: Registrar red social
+        flash: Nueva red social registrada satisfactoriamente.
+    show:
+        title: Redes Sociales
+        link: Mostrar datos
+        data: Datos de red social
+    edit:
+        title: Redes Sociales
+        link: Editar datos
+        form: Formulario de edición de red social
+        submit: Guardar cambios
+        flash: Los cambios en la red social fueron registrados satisfactoriamente.
+    delete:
+        link: Borrar red social
+        title: Borrado de red social
+        message: Los datos borrados no podrán ser recuperados.
+        submit: Confirmar borrado
+        flash: La red social fué borrada totalmente.
+    form:
+        id: ID
+        created_at: Registro
+        updated_at: Actualización

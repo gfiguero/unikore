@@ -1,14 +1,22 @@
 {% block icons %}
     {% if app.request.attributes.get( '_route' ) starts with 'home' %}{{ icon('home fa-fw') }}
+    {% elseif '_account_' in app.request.attributes.get( '_route' ) %}{{ icon('file-text fa-fw') }}
     {% elseif '_client_' in app.request.attributes.get( '_route' ) %}{{ icon('handshake-o fa-fw') }}
     {% elseif '_item_' in app.request.attributes.get( '_route' ) %}{{ icon('cubes fa-fw') }}
     {% elseif '_product_' in app.request.attributes.get( '_route' ) %}{{ icon('cube fa-fw') }}
     {% elseif '_seller_' in app.request.attributes.get( '_route' ) %}{{ icon('id-card fa-fw') }}
     {% elseif '_budget_' in app.request.attributes.get( '_route' ) %}{{ icon('check-square-o fa-fw') }}
-    {% elseif '_provider_' in app.request.attributes.get( '_route' ) %}{{ icon('truck fa-fw') }}
+    {% elseif '_provider_' in app.request.attributes.get( '_route' ) %}{{ icon('truck fa-flip-horizontal fa-fw') }}
+    {% elseif '_feature_' in app.request.attributes.get( '_route' ) %}{{ icon('bullhorn fa-fw') }}
     {% elseif '_note_' in app.request.attributes.get( '_route' ) %}{{ icon('sticky-note fa-fw') }}
     {% elseif '_issuer_' in app.request.attributes.get( '_route' ) %}{{ icon('bookmark fa-fw') }}
+    {% elseif '_photography_' in app.request.attributes.get( '_route' ) %}{{ icon('image fa-fw') }}
+    {% elseif '_page_' in app.request.attributes.get( '_route' ) %}{{ icon('at fa-fw') }}
+    {% elseif '_catalog_' in app.request.attributes.get( '_route' ) %}{{ icon('dot-circle-o fa-fw') }}
+    {% elseif '_category_' in app.request.attributes.get( '_route' ) %}{{ icon('list-ol fa-fw') }}
+    {% elseif '_subcategory_' in app.request.attributes.get( '_route' ) %}{{ icon('list-ul fa-fw') }}
     {% elseif '_user_group_' in app.request.attributes.get( '_route' ) %}{{ icon('group fa-fw') }}
     {% elseif '_user_' in app.request.attributes.get( '_route' ) %}{{ icon('user fa-fw') }}
+    {% elseif '_socialmedia_' in app.request.attributes.get( '_route' ) %}{{ icon('share-alt fa-fw') }}
     {% endif %}
 {% endblock %}

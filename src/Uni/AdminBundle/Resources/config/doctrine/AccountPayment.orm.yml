@@ -1,0 +1,41 @@
+Uni\AdminBundle\Entity\AccountPayment:
+    type: entity
+    table: uni_accountpayment
+    repositoryClass:  Uni\AdminBundle\Entity\AccountPaymentRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    manyToOne:
+        account:
+            targetEntity: Uni\AdminBundle\Entity\Account
+            inversedBy: payments
+    fields:
+        name:
+            type: string
+            length: 100
+        code:
+            type: string
+            length: 100
+        amount:
+            type: integer
+        created_at:
+            type: datetime
+            gedmo:
+                timestampable:
+                    on: create
+        updated_at:
+            type: datetime
+            gedmo:
+                timestampable:
+                    on: update
+        deleted_at:
+            type: datetime
+            nullable: true
+    gedmo:
+        soft_deleteable:
+            field_name: deleted_at
+            time_aware: false
+    lifecycleCallbacks: {  }

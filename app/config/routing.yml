@@ -1,6 +1,10 @@
 _liip_imagine:
     resource: "@LiipImagineBundle/Resources/config/routing.xml"
 
+uni_account:
+    resource: "@UniAccountBundle/Resources/config/routing.yml"
+    prefix:   /backend/account
+
 uni_admin:
     resource: "@UniAdminBundle/Resources/config/routing.yml"
     prefix:   /backend/admin

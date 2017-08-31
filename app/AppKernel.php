@@ -33,6 +33,7 @@ class AppKernel extends Kernel
             new Uni\PageBundle\UniPageBundle(),
             new Uni\CatalogBundle\UniCatalogBundle(),
             new Uni\PublicBundle\UniPublicBundle(),
+            new Uni\AccountBundle\UniAccountBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'), true)) {

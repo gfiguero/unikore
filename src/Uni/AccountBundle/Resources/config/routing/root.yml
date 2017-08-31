@@ -1,0 +1,6 @@
+account_root:
+    path: /
+    defaults:
+        _controller: FrameworkBundle:Redirect:redirect
+        route: account_account_index
+        permanent: true

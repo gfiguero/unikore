@@ -1,0 +1,19 @@
+uni_account_accountpayment:
+    resource: "@UniAccountBundle/Resources/config/routing/accountpayment.yml"
+    prefix:   /accountpayment
+
+uni_account_account:
+    resource: "@UniAccountBundle/Resources/config/routing/account.yml"
+    prefix:   /account
+
+uni_account_user:
+    resource: "@UniAccountBundle/Resources/config/routing/user.yml"
+    prefix:   /user
+
+fos_user_group:
+    resource: "@FOSUserBundle/Resources/config/routing/group.xml"
+    prefix: /group
+
+uni_account_root:
+    resource: "@UniAccountBundle/Resources/config/routing/root.yml"
+    prefix:   /

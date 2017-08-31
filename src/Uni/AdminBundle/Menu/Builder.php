@@ -66,6 +66,24 @@ class Builder implements ContainerAwareInterface
             'admin_region_show',
             'admin_region_edit',
         )));
+        $sidemenu->addChild('sidemenu.account.root', array('route' => 'admin_account_index'))->setExtras(array('translation_domain' => 'UniAdminBundle', 'routes' => array(
+            'admin_account_index',
+            'admin_account_new',
+            'admin_account_show',
+            'admin_account_edit',
+        )));
+        $sidemenu->addChild('sidemenu.user.root', array('route' => 'admin_user_index'))->setExtras(array('translation_domain' => 'UniAdminBundle', 'routes' => array(
+            'admin_user_index',
+            'admin_user_new',
+            'admin_user_show',
+            'admin_user_edit',
+        )));
+        $sidemenu->addChild('sidemenu.group.root', array('route' => 'fos_user_group_list'))->setExtras(array('translation_domain' => 'UniAdminBundle', 'routes' => array(
+            'fos_user_group_list',
+            'fos_user_group_new',
+            'fos_user_group_show',
+            'fos_user_group_edit',
+        )));
 */
         $sidemenu->addChild('sidemenu.issuer.root', array('route' => 'admin_issuer_index'))->setExtras(array('translation_domain' => 'UniAdminBundle', 'routes' => array(
             'admin_issuer_index',

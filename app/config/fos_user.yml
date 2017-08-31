@@ -14,8 +14,8 @@ fos_user:
         user_manager:           fos_user.user_manager.default
 
     from_email:
-        address: unipage@dev.elklan.cl
-        sender_name: Equipo de UniBudget
+        address: contacto@unisign.cl
+        sender_name: Equipo de uniSign
 
     registration:
         form:
@@ -23,8 +23,8 @@ fos_user:
         confirmation:
             enabled:            true
             from_email:
-                address: unipage@dev.elklan.cl
-                sender_name: Equipo de UniBudget
+                address: registro@unisign.cl
+                sender_name: Equipo de uniSign
 
     resetting:
         form:
@@ -32,8 +32,8 @@ fos_user:
         token_ttl: 86400
         email:
             from_email:
-                address: unipage@dev.elklan.cl
-                sender_name: Equipo de UniBudget
+                address: recuperacion@unisign.cl
+                sender_name: Equipo de uniSign
 
     group:
         group_class: Uni\AdminBundle\Entity\Group

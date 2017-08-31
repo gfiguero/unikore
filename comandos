@@ -13,6 +13,7 @@ php app/console generate:bundle --namespace Uni/UserBundle --dir src --bundle-na
 php app/console generate:bundle --namespace Uni/ControlPanelBundle --dir src --bundle-name UniControlPanelBundle --format yml --shared --no-interaction
 php app/console generate:bundle --namespace Uni/PageBundle --dir src --bundle-name UniPageBundle --format yml --shared --no-interaction
 php app/console generate:bundle --namespace Uni/CatalogBundle --dir src --bundle-name UniCatalogBundle --format yml --shared --no-interaction
+php app/console generate:bundle --namespace Uni/AccountBundle --dir src --bundle-name UniAccountBundle --format yml --shared --no-interaction
 php app/console generate:bundle --namespace Uni/PublicBundle --dir src --bundle-name UniPublicBundle --format yml --shared --no-interaction
 
 

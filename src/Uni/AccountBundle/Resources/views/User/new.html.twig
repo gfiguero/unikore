@@ -1,0 +1,74 @@
+{% extends 'UniAccountBundle:Base:layout.html.twig' %}
+
+{% trans_default_domain 'UniAccountBundle' %}
+
+{% block title %}&nbsp;-&nbsp;{{ 'user.new.title'|trans }}{% endblock %}
+
+{% block admin %}
+    <div id="page-wrapper">
+        <div class="row" id="page-header">
+            <div class="col-lg-12">
+                <h1 class="page-header">{% block icons %}{{ parent() }}{% endblock %}{{ 'user.new.title'|trans }}</h1>
+                {% block flashbag %}{{ parent() }}{% endblock %}
+            </div>
+        </div>
+        <!-- /#page-header -->
+
+        <div class="row" id="page-toolbar">
+            <div class="col-lg-12">
+                <div class="btn-toolbar">
+                    <a type="button" class="btn btn-default" href="{{ path('account_user_index') }}">{{ icon('list fa-fw') }}&nbsp;{{ 'user.index.link'|trans }}</a>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-toolbar -->
+
+        <div class="row" id="page-new">
+            <div class="col-lg-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">{{ 'user.new.form'|trans }}</h2>
+                    </div>
+                    <div class="panel-body">
+                        <ul class="nav nav-pills">
+                            <li role="presentation" class="active"><a data-toggle="tab" href="#access">{{ 'user.section.access'|trans }}</a></li>
+                            <li role="presentation"><a data-toggle="tab" href="#personal">{{ 'user.section.personal'|trans }}</a></li>
+                        </ul>
+                    </div>
+                    <div class="panel-body">
+                        {{ form_start(newForm, {'style' : 'horizontal' }) }}
+                        <div class="tab-content">
+                            <div id="access" class="tab-pane fade in active" >
+                                {{ form_row(newForm.username) }}
+                                {{ form_row(newForm.email) }}
+                                {{ form_row(newForm.plainPassword) }}
+                                {{ form_row(newForm.account) }}
+                                {{ form_row(newForm.groups) }}
+                            </div>
+                            <div id="personal" class="tab-pane fade" >
+                                {{ form_row(newForm.name) }}
+                                {{ form_row(newForm.rut) }}
+                                {{ form_row(newForm.phone_number) }}
+                                {{ form_row(newForm.address_street) }}
+                                {{ form_row(newForm.address_number) }}
+                                {{ form_row(newForm.address_commune) }}
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-8 col-md-offset-4">
+                                <button class="btn btn-primary" type="submit">{{ icon('save fa-fw') }}&nbsp;{{ 'user.new.submit'|trans }}</button>
+                            </div>
+                        </div>
+                        {{ form_end(newForm) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-new -->
+
+    </div>
+    <!-- /#page-wrapper -->
+
+{% endblock %}
+
+

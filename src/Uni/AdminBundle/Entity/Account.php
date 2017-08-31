@@ -945,4 +945,43 @@ class Account
     {
         return $this->business_address_commune;
     }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $payments;
+
+
+    /**
+     * Add payment
+     *
+     * @param \Uni\AdminBundle\Entity\AccountPayment $payment
+     *
+     * @return Account
+     */
+    public function addPayment(\Uni\AdminBundle\Entity\AccountPayment $payment)
+    {
+        $this->payments[] = $payment;
+
+        return $this;
+    }
+
+    /**
+     * Remove payment
+     *
+     * @param \Uni\AdminBundle\Entity\AccountPayment $payment
+     */
+    public function removePayment(\Uni\AdminBundle\Entity\AccountPayment $payment)
+    {
+        $this->payments->removeElement($payment);
+    }
+
+    /**
+     * Get payments
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getPayments()
+    {
+        return $this->payments;
+    }
 }

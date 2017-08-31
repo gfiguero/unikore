@@ -1,0 +1,24 @@
+account_account_index:
+    path:     /
+    defaults: { _controller: "UniAccountBundle:Account:index" }
+    methods:  GET
+
+account_account_show:
+    path:     /{id}/show
+    defaults: { _controller: "UniAccountBundle:Account:show" }
+    methods:  GET
+
+account_account_new:
+    path:     /new
+    defaults: { _controller: "UniAccountBundle:Account:new" }
+    methods:  [GET, POST]
+
+account_account_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "UniAccountBundle:Account:edit" }
+    methods:  [GET, POST]
+
+account_account_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "UniAccountBundle:Account:delete" }
+    methods:  DELETE

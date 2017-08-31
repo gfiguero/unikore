@@ -13,6 +13,7 @@ php app/console doctrine:generate:entities UniAdminBundle:Region --path=src
 php app/console doctrine:generate:entities UniAdminBundle:Group --path=src
 php app/console doctrine:generate:entities UniAdminBundle:User --path=src
 php app/console doctrine:generate:entities UniAdminBundle:Account --path=src
+php app/console doctrine:generate:entities UniAdminBundle:AccountPayment --path=src
 php app/console doctrine:generate:entities UniAdminBundle:Page --path=src
 php app/console doctrine:generate:entities UniAdminBundle:Socialnetwork --path=src
 php app/console doctrine:generate:entities UniAdminBundle:Socialmedia --path=src
@@ -37,6 +38,7 @@ php app/console uni:admingenerate:crud --overwrite --format=yml --with-write --n
 php app/console uni:admingenerate:crud --overwrite --format=yml --with-write --no-interaction --entity=UniAdminBundle:User --route-prefix=admin_user
 php app/console uni:admingenerate:crud --overwrite --format=yml --with-write --no-interaction --entity=UniAdminBundle:Group --route-prefix=admin_group
 php app/console uni:admingenerate:crud --overwrite --format=yml --with-write --no-interaction --entity=UniAdminBundle:Account --route-prefix=admin_account
+php app/console uni:admingenerate:crud --overwrite --format=yml --with-write --no-interaction --entity=UniAdminBundle:AccountPayment --route-prefix=admin_accountpayment
 php app/console uni:admingenerate:crud --overwrite --format=yml --with-write --no-interaction --entity=UniAdminBundle:Page --route-prefix=admin_page
 php app/console uni:admingenerate:crud --overwrite --format=yml --with-write --no-interaction --entity=UniAdminBundle:Socialmedia --route-prefix=admin_socialmedia
 php app/console uni:admingenerate:crud --overwrite --format=yml --with-write --no-interaction --entity=UniAdminBundle:Socialnetwork --route-prefix=admin_socialnetwork

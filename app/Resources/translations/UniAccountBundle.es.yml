@@ -1,0 +1,126 @@
+sidemenu:
+    account:
+        root: Cuentas
+    user:
+        root: Usuarios
+    group:
+        root: Grupos
+
+account:
+    index:
+        title: Cuentas
+        list: Lista de cuentas
+        link: Lista de cuentas
+    new:
+        title: Cuentas
+        link: Nueva cuenta
+        form: Formulario de registro de cuenta
+        submit: Registrar cuenta
+        flash: Nueva cuenta registrada satisfactoriamente.
+    show:
+        title: Cuentas
+        link: Mostrar datos
+        data: Datos de cuenta
+    edit:
+        title: Cuentas
+        link: Editar datos
+        form: Formulario de edición de cuenta
+        submit: Guardar cambios
+        flash: Los cambios en la cuenta fueron registrados satisfactoriamente.
+    delete:
+        link: Borrar cuenta
+        title: Borrado de cuenta
+        message: Los datos borrados no podrán ser recuperados.
+        submit: Confirmar borrado
+        flash: La cuenta fué borrada totalmente.
+    form:
+        id: ID
+        name: Nombre de cuenta
+        business_name: Nombre o Razón social
+        business_rut: RUT
+        business_turn: Giro o Negocio
+        business_address_street: Calle
+        business_address_number: Número
+        business_address_commune: Comuna
+        budget_note: Nota de Presupuestos
+        created_at: Registro
+        updated_at: Actualización
+
+user:
+    index:
+        title: Usuarios
+        list: Lista de usuarios
+        link: Lista de usuarios
+    new:
+        title: Usuarios
+        link: Nuevo usuario
+        form: Formulario de registro de usuario
+        submit: Registrar usuario
+        flash: Nuevo usuario registrado satisfactoriamente.
+    show:
+        title: Usuarios
+        link: Mostrar datos
+        data: Datos de usuario
+    edit:
+        title: Usuarios
+        link: Editar datos
+        form: Formulario de edición de usuario
+        submit: Guardar cambios
+        flash: Los cambios en el usuario fueron registrados satisfactoriamente.
+    delete:
+        link: Borrar usuario
+        title: Borrado de usuario
+        message: Los datos borrados no podrán ser recuperados.
+        submit: Confirmar borrado
+        flash: El usuario fué borrado totalmente.
+    form:
+        id: ID
+        username: Nombre de Usuario
+        email: Email
+        password: Password
+        name: Nombre
+        rut: Rut
+        phone_number: Teléfono
+        address_street: Calle
+        address_number: Número
+        address_commune: Comuna
+        account: Cuenta
+        groups: Grupos
+        created_at: Registro
+        updated_at: Actualización
+    section:
+        access: Información de Acceso
+        personal: Información Personal
+
+group:
+    index:
+        title: Grupos
+        list: Lista de grupos
+        link: Lista de grupos
+    new:
+        title: Grupos
+        link: Nuevo grupo
+        form: Formulario de registro de grupo
+        submit: Registrar grupo
+        flash: Nuevo grupo registrado satisfactoriamente.
+    show:
+        title: Grupos
+        link: Mostrar datos
+        data: Datos de grupo
+    edit:
+        title: Grupos
+        link: Editar datos
+        form: Formulario de edición de grupo
+        submit: Guardar cambios
+        flash: Los cambios en el grupo fueron registrados satisfactoriamente.
+    delete:
+        link: Borrar grupo
+        title: Borrado de grupo
+        message: Los datos borrados no podrán ser recuperados.
+        submit: Confirmar borrado
+        flash: El grupo fué borrado totalmente.
+    form:
+        id: ID
+        created_at: Registro
+        updated_at: Actualización
+

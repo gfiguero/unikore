@@ -1,0 +1,24 @@
+account_group_index:
+    path:     /
+    defaults: { _controller: "UniAccountBundle:Group:index" }
+    methods:  GET
+
+account_group_show:
+    path:     /{id}/show
+    defaults: { _controller: "UniAccountBundle:Group:show" }
+    methods:  GET
+
+account_group_new:
+    path:     /new
+    defaults: { _controller: "UniAccountBundle:Group:new" }
+    methods:  [GET, POST]
+
+account_group_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "UniAccountBundle:Group:edit" }
+    methods:  [GET, POST]
+
+account_group_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "UniAccountBundle:Group:delete" }
+    methods:  DELETE

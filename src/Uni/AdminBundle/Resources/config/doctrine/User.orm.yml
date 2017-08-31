@@ -49,12 +49,15 @@ Uni\AdminBundle\Entity\User:
         rut:
             type: string
             length: 200
+            nullable: true
         address_street:
             type: string
             length: 200
+            nullable: true
         address_number:
             type: string
             length: 20
+            nullable: true
         created_at:
             type: datetime
             gedmo:

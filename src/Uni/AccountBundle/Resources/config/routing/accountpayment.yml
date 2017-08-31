@@ -1,0 +1,24 @@
+account_accountpayment_index:
+    path:     /
+    defaults: { _controller: "UniAccountBundle:AccountPayment:index" }
+    methods:  GET
+
+account_accountpayment_show:
+    path:     /{id}/show
+    defaults: { _controller: "UniAccountBundle:AccountPayment:show" }
+    methods:  GET
+
+account_accountpayment_new:
+    path:     /new
+    defaults: { _controller: "UniAccountBundle:AccountPayment:new" }
+    methods:  [GET, POST]
+
+account_accountpayment_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "UniAccountBundle:AccountPayment:edit" }
+    methods:  [GET, POST]
+
+account_accountpayment_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "UniAccountBundle:AccountPayment:delete" }
+    methods:  DELETE
