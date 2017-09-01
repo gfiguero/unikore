@@ -54,6 +54,7 @@ class Page
     {
         $this->features = new \Doctrine\Common\Collections\ArrayCollection();
         $this->photographies = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->socialmedia = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     public function __toString()
@@ -307,67 +308,77 @@ class Page
     /**
      * @var string
      */
-    private $maintitle;
+    private $main_title;
 
     /**
      * @var string
      */
-    private $mainsubtitle;
+    private $main_subtitle;
 
     /**
      * @var string
      */
-    private $maincalltoaction;
+    private $main_calltoaction;
 
     /**
      * @var string
      */
-    private $abouttitle;
+    private $about_title;
 
     /**
      * @var string
      */
-    private $aboutcontent;
+    private $about_content;
 
     /**
      * @var string
      */
-    private $featuretitle;
+    private $feature_title;
 
     /**
      * @var string
      */
-    private $featurecontent;
+    private $socialmedia_title;
 
     /**
      * @var string
      */
-    private $contacttitle;
+    private $feature_content;
 
     /**
      * @var string
      */
-    private $contactcontent;
+    private $contact_title;
 
     /**
      * @var string
      */
-    private $contactphone;
+    private $contact_content;
 
     /**
      * @var string
      */
-    private $contactemail;
+    private $contact_phone;
 
     /**
      * @var string
      */
-    private $contactaddress;
+    private $contact_email;
 
     /**
      * @var string
      */
-    private $contactschedule;
+    private $contact_address;
+
+    /**
+     * @var string
+     */
+    private $contact_schedule;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $socialmedia;
 
 
     /**
@@ -443,321 +454,340 @@ class Page
     }
 
     /**
-     * Set maintitle
+     * Set mainTitle
      *
-     * @param string $maintitle
+     * @param string $mainTitle
      *
      * @return Page
      */
-    public function setMaintitle($maintitle)
+    public function setMainTitle($mainTitle)
     {
-        $this->maintitle = $maintitle;
+        $this->main_title = $mainTitle;
 
         return $this;
     }
 
     /**
-     * Get maintitle
+     * Get mainTitle
      *
      * @return string
      */
-    public function getMaintitle()
+    public function getMainTitle()
     {
-        return $this->maintitle;
+        return $this->main_title;
     }
 
     /**
-     * Set mainsubtitle
+     * Set mainSubtitle
      *
-     * @param string $mainsubtitle
+     * @param string $mainSubtitle
      *
      * @return Page
      */
-    public function setMainsubtitle($mainsubtitle)
+    public function setMainSubtitle($mainSubtitle)
     {
-        $this->mainsubtitle = $mainsubtitle;
+        $this->main_subtitle = $mainSubtitle;
 
         return $this;
     }
 
     /**
-     * Get mainsubtitle
+     * Get mainSubtitle
      *
      * @return string
      */
-    public function getMainsubtitle()
+    public function getMainSubtitle()
     {
-        return $this->mainsubtitle;
+        return $this->main_subtitle;
     }
 
     /**
-     * Set maincalltoaction
+     * Set mainCalltoaction
      *
-     * @param string $maincalltoaction
+     * @param string $mainCalltoaction
      *
      * @return Page
      */
-    public function setMaincalltoaction($maincalltoaction)
+    public function setMainCalltoaction($mainCalltoaction)
     {
-        $this->maincalltoaction = $maincalltoaction;
+        $this->main_calltoaction = $mainCalltoaction;
 
         return $this;
     }
 
     /**
-     * Get maincalltoaction
+     * Get mainCalltoaction
      *
      * @return string
      */
-    public function getMaincalltoaction()
+    public function getMainCalltoaction()
     {
-        return $this->maincalltoaction;
+        return $this->main_calltoaction;
     }
 
     /**
-     * Set abouttitle
+     * Set aboutTitle
      *
-     * @param string $abouttitle
+     * @param string $aboutTitle
      *
      * @return Page
      */
-    public function setAbouttitle($abouttitle)
+    public function setAboutTitle($aboutTitle)
     {
-        $this->abouttitle = $abouttitle;
+        $this->about_title = $aboutTitle;
 
         return $this;
     }
 
     /**
-     * Get abouttitle
+     * Get aboutTitle
      *
      * @return string
      */
-    public function getAbouttitle()
+    public function getAboutTitle()
     {
-        return $this->abouttitle;
+        return $this->about_title;
     }
 
     /**
-     * Set aboutcontent
+     * Set aboutContent
      *
-     * @param string $aboutcontent
+     * @param string $aboutContent
      *
      * @return Page
      */
-    public function setAboutcontent($aboutcontent)
+    public function setAboutContent($aboutContent)
     {
-        $this->aboutcontent = $aboutcontent;
+        $this->about_content = $aboutContent;
 
         return $this;
     }
 
     /**
-     * Get aboutcontent
+     * Get aboutContent
      *
      * @return string
      */
-    public function getAboutcontent()
+    public function getAboutContent()
     {
-        return $this->aboutcontent;
+        return $this->about_content;
     }
 
     /**
-     * Set featuretitle
+     * Set featureTitle
      *
-     * @param string $featuretitle
+     * @param string $featureTitle
      *
      * @return Page
      */
-    public function setFeaturetitle($featuretitle)
+    public function setFeatureTitle($featureTitle)
     {
-        $this->featuretitle = $featuretitle;
+        $this->feature_title = $featureTitle;
 
         return $this;
     }
 
     /**
-     * Get featuretitle
+     * Get featureTitle
      *
      * @return string
      */
-    public function getFeaturetitle()
+    public function getFeatureTitle()
     {
-        return $this->featuretitle;
+        return $this->feature_title;
     }
 
     /**
-     * Set featurecontent
+     * Set socialmediaTitle
      *
-     * @param string $featurecontent
+     * @param string $socialmediaTitle
      *
      * @return Page
      */
-    public function setFeaturecontent($featurecontent)
+    public function setSocialmediaTitle($socialmediaTitle)
     {
-        $this->featurecontent = $featurecontent;
+        $this->socialmedia_title = $socialmediaTitle;
 
         return $this;
     }
 
     /**
-     * Get featurecontent
+     * Get socialmediaTitle
      *
      * @return string
      */
-    public function getFeaturecontent()
+    public function getSocialmediaTitle()
     {
-        return $this->featurecontent;
+        return $this->socialmedia_title;
     }
 
     /**
-     * Set contacttitle
+     * Set featureContent
      *
-     * @param string $contacttitle
+     * @param string $featureContent
      *
      * @return Page
      */
-    public function setContacttitle($contacttitle)
+    public function setFeatureContent($featureContent)
     {
-        $this->contacttitle = $contacttitle;
+        $this->feature_content = $featureContent;
 
         return $this;
     }
 
     /**
-     * Get contacttitle
+     * Get featureContent
      *
      * @return string
      */
-    public function getContacttitle()
+    public function getFeatureContent()
     {
-        return $this->contacttitle;
+        return $this->feature_content;
     }
 
     /**
-     * Set contactcontent
+     * Set contactTitle
      *
-     * @param string $contactcontent
+     * @param string $contactTitle
      *
      * @return Page
      */
-    public function setContactcontent($contactcontent)
+    public function setContactTitle($contactTitle)
     {
-        $this->contactcontent = $contactcontent;
+        $this->contact_title = $contactTitle;
 
         return $this;
     }
 
     /**
-     * Get contactcontent
+     * Get contactTitle
      *
      * @return string
      */
-    public function getContactcontent()
+    public function getContactTitle()
     {
-        return $this->contactcontent;
+        return $this->contact_title;
     }
 
     /**
-     * Set contactphone
+     * Set contactContent
      *
-     * @param string $contactphone
+     * @param string $contactContent
      *
      * @return Page
      */
-    public function setContactphone($contactphone)
+    public function setContactContent($contactContent)
     {
-        $this->contactphone = $contactphone;
+        $this->contact_content = $contactContent;
 
         return $this;
     }
 
     /**
-     * Get contactphone
+     * Get contactContent
      *
      * @return string
      */
-    public function getContactphone()
+    public function getContactContent()
     {
-        return $this->contactphone;
+        return $this->contact_content;
     }
 
     /**
-     * Set contactemail
+     * Set contactPhone
      *
-     * @param string $contactemail
+     * @param string $contactPhone
      *
      * @return Page
      */
-    public function setContactemail($contactemail)
+    public function setContactPhone($contactPhone)
     {
-        $this->contactemail = $contactemail;
+        $this->contact_phone = $contactPhone;
 
         return $this;
     }
 
     /**
-     * Get contactemail
+     * Get contactPhone
      *
      * @return string
      */
-    public function getContactemail()
+    public function getContactPhone()
     {
-        return $this->contactemail;
+        return $this->contact_phone;
     }
 
     /**
-     * Set contactaddress
+     * Set contactEmail
      *
-     * @param string $contactaddress
+     * @param string $contactEmail
      *
      * @return Page
      */
-    public function setContactaddress($contactaddress)
+    public function setContactEmail($contactEmail)
     {
-        $this->contactaddress = $contactaddress;
+        $this->contact_email = $contactEmail;
 
         return $this;
     }
 
     /**
-     * Get contactaddress
+     * Get contactEmail
      *
      * @return string
      */
-    public function getContactaddress()
+    public function getContactEmail()
     {
-        return $this->contactaddress;
+        return $this->contact_email;
     }
 
     /**
-     * Set contactschedule
+     * Set contactAddress
      *
-     * @param string $contactschedule
+     * @param string $contactAddress
      *
      * @return Page
      */
-    public function setContactschedule($contactschedule)
+    public function setContactAddress($contactAddress)
     {
-        $this->contactschedule = $contactschedule;
+        $this->contact_address = $contactAddress;
 
         return $this;
     }
 
     /**
-     * Get contactschedule
+     * Get contactAddress
      *
      * @return string
      */
-    public function getContactschedule()
+    public function getContactAddress()
     {
-        return $this->contactschedule;
+        return $this->contact_address;
     }
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     */
-    private $socialmedia;
 
+    /**
+     * Set contactSchedule
+     *
+     * @param string $contactSchedule
+     *
+     * @return Page
+     */
+    public function setContactSchedule($contactSchedule)
+    {
+        $this->contact_schedule = $contactSchedule;
+
+        return $this;
+    }
+
+    /**
+     * Get contactSchedule
+     *
+     * @return string
+     */
+    public function getContactSchedule()
+    {
+        return $this->contact_schedule;
+    }
 
     /**
      * Add socialmedia
