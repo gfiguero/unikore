@@ -108,7 +108,12 @@ class PageType extends AbstractType
                 'label' => 'page.form.contact_schedule',
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
                 'translation_domain' => 'UniAdminBundle',
-            )) 
+            ))
+            ->add('socialmedia_title', null, array(
+                'label' => 'page.form.socialmedia_title',
+                'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
+                'translation_domain' => 'UniAdminBundle',
+            ))  
             ->add('account', null, array(
                 'label' => 'page.form.account',
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),

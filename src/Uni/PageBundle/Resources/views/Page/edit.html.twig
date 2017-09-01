@@ -42,6 +42,7 @@
                             <li role="presentation"><a data-toggle="tab" href="#about">{{ 'page.section.about'|trans }}</a></li>
                             <li role="presentation"><a data-toggle="tab" href="#feature">{{ 'page.section.feature'|trans }}</a></li>
                             <li role="presentation"><a data-toggle="tab" href="#contact">{{ 'page.section.contact'|trans }}</a></li>
+                            <li role="presentation"><a data-toggle="tab" href="#social">{{ 'page.section.social'|trans }}</a></li>
                         </ul>
                     </div>
                     <div class="panel-body">
@@ -55,25 +56,28 @@
                                 {{ form_row(editForm.brand_secondary_color) }}
                             </div>
                             <div id="main" class="tab-pane fade" >
-                                {{ form_row(editForm.maintitle) }}
-                                {{ form_row(editForm.mainsubtitle) }}
-                                {{ form_row(editForm.maincalltoaction) }}
+                                {{ form_row(editForm.main_title) }}
+                                {{ form_row(editForm.main_subtitle) }}
+                                {{ form_row(editForm.main_calltoaction) }}
                             </div>
                             <div id="about" class="tab-pane fade" >
-                                {{ form_row(editForm.abouttitle) }}
-                                {{ form_row(editForm.aboutcontent) }}
+                                {{ form_row(editForm.about_title) }}
+                                {{ form_row(editForm.about_content) }}
                             </div>
                             <div id="feature" class="tab-pane fade" >
-                                {{ form_row(editForm.featuretitle) }}
-                                {{ form_row(editForm.featurecontent) }}
+                                {{ form_row(editForm.feature_title) }}
+                                {{ form_row(editForm.feature_content) }}
                             </div>
                             <div id="contact" class="tab-pane fade" >
-                                {{ form_row(editForm.contacttitle) }}
-                                {{ form_row(editForm.contactcontent) }}
-                                {{ form_row(editForm.contactphone) }}
-                                {{ form_row(editForm.contactemail) }}
-                                {{ form_row(editForm.contactaddress) }}
-                                {{ form_row(editForm.contactschedule) }}
+                                {{ form_row(editForm.contact_title) }}
+                                {{ form_row(editForm.contact_content) }}
+                                {{ form_row(editForm.contact_phone) }}
+                                {{ form_row(editForm.contact_email) }}
+                                {{ form_row(editForm.contact_address) }}
+                                {{ form_row(editForm.contact_schedule) }}
+                            </div>
+                            <div id="social" class="tab-pane fade" >
+                                {{ form_row(editForm.socialmedia_title) }}
                             </div>
                         </div>
                         <div class="form-group">

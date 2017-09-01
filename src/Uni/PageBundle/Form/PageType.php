@@ -40,68 +40,73 @@ class PageType extends AbstractType
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
                 'translation_domain' => 'UniPageBundle',
             ))
-            ->add('maintitle', null, array(
-                'label' => 'page.form.maintitle',
+            ->add('main_title', null, array(
+                'label' => 'page.form.main_title',
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
                 'translation_domain' => 'UniPageBundle',
             ))
-            ->add('mainsubtitle', null, array(
-                'label' => 'page.form.mainsubtitle',
+            ->add('main_subtitle', null, array(
+                'label' => 'page.form.main_subtitle',
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
                 'translation_domain' => 'UniPageBundle',
             ))
-            ->add('maincalltoaction', null, array(
-                'label' => 'page.form.maincalltoaction',
+            ->add('main_calltoaction', null, array(
+                'label' => 'page.form.main_calltoaction',
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
                 'translation_domain' => 'UniPageBundle',
             ))
-            ->add('abouttitle', null, array(
-                'label' => 'page.form.abouttitle',
+            ->add('about_title', null, array(
+                'label' => 'page.form.about_title',
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
                 'translation_domain' => 'UniPageBundle',
             ))
-            ->add('aboutcontent', null, array(
-                'label' => 'page.form.aboutcontent',
+            ->add('about_content', null, array(
+                'label' => 'page.form.about_content',
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8, 'class' => 'wysiwyg' ),
                 'translation_domain' => 'UniPageBundle',
             ))
-            ->add('featuretitle', null, array(
-                'label' => 'page.form.featuretitle',
+            ->add('feature_title', null, array(
+                'label' => 'page.form.feature_title',
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
                 'translation_domain' => 'UniPageBundle',
             ))
-            ->add('featurecontent', null, array(
-                'label' => 'page.form.featurecontent',
+            ->add('feature_content', null, array(
+                'label' => 'page.form.feature_content',
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8, 'class' => 'wysiwyg' ),
                 'translation_domain' => 'UniPageBundle',
             ))
-            ->add('contacttitle', null, array(
-                'label' => 'page.form.contacttitle',
+            ->add('socialmedia_title', null, array(
+                'label' => 'page.form.socialmedia_title',
+                'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
+                'translation_domain' => 'UniPageBundle',
+            ))  
+            ->add('contact_title', null, array(
+                'label' => 'page.form.contact_title',
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
                 'translation_domain' => 'UniPageBundle',
             ))
-            ->add('contactcontent', null, array(
-                'label' => 'page.form.contactcontent',
+            ->add('contact_content', null, array(
+                'label' => 'page.form.contact_content',
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8, 'class' => 'wysiwyg' ),
                 'translation_domain' => 'UniPageBundle',
             ))
-            ->add('contactphone', null, array(
-                'label' => 'page.form.contactphone',
+            ->add('contact_phone', null, array(
+                'label' => 'page.form.contact_phone',
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
                 'translation_domain' => 'UniPageBundle',
             ))
-            ->add('contactemail', null, array(
-                'label' => 'page.form.contactemail',
+            ->add('contact_email', null, array(
+                'label' => 'page.form.contact_email',
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
                 'translation_domain' => 'UniPageBundle',
             ))
-            ->add('contactaddress', null, array(
-                'label' => 'page.form.contactaddress',
+            ->add('contact_address', null, array(
+                'label' => 'page.form.contact_address',
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
                 'translation_domain' => 'UniPageBundle',
             ))
-            ->add('contactschedule', null, array(
-                'label' => 'page.form.contactschedule',
+            ->add('contact_schedule', null, array(
+                'label' => 'page.form.contact_schedule',
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
                 'translation_domain' => 'UniPageBundle',
             ))
