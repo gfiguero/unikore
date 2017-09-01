@@ -326,4 +326,33 @@ class Feature
     {
         return $this->page;
     }
+    /**
+     * @var string
+     */
+    private $short;
+
+
+    /**
+     * Set short
+     *
+     * @param string $short
+     *
+     * @return Feature
+     */
+    public function setShort($short)
+    {
+        $this->short = $short;
+
+        return $this;
+    }
+
+    /**
+     * Get short
+     *
+     * @return string
+     */
+    public function getShort()
+    {
+        return $this->short;
+    }
 }

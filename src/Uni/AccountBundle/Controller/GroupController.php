@@ -86,12 +86,10 @@ class GroupController extends Controller
      */
     public function showAction(Group $group)
     {
-        $editForm = $this->createEditForm($group);
         $deleteForm = $this->createDeleteForm($group);
 
         return $this->render('UniAccountBundle:Group:show.html.twig', array(
             'group' => $group,
-            'editForm' => $editForm->createView(),
             'deleteForm' => $deleteForm->createView(),
         ));
     }
@@ -102,8 +100,52 @@ class GroupController extends Controller
      */
     public function editAction(Request $request, Group $group)
     {
-        $editForm = $this->createEditForm($group);
+        $dispatcher = $this->get('event_dispatcher');
+
+        $event = new GetResponseGroupEvent($group, $request);
+        $dispatcher->dispatch(FOSUserEvents::GROUP_EDIT_INITIALIZE, $event);
+
+        if (null !== $event->getResponse()) {
+            return $event->getResponse();
+        }
+
+        /** @var $formFactory FactoryInterface */
+        $formFactory = $this->get('fos_user.group.form.factory');
+
+        $form = $formFactory->createForm();
+        $form->setData($group);
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            /** @var $groupManager \FOS\UserBundle\Model\GroupManagerInterface */
+            $groupManager = $this->get('fos_user.group_manager');
+
+            $event = new FormEvent($form, $request);
+            $dispatcher->dispatch(FOSUserEvents::GROUP_EDIT_SUCCESS, $event);
+
+            $groupManager->updateGroup($group);
+
+            if (null === $response = $event->getResponse()) {
+                $url = $this->generateUrl('fos_user_group_show', array('groupName' => $group->getName()));
+                $response = new RedirectResponse($url);
+            }
+
+            $dispatcher->dispatch(FOSUserEvents::GROUP_EDIT_COMPLETED, new FilterGroupResponseEvent($group, $request, $response));
+
+            return $response;
+        }
+
+        return $this->render('@FOSUser/Group/edit.html.twig', array(
+            'form' => $form->createView(),
+            'group_name' => $group->getName(),
+        ));
+
+
+
+
         $deleteForm = $this->createDeleteForm($group);
+        $editForm = $this->createEditForm($group);
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted()) {

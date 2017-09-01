@@ -99,6 +99,7 @@ feature:
         name: Nombre de característica
         image: Imagen de característica
         title: Título de característica
+        short: Descripción corta
         description: Descripción de característica
         imagefile: Archivo de imagen
 

@@ -40,6 +40,11 @@ class FeatureType extends AbstractType
                 'attr'  => array( 'label_col' => 3, 'widget_col' => 9 ),
                 'translation_domain' => 'UniPageBundle',
             ))
+            ->add('short', null, array(
+                'label' => 'feature.form.short',
+                'attr'  => array( 'label_col' => 3, 'widget_col' => 9 ),
+                'translation_domain' => 'UniPageBundle',
+            ))
             ->add('description', null, array(
                 'label' => 'feature.form.description',
                 'attr'  => array( 'label_col' => 3, 'widget_col' => 9, 'class' => 'wysiwyg' ),
