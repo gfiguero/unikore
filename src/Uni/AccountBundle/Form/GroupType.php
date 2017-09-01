@@ -5,6 +5,7 @@ namespace Uni\AccountBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Uni\UserBundle\Form\Type\RoleType;
 
 class GroupType extends AbstractType
 {
@@ -13,11 +14,18 @@ class GroupType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder 
-            ->add('users', null, array(
-                'label' => 'group.form.users',
-                'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
+        $builder
+            ->add('name', null, array(
+                'label' => 'group.form.name',
                 'translation_domain' => 'UniAccountBundle',
+                'attr' => array('label_col' => 4, 'widget_col' => 8),
+            ))
+            ->add('roles', RoleType::class, array(
+                'label' => 'group.form.roles',
+                'translation_domain' => 'UniAccountBundle',
+                'attr' => array('label_col' => 4, 'widget_col' => 8),
+                'multiple' => true,
+                'expanded' => true,
             ))
         ;
     }

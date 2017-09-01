@@ -19,8 +19,13 @@ Uni\AdminBundle\Entity\AccountPayment:
         code:
             type: string
             length: 100
+            nullable: true
+        concept:
+            type: text
+            nullable: true
         amount:
             type: integer
+            nullable: true
         created_at:
             type: datetime
             gedmo:

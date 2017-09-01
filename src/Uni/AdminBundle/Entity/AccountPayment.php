@@ -225,5 +225,33 @@ class AccountPayment
     {
         return $this->account;
     }
-}
+    /**
+     * @var string
+     */
+    private $concept;
 
+
+    /**
+     * Set concept
+     *
+     * @param string $concept
+     *
+     * @return AccountPayment
+     */
+    public function setConcept($concept)
+    {
+        $this->concept = $concept;
+
+        return $this;
+    }
+
+    /**
+     * Get concept
+     *
+     * @return string
+     */
+    public function getConcept()
+    {
+        return $this->concept;
+    }
+}

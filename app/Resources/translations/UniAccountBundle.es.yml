@@ -5,6 +5,8 @@ sidemenu:
         root: Usuarios
     group:
         root: Grupos
+    accountpayment:
+        root: Pagos por Cuenta
 
 account:
     index:
@@ -121,6 +123,46 @@ group:
         flash: El grupo fué borrado totalmente.
     form:
         id: ID
+        name: Nombre de Grupo
+        roles: Roles
         created_at: Registro
         updated_at: Actualización
+
+accountpayment:
+    index:
+        title: Pagos
+        list: Lista de pagos
+        link: Lista de pagos
+    new:
+        title: Pagos
+        link: Nuevo pago
+        form: Formulario de registro de pago
+        submit: Registrar pago
+        flash: Nuevo pago registrado satisfactoriamente.
+    show:
+        title: Pagos
+        link: Mostrar datos
+        data: Datos de pago
+    edit:
+        title: Pagos
+        link: Editar datos
+        form: Formulario de edición de pago
+        submit: Guardar cambios
+        flash: Los cambios en el pago fueron registrados satisfactoriamente.
+    delete:
+        link: Borrar pago
+        title: Borrado de pago
+        message: Los datos borrados no podrán ser recuperados.
+        submit: Confirmar borrado
+        flash: El pago fué borrado totalmente.
+    form:
+        id: ID
+        created_at: Registro
+        updated_at: Actualización
+        name: Nombre
+        account: Cuenta
+        code: Código
+        concept: Concepto
+        amount: Monto
+
 

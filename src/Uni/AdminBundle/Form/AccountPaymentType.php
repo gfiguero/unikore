@@ -24,6 +24,11 @@ class AccountPaymentType extends AbstractType
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
                 'translation_domain' => 'UniAdminBundle',
             )) 
+            ->add('concept', null, array(
+                'label' => 'accountpayment.form.concept',
+                'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
+                'translation_domain' => 'UniAdminBundle',
+            )) 
             ->add('amount', null, array(
                 'label' => 'accountpayment.form.amount',
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),

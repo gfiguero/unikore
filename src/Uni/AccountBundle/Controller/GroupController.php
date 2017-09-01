@@ -6,6 +6,11 @@ use Uni\AdminBundle\Entity\Group;
 use Uni\AccountBundle\Form\GroupType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use FOS\UserBundle\Event\FilterGroupResponseEvent;
+use FOS\UserBundle\Event\FormEvent;
+use FOS\UserBundle\Event\GetResponseGroupEvent;
+use FOS\UserBundle\Event\GroupEvent;
+use FOS\UserBundle\FOSUserEvents;
 
 /**
  * Group controller.
@@ -109,54 +114,20 @@ class GroupController extends Controller
             return $event->getResponse();
         }
 
-        /** @var $formFactory FactoryInterface */
-        $formFactory = $this->get('fos_user.group.form.factory');
-
-        $form = $formFactory->createForm();
-        $form->setData($group);
-
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            /** @var $groupManager \FOS\UserBundle\Model\GroupManagerInterface */
-            $groupManager = $this->get('fos_user.group_manager');
-
-            $event = new FormEvent($form, $request);
-            $dispatcher->dispatch(FOSUserEvents::GROUP_EDIT_SUCCESS, $event);
-
-            $groupManager->updateGroup($group);
-
-            if (null === $response = $event->getResponse()) {
-                $url = $this->generateUrl('fos_user_group_show', array('groupName' => $group->getName()));
-                $response = new RedirectResponse($url);
-            }
-
-            $dispatcher->dispatch(FOSUserEvents::GROUP_EDIT_COMPLETED, new FilterGroupResponseEvent($group, $request, $response));
-
-            return $response;
-        }
-
-        return $this->render('@FOSUser/Group/edit.html.twig', array(
-            'form' => $form->createView(),
-            'group_name' => $group->getName(),
-        ));
-
-
-
-
-        $deleteForm = $this->createDeleteForm($group);
         $editForm = $this->createEditForm($group);
         $editForm->handleRequest($request);
 
-        if ($editForm->isSubmitted()) {
-            if($editForm->isValid()) {
-                $em = $this->getDoctrine()->getManager();
-                $em->persist($group);
-                $em->flush();
-                $request->getSession()->getFlashBag()->add( 'success', 'group.edit.flash' );
-                return $this->redirect($this->generateUrl('account_group_index'));
-            }
+        if ($editForm->isSubmitted() && $editForm->isValid()) {
+            $groupManager = $this->get('fos_user.group_manager');
+            $event = new FormEvent($editForm, $request);
+            $dispatcher->dispatch(FOSUserEvents::GROUP_EDIT_SUCCESS, $event);
+            $groupManager->updateGroup($group);
+            $response = new RedirectResponse($this->generateUrl('account_group_index'));
+            $dispatcher->dispatch(FOSUserEvents::GROUP_EDIT_COMPLETED, new FilterGroupResponseEvent($group, $request, $response));
+            return $response;
         }
+
+        $deleteForm = $this->createDeleteForm($group);
 
         return $this->render('UniAccountBundle:Group:edit.html.twig', array(
             'group' => $group,
