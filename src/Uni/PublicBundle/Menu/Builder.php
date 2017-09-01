@@ -24,11 +24,14 @@ class Builder implements ContainerAwareInterface
         if ($page->getAboutTitle()) $aboutLink = $page->getAboutTitle();
         $featureLink = 'Características';
         if ($page->getFeatureTitle()) $featureLink = $page->getFeatureTitle();
+        $socialLink = 'Social';
+        if ($page->getSocialmediaTitle()) $socialLink = $page->getSocialmediaTitle();
         $contactLink = 'Contacto';
         if ($page->getContactTitle()) $contactLink = $page->getContactTitle();
 
         $topmenu->addChild($aboutLink, array('uri' => '#about'))->setLinkAttribute('class', 'page-scroll');
         $topmenu->addChild($featureLink, array('uri' => '#feature'))->setLinkAttribute('class', 'page-scroll');
+        $topmenu->addChild($socialLink, array('uri' => '#socialmedia'))->setLinkAttribute('class', 'page-scroll');
         $topmenu->addChild($contactLink, array('uri' => '#contact'))->setLinkAttribute('class', 'page-scroll');
 
         return $topmenu;

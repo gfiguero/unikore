@@ -1,11 +1,12 @@
 {% block socialmedia %}
     {% trans_default_domain 'UniPageBundle' %}
+    {% if page.socialmediatitle and socialmedialist is not empty %}
     <section id="socialmedia">
         <div class="container">
             <div class="row">
                 <div class="col-sm-12">
                     <div class="section-header">
-                        <h1 class="section-title contact-title">Social Media</h1>
+                        <h1 class="section-title socialmedia-title">{{ page.socialmediatitle|raw }}</h1>
                         <ul class="list-inline">
                             {% for key, socialmedia in socialmedialist %}
                                 <li>
@@ -18,4 +19,5 @@
             </div>
         </div>
     </section>
+    {% endif %}
 {% endblock %}
