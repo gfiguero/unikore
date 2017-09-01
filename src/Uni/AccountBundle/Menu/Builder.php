@@ -29,12 +29,24 @@ class Builder implements ContainerAwareInterface
             'account_user_show',
             'account_user_edit',
         )));
-        $sidemenu->addChild('sidemenu.group.root', array('route' => 'fos_user_group_list'))->setExtras(array('translation_domain' => 'UniAccountBundle', 'routes' => array(
-            'fos_user_group_list',
-            'fos_user_group_new',
-            'fos_user_group_show',
-            'fos_user_group_edit',
+        $sidemenu->addChild('sidemenu.group.root', array('route' => 'account_group_index'))->setExtras(array('translation_domain' => 'UniAccountBundle', 'routes' => array(
+            'account_group_index',
+            'account_group_new',
+            'account_group_show',
+            'account_group_edit',
         )));
+        $sidemenu->addChild('sidemenu.accountpayment.root', array('route' => 'account_accountpayment_index'))->setExtras(array('translation_domain' => 'UniAccountBundle', 'routes' => array(
+            'account_accountpayment_index',
+            'account_accountpayment_new',
+            'account_accountpayment_show',
+            'account_accountpayment_edit',
+        )));
+//        $sidemenu->addChild('sidemenu.group.root', array('route' => 'fos_user_group_list'))->setExtras(array('translation_domain' => 'UniAccountBundle', 'routes' => array(
+//            'fos_user_group_list',
+//            'fos_user_group_new',
+//            'fos_user_group_show',
+//            'fos_user_group_edit',
+//        )));
 
         return $sidemenu;
     }

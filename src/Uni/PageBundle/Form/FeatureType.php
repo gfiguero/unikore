@@ -15,6 +15,12 @@ class FeatureType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder 
+            ->add('page', null, array(
+                'label' => 'feature.form.page',
+                'attr'  => array( 'label_col' => 3, 'widget_col' => 9 ),
+                'translation_domain' => 'UniPageBundle',
+                'required' => true,
+            ))
             ->add('name', null, array(
                 'label' => 'feature.form.name',
                 'attr'  => array( 'label_col' => 3, 'widget_col' => 9 ),
@@ -35,12 +41,6 @@ class FeatureType extends AbstractType
                 'attr'  => array( 'label_col' => 3, 'widget_col' => 9, 'class' => 'fileinput' ),
                 'translation_domain' => 'UniPageBundle',
                 'required' => false,
-            ))
-            ->add('page', null, array(
-                'label' => 'feature.form.page',
-                'attr'  => array( 'label_col' => 3, 'widget_col' => 9 ),
-                'translation_domain' => 'UniPageBundle',
-                'required' => true,
             ))
         ;
     }

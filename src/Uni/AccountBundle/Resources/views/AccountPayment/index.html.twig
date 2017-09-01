@@ -1,8 +1,6 @@
-{% extends 'UniAdminBundle:Base:layout.html.twig' %}
-{% use 'UniAdminBundle:Base:icons.html.twig' %}
-{% use 'UniAdminBundle:Base:flashbag.html.twig' %}
+{% extends 'UniAccountBundle:Base:layout.html.twig' %}
 
-{% trans_default_domain 'UniAdminBundle' %}
+{% trans_default_domain 'UniAccountBundle' %}
 
 {% block title %}&nbsp;-&nbsp;{{ 'accountpayment.index.title'|trans }}{% endblock %}
 
@@ -19,7 +17,7 @@
         <div class="row" id="page-toolbar">
             <div class="col-lg-12">
                 <div class="btn-toolbar">
-                    <a type="button" class="btn btn-success" href="{{ path('admin_accountpayment_new') }}">{{ icon('plus fa-fw') }}&nbsp;{{ 'accountpayment.new.link'|trans }}</a>
+                    <a type="button" class="btn btn-success" href="{{ path('account_accountpayment_new') }}">{{ icon('plus fa-fw') }}&nbsp;{{ 'accountpayment.new.link'|trans }}</a>
                 </div>
             </div>
         </div>
@@ -50,8 +48,8 @@
                             {% for key, accountpayment in accountPayments %}
                                 <tr>
                                     <td>
-                                        <div class="btn-group" role="group"><a type="button" class="btn btn-xs btn-default" href="{{ path('admin_accountpayment_show', { 'id': accountpayment.id }) }}">{{ icon('search fa-fw') }}</a></div>
-                                        <div class="btn-group" role="group"><a type="button" class="btn btn-xs btn-primary" href="{{ path('admin_accountpayment_edit', { 'id': accountpayment.id }) }}">{{ icon('edit fa-fw') }}</a></div>
+                                        <div class="btn-group" role="group"><a type="button" class="btn btn-xs btn-default" href="{{ path('account_accountpayment_show', { 'id': accountpayment.id }) }}">{{ icon('search fa-fw') }}</a></div>
+                                        <div class="btn-group" role="group"><a type="button" class="btn btn-xs btn-primary" href="{{ path('account_accountpayment_edit', { 'id': accountpayment.id }) }}">{{ icon('edit fa-fw') }}</a></div>
                                         <div class="btn-group" role="group"><button type="button" class="btn btn-xs btn-danger" data-toggle="modal" data-target="#modalDelete{{ accountpayment.id }}">{{ icon('trash fa-fw') }}</button></div>
                                     </td>
                                     <td>{% if accountpayment.id %}{{ accountpayment.id }}{% endif %}</td>

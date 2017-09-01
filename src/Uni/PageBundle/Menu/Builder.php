@@ -23,11 +23,11 @@ class Builder implements ContainerAwareInterface
             'page_page_show',
             'page_page_edit',
         )));
-        $sidemenu->addChild('sidemenu.socialmedia.root', array('route' => 'page_socialmedia_index'))->setExtras(array('translation_domain' => 'UniPageBundle', 'routes' => array(
-            'page_socialmedia_index',
-            'page_socialmedia_new',
-            'page_socialmedia_show',
-            'page_socialmedia_edit',
+        $sidemenu->addChild('sidemenu.photography.root', array('route' => 'page_photography_index'))->setExtras(array('translation_domain' => 'UniPageBundle', 'routes' => array(
+            'page_photography_index',
+            'page_photography_new',
+            'page_photography_show',
+            'page_photography_edit',
         )));
         $sidemenu->addChild('sidemenu.feature.root', array('route' => 'page_feature_index'))->setExtras(array('translation_domain' => 'UniPageBundle', 'routes' => array(
             'page_feature_index',
@@ -35,11 +35,11 @@ class Builder implements ContainerAwareInterface
             'page_feature_show',
             'page_feature_edit',
         )));
-        $sidemenu->addChild('sidemenu.photography.root', array('route' => 'page_photography_index'))->setExtras(array('translation_domain' => 'UniPageBundle', 'routes' => array(
-            'page_photography_index',
-            'page_photography_new',
-            'page_photography_show',
-            'page_photography_edit',
+        $sidemenu->addChild('sidemenu.socialmedia.root', array('route' => 'page_socialmedia_index'))->setExtras(array('translation_domain' => 'UniPageBundle', 'routes' => array(
+            'page_socialmedia_index',
+            'page_socialmedia_new',
+            'page_socialmedia_show',
+            'page_socialmedia_edit',
         )));
 
         return $sidemenu;

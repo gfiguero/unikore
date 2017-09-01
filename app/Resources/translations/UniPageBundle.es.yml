@@ -12,27 +12,34 @@ page:
     index:
         title: Páginas
         list: Lista de páginas
-        link: Volver a la lista
+        link: Lista de páginas
     new:
-        link: Agregar página
-        title: Nueva página
-        form: Página
-        submit: Guardar
+        title: Páginas
+        link: Nueva página
+        form: Formulario de registro de página
+        submit: Registrar página
+        flash: Nueva página registrada satisfactoriamente.
+    show:
+        title: Páginas
+        link: Mostrar datos
+        data: Datos de página
     edit:
-        title: Editar página
-        form: Página
+        title: Páginas
+        link: Editar datos
+        form: Formulario de edición de página
         submit: Guardar cambios
+        flash: Los cambios en la página fueron registrados satisfactoriamente.
     delete:
         link: Borrar página
         title: Borrado de página
         message: Los datos borrados no podrán ser recuperados.
         submit: Confirmar borrado
-        flash: La página fue borrada totalmente.
+        flash: La página fué borrada totalmente.
     form:
         id: ID
-        name: Nombre
-        created_at: Creado
-        updated_at: Actualizado
+        name: Nombre de página
+        created_at: Registro
+        updated_at: Actualización
         domain: Dominio
         brand: Marca
         brand_primary_color: Color primario
@@ -52,91 +59,115 @@ page:
         contactschedule: Horario de atención
     section:
         brand: Marca
-        main: Principal
+        main: Portada
         about: Sobre Nosotros
         feature: Catacterísticas del Negocio
         contact: Información de Contacto
 
 feature:
     index:
-        title: Características
+        title: Catacterísticas
         list: Lista de características
-        link: Volver a la lista
-    new: 
+        link: Lista de características
+    new:
+        title: Catacterísticas
         link: Nueva característica
-        title: Nueva característica
-        form: Característica
-        submit: Guardar
-    form:
-        id: ID
-        name: Nombre
-        image: Imagen
-        created_at: Creado
-        updated_at: Actualizado
-        title: Título
-        description: Descripción
-        imagefile: Imagen
+        form: Formulario de registro de característica
+        submit: Registrar característica
+        flash: Nueva característica registrada satisfactoriamente.
+    show:
+        title: Catacterísticas
+        link: Mostrar datos
+        data: Datos de característica
     edit:
-        title: Editar característica
-        form: Característica
+        title: Catacterísticas
+        link: Editar datos
+        form: Formulario de edición de característica
         submit: Guardar cambios
+        flash: Los cambios en la característica fueron registrados satisfactoriamente.
     delete:
         link: Borrar característica
         title: Borrado de característica
         message: Los datos borrados no podrán ser recuperados.
         submit: Confirmar borrado
-        flash: La característica fue borrada totalmente.
+        flash: La característica fué borrada totalmente.
+    form:
+        id: ID
+        created_at: Registro
+        updated_at: Actualización
+        page: Página
+        name: Nombre de característica
+        image: Imagen de característica
+        title: Título de característica
+        description: Descripción de característica
+        imagefile: Archivo de imagen
 
 photography:
     index:
         title: Fotografías
         list: Lista de fotografías
-        link: Volver a la lista
+        link: Lista de fotografías
     new:
+        title: Fotografías
         link: Nueva fotografía
-        title: Nueva fotografía
-        form: Fotografía
-        submit: Guardar
-    form: 
-        id: ID
-        image: Imagen
-        created_at: Creado
-        imagefile: Imagen
+        form: Formulario de registro de fotografía
+        submit: Registrar fotografía
+        flash: Nueva fotografía registrada satisfactoriamente.
+    show:
+        title: Fotografías
+        link: Mostrar datos
+        data: Datos de fotografía
     edit:
-        title: Editar Fotografía
-        form: Fotografía
+        title: Fotografías
+        link: Editar datos
+        form: Formulario de edición de fotografía
         submit: Guardar cambios
-    delete: 
+        flash: Los cambios en la fotografía fueron registrados satisfactoriamente.
+    delete:
         link: Borrar fotografía
         title: Borrado de fotografía
         message: Los datos borrados no podrán ser recuperados.
         submit: Confirmar borrado
-        flash: La fotografía fue borrada totalmente.
+        flash: La fotografía fué borrada totalmente.
+    form: 
+        id: ID
+        created_at: Registro
+        updated_at: Actualización
+        page: Página
+        image: Imagen
+        imagefile: Archivo de Imagen
 
 socialmedia: 
-    index: 
-        title: Redes sociales
-        list: Lista de redes sociales
-        link: Volver a la lista
+    index:
+        title: Redes Sociales
+        list: Lista de red social
+        link: Lista de red social
     new:
+        title: Redes Sociales
         link: Nueva red social
-        title: Nueva Red social
-        form: Red social
-        submit: Guardar
-    form:
-        id: ID
-        created_at: Creado
-        updated_at: Actualizado
-        url: URL
-        page: ¿A qué página la desea agregar?
-        socialnetwork: Red social
+        form: Formulario de registro de red social
+        submit: Registrar red social
+        flash: Nueva red social registrada satisfactoriamente.
+    show:
+        title: Redes Sociales
+        link: Mostrar datos
+        data: Datos de red social
     edit:
-        title: Editar red social
-        form: Red social
+        title: Redes Sociales
+        link: Editar datos
+        form: Formulario de edición de red social
         submit: Guardar cambios
+        flash: Los cambios en la red social fueron registrados satisfactoriamente.
     delete:
         link: Borrar red social
         title: Borrado de red social
         message: Los datos borrados no podrán ser recuperados.
         submit: Confirmar borrado
-        flash: La red social fue borrada totalmente.
+        flash: La red social fué borrada totalmente.
+    form:
+        id: ID
+        created_at: Registro
+        updated_at: Actualización
+        url: URL
+        page: Página
+        socialnetwork: Red social

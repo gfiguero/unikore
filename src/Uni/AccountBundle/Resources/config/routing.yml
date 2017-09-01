@@ -10,9 +10,13 @@ uni_account_user:
     resource: "@UniAccountBundle/Resources/config/routing/user.yml"
     prefix:   /user
 
-fos_user_group:
-    resource: "@FOSUserBundle/Resources/config/routing/group.xml"
-    prefix: /group
+uni_account_group:
+    resource: "@UniAccountBundle/Resources/config/routing/group.yml"
+    prefix:   /group
+
+#fos_user_group:
+#    resource: "@FOSUserBundle/Resources/config/routing/group.xml"
+#    prefix: /group
 
 uni_account_root:
     resource: "@UniAccountBundle/Resources/config/routing/root.yml"

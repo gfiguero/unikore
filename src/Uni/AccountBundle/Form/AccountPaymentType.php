@@ -1,6 +1,6 @@
 <?php
 
-namespace Uni\AdminBundle\Form;
+namespace Uni\AccountBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -17,22 +17,22 @@ class AccountPaymentType extends AbstractType
             ->add('name', null, array(
                 'label' => 'accountpayment.form.name',
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
-                'translation_domain' => 'UniAdminBundle',
+                'translation_domain' => 'UniAccountBundle',
             )) 
             ->add('code', null, array(
                 'label' => 'accountpayment.form.code',
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
-                'translation_domain' => 'UniAdminBundle',
+                'translation_domain' => 'UniAccountBundle',
             )) 
             ->add('amount', null, array(
                 'label' => 'accountpayment.form.amount',
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
-                'translation_domain' => 'UniAdminBundle',
+                'translation_domain' => 'UniAccountBundle',
             )) 
             ->add('account', null, array(
                 'label' => 'accountpayment.form.account',
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
-                'translation_domain' => 'UniAdminBundle',
+                'translation_domain' => 'UniAccountBundle',
             ))
         ;
     }
@@ -52,7 +52,7 @@ class AccountPaymentType extends AbstractType
      */
     public function getBlockPrefix()
     {
-        return 'uni_adminbundle_accountpayment';
+        return 'uni_accountbundle_accountpayment';
     }
 
 

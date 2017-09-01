@@ -14,6 +14,12 @@ class SocialmediaType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder 
+            ->add('page', null, array(
+                'label' => 'socialmedia.form.page',
+                'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
+                'translation_domain' => 'UniPageBundle',
+                'required' => true,
+            ))
             ->add('socialnetwork', null, array(
                 'label' => 'socialmedia.form.socialnetwork',
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
@@ -24,13 +30,7 @@ class SocialmediaType extends AbstractType
                 'label' => 'socialmedia.form.url',
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
                 'translation_domain' => 'UniPageBundle',
-            )) 
-            ->add('page', null, array(
-                'label' => 'socialmedia.form.page',
-                'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
-                'translation_domain' => 'UniPageBundle',
-                'required' => true,
-            )) 
+            ))
         ;
     }
     

@@ -40,9 +40,9 @@
                                         <div class="btn-group" role="group"><a type="button" class="btn btn-xs btn-default disabled">{{ icon('edit fa-fw') }}</a></div>
                                         <div class="btn-group" role="group"><a type="button" class="btn btn-xs btn-default disabled">{{ icon('trash fa-fw') }}</a></div>
                                     </th>
-                                    <th>{{ knp_pagination_sortable(features, 'feature.form.id'|trans, 'id') }}{% if sort == 'id' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
+                                    <th>{{ knp_pagination_sortable(features, 'feature.form.page'|trans, 'page') }}{% if sort == 'page' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
                                     <th>{{ knp_pagination_sortable(features, 'feature.form.name'|trans, 'name') }}{% if sort == 'name' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
-                                     <th>{{ knp_pagination_sortable(features, 'feature.form.image'|trans, 'image') }}{% if sort == 'image' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
+                                    <th>{{ knp_pagination_sortable(features, 'feature.form.image'|trans, 'image') }}{% if sort == 'image' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
                                     <th>{{ knp_pagination_sortable(features, 'feature.form.created_at'|trans, 'created_at') }}{% if sort == 'created_at' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
                                     <th>{{ knp_pagination_sortable(features, 'feature.form.updated_at'|trans, 'updated_at') }}{% if sort == 'updated_at' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
                                 </tr>
@@ -55,7 +55,7 @@
                                         <div class="btn-group" role="group"><a type="button" class="btn btn-xs btn-primary" href="{{ path('page_feature_edit', { 'id': feature.id }) }}">{{ icon('edit fa-fw') }}</a></div>
                                         <div class="btn-group" role="group"><button type="button" class="btn btn-xs btn-danger" data-toggle="modal" data-target="#modalDelete{{ feature.id }}">{{ icon('trash fa-fw') }}</button></div>
                                     </td>
-                                    <td>{% if feature.id %}{{ feature.id }}{% endif %}</td>
+                                    <td>{% if feature.page %}{{ feature.page }}{% endif %}</td>
                                     <td>{% if feature.name %}{{ feature.name }}{% endif %}</td>
                                     <td>{% if feature.image %}<img class="product-item-image" src="{{ vich_uploader_asset(feature, 'imagefile', 'Uni\\AdminBundle\\Entity\\Feature')|imagine_filter('feature_image_small') }}">{% endif %}</td>
                                     <td><span class="fa fa-calendar-o" data-toggle="tooltip" data-placement="left" title="{{ feature.createdat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "dd LLLL y HH:mm") }}"></span>&nbsp;{{ feature.createdat|ago }}</td>

@@ -33,7 +33,7 @@ class AccountPaymentController extends Controller
             $deleteForms[] = $this->createDeleteForm($accountPayment)->createView();
         }
 
-        return $this->render('UniAdminBundle:AccountPayment:index.html.twig', array(
+        return $this->render('UniAccountBundle:AccountPayment:index.html.twig', array(
             'accountPayments' => $accountPayments,
             'direction' => $direction,
             'sort' => $sort,
@@ -57,11 +57,11 @@ class AccountPaymentController extends Controller
                 $em->persist($accountPayment);
                 $em->flush();
                 $request->getSession()->getFlashBag()->add( 'success', 'accountPayment.new.flash' );
-                return $this->redirect($this->generateUrl('admin_accountpayment_index'));
+                return $this->redirect($this->generateUrl('account_accountpayment_index'));
             }
         }
 
-        return $this->render('UniAdminBundle:AccountPayment:new.html.twig', array(
+        return $this->render('UniAccountBundle:AccountPayment:new.html.twig', array(
             'newForm' => $newForm->createView(),
         ));
     }
@@ -76,7 +76,7 @@ class AccountPaymentController extends Controller
     private function createNewForm(AccountPayment $accountPayment)
     {
         return $this->createForm(new AccountPaymentType(), $accountPayment, array(
-            'action' => $this->generateUrl('admin_accountpayment_new'),
+            'action' => $this->generateUrl('account_accountpayment_new'),
         ));
     }
 
@@ -89,7 +89,7 @@ class AccountPaymentController extends Controller
         $editForm = $this->createEditForm($accountPayment);
         $deleteForm = $this->createDeleteForm($accountPayment);
 
-        return $this->render('UniAdminBundle:AccountPayment:show.html.twig', array(
+        return $this->render('UniAccountBundle:AccountPayment:show.html.twig', array(
             'accountPayment' => $accountPayment,
             'editForm' => $editForm->createView(),
             'deleteForm' => $deleteForm->createView(),
@@ -112,11 +112,11 @@ class AccountPaymentController extends Controller
                 $em->persist($accountPayment);
                 $em->flush();
                 $request->getSession()->getFlashBag()->add( 'success', 'accountPayment.edit.flash' );
-                return $this->redirect($this->generateUrl('admin_accountpayment_index'));
+                return $this->redirect($this->generateUrl('account_accountpayment_index'));
             }
         }
 
-        return $this->render('UniAdminBundle:AccountPayment:edit.html.twig', array(
+        return $this->render('UniAccountBundle:AccountPayment:edit.html.twig', array(
             'accountPayment' => $accountPayment,
             'editForm' => $editForm->createView(),
             'deleteForm' => $deleteForm->createView(),
@@ -133,7 +133,7 @@ class AccountPaymentController extends Controller
     private function createEditForm(AccountPayment $accountPayment)
     {
         return $this->createForm(new AccountPaymentType(), $accountPayment, array(
-            'action' => $this->generateUrl('admin_accountpayment_edit', array('id' => $accountPayment->getId())),
+            'action' => $this->generateUrl('account_accountpayment_edit', array('id' => $accountPayment->getId())),
         ));
     }
 
@@ -153,7 +153,7 @@ class AccountPaymentController extends Controller
             $request->getSession()->getFlashBag()->add( 'danger', 'accountPayment.delete.flash' );
         }
 
-        return $this->redirect($this->generateUrl('admin_accountpayment_index'));
+        return $this->redirect($this->generateUrl('account_accountpayment_index'));
     }
 
     /**
@@ -166,7 +166,7 @@ class AccountPaymentController extends Controller
     private function createDeleteForm(AccountPayment $accountPayment)
     {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('admin_accountpayment_delete', array('id' => $accountPayment->getId())))
+            ->setAction($this->generateUrl('account_accountpayment_delete', array('id' => $accountPayment->getId())))
             ->setMethod('DELETE')
             ->getForm()
         ;
