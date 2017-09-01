@@ -18,7 +18,7 @@
 
                     {% if page.contactphone %}
                         <a href="tel:{{ '+569' ~ page.contactphone|raw }}">
-                            <div class="panel panel-primary-fade contact-panel">
+                            <div class="panel panel-primary-fade">
                                 <div class="panel-body">
                                     <div class="row">
                                         <div class="col-xs-3 text-left">{{ icon('phone fa-fw fa-2x') }}</div>
@@ -31,7 +31,7 @@
 
                     {% if page.contactemail %}
                         <a href="mailto:{{ page.contactemail|raw }}">
-                            <div class="panel panel-primary-fade contact-panel">
+                            <div class="panel panel-primary-fade">
                                 <div class="panel-body">
                                     <div class="row">
                                         <div class="col-xs-3 text-left">{{ icon('envelope fa-fw fa-2x') }}</div>
@@ -43,7 +43,7 @@
                     {% endif %}
 
                     {% if page.contactaddress %}
-                        <div class="panel panel-primary-fade contact-panel">
+                        <div class="panel panel-primary-fade">
                             <div class="panel-body">
                                 <div class="row">
                                     <div class="col-xs-3 text-left">{{ icon('map-marker fa-fw fa-2x') }}</div>
@@ -54,7 +54,7 @@
                     {% endif %}
 
                     {% if page.contactschedule %}
-                        <div class="panel panel-primary-fade contact-panel">
+                        <div class="panel panel-primary-fade">
                             <div class="panel-body">
                                 <div class="row">
                                     <div class="col-xs-3 text-left">{{ icon('clock-o fa-fw fa-2x') }}</div>
