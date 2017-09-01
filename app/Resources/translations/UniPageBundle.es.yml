@@ -44,19 +44,20 @@ page:
         brand: Marca
         brand_primary_color: Color primario
         brand_secondary_color: Color secundario
-        maintitle: Título portada
-        mainsubtitle: Subtítulo portada
-        maincalltoaction: Botón
-        abouttitle: Título sección acerca de
-        aboutcontent: Contenido sección acerca de
-        featuretitle: Título sección características
-        featurecontent: Contenido sección características
-        contacttitle: Título sección contacto
-        contactcontent: Contenido sección contacto
-        contactphone: Teléfono de contacto
-        contactemail: Email de contacto
-        contactaddress: Dirección de contacto
-        contactschedule: Horario de atención
+        main_title: Título portada
+        main_subtitle: Subtítulo portada
+        main_calltoaction: Botón
+        about_title: Título sección acerca de
+        about_content: Contenido sección acerca de
+        feature_title: Título sección características
+        feature_content: Contenido sección características
+        socialmedia_title: Título sección redes sociales
+        contact_title: Título sección contacto
+        contact_content: Contenido sección contacto
+        contact_phone: Teléfono de contacto
+        contact_email: Email de contacto
+        contact_address: Dirección de contacto
+        contact_schedule: Horario de atención
     section:
         brand: Marca
         main: Portada
