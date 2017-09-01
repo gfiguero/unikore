@@ -8,6 +8,11 @@ page_page_show:
     defaults: { _controller: "UniPageBundle:Page:show" }
     methods:  GET
 
+page_page_preview:
+    path:     /{id}/preview
+    defaults: { _controller: "UniPageBundle:Page:preview" }
+    methods:  GET
+
 page_page_new:
     path:     /new
     defaults: { _controller: "UniPageBundle:Page:new" }

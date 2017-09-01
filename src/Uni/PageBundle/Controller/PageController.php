@@ -190,4 +190,20 @@ class PageController extends Controller
             ->getForm()
         ;
     }
+
+    public function previewAction(Page $page)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $page = $em->getRepository('UniAdminBundle:Page')->find($page);
+        $photographies = $em->getRepository('UniAdminBundle:Photography')->findByPage($page);
+        $features = $em->getRepository('UniAdminBundle:Feature')->findByPage($page);
+        $socialmedialist = $em->getRepository('UniAdminBundle:Socialmedia')->findByPage($page);
+        shuffle($photographies);
+        return $this->render('UniPageBundle:Page:preview.html.twig', array(
+            'features' => $features,
+            'photographies' => $photographies,
+            'socialmedialist' => $socialmedialist,
+            'page' => $page,
+        ));
+    }
 }
