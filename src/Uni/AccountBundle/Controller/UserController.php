@@ -50,7 +50,6 @@ class UserController extends Controller
 
     public function newAction(Request $request)
     {
-        $formFactory = $this->get('fos_user.registration.form.factory');
         $userManager = $this->get('fos_user.user_manager');
         $dispatcher = $this->get('event_dispatcher');
         $user = $userManager->createUser();
@@ -59,12 +58,8 @@ class UserController extends Controller
         $event = new GetResponseUserEvent($user, $request);
         $dispatcher->dispatch(FOSUserEvents::REGISTRATION_INITIALIZE, $event);
 
-        $form = $formFactory->createForm();
-        $form->setData($user);
         $newForm = $this->createForm(new UserRegisterType(), $user);
         $newForm->handleRequest($request);
-        dump($form);
-        dump($newForm);
 
         if ($newForm->isSubmitted()) {
             if ($newForm->isValid()) {
