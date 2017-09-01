@@ -84,6 +84,7 @@ class SocialmediaController extends Controller
     {
         return $this->createForm(new SocialmediaType(), $socialmedia, array(
             'action' => $this->generateUrl('page_socialmedia_new'),
+            'token_storage' => $this->get('security.token_storage'),
         ));
     }
 
@@ -149,6 +150,7 @@ class SocialmediaController extends Controller
     {
         return $this->createForm(new SocialmediaType(), $socialmedia, array(
             'action' => $this->generateUrl('page_socialmedia_edit', array('id' => $socialmedia->getId())),
+            'token_storage' => $this->get('security.token_storage'),
         ));
     }
 

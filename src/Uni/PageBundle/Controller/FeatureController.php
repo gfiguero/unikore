@@ -84,6 +84,7 @@ class FeatureController extends Controller
     {
         return $this->createForm(new FeatureType(), $feature, array(
             'action' => $this->generateUrl('page_feature_new'),
+            'token_storage' => $this->get('security.token_storage'),
         ));
     }
 
@@ -149,6 +150,7 @@ class FeatureController extends Controller
     {
         return $this->createForm(new FeatureType(), $feature, array(
             'action' => $this->generateUrl('page_feature_edit', array('id' => $feature->getId())),
+            'token_storage' => $this->get('security.token_storage'),
         ));
     }
 

@@ -1,4 +1,16 @@
 services:
-#    uni_page.example:
-#        class: Uni\PageBundle\Example
-#        arguments: ["@service_id", "plain_value", "%parameter%"]
+    uni_page.form.feature:
+        class: Uni\PageBundle\Form\FeatureType
+        arguments: ["@security.token_storage"]
+        tags:
+            - { name: form.type, alias: uni_pagebundle_feature }
+    uni_page.form.photography:
+        class: Uni\PageBundle\Form\PhotographyType
+        arguments: ["@security.token_storage"]
+        tags:
+            - { name: form.type, alias: uni_pagebundle_photography }
+    uni_page.form.socialmedia:
+        class: Uni\PageBundle\Form\SocialMediaType
+        arguments: ["@security.token_storage"]
+        tags:
+            - { name: form.type, alias: uni_pagebundle_socialmedia }

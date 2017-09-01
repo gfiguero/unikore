@@ -23,7 +23,7 @@ class ItemType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $account = $this->tokenStorage->getToken()->getUser()->getAccount();
-        $builder 
+        $builder
             ->add('product', null, array(
                 'label' => false,
                 'required' => true,

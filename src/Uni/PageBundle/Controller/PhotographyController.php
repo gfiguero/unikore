@@ -85,6 +85,7 @@ class PhotographyController extends Controller
     {
         return $this->createForm(new PhotographyType(), $photography, array(
             'action' => $this->generateUrl('page_photography_new'),
+            'token_storage' => $this->get('security.token_storage'),
         ));
     }
 
@@ -146,6 +147,7 @@ class PhotographyController extends Controller
     {
         return $this->createForm(new PhotographyType(), $photography, array(
             'action' => $this->generateUrl('page_photography_edit', array('id' => $photography->getId())),
+            'token_storage' => $this->get('security.token_storage'),
         ));
     }
 
