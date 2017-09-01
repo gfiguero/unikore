@@ -23,7 +23,7 @@
                         {% if feature.title %}
                         <div class="caption">
                             <h3 class="feature-item-title">{{ feature.title|raw }}</h3>
-                            {% if feature.description %}<p class="feature-item-content">{{ feature.description|raw }}</p>{% endif %}
+                            {% if feature.description %}<p class="feature-item-content">{{ feature.short|raw }}</p>{% endif %}
                         </div>
                         {% endif %}
                     </div>
