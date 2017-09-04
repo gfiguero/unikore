@@ -1,0 +1,39 @@
+Uni\AdminBundle\Entity\InvoiceAction:
+    type: entity
+    table: uni_invoiceaction
+    repositoryClass: Uni\AdminBundle\Entity\InvoiceActionRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    manyToOne:
+        invoice:
+            targetEntity: Uni\AdminBundle\Entity\Invoice
+            inversedBy: actions
+        user:
+            targetEntity: Uni\AdminBundle\Entity\User
+            inversedBy: invoiceactions
+    fields:
+        description:
+            type: text
+            nullable: true
+        created_at:
+            type: datetime
+            gedmo:
+                timestampable:
+                    on: create
+        updated_at:
+            type: datetime
+            gedmo:
+                timestampable:
+                    on: update
+        deleted_at:
+            type: datetime
+            nullable: true
+    gedmo:
+        soft_deleteable:
+            field_name: deleted_at
+            time_aware: false
+    lifecycleCallbacks: {  }

@@ -35,60 +35,72 @@
                         <h2 class="panel-title">{{ 'product.edit.form'|trans }}</h2>
                     </div>
                     <div class="panel-body">
+                        <ul class="nav nav-pills">
+                            <li role="presentation" class="active"><a data-toggle="tab" href="#identification">{{ 'product.section.identification'|trans }}</a></li>
+                            <li role="presentation"><a data-toggle="tab" href="#features">{{ 'product.section.features'|trans }}</a></li>
+                            <li role="presentation"><a data-toggle="tab" href="#trading">{{ 'product.section.trading'|trans }}</a></li>
+                            <li role="presentation"><a data-toggle="tab" href="#branding">{{ 'product.section.branding'|trans }}</a></li>
+                            <li role="presentation"><a data-toggle="tab" href="#consumer">{{ 'product.section.consumer'|trans }}</a></li>
+                            <li role="presentation"><a data-toggle="tab" href="#structure">{{ 'product.section.structure'|trans }}</a></li>
+                            <li role="presentation"><a data-toggle="tab" href="#package">{{ 'product.section.package'|trans }}</a></li>
+                        </ul>
+                    </div>
+                    <div class="panel-body">
                         {{ form_start(editForm, { 'style': 'horizontal' }) }}
-                            <div class="form-group"><div class="col-lg-offset-3 col-lg-9">
-                                <h2>{{ 'product.section.identification'|trans }}</h2>
-                            </div></div>
-                            {{ form_row(editForm.name) }}
-                            {{ form_row(editForm.short) }}
-                            {{ form_row(editForm.description) }}
-                            {{ form_row(editForm.imagefile) }}
-                            {{ form_row(editForm.provider) }}
-                            <div class="form-group"><div class="col-lg-offset-3 col-lg-9">
-                                <h2>{{ 'product.section.features'|trans }}</h2>
-                            </div></div>
-                            {{ form_row(editForm.height) }}
-                            {{ form_row(editForm.width) }}
-                            {{ form_row(editForm.length) }}
-                            {{ form_row(editForm.diameter) }}
-                            {{ form_row(editForm.thickness) }}
-                            {{ form_row(editForm.weight) }}
-                            <div class="form-group"><div class="col-lg-offset-3 col-lg-9">
-                                <h2>{{ 'product.section.trading'|trans }}</h2>
-                            </div></div>
-                            {{ form_row(editForm.cost) }}
-                            {{ form_row(editForm.price) }}
-                            {{ form_row(editForm.code) }}
-                            {{ form_row(editForm.cm_code) }}
-                            <div class="form-group"><div class="col-lg-offset-3 col-lg-9">
-                                <h2>{{ 'product.section.branding'|trans }}</h2>
-                            </div></div>
-                            {{ form_row(editForm.brand) }}
-                            {{ form_row(editForm.origin) }}
-                            {{ form_row(editForm.resistance) }}
-                            {{ form_row(editForm.warranty) }}
-                            {{ form_row(editForm.certification) }}
-                            <div class="form-group"><div class="col-lg-offset-3 col-lg-9">
-                                <h2>{{ 'product.section.consumer'|trans }}</h2>
-                            </div></div>
-                            {{ form_row(editForm.consumer_name) }}
-                            {{ form_row(editForm.consumer_age) }}
-                            {{ form_row(editForm.consumer_capacity) }}
-                            <div class="form-group"><div class="col-lg-offset-3 col-lg-9">
-                                <h2>{{ 'product.section.structure'|trans }}</h2>
-                            </div></div>
-                            {{ form_row(editForm.structure_main) }}
-                            {{ form_row(editForm.structure_side) }}
-                            {{ form_row(editForm.structure_instalation) }}
-                            {{ form_row(editForm.structure_anchorage) }}
-                            {{ form_row(editForm.structure_assembly) }}
-                            {{ form_row(editForm.structure_protection) }}
-                            {{ form_row(editForm.structure_termination) }}
-                            {{ form_row(editForm.structure_color) }}
-                            {{ form_row(editForm.structure_size) }}
-                            <div class="form-group"><div class="col-lg-offset-3 col-lg-9">
+                        <div class="tab-content">
+                            <div id="identification" class="tab-pane fade in active" >
+                                {{ form_row(editForm.name) }}
+                                {{ form_row(editForm.short) }}
+                                {{ form_row(editForm.description) }}
+                                {{ form_row(editForm.imagefile) }}
+                            </div>
+                            <div id="features" class="tab-pane fade" >
+                                {{ form_row(editForm.height) }}
+                                {{ form_row(editForm.width) }}
+                                {{ form_row(editForm.length) }}
+                                {{ form_row(editForm.diameter) }}
+                                {{ form_row(editForm.thickness) }}
+                                {{ form_row(editForm.weight) }}
+                            </div>
+                            <div id="trading" class="tab-pane fade" >
+                                {{ form_row(editForm.provider) }}
+                                {{ form_row(editForm.cost) }}
+                                {{ form_row(editForm.price) }}
+                                {{ form_row(editForm.code) }}
+                                {{ form_row(editForm.cm_code) }}
+                            </div>
+                            <div id="branding" class="tab-pane fade" >
+                                {{ form_row(editForm.brand) }}
+                                {{ form_row(editForm.origin) }}
+                                {{ form_row(editForm.resistance) }}
+                                {{ form_row(editForm.warranty) }}
+                                {{ form_row(editForm.certification) }}
+                            </div>
+                            <div id="consumer" class="tab-pane fade" >
+                                {{ form_row(editForm.consumer_name) }}
+                                {{ form_row(editForm.consumer_age) }}
+                                {{ form_row(editForm.consumer_capacity) }}
+                            </div>
+                            <div id="structure" class="tab-pane fade" >
+                                {{ form_row(editForm.structure_main) }}
+                                {{ form_row(editForm.structure_side) }}
+                                {{ form_row(editForm.structure_instalation) }}
+                                {{ form_row(editForm.structure_anchorage) }}
+                                {{ form_row(editForm.structure_assembly) }}
+                                {{ form_row(editForm.structure_protection) }}
+                                {{ form_row(editForm.structure_termination) }}
+                                {{ form_row(editForm.structure_color) }}
+                                {{ form_row(editForm.structure_size) }}
+                            </div>
+                            <div id="package" class="tab-pane fade">
+                                {{ form_row(editForm.packages) }}
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-lg-offset-3 col-lg-9">
                                 <button type="submit" class="btn btn-primary">{{ icon('save fa-fw') }}&nbsp;{{ 'product.edit.submit'|trans }}</button>
-                            </div></div>
+                            </div>
+                        </div>
                         {{ form_end(editForm) }}
                     </div>
                 </div>
@@ -132,6 +144,7 @@
 {% endblock %}
 
 {% block javascript %}
+    <script src="{{ asset('bundles/unioffer/js/product.package.js') }}"></script>
     {% block wysiwygjs %}{{ parent() }}{% endblock %}
     {% block fileinputjs %}{{ parent() }}{% endblock %}
 {% endblock %}

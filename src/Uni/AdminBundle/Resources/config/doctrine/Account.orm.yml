@@ -57,6 +57,9 @@ Uni\AdminBundle\Entity\Account:
         payments:
             targetEntity: Uni\AdminBundle\Entity\AccountPayment
             mappedBy: account
+        invoices:
+            targetEntity: Uni\AdminBundle\Entity\Invoice
+            mappedBy: account
     manyToOne:
         business_address_commune:
             targetEntity: Uni\AdminBundle\Entity\Commune

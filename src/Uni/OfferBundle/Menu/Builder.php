@@ -65,6 +65,12 @@ class Builder implements ContainerAwareInterface
             'offer_budget_show',
             'offer_budget_edit',
         )));
+        $sidemenu->addChild('sidemenu.invoice.root', array('route' => 'offer_invoice_index'))->setExtras(array('translation_domain' => 'UniOfferBundle', 'routes' => array(
+            'offer_invoice_index',
+            'offer_invoice_new',
+            'offer_invoice_show',
+            'offer_invoice_edit',
+        )));
 /*
         $sidemenu->addChild('sidemenu.item.root', array('route' => 'offer_item_index'))->setExtras(array('translation_domain' => 'UniOfferBundle', 'routes' => array(
             'offer_item_index',

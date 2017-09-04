@@ -1,0 +1,24 @@
+admin_invoiceaction_index:
+    path:     /
+    defaults: { _controller: "UniAdminBundle:InvoiceAction:index" }
+    methods:  GET
+
+admin_invoiceaction_show:
+    path:     /{id}/show
+    defaults: { _controller: "UniAdminBundle:InvoiceAction:show" }
+    methods:  GET
+
+admin_invoiceaction_new:
+    path:     /new
+    defaults: { _controller: "UniAdminBundle:InvoiceAction:new" }
+    methods:  [GET, POST]
+
+admin_invoiceaction_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "UniAdminBundle:InvoiceAction:edit" }
+    methods:  [GET, POST]
+
+admin_invoiceaction_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "UniAdminBundle:InvoiceAction:delete" }
+    methods:  DELETE

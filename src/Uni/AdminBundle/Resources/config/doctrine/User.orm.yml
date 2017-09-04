@@ -33,6 +33,12 @@ Uni\AdminBundle\Entity\User:
         notes:
             targetEntity: Uni\AdminBundle\Entity\Note
             mappedBy: user
+        invoices:
+            targetEntity: Uni\AdminBundle\Entity\Invoice
+            mappedBy: user
+        invoiceactions:
+            targetEntity: Uni\AdminBundle\Entity\InvoiceAction
+            mappedBy: user
     manyToMany:
         groups:
             targetEntity: Uni\AdminBundle\Entity\Group

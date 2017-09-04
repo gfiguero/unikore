@@ -19,6 +19,8 @@ sidemenu:
         root: Presupuestos
     note:
         root: Notas
+    invoice:
+        root: Facturas
 
 dashboard:
     index:
@@ -222,12 +224,13 @@ product:
         submit: Confirmar borrado
         flash: El producto fué borrado totalmente.
     section:
-        identification: Itentificación del Producto
-        features: Características del Producto
-        trading: Información Comercial
-        branding: Información de Marketing
-        consumer: Información del Comsumidor
-        structure: Información de Fabricación
+        identification: Itentificación
+        features: Características
+        trading: Comercio
+        branding: Origen
+        consumer: Comsumidor
+        structure: Fabricación
+        package: Empaque
     form:
         id: ID
         features: Características
@@ -270,9 +273,17 @@ product:
         structure_termination: Terminación
         structure_color: Color
         structure_size: Tamaño
+        packages: Empaques
+        addpackage: Agregar empaque
         created_at: Registro
         updated_at: Actualización
 
+productpackage:
+    form:
+        height: Atura [cm]
+        weight: Peso [Kg]
+        width: Ancho [cm]
+        length: Largo [cm]        
 
 item:
     index:
@@ -336,7 +347,7 @@ budget:
         submit: Registrar presupuesto
         flash: Nuevo presupuesto registrado satisfactoriamente.
     show:
-        title: Cotización N° %id%
+        title: Presupuesto
         link: Mostrar datos
         data: Datos de presupuesto
         client: Cliente
@@ -421,3 +432,55 @@ note:
         created_at: Registro
         updated_at: Actualización
 
+invoice:
+    index:
+        title: Facturas
+        list: Lista de facturas
+        link: Lista de facturas
+    new:
+        title: Facturas
+        link: Nueva factura
+        form: Formulario de registro de factura
+        submit: Registrar factura
+        flash: Nueva factura registrada satisfactoriamente.
+    show:
+        title: Facturas
+        link: Mostrar datos
+        data: Datos básicos
+        client: Datos del receptor
+        actions: Seguimiento
+    edit:
+        title: Facturas
+        link: Editar datos
+        form: Formulario de edición de factura
+        submit: Guardar cambios
+        flash: Los cambios en la factura fueron registrados satisfactoriamente.
+    delete:
+        link: Borrar factura
+        title: Borrado de factura
+        message: Los datos borrados no podrán ser recuperados.
+        submit: Confirmar borrado
+        flash: La factura fué borrada totalmente.
+    form:
+        id: ID
+        created_at: Registro
+        updated_at: Actualización
+        name: Nombre de factura
+        code: Número de factura
+        amount: Monto
+        note: Nota
+        user: Usuario
+        issuer: Emisor
+        client: Cliente
+        pay_in: Fecha de pago
+
+invoiceaction:
+    new:
+        title: Nueva acción de factura
+        link: Nueva acción
+        submit: Registrar acción
+        flash: Nueva acción de factura registrada satisfactoriamente.
+    form:
+        user: Usuario
+        description: Descripción
+        created_at: Registro

@@ -19,6 +19,10 @@ Uni\AdminBundle\Entity\Product:
             targetEntity: Uni\AdminBundle\Entity\Account
             inversedBy: products
     oneToMany:
+        packages:
+            targetEntity: Uni\AdminBundle\Entity\ProductPackage
+            mappedBy: product
+            cascade: ['persist', 'remove']
         items:
             targetEntity: Uni\AdminBundle\Entity\Item
             mappedBy: product

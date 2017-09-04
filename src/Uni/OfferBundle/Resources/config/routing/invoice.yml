@@ -1,0 +1,24 @@
+offer_invoice_index:
+    path:     /
+    defaults: { _controller: "UniOfferBundle:Invoice:index" }
+    methods:  GET
+
+offer_invoice_show:
+    path:     /{id}/show
+    defaults: { _controller: "UniOfferBundle:Invoice:show" }
+    methods:  GET
+
+offer_invoice_new:
+    path:     /new
+    defaults: { _controller: "UniOfferBundle:Invoice:new" }
+    methods:  [GET, POST]
+
+offer_invoice_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "UniOfferBundle:Invoice:edit" }
+    methods:  [GET, POST]
+
+offer_invoice_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "UniOfferBundle:Invoice:delete" }
+    methods:  DELETE

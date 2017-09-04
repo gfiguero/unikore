@@ -7,6 +7,7 @@ use Uni\OfferBundle\Form\ProductType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Product controller.
@@ -119,6 +120,9 @@ class ProductController extends Controller
         $account = $user->getAccount();
         if ($account != $product->getAccount()) return $this->redirect($this->generateUrl('offer_product_index'));
 
+        $originalPackages = new ArrayCollection();
+        foreach ($product->getPackages() as $package) $originalPackages->add($package);
+
         $editForm = $this->createEditForm($product);
         $deleteForm = $this->createDeleteForm($product);
         $editForm->handleRequest($request);
@@ -126,6 +130,7 @@ class ProductController extends Controller
         if ($editForm->isSubmitted()) {
             if($editForm->isValid()) {
                 $em = $this->getDoctrine()->getManager();
+                foreach ($originalPackages as $package) if (false === $product->getPackages()->contains($package)) $em->remove($package);
                 $em->persist($product);
                 $em->flush();
                 $request->getSession()->getFlashBag()->add( 'success', 'product.edit.flash' );

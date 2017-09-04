@@ -176,6 +176,18 @@ class ProductType extends AbstractType
                 'attr'  => array( 'label_col' => 3, 'widget_col' => 9 ),
                 'translation_domain' => 'UniOfferBundle',
             ))
+            ->add('packages', 'bootstrap_collection', array(
+                'label' => false,
+                'attr'  => array( 'label_col' => 3, 'widget_col' => 9 ),
+                'translation_domain' => 'UniOfferBundle',
+                'entry_type' => 'Uni\OfferBundle\Form\ProductPackageType',
+                'allow_add' => true,
+                'allow_delete' => true,
+                'add_button_text'    => 'product.form.addpackage',
+                'delete_button_text' => 'product.form.deletepackage',
+                'delete_empty' => true,
+                'by_reference' => false,
+            ))
         ;
     }
 

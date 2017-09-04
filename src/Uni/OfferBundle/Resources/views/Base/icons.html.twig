@@ -10,5 +10,6 @@
     {% elseif '_note_' in app.request.attributes.get( '_route' ) %}{{ icon('sticky-note fa-fw') }}
     {% elseif '_issuer_' in app.request.attributes.get( '_route' ) %}{{ icon('flag fa-fw') }}
     {% elseif '_account_' in app.request.attributes.get( '_route' ) %}{{ icon('gears fa-fw') }}
+    {% elseif '_invoice_' in app.request.attributes.get( '_route' ) %}{{ icon('credit-card fa-fw') }}
     {% endif %}
 {% endblock %}

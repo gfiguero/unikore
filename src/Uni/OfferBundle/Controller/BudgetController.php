@@ -7,6 +7,7 @@ use Uni\OfferBundle\Form\BudgetType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Budget controller.
@@ -172,9 +173,11 @@ class BudgetController extends Controller
     {
         $user = $this->getUser();
         $account = $user->getAccount();
-        if ($account != $budget->getAccount()) {
-            return $this->redirect($this->generateUrl('offer_budget_index'));
-        }
+        if ($account != $budget->getAccount()) return $this->redirect($this->generateUrl('offer_budget_index'));
+
+        $originalItems = new ArrayCollection();
+        foreach ($budget->getItems() as $item) $originalItems->add($item);
+
         $editForm = $this->createEditForm($budget);
         $deleteForm = $this->createDeleteForm($budget);
         $editForm->handleRequest($request);
@@ -183,6 +186,7 @@ class BudgetController extends Controller
             if($editForm->isValid()) {
                 $budget->setReferencePrices();
                 $em = $this->getDoctrine()->getManager();
+                foreach ($originalItems as $item) if (false === $budget->getItems()->contains($item)) $em->remove($item);
                 $em->persist($budget);
                 $em->flush();
                 $request->getSession()->getFlashBag()->add( 'success', 'budget.edit.flash' );

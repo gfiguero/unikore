@@ -537,4 +537,72 @@ class Client
     {
         return $this->comment;
     }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $invoices;
+
+
+    /**
+     * Add invoice
+     *
+     * @param \Uni\AdminBundle\Entity\Invoice $invoice
+     *
+     * @return Client
+     */
+    public function addInvoice(\Uni\AdminBundle\Entity\Invoice $invoice)
+    {
+        $this->invoices[] = $invoice;
+
+        return $this;
+    }
+
+    /**
+     * Remove invoice
+     *
+     * @param \Uni\AdminBundle\Entity\Invoice $invoice
+     */
+    public function removeInvoice(\Uni\AdminBundle\Entity\Invoice $invoice)
+    {
+        $this->invoices->removeElement($invoice);
+    }
+
+    /**
+     * Get invoices
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getInvoices()
+    {
+        return $this->invoices;
+    }
+    /**
+     * @var string
+     */
+    private $note;
+
+
+    /**
+     * Set note
+     *
+     * @param string $note
+     *
+     * @return Client
+     */
+    public function setNote($note)
+    {
+        $this->note = $note;
+
+        return $this;
+    }
+
+    /**
+     * Get note
+     *
+     * @return string
+     */
+    public function getNote()
+    {
+        return $this->note;
+    }
 }

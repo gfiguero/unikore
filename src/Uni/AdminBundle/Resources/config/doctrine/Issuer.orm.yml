@@ -18,6 +18,9 @@ Uni\AdminBundle\Entity\Issuer:
         budgets:
             targetEntity: Uni\AdminBundle\Entity\Budget
             mappedBy: issuer
+        invoices:
+            targetEntity: Uni\AdminBundle\Entity\Invoice
+            mappedBy: issuer
     fields:
         name:
             type: string

@@ -6,6 +6,14 @@ uni_offer_issuer:
     resource: "@UniOfferBundle/Resources/config/routing/issuer.yml"
     prefix:   /issuer
 
+uni_offer_invoice:
+    resource: "@UniOfferBundle/Resources/config/routing/invoice.yml"
+    prefix:   /invoice
+
+uni_offer_invoiceaction:
+    resource: "@UniOfferBundle/Resources/config/routing/invoiceaction.yml"
+    prefix:   /invoiceaction
+
 uni_offer_account:
     resource: "@UniOfferBundle/Resources/config/routing/account.yml"
     prefix:   /account

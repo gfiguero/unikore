@@ -1440,4 +1440,45 @@ class Product
     {
         return $this->catalogitems;
     }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $packages;
+
+
+    /**
+     * Add package
+     *
+     * @param \Uni\AdminBundle\Entity\ProductPackage $package
+     *
+     * @return Product
+     */
+    public function addPackage(\Uni\AdminBundle\Entity\ProductPackage $package)
+    {
+        $package->setProduct($this);
+
+        $this->packages[] = $package;
+
+        return $this;
+    }
+
+    /**
+     * Remove package
+     *
+     * @param \Uni\AdminBundle\Entity\ProductPackage $package
+     */
+    public function removePackage(\Uni\AdminBundle\Entity\ProductPackage $package)
+    {
+        $this->packages->removeElement($package);
+    }
+
+    /**
+     * Get packages
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getPackages()
+    {
+        return $this->packages;
+    }
 }

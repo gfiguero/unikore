@@ -1,0 +1,63 @@
+Uni\AdminBundle\Entity\Invoice:
+    type: entity
+    table: uni_invoice
+    repositoryClass: Uni\AdminBundle\Entity\InvoiceRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    manyToOne:
+        client:
+            targetEntity: Uni\AdminBundle\Entity\Client
+            inversedBy: invoices
+        issuer:
+            targetEntity: Uni\AdminBundle\Entity\Issuer
+            inversedBy: invoices
+        user:
+            targetEntity: Uni\AdminBundle\Entity\User
+            inversedBy: invoices
+        account:
+            targetEntity: Uni\AdminBundle\Entity\Account
+            inversedBy: invoices
+    oneToMany:
+        actions:
+            targetEntity: Uni\AdminBundle\Entity\InvoiceAction
+            mappedBy: invoice
+            cascade: ['remove']
+    fields:
+        name:
+            type: string
+            length: 100
+            nullable: true
+        code:
+            type: string
+            length: 100
+            nullable: true
+        amount:
+            type: integer
+            nullable: true
+        note:
+            type: text
+            nullable: true
+        pay_in:
+            type: datetime
+        created_at:
+            type: datetime
+            gedmo:
+                timestampable:
+                    on: create
+        updated_at:
+            type: datetime
+            gedmo:
+                timestampable:
+                    on: update
+        deleted_at:
+            type: datetime
+            nullable: true
+    gedmo:
+        soft_deleteable:
+            field_name: deleted_at
+            time_aware: false
+    lifecycleCallbacks: {  }

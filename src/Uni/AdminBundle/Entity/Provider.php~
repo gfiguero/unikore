@@ -537,4 +537,33 @@ class Provider
     {
         return $this->comment;
     }
+    /**
+     * @var string
+     */
+    private $note;
+
+
+    /**
+     * Set note
+     *
+     * @param string $note
+     *
+     * @return Provider
+     */
+    public function setNote($note)
+    {
+        $this->note = $note;
+
+        return $this;
+    }
+
+    /**
+     * Get note
+     *
+     * @return string
+     */
+    public function getNote()
+    {
+        return $this->note;
+    }
 }

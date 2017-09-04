@@ -1,0 +1,45 @@
+Uni\AdminBundle\Entity\ProductPackage:
+    type: entity
+    table: uni_productpackage
+    repositoryClass: Uni\AdminBundle\Entity\ProductPackageRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    manyToOne:
+        product:
+            targetEntity: Uni\AdminBundle\Entity\Product
+            inversedBy: packages
+    fields:
+        height:
+            type: integer
+            nullable: true
+        width:
+            type: integer
+            nullable: true
+        length:
+            type: integer
+            nullable: true
+        weight:
+            type: integer
+            nullable: true
+        created_at:
+            type: datetime
+            gedmo:
+                timestampable:
+                    on: create
+        updated_at:
+            type: datetime
+            gedmo:
+                timestampable:
+                    on: update
+        deleted_at:
+            type: datetime
+            nullable: true
+    gedmo:
+        soft_deleteable:
+            field_name: deleted_at
+            time_aware: false
+    lifecycleCallbacks: {  }

@@ -66,7 +66,7 @@
         {% if form.vars.allow_add %}
             {{ form_label(form) }}
             <div class="form-group">
-                <label class="control-label col-lg-{{ attr.label_col }}" for="uni_agentbundle_budget_seller">{{'budget.form.items'|trans({}, translation_domain) }}</label>
+                <label class="control-label col-lg-{{ attr.label_col }}" for="uni_offerbundle_budget_items">{{'budget.form.items'|trans({}, translation_domain) }}</label>
                 <div class="col-lg-{{ attr.widget_col }}">
                     <a type="button" href="#" class="btn btn-success" data-addfield="collection" data-collection="{{ form.vars.id }}" data-prototype-name="{{ prototype_name }}">{{ icon('plus fa-fw') }}&nbsp;{{ form.vars.add_button_text|trans({}, translation_domain)|parse_icons|raw }}</a>
                 </div>
@@ -103,3 +103,103 @@
     {% endspaceless %}
 {% endblock _uni_offerbundle_budget_items_widget %}
 
+{% block _uni_offerbundle_product_packages_widget %}
+    {% spaceless %}
+        {% if prototype is defined %}
+            {% set prototype_vars = {} %}
+            {% if style is defined %}
+                {% set prototype_vars = prototype_vars|merge({'style': 'inline', 'label_col' : 0}) %}
+            {% endif %}
+            {% set prototype_html = '<td><a href="#" class="btn btn-danger btn-sm" data-removefield="collection" data-field="__id__">' ~ icon('times fa-fw') ~ '</a></td>' %}
+            {% set prototype_html = prototype_html ~ '<td>' ~ form_widget(prototype.height, {'attr': {'value': 0}}) ~ '</td>' %}
+            {% set prototype_html = prototype_html ~ '<td>' ~ form_widget(prototype.width, {'attr': {'value': 0}}) ~ '</td>' %}
+            {% set prototype_html = prototype_html ~ '<td>' ~ form_widget(prototype.length, {'attr': {'value': 0}}) ~ '</td>' %}
+            {% set prototype_html = prototype_html ~ '<td>' ~ form_widget(prototype.weight, {'attr': {'value': 0}}) ~ '</td>' %}
+            {% set attr = attr|merge({'data-prototype': prototype_html }) %}
+            {% set attr = attr|merge({'data-prototype-name': prototype_name }) %}
+        {% endif %}
+        {% if form.vars.allow_add %}
+            {{ form_label(form) }}
+            <div class="form-group">
+                <label class="control-label col-lg-{{ attr.label_col }}" for="uni_offerbundle_product_packages">{{'product.form.packages'|trans({}, translation_domain) }}</label>
+                <div class="col-lg-{{ attr.widget_col }}">
+                    <a type="button" href="#" class="btn btn-success" data-addfield="collection" data-collection="{{ form.vars.id }}" data-prototype-name="{{ prototype_name }}">{{ icon('plus fa-fw') }}&nbsp;{{ form.vars.add_button_text|trans({}, translation_domain)|parse_icons|raw }}</a>
+                </div>
+            </div>
+        {% endif %}
+        <div class="form-group">
+            <div class="col-lg-{{ attr.widget_col }} col-lg-offset-{{ attr.label_col }}">
+                <div class="panel panel-default">
+                    <div {{ block('widget_container_attributes') }} >
+                        <table class="table table-middle">
+                            <thead>
+                                <tr>
+                                    <th><a class="btn btn-default btn-sm disabled">{{ icon('times fa-fw') }}</a></th>
+                                    <th>{{'productpackage.form.height'|trans({}, translation_domain) }}</th>
+                                    <th>{{'productpackage.form.width'|trans({}, translation_domain) }}</th>
+                                    <th>{{'productpackage.form.length'|trans({}, translation_domain) }}</th>
+                                    <th>{{'productpackage.form.weight'|trans({}, translation_domain) }}</th>
+                                </tr>
+                            </thead>
+                            {% for field in form %}
+                                <tr>
+                                    <td><a href="#" class="btn btn-danger btn-sm" data-removefield="collection" data-field="{{ field.vars.id }}">{{ icon('times fa-fw') }}</a></td>
+                                    <td>{{ form_widget(field.height) }}</td>
+                                    <td>{{ form_widget(field.width) }}</td>
+                                    <td>{{ form_widget(field.length) }}</td>
+                                    <td>{{ form_widget(field.weight) }}</td>
+                                </tr>
+                            {% endfor %}
+                        </table>
+                    </div>
+                </div>
+            </div> 
+        </div> 
+    {% endspaceless %}
+{% endblock _uni_offerbundle_product_packages_widget %}
+
+{% block _uni_offerbundle_invoice_actions_widget %}
+    {% spaceless %}
+        {% if prototype is defined %}
+            {% set prototype_vars = {} %}
+            {% if style is defined %}
+                {% set prototype_vars = prototype_vars|merge({'style': 'inline', 'label_col' : 0}) %}
+            {% endif %}
+            {% set prototype_html = '<td><a href="#" class="btn btn-danger btn-sm" data-removefield="collection" data-field="__id__">' ~ icon('times fa-fw') ~ '</a></td>' %}
+            {% set prototype_html = prototype_html ~ '<td>' ~ form_widget(prototype.description) ~ '</td>' %}
+            {% set attr = attr|merge({'data-prototype': prototype_html }) %}
+            {% set attr = attr|merge({'data-prototype-name': prototype_name }) %}
+        {% endif %}
+        {% if form.vars.allow_add %}
+            {{ form_label(form) }}
+            <div class="form-group">
+                <label class="control-label col-lg-{{ attr.label_col }}" for="uni_offerbundle_invoice_actions">{{'invoice.form.actions'|trans({}, translation_domain) }}</label>
+                <div class="col-lg-{{ attr.widget_col }}">
+                    <a type="button" href="#" class="btn btn-success" data-addfield="collection" data-collection="{{ form.vars.id }}" data-prototype-name="{{ prototype_name }}">{{ icon('plus fa-fw') }}&nbsp;{{ form.vars.add_button_text|trans({}, translation_domain)|parse_icons|raw }}</a>
+                </div>
+            </div>
+        {% endif %}
+        <div class="form-group">
+            <div class="col-lg-{{ attr.widget_col }} col-lg-offset-{{ attr.label_col }}">
+                <div class="panel panel-default">
+                    <div {{ block('widget_container_attributes') }} >
+                        <table class="table table-middle">
+                            <thead>
+                                <tr>
+                                    <th><a class="btn btn-default btn-sm disabled">{{ icon('times fa-fw') }}</a></th>
+                                    <th>{{'invoiceaction.form.description'|trans({}, translation_domain) }}</th>
+                                </tr>
+                            </thead>
+                            {% for field in form %}
+                                <tr>
+                                    <td><a href="#" class="btn btn-danger btn-sm" data-removefield="collection" data-field="{{ field.vars.id }}">{{ icon('times fa-fw') }}</a></td>
+                                    <td>{{ form_widget(field.description) }}</td>
+                                </tr>
+                            {% endfor %}
+                        </table>
+                    </div>
+                </div>
+            </div> 
+        </div> 
+    {% endspaceless %}
+{% endblock _uni_offerbundle_invoice_actions_widget %}

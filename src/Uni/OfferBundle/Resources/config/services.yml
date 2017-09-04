@@ -10,3 +10,9 @@ services:
         arguments: ["@security.token_storage"]
         tags:
             - { name: form.type, alias: uni_offerbundle_budget }
+
+    uni_offer.form.invoice:
+        class: Uni\OfferBundle\Form\InvoiceType
+        arguments: ["@security.token_storage"]
+        tags:
+            - { name: form.type, alias: uni_offerbundle_invoice }

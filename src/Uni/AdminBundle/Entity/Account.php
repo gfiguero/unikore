@@ -984,4 +984,43 @@ class Account
     {
         return $this->payments;
     }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $invoices;
+
+
+    /**
+     * Add invoice
+     *
+     * @param \Uni\AdminBundle\Entity\Invoice $invoice
+     *
+     * @return Account
+     */
+    public function addInvoice(\Uni\AdminBundle\Entity\Invoice $invoice)
+    {
+        $this->invoices[] = $invoice;
+
+        return $this;
+    }
+
+    /**
+     * Remove invoice
+     *
+     * @param \Uni\AdminBundle\Entity\Invoice $invoice
+     */
+    public function removeInvoice(\Uni\AdminBundle\Entity\Invoice $invoice)
+    {
+        $this->invoices->removeElement($invoice);
+    }
+
+    /**
+     * Get invoices
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getInvoices()
+    {
+        return $this->invoices;
+    }
 }
