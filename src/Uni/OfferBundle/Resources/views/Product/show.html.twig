@@ -49,7 +49,7 @@
                                                 <dt>{{ 'product.form.name'|trans }}</dt>
                                                     <dd>{% if product.name %}{{ product.name }}{% endif %}</dd>
                                                 <dt>{{ 'product.form.description'|trans }}</dt>
-                                                    <dd>{% if product.description %}{{ product.description }}{% endif %}</dd>
+                                                    <dd>{% if product.description %}{{ product.description|raw }}{% endif %}</dd>
                                                 <dt>{{ 'product.form.short'|trans }}</dt>
                                                     <dd>{% if product.short %}{{ product.short }}{% endif %}</dd>
                                                 <dt>{{ 'product.form.provider'|trans }}</dt>
