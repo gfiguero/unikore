@@ -31,17 +31,6 @@
                     <div class="panel-heading">
                         <h2 class="panel-title">{{ 'photography.index.list'|trans }}</h2>
                     </div>
-                    <div class="panel-body">
-                        <div class="">
-                        {% for key, photography in photographies %}
-                            {% if photography.image %}
-                                <div>
-                                <img class="img-responsive img-thumbnail" src="{{ vich_uploader_asset(photography, 'imagefile', 'Uni\\AdminBundle\\Entity\\Photography')|imagine_filter('photography_index_small') }}">
-                                </div>
-                            {% endif %}
-                        {% endfor %}
-                        </div>
-                    </div>
                     <div class="table-responsive">
                         <table class="records_list table table-striped table-hover table-middle">
                             <thead>
@@ -54,6 +43,7 @@
                                     <th>{{ knp_pagination_sortable(photographies, 'photography.form.page'|trans, 'page') }}{% if sort == 'page' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
                                     <th>{{ knp_pagination_sortable(photographies, 'photography.form.image'|trans, 'image') }}{% if sort == 'image' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
                                     <th>{{ knp_pagination_sortable(photographies, 'photography.form.created_at'|trans, 'created_at') }}{% if sort == 'created_at' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
+                                    <th>{{ knp_pagination_sortable(photographies, 'photography.form.updated_at'|trans, 'updated_at') }}{% if sort == 'updated_at' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -67,6 +57,7 @@
                                     <td>{% if photography.page %}{{ photography.page }}{% endif %}</td>
                                     <td>{% if photography.image %}<img class="product-item-image" src="{{ vich_uploader_asset(photography, 'imagefile', 'Uni\\AdminBundle\\Entity\\Photography')|imagine_filter('photography_index_small') }}">{% endif %}</td>
                                     <td><span class="fa fa-calendar-o" data-toggle="tooltip" data-placement="left" title="{{ photography.createdat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "dd LLLL y HH:mm") }}"></span>&nbsp;{{ photography.createdat|ago }}</td>
+                                    <td><span class="fa fa-calendar-o" data-toggle="tooltip" data-placement="left" title="{{ photography.updatedat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "dd LLLL y HH:mm") }}"></span>&nbsp;{{ photography.updatedat|ago }}</td>
                                 </tr>
                             {% endfor %}
                             </tbody>

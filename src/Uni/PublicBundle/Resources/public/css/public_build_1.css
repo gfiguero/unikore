@@ -6815,7 +6815,6 @@ button.close {
   border-color: transparent;
   background-color: rgba(51, 122, 183, 0.5);
   color: white;
-  word-wrap: break-word;
 }
 .panel-primary-fade > .panel-heading {
   color: white;
@@ -6870,11 +6869,6 @@ button.close {
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
-}
-#main .main-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 #main .main-title,
 #main .main-subtitle {
@@ -7013,4 +7007,7 @@ section {
 }
 .col-flex {
   display: flex;
+}
+body {
+  word-break: break-word;
 }
