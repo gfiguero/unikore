@@ -29,6 +29,9 @@ Uni\AdminBundle\Entity\Budget:
             targetEntity: Uni\AdminBundle\Entity\Item
             mappedBy: budget
             cascade: ['persist', 'remove']
+        orders:
+            targetEntity: Uni\AdminBundle\Entity\Order
+            mappedBy: budget
     manyToMany:
         notes:
             targetEntity: Uni\AdminBundle\Entity\Note
@@ -37,6 +40,9 @@ Uni\AdminBundle\Entity\Budget:
         name:
             type: string
             length: 100
+            nullable: true
+        number:
+            type: integer
             nullable: true
         note:
             type: text

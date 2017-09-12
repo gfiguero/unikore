@@ -27,7 +27,7 @@ class ProviderController extends Controller
         $direction = $request->query->get('direction');
         $em = $this->getDoctrine()->getManager();
         if($sort) $providers = $em->getRepository('UniAdminBundle:Provider')->findBy(array('account' => $account), array($sort => $direction));
-        else $providers = $em->getRepository('UniAdminBundle:Provider')->findBy(array('account' => $account));
+        else $providers = $em->getRepository('UniAdminBundle:Provider')->findBy(array('account' => $account), array('updated_at' => 'DESC'));
         $paginator = $this->get('knp_paginator');
         $providers = $paginator->paginate($providers, $request->query->getInt('page', 1), 100);
 

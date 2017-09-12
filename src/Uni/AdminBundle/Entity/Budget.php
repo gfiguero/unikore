@@ -32,6 +32,11 @@ class Budget
         return (string) $this->name;
     }
 
+    public function getDisplayName()
+    {
+        return (string) $this->name . ' ($ ' . number_format($this->getTotal(), 0, ',', '.') . ')';
+    }
+
     /**
      * Get id
      *
@@ -686,5 +691,73 @@ class Budget
     public function getAccount()
     {
         return $this->account;
+    }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $orders;
+
+
+    /**
+     * Add order
+     *
+     * @param \Uni\AdminBundle\Entity\Order $order
+     *
+     * @return Budget
+     */
+    public function addOrder(\Uni\AdminBundle\Entity\Order $order)
+    {
+        $this->orders[] = $order;
+
+        return $this;
+    }
+
+    /**
+     * Remove order
+     *
+     * @param \Uni\AdminBundle\Entity\Order $order
+     */
+    public function removeOrder(\Uni\AdminBundle\Entity\Order $order)
+    {
+        $this->orders->removeElement($order);
+    }
+
+    /**
+     * Get orders
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getOrders()
+    {
+        return $this->orders;
+    }
+    /**
+     * @var integer
+     */
+    private $number;
+
+
+    /**
+     * Set number
+     *
+     * @param integer $number
+     *
+     * @return Budget
+     */
+    public function setNumber($number)
+    {
+        $this->number = $number;
+
+        return $this;
+    }
+
+    /**
+     * Get number
+     *
+     * @return integer
+     */
+    public function getNumber()
+    {
+        return $this->number;
     }
 }

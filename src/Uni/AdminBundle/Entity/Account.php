@@ -1023,4 +1023,82 @@ class Account
     {
         return $this->invoices;
     }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $shipments;
+
+
+    /**
+     * Add shipment
+     *
+     * @param \Uni\AdminBundle\Entity\Shipment $shipment
+     *
+     * @return Account
+     */
+    public function addShipment(\Uni\AdminBundle\Entity\Shipment $shipment)
+    {
+        $this->shipments[] = $shipment;
+
+        return $this;
+    }
+
+    /**
+     * Remove shipment
+     *
+     * @param \Uni\AdminBundle\Entity\Shipment $shipment
+     */
+    public function removeShipment(\Uni\AdminBundle\Entity\Shipment $shipment)
+    {
+        $this->shipments->removeElement($shipment);
+    }
+
+    /**
+     * Get shipments
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getShipments()
+    {
+        return $this->shipments;
+    }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $orders;
+
+
+    /**
+     * Add order
+     *
+     * @param \Uni\AdminBundle\Entity\Order $order
+     *
+     * @return Account
+     */
+    public function addOrder(\Uni\AdminBundle\Entity\Order $order)
+    {
+        $this->orders[] = $order;
+
+        return $this;
+    }
+
+    /**
+     * Remove order
+     *
+     * @param \Uni\AdminBundle\Entity\Order $order
+     */
+    public function removeOrder(\Uni\AdminBundle\Entity\Order $order)
+    {
+        $this->orders->removeElement($order);
+    }
+
+    /**
+     * Get orders
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getOrders()
+    {
+        return $this->orders;
+    }
 }

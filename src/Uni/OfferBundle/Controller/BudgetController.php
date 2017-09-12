@@ -3,7 +3,9 @@
 namespace Uni\OfferBundle\Controller;
 
 use Uni\AdminBundle\Entity\Budget;
+use Uni\AdminBundle\Entity\Order;
 use Uni\OfferBundle\Form\BudgetType;
+use Uni\OfferBundle\Form\OrderType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -109,14 +111,25 @@ class BudgetController extends Controller
         $account = $user->getAccount();
         if ($account != $budget->getAccount()) return $this->redirect($this->generateUrl('offer_budget_index'));
 
-        $editForm = $this->createEditForm($budget);
         $deleteForm = $this->createDeleteForm($budget);
+
+        $order = new Order();
+        $orderForm = $this->createOrderForm($order, $budget);
 
         return $this->render('UniOfferBundle:Budget:show.html.twig', array(
             'budget' => $budget,
-            'editForm' => $editForm->createView(),
+            'client' => $budget->getClient(),
+            'seller' => $budget->getSeller(),
+            'orderForm' => $orderForm->createView(),
             'deleteForm' => $deleteForm->createView(),
         ));
+    }
+
+    private function createOrderForm(Order $order, Budget $budget)
+    {
+        return $this->createForm(OrderType::class, $order, array(
+            'action' => $this->generateUrl('offer_order_add', array('id' => $budget->getId())),
+        ))->remove('budget')->remove('amount');
     }
 
     public function exportAction(Budget $budget)

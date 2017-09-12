@@ -322,6 +322,16 @@ class Item
     }
 
     /**
+     * Get normalFullPrice
+     *
+     * @return integer
+     */
+    public function getNormalFullPrice()
+    {
+        return round(($this->getPrice()/1.19) + $this->getSurcharge());
+    }
+
+    /**
      * Get totalNormalFullPrice
      *
      * @return integer

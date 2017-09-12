@@ -1,0 +1,53 @@
+Uni\AdminBundle\Entity\Shipment:
+    type: entity
+    table: uni_shipment
+    repositoryClass: Uni\AdminBundle\Entity\ShipmentRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    manyToOne:
+        invoice:
+            targetEntity: Uni\AdminBundle\Entity\Invoice
+            inversedBy: shipments
+        user:
+            targetEntity: Uni\AdminBundle\Entity\User
+            inversedBy: shipments
+        account:
+            targetEntity: Uni\AdminBundle\Entity\Account
+            inversedBy: shipments
+    fields:
+        description:
+            type: text
+            nullable: true
+        amount:
+            type: integer
+            nullable: true
+        code:
+            type: string
+            length: 100
+            nullable: true
+        filename:
+            type: string
+            length: 100
+            nullable: true
+        created_at:
+            type: datetime
+            gedmo:
+                timestampable:
+                    on: create
+        updated_at:
+            type: datetime
+            gedmo:
+                timestampable:
+                    on: update
+        deleted_at:
+            type: datetime
+            nullable: true
+    gedmo:
+        soft_deleteable:
+            field_name: deleted_at
+            time_aware: false
+    lifecycleCallbacks: {  }

@@ -596,4 +596,121 @@ class User extends BaseUser
     {
         return $this->address_commune;
     }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $invoices;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $invoiceactions;
+
+
+    /**
+     * Add invoice
+     *
+     * @param \Uni\AdminBundle\Entity\Invoice $invoice
+     *
+     * @return User
+     */
+    public function addInvoice(\Uni\AdminBundle\Entity\Invoice $invoice)
+    {
+        $this->invoices[] = $invoice;
+
+        return $this;
+    }
+
+    /**
+     * Remove invoice
+     *
+     * @param \Uni\AdminBundle\Entity\Invoice $invoice
+     */
+    public function removeInvoice(\Uni\AdminBundle\Entity\Invoice $invoice)
+    {
+        $this->invoices->removeElement($invoice);
+    }
+
+    /**
+     * Get invoices
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getInvoices()
+    {
+        return $this->invoices;
+    }
+
+    /**
+     * Add invoiceaction
+     *
+     * @param \Uni\AdminBundle\Entity\InvoiceAction $invoiceaction
+     *
+     * @return User
+     */
+    public function addInvoiceaction(\Uni\AdminBundle\Entity\InvoiceAction $invoiceaction)
+    {
+        $this->invoiceactions[] = $invoiceaction;
+
+        return $this;
+    }
+
+    /**
+     * Remove invoiceaction
+     *
+     * @param \Uni\AdminBundle\Entity\InvoiceAction $invoiceaction
+     */
+    public function removeInvoiceaction(\Uni\AdminBundle\Entity\InvoiceAction $invoiceaction)
+    {
+        $this->invoiceactions->removeElement($invoiceaction);
+    }
+
+    /**
+     * Get invoiceactions
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getInvoiceactions()
+    {
+        return $this->invoiceactions;
+    }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $shipments;
+
+
+    /**
+     * Add shipment
+     *
+     * @param \Uni\AdminBundle\Entity\Shipment $shipment
+     *
+     * @return User
+     */
+    public function addShipment(\Uni\AdminBundle\Entity\Shipment $shipment)
+    {
+        $this->shipments[] = $shipment;
+
+        return $this;
+    }
+
+    /**
+     * Remove shipment
+     *
+     * @param \Uni\AdminBundle\Entity\Shipment $shipment
+     */
+    public function removeShipment(\Uni\AdminBundle\Entity\Shipment $shipment)
+    {
+        $this->shipments->removeElement($shipment);
+    }
+
+    /**
+     * Get shipments
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getShipments()
+    {
+        return $this->shipments;
+    }
 }

@@ -3,9 +3,12 @@
 namespace Uni\OfferBundle\Controller;
 
 use Uni\AdminBundle\Entity\Invoice;
+use Uni\AdminBundle\Entity\Order;
 use Uni\AdminBundle\Entity\InvoiceAction;
+use Uni\AdminBundle\Entity\Shipment;
 use Uni\OfferBundle\Form\InvoiceType;
 use Uni\OfferBundle\Form\InvoiceActionType;
+use Uni\OfferBundle\Form\ShipmentType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Doctrine\Common\Collections\ArrayCollection;
@@ -29,7 +32,7 @@ class InvoiceController extends Controller
         $direction = $request->query->get('direction');
         $em = $this->getDoctrine()->getManager();
         if($sort) $invoices = $em->getRepository('UniAdminBundle:Invoice')->findBy(array('account' => $account), array($sort => $direction));
-        else $invoices = $em->getRepository('UniAdminBundle:Invoice')->findBy(array('account' => $account));
+        else $invoices = $em->getRepository('UniAdminBundle:Invoice')->findBy(array('account' => $account), array('updated_at' => 'DESC'));
         $paginator = $this->get('knp_paginator');
         $invoices = $paginator->paginate($invoices, $request->query->getInt('page', 1), 100);
 
@@ -90,6 +93,40 @@ class InvoiceController extends Controller
         ));
     }
 
+    public function addAction(Request $request, Order $order)
+    {
+        $user = $this->getUser();
+        $account = $user->getAccount();
+        if ($account != $order->getAccount()) return $this->redirect($this->generateUrl('offer_invoice_index'));
+
+        $invoice = new Invoice();
+        $addForm = $this->createAddForm($invoice, $order);
+        $addForm->handleRequest($request);
+
+        if ($addForm->isSubmitted()) {
+            if($addForm->isValid()) {
+                $invoice->setUser($user);
+                $invoice->setAccount($account);
+                $invoice->setOrder($order);
+                $invoice->setAmount($order->getAmount());
+                $em = $this->getDoctrine()->getManager();
+                $em->persist($invoice);
+                $em->flush();
+                $request->getSession()->getFlashBag()->add( 'success', 'invoice.new.flash' );
+                return $this->redirect($this->generateUrl('offer_invoice_show', array('id' => $invoice->getId())));
+            }
+        }
+
+        return $this->redirect($this->generateUrl('offer_order_show', array('id' => $order->getId())));
+    }
+
+    private function createAddForm(Invoice $invoice, Order $order)
+    {
+        return $this->createForm(InvoiceType::class, $invoice, array(
+            'action' => $this->generateUrl('offer_invoice_add', array('id' => $order->getId())),
+        ))->remove('order')->remove('amount');
+    }
+
     /**
      * Finds and displays a Invoice entity.
      *
@@ -104,17 +141,45 @@ class InvoiceController extends Controller
 
         $em = $this->getDoctrine()->getManager();
         $invoiceactions = $em->getRepository('UniAdminBundle:InvoiceAction')->findBy(array('invoice' => $invoice), array('created_at' => 'DESC'));
+        $shipments = $em->getRepository('UniAdminBundle:Shipment')->findBy(array('invoice' => $invoice), array('created_at' => 'DESC'));
 
         $invoiceAction = new InvoiceAction();
         $invoiceActionForm = $this->createInvoiceActionForm($invoiceAction, $invoice);
 
+        $shipment = new Shipment();
+        $shipmentForm = $this->createAddShipmentForm($shipment, $invoice);
+
+        $user = $invoice->getUser();
+        $order = $invoice->getOrder();
+        $budget = $order ? $order->getBudget() : null;
+        $issuer = $budget ? $budget->getIssuer() : null;
+        $client = $budget ? $budget->getClient() : null;
+        $seller = $budget ? $budget->getSeller() : null;
+        $items = $budget ? $budget->getItems() : null;
+
         return $this->render('UniOfferBundle:Invoice:show.html.twig', array(
             'invoice' => $invoice,
             'invoiceactions' => $invoiceactions,
+            'shipments' => $shipments,
+            'user' => $user,
+            'order' => $order,
+            'budget' => $budget,
+            'issuer' => $issuer,
+            'items' => $items,
+            'client' => $client,
+            'seller' => $seller,
             'editForm' => $editForm->createView(),
             'deleteForm' => $deleteForm->createView(),
+            'shipmentForm' => $shipmentForm->createView(),
             'invoiceActionForm' => $invoiceActionForm->createView(),
         ));
+    }
+
+    private function createAddShipmentForm(Shipment $shipment, Invoice $invoice)
+    {
+        return $this->createForm(ShipmentType::class, $shipment, array(
+            'action' => $this->generateUrl('offer_shipment_add', array('id' => $invoice->getId())),
+        ))->remove('invoice');
     }
 
     /**
@@ -144,8 +209,17 @@ class InvoiceController extends Controller
             }
         }
 
+        $order = $invoice->getOrder();
+        $budget = $order ? $order->getBudget() : null;
+        $client = $budget ? $budget->getClient() : null;
+        $issuer = $budget ? $budget->getIssuer() : null;
+
         return $this->render('UniOfferBundle:Invoice:edit.html.twig', array(
             'invoice' => $invoice,
+            'order' => $order,
+            'budget' => $budget,
+            'client' => $client,
+            'issuer' => $issuer,
             'editForm' => $editForm->createView(),
             'deleteForm' => $deleteForm->createView(),
         ));

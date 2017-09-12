@@ -1,0 +1,29 @@
+offer_shipment_index:
+    path:     /
+    defaults: { _controller: "UniOfferBundle:Shipment:index" }
+    methods:  GET
+
+offer_shipment_show:
+    path:     /{id}/show
+    defaults: { _controller: "UniOfferBundle:Shipment:show" }
+    methods:  GET
+
+offer_shipment_new:
+    path:     /new
+    defaults: { _controller: "UniOfferBundle:Shipment:new" }
+    methods:  [GET, POST]
+
+offer_shipment_add:
+    path:     /{id}/add
+    defaults: { _controller: "UniOfferBundle:Shipment:add" }
+    methods:  [GET, POST]
+
+offer_shipment_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "UniOfferBundle:Shipment:edit" }
+    methods:  [GET, POST]
+
+offer_shipment_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "UniOfferBundle:Shipment:delete" }
+    methods:  DELETE

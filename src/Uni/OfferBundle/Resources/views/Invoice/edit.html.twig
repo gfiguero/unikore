@@ -25,7 +25,7 @@
         <!-- /#page-toolbar -->
 
         <div class="row" id="page-edit">
-            <div class="col-lg-12">
+            <div class="col-md-12 col-lg-6">
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h2 class="panel-title">{{ 'invoice.edit.form'|trans }}</h2>
@@ -33,13 +33,60 @@
                     <div class="panel-body">
                         {{ form_start(editForm, { 'style': 'horizontal' }) }}
                             {{ form_widget(editForm) }}
-                                <div class="form-group"><div class="col-lg-offset-4 col-lg-8">
+                            <div class="form-group">
+                                <div class="col-lg-offset-4 col-lg-8">
                                     <button type="submit" class="btn btn-primary">{{ icon('save fa-fw') }}&nbsp;{{ 'invoice.edit.submit'|trans }}</button>
-                                </div></div>
+                                </div>
+                            </div>
                         {{ form_end(editForm) }}
                     </div>
                 </div>
             </div>
+            {% if order %}
+            <div class="col-md-12 col-lg-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">{{ 'invoice.edit.attachments'|trans }}</h2>
+                    </div>
+                    <div class="panel-body">
+                        <fieldset>
+                            <legend><em>{{ 'order.show.data'|trans }}</em></legend>
+                            <dl class="dl-horizontal">
+                                <dt>{{ 'order.form.name'|trans }}</dt>
+                                    <dd>{% if order.name %}{{ order.name|raw }}{% endif %}</dd>
+                                <dt>{{ 'order.form.number'|trans }}</dt>
+                                    <dd>{% if order.number %}{{ order.number|raw }}{% endif %}</dd>
+                                <dt>{{ 'order.form.amount'|trans }}</dt>
+                                    <dd>{% if order.amount %}{{ icon('dollar') }}&nbsp;{{ order.amount|number_format(0, ',', '.') }}{% endif %}</dd>
+                                <dt>{{ 'order.form.note'|trans }}</dt>
+                                    <dd>{% if order.note %}{{ order.note|raw }}{% endif %}</dd>
+                            </dl>
+                        </fieldset>
+                        {% if budget %}
+                        <fieldset>
+                            <legend><em>{{ 'budget.show.data'|trans }}</em></legend>
+                            <dl class="dl-horizontal">
+                                <dt>{{ 'budget.form.name'|trans }}</dt>
+                                    <dd>{% if budget.name %}{{ budget.name|raw }}{% endif %}</dd>
+                                <dt>{{ 'budget.form.number'|trans }}</dt>
+                                    <dd>{% if budget.number %}{{ budget.number|raw }}{% endif %}</dd>
+                                <dt>{{ 'budget.form.note'|trans }}</dt>
+                                    <dd>{% if budget.note %}{{ budget.note|raw }}{% endif %}</dd>
+                                <dt>{{ 'budget.form.created_at'|trans }}</dt>
+                                    <dd>{% if budget.createdat %}{{ budget.createdat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "d 'de' LLLL 'de' y - HH:mm") }}&nbsp;({{ budget.createdat|ago }}){% endif %}</dd>
+                                <dt>{{ 'budget.form.updated_at'|trans }}</dt>
+                                    <dd>{% if budget.updatedat %}{{ budget.updatedat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "d 'de' LLLL 'de' y - HH:mm") }}&nbsp;({{ budget.updatedat|ago }}){% endif %}</dd>
+                                <dt>{{ 'budget.form.adjudicated_at'|trans }}</dt>
+                                    <dd>{% if budget.adjudicatedat %}{{ budget.adjudicatedat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "d 'de' LLLL 'de' y") }}&nbsp;({{ budget.adjudicatedat|ago }}){% endif %}</dd>
+                                <dt>{{ 'budget.form.expired_at'|trans }}</dt>
+                                    <dd>{% if budget.expiredat %}{{ budget.expiredat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "d 'de' LLLL 'de' y") }}&nbsp;({{ budget.expiredat|ago }}){% endif %}</dd>
+                            </dl>
+                        </fieldset>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% endif %}
         </div>
         <!-- /#page-edit -->
 

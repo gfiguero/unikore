@@ -29,7 +29,7 @@ class ProductController extends Controller
         $direction = $request->query->get('direction');
         $em = $this->getDoctrine()->getManager();
         if($sort) $products = $em->getRepository('UniAdminBundle:Product')->findBy(array('account' => $account), array($sort => $direction));
-        else $products = $em->getRepository('UniAdminBundle:Product')->findBy(array('account' => $account));
+        else $products = $em->getRepository('UniAdminBundle:Product')->findBy(array('account' => $account), array('updated_at' => 'DESC'));
         $paginator = $this->get('knp_paginator');
         $products = $paginator->paginate($products, $request->query->getInt('page', 1), 100);
 

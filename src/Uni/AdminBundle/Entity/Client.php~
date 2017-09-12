@@ -579,30 +579,43 @@ class Client
     /**
      * @var string
      */
-    private $note;
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $orders;
 
 
     /**
-     * Set note
+     * Add order
      *
-     * @param string $note
+     * @param \Uni\AdminBundle\Entity\Order $order
      *
      * @return Client
      */
-    public function setNote($note)
+    public function addOrder(\Uni\AdminBundle\Entity\Order $order)
     {
-        $this->note = $note;
+        $this->orders[] = $order;
 
         return $this;
     }
 
     /**
-     * Get note
+     * Remove order
      *
-     * @return string
+     * @param \Uni\AdminBundle\Entity\Order $order
      */
-    public function getNote()
+    public function removeOrder(\Uni\AdminBundle\Entity\Order $order)
     {
-        return $this->note;
+        $this->orders->removeElement($order);
+    }
+
+    /**
+     * Get orders
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getOrders()
+    {
+        return $this->orders;
     }
 }

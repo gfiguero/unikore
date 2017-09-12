@@ -27,7 +27,7 @@ class InvoiceActionController extends Controller
                 $em = $this->getDoctrine()->getManager();
                 $em->persist($invoiceAction);
                 $em->flush();
-                $request->getSession()->getFlashBag()->add( 'success', 'invoiceAction.new.flash' );
+                $request->getSession()->getFlashBag()->add( 'success', 'invoiceaction.new.flash' );
             }
         }
 

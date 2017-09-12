@@ -1,0 +1,57 @@
+Uni\AdminBundle\Entity\Order:
+    type: entity
+    table: uni_order
+    repositoryClass: Uni\AdminBundle\Entity\OrderRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    oneToOne:
+        invoice:
+            targetEntity: Uni\AdminBundle\Entity\Invoice
+            mappedBy: order
+    manyToOne:
+        budget:
+            targetEntity: Uni\AdminBundle\Entity\Budget
+            inversedBy: orders
+        user:
+            targetEntity: Uni\AdminBundle\Entity\User
+            inversedBy: orders
+        account:
+            targetEntity: Uni\AdminBundle\Entity\Account
+            inversedBy: orders
+    fields:
+        name:
+            type: string
+            length: 100
+            nullable: true
+        number:
+            type: string
+            length: 100
+            nullable: true
+        amount:
+            type: integer
+            nullable: true
+        note:
+            type: text
+            nullable: true
+        created_at:
+            type: datetime
+            gedmo:
+                timestampable:
+                    on: create
+        updated_at:
+            type: datetime
+            gedmo:
+                timestampable:
+                    on: update
+        deleted_at:
+            type: datetime
+            nullable: true
+    gedmo:
+        soft_deleteable:
+            field_name: deleted_at
+            time_aware: false
+    lifecycleCallbacks: {  }

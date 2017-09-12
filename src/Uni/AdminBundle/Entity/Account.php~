@@ -984,4 +984,82 @@ class Account
     {
         return $this->payments;
     }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $invoices;
+
+
+    /**
+     * Add invoice
+     *
+     * @param \Uni\AdminBundle\Entity\Invoice $invoice
+     *
+     * @return Account
+     */
+    public function addInvoice(\Uni\AdminBundle\Entity\Invoice $invoice)
+    {
+        $this->invoices[] = $invoice;
+
+        return $this;
+    }
+
+    /**
+     * Remove invoice
+     *
+     * @param \Uni\AdminBundle\Entity\Invoice $invoice
+     */
+    public function removeInvoice(\Uni\AdminBundle\Entity\Invoice $invoice)
+    {
+        $this->invoices->removeElement($invoice);
+    }
+
+    /**
+     * Get invoices
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getInvoices()
+    {
+        return $this->invoices;
+    }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $shipments;
+
+
+    /**
+     * Add shipment
+     *
+     * @param \Uni\AdminBundle\Entity\Shipment $shipment
+     *
+     * @return Account
+     */
+    public function addShipment(\Uni\AdminBundle\Entity\Shipment $shipment)
+    {
+        $this->shipments[] = $shipment;
+
+        return $this;
+    }
+
+    /**
+     * Remove shipment
+     *
+     * @param \Uni\AdminBundle\Entity\Shipment $shipment
+     */
+    public function removeShipment(\Uni\AdminBundle\Entity\Shipment $shipment)
+    {
+        $this->shipments->removeElement($shipment);
+    }
+
+    /**
+     * Get shipments
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getShipments()
+    {
+        return $this->shipments;
+    }
 }

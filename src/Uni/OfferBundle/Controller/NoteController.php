@@ -27,7 +27,7 @@ class NoteController extends Controller
         $direction = $request->query->get('direction');
         $em = $this->getDoctrine()->getManager();
         if($sort) $notes = $em->getRepository('UniAdminBundle:Note')->findBy(array('account' => $account), array($sort => $direction));
-        else $notes = $em->getRepository('UniAdminBundle:Note')->findBy(array('account' => $account));
+        else $notes = $em->getRepository('UniAdminBundle:Note')->findBy(array('account' => $account), array('updated_at' => 'DESC'));
         $paginator = $this->get('knp_paginator');
         $notes = $paginator->paginate($notes, $request->query->getInt('page', 1), 100);
 

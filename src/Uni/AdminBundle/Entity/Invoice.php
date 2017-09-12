@@ -80,6 +80,11 @@ class Invoice
         $this->actions = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
+    public function __toString()
+    {
+        return (string) $this->name;
+    }
+
     /**
      * Get id
      *
@@ -415,5 +420,131 @@ class Invoice
     public function getAmount()
     {
         return $this->amount;
+    }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $shipments;
+
+
+    /**
+     * Add shipment
+     *
+     * @param \Uni\AdminBundle\Entity\Shipment $shipment
+     *
+     * @return Invoice
+     */
+    public function addShipment(\Uni\AdminBundle\Entity\Shipment $shipment)
+    {
+        $this->shipments[] = $shipment;
+
+        return $this;
+    }
+
+    /**
+     * Remove shipment
+     *
+     * @param \Uni\AdminBundle\Entity\Shipment $shipment
+     */
+    public function removeShipment(\Uni\AdminBundle\Entity\Shipment $shipment)
+    {
+        $this->shipments->removeElement($shipment);
+    }
+
+    /**
+     * Get shipments
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getShipments()
+    {
+        return $this->shipments;
+    }
+    /**
+     * @var \Uni\AdminBundle\Entity\Order
+     */
+    private $order;
+
+
+    /**
+     * Set order
+     *
+     * @param \Uni\AdminBundle\Entity\Order $order
+     *
+     * @return Invoice
+     */
+    public function setOrder(\Uni\AdminBundle\Entity\Order $order = null)
+    {
+        $this->order = $order;
+
+        return $this;
+    }
+
+    /**
+     * Get order
+     *
+     * @return \Uni\AdminBundle\Entity\Order
+     */
+    public function getOrder()
+    {
+        return $this->order;
+    }
+    /**
+     * @var string
+     */
+    private $number;
+
+
+    /**
+     * Set number
+     *
+     * @param string $number
+     *
+     * @return Invoice
+     */
+    public function setNumber($number)
+    {
+        $this->number = $number;
+
+        return $this;
+    }
+
+    /**
+     * Get number
+     *
+     * @return string
+     */
+    public function getNumber()
+    {
+        return $this->number;
+    }
+    /**
+     * @var \Uni\AdminBundle\Entity\PaymentStatus
+     */
+    private $paymentstatus;
+
+
+    /**
+     * Set paymentstatus
+     *
+     * @param \Uni\AdminBundle\Entity\PaymentStatus $paymentstatus
+     *
+     * @return Invoice
+     */
+    public function setPaymentstatus(\Uni\AdminBundle\Entity\PaymentStatus $paymentstatus = null)
+    {
+        $this->paymentstatus = $paymentstatus;
+
+        return $this;
+    }
+
+    /**
+     * Get paymentstatus
+     *
+     * @return \Uni\AdminBundle\Entity\PaymentStatus
+     */
+    public function getPaymentstatus()
+    {
+        return $this->paymentstatus;
     }
 }

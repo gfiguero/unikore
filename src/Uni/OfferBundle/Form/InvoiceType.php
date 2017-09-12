@@ -7,6 +7,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorage;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Doctrine\ORM\EntityRepository;
 
 class InvoiceType extends AbstractType
@@ -24,36 +25,15 @@ class InvoiceType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $account = $this->tokenStorage->getToken()->getUser()->getAccount();
-        $builder 
-            ->add('issuer', null, array(
-                'label' => 'invoice.form.issuer',
-                'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
-                'translation_domain' => 'UniOfferBundle',
-                'query_builder' => function (EntityRepository $er) use ($account) {
-                    return $er->createQueryBuilder('i')
-                        ->where('i.account = :account')
-                        ->setParameter('account', $account)
-                    ;
-                },
-            ))
-            ->add('client', null, array(
-                'label' => 'invoice.form.client',
-                'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
-                'translation_domain' => 'UniOfferBundle',
-                'query_builder' => function (EntityRepository $er) use ($account) {
-                    return $er->createQueryBuilder('c')
-                        ->where('c.account = :account')
-                        ->setParameter('account', $account)
-                    ;
-                },
-            ))
+        $invoice = $options['data'];
+        $builder
             ->add('name', null, array(
                 'label' => 'invoice.form.name',
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
                 'translation_domain' => 'UniOfferBundle',
             ))
-            ->add('code', null, array(
-                'label' => 'invoice.form.code',
+            ->add('number', null, array(
+                'label' => 'invoice.form.number',
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
                 'translation_domain' => 'UniOfferBundle',
             ))
@@ -72,20 +52,13 @@ class InvoiceType extends AbstractType
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
                 'translation_domain' => 'UniOfferBundle',
             ))
-/*
-            ->add('actions', 'bootstrap_collection', array(
-                'label' => false,
+            ->add('paymentstatus', null, array(
+                'label' => 'invoice.form.paymentstatus',
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
                 'translation_domain' => 'UniOfferBundle',
-                'entry_type' => 'Uni\OfferBundle\Form\InvoiceActionType',
-                'allow_add' => true,
-                'allow_delete' => true,
-                'add_button_text'    => 'invoice.form.addaction',
-                'delete_button_text' => 'invoice.form.deleteaction',
-                'delete_empty' => true,
-                'by_reference' => false,                
+                'choice_label' => 'name',
+                'required' => true,
             ))
-*/
         ;
     }
     

@@ -2,9 +2,17 @@ uni_offer_dashboard:
     resource: "@UniOfferBundle/Resources/config/routing/dashboard.yml"
     prefix:   /dashboard
 
+uni_offer_order:
+    resource: "@UniOfferBundle/Resources/config/routing/order.yml"
+    prefix:   /order
+
 uni_offer_issuer:
     resource: "@UniOfferBundle/Resources/config/routing/issuer.yml"
     prefix:   /issuer
+
+uni_offer_shipment:
+    resource: "@UniOfferBundle/Resources/config/routing/shipment.yml"
+    prefix:   /shipment
 
 uni_offer_invoice:
     resource: "@UniOfferBundle/Resources/config/routing/invoice.yml"

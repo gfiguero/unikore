@@ -27,7 +27,7 @@ class IssuerController extends Controller
         $direction = $request->query->get('direction');
         $em = $this->getDoctrine()->getManager();
         if($sort) $issuers = $em->getRepository('UniAdminBundle:Issuer')->findBy(array('account' => $account), array($sort => $direction));
-        else $issuers = $em->getRepository('UniAdminBundle:Issuer')->findBy(array('account' => $account));
+        else $issuers = $em->getRepository('UniAdminBundle:Issuer')->findBy(array('account' => $account), array('updated_at' => 'DESC'));
         $paginator = $this->get('knp_paginator');
         $issuers = $paginator->paginate($issuers, $request->query->getInt('page', 1), 100);
 

@@ -29,6 +29,9 @@ class ItemType extends AbstractType
                 'required' => true,
                 'placeholder' => 'item.form.placeholder.product',
                 'attr' => array( 'class' => 'multiselect' ),
+                'choice_label' => function ($product) {
+                    return $product->getName() . ' (' . $product->getProvider() . ')';
+                },
                 'query_builder' => function (EntityRepository $er) use ($account) {
                     return $er->createQueryBuilder('p')
                         ->where('p.account = :account')

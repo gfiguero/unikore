@@ -4,15 +4,23 @@ services:
         arguments: ["@security.token_storage"]
         tags:
             - { name: form.type, alias: uni_offerbundle_item }
-
     uni_offer.form.budget:
         class: Uni\OfferBundle\Form\BudgetType
         arguments: ["@security.token_storage"]
         tags:
             - { name: form.type, alias: uni_offerbundle_budget }
-
     uni_offer.form.invoice:
         class: Uni\OfferBundle\Form\InvoiceType
         arguments: ["@security.token_storage"]
         tags:
             - { name: form.type, alias: uni_offerbundle_invoice }
+    uni_offer.form.shipment:
+        class: Uni\OfferBundle\Form\ShipmentType
+        arguments: ["@security.token_storage"]
+        tags:
+            - { name: form.type, alias: uni_offerbundle_shipment }
+    uni_offer.form.order:
+        class: Uni\OfferBundle\Form\OrderType
+        arguments: ["@security.token_storage"]
+        tags:
+            - { name: form.type, alias: uni_offerbundle_order }

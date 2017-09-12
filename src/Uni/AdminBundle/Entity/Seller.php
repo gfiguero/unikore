@@ -363,4 +363,43 @@ class Seller
     {
         return $this->account;
     }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $orders;
+
+
+    /**
+     * Add order
+     *
+     * @param \Uni\AdminBundle\Entity\Order $order
+     *
+     * @return Seller
+     */
+    public function addOrder(\Uni\AdminBundle\Entity\Order $order)
+    {
+        $this->orders[] = $order;
+
+        return $this;
+    }
+
+    /**
+     * Remove order
+     *
+     * @param \Uni\AdminBundle\Entity\Order $order
+     */
+    public function removeOrder(\Uni\AdminBundle\Entity\Order $order)
+    {
+        $this->orders->removeElement($order);
+    }
+
+    /**
+     * Get orders
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getOrders()
+    {
+        return $this->orders;
+    }
 }

@@ -21,6 +21,10 @@ sidemenu:
         root: Notas
     invoice:
         root: Facturas
+    shipment:
+        root: Envíos
+    order:
+        root: Órdenes
 
 dashboard:
     index:
@@ -145,9 +149,11 @@ client:
         id: ID
         rut: Rut
         name: Nombre o Razón Social
+        unit: Unidad Presupuestaria
         contactname: Nombre Contacto
         email: Email
         phone: Teléfono
+        address: Dirección
         address_street: Calle
         address_number: Número
         commune: Comuna
@@ -324,6 +330,7 @@ item:
         totaldiscountprice: Descuento
         price: Precio
         netprice: Neto
+        unitnetprice: Unitario
         totalprice: Precio Total
         totalnetprice: Total Neto
         totaliva: IVA
@@ -349,14 +356,20 @@ budget:
     show:
         title: Presupuesto
         link: Mostrar datos
+        basic: Información básica
         data: Datos de presupuesto
         client: Cliente
         seller: Ejecutivo
         items: Ítems
-        total: Totales
+        orders: Órdenes de compra
+        total: Totales del presupuesto
         notes: Notas importantes
         cmpdf: Generar PDF CM
         export: Exportar a PDF
+        base: Base
+        surcharge: Recargos
+        discount: Descuentos
+        final: Resultados Finales
     edit:
         title: Presupuestos
         link: Editar datos
@@ -371,16 +384,17 @@ budget:
         flash: El presupuesto fué borrado totalmente.
     form:
         id: ID
-        name: Título
+        name: Nombre
+        number: Número
         code: Código
         client: Cliente
         seller: Vendedor
         issuer: Emisor
-        adjudicatedAt: Fecha de Revisión
-        expiredAt: Fecha de Descarte
+        adjudicated_at: Fecha de Revisión
+        expired_at: Fecha de Descarte
         items: Ítems
         notes: Notas reutilizables
-        note: Nota única
+        note: Nota
         additem: Agregar Ítem
         totallistprice: Precio Lista
         totalnormalprice: Neto Inicial
@@ -432,13 +446,58 @@ note:
         created_at: Registro
         updated_at: Actualización
 
+order:
+    index:
+        title: Órdenes de compra
+        list: Lista de órdenes de compra
+        link: Lista de órdenes de compra
+    new:
+        title: Nueva orden de compra
+        link: Nueva orden de compra
+        form: Formulario de registro de orden de compra
+        submit: Registrar orden de compra
+        flash: Nueva orden de compra registrada satisfactoriamente.
+    show:
+        title: Orden de compra %number%
+        link: Mostrar datos
+        basic: Información básica
+        data: Datos de orden de compra
+        total: Montos
+    edit:
+        title: Órdenes de compra
+        link: Editar datos
+        form: Formulario de edición de orden de compra
+        submit: Guardar cambios
+        flash: Los cambios en la orden de compra fueron registrados satisfactoriamente.
+    delete:
+        link: Borrar orden de compra
+        title: Borrado de orden de compra
+        message: Los datos borrados no podrán ser recuperados.
+        submit: Confirmar borrado
+        flash: La orden de compra fué borrada totalmente.
+    form:
+        id: ID
+        created_at: Registro
+        updated_at: Actualización
+        name: Nombre
+        number: Número
+        budget: Presupuesto
+        seller: Vendedor
+        amount: Monto
+        note: Nota
+        user: Usuario
+        issuer: Emisor
+        client: Cliente
+        placeholder:
+            budget: Sin presupuesto
+
 invoice:
     index:
         title: Facturas
         list: Lista de facturas
         link: Lista de facturas
     new:
-        title: Facturas
+        title: Nueva factura
         link: Nueva factura
         form: Formulario de registro de factura
         submit: Registrar factura
@@ -446,12 +505,16 @@ invoice:
     show:
         title: Facturas
         link: Mostrar datos
-        data: Datos básicos
+        basic: Información básica
+        data: Datos de factura
+        attachments: Datos anexos
         client: Datos del receptor
         actions: Seguimiento
+        shipments: Envíos
     edit:
         title: Facturas
         link: Editar datos
+        attachments: Datos anexos
         form: Formulario de edición de factura
         submit: Guardar cambios
         flash: Los cambios en la factura fueron registrados satisfactoriamente.
@@ -465,14 +528,20 @@ invoice:
         id: ID
         created_at: Registro
         updated_at: Actualización
-        name: Nombre de factura
-        code: Número de factura
+        name: Nombre
+        number: Número
+        order: Orden de compra
+        budget: Presupuesto
+        seller: Vendedor
         amount: Monto
         note: Nota
         user: Usuario
         issuer: Emisor
         client: Cliente
         pay_in: Fecha de pago
+        paymentstatus: Estado de pago
+        placeholder:
+            order: Sin orden de compra
 
 invoiceaction:
     new:
@@ -484,3 +553,40 @@ invoiceaction:
         user: Usuario
         description: Descripción
         created_at: Registro
+
+shipment:
+    index:
+        title: Envíos
+        list: Lista de envíos
+        link: Lista de envíos
+    new:
+        title: Envíos
+        link: Nuevo envío
+        form: Formulario de registro de envío
+        submit: Registrar envío
+        flash: Nuevo envío registrado satisfactoriamente.
+    show:
+        title: Envíos
+        link: Mostrar datos
+        data: Datos de envío
+    edit:
+        title: Envíos
+        link: Editar datos
+        form: Formulario de edición de envío
+        submit: Guardar cambios
+        flash: Los cambios en el envío fueron registrados satisfactoriamente.
+    delete:
+        link: Borrar envío
+        title: Borrado de envío
+        message: Los datos borrados no podrán ser recuperados.
+        submit: Confirmar borrado
+        flash: El envío fué borrado totalmente.
+    form:
+        id: ID
+        user: Usuario
+        invoice: Factura
+        description: Descripción
+        amount: Monto
+        code: Código
+        created_at: Registro
+        updated_at: Actualización

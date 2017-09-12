@@ -27,6 +27,9 @@ Uni\AdminBundle\Entity\User:
         budgets:
             targetEntity: Uni\AdminBundle\Entity\Budget
             mappedBy: user
+        orders:
+            targetEntity: Uni\AdminBundle\Entity\Order
+            mappedBy: user
         products:
             targetEntity: Uni\AdminBundle\Entity\Product
             mappedBy: user
@@ -38,6 +41,9 @@ Uni\AdminBundle\Entity\User:
             mappedBy: user
         invoiceactions:
             targetEntity: Uni\AdminBundle\Entity\InvoiceAction
+            mappedBy: user
+        shipments:
+            targetEntity: Uni\AdminBundle\Entity\Shipment
             mappedBy: user
     manyToMany:
         groups:

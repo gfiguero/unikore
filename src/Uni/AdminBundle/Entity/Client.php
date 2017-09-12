@@ -214,7 +214,10 @@ class Client
      */
     public function getAddress()
     {
-        return $this->address;
+        if ($this->getCommune()) {
+            return $this->address_street . ' ' . $this->address_number . ', ' . $this->getCommune()->getFullName();
+        }
+        return $this->address_street . ' ' . $this->address_number;
     }
 
     /**
@@ -579,4 +582,72 @@ class Client
     /**
      * @var string
      */
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $orders;
+
+
+    /**
+     * Add order
+     *
+     * @param \Uni\AdminBundle\Entity\Order $order
+     *
+     * @return Client
+     */
+    public function addOrder(\Uni\AdminBundle\Entity\Order $order)
+    {
+        $this->orders[] = $order;
+
+        return $this;
+    }
+
+    /**
+     * Remove order
+     *
+     * @param \Uni\AdminBundle\Entity\Order $order
+     */
+    public function removeOrder(\Uni\AdminBundle\Entity\Order $order)
+    {
+        $this->orders->removeElement($order);
+    }
+
+    /**
+     * Get orders
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getOrders()
+    {
+        return $this->orders;
+    }
+    /**
+     * @var string
+     */
+    private $unit;
+
+
+    /**
+     * Set unit
+     *
+     * @param string $unit
+     *
+     * @return Client
+     */
+    public function setUnit($unit)
+    {
+        $this->unit = $unit;
+
+        return $this;
+    }
+
+    /**
+     * Get unit
+     *
+     * @return string
+     */
+    public function getUnit()
+    {
+        return $this->unit;
+    }
 }

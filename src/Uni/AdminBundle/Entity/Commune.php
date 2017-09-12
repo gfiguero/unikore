@@ -27,6 +27,11 @@ class Commune
         return (string) $this->name;
     }
 
+    public function getFullName()
+    {
+        return (string) $this->name . ', ' . $this->getProvince() . ', ' . $this->getProvince()->getRegion() . '.';
+    }
+
 
     /**
      * Get id

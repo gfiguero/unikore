@@ -21,6 +21,7 @@
                     <a type="button" class="btn btn-primary" href="{{ path('offer_invoice_edit', { 'id': invoice.id }) }}">{{ icon('edit fa-fw') }}&nbsp;{{ 'invoice.edit.link'|trans }}</a>
                     <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalDelete">{{ icon('trash-o fa-fw') }}&nbsp;{{ 'invoice.delete.link'|trans }}</button>
                     <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modalInvoiceAction">{{ icon('plus fa-fw') }}&nbsp;{{ 'invoiceaction.new.link'|trans }}</button>
+                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modalShipment">{{ icon('plus fa-fw') }}&nbsp;{{ 'shipment.new.link'|trans }}</button>
                 </div>
             </div>
         </div>
@@ -28,63 +29,58 @@
 
         <div class="row" id="page-show">
             <div class="col-lg-6">
-                <div class="panel panel-default">
+                <div class="panel panel-primary">
                     <div class="panel-heading">
-                        <h2 class="panel-title">{{ 'invoice.show.data'|trans }}</h2>
+                        <h2 class="panel-title">{{ 'invoice.show.basic'|trans }}</h2>
                     </div>
                     <div class="panel-body">
-                        <dl class="dl-horizontal">
-                            <dt>{{ 'invoice.form.name'|trans }}</dt>
-                                <dd>{% if invoice.name %}{{ invoice.name }}{% endif %}</dd>
-                            <dt>{{ 'invoice.form.code'|trans }}</dt>
-                                <dd>{% if invoice.code %}{{ invoice.code }}{% endif %}</dd>
-                            <dt>{{ 'invoice.form.note'|trans }}</dt>
-                                <dd>{% if invoice.note %}{{ invoice.note }}{% endif %}</dd>
-                            <dt>{{ 'invoice.form.created_at'|trans }}</dt>
-                                <dd>{% if invoice.createdat %}{{ invoice.createdat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "d 'de' LLLL 'de' y - HH:mm") }}&nbsp;({{ invoice.createdat|ago }}){% endif %}</dd>
-                            <dt>{{ 'invoice.form.updated_at'|trans }}</dt>
-                                <dd>{% if invoice.updatedat %}{{ invoice.updatedat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "d 'de' LLLL 'de' y - HH:mm") }}&nbsp;({{ invoice.updatedat|ago }}){% endif %}</dd>
-                            <hr>
-                            <dt>{{ 'invoice.form.user'|trans }}</dt>
-                                <dd>{% if invoice.user %}{{ invoice.user }}{% endif %}</dd>
-                            <dt>{{ 'invoice.form.issuer'|trans }}</dt>
-                                <dd>{% if invoice.issuer %}{{ invoice.issuer }}{% endif %}</dd>
-                            <dt>{{ 'invoice.form.amount'|trans }}</dt>
-                                <dd>{% if invoice.amount %}{{ invoice.amount|number_format(0, ',', '.') }}{% endif %}</dd>
-                            <dt>{{ 'invoice.form.pay_in'|trans }}</dt>
-                                <dd>{% if invoice.payin %}{{ invoice.payin|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "d 'de' LLLL 'de' y - HH:mm") }}&nbsp;({{ invoice.payin|ago }}){% endif %}</dd>
-                        </dl>
+                        <fieldset>
+                            <legend><em>{{ 'invoice.show.data'|trans }}</em></legend>
+                            <dl class="dl-horizontal">
+                                <dt>{{ 'invoice.form.name'|trans }}</dt>
+                                    <dd>{% if invoice.name %}{{ invoice.name }}{% endif %}</dd>
+                                <dt>{{ 'invoice.form.number'|trans }}</dt>
+                                    <dd>{% if invoice.number %}{{ invoice.number }}{% endif %}</dd>
+                                <dt>{{ 'invoice.form.amount'|trans }}</dt>
+                                    <dd>{% if invoice.amount %}{{ icon('dollar') }}&nbsp;{{ invoice.amount|number_format(0, ',', '.') }}{% endif %}</dd>
+                                <dt>{{ 'invoice.form.note'|trans }}</dt>
+                                    <dd>{% if invoice.note %}{{ invoice.note }}{% endif %}</dd>
+                                <dt>{{ 'invoice.form.created_at'|trans }}</dt>
+                                    <dd>{% if invoice.createdat %}{{ invoice.createdat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "d 'de' LLLL 'de' y - HH:mm") }}&nbsp;({{ invoice.createdat|ago }}){% endif %}</dd>
+                                <dt>{{ 'invoice.form.updated_at'|trans }}</dt>
+                                    <dd>{% if invoice.updatedat %}{{ invoice.updatedat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "d 'de' LLLL 'de' y - HH:mm") }}&nbsp;({{ invoice.updatedat|ago }}){% endif %}</dd>
+                                <dt>{{ 'invoice.form.pay_in'|trans }}</dt>
+                                    <dd>{% if invoice.payin %}{{ invoice.payin|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "d 'de' LLLL 'de' y - HH:mm") }}&nbsp;({{ invoice.payin|ago }}){% endif %}</dd>
+                            </dl>
+                        </fieldset>
                     </div>
                 </div>
             </div>
+            {% if order %}
             <div class="col-lg-6">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h2 class="panel-title">{{ 'invoice.show.client'|trans }}</h2>
+                        <h2 class="panel-title">{{ 'invoice.show.attachments'|trans }}</h2>
                     </div>
                     <div class="panel-body">
                         <dl class="dl-horizontal">
-                            {% set client = invoice.client %}
-                            <dt>{{ 'client.form.name'|trans }}</dt>
-                                <dd>{% if client.name %}{{ client.name }}{% endif %}</dd>
-                            <dt>{{ 'client.form.rut'|trans }}</dt>
-                                <dd>{% if client.rut %}{{ client.rut }}{% endif %}</dd>
-                            <dt>{{ 'client.form.contactname'|trans }}</dt>
-                                <dd>{% if client.contactname %}{{ client.contactname }}{% endif %}</dd>
-                            <dt>{{ 'client.form.phone'|trans }}</dt>
-                                <dd>{% if client.phone %}{{ client.phone }}{% endif %}</dd>
-                            <dt>{{ 'client.form.email'|trans }}</dt>
-                                <dd>{% if client.email %}{{ client.email }}{% endif %}</dd>
-                            <dt>{{ 'client.form.address_street'|trans }}</dt>
-                                <dd>{% if client.addressstreet %}{{ client.addressstreet }}{% endif %}</dd>
-                            <dt>{{ 'client.form.address_number'|trans }}</dt>
-                                <dd>{% if client.addressnumber %}{{ client.addressnumber }}{% endif %}</dd>
-                            <dt>{{ 'client.form.commune'|trans }}</dt>
-                                <dd>{% if client.commune %}{{ client.commune }}{% endif %}</dd>
+                            <dt>{{ 'invoice.form.order'|trans }}</dt>
+                                <dd>{% if order %}<a href="{{ path('offer_order_show', { id: order.id }) }}">{{ order|raw }}</a>{% endif %}</dd>
+{#}
+                            <dt>{{ 'invoice.form.issuer'|trans }}</dt>
+                                <dd>{% if issuer %}<a href="{{ path('offer_issuer_show', { id: issuer.id }) }}">{{ issuer|raw }}</a>{% endif %}</dd>
+{#}
+                            <dt>{{ 'invoice.form.budget'|trans }}</dt>
+                                <dd>{% if budget %}<a href="{{ path('offer_budget_show', { id: budget.id }) }}">{{ budget|raw }}</a>{% endif %}</dd>
+                            <dt>{{ 'invoice.form.client'|trans }}</dt>
+                                <dd>{% if client %}<a href="{{ path('offer_client_show', { id: client.id }) }}">{{ client|raw }}</a>{% endif %}</dd>
+                            <dt>{{ 'invoice.form.seller'|trans }}</dt>
+                                <dd>{% if seller %}<a href="{{ path('offer_seller_show', { id: seller.id }) }}">{{ seller|raw }}</a>{% endif %}</dd>
                         </dl>
                     </div>
                 </div>
             </div>
+            {% endif %}
         </div>
         <!-- /#page-show -->
 
@@ -118,6 +114,41 @@
             </div>
         </div>
         <!-- /#page-actions -->
+
+        <div class="row" id="page-shipments">
+            <div class="col-lg-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">{{ 'invoice.show.shipments'|trans }}</h2>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>{{ 'shipment.form.user'|trans }}</th>
+                                    <th>{{ 'shipment.form.description'|trans }}</th>
+                                    <th>{{ 'shipment.form.code'|trans }}</th>
+                                    <th>{{ 'shipment.form.amount'|trans }}</th>
+                                    <th>{{ 'shipment.form.created_at'|trans }}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for shipment in shipments %}
+                                <tr>
+                                    <td>{{ shipment.user }}</td>
+                                    <td>{{ shipment.description }}</td>
+                                    <td>{{ shipment.code }}</td>
+                                    <td>{{ shipment.amount|number_format(0, ',', '.') }}</td>
+                                    <td><span class="fa fa-calendar-o" data-toggle="tooltip" data-placement="left" title="{{ invoice.createdat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "dd LLLL y HH:mm") }}"></span>&nbsp;{{ shipment.createdat|ago }}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-shipments -->
 
         <div id="page-modal">
             <div class="modal fade" id="modalDelete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -161,6 +192,25 @@
                 </div>
             </div>
 
+            <div class="modal fade" id="modalShipment" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog modal-md" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">{{ icon('times') }}</button>
+                            <h4 class="modal-title" id="myModalLabel">{{ 'shipment.new.link'|trans }}</h4>
+                        </div>
+                        <div class="modal-body">
+                            {{ form_start(shipmentForm) }}
+                                {{ form_widget(shipmentForm) }}
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-primary">{{ icon('save fa-fw') }}&nbsp;{{ 'shipment.new.submit'|trans }}</button>
+                                </div>
+                            {{ form_end(shipmentForm) }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
         <!-- /#page-modal -->
 
@@ -168,3 +218,4 @@
     <!-- /#page-wrapper -->
 {% endblock %}
 
+{% block javascript %}<script type="text/javascript">$(function () { $('[data-toggle="tooltip"]').tooltip() })</script>{% endblock %}

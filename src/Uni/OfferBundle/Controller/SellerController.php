@@ -27,7 +27,7 @@ class SellerController extends Controller
         $direction = $request->query->get('direction');
         $em = $this->getDoctrine()->getManager();
         if($sort) $sellers = $em->getRepository('UniAdminBundle:Seller')->findBy(array('account' => $account), array($sort => $direction));
-        else $sellers = $em->getRepository('UniAdminBundle:Seller')->findBy(array('account' => $account));
+        else $sellers = $em->getRepository('UniAdminBundle:Seller')->findBy(array('account' => $account), array('updated_at' => 'DESC'));
         $paginator = $this->get('knp_paginator');
         $sellers = $paginator->paginate($sellers, $request->query->getInt('page', 1), 100);
 

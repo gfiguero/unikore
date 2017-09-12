@@ -1,0 +1,24 @@
+admin_orderitem_index:
+    path:     /
+    defaults: { _controller: "UniAdminBundle:OrderItem:index" }
+    methods:  GET
+
+admin_orderitem_show:
+    path:     /{id}/show
+    defaults: { _controller: "UniAdminBundle:OrderItem:show" }
+    methods:  GET
+
+admin_orderitem_new:
+    path:     /new
+    defaults: { _controller: "UniAdminBundle:OrderItem:new" }
+    methods:  [GET, POST]
+
+admin_orderitem_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "UniAdminBundle:OrderItem:edit" }
+    methods:  [GET, POST]
+
+admin_orderitem_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "UniAdminBundle:OrderItem:delete" }
+    methods:  DELETE

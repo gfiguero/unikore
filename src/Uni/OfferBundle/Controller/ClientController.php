@@ -27,7 +27,7 @@ class ClientController extends Controller
         $direction = $request->query->get('direction');
         $em = $this->getDoctrine()->getManager();
         if($sort) $clients = $em->getRepository('UniAdminBundle:Client')->findBy(array('account' => $account), array($sort => $direction));
-        else $clients = $em->getRepository('UniAdminBundle:Client')->findBy(array('account' => $account));
+        else $clients = $em->getRepository('UniAdminBundle:Client')->findBy(array('account' => $account), array('updated_at' => 'DESC'));
         $paginator = $this->get('knp_paginator');
         $clients = $paginator->paginate($clients, $request->query->getInt('page', 1), 100);
 

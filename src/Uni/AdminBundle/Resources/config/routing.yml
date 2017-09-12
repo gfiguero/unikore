@@ -6,6 +6,10 @@ uni_admin_socialnetwork:
     resource: "@UniAdminBundle/Resources/config/routing/socialnetwork.yml"
     prefix:   /socialnetwork
 
+uni_admin_paymentstatus:
+    resource: "@UniAdminBundle/Resources/config/routing/paymentstatus.yml"
+    prefix:   /paymentstatus
+
 uni_admin_page:
     resource: "@UniAdminBundle/Resources/config/routing/page.yml"
     prefix:   /page

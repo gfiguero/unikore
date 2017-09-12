@@ -24,6 +24,9 @@ Uni\AdminBundle\Entity\Account:
         budgets:
             targetEntity: Uni\AdminBundle\Entity\Budget
             mappedBy: account
+        orders:
+            targetEntity: Uni\AdminBundle\Entity\Order
+            mappedBy: account
         products:
             targetEntity: Uni\AdminBundle\Entity\Product
             mappedBy: account
@@ -59,6 +62,9 @@ Uni\AdminBundle\Entity\Account:
             mappedBy: account
         invoices:
             targetEntity: Uni\AdminBundle\Entity\Invoice
+            mappedBy: account
+        shipments:
+            targetEntity: Uni\AdminBundle\Entity\Shipment
             mappedBy: account
     manyToOne:
         business_address_commune:

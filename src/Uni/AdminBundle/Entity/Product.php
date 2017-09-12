@@ -1481,4 +1481,5 @@ class Product
     {
         return $this->packages;
     }
+
 }

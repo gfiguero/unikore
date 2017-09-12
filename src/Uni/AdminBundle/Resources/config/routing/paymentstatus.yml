@@ -1,0 +1,24 @@
+admin_paymentstatus_index:
+    path:     /
+    defaults: { _controller: "UniAdminBundle:PaymentStatus:index" }
+    methods:  GET
+
+admin_paymentstatus_show:
+    path:     /{id}/show
+    defaults: { _controller: "UniAdminBundle:PaymentStatus:show" }
+    methods:  GET
+
+admin_paymentstatus_new:
+    path:     /new
+    defaults: { _controller: "UniAdminBundle:PaymentStatus:new" }
+    methods:  [GET, POST]
+
+admin_paymentstatus_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "UniAdminBundle:PaymentStatus:edit" }
+    methods:  [GET, POST]
+
+admin_paymentstatus_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "UniAdminBundle:PaymentStatus:delete" }
+    methods:  DELETE

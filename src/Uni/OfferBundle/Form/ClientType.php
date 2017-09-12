@@ -24,6 +24,11 @@ class ClientType extends AbstractType
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
                 'translation_domain' => 'UniOfferBundle',
             ))
+            ->add('unit', null, array(
+                'label' => 'client.form.unit',
+                'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
+                'translation_domain' => 'UniOfferBundle',
+            ))
             ->add('contactname', null, array(
                 'label' => 'client.form.contactname',
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),

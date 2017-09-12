@@ -8,30 +8,33 @@ Uni\AdminBundle\Entity\Invoice:
             id: true
             generator:
                 strategy: AUTO
+    oneToOne:
+        order:
+            targetEntity: Uni\AdminBundle\Entity\Order
+            inversedBy: invoice
     manyToOne:
-        client:
-            targetEntity: Uni\AdminBundle\Entity\Client
-            inversedBy: invoices
-        issuer:
-            targetEntity: Uni\AdminBundle\Entity\Issuer
-            inversedBy: invoices
         user:
             targetEntity: Uni\AdminBundle\Entity\User
             inversedBy: invoices
         account:
             targetEntity: Uni\AdminBundle\Entity\Account
             inversedBy: invoices
+        paymentstatus:
+            targetEntity: Uni\AdminBundle\Entity\PaymentStatus            
     oneToMany:
         actions:
             targetEntity: Uni\AdminBundle\Entity\InvoiceAction
             mappedBy: invoice
             cascade: ['remove']
+        shipments:
+            targetEntity: Uni\AdminBundle\Entity\Shipment
+            mappedBy: invoice
     fields:
         name:
             type: string
             length: 100
             nullable: true
-        code:
+        number:
             type: string
             length: 100
             nullable: true

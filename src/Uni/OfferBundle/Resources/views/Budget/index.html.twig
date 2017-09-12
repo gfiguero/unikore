@@ -39,11 +39,12 @@
                                         <div class="btn-group" role="group"><a type="button" class="btn btn-xs btn-default disabled">{{ icon('trash fa-fw') }}</a></div>
                                         <div class="btn-group" role="group"><a type="button" class="btn btn-xs btn-default disabled">{{ icon('share fa-fw') }}</a></div>
                                     </th>
-                                    <th>{{ knp_pagination_sortable(budgets, 'budget.form.id'|trans, 'id') }}{% if sort == 'id' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
+                                    <th>{{ knp_pagination_sortable(budgets, 'budget.form.name'|trans, 'name') }}{% if sort == 'name' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
                                     <th>{{ knp_pagination_sortable(budgets, 'budget.form.client'|trans, 'client') }}{% if sort == 'client' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
                                     <th>{{ knp_pagination_sortable(budgets, 'budget.form.seller'|trans, 'seller') }}{% if sort == 'seller' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
                                     <th>{{ 'budget.form.total'|trans }}</th>
                                     <th>{{ knp_pagination_sortable(budgets, 'budget.form.updated_at'|trans, 'updated_at') }}{% if sort == 'updated_at' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
+                                    <th>{{ knp_pagination_sortable(budgets, 'budget.form.expired_at'|trans, 'expired_at') }}{% if sort == 'expired_at' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -55,11 +56,12 @@
                                         <div class="btn-group" role="group"><button type="button" class="btn btn-xs btn-danger" data-toggle="modal" data-target="#modalDelete{{ budget.id }}">{{ icon('trash fa-fw') }}</button></div>
                                         <div class="btn-group" role="group"><a type="button" class="btn btn-xs btn-warning" href="{{ path('offer_budget_pdf', { 'id': budget.id }) }}" target="_blank">{{ icon('share fa-fw') }}</a></div>
                                     </td>
-                                    <td>{% if budget.id %}{{ budget.id }}{% endif %}</td>
+                                    <td>{% if budget.name %}{{ budget.name }}{% endif %}</td>
                                     <td>{% if budget.client %}{{ budget.client }}{% endif %}</td>
                                     <td>{% if budget.seller %}{{ budget.seller }}{% endif %}</td>
                                     <td>{% if budget.total %}{{ icon('dollar') }}&nbsp;{{ budget.total|number_format(0, ',', '.') }}{% endif %}</td>
                                     <td><span class="fa fa-calendar-o" data-toggle="tooltip" data-placement="left" title="{{ budget.updatedat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "dd LLLL Y HH:mm") }}"></span>&nbsp;{{ budget.updatedat|ago }}</td>
+                                    <td><span class="fa fa-calendar-o" data-toggle="tooltip" data-placement="left" title="{{ budget.expiredat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "dd LLLL Y HH:mm") }}"></span>&nbsp;{{ budget.expiredat|ago }}</td>
                                 </tr>
                             {% endfor %}
                             </tbody>

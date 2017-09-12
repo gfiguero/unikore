@@ -1,0 +1,29 @@
+offer_order_index:
+    path:     /
+    defaults: { _controller: "UniOfferBundle:Order:index" }
+    methods:  GET
+
+offer_order_show:
+    path:     /{id}/show
+    defaults: { _controller: "UniOfferBundle:Order:show" }
+    methods:  GET
+
+offer_order_new:
+    path:     /new
+    defaults: { _controller: "UniOfferBundle:Order:new" }
+    methods:  [GET, POST]
+
+offer_order_add:
+    path:     /{id}/add
+    defaults: { _controller: "UniOfferBundle:Order:add" }
+    methods:  [GET, POST]
+
+offer_order_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "UniOfferBundle:Order:edit" }
+    methods:  [GET, POST]
+
+offer_order_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "UniOfferBundle:Order:delete" }
+    methods:  DELETE

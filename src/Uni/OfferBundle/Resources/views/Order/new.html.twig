@@ -1,0 +1,50 @@
+{% extends 'UniOfferBundle:Base:layout.html.twig' %}
+
+{% trans_default_domain 'UniOfferBundle' %}
+
+{% block title %}&nbsp;-&nbsp;{{ 'order.new.title'|trans }}{% endblock %}
+
+{% block offer %}
+    <div id="page-wrapper">
+        <div class="row" id="page-header">
+            <div class="col-lg-12">
+                <h1 class="page-header">{% block icons %}{{ parent() }}{% endblock %}{{ 'order.new.title'|trans }}</h1>
+                {% block flashbag %}{{ parent() }}{% endblock %}
+            </div>
+        </div>
+        <!-- /#page-header -->
+
+        <div class="row" id="page-toolbar">
+            <div class="col-lg-12">
+                <div class="btn-toolbar">
+                    <a type="button" class="btn btn-default" href="{{ path('offer_order_index') }}">{{ icon('list fa-fw') }}&nbsp;{{ 'order.index.link'|trans }}</a>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-toolbar -->
+
+        <div class="row" id="page-new">
+            <div class="col-lg-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">{{ 'order.new.form'|trans }}</h2>
+                    </div>
+                    <div class="panel-body">
+                        {{ form_start(newForm, { 'style': 'horizontal' }) }}
+                            {{ form_widget(newForm) }}
+                            <div class="form-group">
+                                <div class="col-md-10 col-md-offset-2">
+                                    <button type="submit" class="btn btn-primary">{{ icon('save fa-fw') }}&nbsp;{{ 'order.new.submit'|trans }}</button>
+                                </div>
+                            </div>
+                        {{ form_end(newForm) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-new -->
+
+    </div>
+    <!-- /#page-wrapper -->
+
+{% endblock %}

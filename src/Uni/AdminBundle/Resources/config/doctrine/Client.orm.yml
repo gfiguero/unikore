@@ -21,9 +21,6 @@ Uni\AdminBundle\Entity\Client:
         budgets:
             targetEntity: Uni\AdminBundle\Entity\Budget
             mappedBy: client
-        invoices:
-            targetEntity: Uni\AdminBundle\Entity\Invoice
-            mappedBy: client
     fields:
         name:
             type: string
@@ -32,6 +29,10 @@ Uni\AdminBundle\Entity\Client:
         rut:
             type: string
             length: 30
+            nullable: true
+        unit:
+            type: string
+            length: 100
             nullable: true
         contactname:
             type: string

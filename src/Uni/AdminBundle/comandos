@@ -1,4 +1,9 @@
-php app/console doctrine:generate:entities UniAdminBundle:Budget --path=src
+php app/console doctrine:generate:entities UniAdminBundle:Commune --path=src
+php app/console doctrine:generate:entities UniAdminBundle:Province --path=src
+php app/console doctrine:generate:entities UniAdminBundle:Region --path=src
+php app/console doctrine:generate:entities UniAdminBundle:PaymentStatus --path=src
+php app/console doctrine:generate:entities UniAdminBundle:Socialnetwork --path=src
+
 php app/console doctrine:generate:entities UniAdminBundle:Client --path=src
 php app/console doctrine:generate:entities UniAdminBundle:Item --path=src
 php app/console doctrine:generate:entities UniAdminBundle:CatalogItem --path=src
@@ -8,23 +13,23 @@ php app/console doctrine:generate:entities UniAdminBundle:Provider --path=src
 php app/console doctrine:generate:entities UniAdminBundle:Seller --path=src
 php app/console doctrine:generate:entities UniAdminBundle:Note --path=src
 php app/console doctrine:generate:entities UniAdminBundle:Issuer --path=src
-php app/console doctrine:generate:entities UniAdminBundle:Commune --path=src
-php app/console doctrine:generate:entities UniAdminBundle:Province --path=src
-php app/console doctrine:generate:entities UniAdminBundle:Region --path=src
 php app/console doctrine:generate:entities UniAdminBundle:Group --path=src
 php app/console doctrine:generate:entities UniAdminBundle:User --path=src
 php app/console doctrine:generate:entities UniAdminBundle:Account --path=src
 php app/console doctrine:generate:entities UniAdminBundle:AccountPayment --path=src
 php app/console doctrine:generate:entities UniAdminBundle:Page --path=src
-php app/console doctrine:generate:entities UniAdminBundle:Socialnetwork --path=src
 php app/console doctrine:generate:entities UniAdminBundle:Socialmedia --path=src
 php app/console doctrine:generate:entities UniAdminBundle:Catalog --path=src
 php app/console doctrine:generate:entities UniAdminBundle:Feature --path=src
 php app/console doctrine:generate:entities UniAdminBundle:Photography --path=src
 php app/console doctrine:generate:entities UniAdminBundle:Category --path=src
 php app/console doctrine:generate:entities UniAdminBundle:Subcategory --path=src
-php app/console doctrine:generate:entities UniAdminBundle:Invoice --path=src
 php app/console doctrine:generate:entities UniAdminBundle:InvoiceAction --path=src
+
+php app/console doctrine:generate:entities UniAdminBundle:Shipment --path=src
+php app/console doctrine:generate:entities UniAdminBundle:Invoice --path=src
+php app/console doctrine:generate:entities UniAdminBundle:Budget --path=src
+php app/console doctrine:generate:entities UniAdminBundle:Order --path=src
 
 php app/console uni:admingenerate:crud --overwrite --format=yml --with-write --no-interaction --entity=UniAdminBundle:Budget --route-prefix=admin_budget
 php app/console uni:admingenerate:crud --overwrite --format=yml --with-write --no-interaction --entity=UniAdminBundle:Client --route-prefix=admin_client
@@ -53,6 +58,9 @@ php app/console uni:admingenerate:crud --overwrite --format=yml --with-write --n
 php app/console uni:admingenerate:crud --overwrite --format=yml --with-write --no-interaction --entity=UniAdminBundle:Subcategory --route-prefix=admin_subcategory
 php app/console uni:admingenerate:crud --overwrite --format=yml --with-write --no-interaction --entity=UniAdminBundle:Invoice --route-prefix=admin_invoice
 php app/console uni:admingenerate:crud --overwrite --format=yml --with-write --no-interaction --entity=UniAdminBundle:InvoiceAction --route-prefix=admin_invoiceaction
+php app/console uni:admingenerate:crud --overwrite --format=yml --with-write --no-interaction --entity=UniAdminBundle:Shipment --route-prefix=admin_shipment
+php app/console uni:admingenerate:crud --overwrite --format=yml --with-write --no-interaction --entity=UniAdminBundle:Order --route-prefix=admin_order
+php app/console uni:admingenerate:crud --overwrite --format=yml --with-write --no-interaction --entity=UniAdminBundle:PaymentStatus --route-prefix=admin_paymentstatus
 
 php app/console uni:admingenerate:crud --format=yml --with-write --no-interaction --entity=UniAdminBundle:Budget --route-prefix=admin_budget
 php app/console uni:admingenerate:crud --format=yml --with-write --no-interaction --entity=UniAdminBundle:Client --route-prefix=admin_client

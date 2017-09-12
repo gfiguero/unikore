@@ -30,6 +30,11 @@ class BudgetType extends AbstractType
                 'attr'  => array( 'label_col' => 2, 'widget_col' => 10 ),
                 'translation_domain' => 'UniOfferBundle',
             ))
+            ->add('number', null, array(
+                'label' => 'budget.form.number',
+                'attr'  => array( 'label_col' => 2, 'widget_col' => 10 ),
+                'translation_domain' => 'UniOfferBundle',
+            ))
             ->add('client', null, array(
                 'label' => 'budget.form.client',
                 'attr'  => array( 'label_col' => 2, 'widget_col' => 10 ),
@@ -64,12 +69,12 @@ class BudgetType extends AbstractType
                 },
             ))
             ->add('adjudicated_at', DateType::class, array(
-                'label' => 'budget.form.adjudicatedAt',
+                'label' => 'budget.form.adjudicated_at',
                 'attr'  => array( 'label_col' => 2, 'widget_col' => 10 ),
                 'translation_domain' => 'UniOfferBundle',
             ))
             ->add('expired_at', DateType::class, array(
-                'label' => 'budget.form.expiredAt',
+                'label' => 'budget.form.expired_at',
                 'attr'  => array( 'label_col' => 2, 'widget_col' => 10 ),
                 'translation_domain' => 'UniOfferBundle',
             ))

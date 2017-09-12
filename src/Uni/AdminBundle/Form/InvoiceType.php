@@ -39,13 +39,8 @@ class InvoiceType extends AbstractType
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
                 'translation_domain' => 'UniAdminBundle',
             )) 
-            ->add('client', null, array(
-                'label' => 'invoice.form.client',
-                'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
-                'translation_domain' => 'UniAdminBundle',
-            )) 
-            ->add('issuer', null, array(
-                'label' => 'invoice.form.issuer',
+            ->add('order', null, array(
+                'label' => 'invoice.form.order',
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
                 'translation_domain' => 'UniAdminBundle',
             )) 
