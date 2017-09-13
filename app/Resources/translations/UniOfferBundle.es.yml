@@ -512,7 +512,7 @@ invoice:
         data: Datos de factura
         attachments: Datos anexos
         client: Datos del receptor
-        actions: Seguimiento
+        actions: Acciones
         shipments: Envíos
     edit:
         title: Facturas
