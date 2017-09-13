@@ -56,7 +56,7 @@ seller:
     show:
         title: Vendedores
         link: Mostrar datos
-        data: Datos de vendedor
+        data: Datos del ejecutivo
     edit:
         title: Vendedores
         link: Editar datos
@@ -92,7 +92,7 @@ issuer:
     show:
         title: Emisores
         link: Mostrar datos
-        data: Datos de emisor
+        data: Datos del emisor
     edit:
         title: Emisores
         link: Editar datos
@@ -132,7 +132,7 @@ client:
     show:
         title: Clientes
         link: Mostrar datos
-        data: Datos de cliente
+        data: Datos del cliente
     edit:
         title: Clientes
         link: Editar datos
@@ -357,7 +357,7 @@ budget:
         title: Presupuesto
         link: Mostrar datos
         basic: Información básica
-        data: Datos de presupuesto
+        data: Datos del presupuesto
         client: Cliente
         seller: Ejecutivo
         items: Ítems
@@ -461,6 +461,7 @@ order:
         title: Orden de compra %number%
         link: Mostrar datos
         basic: Información básica
+        attachments: Datos anexos
         data: Datos de orden de compra
         total: Montos
     edit:
@@ -483,6 +484,7 @@ order:
         number: Número
         budget: Presupuesto
         seller: Vendedor
+        invoice: Factura
         amount: Monto
         note: Nota
         user: Usuario

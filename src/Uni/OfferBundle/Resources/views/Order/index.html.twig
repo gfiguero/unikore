@@ -40,7 +40,9 @@
                                     </th>
                                     <th>{{ knp_pagination_sortable(orders, 'order.form.name'|trans, 'name') }}{% if sort == 'name' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
                                     <th>{{ knp_pagination_sortable(orders, 'order.form.number'|trans, 'number') }}{% if sort == 'number' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
+                                    <th>{{ knp_pagination_sortable(orders, 'order.form.amount'|trans, 'amount') }}{% if sort == 'amount' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
                                     <th>{{ knp_pagination_sortable(orders, 'order.form.budget'|trans, 'budget') }}{% if sort == 'budget' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
+                                    <th>{{ knp_pagination_sortable(orders, 'order.form.invoice'|trans, 'invoice') }}{% if sort == 'invoice' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
                                     <th>{{ knp_pagination_sortable(orders, 'order.form.updated_at'|trans, 'updated_at') }}{% if sort == 'updated_at' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
                                 </tr>
                             </thead>
@@ -54,7 +56,9 @@
                                     </td>
                                     <td>{% if order.name %}{{ order.name }}{% endif %}</td>
                                     <td>{% if order.number %}{{ order.number }}{% endif %}</td>
-                                    <td>{% if order.budget %}{{ order.budget.displayname }}{% endif %}</td>
+                                    <td>{% if order.amount %}{{ icon('dollar') }}&nbsp;{{ order.amount|number_format(0, ',', '.') }}{% endif %}</td>
+                                    <td>{% if order.budget %}<a href="{{ path('offer_budget_show', { 'id': order.budget.id }) }}">{{ order.budget.displayname }}</a>{% endif %}</td>
+                                    <td>{% if order.invoice %}<a href="{{ path('offer_invoice_show', { 'id': order.invoice.id }) }}">{{ order.invoice.displayname }}</a>{% endif %}</td>
                                     <td><span class="fa fa-calendar-o" data-toggle="tooltip" data-placement="left" title="{{ order.updatedat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "dd LLLL Y HH:mm") }}"></span>&nbsp;{{ order.updatedat|ago }}</td>
                                 </tr>
                             {% endfor %}

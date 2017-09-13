@@ -205,7 +205,7 @@ class InvoiceController extends Controller
                 $em->persist($invoice);
                 $em->flush();
                 $request->getSession()->getFlashBag()->add( 'success', 'invoice.edit.flash' );
-                return $this->redirect($this->generateUrl('offer_invoice_index'));
+                return $this->redirect($this->generateUrl('offer_invoice_show', array('id' => $invoice->getId())));
             }
         }
 

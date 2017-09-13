@@ -31,7 +31,7 @@ class BudgetController extends Controller
         $direction = $request->query->get('direction');
         $em = $this->getDoctrine()->getManager();
         if($sort) $budgets = $em->getRepository('UniAdminBundle:Budget')->findBy(array('account' => $account), array($sort => $direction));
-        else $budgets = $em->getRepository('UniAdminBundle:Budget')->findBy(array('account' => $account));
+        else $budgets = $em->getRepository('UniAdminBundle:Budget')->findBy(array('account' => $account), array('updated_at' => 'DESC'));
         $paginator = $this->get('knp_paginator');
         $budgets = $paginator->paginate($budgets, $request->query->getInt('page', 1), 100);
 

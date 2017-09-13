@@ -85,6 +85,11 @@ class Invoice
         return (string) $this->name;
     }
 
+    public function getDisplayName()
+    {
+        return (string) $this->getNumber() . ' ($ ' . number_format($this->getAmount(), 0, ',', '.') . ')';
+    }
+
     /**
      * Get id
      *

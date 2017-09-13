@@ -54,9 +54,10 @@
                                     <dd>{% if budget.expiredat %}{{ budget.expiredat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "d 'de' LLLL 'de' y") }}&nbsp;({{ budget.expiredat|ago }}){% endif %}</dd>
                             </dl>
                         </fieldset>
+
                         {% if client %}
                         <fieldset>
-                            <legend><em>{{ 'budget.show.client'|trans }}</em></legend>
+                            <legend><em>{{ 'client.show.data'|trans }}</em></legend>
                             <dl class="dl-horizontal">
                                 <dt>{{ 'client.form.name'|trans }}</dt>
                                     <dd>{% if client.name %}{{ client.name|raw }}{% endif %}</dd>
@@ -74,7 +75,7 @@
 
                         {% if seller %}
                         <fieldset>
-                            <legend><em>{{ 'budget.show.seller'|trans }}</em></legend>
+                            <legend><em>{{ 'seller.show.data'|trans }}</em></legend>
                             <dl class="dl-horizontal">
                                 <dt>{{ 'seller.form.name'|trans }}</dt>
                                     <dd>{% if seller.name %}{{ seller.name }}{% endif %}</dd>

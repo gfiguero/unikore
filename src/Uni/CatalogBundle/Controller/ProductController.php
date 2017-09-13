@@ -83,7 +83,7 @@ class ProductController extends Controller
      */
     private function createNewForm(Product $product)
     {
-        return $this->createForm(new ProductType(), $product, array(
+        return $this->createForm(ProductType::class, $product, array(
             'action' => $this->generateUrl('catalog_product_new'),
         ));
     }

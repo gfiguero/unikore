@@ -135,6 +135,7 @@ class OrderController extends Controller
         $account = $user->getAccount();
         if ($account != $order->getAccount()) return $this->redirect($this->generateUrl('offer_order_index'));
 
+        $invoice = $order->getInvoice();
         $budget = $order->getBudget();
         $client = ($budget ? $budget->getClient() : null);
         $seller = ($budget ? $budget->getSeller() : null);
@@ -142,12 +143,13 @@ class OrderController extends Controller
 
         $deleteForm = $this->createDeleteForm($order);
 
-        $invoice = new Invoice();
-        $invoice->setPayIn(new \DateTime('+30 days'));
-        $invoiceForm = $this->createInvoiceForm($invoice, $order);
+        $newInvoice = new Invoice();
+        $newInvoice->setPayIn(new \DateTime('+30 days'));
+        $invoiceForm = $this->createInvoiceForm($newInvoice, $order);
 
         return $this->render('UniOfferBundle:Order:show.html.twig', array(
             'order' => $order,
+            'invoice' => $invoice,
             'budget' => $budget,
             'items' => $items,
             'client' => $client,
