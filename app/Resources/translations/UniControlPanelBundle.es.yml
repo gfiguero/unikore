@@ -10,6 +10,8 @@ topmenu:
     profile: Perfil
     account: Cuenta
     logout: Salir
+    reset: Recuperar Password
+    login: Ingresar
 
 sidemenu:
     dashboard:
