@@ -50,6 +50,7 @@ class ShipmentType extends AbstractType
                 'label' => 'shipment.form.file',
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8, 'class' => 'fileinput'  ),
                 'translation_domain' => 'UniOfferBundle',
+                'required' => false,
             ))
             ->add('code', null, array(
                 'label' => 'shipment.form.code',

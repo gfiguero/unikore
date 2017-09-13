@@ -61,6 +61,7 @@ class OrderType extends AbstractType
                 'label' => 'order.form.file',
                 'attr'  => array( 'label_col' => 2, 'widget_col' => 10, 'class' => 'fileinput'  ),
                 'translation_domain' => 'UniOfferBundle',
+                'required' => false,
             ))
             ->add('note', null, array(
                 'label' => 'order.form.note',
