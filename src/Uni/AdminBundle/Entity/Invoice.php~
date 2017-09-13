@@ -85,6 +85,11 @@ class Invoice
         return (string) $this->name;
     }
 
+    public function getDisplayName()
+    {
+        return (string) $this->getNumber() . ' ($ ' . number_format($this->getAmount(), 0, ',', '.') . ')';
+    }
+
     /**
      * Get id
      *
@@ -517,5 +522,34 @@ class Invoice
     public function getNumber()
     {
         return $this->number;
+    }
+    /**
+     * @var \Uni\AdminBundle\Entity\PaymentStatus
+     */
+    private $paymentstatus;
+
+
+    /**
+     * Set paymentstatus
+     *
+     * @param \Uni\AdminBundle\Entity\PaymentStatus $paymentstatus
+     *
+     * @return Invoice
+     */
+    public function setPaymentstatus(\Uni\AdminBundle\Entity\PaymentStatus $paymentstatus = null)
+    {
+        $this->paymentstatus = $paymentstatus;
+
+        return $this;
+    }
+
+    /**
+     * Get paymentstatus
+     *
+     * @return \Uni\AdminBundle\Entity\PaymentStatus
+     */
+    public function getPaymentstatus()
+    {
+        return $this->paymentstatus;
     }
 }

@@ -41,6 +41,7 @@
                                     <th>{{ knp_pagination_sortable(invoices, 'invoice.form.name'|trans, 'name') }}{% if sort == 'name' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
                                     <th>{{ knp_pagination_sortable(invoices, 'invoice.form.number'|trans, 'number') }}{% if sort == 'number' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
                                     <th>{{ knp_pagination_sortable(invoices, 'invoice.form.amount'|trans, 'amount') }}{% if sort == 'amount' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
+                                    <th>{{ knp_pagination_sortable(invoices, 'invoice.form.file'|trans, 'file') }}{% if sort == 'file' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
                                     <th>{{ knp_pagination_sortable(invoices, 'invoice.form.paymentstatus'|trans, 'paymentstatus') }}{% if sort == 'paymentstatus' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
                                     <th>{{ knp_pagination_sortable(invoices, 'invoice.form.pay_in'|trans, 'pay_in') }}{% if sort == 'pay_in' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
                                     <th>{{ knp_pagination_sortable(invoices, 'invoice.form.order'|trans, 'order') }}{% if sort == 'order' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
@@ -58,6 +59,7 @@
                                     <td>{% if invoice.name %}{{ invoice.name|raw }}{% endif %}</td>
                                     <td>{% if invoice.number %}{{ invoice.number|raw }}{% endif %}</td>
                                     <td>{% if invoice.amount %}{{ icon('dollar') }}&nbsp;{{ invoice.amount|number_format(0, ',', '.') }}{% endif %}</td>
+                                    <td>{% if invoice.filename %}{{ icon('check fa-fw') }}{% endif %}</td>
                                     <td>{% if invoice.paymentstatus %}{{ invoice.paymentstatus.name|raw }}{% endif %}</td>
                                     <td><span class="fa fa-calendar-o" data-toggle="tooltip" data-placement="left" title="{{ invoice.payin|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "dd LLLL y") }}"></span>&nbsp;{{ invoice.payin|ago }}</td>
                                     <td>{% if invoice.order %}<a href="{{ path('offer_order_show', { 'id': invoice.order.id }) }}">{{ invoice.order.displayname|raw }}</a>{% endif %}</td>

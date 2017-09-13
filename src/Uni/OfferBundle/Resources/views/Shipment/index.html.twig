@@ -41,6 +41,7 @@
                                     <th>{{ knp_pagination_sortable(shipments, 'shipment.form.invoice'|trans, 'invoice') }}{% if sort == 'invoice' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
                                     <th>{{ knp_pagination_sortable(shipments, 'shipment.form.code'|trans, 'code') }}{% if sort == 'code' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
                                     <th>{{ knp_pagination_sortable(shipments, 'shipment.form.amount'|trans, 'amount') }}{% if sort == 'amount' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
+                                    <th>{{ knp_pagination_sortable(shipments, 'shipment.form.file'|trans, 'file') }}{% if sort == 'file' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
                                     <th>{{ knp_pagination_sortable(shipments, 'shipment.form.updated_at'|trans, 'updated_at') }}{% if sort == 'updated_at' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
                                 </tr>
                             </thead>
@@ -55,6 +56,7 @@
                                     <td>{% if shipment.invoice %}{{ shipment.invoice|raw }}{% endif %}</td>
                                     <td>{% if shipment.code %}{{ shipment.code|raw }}{% endif %}</td>
                                     <td>{% if shipment.amount %}{{ shipment.amount|raw|number_format(0, ',', '.') }}{% endif %}</td>
+                                    <td>{% if shipment.filename %}{{ icon('check fa-fw') }}{% endif %}</td>
                                     <td><span class="fa fa-calendar-o" data-toggle="tooltip" data-placement="left" title="{{ shipment.updatedat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "dd LLLL y HH:mm") }}"></span>&nbsp;{{ shipment.updatedat|ago }}</td>
                                 </tr>
                             {% endfor %}

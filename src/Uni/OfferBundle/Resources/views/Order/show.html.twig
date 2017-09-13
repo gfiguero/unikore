@@ -43,6 +43,8 @@
                                     <dd>{% if order.number %}{{ order.number|raw }}{% endif %}</dd>
                                 <dt>{{ 'order.form.amount'|trans }}</dt>
                                     <dd>{% if order.amount %}{{ icon('dollar') }}&nbsp;{{ order.amount|number_format(0, ',', '.') }}{% endif %}</dd>
+                                <dt>{{ 'order.form.file'|trans }}</dt>
+                                    <dd>{% if order.filename %}<a target="_blank" href="{{ asset(vich_uploader_asset(order, 'file')) }}">{{ icon('paperclip') }}&nbsp;{{ order.filename }}</a>{% endif %}</dd>
                                 <dt>{{ 'order.form.note'|trans }}</dt>
                                     <dd>{% if order.note %}{{ order.note|raw }}{% endif %}</dd>
                                 <dt>{{ 'order.form.created_at'|trans }}</dt>

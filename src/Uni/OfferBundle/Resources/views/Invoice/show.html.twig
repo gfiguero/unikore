@@ -43,6 +43,8 @@
                                     <dd>{% if invoice.number %}{{ invoice.number|raw }}{% endif %}</dd>
                                 <dt>{{ 'invoice.form.amount'|trans }}</dt>
                                     <dd>{% if invoice.amount %}{{ icon('dollar') }}&nbsp;{{ invoice.amount|raw|number_format(0, ',', '.') }}{% endif %}</dd>
+                                <dt>{{ 'invoice.form.file'|trans }}</dt>
+                                    <dd>{% if invoice.filename %}<a target="_blank" href="{{ asset(vich_uploader_asset(invoice, 'file')) }}">{{ icon('paperclip') }}&nbsp;{{ invoice.filename }}</a>{% endif %}</dd>
                                 <dt>{{ 'invoice.form.note'|trans }}</dt>
                                     <dd>{% if invoice.note %}{{ invoice.note|raw }}{% endif %}</dd>
                                 <dt>{{ 'invoice.form.created_at'|trans }}</dt>

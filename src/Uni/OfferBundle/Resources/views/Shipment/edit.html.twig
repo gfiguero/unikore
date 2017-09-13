@@ -1,4 +1,5 @@
 {% extends 'UniOfferBundle:Base:layout.html.twig' %}
+{% use 'UniOfferBundle:Base:fileinput.html.twig' %}
 
 {% trans_default_domain 'UniOfferBundle' %}
 
@@ -73,6 +74,10 @@
 
 {% endblock %}
 
+{% block stylesheet %}
+    {% block fileinputcss %}{{ parent() }}{% endblock %}
+{% endblock %}
+
 {% block javascript %}
-    <script src="{{ asset('bundles/unioffer/js/collection.table.js') }}"></script>
+    {% block fileinputjs_file %}{{ parent() }}{% endblock %}
 {% endblock %}

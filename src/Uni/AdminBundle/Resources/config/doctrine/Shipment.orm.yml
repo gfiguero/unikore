@@ -25,11 +25,11 @@ Uni\AdminBundle\Entity\Shipment:
         amount:
             type: integer
             nullable: true
-        code:
+        filename:
             type: string
             length: 100
             nullable: true
-        filename:
+        code:
             type: string
             length: 100
             nullable: true

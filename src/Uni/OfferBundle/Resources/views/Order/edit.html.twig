@@ -1,4 +1,5 @@
 {% extends 'UniOfferBundle:Base:layout.html.twig' %}
+{% use 'UniOfferBundle:Base:fileinput.html.twig' %}
 
 {% trans_default_domain 'UniOfferBundle' %}
 
@@ -73,4 +74,12 @@
     </div>
     <!-- /#page-wrapper -->
 
+{% endblock %}
+
+{% block stylesheet %}
+    {% block fileinputcss %}{{ parent() }}{% endblock %}
+{% endblock %}
+
+{% block javascript %}
+    {% block fileinputjs_file %}{{ parent() }}{% endblock %}
 {% endblock %}

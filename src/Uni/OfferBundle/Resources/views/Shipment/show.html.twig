@@ -43,6 +43,8 @@
                                 <dd>{% if shipment.code %}{{ shipment.code|raw }}{% endif %}</dd>
                             <dt>{{ 'shipment.form.amount'|trans }}</dt>
                                 <dd>{% if shipment.amount %}{{ shipment.amount|raw|number_format(0, ',', '.') }}{% endif %}</dd>
+                            <dt>{{ 'shipment.form.file'|trans }}</dt>
+                                <dd>{% if shipment.filename %}<a target="_blank" href="{{ asset(vich_uploader_asset(shipment, 'file')) }}">{{ icon('paperclip') }}&nbsp;{{ shipment.filename }}</a>{% endif %}</dd>
                             <dt>{{ 'shipment.form.created_at'|trans }}</dt>
                                 <dd>{% if shipment.createdat %}{{ shipment.createdat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "dd 'de' LLLL 'de' y - HH:mm") }}&nbsp;({{ shipment.createdat|ago }}){% endif %}</dd>
                             <dt>{{ 'shipment.form.updated_at'|trans }}</dt>

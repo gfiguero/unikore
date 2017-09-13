@@ -57,6 +57,10 @@ class Order
         return (string) $this->name;
     }
 
+    public function getDisplayName()
+    {
+        return (string) $this->getNumber() . ' ($ ' . number_format($this->getAmount(), 0, ',', '.') . ')';
+    }
 
     /**
      * Get id
@@ -316,5 +320,34 @@ class Order
     public function getNumber()
     {
         return $this->number;
+    }
+    /**
+     * @var integer
+     */
+    private $amount;
+
+
+    /**
+     * Set amount
+     *
+     * @param integer $amount
+     *
+     * @return Order
+     */
+    public function setAmount($amount)
+    {
+        $this->amount = $amount;
+
+        return $this;
+    }
+
+    /**
+     * Get amount
+     *
+     * @return integer
+     */
+    public function getAmount()
+    {
+        return $this->amount;
     }
 }

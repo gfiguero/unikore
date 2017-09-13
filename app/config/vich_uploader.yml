@@ -25,3 +25,17 @@ vich_uploader:
             uri_prefix: uploads/feature
             upload_destination: %kernel.root_dir%/../web/uploads/feature
             namer: vich_uploader.namer_origname
+
+        order_file:
+            uri_prefix: uploads/order
+            upload_destination: %kernel.root_dir%/../web/uploads/order
+            namer: vich_uploader.namer_origname
+        invoice_file:
+            uri_prefix: uploads/invoice
+            upload_destination: %kernel.root_dir%/../web/uploads/invoice
+            namer: vich_uploader.namer_origname
+        shipment_file:
+            uri_prefix: uploads/shipment
+            upload_destination: %kernel.root_dir%/../web/uploads/shipment
+            namer: vich_uploader.namer_origname
+

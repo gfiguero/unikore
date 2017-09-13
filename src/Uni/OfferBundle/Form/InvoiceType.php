@@ -42,6 +42,11 @@ class InvoiceType extends AbstractType
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
                 'translation_domain' => 'UniOfferBundle',
             ))
+            ->add('file', 'file', array(
+                'label' => 'invoice.form.file',
+                'attr'  => array( 'label_col' => 4, 'widget_col' => 8, 'class' => 'fileinput' ),
+                'translation_domain' => 'UniOfferBundle',
+            ))
             ->add('note', null, array(
                 'label' => 'invoice.form.note',
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),

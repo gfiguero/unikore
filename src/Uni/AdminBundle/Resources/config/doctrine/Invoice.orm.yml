@@ -41,6 +41,10 @@ Uni\AdminBundle\Entity\Invoice:
         amount:
             type: integer
             nullable: true
+        filename:
+            type: string
+            length: 100
+            nullable: true
         note:
             type: text
             nullable: true
