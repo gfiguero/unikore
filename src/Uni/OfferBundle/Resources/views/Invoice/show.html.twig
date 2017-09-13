@@ -38,19 +38,19 @@
                             <legend><em>{{ 'invoice.show.data'|trans }}</em></legend>
                             <dl class="dl-horizontal">
                                 <dt>{{ 'invoice.form.name'|trans }}</dt>
-                                    <dd>{% if invoice.name %}{{ invoice.name }}{% endif %}</dd>
+                                    <dd>{% if invoice.name %}{{ invoice.name|raw }}{% endif %}</dd>
                                 <dt>{{ 'invoice.form.number'|trans }}</dt>
-                                    <dd>{% if invoice.number %}{{ invoice.number }}{% endif %}</dd>
+                                    <dd>{% if invoice.number %}{{ invoice.number|raw }}{% endif %}</dd>
                                 <dt>{{ 'invoice.form.amount'|trans }}</dt>
-                                    <dd>{% if invoice.amount %}{{ icon('dollar') }}&nbsp;{{ invoice.amount|number_format(0, ',', '.') }}{% endif %}</dd>
+                                    <dd>{% if invoice.amount %}{{ icon('dollar') }}&nbsp;{{ invoice.amount|raw|number_format(0, ',', '.') }}{% endif %}</dd>
                                 <dt>{{ 'invoice.form.note'|trans }}</dt>
-                                    <dd>{% if invoice.note %}{{ invoice.note }}{% endif %}</dd>
+                                    <dd>{% if invoice.note %}{{ invoice.note|raw }}{% endif %}</dd>
                                 <dt>{{ 'invoice.form.created_at'|trans }}</dt>
-                                    <dd>{% if invoice.createdat %}{{ invoice.createdat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "d 'de' LLLL 'de' y - HH:mm") }}&nbsp;({{ invoice.createdat|ago }}){% endif %}</dd>
+                                    <dd>{% if invoice.createdat %}{{ invoice.createdat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "dd 'de' LLLL 'de' y - HH:mm") }}&nbsp;({{ invoice.createdat|ago }}){% endif %}</dd>
                                 <dt>{{ 'invoice.form.updated_at'|trans }}</dt>
-                                    <dd>{% if invoice.updatedat %}{{ invoice.updatedat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "d 'de' LLLL 'de' y - HH:mm") }}&nbsp;({{ invoice.updatedat|ago }}){% endif %}</dd>
+                                    <dd>{% if invoice.updatedat %}{{ invoice.updatedat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "dd 'de' LLLL 'de' y - HH:mm") }}&nbsp;({{ invoice.updatedat|ago }}){% endif %}</dd>
                                 <dt>{{ 'invoice.form.pay_in'|trans }}</dt>
-                                    <dd>{% if invoice.payin %}{{ invoice.payin|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "d 'de' LLLL 'de' y - HH:mm") }}&nbsp;({{ invoice.payin|ago }}){% endif %}</dd>
+                                    <dd>{% if invoice.payin %}{{ invoice.payin|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "dd 'de' LLLL 'de' y - HH:mm") }}&nbsp;({{ invoice.payin|ago }}){% endif %}</dd>
                             </dl>
                         </fieldset>
                     </div>
@@ -110,7 +110,7 @@
                             <tbody>
                                 {% for action in invoiceactions %}
                                 <tr>
-                                    <td>{{ action.user }}</td>
+                                    <td>{{ action.user|raw }}</td>
                                     <td>{{ action.description|raw }}</td>
                                     <td><span class="fa fa-calendar-o" data-toggle="tooltip" data-placement="left" title="{{ invoice.createdat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "dd LLLL y HH:mm") }}"></span>&nbsp;{{ action.createdat|ago }}</td>
                                 </tr>
@@ -143,9 +143,9 @@
                             <tbody>
                                 {% for shipment in shipments %}
                                 <tr>
-                                    <td>{{ shipment.user }}</td>
-                                    <td>{{ shipment.description }}</td>
-                                    <td>{{ shipment.code }}</td>
+                                    <td>{{ shipment.user|raw }}</td>
+                                    <td>{{ shipment.description|raw }}</td>
+                                    <td>{{ shipment.code|raw }}</td>
                                     <td>{{ shipment.amount|number_format(0, ',', '.') }}</td>
                                     <td><span class="fa fa-calendar-o" data-toggle="tooltip" data-placement="left" title="{{ invoice.createdat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "dd LLLL y HH:mm") }}"></span>&nbsp;{{ shipment.createdat|ago }}</td>
                                 </tr>

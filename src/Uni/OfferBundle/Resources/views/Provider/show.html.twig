@@ -1,6 +1,4 @@
 {% extends 'UniOfferBundle:Base:layout.html.twig' %}
-{% use 'UniOfferBundle:Base:icons.html.twig' %}
-{% use 'UniOfferBundle:Base:flashbag.html.twig' %}
 
 {% trans_default_domain 'UniOfferBundle' %}
 
@@ -36,27 +34,27 @@
                     <div class="panel-body">
                         <dl class="dl-horizontal">
                             <dt>{{ 'provider.form.id'|trans }}</dt>
-                                <dd>{% if provider.id %}{{ provider.id }}{% endif %}</dd>
+                                <dd>{% if provider.id %}{{ provider.id|raw }}{% endif %}</dd>
                             <dt>{{ 'provider.form.name'|trans }}</dt>
-                                <dd>{% if provider.name %}{{ provider.name }}{% endif %}</dd>
+                                <dd>{% if provider.name %}{{ provider.name|raw }}{% endif %}</dd>
                             <dt>{{ 'provider.form.rut'|trans }}</dt>
-                                <dd>{% if provider.rut %}{{ provider.rut }}{% endif %}</dd>
+                                <dd>{% if provider.rut %}{{ provider.rut|raw }}{% endif %}</dd>
                             <dt>{{ 'provider.form.contactname'|trans }}</dt>
-                                <dd>{% if provider.contactname %}{{ provider.contactname }}{% endif %}</dd>
+                                <dd>{% if provider.contactname %}{{ provider.contactname|raw }}{% endif %}</dd>
                             <dt>{{ 'provider.form.phone'|trans }}</dt>
-                                <dd>{% if provider.phone %}{{ provider.phone }}{% endif %}</dd>
+                                <dd>{% if provider.phone %}{{ provider.phone|raw }}{% endif %}</dd>
                             <dt>{{ 'provider.form.email'|trans }}</dt>
-                                <dd>{% if provider.email %}{{ provider.email }}{% endif %}</dd>
+                                <dd>{% if provider.email %}{{ provider.email|raw }}{% endif %}</dd>
                             <dt>{{ 'provider.form.address_street'|trans }}</dt>
-                                <dd>{% if provider.addressstreet %}{{ provider.addressstreet }}{% endif %}</dd>
+                                <dd>{% if provider.addressstreet %}{{ provider.addressstreet|raw }}{% endif %}</dd>
                             <dt>{{ 'provider.form.address_number'|trans }}</dt>
-                                <dd>{% if provider.addressnumber %}{{ provider.addressnumber }}{% endif %}</dd>
+                                <dd>{% if provider.addressnumber %}{{ provider.addressnumber|raw }}{% endif %}</dd>
                             <dt>{{ 'provider.form.commune'|trans }}</dt>
-                                <dd>{% if provider.commune %}{{ provider.commune }}{% endif %}</dd>
+                                <dd>{% if provider.commune %}{{ provider.commune|raw }}{% endif %}</dd>
                             <dt>{{ 'provider.form.created_at'|trans }}</dt>
-                                <dd>{% if provider.createdat %}{{ provider.createdat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "d 'de' LLLL 'de' Y - HH:mm") }}&nbsp;({{ provider.createdat|ago }}){% endif %}</dd>
+                                <dd>{% if provider.createdat %}{{ provider.createdat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "dd 'de' LLLL 'de' y - HH:mm") }}&nbsp;({{ provider.createdat|ago }}){% endif %}</dd>
                             <dt>{{ 'provider.form.updated_at'|trans }}</dt>
-                                <dd>{% if provider.updatedat %}{{ provider.updatedat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "d 'de' LLLL 'de' Y - HH:mm") }}&nbsp;({{ provider.updatedat|ago }}){% endif %}</dd>                        </dl>
+                                <dd>{% if provider.updatedat %}{{ provider.updatedat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "dd 'de' LLLL 'de' y - HH:mm") }}&nbsp;({{ provider.updatedat|ago }}){% endif %}</dd>                        </dl>
                     </div>
                 </div>
             </div>

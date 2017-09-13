@@ -46,9 +46,9 @@
                                 <dt>{{ 'order.form.note'|trans }}</dt>
                                     <dd>{% if order.note %}{{ order.note|raw }}{% endif %}</dd>
                                 <dt>{{ 'order.form.created_at'|trans }}</dt>
-                                    <dd>{% if order.createdat %}{{ order.createdat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "d 'de' LLLL 'de' Y - HH:mm") }}&nbsp;({{ order.createdat|ago }}){% endif %}</dd>
+                                    <dd>{% if order.createdat %}{{ order.createdat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "dd 'de' LLLL 'de' y - HH:mm") }}&nbsp;({{ order.createdat|ago }}){% endif %}</dd>
                                 <dt>{{ 'order.form.updated_at'|trans }}</dt>
-                                    <dd>{% if order.updatedat %}{{ order.updatedat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "d 'de' LLLL 'de' Y - HH:mm") }}&nbsp;({{ order.updatedat|ago }}){% endif %}</dd>
+                                    <dd>{% if order.updatedat %}{{ order.updatedat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "dd 'de' LLLL 'de' y - HH:mm") }}&nbsp;({{ order.updatedat|ago }}){% endif %}</dd>
                             </dl>
                         </fieldset>
                     </div>
@@ -115,10 +115,10 @@
                             {% for item in items %}
                                 <tr>
                                     <td>{{ item.product }}</td>
-                                    <td class="text-right">{{ item.quantity }}</td>
-                                    <td class="text-right">{{ item.normalfullprice|number_format(0, ',', '.') }}</td>
-                                    <td class="text-right">{{ item.totaldiscountprice|number_format(0, ',', '.') }}</td>
-                                    <td class="text-right">{{ item.totalnetprice|number_format(0, ',', '.') }}</td>
+                                    <td class="text-right">{{ item.quantity|raw }}</td>
+                                    <td class="text-right">{{ item.normalfullprice|raw|number_format(0, ',', '.') }}</td>
+                                    <td class="text-right">{{ item.totaldiscountprice|raw|number_format(0, ',', '.') }}</td>
+                                    <td class="text-right">{{ item.totalnetprice|raw|number_format(0, ',', '.') }}</td>
                                 </tr>
                             {% endfor %}
                         </table>
@@ -170,7 +170,7 @@
                                     <dt>{{ 'order.form.number'|trans }}</dt>
                                         <dd>{% if order.number %}{{ order.number|raw }}{% endif %}</dd>
                                     <dt>{{ 'order.form.amount'|trans }}</dt>
-                                        <dd>{% if order.amount %}{{ icon('dollar') }}&nbsp;{{ order.amount|number_format(0, ',', '.') }}{% endif %}</dd>
+                                        <dd>{% if order.amount %}{{ icon('dollar') }}&nbsp;{{ order.amount|raw|number_format(0, ',', '.') }}{% endif %}</dd>
                                 </dl>
                             </fieldset>
                         </div>

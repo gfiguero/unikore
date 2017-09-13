@@ -56,12 +56,12 @@
                                         <div class="btn-group" role="group"><button type="button" class="btn btn-xs btn-danger" data-toggle="modal" data-target="#modalDelete{{ budget.id }}">{{ icon('trash fa-fw') }}</button></div>
                                         <div class="btn-group" role="group"><a type="button" class="btn btn-xs btn-warning" href="{{ path('offer_budget_pdf', { 'id': budget.id }) }}" target="_blank">{{ icon('share fa-fw') }}</a></div>
                                     </td>
-                                    <td>{% if budget.name %}{{ budget.name }}{% endif %}</td>
-                                    <td>{% if budget.client %}{{ budget.client }}{% endif %}</td>
-                                    <td>{% if budget.seller %}{{ budget.seller }}{% endif %}</td>
+                                    <td>{% if budget.name %}{{ budget.name|raw }}{% endif %}</td>
+                                    <td>{% if budget.client %}{{ budget.client|raw }}{% endif %}</td>
+                                    <td>{% if budget.seller %}{{ budget.seller|raw }}{% endif %}</td>
                                     <td>{% if budget.total %}{{ icon('dollar') }}&nbsp;{{ budget.total|number_format(0, ',', '.') }}{% endif %}</td>
-                                    <td><span class="fa fa-calendar-o" data-toggle="tooltip" data-placement="left" title="{{ budget.expiredat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "dd LLLL Y HH:mm") }}"></span>&nbsp;{{ budget.expiredat|ago }}</td>
-                                    <td><span class="fa fa-calendar-o" data-toggle="tooltip" data-placement="left" title="{{ budget.updatedat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "dd LLLL Y HH:mm") }}"></span>&nbsp;{{ budget.updatedat|ago }}</td>
+                                    <td><span class="fa fa-calendar-o" data-toggle="tooltip" data-placement="left" title="{{ budget.updatedat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "dd LLLL y HH:mm") }}"></span>&nbsp;{{ budget.updatedat|ago }}</td>
+                                    <td><span class="fa fa-calendar-o" data-toggle="tooltip" data-placement="left" title="{{ budget.expiredat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "dd LLLL y HH:mm") }}"></span>&nbsp;{{ budget.expiredat|ago }}</td>
                                 </tr>
                             {% endfor %}
                             </tbody>

@@ -55,12 +55,12 @@
                                         <div class="btn-group" role="group"><a type="button" class="btn btn-xs btn-primary" href="{{ path('offer_invoice_edit', { 'id': invoice.id }) }}">{{ icon('edit fa-fw') }}</a></div>
                                         <div class="btn-group" role="group"><button type="button" class="btn btn-xs btn-danger" data-toggle="modal" data-target="#modalDelete{{ invoice.id }}">{{ icon('trash fa-fw') }}</button></div>
                                     </td>
-                                    <td>{% if invoice.name %}{{ invoice.name }}{% endif %}</td>
-                                    <td>{% if invoice.number %}{{ invoice.number }}{% endif %}</td>
+                                    <td>{% if invoice.name %}{{ invoice.name|raw }}{% endif %}</td>
+                                    <td>{% if invoice.number %}{{ invoice.number|raw }}{% endif %}</td>
                                     <td>{% if invoice.amount %}{{ icon('dollar') }}&nbsp;{{ invoice.amount|number_format(0, ',', '.') }}{% endif %}</td>
-                                    <td>{% if invoice.paymentstatus %}{{ invoice.paymentstatus.name }}{% endif %}</td>
+                                    <td>{% if invoice.paymentstatus %}{{ invoice.paymentstatus.name|raw }}{% endif %}</td>
                                     <td><span class="fa fa-calendar-o" data-toggle="tooltip" data-placement="left" title="{{ invoice.createdat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "dd LLLL y HH:mm") }}"></span>&nbsp;{{ invoice.payin|ago }}</td>
-                                    <td>{% if invoice.order %}<a href="{{ path('offer_order_show', { 'id': invoice.order.id }) }}">{{ invoice.order.displayname }}</a>{% endif %}</td>
+                                    <td>{% if invoice.order %}<a href="{{ path('offer_order_show', { 'id': invoice.order.id }) }}">{{ invoice.order.displayname|raw }}</a>{% endif %}</td>
                                     <td><span class="fa fa-calendar-o" data-toggle="tooltip" data-placement="left" title="{{ invoice.updatedat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "dd LLLL y HH:mm") }}"></span>&nbsp;{{ invoice.updatedat|ago }}</td>
                                 </tr>
                             {% endfor %}

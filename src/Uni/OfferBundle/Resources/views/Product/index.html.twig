@@ -1,6 +1,4 @@
 {% extends 'UniOfferBundle:Base:layout.html.twig' %}
-{% use 'UniOfferBundle:Base:icons.html.twig' %}
-{% use 'UniOfferBundle:Base:flashbag.html.twig' %}
 
 {% trans_default_domain 'UniOfferBundle' %}
 
@@ -58,13 +56,13 @@
                                         <div class="btn-group" role="group"><a type="button" class="btn btn-xs btn-primary" href="{{ path('offer_product_edit', { 'id': product.id }) }}">{{ icon('edit fa-fw') }}</a></div>
                                         <div class="btn-group" role="group"><button type="button" class="btn btn-xs btn-danger" data-toggle="modal" data-target="#modalDelete{{ product.id }}">{{ icon('trash fa-fw') }}</button></div>
                                     </td>
-                                    <td>{% if product.name %}{{ product.name }}{% endif %}</td>
-                                    <td>{% if product.provider %}{{ product.provider }}{% endif %}</td>
-                                    <td>{% if product.cost %}{{ product.cost|number_format(0, ',', '.') }}{% endif %}</td>
-                                    <td>{% if product.price %}{{ product.price|number_format(0, ',', '.') }}{% endif %}</td>
-                                    <td>{% if product.margin %}{{ (100 * product.margin)|number_format(0, ',', '.') ~ '%' }}{% endif %}</td>
+                                    <td>{% if product.name %}{{ product.name|raw }}{% endif %}</td>
+                                    <td>{% if product.provider %}{{ product.provider|raw }}{% endif %}</td>
+                                    <td>{% if product.cost %}{{ product.cost|raw|number_format(0, ',', '.') }}{% endif %}</td>
+                                    <td>{% if product.price %}{{ product.price|raw|number_format(0, ',', '.') }}{% endif %}</td>
+                                    <td>{% if product.margin %}{{ (100 * product.margin)|raw|number_format(0, ',', '.') ~ '%' }}{% endif %}</td>
 {#}                                    <td>{% if product.image %}{{ product.image }}{% endif %}</td>{#}
-                                    <td><span class="fa fa-calendar-o" data-toggle="tooltip" data-placement="left" title="{{ product.updatedat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "dd LLLL Y HH:mm") }}"></span>&nbsp;{{ product.updatedat|ago }}</td>
+                                    <td><span class="fa fa-calendar-o" data-toggle="tooltip" data-placement="left" title="{{ product.updatedat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "dd LLLL y HH:mm") }}"></span>&nbsp;{{ product.updatedat|ago }}</td>
                                 </tr>
                             {% endfor %}
                             </tbody>

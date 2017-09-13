@@ -34,19 +34,19 @@
                     <div class="panel-body">
                         <dl class="dl-horizontal">
                             <dt>{{ 'shipment.form.user'|trans }}</dt>
-                                <dd>{% if shipment.user %}{{ shipment.user }}{% endif %}</dd>
+                                <dd>{% if shipment.user %}{{ shipment.user|raw }}{% endif %}</dd>
                             <dt>{{ 'shipment.form.invoice'|trans }}</dt>
-                                <dd>{% if shipment.invoice %}{{ shipment.invoice }}{% endif %}</dd>
+                                <dd>{% if shipment.invoice %}{{ shipment.invoice|raw }}{% endif %}</dd>
                             <dt>{{ 'shipment.form.description'|trans }}</dt>
-                                <dd>{% if shipment.description %}{{ shipment.description }}{% endif %}</dd>
+                                <dd>{% if shipment.description %}{{ shipment.description|raw }}{% endif %}</dd>
                             <dt>{{ 'shipment.form.code'|trans }}</dt>
-                                <dd>{% if shipment.code %}{{ shipment.code }}{% endif %}</dd>
+                                <dd>{% if shipment.code %}{{ shipment.code|raw }}{% endif %}</dd>
                             <dt>{{ 'shipment.form.amount'|trans }}</dt>
-                                <dd>{% if shipment.amount %}{{ shipment.amount|number_format(0, ',', '.') }}{% endif %}</dd>
+                                <dd>{% if shipment.amount %}{{ shipment.amount|raw|number_format(0, ',', '.') }}{% endif %}</dd>
                             <dt>{{ 'shipment.form.created_at'|trans }}</dt>
-                                <dd>{% if shipment.createdat %}{{ shipment.createdat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "d 'de' LLLL 'de' y - HH:mm") }}&nbsp;({{ shipment.createdat|ago }}){% endif %}</dd>
+                                <dd>{% if shipment.createdat %}{{ shipment.createdat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "dd 'de' LLLL 'de' y - HH:mm") }}&nbsp;({{ shipment.createdat|ago }}){% endif %}</dd>
                             <dt>{{ 'shipment.form.updated_at'|trans }}</dt>
-                                <dd>{% if shipment.updatedat %}{{ shipment.updatedat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "d 'de' LLLL 'de' y - HH:mm") }}&nbsp;({{ shipment.updatedat|ago }}){% endif %}</dd>
+                                <dd>{% if shipment.updatedat %}{{ shipment.updatedat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "dd 'de' LLLL 'de' y - HH:mm") }}&nbsp;({{ shipment.updatedat|ago }}){% endif %}</dd>
                         </dl>
                     </div>
                 </div>

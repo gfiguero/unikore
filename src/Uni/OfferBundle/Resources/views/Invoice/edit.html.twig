@@ -57,7 +57,7 @@
                                 <dt>{{ 'order.form.number'|trans }}</dt>
                                     <dd>{% if order.number %}{{ order.number|raw }}{% endif %}</dd>
                                 <dt>{{ 'order.form.amount'|trans }}</dt>
-                                    <dd>{% if order.amount %}{{ icon('dollar') }}&nbsp;{{ order.amount|number_format(0, ',', '.') }}{% endif %}</dd>
+                                    <dd>{% if order.amount %}{{ icon('dollar') }}&nbsp;{{ order.amount|raw|number_format(0, ',', '.') }}{% endif %}</dd>
                                 <dt>{{ 'order.form.note'|trans }}</dt>
                                     <dd>{% if order.note %}{{ order.note|raw }}{% endif %}</dd>
                             </dl>
@@ -73,13 +73,13 @@
                                 <dt>{{ 'budget.form.note'|trans }}</dt>
                                     <dd>{% if budget.note %}{{ budget.note|raw }}{% endif %}</dd>
                                 <dt>{{ 'budget.form.created_at'|trans }}</dt>
-                                    <dd>{% if budget.createdat %}{{ budget.createdat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "d 'de' LLLL 'de' y - HH:mm") }}&nbsp;({{ budget.createdat|ago }}){% endif %}</dd>
+                                    <dd>{% if budget.createdat %}{{ budget.createdat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "dd 'de' LLLL 'de' y - HH:mm") }}&nbsp;({{ budget.createdat|ago }}){% endif %}</dd>
                                 <dt>{{ 'budget.form.updated_at'|trans }}</dt>
-                                    <dd>{% if budget.updatedat %}{{ budget.updatedat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "d 'de' LLLL 'de' y - HH:mm") }}&nbsp;({{ budget.updatedat|ago }}){% endif %}</dd>
+                                    <dd>{% if budget.updatedat %}{{ budget.updatedat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "dd 'de' LLLL 'de' y - HH:mm") }}&nbsp;({{ budget.updatedat|ago }}){% endif %}</dd>
                                 <dt>{{ 'budget.form.adjudicated_at'|trans }}</dt>
-                                    <dd>{% if budget.adjudicatedat %}{{ budget.adjudicatedat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "d 'de' LLLL 'de' y") }}&nbsp;({{ budget.adjudicatedat|ago }}){% endif %}</dd>
+                                    <dd>{% if budget.adjudicatedat %}{{ budget.adjudicatedat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "dd 'de' LLLL 'de' y") }}&nbsp;({{ budget.adjudicatedat|ago }}){% endif %}</dd>
                                 <dt>{{ 'budget.form.expired_at'|trans }}</dt>
-                                    <dd>{% if budget.expiredat %}{{ budget.expiredat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "d 'de' LLLL 'de' y") }}&nbsp;({{ budget.expiredat|ago }}){% endif %}</dd>
+                                    <dd>{% if budget.expiredat %}{{ budget.expiredat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "dd 'de' LLLL 'de' y") }}&nbsp;({{ budget.expiredat|ago }}){% endif %}</dd>
                             </dl>
                         </fieldset>
                         {% endif %}

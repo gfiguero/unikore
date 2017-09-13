@@ -54,8 +54,8 @@
                                         <div class="btn-group" role="group"><button type="button" class="btn btn-xs btn-danger" data-toggle="modal" data-target="#modalDelete{{ item.id }}">{{ icon('trash fa-fw') }}</button></div>
                                     </td>
                                     <td>{% if item.id %}{{ item.id }}{% endif %}</td>
-                                    <td><span class="fa fa-calendar-o" data-toggle="tooltip" data-placement="left" title="{{ item.createdat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "dd LLLL Y HH:mm") }}"></span>&nbsp;{{ item.createdat|ago }}</td>
-                                    <td><span class="fa fa-calendar-o" data-toggle="tooltip" data-placement="left" title="{{ item.updatedat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "dd LLLL Y HH:mm") }}"></span>&nbsp;{{ item.updatedat|ago }}</td>
+                                    <td><span class="fa fa-calendar-o" data-toggle="tooltip" data-placement="left" title="{{ item.createdat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "dd LLLL y HH:mm") }}"></span>&nbsp;{{ item.createdat|ago }}</td>
+                                    <td><span class="fa fa-calendar-o" data-toggle="tooltip" data-placement="left" title="{{ item.updatedat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "dd LLLL y HH:mm") }}"></span>&nbsp;{{ item.updatedat|ago }}</td>
                                 </tr>
                             {% endfor %}
                             </tbody>
