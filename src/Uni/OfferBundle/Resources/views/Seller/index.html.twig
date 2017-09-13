@@ -57,7 +57,7 @@
                                     <td>{% if seller.name %}{{ seller.name }}{% endif %}</td>
                                     <td>{% if seller.email %}{{ seller.email }}{% endif %}</td>
                                     <td>{% if seller.phone %}{{ seller.phone }}{% endif %}</td>
-                                    <td><span class="fa fa-calendar-o" data-toggle="tooltip" data-placement="left" title="{{ seller.updatedat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "dd LLLL Y HH:mm") }}"></span>&nbsp;{{ seller.updatedat|ago }}</td>
+                                    <td><span class="fa fa-calendar-o" data-toggle="tooltip" data-placement="left" title="{{ seller.updatedat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "dd LLLL y HH:mm") }}"></span>&nbsp;{{ seller.updatedat|ago }}</td>
                                 </tr>
                             {% endfor %}
                             </tbody>

@@ -1,6 +1,4 @@
 {% extends 'UniOfferBundle:Base:layout.html.twig' %}
-{% use 'UniOfferBundle:Base:icons.html.twig' %}
-{% use 'UniOfferBundle:Base:flashbag.html.twig' %}
 
 {% trans_default_domain 'UniOfferBundle' %}
 
@@ -36,11 +34,11 @@
                     <div class="panel-body">
                         <dl class="dl-horizontal">
                             <dt>{{ 'issuer.form.id'|trans }}</dt>
-                                <dd>{% if issuer.id %}{{ issuer.id }}{% endif %}</dd>
+                                <dd>{% if issuer.id %}{{ issuer.id|raw }}{% endif %}</dd>
                             <dt>{{ 'issuer.form.name'|trans }}</dt>
-                                <dd>{% if issuer.name %}{{ issuer.name }}{% endif %}</dd>
+                                <dd>{% if issuer.name %}{{ issuer.name|raw }}{% endif %}</dd>
                             <dt>{{ 'issuer.form.rut'|trans }}</dt>
-                                <dd>{% if issuer.rut %}{{ issuer.rut }}{% endif %}</dd>
+                                <dd>{% if issuer.rut %}{{ issuer.rut|raw }}{% endif %}</dd>
                             <dt>{{ 'issuer.form.created_at'|trans }}</dt>
                                 <dd>{% if issuer.createdat %}{{ issuer.createdat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "d 'de' LLLL 'de' Y - HH:mm") }}&nbsp;({{ issuer.createdat|ago }}){% endif %}</dd>
                             <dt>{{ 'issuer.form.updated_at'|trans }}</dt>

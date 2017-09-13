@@ -61,7 +61,7 @@
                                     <td>{% if provider.contactname %}{{ provider.contactname }}{% endif %}</td>
                                     <td>{% if provider.email %}{{ provider.email }}{% endif %}</td>
                                     <td>{% if provider.phone %}{{ provider.phone }}{% endif %}</td>
-                                    <td><span class="fa fa-calendar-o" data-toggle="tooltip" data-placement="left" title="{{ provider.updatedat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "dd LLLL Y HH:mm") }}"></span>&nbsp;{{ provider.updatedat|ago }}</td>
+                                    <td><span class="fa fa-calendar-o" data-toggle="tooltip" data-placement="left" title="{{ provider.updatedat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "dd LLLL y HH:mm") }}"></span>&nbsp;{{ provider.updatedat|ago }}</td>
                                 </tr>
                             {% endfor %}
                             </tbody>

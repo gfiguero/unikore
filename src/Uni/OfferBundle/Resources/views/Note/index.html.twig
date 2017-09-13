@@ -1,6 +1,4 @@
 {% extends 'UniOfferBundle:Base:layout.html.twig' %}
-{% use 'UniOfferBundle:Base:icons.html.twig' %}
-{% use 'UniOfferBundle:Base:flashbag.html.twig' %}
 
 {% trans_default_domain 'UniOfferBundle' %}
 
@@ -57,7 +55,7 @@
                                     <td>{% if note.name %}{{ note.name|raw }}{% endif %}</td>
                                     <td>{% if note.title %}{{ note.title|raw }}{% endif %}</td>
                                     <td>{% if note.description %}{{ note.description|raw|truncate(60, true) }}{% endif %}</td>
-                                    <td><span class="fa fa-calendar-o" data-toggle="tooltip" data-placement="left" title="{{ note.updatedat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "dd LLLL Y HH:mm") }}"></span>&nbsp;{{ note.updatedat|ago }}</td>
+                                    <td><span class="fa fa-calendar-o" data-toggle="tooltip" data-placement="left" title="{{ note.updatedat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "dd LLLL y HH:mm") }}"></span>&nbsp;{{ note.updatedat|ago }}</td>
                                 </tr>
                             {% endfor %}
                             </tbody>

@@ -55,7 +55,7 @@
                                     <td>{% if order.name %}{{ order.name }}{% endif %}</td>
                                     <td>{% if order.number %}{{ order.number }}{% endif %}</td>
                                     <td>{% if order.budget %}{{ order.budget.displayname }}{% endif %}</td>
-                                    <td><span class="fa fa-calendar-o" data-toggle="tooltip" data-placement="left" title="{{ order.updatedat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "dd LLLL Y HH:mm") }}"></span>&nbsp;{{ order.updatedat|ago }}</td>
+                                    <td><span class="fa fa-calendar-o" data-toggle="tooltip" data-placement="left" title="{{ order.updatedat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "dd LLLL y HH:mm") }}"></span>&nbsp;{{ order.updatedat|ago }}</td>
                                 </tr>
                             {% endfor %}
                             </tbody>
