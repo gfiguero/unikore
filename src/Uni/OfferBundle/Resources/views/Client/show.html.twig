@@ -1,6 +1,4 @@
 {% extends 'UniOfferBundle:Base:layout.html.twig' %}
-{% use 'UniOfferBundle:Base:icons.html.twig' %}
-{% use 'UniOfferBundle:Base:flashbag.html.twig' %}
 
 {% trans_default_domain 'UniOfferBundle' %}
 
@@ -36,25 +34,25 @@
                     <div class="panel-body">
                         <dl class="dl-horizontal">
                             <dt>{{ 'client.form.name'|trans }}</dt>
-                                <dd>{% if client.name %}{{ client.name }}{% endif %}</dd>
+                                <dd>{% if client.name %}{{ client.name|raw }}{% endif %}</dd>
                             <dt>{{ 'client.form.rut'|trans }}</dt>
-                                <dd>{% if client.rut %}{{ client.rut }}{% endif %}</dd>
+                                <dd>{% if client.rut %}{{ client.rut|raw }}{% endif %}</dd>
                             <dt>{{ 'client.form.contactname'|trans }}</dt>
-                                <dd>{% if client.contactname %}{{ client.contactname }}{% endif %}</dd>
+                                <dd>{% if client.contactname %}{{ client.contactname|raw }}{% endif %}</dd>
                             <dt>{{ 'client.form.phone'|trans }}</dt>
-                                <dd>{% if client.phone %}{{ client.phone }}{% endif %}</dd>
+                                <dd>{% if client.phone %}{{ client.phone|raw }}{% endif %}</dd>
                             <dt>{{ 'client.form.email'|trans }}</dt>
-                                <dd>{% if client.email %}{{ client.email }}{% endif %}</dd>
+                                <dd>{% if client.email %}{{ client.email|raw }}{% endif %}</dd>
                             <dt>{{ 'client.form.address_street'|trans }}</dt>
-                                <dd>{% if client.addressstreet %}{{ client.addressstreet }}{% endif %}</dd>
+                                <dd>{% if client.addressstreet %}{{ client.addressstreet|raw }}{% endif %}</dd>
                             <dt>{{ 'client.form.address_number'|trans }}</dt>
-                                <dd>{% if client.addressnumber %}{{ client.addressnumber }}{% endif %}</dd>
+                                <dd>{% if client.addressnumber %}{{ client.addressnumber|raw }}{% endif %}</dd>
                             <dt>{{ 'client.form.commune'|trans }}</dt>
-                                <dd>{% if client.commune %}{{ client.commune }}{% endif %}</dd>
+                                <dd>{% if client.commune %}{{ client.commune|raw }}{% endif %}</dd>
                             <dt>{{ 'client.form.created_at'|trans }}</dt>
-                                <dd>{% if client.createdat %}{{ client.createdat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "d 'de' LLLL 'de' Y - HH:mm") }}&nbsp;({{ client.createdat|ago }}){% endif %}</dd>
+                                <dd>{% if client.createdat %}{{ client.createdat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "dd 'de' LLLL 'de' y - HH:mm") }}&nbsp;({{ client.createdat|ago }}){% endif %}</dd>
                             <dt>{{ 'client.form.updated_at'|trans }}</dt>
-                                <dd>{% if client.updatedat %}{{ client.updatedat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "d 'de' LLLL 'de' Y - HH:mm") }}&nbsp;({{ client.updatedat|ago }}){% endif %}</dd>                        </dl>
+                                <dd>{% if client.updatedat %}{{ client.updatedat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "dd 'de' LLLL 'de' y - HH:mm") }}&nbsp;({{ client.updatedat|ago }}){% endif %}</dd>                        </dl>
                     </div>
                 </div>
             </div>

@@ -40,9 +40,9 @@
                             <dt>{{ 'issuer.form.rut'|trans }}</dt>
                                 <dd>{% if issuer.rut %}{{ issuer.rut|raw }}{% endif %}</dd>
                             <dt>{{ 'issuer.form.created_at'|trans }}</dt>
-                                <dd>{% if issuer.createdat %}{{ issuer.createdat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "d 'de' LLLL 'de' Y - HH:mm") }}&nbsp;({{ issuer.createdat|ago }}){% endif %}</dd>
+                                <dd>{% if issuer.createdat %}{{ issuer.createdat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "dd 'de' LLLL 'de' y - HH:mm") }}&nbsp;({{ issuer.createdat|ago }}){% endif %}</dd>
                             <dt>{{ 'issuer.form.updated_at'|trans }}</dt>
-                                <dd>{% if issuer.updatedat %}{{ issuer.updatedat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "d 'de' LLLL 'de' Y - HH:mm") }}&nbsp;({{ issuer.updatedat|ago }}){% endif %}</dd>                        </dl>
+                                <dd>{% if issuer.updatedat %}{{ issuer.updatedat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "dd 'de' LLLL 'de' y - HH:mm") }}&nbsp;({{ issuer.updatedat|ago }}){% endif %}</dd>                        </dl>
                     </div>
                 </div>
             </div>

@@ -1,6 +1,4 @@
 {% extends 'UniOfferBundle:Base:layout.html.twig' %}
-{% use 'UniOfferBundle:Base:icons.html.twig' %}
-{% use 'UniOfferBundle:Base:flashbag.html.twig' %}
 
 {% trans_default_domain 'UniOfferBundle' %}
 
@@ -45,19 +43,19 @@
                                             <legend>{{ 'product.section.identification'|trans }}</legend>
                                             <dl class="dl-horizontal">
                                                 <dt>{{ 'product.form.id'|trans }}</dt>
-                                                    <dd>{% if product.id %}{{ product.id }}{% endif %}</dd>
+                                                    <dd>{% if product.id %}{{ product.id|raw }}{% endif %}</dd>
                                                 <dt>{{ 'product.form.name'|trans }}</dt>
-                                                    <dd>{% if product.name %}{{ product.name }}{% endif %}</dd>
+                                                    <dd>{% if product.name %}{{ product.name|raw }}{% endif %}</dd>
                                                 <dt>{{ 'product.form.description'|trans }}</dt>
                                                     <dd>{% if product.description %}{{ product.description|raw }}{% endif %}</dd>
                                                 <dt>{{ 'product.form.short'|trans }}</dt>
-                                                    <dd>{% if product.short %}{{ product.short }}{% endif %}</dd>
+                                                    <dd>{% if product.short %}{{ product.short|raw }}{% endif %}</dd>
                                                 <dt>{{ 'product.form.provider'|trans }}</dt>
-                                                    <dd>{% if product.provider %}{{ product.provider }}{% endif %}</dd>
+                                                    <dd>{% if product.provider %}{{ product.provider|raw }}{% endif %}</dd>
                                                 <dt>{{ 'product.form.created_at'|trans }}</dt>
-                                                    <dd>{% if product.createdat %}{{ product.createdat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "d 'de' LLLL 'de' Y - HH:mm") }}&nbsp;({{ product.createdat|ago }}){% endif %}</dd>
+                                                    <dd>{% if product.createdat %}{{ product.createdat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "dd 'de' LLLL 'de' y - HH:mm") }}&nbsp;({{ product.createdat|ago }}){% endif %}</dd>
                                                 <dt>{{ 'product.form.updated_at'|trans }}</dt>
-                                                    <dd>{% if product.updatedat %}{{ product.updatedat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "d 'de' LLLL 'de' Y - HH:mm") }}&nbsp;({{ product.updatedat|ago }}){% endif %}</dd>
+                                                    <dd>{% if product.updatedat %}{{ product.updatedat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "dd 'de' LLLL 'de' y - HH:mm") }}&nbsp;({{ product.updatedat|ago }}){% endif %}</dd>
                                             </dl>
                                         </fieldset>
                                     </div>
@@ -66,17 +64,17 @@
                                             <legend>{{ 'product.section.trading'|trans }}</legend>
                                             <dl class="dl-horizontal">
                                                 <dt>{{ 'product.form.cost'|trans }}</dt>
-                                                    <dd>{% if product.cost %}{{ icon('dollar fa-fw') }}&nbsp;{{ product.cost|number_format(0, ',', '.') }}{% endif %}</dd>
+                                                    <dd>{% if product.cost %}{{ icon('dollar fa-fw') }}&nbsp;{{ product.cost|raw|number_format(0, ',', '.') }}{% endif %}</dd>
                                                 <dt>{{ 'product.form.price'|trans }}</dt>
-                                                    <dd>{% if product.price %}{{ icon('dollar fa-fw') }}&nbsp;{{ product.price|number_format(0, ',', '.') }}{% endif %}</dd>
+                                                    <dd>{% if product.price %}{{ icon('dollar fa-fw') }}&nbsp;{{ product.price|raw|number_format(0, ',', '.') }}{% endif %}</dd>
                                                 <dt>{{ 'product.form.netprice'|trans }}</dt>
-                                                    <dd>{% if product.netprice %}{{ icon('dollar fa-fw') }}&nbsp;{{ product.netprice|number_format(0, ',', '.') }}{% endif %}</dd>
+                                                    <dd>{% if product.netprice %}{{ icon('dollar fa-fw') }}&nbsp;{{ product.netprice|raw|number_format(0, ',', '.') }}{% endif %}</dd>
                                                 <dt>{{ 'product.form.margin'|trans }}</dt>
-                                                    <dd>{% if product.margin %}{{ (100 * product.margin)|number_format(0, ',', '.') ~ '%' }}{% endif %}</dd>
+                                                    <dd>{% if product.margin %}{{ (100 * product.margin)|raw|number_format(0, ',', '.') ~ '%' }}{% endif %}</dd>
                                                 <dt>{{ 'product.form.cm_code'|trans }}</dt>
-                                                    <dd>{% if product.cmcode %}{{ product.cmcode }}{% endif %}</dd>
+                                                    <dd>{% if product.cmcode %}{{ product.cmcode|raw }}{% endif %}</dd>
                                                 <dt>{{ 'product.form.code'|trans }}</dt>
-                                                    <dd>{% if product.code %}{{ product.code }}{% endif %}</dd>
+                                                    <dd>{% if product.code %}{{ product.code|raw }}{% endif %}</dd>
                                             </dl>
                                         </fieldset>
                                     </div>
@@ -87,15 +85,15 @@
                                             <legend>{{ 'product.section.features'|trans }}</legend>
                                             <dl class="dl-horizontal">
                                                 <dt>{{ 'product.form.height'|trans }}</dt>
-                                                    <dd>{% if product.height %}{{ product.height }}{% endif %}</dd>
+                                                    <dd>{% if product.height %}{{ product.height|raw }}{% endif %}</dd>
                                                 <dt>{{ 'product.form.width'|trans }}</dt>
-                                                    <dd>{% if product.width %}{{ product.width }}{% endif %}</dd>
+                                                    <dd>{% if product.width %}{{ product.width|raw }}{% endif %}</dd>
                                                 <dt>{{ 'product.form.length'|trans }}</dt>
-                                                    <dd>{% if product.length %}{{ product.length }}{% endif %}</dd>
+                                                    <dd>{% if product.length %}{{ product.length|raw }}{% endif %}</dd>
                                                 <dt>{{ 'product.form.thickness'|trans }}</dt>
-                                                    <dd>{% if product.thickness %}{{ product.thickness }}{% endif %}</dd>
+                                                    <dd>{% if product.thickness %}{{ product.thickness|raw }}{% endif %}</dd>
                                                 <dt>{{ 'product.form.weight'|trans }}</dt>
-                                                    <dd>{% if product.weight %}{{ product.weight }}{% endif %}</dd>
+                                                    <dd>{% if product.weight %}{{ product.weight|raw }}{% endif %}</dd>
                                             </dl>
                                         </fieldset>
                                     </div>
@@ -104,7 +102,7 @@
                                             <legend>{{ 'product.section.branding'|trans }}</legend>
                                             <dl class="dl-horizontal">
                                                 <dt>{{ 'product.form.cost'|trans }}</dt>
-                                                    <dd>{% if product.cost %}{{ icon('dollar fa-fw') }}&nbsp;{{ product.cost|number_format(0, ',', '.') }}{% endif %}</dd>
+                                                    <dd>{% if product.cost %}{{ icon('dollar fa-fw') }}&nbsp;{{ product.cost|raw|number_format(0, ',', '.') }}{% endif %}</dd>
                                             </dl>
                                         </fieldset>
                                     </div>
@@ -115,7 +113,7 @@
                                             <legend>{{ 'product.section.consumer'|trans }}</legend>
                                             <dl class="dl-horizontal">
                                                 <dt>{{ 'product.form.cost'|trans }}</dt>
-                                                    <dd>{% if product.cost %}{{ icon('dollar fa-fw') }}&nbsp;{{ product.cost|number_format(0, ',', '.') }}{% endif %}</dd>
+                                                    <dd>{% if product.cost %}{{ icon('dollar fa-fw') }}&nbsp;{{ product.cost|raw|number_format(0, ',', '.') }}{% endif %}</dd>
                                             </dl>
                                         </fieldset>
                                     </div>
@@ -124,7 +122,7 @@
                                             <legend>{{ 'product.section.structure'|trans }}</legend>
                                             <dl class="dl-horizontal">
                                                 <dt>{{ 'product.form.cost'|trans }}</dt>
-                                                    <dd>{% if product.cost %}{{ icon('dollar fa-fw') }}&nbsp;{{ product.cost|number_format(0, ',', '.') }}{% endif %}</dd>
+                                                    <dd>{% if product.cost %}{{ icon('dollar fa-fw') }}&nbsp;{{ product.cost|raw|number_format(0, ',', '.') }}{% endif %}</dd>
                                             </dl>
                                         </fieldset>
                                     </div>

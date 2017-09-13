@@ -1,6 +1,4 @@
 {% extends 'UniOfferBundle:Base:layout.html.twig' %}
-{% use 'UniOfferBundle:Base:icons.html.twig' %}
-{% use 'UniOfferBundle:Base:flashbag.html.twig' %}
 
 {% trans_default_domain 'UniOfferBundle' %}
 
@@ -36,19 +34,19 @@
                     <div class="panel-body">
                         <dl class="dl-horizontal">
                             <dt>{{ 'seller.form.id'|trans }}</dt>
-                                <dd>{% if seller.id %}{{ seller.id }}{% endif %}</dd>
+                                <dd>{% if seller.id %}{{ seller.id|raw }}{% endif %}</dd>
                             <dt>{{ 'seller.form.name'|trans }}</dt>
-                                <dd>{% if seller.name %}{{ seller.name }}{% endif %}</dd>
+                                <dd>{% if seller.name %}{{ seller.name|raw }}{% endif %}</dd>
                             <dt>{{ 'seller.form.rut'|trans }}</dt>
-                                <dd>{% if seller.rut %}{{ seller.rut }}{% endif %}</dd>
+                                <dd>{% if seller.rut %}{{ seller.rut|raw }}{% endif %}</dd>
                             <dt>{{ 'seller.form.phone'|trans }}</dt>
-                                <dd>{% if seller.phone %}{{ seller.phone }}{% endif %}</dd>
+                                <dd>{% if seller.phone %}{{ seller.phone|raw }}{% endif %}</dd>
                             <dt>{{ 'seller.form.email'|trans }}</dt>
-                                <dd>{% if seller.email %}{{ seller.email }}{% endif %}</dd>
+                                <dd>{% if seller.email %}{{ seller.email|raw }}{% endif %}</dd>
                             <dt>{{ 'seller.form.created_at'|trans }}</dt>
-                                <dd>{% if seller.createdat %}{{ seller.createdat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "d 'de' LLLL 'de' Y - HH:mm") }}&nbsp;({{ seller.createdat|ago }}){% endif %}</dd>
+                                <dd>{% if seller.createdat %}{{ seller.createdat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "dd 'de' LLLL 'de' y - HH:mm") }}&nbsp;({{ seller.createdat|ago }}){% endif %}</dd>
                             <dt>{{ 'seller.form.updated_at'|trans }}</dt>
-                                <dd>{% if seller.updatedat %}{{ seller.updatedat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "d 'de' LLLL 'de' Y - HH:mm") }}&nbsp;({{ seller.updatedat|ago }}){% endif %}</dd>                        </dl>
+                                <dd>{% if seller.updatedat %}{{ seller.updatedat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "dd 'de' LLLL 'de' y - HH:mm") }}&nbsp;({{ seller.updatedat|ago }}){% endif %}</dd>                        </dl>
                     </div>
                 </div>
             </div>

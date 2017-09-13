@@ -1,6 +1,4 @@
 {% extends 'UniOfferBundle:Base:layout.html.twig' %}
-{% use 'UniOfferBundle:Base:icons.html.twig' %}
-{% use 'UniOfferBundle:Base:flashbag.html.twig' %}
 
 {% trans_default_domain 'UniOfferBundle' %}
 
@@ -56,11 +54,11 @@
                                         <div class="btn-group" role="group"><a type="button" class="btn btn-xs btn-primary" href="{{ path('offer_client_edit', { 'id': client.id }) }}">{{ icon('edit fa-fw') }}</a></div>
                                         <div class="btn-group" role="group"><button type="button" class="btn btn-xs btn-danger" data-toggle="modal" data-target="#modalDelete{{ client.id }}">{{ icon('trash fa-fw') }}</button></div>
                                     </td>
-                                    <td>{% if client.name %}{{ client.name }}{% endif %}</td>
-                                    <td>{% if client.rut %}{{ client.rut }}{% endif %}</td>
-                                    <td>{% if client.contactname %}{{ client.contactname }}{% endif %}</td>
-                                    <td>{% if client.email %}{{ client.email }}{% endif %}</td>
-                                    <td>{% if client.phone %}{{ client.phone }}{% endif %}</td>
+                                    <td>{% if client.name %}{{ client.name|raw }}{% endif %}</td>
+                                    <td>{% if client.rut %}{{ client.rut|raw }}{% endif %}</td>
+                                    <td>{% if client.contactname %}{{ client.contactname|raw }}{% endif %}</td>
+                                    <td>{% if client.email %}{{ client.email|raw }}{% endif %}</td>
+                                    <td>{% if client.phone %}{{ client.phone|raw }}{% endif %}</td>
                                     <td><span class="fa fa-calendar-o" data-toggle="tooltip" data-placement="left" title="{{ client.updatedat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "dd LLLL y HH:mm") }}"></span>&nbsp;{{ client.updatedat|ago }}</td>
                                 </tr>
                             {% endfor %}
