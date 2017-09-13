@@ -60,8 +60,8 @@
                                     <td>{% if budget.client %}{{ budget.client|raw }}{% endif %}</td>
                                     <td>{% if budget.seller %}{{ budget.seller|raw }}{% endif %}</td>
                                     <td>{% if budget.total %}{{ icon('dollar') }}&nbsp;{{ budget.total|number_format(0, ',', '.') }}{% endif %}</td>
-                                    <td><span class="fa fa-calendar-o" data-toggle="tooltip" data-placement="left" title="{{ budget.updatedat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "dd LLLL y HH:mm") }}"></span>&nbsp;{{ budget.updatedat|ago }}</td>
                                     <td><span class="fa fa-calendar-o" data-toggle="tooltip" data-placement="left" title="{{ budget.expiredat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "dd LLLL y HH:mm") }}"></span>&nbsp;{{ budget.expiredat|ago }}</td>
+                                    <td><span class="fa fa-calendar-o" data-toggle="tooltip" data-placement="left" title="{{ budget.updatedat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "dd LLLL y HH:mm") }}"></span>&nbsp;{{ budget.updatedat|ago }}</td>
                                 </tr>
                             {% endfor %}
                             </tbody>
