@@ -27,6 +27,22 @@ class InvoiceType extends AbstractType
         $account = $this->tokenStorage->getToken()->getUser()->getAccount();
         $invoice = $options['data'];
         $builder
+            ->add('order', null, array(
+                'label' => 'invoice.form.order',
+                'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
+                'translation_domain' => 'UniOfferBundle',
+                'required' => false,
+                'placeholder' => 'invoice.form.placeholder.order',
+                'query_builder' => function (EntityRepository $er) use ($account) {
+                    return $er->createQueryBuilder('o')
+                        ->where('o.account = :account')
+                        ->setParameters(array('account' => $account))
+                    ;
+                },
+                'choice_label' => function ($order) {
+                    return $order->getDisplayName();
+                }
+            ))
             ->add('name', null, array(
                 'label' => 'invoice.form.name',
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
@@ -50,6 +66,11 @@ class InvoiceType extends AbstractType
             ))
             ->add('note', null, array(
                 'label' => 'invoice.form.note',
+                'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
+                'translation_domain' => 'UniOfferBundle',
+            ))
+            ->add('issued_at', DateType::class, array(
+                'label' => 'invoice.form.issued_at',
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
                 'translation_domain' => 'UniOfferBundle',
             ))

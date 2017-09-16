@@ -21,7 +21,7 @@
                     <a type="button" class="btn btn-default" href="{{ path('offer_order_index') }}">{{ icon('list fa-fw') }}&nbsp;{{ 'order.index.link'|trans }}</a>
                     <a type="button" class="btn btn-primary" href="{{ path('offer_order_edit', { 'id': order.id }) }}">{{ icon('edit fa-fw') }}&nbsp;{{ 'order.edit.link'|trans }}</a>
                     <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalDelete">{{ icon('trash-o fa-fw') }}&nbsp;{{ 'order.delete.link'|trans }}</button>
-                    {% if not invoice %}<button type="button" class="btn btn-success" data-toggle="modal" data-target="#modalInvoice">{{ icon('credit-card fa-fw') }}&nbsp;{{ 'invoice.new.link'|trans }}</button>{% endif %}
+                    {% if invoices is empty %}<button type="button" class="btn btn-success" data-toggle="modal" data-target="#modalInvoice">{{ icon('credit-card fa-fw') }}&nbsp;{{ 'invoice.new.link'|trans }}</button>{% endif %}
                 </div>
             </div>
         </div>
@@ -58,7 +58,7 @@
                 </div>
             </div>
 
-            {% if budget or client or seller or invoice %}
+            {% if budget or client or seller %}
             <div class="col-lg-6">
                 <div class="panel panel-default">
                     <div class="panel-heading">
@@ -78,10 +78,6 @@
                             <dt>{{ 'order.form.seller'|trans }}</dt>
                                 <dd><a href="{{ path('offer_seller_show', { id: seller.id }) }}">{{ seller|raw }}</a></dd>
                             {% endif %}
-                            {% if invoice %}
-                            <dt>{{ 'order.form.invoice'|trans }}</dt>
-                                <dd><a href="{{ path('offer_invoice_show', { id: invoice.id }) }}">{{ invoice|raw }}</a></dd>
-                            {% endif %}
                         </dl>
                     </div>
                 </div>
@@ -91,8 +87,52 @@
         </div>
         <!-- /#page-show -->
 
-        <div class="row" id="page-client-seller">
-
+        <div class="row" id="page-invoices">
+            <div class="col-lg-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">{{ 'order.show.invoices'|trans }}</h2>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-middle table-striped">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        <div class="btn-group" role="group"><a type="button" class="btn btn-xs btn-default disabled">{{ icon('search fa-fw') }}</a></div>
+                                        <div class="btn-group" role="group"><a type="button" class="btn btn-xs btn-default disabled">{{ icon('edit fa-fw') }}</a></div>
+                                    </th>
+                                    <th>{{'invoice.form.name'|trans }}</th>
+                                    <th>{{'invoice.form.number'|trans }}</th>
+                                    <th>{{'invoice.form.amount'|trans }}</th>
+                                    <th>{{'invoice.form.file'|trans }}</th>
+                                    <th>{{'invoice.form.paymentstatus'|trans }}</th>
+                                    <th>{{'invoice.form.issued_at'|trans }}</th>
+                                    <th>{{'invoice.form.pay_in'|trans }}</th>
+                                    <th>{{'invoice.form.updated_at'|trans }}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            {% for key, invoice in invoices %}
+                                <tr>
+                                    <td>
+                                        <div class="btn-group" role="group"><a type="button" class="btn btn-xs btn-default" href="{{ path('offer_invoice_show', { 'id': invoice.id }) }}">{{ icon('search fa-fw') }}</a></div>
+                                        <div class="btn-group" role="group"><a type="button" class="btn btn-xs btn-primary" href="{{ path('offer_invoice_edit', { 'id': invoice.id }) }}">{{ icon('edit fa-fw') }}</a></div>
+                                    </td>
+                                    <td>{% if invoice.name %}{{ invoice.name|raw }}{% endif %}</td>
+                                    <td>{% if invoice.number %}{{ invoice.number|raw }}{% endif %}</td>
+                                    <td>{% if invoice.amount %}{{ icon('dollar') }}&nbsp;{{ invoice.amount|number_format(0, ',', '.') }}{% endif %}</td>
+                                    <td>{% if invoice.filename %}{{ icon('check fa-fw') }}{% endif %}</td>
+                                    <td>{% if invoice.paymentstatus %}{{ invoice.paymentstatus.name|raw }}{% endif %}</td>
+                                    <td><span class="fa fa-calendar-o" data-toggle="tooltip" data-placement="left" title="{{ invoice.issuedat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "dd LLLL y") }}"></span>&nbsp;{{ invoice.issuedat|ago }}</td>
+                                    <td><span class="fa fa-calendar-o" data-toggle="tooltip" data-placement="left" title="{{ invoice.payin|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "dd LLLL y") }}"></span>&nbsp;{{ invoice.payin|ago }}</td>
+                                    <td><span class="fa fa-calendar-o" data-toggle="tooltip" data-placement="left" title="{{ invoice.updatedat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "dd LLLL y HH:mm") }}"></span>&nbsp;{{ invoice.updatedat|ago }}</td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
         </div>
         <!-- /#page-client-seller -->
 
@@ -156,7 +196,7 @@
                 </div>
             </div>
 
-            {% if not invoice %}
+            {% if invoices is empty %}
             <div class="modal fade" id="modalInvoice" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                 <div class="modal-dialog modal-md" role="document">
                     <div class="modal-content">
@@ -165,28 +205,12 @@
                             <h4 class="modal-title" id="myModalLabel">{{ 'invoice.new.title'|trans }}</h4>
                         </div>
                         <div class="modal-body">
-                            <fieldset>
-                                <legend><em>{{ 'order.show.data'|trans }}</em></legend>
-                                <dl class="dl-horizontal">
-                                    <dt>{{ 'order.form.name'|trans }}</dt>
-                                        <dd>{% if order.name %}{{ order.name|raw }}{% endif %}</dd>
-                                    <dt>{{ 'order.form.number'|trans }}</dt>
-                                        <dd>{% if order.number %}{{ order.number|raw }}{% endif %}</dd>
-                                    <dt>{{ 'order.form.amount'|trans }}</dt>
-                                        <dd>{% if order.amount %}{{ icon('dollar') }}&nbsp;{{ order.amount|raw|number_format(0, ',', '.') }}{% endif %}</dd>
-                                </dl>
-                            </fieldset>
-                        </div>
-                        <div class="modal-body">
-                            <fieldset>
-                                <legend><em>{{ 'invoice.show.data'|trans }}</em></legend>
-                                {{ form_start(invoiceForm) }}
-                                    {{ form_widget(invoiceForm) }}
-                                    <div class="form-group">
-                                        <button type="submit" class="btn btn-primary">{{ icon('save fa-fw') }}&nbsp;{{ 'invoice.new.submit'|trans }}</button>
-                                    </div>
-                                {{ form_end(invoiceForm) }}
-                            </fieldset>
+                            {{ form_start(invoiceForm) }}
+                                {{ form_widget(invoiceForm) }}
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-primary">{{ icon('save fa-fw') }}&nbsp;{{ 'invoice.new.submit'|trans }}</button>
+                                </div>
+                            {{ form_end(invoiceForm) }}
                         </div>
                     </div>
                 </div>

@@ -617,4 +617,33 @@ class Invoice
         return $this->file;
     }
 
+    /**
+     * @var \DateTime
+     */
+    private $issued_at;
+
+
+    /**
+     * Set issuedAt
+     *
+     * @param \DateTime $issuedAt
+     *
+     * @return Invoice
+     */
+    public function setIssuedAt($issuedAt)
+    {
+        $this->issued_at = $issuedAt;
+
+        return $this;
+    }
+
+    /**
+     * Get issuedAt
+     *
+     * @return \DateTime
+     */
+    public function getIssuedAt()
+    {
+        return $this->issued_at;
+    }
 }

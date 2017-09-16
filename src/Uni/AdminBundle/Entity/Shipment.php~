@@ -2,8 +2,13 @@
 
 namespace Uni\AdminBundle\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+
 /**
  * Shipment
+ * @Vich\Uploadable
  */
 class Shipment
 {
@@ -31,6 +36,12 @@ class Shipment
      * @var string
      */
     private $filename;
+
+    /**
+     * @Vich\UploadableField(mapping="shipment_file", fileNameProperty="filename")
+     * @var File
+     */
+    private $file;
 
     /**
      * @var \DateTime
@@ -157,6 +168,30 @@ class Shipment
     public function getFilename()
     {
         return $this->filename;
+    }
+
+    /**
+     * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile $file
+     *
+     * @return Shipment
+     */
+    public function setFile(File $file = null)
+    {
+        $this->file = $file;
+
+        if ($file) {
+            $this->updated_at = new \DateTime();
+        }
+        
+        return $this;
+    }
+
+    /**
+     * @return File|null
+     */
+    public function getFile()
+    {
+        return $this->file;
     }
 
     /**
@@ -312,4 +347,5 @@ class Shipment
     {
         return $this->account;
     }
+
 }

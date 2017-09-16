@@ -135,7 +135,7 @@ class OrderController extends Controller
         $account = $user->getAccount();
         if ($account != $order->getAccount()) return $this->redirect($this->generateUrl('offer_order_index'));
 
-        $invoice = $order->getInvoice();
+        $invoices = $order->getInvoices();
         $budget = $order->getBudget();
         $client = ($budget ? $budget->getClient() : null);
         $seller = ($budget ? $budget->getSeller() : null);
@@ -149,7 +149,7 @@ class OrderController extends Controller
 
         return $this->render('UniOfferBundle:Order:show.html.twig', array(
             'order' => $order,
-            'invoice' => $invoice,
+            'invoices' => $invoices,
             'budget' => $budget,
             'items' => $items,
             'client' => $client,

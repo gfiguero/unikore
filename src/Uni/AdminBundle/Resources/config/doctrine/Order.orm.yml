@@ -8,8 +8,8 @@ Uni\AdminBundle\Entity\Order:
             id: true
             generator:
                 strategy: AUTO
-    oneToOne:
-        invoice:
+    oneToMany:
+        invoices:
             targetEntity: Uni\AdminBundle\Entity\Invoice
             mappedBy: order
     manyToOne:

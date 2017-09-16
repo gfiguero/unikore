@@ -731,4 +731,33 @@ class Budget
     {
         return $this->orders;
     }
+    /**
+     * @var integer
+     */
+    private $number;
+
+
+    /**
+     * Set number
+     *
+     * @param integer $number
+     *
+     * @return Budget
+     */
+    public function setNumber($number)
+    {
+        $this->number = $number;
+
+        return $this;
+    }
+
+    /**
+     * Get number
+     *
+     * @return integer
+     */
+    public function getNumber()
+    {
+        return $this->number;
+    }
 }

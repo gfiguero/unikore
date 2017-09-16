@@ -268,35 +268,7 @@ class Order
     {
         return $this->account;
     }
-    /**
-     * @var \Uni\AdminBundle\Entity\Invoice
-     */
-    private $invoice;
 
-
-    /**
-     * Set invoice
-     *
-     * @param \Uni\AdminBundle\Entity\Invoice $invoice
-     *
-     * @return Order
-     */
-    public function setInvoice(\Uni\AdminBundle\Entity\Invoice $invoice = null)
-    {
-        $this->invoice = $invoice;
-
-        return $this;
-    }
-
-    /**
-     * Get invoice
-     *
-     * @return \Uni\AdminBundle\Entity\Invoice
-     */
-    public function getInvoice()
-    {
-        return $this->invoice;
-    }
     /**
      * @var string
      */
@@ -415,4 +387,50 @@ class Order
         return $this->file;
     }
 
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $invoices;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->invoices = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add invoice
+     *
+     * @param \Uni\AdminBundle\Entity\Invoice $invoice
+     *
+     * @return Order
+     */
+    public function addInvoice(\Uni\AdminBundle\Entity\Invoice $invoice)
+    {
+        $this->invoices[] = $invoice;
+
+        return $this;
+    }
+
+    /**
+     * Remove invoice
+     *
+     * @param \Uni\AdminBundle\Entity\Invoice $invoice
+     */
+    public function removeInvoice(\Uni\AdminBundle\Entity\Invoice $invoice)
+    {
+        $this->invoices->removeElement($invoice);
+    }
+
+    /**
+     * Get invoices
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getInvoices()
+    {
+        return $this->invoices;
+    }
 }

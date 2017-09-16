@@ -2,8 +2,13 @@
 
 namespace Uni\AdminBundle\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+
 /**
  * Invoice
+ * @Vich\Uploadable
  */
 class Invoice
 {
@@ -552,4 +557,64 @@ class Invoice
     {
         return $this->paymentstatus;
     }
+
+    /**
+     * @var string
+     */
+    private $filename;
+
+    /**
+     * @Vich\UploadableField(mapping="invoice_file", fileNameProperty="filename")
+     * @var File
+     */
+    private $file;
+
+    /**
+     * Set filename
+     *
+     * @param string $filename
+     *
+     * @return Invoice
+     */
+    public function setFilename($filename)
+    {
+        $this->filename = $filename;
+
+        return $this;
+    }
+
+    /**
+     * Get filename
+     *
+     * @return string
+     */
+    public function getFilename()
+    {
+        return $this->filename;
+    }
+
+    /**
+     * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile $file
+     *
+     * @return Invoice
+     */
+    public function setFile(File $file = null)
+    {
+        $this->file = $file;
+
+        if ($file) {
+            $this->updated_at = new \DateTime();
+        }
+        
+        return $this;
+    }
+
+    /**
+     * @return File|null
+     */
+    public function getFile()
+    {
+        return $this->file;
+    }
+
 }

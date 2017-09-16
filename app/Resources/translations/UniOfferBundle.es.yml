@@ -462,6 +462,7 @@ order:
         link: Mostrar datos
         basic: Información básica
         attachments: Datos anexos
+        invoices: Facturas asociadas
         data: Datos de orden de compra
         total: Montos
     edit:
@@ -517,9 +518,11 @@ invoice:
     edit:
         title: Facturas
         link: Editar datos
+        basic: Información básica
         attachments: Datos anexos
         form: Formulario de edición de factura
         submit: Guardar cambios
+        cancel: Cancelar edición
         flash: Los cambios en la factura fueron registrados satisfactoriamente.
     delete:
         link: Borrar factura
@@ -543,6 +546,7 @@ invoice:
         issuer: Emisor
         client: Cliente
         pay_in: Fecha de pago
+        issued_at: Fecha de emisión
         paymentstatus: Estado de pago
         placeholder:
             order: Sin orden de compra

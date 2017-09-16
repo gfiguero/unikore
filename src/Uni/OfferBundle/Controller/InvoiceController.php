@@ -58,6 +58,7 @@ class InvoiceController extends Controller
         $user = $this->getUser();
         $account = $user->getAccount();
         $invoice = new Invoice();
+        $invoice->setIssuedAt(new \DateTime('now'));
         $invoice->setPayIn(new \DateTime('+ 30 days'));
         $newForm = $this->createNewForm($invoice);
         $newForm->handleRequest($request);

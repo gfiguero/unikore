@@ -8,10 +8,6 @@ Uni\AdminBundle\Entity\Invoice:
             id: true
             generator:
                 strategy: AUTO
-    oneToOne:
-        order:
-            targetEntity: Uni\AdminBundle\Entity\Order
-            inversedBy: invoice
     manyToOne:
         user:
             targetEntity: Uni\AdminBundle\Entity\User
@@ -19,6 +15,9 @@ Uni\AdminBundle\Entity\Invoice:
         account:
             targetEntity: Uni\AdminBundle\Entity\Account
             inversedBy: invoices
+        order:
+            targetEntity: Uni\AdminBundle\Entity\Order
+            inversedBy: invoice
         paymentstatus:
             targetEntity: Uni\AdminBundle\Entity\PaymentStatus            
     oneToMany:
@@ -49,6 +48,8 @@ Uni\AdminBundle\Entity\Invoice:
             type: text
             nullable: true
         pay_in:
+            type: datetime
+        issued_at:
             type: datetime
         created_at:
             type: datetime
