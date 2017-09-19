@@ -25,6 +25,8 @@ sidemenu:
         root: Envíos
     order:
         root: Órdenes
+    invoiceaction:
+        root: Acciones
 
 dashboard:
     index:
@@ -481,7 +483,7 @@ order:
         id: ID
         created_at: Registro
         updated_at: Actualización
-        name: Nombre
+        name: Detalle
         number: Número
         budget: Presupuesto
         seller: Vendedor
@@ -534,7 +536,7 @@ invoice:
         id: ID
         created_at: Registro
         updated_at: Actualización
-        name: Nombre
+        name: Detalle
         number: Número
         order: Orden de compra
         budget: Presupuesto
@@ -552,13 +554,21 @@ invoice:
             order: Sin orden de compra
 
 invoiceaction:
+    index:
+        title: Acciones
+        list: Lista de acciones
+        link: Lista de acciones
     new:
-        title: Nueva acción de factura
+        title: Nueva acción
         link: Nueva acción
         submit: Registrar acción
         flash: Nueva acción de factura registrada satisfactoriamente.
+    set:
+        new: El usuario %user% ha registrado la factura %invoice%
+        edit: El usuario %user% ha realizado cambios en la factura %invoice%
     form:
         user: Usuario
+        invoice: Factura
         description: Descripción
         created_at: Registro
 
@@ -593,9 +603,10 @@ shipment:
         id: ID
         user: Usuario
         invoice: Factura
+        invoicecode: Número de factura
         description: Descripción
         amount: Monto
         file: Archivo
-        code: Código
+        code: Número de envío
         created_at: Registro
         updated_at: Actualización

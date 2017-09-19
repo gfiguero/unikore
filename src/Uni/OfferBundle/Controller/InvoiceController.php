@@ -71,6 +71,7 @@ class InvoiceController extends Controller
                 $em->persist($invoice);
                 $em->flush();
                 $request->getSession()->getFlashBag()->add( 'success', 'invoice.new.flash' );
+                $this->setAction($invoice, $this->get('translator')->trans('invoiceaction.set.new', array('%user%' => $user, '%invoice%' => $invoice), 'UniOfferBundle'));
                 return $this->redirect($this->generateUrl('offer_invoice_index'));
             }
         }
@@ -78,6 +79,20 @@ class InvoiceController extends Controller
         return $this->render('UniOfferBundle:Invoice:new.html.twig', array(
             'newForm' => $newForm->createView(),
         ));
+    }
+
+    private function setAction($invoice, $description)
+    {
+        $user = $this->getUser();
+        $account = $user->getAccount();
+        $invoiceAction = new InvoiceAction();
+        $invoiceAction->setInvoice($invoice);
+        $invoiceAction->setUser($user);
+        $invoiceAction->setAccount($account);
+        $invoiceAction->setDescription($description);
+        $em = $this->getDoctrine()->getManager();
+        $em->persist($invoiceAction);
+        $em->flush();
     }
 
     /**
@@ -206,6 +221,7 @@ class InvoiceController extends Controller
                 $em->persist($invoice);
                 $em->flush();
                 $request->getSession()->getFlashBag()->add( 'success', 'invoice.edit.flash' );
+                $this->setAction($invoice, $this->get('translator')->trans('invoiceaction.set.edit', array('%user%' => $user, '%invoice%' => $invoice), 'UniOfferBundle'));
                 return $this->redirect($this->generateUrl('offer_invoice_show', array('id' => $invoice->getId())));
             }
         }

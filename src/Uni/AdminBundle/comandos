@@ -5,26 +5,29 @@ php app/console doctrine:generate:entities UniAdminBundle:PaymentStatus --path=s
 php app/console doctrine:generate:entities UniAdminBundle:Socialnetwork --path=src
 
 php app/console doctrine:generate:entities UniAdminBundle:Client --path=src
-php app/console doctrine:generate:entities UniAdminBundle:Item --path=src
-php app/console doctrine:generate:entities UniAdminBundle:CatalogItem --path=src
 php app/console doctrine:generate:entities UniAdminBundle:Product --path=src
-php app/console doctrine:generate:entities UniAdminBundle:ProductPackage --path=src
 php app/console doctrine:generate:entities UniAdminBundle:Provider --path=src
-php app/console doctrine:generate:entities UniAdminBundle:Seller --path=src
-php app/console doctrine:generate:entities UniAdminBundle:Note --path=src
 php app/console doctrine:generate:entities UniAdminBundle:Issuer --path=src
-php app/console doctrine:generate:entities UniAdminBundle:Group --path=src
-php app/console doctrine:generate:entities UniAdminBundle:User --path=src
-php app/console doctrine:generate:entities UniAdminBundle:Account --path=src
-php app/console doctrine:generate:entities UniAdminBundle:AccountPayment --path=src
+php app/console doctrine:generate:entities UniAdminBundle:Seller --path=src
+
 php app/console doctrine:generate:entities UniAdminBundle:Page --path=src
 php app/console doctrine:generate:entities UniAdminBundle:Socialmedia --path=src
 php app/console doctrine:generate:entities UniAdminBundle:Catalog --path=src
 php app/console doctrine:generate:entities UniAdminBundle:Feature --path=src
 php app/console doctrine:generate:entities UniAdminBundle:Photography --path=src
+
 php app/console doctrine:generate:entities UniAdminBundle:Category --path=src
 php app/console doctrine:generate:entities UniAdminBundle:Subcategory --path=src
+php app/console doctrine:generate:entities UniAdminBundle:CatalogItem --path=src
 php app/console doctrine:generate:entities UniAdminBundle:InvoiceAction --path=src
+php app/console doctrine:generate:entities UniAdminBundle:Item --path=src
+php app/console doctrine:generate:entities UniAdminBundle:ProductPackage --path=src
+php app/console doctrine:generate:entities UniAdminBundle:Note --path=src
+php app/console doctrine:generate:entities UniAdminBundle:AccountPayment --path=src
+
+php app/console doctrine:generate:entities UniAdminBundle:Group --path=src
+php app/console doctrine:generate:entities UniAdminBundle:User --path=src
+php app/console doctrine:generate:entities UniAdminBundle:Account --path=src
 
 php app/console doctrine:generate:entities UniAdminBundle:Shipment --path=src
 php app/console doctrine:generate:entities UniAdminBundle:Invoice --path=src

@@ -18,6 +18,8 @@
             <div class="col-lg-12">
                 <div class="btn-toolbar">
                     <a type="button" class="btn btn-success" href="{{ path('offer_invoice_new') }}">{{ icon('plus fa-fw') }}&nbsp;{{ 'invoice.new.link'|trans }}</a>
+                    <a type="button" class="btn btn-default" href="{{ path('offer_shipment_index') }}">{{ icon('send fa-fw') }}&nbsp;{{ 'shipment.index.link'|trans }}</a>
+                    <a type="button" class="btn btn-default" href="{{ path('offer_invoiceaction_index') }}">{{ icon('play fa-fw') }}&nbsp;{{ 'invoiceaction.index.link'|trans }}</a>
                 </div>
             </div>
         </div>
@@ -38,8 +40,8 @@
                                         <div class="btn-group" role="group"><a type="button" class="btn btn-xs btn-default disabled">{{ icon('edit fa-fw') }}</a></div>
                                         <div class="btn-group" role="group"><a type="button" class="btn btn-xs btn-default disabled">{{ icon('trash fa-fw') }}</a></div>
                                     </th>
-                                    <th>{{ knp_pagination_sortable(invoices, 'invoice.form.name'|trans, 'name') }}{% if sort == 'name' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
                                     <th>{{ knp_pagination_sortable(invoices, 'invoice.form.number'|trans, 'number') }}{% if sort == 'number' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
+                                    <th>{{ knp_pagination_sortable(invoices, 'invoice.form.name'|trans, 'name') }}{% if sort == 'name' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
                                     <th>{{ knp_pagination_sortable(invoices, 'invoice.form.amount'|trans, 'amount') }}{% if sort == 'amount' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
                                     <th>{{ knp_pagination_sortable(invoices, 'invoice.form.file'|trans, 'file') }}{% if sort == 'file' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
                                     <th>{{ knp_pagination_sortable(invoices, 'invoice.form.paymentstatus'|trans, 'paymentstatus') }}{% if sort == 'paymentstatus' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
@@ -56,8 +58,8 @@
                                         <div class="btn-group" role="group"><a type="button" class="btn btn-xs btn-primary" href="{{ path('offer_invoice_edit', { 'id': invoice.id }) }}">{{ icon('edit fa-fw') }}</a></div>
                                         <div class="btn-group" role="group"><button type="button" class="btn btn-xs btn-danger" data-toggle="modal" data-target="#modalDelete{{ invoice.id }}">{{ icon('trash fa-fw') }}</button></div>
                                     </td>
-                                    <td>{% if invoice.name %}{{ invoice.name|raw }}{% endif %}</td>
                                     <td>{% if invoice.number %}{{ invoice.number|raw }}{% endif %}</td>
+                                    <td>{% if invoice.name %}{{ invoice.name|raw }}{% endif %}</td>
                                     <td>{% if invoice.amount %}{{ icon('dollar') }}&nbsp;{{ invoice.amount|number_format(0, ',', '.') }}{% endif %}</td>
                                     <td>{% if invoice.filename %}{{ icon('check fa-fw') }}{% endif %}</td>
                                     <td>{% if invoice.paymentstatus %}{{ invoice.paymentstatus.name|raw }}{% endif %}</td>

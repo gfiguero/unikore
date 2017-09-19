@@ -15,6 +15,9 @@ Uni\AdminBundle\Entity\InvoiceAction:
         user:
             targetEntity: Uni\AdminBundle\Entity\User
             inversedBy: invoiceactions
+        account:
+            targetEntity: Uni\AdminBundle\Entity\Account
+            inversedBy: invoiceactions
     fields:
         description:
             type: text

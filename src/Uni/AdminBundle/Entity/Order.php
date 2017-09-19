@@ -59,7 +59,7 @@ class Order
 
     public function __toString()
     {
-        return (string) $this->name;
+        return (string) $this->getNumber();
     }
 
     public function getDisplayName()

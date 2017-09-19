@@ -42,13 +42,13 @@ class OrderType extends AbstractType
                     return $budget->getDisplayName();
                 }
             ))
-            ->add('name', null, array(
-                'label' => 'order.form.name',
+            ->add('number', null, array(
+                'label' => 'order.form.number',
                 'attr'  => array( 'label_col' => 2, 'widget_col' => 10 ),
                 'translation_domain' => 'UniOfferBundle',
             ))
-            ->add('number', null, array(
-                'label' => 'order.form.number',
+            ->add('name', null, array(
+                'label' => 'order.form.name',
                 'attr'  => array( 'label_col' => 2, 'widget_col' => 10 ),
                 'translation_domain' => 'UniOfferBundle',
             ))

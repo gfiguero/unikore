@@ -38,8 +38,8 @@
                                         <div class="btn-group" role="group"><a type="button" class="btn btn-xs btn-default disabled">{{ icon('edit fa-fw') }}</a></div>
                                         <div class="btn-group" role="group"><a type="button" class="btn btn-xs btn-default disabled">{{ icon('trash fa-fw') }}</a></div>
                                     </th>
-                                    <th>{{ knp_pagination_sortable(orders, 'order.form.name'|trans, 'name') }}{% if sort == 'name' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
                                     <th>{{ knp_pagination_sortable(orders, 'order.form.number'|trans, 'number') }}{% if sort == 'number' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
+                                    <th>{{ knp_pagination_sortable(orders, 'order.form.name'|trans, 'name') }}{% if sort == 'name' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
                                     <th>{{ knp_pagination_sortable(orders, 'order.form.amount'|trans, 'amount') }}{% if sort == 'amount' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
                                     <th>{{ knp_pagination_sortable(orders, 'order.form.file'|trans, 'file') }}{% if sort == 'file' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
                                     <th>{{ knp_pagination_sortable(orders, 'order.form.budget'|trans, 'budget') }}{% if sort == 'budget' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
@@ -55,8 +55,8 @@
                                         <div class="btn-group" role="group"><a type="button" class="btn btn-xs btn-primary" href="{{ path('offer_order_edit', { 'id': order.id }) }}">{{ icon('edit fa-fw') }}</a></div>
                                         <div class="btn-group" role="group"><button type="button" class="btn btn-xs btn-danger" data-toggle="modal" data-target="#modalDelete{{ order.id }}">{{ icon('trash fa-fw') }}</button></div>
                                     </td>
-                                    <td>{% if order.name %}{{ order.name|raw }}{% endif %}</td>
                                     <td>{% if order.number %}{{ order.number|raw }}{% endif %}</td>
+                                    <td>{% if order.name %}{{ order.name|raw }}{% endif %}</td>
                                     <td>{% if order.amount %}{{ icon('dollar') }}&nbsp;{{ order.amount|number_format(0, ',', '.') }}{% endif %}</td>
                                     <td>{% if order.filename %}{{ icon('check fa-fw') }}{% endif %}</td>
                                     <td>{% if order.budget %}<a href="{{ path('offer_budget_show', { 'id': order.budget.id }) }}">{{ order.budget.displayname|raw }}</a>{% endif %}</td>

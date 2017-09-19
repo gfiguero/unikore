@@ -225,4 +225,33 @@ class InvoiceAction
     {
         return $this->description;
     }
+    /**
+     * @var \Uni\AdminBundle\Entity\Account
+     */
+    private $account;
+
+
+    /**
+     * Set account
+     *
+     * @param \Uni\AdminBundle\Entity\Account $account
+     *
+     * @return InvoiceAction
+     */
+    public function setAccount(\Uni\AdminBundle\Entity\Account $account = null)
+    {
+        $this->account = $account;
+
+        return $this;
+    }
+
+    /**
+     * Get account
+     *
+     * @return \Uni\AdminBundle\Entity\Account
+     */
+    public function getAccount()
+    {
+        return $this->account;
+    }
 }

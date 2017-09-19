@@ -1,3 +1,8 @@
+offer_invoiceaction_index:
+    path:     /
+    defaults: { _controller: "UniOfferBundle:InvoiceAction:index" }
+    methods:  [GET, POST]
+
 offer_invoiceaction_new:
     path:     /{id}/new
     defaults: { _controller: "UniOfferBundle:InvoiceAction:new" }

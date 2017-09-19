@@ -17,7 +17,7 @@ Uni\AdminBundle\Entity\Invoice:
             inversedBy: invoices
         order:
             targetEntity: Uni\AdminBundle\Entity\Order
-            inversedBy: invoice
+            inversedBy: invoices
         paymentstatus:
             targetEntity: Uni\AdminBundle\Entity\PaymentStatus            
     oneToMany:

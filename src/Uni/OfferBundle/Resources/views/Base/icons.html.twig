@@ -13,5 +13,6 @@
     {% elseif '_order_' in app.request.attributes.get( '_route' ) %}{{ icon('bullhorn fa-fw') }}
     {% elseif '_invoice_' in app.request.attributes.get( '_route' ) %}{{ icon('credit-card fa-fw') }}
     {% elseif '_shipment_' in app.request.attributes.get( '_route' ) %}{{ icon('send fa-fw') }}
+    {% elseif '_invoiceaction_' in app.request.attributes.get( '_route' ) %}{{ icon('play fa-fw') }}
     {% endif %}
 {% endblock %}

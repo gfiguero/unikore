@@ -63,6 +63,9 @@ Uni\AdminBundle\Entity\Account:
         invoices:
             targetEntity: Uni\AdminBundle\Entity\Invoice
             mappedBy: account
+        invoiceactions:
+            targetEntity: Uni\AdminBundle\Entity\InvoiceAction
+            mappedBy: account
         shipments:
             targetEntity: Uni\AdminBundle\Entity\Shipment
             mappedBy: account

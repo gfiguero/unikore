@@ -1101,4 +1101,43 @@ class Account
     {
         return $this->orders;
     }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $invoiceactions;
+
+
+    /**
+     * Add invoiceaction
+     *
+     * @param \Uni\AdminBundle\Entity\InvoiceAction $invoiceaction
+     *
+     * @return Account
+     */
+    public function addInvoiceaction(\Uni\AdminBundle\Entity\InvoiceAction $invoiceaction)
+    {
+        $this->invoiceactions[] = $invoiceaction;
+
+        return $this;
+    }
+
+    /**
+     * Remove invoiceaction
+     *
+     * @param \Uni\AdminBundle\Entity\InvoiceAction $invoiceaction
+     */
+    public function removeInvoiceaction(\Uni\AdminBundle\Entity\InvoiceAction $invoiceaction)
+    {
+        $this->invoiceactions->removeElement($invoiceaction);
+    }
+
+    /**
+     * Get invoiceactions
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getInvoiceactions()
+    {
+        return $this->invoiceactions;
+    }
 }

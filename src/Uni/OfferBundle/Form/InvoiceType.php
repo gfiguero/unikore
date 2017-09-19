@@ -43,13 +43,13 @@ class InvoiceType extends AbstractType
                     return $order->getDisplayName();
                 }
             ))
-            ->add('name', null, array(
-                'label' => 'invoice.form.name',
+            ->add('number', null, array(
+                'label' => 'invoice.form.number',
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
                 'translation_domain' => 'UniOfferBundle',
             ))
-            ->add('number', null, array(
-                'label' => 'invoice.form.number',
+            ->add('name', null, array(
+                'label' => 'invoice.form.name',
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
                 'translation_domain' => 'UniOfferBundle',
             ))
