@@ -59,6 +59,11 @@ class CatalogController extends Controller
 
         if ($newForm->isSubmitted()) {
             if($newForm->isValid()) {
+                foreach ($catalog->getCategories() as $category) {
+                    foreach ($category->getSubcategories() as $subcategory) {
+                        $subcategory->setAccount($account);
+                    }
+                }
                 $catalog->setUser($user);
                 $catalog->setAccount($account);
                 $em = $this->getDoctrine()->getManager();
@@ -124,6 +129,11 @@ class CatalogController extends Controller
 
         if ($editForm->isSubmitted()) {
             if($editForm->isValid()) {
+                foreach ($catalog->getCategories() as $category) {
+                    foreach ($category->getSubcategories() as $subcategory) {
+                        $subcategory->setAccount($account);
+                    }
+                }
                 $em = $this->getDoctrine()->getManager();
                 $em->persist($catalog);
                 $em->flush();

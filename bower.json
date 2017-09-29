@@ -24,6 +24,9 @@
     "summernote": "^0.8.6",
     "bootstrap-multiselect": "^0.9.13",
     "bootstrap-fileinput": "^4.4.2",
-    "jquery-minicolors": "^2.2.6"
+    "jquery-minicolors": "^2.2.6",
+    "bootswatch": "^3.3.7",
+    "remarkable-bootstrap-notify": "^3.1.3",
+    "animate.css": "^3.5.2"
   }
 }
