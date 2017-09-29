@@ -14,7 +14,7 @@ class Builder implements ContainerAwareInterface
     {
         $sidemenu = $factory->createItem('root');
         $sidemenu->setCurrent($this->container->get('request')->getRequestUri());
-        $sidemenu->setChildrenAttribute('class', 'metismenu');
+        $sidemenu->setChildrenAttribute('class', 'nav nav-pills nav-stacked');
         $sidemenu->setChildrenAttribute('id', 'side-menu');
 
         $sidemenu->addChild('sidemenu.dashboard.root', array('route' => 'catalog_dashboard_index'))->setExtras(array('translation_domain' => 'UniCatalogBundle', 'routes' => array(

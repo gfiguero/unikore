@@ -461,16 +461,16 @@
         },
         {
             "name": "doctrine/doctrine-bundle",
-            "version": "1.6.8",
+            "version": "1.6.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/DoctrineBundle.git",
-                "reference": "6e96577cbbdbb5b6dcca2ff203d665976b51beb0"
+                "reference": "d276b1849ce1c252d3e0993e4ae1f0424118be8f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/DoctrineBundle/zipball/6e96577cbbdbb5b6dcca2ff203d665976b51beb0",
-                "reference": "6e96577cbbdbb5b6dcca2ff203d665976b51beb0",
+                "url": "https://api.github.com/repos/doctrine/DoctrineBundle/zipball/d276b1849ce1c252d3e0993e4ae1f0424118be8f",
+                "reference": "d276b1849ce1c252d3e0993e4ae1f0424118be8f",
                 "shasum": ""
             },
             "require": {
@@ -538,7 +538,7 @@
                 "orm",
                 "persistence"
             ],
-            "time": "2017-05-18T08:15:18+00:00"
+            "time": "2017-09-29T17:50:40+00:00"
         },
         {
             "name": "doctrine/doctrine-cache-bundle",
