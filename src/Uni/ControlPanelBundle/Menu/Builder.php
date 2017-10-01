@@ -34,7 +34,12 @@ class Builder implements ContainerAwareInterface
         }
 
         if ($checker->isGranted('ROLE_PAGE')) {
-            $topmenu->addChild('topmenu.page', array('route' => 'page_root'))->setExtras(array('translation_domain' => 'UniControlPanelBundle'));
+            $topmenu->addChild('topmenu.page', array('route' => 'page_root'))->setExtras(array('translation_domain' => 'UniControlPanelBundle', 'routes' => array(
+                'page_page_index',
+                'page_page_new',
+                'page_page_edit',
+                'page_page_show',
+            )));
         }
 
         if ($checker->isGranted('ROLE_CATALOG')) {

@@ -6,7 +6,7 @@ sidemenu:
     group:
         root: Grupos
     accountpayment:
-        root: Pagos por Cuenta
+        root: Pagos
 
 account:
     index:

@@ -15,10 +15,10 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="{{ path('page_page_index') }}"><i>UniKore - Page</i></a>
+                <a class="navbar-brand" href="{{ path('page_page_index') }}"><i>uniKore - Page</i></a>
             </div>
             <div class="navbar-collapse collapse" id="navbar">
-                {{ knp_menu_render('UniControlPanelBundle:Builder:topMenu') }}
+                {{ knp_menu_render('UniControlPanelBundle:Builder:topMenu', {'currentClass': 'active'}) }}
             </div>
         </div>
     </nav>

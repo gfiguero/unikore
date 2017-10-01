@@ -18,7 +18,7 @@
                 <a class="navbar-brand" href="{{ path('account_root') }}"><i>uniKore - Cuentas</i></a>
             </div>
             <div class="navbar-collapse collapse" id="navbar">
-                {{ knp_menu_render('UniControlPanelBundle:Builder:topMenu') }}
+                {{ knp_menu_render('UniControlPanelBundle:Builder:topMenu', {'currentClass': 'active'}) }}
             </div>
         </div>
     </nav>
