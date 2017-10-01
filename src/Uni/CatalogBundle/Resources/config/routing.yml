@@ -18,6 +18,10 @@ uni_catalog_product:
     resource: "@UniCatalogBundle/Resources/config/routing/product.yml"
     prefix:   /product
 
+uni_catalog_catalogitem:
+    resource: "@UniCatalogBundle/Resources/config/routing/catalogitem.yml"
+    prefix:   /catalogitem
+
 uni_catalog_root:
     resource: "@UniCatalogBundle/Resources/config/routing/root.yml"
     prefix:   /

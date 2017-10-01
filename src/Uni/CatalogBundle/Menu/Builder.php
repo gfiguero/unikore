@@ -32,6 +32,12 @@ class Builder implements ContainerAwareInterface
             'catalog_product_show',
             'catalog_product_edit',
         )));
+        $sidemenu->addChild('sidemenu.catalogitem.root', array('route' => 'catalog_catalogitem_index'))->setExtras(array('translation_domain' => 'UniCatalogBundle', 'routes' => array(
+            'catalog_catalogitem_index',
+            'catalog_catalogitem_new',
+            'catalog_catalogitem_show',
+            'catalog_catalogitem_edit',
+        )));        
 
         return $sidemenu;
     }
