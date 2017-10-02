@@ -248,6 +248,6 @@ class Catalog
     public function getAccount()
     {
         return $this->account;
-    }
+    }   
 }
 

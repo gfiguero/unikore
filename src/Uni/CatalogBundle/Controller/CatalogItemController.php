@@ -59,6 +59,7 @@ class CatalogItemController extends Controller
 
         if ($newForm->isSubmitted()) {
             if($newForm->isValid()) {
+                $catalogitem->setReferencePrice();
                 $catalogitem->setAccount($account);
                 $em = $this->getDoctrine()->getManager();
                 $em->persist($catalogitem);
@@ -124,6 +125,7 @@ class CatalogItemController extends Controller
 
         if ($editForm->isSubmitted()) {
             if($editForm->isValid()) {
+                $catalogitem->setReferencePrice();
                 $em = $this->getDoctrine()->getManager();
                 $em->persist($catalogitem);
                 $em->flush();

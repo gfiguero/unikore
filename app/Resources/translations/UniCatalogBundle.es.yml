@@ -143,11 +143,24 @@ catalogitem:
         title: Nuevo item
         form: item
         submit: Guardar
+        flash: Nuevo item registrado satisfactoriamente.
     form:
         id: ID
         subcategory: Subcategoría
+        product: Producto
         quantity: Cantidad
         discount: Descuento
         surcharge: Recargo
         created_at: Creado
         updated_at: Actualizado
+    edit: 
+        title: Editar item
+        form: Items
+        submit: Guardar cambios
+        flash: Los cambios en el item fueron registrados satisfactoriamente.
+    delete:
+        link: Borrar item
+        title: Borrado de item
+        message: Los datos borrados no podrán ser recuperados.
+        submit: Confirmar borrado
+        flash: El Item fue borrado totalmente.

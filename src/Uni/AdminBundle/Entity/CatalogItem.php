@@ -339,6 +339,20 @@ class CatalogItem
     public function getAccount()
     {
         return $this->account;
+    }
+
+    /**
+    * Get product price
+    */
+    public function setReferencePrice()
+    {
+        $product = $this->getProduct();
+
+        if($product) {
+            $this->setPrice( $product->getPrice() );
+        }
+
+        return $this;
     }    
 }
 
