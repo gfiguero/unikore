@@ -9,6 +9,8 @@ sidemenu:
         root: Subcategorías
     product:
         root: Productos
+    catalogitem:
+        root: Items        
 
 dashboard:
     index:
@@ -131,3 +133,21 @@ subcategory:
         submit: Confirmar borrado
         flash: La subcategoría fue borrada totalmente.
 
+catalogitem:
+    index:
+        title: Items
+        list: Lista de items
+        link: Volver a la lista
+    new:
+        link: Nuevo item
+        title: Nuevo item
+        form: item
+        submit: Guardar
+    form:
+        id: ID
+        subcategory: Subcategoría
+        quantity: Cantidad
+        discount: Descuento
+        surcharge: Recargo
+        created_at: Creado
+        updated_at: Actualizado

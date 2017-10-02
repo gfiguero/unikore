@@ -1,0 +1,24 @@
+catalog_catalogitem_index:
+    path:     /
+    defaults: { _controller: "UniCatalogBundle:CatalogItem:index" }
+    methods:  GET
+
+catalog_catalogitem_show:
+    path:     /{id}/show
+    defaults: { _controller: "UniCatalogBundle:CatalogItem:show" }
+    methods:  GET
+
+catalog_catalogitem_new:
+    path:     /new
+    defaults: { _controller: "UniCatalogBundle:CatalogItem:new" }
+    methods:  [GET, POST]
+
+catalog_catalogitem_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "UniCatalogBundle:CatalogItem:edit" }
+    methods:  [GET, POST]
+
+catalog_catalogitem_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "UniCatalogBundle:CatalogItem:delete" }
+    methods:  DELETE

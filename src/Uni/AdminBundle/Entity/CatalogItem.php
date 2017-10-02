@@ -57,6 +57,15 @@ class CatalogItem
      */
     private $product;
 
+    /**
+     * @var \Uni\AdminBundle\Entity\User
+     */
+    private $user;
+
+    /**
+     * @var \Uni\AdminBundle\Entity\Account
+     */
+    private $account;    
 
     /**
      * Get id
@@ -283,5 +292,53 @@ class CatalogItem
     {
         return $this->product;
     }
+
+    /**
+     * Set user
+     *
+     * @param \Uni\AdminBundle\Entity\User $user
+     *
+     * @return Product
+     */
+    public function setUser(\Uni\AdminBundle\Entity\User $user = null)
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * Get user
+     *
+     * @return \Uni\AdminBundle\Entity\User
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+
+    /**
+     * Set account
+     *
+     * @param \Uni\AdminBundle\Entity\Account $account
+     *
+     * @return Page
+     */
+    public function setAccount(\Uni\AdminBundle\Entity\Account $account = null)
+    {
+        $this->account = $account;
+
+        return $this;
+    }
+
+    /**
+     * Get account
+     *
+     * @return \Uni\AdminBundle\Entity\Account
+     */
+    public function getAccount()
+    {
+        return $this->account;
+    }    
 }
 
