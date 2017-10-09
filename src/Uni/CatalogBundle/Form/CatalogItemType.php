@@ -15,7 +15,7 @@ class CatalogItemType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $account = $options['token_storage']->getToken()->getUser()->getAccount();        
+        $account = $options['token_storage']->getToken()->getUser()->getAccount();
         $builder
             ->add('subcategory', null, array(
                 'label' => 'catalogitem.form.subcategory',

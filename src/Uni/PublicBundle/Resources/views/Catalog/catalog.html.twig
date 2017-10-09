@@ -1,14 +1,14 @@
-{% extends 'UniCatalogBundle:Base:base.html.twig' %}
-{% use 'UniCatalogBundle:Base:sidebar.html.twig' %}
-{% use 'UniCatalogBundle:Base:style-catalog.html.twig' %}
-{% use 'UniCatalogBundle:Base:footer.html.twig' %}
+{% extends 'UniPublicBundle:Base:base.html.twig' %}
+{% use 'UniPublicBundle:Catalog:sidebar.html.twig' %}
+{% use 'UniPublicBundle:Catalog:style-catalog.html.twig' %}
+{% use 'UniPublicBundle:Catalog:footer.html.twig' %}
 
-{% trans_default_domain 'UniCatalogBundle' %}
+{% trans_default_domain 'UniPublicBundle' %}
 
 {% block title %}{{ 'product.index.title'|trans }}{% endblock %}
 
 {% block body %}
-    {% if user.producttitle and products is not empty %}
+    {% if products is not empty %}
     <section id="catalog">
         <div class="container-fluid">
             <div class="row">
@@ -21,7 +21,7 @@
                         <div class="col-sm-3 col-md-2 col-flex">
                             <div class="thumbnail product-thumbnail" data-toggle="modal" data-target="#productModal{{ k }}">
                                 {% if product.image %}
-                                    <img class="product-item-image" src="{{ vich_uploader_asset(product, 'imagefile', 'Uni\\AdminBundle\\Entity\\Product')|imagine_filter('product_photography') }}">
+                                    <img class="product-item-image" src="{{ vich_uploader_asset(product, 'imagefile', 'Uni\\AdminBundle\\Entity\\Product')|imagine_filter('product_image') }}">
                                     <div class="overlay">
                                         <div class="overlay-content">{{ icon('plus-circle fa-fw fa-4x') }}</div>
                                     </div>
@@ -43,12 +43,14 @@
                                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                                         </div>
                                         <div class="modal-body">
-                                            <img class="product-item-image img-responsive" src="{{ vich_uploader_asset(product, 'imagefile', 'Uni\\AdminBundle\\Entity\\Product')|imagine_filter('product_photography_large') }}">
+                                            <img class="product-item-image img-responsive" src="{{ vich_uploader_asset(product, 'imagefile', 'Uni\\AdminBundle\\Entity\\Product')|imagine_filter('product_image_large') }}">
                                         </div>
                                         <div class="modal-footer">
                                         {% if product.name %}
                                             <h4 class="modal-title">{{ product.name|raw }}</h4>
-                                             {% if product.subcategory %}<small>{{ product.subcategory|raw }}</small>{% endif %}
+                                            {% for k, catalogitem in catalogitems %}
+                                            {% if catalogitem.subcategory %}<small>{{ catalogitem.subcategory|raw }}</small>{% endif %}
+                                            {% endfor %}
                                             {% if product.description %}<p>{{ product.description|raw }}</p>{% endif %}
                                             {% if product.price %}<p>$&nbsp;{{ product.price|raw|number_format(0, ',', '.') }}</p>{% endif %}
                                         {% endif %}
