@@ -20,6 +20,16 @@ liip_imagine:
             filters:
                 upscale: { min: [120, 120] }
                 thumbnail: { size: [120, 120], mode: inset }
+        product_image_large:
+            quality: 75
+            filters:
+                upscale: { min: [900, 900] }
+                thumbnail: { size: [900, 900], mode: outbound }
+        product_image:
+            quality: 75
+            filters:
+                upscale: { min: [600, 600] }
+                thumbnail: { size: [600, 600], mode: outbound }        
         product_image_small:
             quality: 75
             filters:

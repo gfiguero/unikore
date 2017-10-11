@@ -1401,11 +1401,41 @@ class Product
     {
         return $this->diameter;
     }
+
+    /**
+     * @var \Uni\AdminBundle\Entity\Page
+     */
+    private $page;
+
+
+    /**
+     * Set page
+     *
+     * @param \Uni\AdminBundle\Entity\Page $page
+     *
+     * @return Feature
+     */
+    public function setPage(\Uni\AdminBundle\Entity\Page $page = null)
+    {
+        $this->page = $page;
+
+        return $this;
+    }
+
+    /**
+     * Get page
+     *
+     * @return \Uni\AdminBundle\Entity\Page
+     */
+    public function getPage()
+    {
+        return $this->page;
+    }
+
     /**
      * @var \Doctrine\Common\Collections\Collection
      */
     private $catalogitems;
-
 
     /**
      * Add catalogitem

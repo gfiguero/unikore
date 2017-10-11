@@ -6956,11 +6956,11 @@ button.close {
   margin: 0;
   text-align: center;
 }
-#product {
+#catalog {
   text-align: center;
   background: radial-gradient(#2d2c2d, #171717, black);
 }
-#product .overlay {
+#catalog .overlay {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -6971,17 +6971,17 @@ button.close {
   opacity: 0;
   transition: .5s ease;
 }
-#product .product-thumbnail {
+#catalog .product-thumbnail {
   overflow: hidden;
 }
-#product .product-thumbnail:hover .overlay {
+#catalog .product-thumbnail:hover .overlay {
   opacity: 1;
 }
-#product .product-thumbnail:hover img {
+#catalog .product-thumbnail:hover img {
   transform: scale(1.1);
   transition: 2s;
 }
-#product .product-thumbnail .overlay-content {
+#catalog .product-thumbnail .overlay-content {
   position: absolute;
   top: 50%;
   left: 50%;

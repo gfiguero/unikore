@@ -2,7 +2,7 @@ services:
 #    uni_catalog.example:
 #        class: Uni\CatalogBundle\Example
 #        arguments: ["@service_id", "plain_value", "%parameter%"]
-    uni_page.form.feature:
+    uni_page.form.catalogitem:
         class: Uni\CatalogBundle\Form\CatalogItemType
         arguments: ["@security.token_storage"]
         tags:

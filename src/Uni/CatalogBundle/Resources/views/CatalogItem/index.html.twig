@@ -1,6 +1,4 @@
 {% extends 'UniCatalogBundle:Base:layout.html.twig' %}
-{% use 'UniCatalogBundle:Base:icons.html.twig' %}
-{% use 'UniCatalogBundle:Base:flashbag.html.twig' %}
 
 {% trans_default_domain 'UniCatalogBundle' %}
 
@@ -42,6 +40,7 @@
                                     </th>
                                     <th>{{ knp_pagination_sortable(catalogitems, 'catalogitem.form.id'|trans, 'id') }}{% if sort == 'id' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
                                     <th>{{ knp_pagination_sortable(catalogitems, 'catalogitem.form.subcategory'|trans, 'subcategory') }}{% if sort == 'subcategory' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
+                                    <th>{{ knp_pagination_sortable(catalogitems, 'catalogitem.form.product'|trans, 'product') }}{% if sort == 'product' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
                                     <th>{{ knp_pagination_sortable(catalogitems, 'catalogitem.form.quantity'|trans, 'quantity') }}{% if sort == 'quantity' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
                                     <th>{{ knp_pagination_sortable(catalogitems, 'catalogitem.form.discount'|trans, 'discount') }}{% if sort == 'discount' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
                                     <th>{{ knp_pagination_sortable(catalogitems, 'catalogitem.form.surcharge'|trans, 'surcharge') }}{% if sort == 'surcharge' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>                                    
@@ -59,6 +58,7 @@
                                     </td>
                                     <td>{% if catalogitem.id %}{{ catalogitem.id }}{% endif %}</td>
                                     <td>{% if catalogitem.subcategory %}{{ catalogitem.subcategory }}{% endif %}</td>
+                                    <td>{% if catalogitem.product %}{{ catalogitem.product }}{% endif %}</td>
                                     <td>{% if catalogitem.quantity %}{{ catalogitem.quantity }}{% endif %}</td>
                                     <td>{% if catalogitem.discount %}{{ catalogitem.discount }}{% endif %}</td>
                                     <td>{% if catalogitem.surcharge %}{{ catalogitem.surcharge }}{% endif %}</td>                                    
