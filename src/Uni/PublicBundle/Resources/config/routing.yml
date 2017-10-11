@@ -13,6 +13,6 @@ uni_public_root:
     resource: "@UniPublicBundle/Resources/config/routing/root.yml"
     prefix:   /
 
-#uni_public_catalog:
-#    resource: "@UniPublicBundle/Resources/config/routing/catalog.yml"
-#    prefix:   /catalog
+uni_public_catalog:
+    resource: "@UniPublicBundle/Resources/config/routing/catalog.yml"
+    prefix:   /catalog

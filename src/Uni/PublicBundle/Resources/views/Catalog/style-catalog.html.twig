@@ -1,0 +1,22 @@
+{% block stylecatalog %}
+    {% if page.brandprimarycolor %}
+        <style type="text/css">
+            .overlay {
+                background-color: {{ color_alpha(page.brandprimarycolor, 50) }};
+            }
+        </style>
+    {% endif %}
+    {% if page.brandsecondarycolor %}
+        <style type="text/css">
+            .modal-footer {
+                background-color: {{ page.brandsecondarycolor }}!important;
+                
+            }
+            @media(min-width: 992px) {
+                .modal-footer {
+                    background-color: {{ color_alpha(page.brandsecondarycolor, 50) }}!important;
+                }
+            }
+        </style>
+    {% endif %}
+{% endblock %}
