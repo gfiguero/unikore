@@ -38,6 +38,7 @@
                             <li role="presentation"><a data-toggle="tab" href="#main">{{ 'page.section.main'|trans }}</a></li>
                             <li role="presentation"><a data-toggle="tab" href="#about">{{ 'page.section.about'|trans }}</a></li>
                             <li role="presentation"><a data-toggle="tab" href="#feature">{{ 'page.section.feature'|trans }}</a></li>
+                            <li role="presentation"><a data-toggle="tab" href="#socialmedia">{{ 'page.section.socialmedia'|trans }}</a></li>                            
                             <li role="presentation"><a data-toggle="tab" href="#contact">{{ 'page.section.contact'|trans }}</a></li>
                         </ul>
                     </div>
@@ -64,6 +65,9 @@
                                 {{ form_row(newForm.feature_title) }}
                                 {{ form_row(newForm.feature_content) }}
                             </div>
+                            <div id="socialmedia" class="tab-pane fade" >
+                                {{ form_row(newForm.socialmedia_title) }}
+                            </div>                            
                             <div id="contact" class="tab-pane fade" >
                                 {{ form_row(newForm.contact_title) }}
                                 {{ form_row(newForm.contact_content) }}

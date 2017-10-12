@@ -63,8 +63,9 @@ page:
         main: Portada
         about: Sobre Nosotros
         feature: Catacterísticas del Negocio
+        socialmedia: Redes Sociales
         contact: Información de Contacto
-        social: Redes Sociales
+
 
 feature:
     index:
