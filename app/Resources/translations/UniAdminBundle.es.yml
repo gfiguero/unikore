@@ -177,6 +177,13 @@ issuer:
         flash: El emisor fué borrado totalmente.
     form:
         id: ID
+        name: Nombre
+        image: imagen
+        rut: RUT
+        address_street: Calle
+        address_number: Número
+        account: Cuenta
+        commune: Comuna
         created_at: Registro
         updated_at: Actualización
 
@@ -213,6 +220,8 @@ seller:
         name: Nombre
         email: Email
         phone: Celular
+        user: Usuario
+        account: Cuenta
         created_at: Registro
         updated_at: Actualización
 
@@ -251,6 +260,12 @@ client:
         email: Email
         phone: Celular
         address: Dirección
+        address_street: Calle
+        address_number: Número
+        comment: Comentario
+        user: Usuario
+        account: Cuenta
+        commune: Comuna
         created_at: Registro
         updated_at: Actualización
 
@@ -288,6 +303,12 @@ provider:
         contactname: Nombre Contacto
         email: Email
         phone: Celular
+        address_street: Calle
+        address_number: Número
+        comment: Comentario
+        user: Usuario
+        account: Cuenta
+        commune: Comuna
         created_at: Registro
         updated_at: Actualización
 
@@ -329,6 +350,34 @@ product:
         margin: Margen
         image: Imagen
         provider: Proveedor
+        short: Descripción corta
+        code: Código
+        height: Altura [cm]
+        width: Ancho [cm]
+        length: Largo [cm]
+        weight: Peso [kg]
+        thickness: Espesor [mm]
+        diameter: Diámetro [cm]
+        brand: Marca
+        origin: Origen
+        resistance: Resistencia
+        warrantly: Garantía
+        certification: Certificación
+        consumer_name: Usuario
+        consumer_age: Edad
+        consumer_capacity: Capacidad
+        consumer_traffic: Tráfico
+        structure_main: Estructura principal
+        structure_side: Estructura secundaria
+        structure_instalation: Instalación
+        structure_anchorage: Anclaje
+        structure_assembly: Ensamblado
+        structure_protection: Protección
+        structure_termination: Terminación
+        structure_color: Color
+        structure_size: Tamaño
+        user: Usuario
+        account: Cuenta
         created_at: Registro
         updated_at: Actualización
 
@@ -365,6 +414,8 @@ item:
         discount: Descuento
         budget: Cotización
         product: Producto
+        surcharge: Recargo
+        price: Precio
         created_at: Registro
         updated_at: Actualización
 
@@ -397,7 +448,14 @@ budget:
         flash: El presupuesto fué borrado totalmente.
     form:
         id: ID
-        nota: Nota
+        name: Nombre
+        adjudicated_at: Adjudicado en
+        expired_at: Expirado en
+        issuer: Emisor
+        user: Usuario
+        account: Cuenta
+        notes: Notas
+        note: Nota
         client: Cliente
         seller: Vendedor
         created_at: Registro
@@ -432,6 +490,12 @@ note:
         flash: La nota fué borrada totalmente.
     form:
         id: ID
+        name: Nombre
+        title: Título
+        description: Descripción
+        user: Usuario
+        account: Cuenta
+        budgets: Presupuestos
         created_at: Registro
         updated_at: Actualización
 
@@ -464,6 +528,13 @@ feature:
         flash: La característica fué borrada totalmente.
     form:
         id: ID
+        name: Nombre
+        title: Título
+        short: Descripción corta
+        description: Descripción
+        image: Imagen
+        account: Cuenta
+        page: Página
         created_at: Registro
         updated_at: Actualización
 
@@ -496,6 +567,9 @@ photography:
         flash: La fotografía fué borrada totalmente.
     form:
         id: ID
+        image: Imagen
+        account: Cuenta
+        page: Página
         created_at: Registro
         updated_at: Actualización
 
@@ -528,6 +602,9 @@ category:
         flash: La categoría fué borrada totalmente.
     form:
         id: ID
+        name: Nombre
+        account: Cuenta
+        catalog: Catálogo
         created_at: Registro
         updated_at: Actualización
 
@@ -560,6 +637,10 @@ subcategory:
         flash: La subcategoría fué borrada totalmente.
     form:
         id: ID
+        name: Nombre
+        slug: Etiqueta
+        account: Cuenta
+        category: Categoría
         created_at: Registro
         updated_at: Actualización
 
@@ -592,6 +673,8 @@ catalog:
         flash: El catálogo fué borrado totalmente.
     form:
         id: ID
+        name: Nombre
+        account: Cuenta
         created_at: Registro
         updated_at: Actualización
 
@@ -624,6 +707,29 @@ page:
         flash: La página fué borrada totalmente.
     form:
         id: ID
+        name: Nombre
+        domain: Dominio
+        imagefile: Imagen
+        brand: Marca
+        brand_primary_color: Color primario
+        brand_secondary_color: Color secundario
+        main_title: Título portada
+        main_subtitle: Subtítulo portada
+        main_calltoaction: Botón
+        about_title: Título sección acerca de
+        about_content: Contenido sección acerca de
+        feature_title: Título sección características
+        feature_content: Contenido sección características
+        cataloglinkeage_content: Contenido sección catálogo
+        cataloglinkeage_calltoaction: Botón
+        socialmedia_title: Título sección redes sociales
+        contact_title: Título sección contacto
+        contact_content: Contenido sección contacto
+        contact_phone: Teléfono de contacto
+        contact_email: Email de contacto
+        contact_address: Dirección de contacto
+        contact_schedule: Horario de atención
+        account: Cuenta
         created_at: Registro
         updated_at: Actualización
 
@@ -656,5 +762,9 @@ socialmedia:
         flash: La red social fué borrada totalmente.
     form:
         id: ID
+        url: URL
+        account: Cuenta
+        page: Página
+        socialnetwork: Red social
         created_at: Registro
         updated_at: Actualización

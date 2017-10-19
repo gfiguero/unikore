@@ -38,7 +38,8 @@
                             <li role="presentation"><a data-toggle="tab" href="#main">{{ 'page.section.main'|trans }}</a></li>
                             <li role="presentation"><a data-toggle="tab" href="#about">{{ 'page.section.about'|trans }}</a></li>
                             <li role="presentation"><a data-toggle="tab" href="#feature">{{ 'page.section.feature'|trans }}</a></li>
-                            <li role="presentation"><a data-toggle="tab" href="#socialmedia">{{ 'page.section.socialmedia'|trans }}</a></li>                            
+                            <li role="presentation"><a data-toggle="tab" href="#cataloglinkage">{{ 'page.section.cataloglinkage'|trans }}</a></li>
+                            <li role="presentation"><a data-toggle="tab" href="#socialmedia">{{ 'page.section.socialmedia'|trans }}</a></li>
                             <li role="presentation"><a data-toggle="tab" href="#contact">{{ 'page.section.contact'|trans }}</a></li>
                         </ul>
                     </div>
@@ -46,6 +47,7 @@
                         {{ form_start(newForm, {'style' : 'horizontal' }) }}
                         <div class="tab-content">
                             <div id="brand" class="tab-pane fade in active" >
+                                {{ form_row(newForm.imagefile) }}
                                 {{ form_row(newForm.brand) }}
                                 {{ form_row(newForm.name) }}
                                 {{ form_row(newForm.domain) }}
@@ -64,6 +66,11 @@
                             <div id="feature" class="tab-pane fade" >
                                 {{ form_row(newForm.feature_title) }}
                                 {{ form_row(newForm.feature_content) }}
+                            </div>
+                            <div id="cataloglinkage" class="tab-pane fade" >
+                                {{ form_row(newForm.cataloglinkage_title) }}
+                                {{ form_row(newForm.cataloglinkage_calltoaction) }}
+                                {{ form_row(newForm.imagefile) }}
                             </div>
                             <div id="socialmedia" class="tab-pane fade" >
                                 {{ form_row(newForm.socialmedia_title) }}
@@ -102,7 +109,7 @@
 
 {% block javascript %}
     {% block wysiwygjs %}{{ parent() }}{% endblock %}
-    {% block fileinputjs_edit %}{{ parent() }}{% endblock %}
+    {% block fileinputjs %}{{ parent() }}{% endblock %}
     {% block minicolorsjs %}{{ parent() }}{% endblock %}
 {% endblock %}
 

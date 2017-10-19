@@ -10,7 +10,7 @@ sidemenu:
     product:
         root: Productos
     catalogitem:
-        root: Items        
+        root: Items
 
 dashboard:
     index:
@@ -36,6 +36,7 @@ catalog:
         categories: Categorías
         created_at: Creado
         updated_at: Actualizado
+        addcategory: Agregar categoría
     edit:
         title: Editar catálogo
         form: Catálogo
@@ -95,6 +96,7 @@ category:
         subcategories: Subcategorías
         created_at: Creado
         updated_at: Actualizado
+        addsubcategory: Agregar subcategoría
     edit:
         title: Editar categoría
         form: Categoría

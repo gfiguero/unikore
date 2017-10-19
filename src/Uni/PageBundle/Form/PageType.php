@@ -25,6 +25,12 @@ class PageType extends AbstractType
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
                 'translation_domain' => 'UniPageBundle',
             ))
+            ->add('imagefile', 'file', array(
+                'label' => 'page.form.imagefile',
+                'attr'  => array( 'label_col' => 4, 'widget_col' => 8, 'class' => 'fileinput' ),
+                'translation_domain' => 'UniPageBundle',
+                'required' => false,
+            ))
             ->add('brand', null, array(
                 'label' => 'page.form.brand',
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
@@ -73,6 +79,16 @@ class PageType extends AbstractType
             ->add('feature_content', null, array(
                 'label' => 'page.form.feature_content',
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8, 'class' => 'wysiwyg' ),
+                'translation_domain' => 'UniPageBundle',
+            ))
+            ->add('cataloglinkage_title', null, array(
+                'label' => 'page.form.cataloglinkeage_title',
+                'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
+                'translation_domain' => 'UniPageBundle',
+            ))
+            ->add('cataloglinkage_calltoaction', null, array(
+                'label' => 'page.form.cataloglinkeage_calltoaction',
+                'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
                 'translation_domain' => 'UniPageBundle',
             ))
             ->add('socialmedia_title', null, array(

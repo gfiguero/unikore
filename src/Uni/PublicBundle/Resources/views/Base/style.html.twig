@@ -7,6 +7,11 @@
             <style type="text/css">#contact {background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('{{ vich_uploader_asset(photography2, 'imagefile', 'Uni\\AdminBundle\\Entity\\Photography')|imagine_filter('main_photography') }}');}</style>
         {% endif %}
     {% endif %}
+    {#
+    {% if page.image %}
+        <style type="text/css">#cataloglinkage {background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('{{ vich_uploader_asset(page, 'imagefile')|imagine_filter('cataloglinkage_photography') }}');}</style>
+    {% endif %}
+    #}
     {% if page.brandprimarycolor %}
         <style type="text/css">
         .navbar-default .navbar-brand {
@@ -127,6 +132,15 @@
             .panel-primary-fade {
                 background-color: {{ color_alpha(page.brandsecondarycolor, 50) }};
             }
+        .cataloglinkage-calltoaction {
+            background-color: {{ page.brandsecondarycolor }};
+        }
+        .cataloglinkage-calltoaction:hover,
+        .cataloglinkage-calltoaction:focus,
+        .cataloglinkage-calltoaction:active:focus,
+        .cataloglinkage-calltoaction:active {
+            background-color: {{ color_darken(page.brandsecondarycolor, 20) }};
+        }
             #socialmedia {
                 background-color: {{ page.brandsecondarycolor }};
             }

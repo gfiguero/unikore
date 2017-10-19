@@ -1,0 +1,14 @@
+{% block cataloglinkage %}
+    <main id="cataloglinkage">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="main-header">
+                        {% if page.cataloglinkagetitle %}<h1 class="cataloglinkage-title">{{ page.cataloglinkagetitle|raw }}</h1>{% endif %}
+                        {% if page.cataloglinkagecalltoaction %}<a type="button" href="{{ path('public_catalog') }}" target="_blank" class="btn btn-primary btn-lg cataloglinkage-calltoaction page-scroll">{{ page.cataloglinkagecalltoaction|raw }}</a>{% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock %}

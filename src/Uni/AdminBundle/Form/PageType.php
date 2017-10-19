@@ -13,97 +13,119 @@ class PageType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder 
+        $builder
             ->add('name', null, array(
                 'label' => 'page.form.name',
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
                 'translation_domain' => 'UniAdminBundle',
-            )) 
+            ))
             ->add('domain', null, array(
                 'label' => 'page.form.domain',
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
                 'translation_domain' => 'UniAdminBundle',
-            )) 
+            ))
+            ->add('imagefile', 'file', array(
+                'label' => 'page.form.imagefile',
+                'attr'  => array( 'label_col' => 4, 'widget_col' => 8, 'class' => 'fileinput' ),
+                'translation_domain' => 'UniAdminBundle',
+                'required' => false,
+            ))
             ->add('brand', null, array(
                 'label' => 'page.form.brand',
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
                 'translation_domain' => 'UniAdminBundle',
-            )) 
+            ))
             ->add('brand_primary_color', null, array(
                 'label' => 'page.form.brand_primary_color',
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
                 'translation_domain' => 'UniAdminBundle',
-            )) 
+            ))
             ->add('brand_secondary_color', null, array(
                 'label' => 'page.form.brand_secondary_color',
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
                 'translation_domain' => 'UniAdminBundle',
-            )) 
+            ))
             ->add('main_title', null, array(
                 'label' => 'page.form.main_title',
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
                 'translation_domain' => 'UniAdminBundle',
-            )) 
+            ))
             ->add('main_subtitle', null, array(
                 'label' => 'page.form.main_subtitle',
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
                 'translation_domain' => 'UniAdminBundle',
-            )) 
+            ))
             ->add('main_calltoaction', null, array(
                 'label' => 'page.form.main_calltoaction',
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
                 'translation_domain' => 'UniAdminBundle',
-            )) 
+            ))
             ->add('about_title', null, array(
                 'label' => 'page.form.about_title',
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
                 'translation_domain' => 'UniAdminBundle',
-            )) 
+            ))
             ->add('about_content', null, array(
                 'label' => 'page.form.about_content',
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
                 'translation_domain' => 'UniAdminBundle',
-            )) 
+            ))
             ->add('feature_title', null, array(
                 'label' => 'page.form.feature_title',
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
                 'translation_domain' => 'UniAdminBundle',
-            )) 
-            ->add('socialmedia_title', null, array(
-                'label' => 'page.form.socialmedia_title',
-                'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
-                'translation_domain' => 'UniAdminBundle',
-            )) 
+            ))
             ->add('feature_content', null, array(
                 'label' => 'page.form.feature_content',
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
                 'translation_domain' => 'UniAdminBundle',
-            )) 
+            ))
+            ->add('cataloglinkage_title', null, array(
+                'label' => 'page.form.cataloglinkeage_content',
+                'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
+                'translation_domain' => 'UniAdminBundle',
+            ))
+            ->add('cataloglinkage_calltoaction', null, array(
+                'label' => 'page.form.cataloglinkeage_calltoaction',
+                'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
+                'translation_domain' => 'UniAdminBundle',
+            ))
+            ->add('imagefile', 'file', array(
+                'label' => 'page.form.imagefile',
+                'attr'  => array( 'label_col' => 4, 'widget_col' => 8, 'class' => 'fileinput' ),
+                'translation_domain' => 'UniAdminBundle',
+                'required' => false,
+            ))
+            ->add('socialmedia_title', null, array(
+                'label' => 'page.form.socialmedia_title',
+                'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
+                'translation_domain' => 'UniAdminBundle',
+            ))
             ->add('contact_title', null, array(
                 'label' => 'page.form.contact_title',
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
                 'translation_domain' => 'UniAdminBundle',
-            )) 
+            ))
             ->add('contact_content', null, array(
                 'label' => 'page.form.contact_content',
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
                 'translation_domain' => 'UniAdminBundle',
-            )) 
+            ))
             ->add('contact_phone', null, array(
                 'label' => 'page.form.contact_phone',
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
                 'translation_domain' => 'UniAdminBundle',
-            )) 
+            ))
             ->add('contact_email', null, array(
                 'label' => 'page.form.contact_email',
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
                 'translation_domain' => 'UniAdminBundle',
-            )) 
+            ))
             ->add('contact_address', null, array(
                 'label' => 'page.form.contact_address',
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
                 'translation_domain' => 'UniAdminBundle',
-            )) 
+            ))
             ->add('contact_schedule', null, array(
                 'label' => 'page.form.contact_schedule',
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
@@ -113,7 +135,7 @@ class PageType extends AbstractType
                 'label' => 'page.form.socialmedia_title',
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
                 'translation_domain' => 'UniAdminBundle',
-            ))  
+            ))
             ->add('account', null, array(
                 'label' => 'page.form.account',
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),

@@ -32,6 +32,10 @@ Uni\AdminBundle\Entity\Page:
             type: string
             length: 100
             nullable: true
+        image:
+            type: string
+            length: 200
+            nullable: true
         brand:
             type: string
             length: 100
@@ -67,12 +71,20 @@ Uni\AdminBundle\Entity\Page:
             type: string
             length: 20
             nullable: true
-        socialmedia_title:
+        feature_content:
+            type: text
+            nullable: true
+        cataloglinkage_title:
+            type: string
+            length: 40
+            nullable: true
+        cataloglinkage_calltoaction:
             type: string
             length: 20
             nullable: true
-        feature_content:
-            type: text
+        socialmedia_title:
+            type: string
+            length: 20
             nullable: true
         contact_title:
             type: string

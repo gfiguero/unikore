@@ -1,0 +1,101 @@
+{% extends 'UniCatalogBundle:Base:layout.html.twig' %}
+
+{% trans_default_domain 'UniCatalogBundle' %}
+
+{% block title %}&nbsp;-&nbsp;{{ 'catalogitem.index.title'|trans }}{% endblock %}
+
+{% block catalog %}
+    <div id="page-wrapper">
+        <div class="row" id="page-header">
+            <div class="col-lg-12">
+                <h1 class="page-header">{% block icons %}{{ parent() }}{% endblock %}{{ 'catalogitem.index.title'|trans }}</h1>
+                {% block flashbag %}{{ parent() }}{% endblock %}
+            </div>
+        </div>
+        <!-- /#page-header -->
+
+        <div class="row" id="page-toolbar">
+            <div class="col-lg-12">
+                <div class="btn-toolbar">
+                    <a type="button" class="btn btn-success" href="{{ path('catalog_catalogitem_new') }}">{{ icon('plus fa-fw') }}&nbsp;{{ 'catalogitem.new.link'|trans }}</a>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-toolbar -->
+
+        <div class="row" id="page-list">
+            <div class="col-lg-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">{{ 'catalogitem.index.list'|trans }}</h2>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="records_list table table-striped table-hover table-middle">
+                            <thead>
+                                <tr>
+                                    <th>{{ knp_pagination_sortable(catalogitems, 'catalogitem.form.id'|trans, 'id') }}{% if sort == 'id' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
+                                    <th>{{ knp_pagination_sortable(catalogitems, 'catalogitem.form.subcategory'|trans, 'subcategory') }}{% if sort == 'subcategory' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
+                                    <th>{{ knp_pagination_sortable(catalogitems, 'catalogitem.form.product.image'|trans, 'product.image') }}{% if sort == 'product.image' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
+                                    <th>{{ knp_pagination_sortable(catalogitems, 'catalogitem.form.quantity'|trans, 'quantity') }}{% if sort == 'quantity' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
+                                    <th>{{ knp_pagination_sortable(catalogitems, 'catalogitem.form.discount'|trans, 'discount') }}{% if sort == 'discount' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
+                                    <th>{{ knp_pagination_sortable(catalogitems, 'catalogitem.form.surcharge'|trans, 'surcharge') }}{% if sort == 'surcharge' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>                                    
+                                    <th>{{ knp_pagination_sortable(catalogitems, 'catalogitem.form.created_at'|trans, 'created_at') }}{% if sort == 'created_at' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
+                                    <th>{{ knp_pagination_sortable(catalogitems, 'catalogitem.form.updated_at'|trans, 'updated_at') }}{% if sort == 'updated_at' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            {% for key, catalogitem in catalogitems %}
+                                <tr>
+                                    <td>{% if catalogitem.id %}{{ catalogitem.id }}{% endif %}</td>
+                                    <td>{% if catalogitem.subcategory %}{{ catalogitem.subcategory }}{% endif %}</td>
+                                    <td>{% if catalogitem.product %}<img class="product-item-image" src="{{ vich_uploader_asset(catalogitem.product, 'imagefile')|imagine_filter('product_image_small') }}">{% endif %}</td>
+                                    <td>{% if catalogitem.quantity %}{{ catalogitem.quantity }}{% endif %}</td>
+                                    <td>{% if catalogitem.discount %}{{ catalogitem.discount }}{% endif %}</td>
+                                    <td>{% if catalogitem.surcharge %}{{ catalogitem.surcharge }}{% endif %}</td>                                    
+                                    <td><span class="fa fa-calendar-o" data-toggle="tooltip" data-placement="left" title="{{ catalogitem.createdat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "dd LLLL y HH:mm") }}"></span>&nbsp;{{ catalogitem.createdat|ago }}</td>
+                                    <td><span class="fa fa-calendar-o" data-toggle="tooltip" data-placement="left" title="{{ catalogitem.updatedat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "dd LLLL y HH:mm") }}"></span>&nbsp;{{ catalogitem.updatedat|ago }}</td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="panel-footer">
+                        <div class="text-center">
+                            {{ knp_pagination_render(catalogitems) }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-list -->
+
+        <div id="page-modal">
+            {% for key, catalogitem in catalogitems %}
+            <div class="modal fade" id="modalDelete{{ catalogitem.id }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog modal-md" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">{{ icon('times') }}</button>
+                            <h4 class="modal-title" id="myModalLabel">{{ 'catalogitem.delete.title'|trans }}</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-xs-2 text-center">{{ icon('exclamation-triangle fa-5x') }}</div>
+                                <div class="col-xs-10"><p>{{ 'catalogitem.delete.message'|trans }}</p></div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <!-- /#page-modal -->
+
+    </div>
+    <!-- /#page-wrapper -->
+
+{% endblock %}
+
+{% block javascript %}<script type="text/javascript">$(function () { $('[data-toggle="tooltip"]').tooltip() })</script>{% endblock %}

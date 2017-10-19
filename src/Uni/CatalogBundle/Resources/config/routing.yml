@@ -26,3 +26,19 @@ uni_catalog_root:
     resource: "@UniCatalogBundle/Resources/config/routing/root.yml"
     prefix:   /
 
+#test
+uni_catalog_catalogtest:
+    resource: "@UniCatalogBundle/Resources/config/routing/catalogtest.yml"
+    prefix:   /catalogtest
+
+uni_catalog_catalogcategorytest:
+    resource: "@UniCatalogBundle/Resources/config/routing/catalogcategorytest.yml"
+    prefix:   /catalogcategorytest
+
+uni_catalog_catalogsubcategorytest:
+    resource: "@UniCatalogBundle/Resources/config/routing/catalogsubcategorytest.yml"
+    prefix:   /catalogsubcategorytest
+
+uni_catalog_catalogitemtest:
+    resource: "@UniCatalogBundle/Resources/config/routing/catalogitemtest.yml"
+    prefix:   /catalogitemtest

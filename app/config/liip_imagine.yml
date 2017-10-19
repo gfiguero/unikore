@@ -65,6 +65,18 @@ liip_imagine:
                 upscale: { min: [256, 160] }
                 thumbnail: { size: [256, 160], mode: inset }
 
+        brand_photography:
+            quality: 75
+            filters:
+                upscale: { min: [200] }
+                thumbnail: { size: [200], mode: outbound }
+        brand_photography_edit_preview:
+            quality: 75
+            default_image: default.png
+            filters:
+                upscale: { min: [256, 160] }
+                thumbnail: { size: [256, 160], mode: inset }
+
         feature_edit_preview:
             quality: 75
             default_image: default.png
