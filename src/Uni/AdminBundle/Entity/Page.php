@@ -947,4 +947,43 @@ class Page
     {
         return $this->socialmedia;
     }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $catalogs;
+
+
+    /**
+     * Add catalog
+     *
+     * @param \Uni\AdminBundle\Entity\Catalog $catalog
+     *
+     * @return Page
+     */
+    public function addCatalog(\Uni\AdminBundle\Entity\Catalog $catalog)
+    {
+        $this->catalogs[] = $catalog;
+
+        return $this;
+    }
+
+    /**
+     * Remove catalog
+     *
+     * @param \Uni\AdminBundle\Entity\Catalog $catalog
+     */
+    public function removeCatalog(\Uni\AdminBundle\Entity\Catalog $catalog)
+    {
+        $this->catalogs->removeElement($catalog);
+    }
+
+    /**
+     * Get catalogs
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getCatalogs()
+    {
+        return $this->catalogs;
+    }
 }

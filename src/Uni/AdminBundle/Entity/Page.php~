@@ -2,8 +2,15 @@
 
 namespace Uni\AdminBundle\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Evence\Bundle\SoftDeleteableExtensionBundle\Mapping\Annotation as Evence;
+
 /**
  * Page
+ * @ORM\Entity
+ * @Vich\Uploadable
  */
 class Page
 {
@@ -290,6 +297,7 @@ class Page
     {
         return $this->domain;
     }
+
     /**
      * @var string
      */
@@ -338,12 +346,34 @@ class Page
     /**
      * @var string
      */
-    private $socialmedia_title;
+    private $feature_content;
 
     /**
      * @var string
      */
-    private $feature_content;
+    private $cataloglinkage_title;
+
+    /**
+     * @var string
+     */
+    private $cataloglinkage_calltoaction;
+
+    /**
+     * @var string
+     */
+    private $image;
+
+    /**
+     * @Vich\UploadableField(mapping="brand_image", fileNameProperty="image")
+     * @var File
+     */
+    private $imagefile;
+
+    /**
+     * @var string
+     */
+    private $socialmedia_title;
+
 
     /**
      * @var string
@@ -379,7 +409,6 @@ class Page
      * @var \Doctrine\Common\Collections\Collection
      */
     private $socialmedia;
-
 
     /**
      * Set brand
@@ -595,6 +624,102 @@ class Page
     public function getFeatureTitle()
     {
         return $this->feature_title;
+    }
+
+    /**
+     * Set cataloglinkageTitle
+     *
+     * @param string $cataloglinkageTitle
+     *
+     * @return Page
+     */
+    public function setCataloglinkageTitle($cataloglinkageTitle)
+    {
+        $this->cataloglinkage_title = $cataloglinkageTitle;
+
+        return $this;
+    }
+
+    /**
+     * Get cataloglinkageTitle
+     *
+     * @return string
+     */
+    public function getCataloglinkageTitle()
+    {
+        return $this->cataloglinkage_title;
+    }
+
+    /**
+     * Set cataloglinkageCalltoaction
+     *
+     * @param string $cataloglinkageCalltoaction
+     *
+     * @return Page
+     */
+    public function setCataloglinkageCalltoaction($cataloglinkageCalltoaction)
+    {
+        $this->cataloglinkage_calltoaction = $cataloglinkageCalltoaction;
+
+        return $this;
+    }
+
+    /**
+     * Get cataloglinkageCalltoaction
+     *
+     * @return string
+     */
+    public function getCataloglinkageCalltoaction()
+    {
+        return $this->cataloglinkage_calltoaction;
+    }
+
+    /**
+     * Set image
+     *
+     * @param string $image
+     *
+     * @return Page
+     */
+    public function setImage($image)
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
+    /**
+     * Get image
+     *
+     * @return string
+     */
+    public function getImage()
+    {
+        if ($this->image) return $this->image; else return 'default';
+    }
+
+    /**
+     * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile $image
+     *
+     * @return Page
+     */
+    public function setImagefile(File $image = null)
+    {
+        $this->imagefile = $image;
+
+        if ($image) {
+            $this->updated_at = new \DateTime();
+        }
+        
+        return $this;
+    }
+
+    /**
+     * @return File|null
+     */
+    public function getImagefile()
+    {
+        return $this->imagefile;
     }
 
     /**

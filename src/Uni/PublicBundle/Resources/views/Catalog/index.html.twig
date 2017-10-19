@@ -1,14 +1,11 @@
-{% extends 'UniPublicBundle:Base:base.html.twig' %}
-{#{% use 'UniPublicBundle:Catalog:sidebar.html.twig' %}#}
-{% use 'UniPublicBundle:Catalog:style-catalog.html.twig' %}
-{% use 'UniPublicBundle:Catalog:footer.html.twig' %}
+{% extends 'UniPublicBundle:Catalog:layout.html.twig' %}
 
 {% trans_default_domain 'UniPublicBundle' %}
 
-{% block title %}{{ 'product.index.title'|trans }}{% endblock %}
+{% block title %}{{ 'catalog.index.title'|trans }}{% endblock %}
 
-{% block body %}
-    {% if catalogitems is not empty %}
+{% block catalog %}
+{#}
     <section id="catalog">
         <div class="container-fluid">
             <div class="row">
@@ -67,6 +64,7 @@
     </section>
     {% endif %} 
     {% block footer %}{{ parent() }}{% endblock %}
+{#}
 {% endblock %}
 
 {% block stylesheet %}

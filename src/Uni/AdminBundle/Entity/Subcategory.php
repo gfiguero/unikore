@@ -57,6 +57,11 @@ class Subcategory
         return (string) $this->name;
     }
 
+    public function getFullName()
+    {
+        return (string) $this->getCategory()->getCatalog() . ' - ' . $this->getCategory() . ' - ' . $this->name;
+    }
+
     /**
      * Get id
      *

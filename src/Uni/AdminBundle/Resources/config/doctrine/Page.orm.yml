@@ -23,6 +23,9 @@ Uni\AdminBundle\Entity\Page:
         socialmedia:
             targetEntity:  Uni\AdminBundle\Entity\Socialmedia
             mappedBy: page
+        catalogs:
+            targetEntity:  Uni\AdminBundle\Entity\Catalog
+            mappedBy: page
     fields:
         name:
             type: string

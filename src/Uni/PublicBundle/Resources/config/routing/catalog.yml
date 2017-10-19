@@ -1,3 +1,11 @@
-public_catalog:
+public_catalog_index:
     path:     /
     defaults: { _controller: UniPublicBundle:Catalog:index }
+
+public_catalog_show:
+    path:     /{id}/show
+    defaults: { _controller: UniPublicBundle:Catalog:show }
+
+public_catalog_subcategory:
+    path:     /{id}/subcategory
+    defaults: { _controller: UniPublicBundle:Catalog:subcategory }

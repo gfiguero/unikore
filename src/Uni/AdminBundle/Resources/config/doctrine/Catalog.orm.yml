@@ -12,6 +12,9 @@ Uni\AdminBundle\Entity\Catalog:
         account:
             targetEntity: Uni\AdminBundle\Entity\Account
             inversedBy: catalogs
+        page:
+            targetEntity: Uni\AdminBundle\Entity\Page
+            inversedBy: catalogs
     oneToMany:
         categories:
             targetEntity:  Uni\AdminBundle\Entity\Category

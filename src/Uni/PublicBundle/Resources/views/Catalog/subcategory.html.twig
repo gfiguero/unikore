@@ -1,0 +1,17 @@
+{% extends 'UniPublicBundle:Catalog:layout.html.twig' %}
+
+{% trans_default_domain 'UniPublicBundle' %}
+
+{% block title %}{{ 'catalog.show.title'|trans }}{% endblock %}
+
+{% block catalog %}
+    <div class="row">
+        <div class="col-md-12">
+            <ul class="list-group">
+                {% for catalogitem in catalogitems %}
+                    <li class="list-group-item">{{ catalogitem.product.name }}</li>
+                {% endfor %}
+              </ul>
+        </div>
+    </div>
+{% endblock %}

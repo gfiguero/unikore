@@ -22,6 +22,7 @@ class CatalogItemType extends AbstractType
                 'attr'  => array( 'label_col' => 3, 'widget_col' => 9 ),
                 'translation_domain' => 'UniCatalogBundle',
                 'required' => true,
+                'choice_label' => 'fullName',
                 'query_builder' => function (EntityRepository $er) use ($account) {
                     return $er->createQueryBuilder('s')
                         ->where('s.account = :account')

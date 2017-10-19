@@ -9,9 +9,6 @@ Uni\AdminBundle\Entity\CatalogItem:
             generator:
                 strategy: AUTO
     manyToOne:
-        account:
-            targetEntity: Uni\AdminBundle\Entity\Account
-            inversedBy: catalogitems
         subcategory:
             targetEntity: Uni\AdminBundle\Entity\Subcategory
             inversedBy: catalogitems

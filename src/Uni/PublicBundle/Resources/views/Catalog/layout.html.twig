@@ -1,0 +1,17 @@
+{% extends 'UniPublicBundle:Catalog:base.html.twig' %}
+{% use 'UniPublicBundle:Catalog:header.html.twig' %}
+{% use 'UniPublicBundle:Catalog:aside.html.twig' %}
+
+{% block body %}
+    {% block header %}{{ parent() }}{% endblock %}
+    <div class="container-fluid">
+        <div class="row">
+            <aside class="col-md-2">
+                {% block aside %}{{ parent() }}{% endblock %}
+            </aside>
+            <div class="col-md-10">
+                {% block catalog %}{% endblock %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

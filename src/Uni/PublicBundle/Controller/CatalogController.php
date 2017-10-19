@@ -5,20 +5,45 @@ namespace Uni\PublicBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
+use Uni\AdminBundle\Entity\Catalog;
+use Uni\AdminBundle\Entity\SubCategory;
+
 class CatalogController extends Controller
 {
     public function indexAction(Request $request)
     {
-        $user = $this->getUser();
-        $account = $user->getAccount();
         $em = $this->getDoctrine()->getManager();
-        $products = $em->getRepository('UniAdminBundle:Product')->findBy(array('account' => $account));
-        $page = $em->getRepository('UniAdminBundle:Page')->findOneByDomain($this->getRequest()->getHost());
-        $catalogitems = $em->getRepository('UniAdminBundle:CatalogItem')->findBy(array());
+        $catalogs = $em->getRepository('UniAdminBundle:Catalog')->findAll();
 
-        return $this->render('UniPublicBundle:Catalog:catalog.html.twig', array(
-            'products' => $products,
-            'page' => $page,
+        return $this->render('UniPublicBundle:Catalog:index.html.twig', array(
+            'catalogs' => $catalogs,
+        ));
+    }
+
+    public function showAction(Request $request, Catalog $catalog)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $catalogs = $em->getRepository('UniAdminBundle:Catalog')->findAll();
+        $categories = $em->getRepository('UniAdminBundle:Category')->findBy(array('catalog' => $catalog));
+
+        return $this->render('UniPublicBundle:Catalog:show.html.twig', array(
+            'catalog' => $catalog,
+            'catalogs' => $catalogs,
+            'categories' => $categories,
+        ));
+    }
+
+    public function subcategoryAction(Request $request, SubCategory $subcategory)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $catalog = $subcategory->getCategory()->getCatalog();
+        $categories = $em->getRepository('UniAdminBundle:Category')->findBy(array('catalog' => $catalog));
+        $catalogs = $em->getRepository('UniAdminBundle:Catalog')->findAll();
+        $catalogitems = $em->getRepository('UniAdminBundle:CatalogItem')->findBy(array('subcategory' => $subcategory));
+
+        return $this->render('UniPublicBundle:Catalog:subcategory.html.twig', array(
+            'catalogs' => $catalogs,
+            'categories' => $categories,
             'catalogitems' => $catalogitems,
         ));
     }
