@@ -67,6 +67,7 @@ class CatalogController extends Controller
                 }
                 $catalog->setUser($user);
                 $catalog->setAccount($account);
+                $catalog->setSlug(null);
                 $em = $this->getDoctrine()->getManager();
                 $em->persist($catalog);
                 $em->flush();
@@ -136,6 +137,7 @@ class CatalogController extends Controller
                         $subcategory->setAccount($account);
                     }
                 }
+                $catalog->setSlug(null);
                 $em = $this->getDoctrine()->getManager();
                 $em->persist($catalog);
                 $em->flush();

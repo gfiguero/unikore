@@ -14,6 +14,11 @@ class CatalogType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder 
+            ->add('page', null, array(
+                'label' => 'catalog.form.page',
+                'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
+                'translation_domain' => 'UniAdminBundle',
+            )) 
             ->add('name', null, array(
                 'label' => 'catalog.form.name',
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),

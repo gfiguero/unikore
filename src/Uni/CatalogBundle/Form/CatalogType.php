@@ -17,14 +17,19 @@ class CatalogType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
+            ->add('page', null, array(
+                'label' => 'catalog.form.page',
+                'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
+                'translation_domain' => 'UniCatalogBundle',
+            )) 
             ->add('name', null, array(
                 'label' => 'catalog.form.name',
-                'attr'  => array( 'label_col' => 2, 'widget_col' => 10 ),
+                'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
                 'translation_domain' => 'UniCatalogBundle',
             ))
             ->add('categories', 'bootstrap_collection', array(
                 'label' => 'catalog.form.categories',
-                'attr'  => array( 'label_col' => 2, 'widget_col' => 10 ),
+                'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
                 'translation_domain' => 'UniCatalogBundle',
                 'entry_type' => CategoryType::class,
                 'allow_add' => true,

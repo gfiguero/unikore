@@ -2,6 +2,9 @@
 
 namespace Uni\AdminBundle\Entity;
 
+use Gedmo\Mapping\Annotation as Gedmo;
+use Doctrine\ORM\Mapping as ORM;
+
 /**
  * Catalog
  */
@@ -16,6 +19,12 @@ class Catalog
      * @var string
      */
     private $name;
+
+    /**
+     * @Gedmo\Slug(fields={"name"},suffix=".html")
+     * @ORM\Column(length=128, unique=true, nullable=true)
+     */
+    private $slug;
 
     /**
      * @var \DateTime
@@ -92,6 +101,28 @@ class Catalog
     public function getName()
     {
         return $this->name;
+    }
+
+    /**
+     * Set slug
+     *
+     * @param string $slug
+     *
+     * @return Catalog
+     */
+    public function setSlug($slug){
+        $this->slug = $slug;
+        return $this;
+    }
+
+    /**
+     * Get slug
+     *
+     * @return string
+     */
+    public function getSlug()
+    {
+        return $this->slug;
     }
 
     /**

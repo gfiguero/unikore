@@ -160,9 +160,12 @@ catalogitem:
         form: Items
         submit: Guardar cambios
         flash: Los cambios en el item fueron registrados satisfactoriamente.
+        link: Editar ítem
     delete:
         link: Borrar item
         title: Borrado de item
         message: Los datos borrados no podrán ser recuperados.
         submit: Confirmar borrado
         flash: El Item fue borrado totalmente.
+    show:
+        title: Ítems

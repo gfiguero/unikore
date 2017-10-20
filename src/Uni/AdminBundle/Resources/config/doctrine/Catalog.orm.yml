@@ -25,6 +25,15 @@ Uni\AdminBundle\Entity\Catalog:
             type: string
             length: 100
             nullable: true
+        slug:
+          type: string
+          length: 128
+          gedmo:
+            slug:
+              separator: _
+              style: lower
+              fields:
+                - name
         created_at:
             type: datetime
             gedmo:

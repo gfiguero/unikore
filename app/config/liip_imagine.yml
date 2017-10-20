@@ -28,8 +28,8 @@ liip_imagine:
         product_image:
             quality: 75
             filters:
-                upscale: { min: [600, 600] }
-                thumbnail: { size: [600, 600], mode: outbound }        
+                upscale: { min: [900, 900] }
+                thumbnail: { size: [900, 900], mode: outbound }        
         product_image_small:
             quality: 75
             filters:

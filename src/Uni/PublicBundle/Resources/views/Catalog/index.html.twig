@@ -5,6 +5,19 @@
 {% block title %}{{ 'catalog.index.title'|trans }}{% endblock %}
 
 {% block catalog %}
+    {% if catalogs is not empty %}
+        <div class="row row-flex">
+            {% for k, catalog in catalogs %}
+            <div class="col-xs-6 col-md-2 col-flex">
+                <a href="#" class="thumbnail">
+                    {% if catalog.name %}
+                    <h1>{{ catalog.name|raw }}</h1>
+                    {% endif %}
+                </a>
+            </div>
+        {% endfor %}
+        </div>
+    {% endif %} 
 {#}
     <section id="catalog">
         <div class="container-fluid">

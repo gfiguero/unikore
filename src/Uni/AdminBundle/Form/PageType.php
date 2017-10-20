@@ -80,16 +80,6 @@ class PageType extends AbstractType
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
                 'translation_domain' => 'UniAdminBundle',
             ))
-            ->add('cataloglinkage_title', null, array(
-                'label' => 'page.form.cataloglinkeage_content',
-                'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
-                'translation_domain' => 'UniAdminBundle',
-            ))
-            ->add('cataloglinkage_calltoaction', null, array(
-                'label' => 'page.form.cataloglinkeage_calltoaction',
-                'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
-                'translation_domain' => 'UniAdminBundle',
-            ))
             ->add('imagefile', 'file', array(
                 'label' => 'page.form.imagefile',
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8, 'class' => 'fileinput' ),

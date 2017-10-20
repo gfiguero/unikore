@@ -338,7 +338,7 @@ class CatalogItem
      */
     public function getAccount()
     {
-        return $this->account;
+        return $this->getSubcategory()->getCategory()->getCatalog()->getAccount();
     }
 
     /**

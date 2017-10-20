@@ -2,6 +2,7 @@
 
 namespace Uni\AdminBundle\Entity;
 
+use Gedmo\Mapping\Annotation as Gedmo;
 use Doctrine\ORM\Mapping as ORM;
 use Evence\Bundle\SoftDeleteableExtensionBundle\Mapping\Annotation as Evence;
 
@@ -19,6 +20,12 @@ class Subcategory
      * @var string
      */
     private $name;
+
+    /**
+     * @Gedmo\Slug(fields={"name"},suffix=".html")
+     * @ORM\Column(length=128, unique=true, nullable=true)
+     */
+    private $slug;
 
     /**
      * @var \DateTime
@@ -94,6 +101,28 @@ class Subcategory
     public function getName()
     {
         return $this->name;
+    }
+
+    /**
+     * Set slug
+     *
+     * @param string $slug
+     *
+     * @return Subcategory
+     */
+    public function setSlug($slug){
+        $this->slug = $slug;
+        return $this;
+    }
+
+    /**
+     * Get slug
+     *
+     * @return string
+     */
+    public function getSlug()
+    {
+        return $this->slug;
     }
 
     /**
@@ -239,35 +268,7 @@ class Subcategory
     {
         return $this->category;
     }
-    /**
-     * @var string
-     */
-    private $slug;
 
-
-    /**
-     * Set slug
-     *
-     * @param string $slug
-     *
-     * @return Subcategory
-     */
-    public function setSlug($slug)
-    {
-        $this->slug = $slug;
-
-        return $this;
-    }
-
-    /**
-     * Get slug
-     *
-     * @return string
-     */
-    public function getSlug()
-    {
-        return $this->slug;
-    }
     /**
      * @var \Doctrine\Common\Collections\Collection
      */

@@ -77,14 +77,6 @@ Uni\AdminBundle\Entity\Page:
         feature_content:
             type: text
             nullable: true
-        cataloglinkage_title:
-            type: string
-            length: 40
-            nullable: true
-        cataloglinkage_calltoaction:
-            type: string
-            length: 20
-            nullable: true
         socialmedia_title:
             type: string
             length: 20

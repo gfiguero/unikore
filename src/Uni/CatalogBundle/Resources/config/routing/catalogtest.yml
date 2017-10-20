@@ -1,4 +1,0 @@
-catalog_catalogtest_index:
-    path:     /
-    defaults: { _controller: "UniCatalogBundle:CatalogTest:index" }
-    methods:  GET

@@ -6859,6 +6859,24 @@ button.close {
 #page-toolbar .btn-toolbar .btn {
   margin-bottom: 5px;
 }
+h1,
+.h1 {
+  font-size: 31px;
+}
+h2,
+.h2 {
+  font-size: 23px;
+}
+@media (min-width: 480px) {
+  h1,
+  .h1 {
+    font-size: 46px;
+  }
+  h2,
+  .h2 {
+    font-size: 38px;
+  }
+}
 #main {
   display: flex;
   justify-content: center;
@@ -6930,7 +6948,6 @@ button.close {
 #socialmedia {
   background: #333333;
   text-align: center;
-  padding: 30px 0px;
 }
 #socialmedia .socialmedia-link {
   display: block;
@@ -6978,11 +6995,7 @@ button.close {
   margin: 0;
   text-align: center;
 }
-#catalog {
-  text-align: center;
-  background: radial-gradient(#2d2c2d, #171717, black);
-}
-#catalog .overlay {
+.overlay {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -6993,17 +7006,18 @@ button.close {
   opacity: 0;
   transition: .5s ease;
 }
-#catalog .product-thumbnail {
+.product-thumbnail {
   overflow: hidden;
 }
-#catalog .product-thumbnail:hover .overlay {
+.product-thumbnail:hover .overlay {
   opacity: 1;
 }
-#catalog .product-thumbnail:hover img {
+.product-thumbnail:hover img {
   transform: scale(1.1);
   transition: 2s;
 }
-#catalog .product-thumbnail .overlay-content {
+.product-thumbnail .overlay-content {
+  color: white;
   position: absolute;
   top: 50%;
   left: 50%;

@@ -351,16 +351,6 @@ class Page
     /**
      * @var string
      */
-    private $cataloglinkage_title;
-
-    /**
-     * @var string
-     */
-    private $cataloglinkage_calltoaction;
-
-    /**
-     * @var string
-     */
     private $image;
 
     /**
@@ -624,54 +614,6 @@ class Page
     public function getFeatureTitle()
     {
         return $this->feature_title;
-    }
-
-    /**
-     * Set cataloglinkageTitle
-     *
-     * @param string $cataloglinkageTitle
-     *
-     * @return Page
-     */
-    public function setCataloglinkageTitle($cataloglinkageTitle)
-    {
-        $this->cataloglinkage_title = $cataloglinkageTitle;
-
-        return $this;
-    }
-
-    /**
-     * Get cataloglinkageTitle
-     *
-     * @return string
-     */
-    public function getCataloglinkageTitle()
-    {
-        return $this->cataloglinkage_title;
-    }
-
-    /**
-     * Set cataloglinkageCalltoaction
-     *
-     * @param string $cataloglinkageCalltoaction
-     *
-     * @return Page
-     */
-    public function setCataloglinkageCalltoaction($cataloglinkageCalltoaction)
-    {
-        $this->cataloglinkage_calltoaction = $cataloglinkageCalltoaction;
-
-        return $this;
-    }
-
-    /**
-     * Get cataloglinkageCalltoaction
-     *
-     * @return string
-     */
-    public function getCataloglinkageCalltoaction()
-    {
-        return $this->cataloglinkage_calltoaction;
     }
 
     /**
