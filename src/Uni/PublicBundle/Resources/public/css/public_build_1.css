@@ -6923,25 +6923,13 @@ h2,
 #feature .feature-item-content {
   text-align: center;
 }
-#cataloglinkage {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: left;
-  min-height: 100vh;
-  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('https://static.pexels.com/photos/483773/pexels-photo-483773.jpeg');
-  background-position: center center;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-#cataloglinkage .cataloglinkage-title,
-#cataloglinkage .cataloglinkage-subtitle {
+.cataloglink-title {
   color: white;
   text-shadow: 0 2px 4px #000;
   font-weight: 300;
   margin: 0px 0px 40px;
 }
-#cataloglinkage .cataloglinkage-calltoaction {
+.cataloglink-calltoaction {
   padding: 20px 40px;
   border: none;
 }
@@ -6994,34 +6982,6 @@ h2,
 #footer .footer-content {
   margin: 0;
   text-align: center;
-}
-.overlay {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  width: 100%;
-  opacity: 0;
-  transition: .5s ease;
-}
-.product-thumbnail {
-  overflow: hidden;
-}
-.product-thumbnail:hover .overlay {
-  opacity: 1;
-}
-.product-thumbnail:hover img {
-  transform: scale(1.1);
-  transition: 2s;
-}
-.product-thumbnail .overlay-content {
-  color: white;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
 section {
   padding: 100px 0px;

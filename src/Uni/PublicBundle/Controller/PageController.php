@@ -14,12 +14,14 @@ class PageController extends Controller
         $photographies = $em->getRepository('UniAdminBundle:Photography')->findByPage($page);
         $features = $em->getRepository('UniAdminBundle:Feature')->findByPage($page);
         $socialmedialist = $em->getRepository('UniAdminBundle:Socialmedia')->findByPage($page);
+        $catalogs = $em->getRepository('UniAdminBundle:Catalog')->findByPage($page);
         shuffle($photographies);
         return $this->render('UniPublicBundle:Page:index.html.twig', array(
             'features' => $features,
             'photographies' => $photographies,
             'socialmedialist' => $socialmedialist,
             'page' => $page,
+            'catalogs' => $catalogs,
         ));
     }
 }

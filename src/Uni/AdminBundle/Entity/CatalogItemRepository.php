@@ -10,4 +10,17 @@ namespace Uni\AdminBundle\Entity;
  */
 class CatalogItemRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function findByCatalog($catalog)
+    {
+        $qb = $this->getEntityManager()->createQueryBuilder();
+        $qb->select('ci')
+            ->from('UniAdminBundle:CatalogItem', 'ci')
+            ->join('ci.subcategory', 'cis')
+            ->join('cis.category', 'cisc')
+            ->join('cisc.catalog', 'ciscc')
+            ->where('ciscc.id = :catalog')
+            ->setParameter('catalog', $catalog)
+        ;
+        return $qb->getQuery()->getResult();
+    }
 }

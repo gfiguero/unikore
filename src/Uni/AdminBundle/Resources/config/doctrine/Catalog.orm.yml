@@ -34,6 +34,14 @@ Uni\AdminBundle\Entity\Catalog:
               style: lower
               fields:
                 - name
+        catalog_content:
+            type: string
+            length: 100
+            nullable: true
+        catalog_calltoaction:
+            type: string
+            length: 20
+            nullable: true
         created_at:
             type: datetime
             gedmo:

@@ -11,11 +11,6 @@
             <style type="text/css">#cataloglinkage {background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('{{ vich_uploader_asset(photography3, 'imagefile', 'Uni\\AdminBundle\\Entity\\Photography')|imagine_filter('main_photography') }}');}</style>
         {% endif %}
     {% endif %}
-    {#
-    {% if page.image %}
-        <style type="text/css">#cataloglinkage {background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('{{ vich_uploader_asset(page, 'imagefile')|imagine_filter('cataloglinkage_photography') }}');}</style>
-    {% endif %}
-    #}
     {% if page.brandprimarycolor %}
         <style type="text/css">
         .navbar-default .navbar-brand {
@@ -125,10 +120,28 @@
         .feature-thumbnail:hover {
             background-color: {{ color_darken(page.brandprimarycolor, 10) }};
         }
-        .overlay {
-            background-color: {{ color_alpha(page.brandprimarycolor, 50) }}; 
+        .cataloglink-calltoaction {
+            background-color: {{ page.brandprimarycolor }};
         }
-
+        .cataloglink-calltoaction:hover,
+        .cataloglink-calltoaction:focus,
+        .cataloglink-calltoaction:active:focus,
+        .cataloglink-calltoaction:active {
+            background-color: {{ color_darken(page.brandprimarycolor, 20) }};
+        }
+        {% for k, catalog in catalogs %}
+            {{ 'section#' ~ catalog.slug|raw }} {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-align: left;
+                min-height: 100vh;
+                background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('https://static.pexels.com/photos/483773/pexels-photo-483773.jpeg');
+                background-position: center center;
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+        {% endfor %}
         </style>
     {% endif %}
     {% if page.brandsecondarycolor %}

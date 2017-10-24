@@ -25,14 +25,16 @@ class CatalogController extends Controller
     public function showAction(Request $request, Catalog $catalog)
     {
         $em = $this->getDoctrine()->getManager();
-        $catalogs = $em->getRepository('UniAdminBundle:Catalog')->findAll();
-        $categories = $em->getRepository('UniAdminBundle:Category')->findBy(array('catalog' => $catalog));
         $page = $em->getRepository('UniAdminBundle:Page')->findOneByDomain($this->getRequest()->getHost());
+        $catalogs = $em->getRepository('UniAdminBundle:Catalog')->findByPage($page);
+        $categories = $em->getRepository('UniAdminBundle:Category')->findBy(array('catalog' => $catalog));
+        $catalogitems = $em->getRepository('UniAdminBundle:CatalogItem')->findByCatalog($catalog);
 
         return $this->render('UniPublicBundle:Catalog:show.html.twig', array(
             'catalog' => $catalog,
             'catalogs' => $catalogs,
             'categories' => $categories,
+            'catalogitems' => $catalogitems,
             'page' => $page,
         ));
     }
@@ -40,11 +42,12 @@ class CatalogController extends Controller
     public function subcategoryAction(Request $request, SubCategory $subcategory)
     {
         $em = $this->getDoctrine()->getManager();
+        $page = $em->getRepository('UniAdminBundle:Page')->findOneByDomain($this->getRequest()->getHost());
+        $catalogs = $em->getRepository('UniAdminBundle:Catalog')->findByPage($page);
         $catalog = $subcategory->getCategory()->getCatalog();
         $categories = $em->getRepository('UniAdminBundle:Category')->findBy(array('catalog' => $catalog));
-        $catalogs = $em->getRepository('UniAdminBundle:Catalog')->findAll();
         $catalogitems = $em->getRepository('UniAdminBundle:CatalogItem')->findBy(array('subcategory' => $subcategory));
-        $page = $em->getRepository('UniAdminBundle:Page')->findOneByDomain($this->getRequest()->getHost());
+
 
         return $this->render('UniPublicBundle:Catalog:subcategory.html.twig', array(
             'catalogs' => $catalogs,

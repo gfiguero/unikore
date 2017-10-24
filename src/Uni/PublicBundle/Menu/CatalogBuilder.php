@@ -11,7 +11,7 @@ class CatalogBuilder implements ContainerAwareInterface
 {
     use ContainerAwareTrait;
 
-    public function topMenu(FactoryInterface $factory, array $options)
+    /*public function topMenu(FactoryInterface $factory, array $options)
     {
         $catalogs = $options['catalogs'];
 
@@ -25,7 +25,7 @@ class CatalogBuilder implements ContainerAwareInterface
         }
 
         return $topmenu;
-    }
+    }*/
 
     public function sideMenu(FactoryInterface $factory, array $options)
     {

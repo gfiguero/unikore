@@ -60,6 +60,13 @@ assetic:
                 - less
                 - cssrewrite
             output: src/Uni/PublicBundle/Resources/public/css/public.css
+        uni_public_catalog_css:
+            inputs:
+                - src/Uni/PublicBundle/Resources/less/build-catalog.less
+            filters:
+                - less
+                - cssrewrite
+            output: src/Uni/PublicBundle/Resources/public/css/public-catalog.css
 #        frontend_css:
 #            inputs:
 #                - src/Uni/OfferBundle/Resources/less/build.less

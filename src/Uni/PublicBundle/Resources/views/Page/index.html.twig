@@ -3,7 +3,7 @@
 {% use 'UniPublicBundle:Page:main.html.twig' %}
 {% use 'UniPublicBundle:Page:about.html.twig' %}
 {% use 'UniPublicBundle:Page:feature.html.twig' %}
-{#{% use 'UniPublicBundle:Page:cataloglinkage.html.twig' %}#}
+{% use 'UniPublicBundle:Page:cataloglink.html.twig' %}
 {% use 'UniPublicBundle:Page:socialmedia.html.twig' %}
 {% use 'UniPublicBundle:Page:location.html.twig' %}
 {% use 'UniPublicBundle:Page:contact.html.twig' %}
@@ -17,7 +17,7 @@
         {% block main %}{{ parent() }}{% endblock %}
         {% block about %}{{ parent() }}{% endblock %}
         {% block feature %}{{ parent() }}{% endblock %}
-        {#{% block cataloglinkage %}{{ parent() }}{% endblock %}#}
+        {% block cataloglink %}{{ parent() }}{% endblock %}
         {% block socialmedia %}{{ parent() }}{% endblock %}
         {% block location %}{{ parent() }}{% endblock %}
         {% block contact %}{{ parent() }}{% endblock %}

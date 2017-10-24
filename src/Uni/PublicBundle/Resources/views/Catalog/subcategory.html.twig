@@ -1,63 +1,61 @@
 {% extends 'UniPublicBundle:Catalog:layout.html.twig' %}
-{% use 'UniPublicBundle:Catalog:style-catalog.html.twig' %}
 
 {% trans_default_domain 'UniPublicBundle' %}
 
 {% block title %}{{ 'catalog.show.title'|trans }}{% endblock %}
 
 {% block catalog %}
-    {% if catalogs is not empty %}
-        <div class="row">
-            <div class="col-md-12">
-                <div class="row row-flex">
-                    {% for k, catalogitem in catalogitems %}
-                    <div class="col-sm-3 col-md-3 col-flex">
-                        <div class="thumbnail product-thumbnail" data-toggle="modal" data-target="#productModal{{ k }}">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row row-flex">
+                {% for k, catalogitem in catalogitems %}
+                    <div class="col-sm-4 col-md-2 col-flex">
+                        <div class="thumbnail" data-toggle="modal" data-target="#productModal{{ k }}">
                             {% if catalogitem.product.image %}
                                 <img class="product-item-image" src="{{ vich_uploader_asset(catalogitem.product, 'imagefile', 'Uni\\AdminBundle\\Entity\\Product')|imagine_filter('product_image') }}">
-                                <div class="overlay">
-                                    <div class="overlay-content">{{ icon('plus-circle fa-fw fa-4x') }}</div>
+                                <div class="caption">
+                                    {% if catalogitem.product.name %}<p><strong>{{ catalogitem.product.name|raw }}</strong></p>{% endif %}
+                                    {% if catalogitem.product.price %}<strong><mark>{{ icon('tag fa-fw fa-lg') }}$&nbsp;{{ catalogitem.product.price|raw|number_format(0, ',', '.') }}</mark></strong>{% endif %}
                                 </div>
                             {% endif %}
                         </div>
                     </div>
-                    {% endfor %}
-                </div>
+                {% endfor %}
+            </div>
+            <div id="modals">
 
-                <div id="modals">
+                    {% for k, catalogitem in catalogitems %}
+                    <div id="productModal{{ k }}" class="modal fade" role="dialog">
+                        <div class="modal-dialog modal-lg modal-image">
 
-                        {% for k, catalogitem in catalogitems %}
-                        <div id="productModal{{ k }}" class="modal fade" role="dialog">
-                            <div class="modal-dialog modal-lg modal-image">
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8">
+                                            <img class="product-item-image img-responsive" src="{{ vich_uploader_asset(catalogitem.product, 'imagefile', 'Uni\\AdminBundle\\Entity\\Product')|imagine_filter('product_image_large') }}">
+                                        </div>
+                                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
+                                            <div id="modal-caption">
+                                            {% if catalogitem.product.name %}
+                                                <h1>{{ catalogitem.product.name|raw }}</h1>
+                                                {% if catalogitem.subcategory %}<small>{{ catalogitem.subcategory|raw }}</small>{% endif %}
+                                                {% if catalogitem.product.description %}<p>{{ catalogitem.product.description|raw }}</p>{% endif %}
+                                                {% if catalogitem.product.price %}<strong><mark>{{ icon('tag fa-fw fa-lg') }}$&nbsp;{{ catalogitem.product.price|raw|number_format(0, ',', '.') }}</mark></strong>{% endif %}
+                                            {% endif %}
+                                            </div>
+                                        </div>
 
-                                <!-- Modal content-->
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <img class="product-item-image img-responsive" src="{{ vich_uploader_asset(catalogitem.product, 'imagefile', 'Uni\\AdminBundle\\Entity\\Product')|imagine_filter('product_image_large') }}">
-                                    </div>
-                                    <div class="modal-footer">
-                                    {% if catalogitem.product.name %}
-                                        <h4 class="modal-title">{{ catalogitem.product.name|raw }}</h4>
-                                        {% if catalogitem.subcategory %}<small>{{ catalogitem.subcategory|raw }}</small>{% endif %}
-                                        {% if catalogitem.product.description %}<p>{{ catalogitem.product.description|raw }}</p>{% endif %}
-                                        {% if catalogitem.product.price %}<p>$&nbsp;{{ catalogitem.product.price|raw|number_format(0, ',', '.') }}</p>{% endif %}
-                                    {% endif %}
                                     </div>
                                 </div>
-
                             </div>
                         </div>
-                        {% endfor %}
-                </div>
+                    </div>
+                    {% endfor %}
             </div>
         </div>
-
-    {% endif %} 
-{% endblock %}
-
-{% block stylesheet %}
-    {% block stylecatalog %}{{ parent() }}{% endblock %}
+    </div>
 {% endblock %}

@@ -1,5 +1,4 @@
 {% extends 'UniPublicBundle:Catalog:base.html.twig' %}
-{% use 'UniPublicBundle:Catalog:header.html.twig' %}
 {% use 'UniPublicBundle:Catalog:aside.html.twig' %}
 
 {% block body %}
@@ -7,6 +6,7 @@
         <div class="container-fluid">
             <div class="row">
                 <aside class="col-md-2">
+                    {% if page.image %}<a href="{{ path('public_root') }}"><img src="{{ vich_uploader_asset(page, 'imagefile')|imagine_filter('brand_photography_catalog') }}" class="center-block logo"></a>{% endif %}
                     {% block aside %}{{ parent() }}{% endblock %}
                 </aside>
                 <div class="col-md-10">

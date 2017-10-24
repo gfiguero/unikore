@@ -27,6 +27,16 @@ class Catalog
     private $slug;
 
     /**
+     * @var string
+     */
+    private $catalog_content;
+
+    /**
+     * @var string
+     */
+    private $catalog_calltoaction;
+
+    /**
      * @var \DateTime
      */
     private $created_at;
@@ -123,6 +133,54 @@ class Catalog
     public function getSlug()
     {
         return $this->slug;
+    }
+
+    /**
+     * Set catalogContent
+     *
+     * @param string $catalog_content
+     *
+     * @return Catalog
+     */
+    public function setCatalogContent($catalog_content)
+    {
+        $this->catalog_content = $catalog_content;
+
+        return $this;
+    }
+
+    /**
+     * Get catalogContent
+     *
+     * @return string
+     */
+    public function getCatalogContent()
+    {
+        return $this->catalog_content;
+    }
+
+    /**
+     * Set catalogCalltoaction
+     *
+     * @param string $catalog_calltoaction
+     *
+     * @return Catalog
+     */
+    public function setCatalogCalltoaction($catalog_calltoaction)
+    {
+        $this->catalog_calltoaction = $catalog_calltoaction;
+
+        return $this;
+    }
+
+    /**
+     * Get catalogCalltoaction
+     *
+     * @return string
+     */
+    public function getCatalogCalltoaction()
+    {
+        return $this->catalog_calltoaction;
     }
 
     /**

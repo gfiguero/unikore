@@ -27,6 +27,16 @@ class CatalogType extends AbstractType
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
                 'translation_domain' => 'UniCatalogBundle',
             ))
+            ->add('catalog_content', null, array(
+                'label' => 'catalog.form.catalog_content',
+                'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
+                'translation_domain' => 'UniCatalogBundle',
+            ))
+            ->add('catalog_calltoaction', null, array(
+                'label' => 'catalog.form.catalog_calltoaction',
+                'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
+                'translation_domain' => 'UniCatalogBundle',
+            ))
             ->add('categories', 'bootstrap_collection', array(
                 'label' => 'catalog.form.categories',
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),

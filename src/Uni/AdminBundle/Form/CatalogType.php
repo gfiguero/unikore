@@ -23,7 +23,17 @@ class CatalogType extends AbstractType
                 'label' => 'catalog.form.name',
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
                 'translation_domain' => 'UniAdminBundle',
-            )) 
+            ))
+            ->add('catalog_content', null, array(
+                'label' => 'catalog.form.catalog_content',
+                'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
+                'translation_domain' => 'UniAdminBundle',
+            ))
+            ->add('catalog_calltoaction', null, array(
+                'label' => 'catalog.form.catalog_calltoaction',
+                'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
+                'translation_domain' => 'UniAdminBundle',
+            ))
             ->add('account', null, array(
                 'label' => 'catalog.form.account',
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
