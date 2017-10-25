@@ -41,6 +41,8 @@
                                 <dd>{% if page.name %}{{ page.name }}{% endif %}</dd>
                             <dt>{{ 'page.form.domain'|trans }}</dt>
                                 <dd>{% if page.domain %}{{ page.domain }}{% endif %}</dd>
+                            <dt>{{ 'page.form.imagefile'|trans }}</dt>
+                                <dd>{% if page.imagefile %}{{ page.imagefile }}{% endif %}</dd>
                             <dt>{{ 'page.form.brand'|trans }}</dt>
                                 <dd>{% if page.brand %}{{ page.brand }}{% endif %}</dd>
                             <dt>{{ 'page.form.brand_primary_color'|trans }}</dt>
@@ -75,6 +77,16 @@
                                 <dd>{% if page.contactaddress %}{{ page.contactaddress }}{% endif %}</dd>
                             <dt>{{ 'page.form.contact_schedule'|trans }}</dt>
                                 <dd>{% if page.contactschedule %}{{ page.contactschedule }}{% endif %}</dd>
+                            <dt>{{ 'page.form.keywords'|trans }}</dt>
+                                <dd>{% if page.keywords %}{{ page.keywords }}{% endif %}</dd>
+                            <dt>{{ 'page.form.social_share_image'|trans }}</dt>
+                                <dd>{% if page.socialshareimage %}{{ page.socialshareimage }}{% endif %}</dd>
+                            <dt>{{ 'page.form.social_share_title'|trans }}</dt>
+                                <dd>{% if page.socialsharetitle %}{{ page.socialsharetitle }}{% endif %}</dd>
+                            <dt>{{ 'page.form.social_share_description'|trans }}</dt>
+                                <dd>{% if page.socialsharedescription %}{{ page.socialsharedescription }}{% endif %}</dd>
+                            <dt>{{ 'page.form.fb_share_appid'|trans }}</dt>
+                                <dd>{% if page.fbshareappid %}{{ page.fbshareappid }}{% endif %}</dd>
                             <dt>{{ 'page.form.created_at'|trans }}</dt>
                                 <dd>{% if page.createdat %}{{ page.createdat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "d 'de' LLLL 'de' y - HH:mm") }}&nbsp;({{ page.createdat|ago }}){% endif %}</dd>
                             <dt>{{ 'page.form.updated_at'|trans }}</dt>

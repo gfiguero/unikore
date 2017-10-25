@@ -40,6 +40,7 @@
                             <li role="presentation"><a data-toggle="tab" href="#feature">{{ 'page.section.feature'|trans }}</a></li>
                             <li role="presentation"><a data-toggle="tab" href="#socialmedia">{{ 'page.section.socialmedia'|trans }}</a></li>
                             <li role="presentation"><a data-toggle="tab" href="#contact">{{ 'page.section.contact'|trans }}</a></li>
+                            <li role="presentation"><a data-toggle="tab" href="#seo">{{ 'page.section.seo'|trans }}</a></li>
                         </ul>
                     </div>
                     <div class="panel-body">
@@ -76,6 +77,13 @@
                                 {{ form_row(newForm.contact_email) }}
                                 {{ form_row(newForm.contact_address) }}
                                 {{ form_row(newForm.contact_schedule) }}
+                            </div>
+                            <div id="seo" class="tab-pane fade" >
+                                {{ form_row(newForm.keywords) }}
+                                {{ form_row(newForm.social_share_image) }}
+                                {{ form_row(newForm.social_share_title) }}
+                                {{ form_row(newForm.social_share_description) }}
+                                {{ form_row(newForm.fb_share_appid) }}
                             </div>
                         </div>
                         <div class="form-group">

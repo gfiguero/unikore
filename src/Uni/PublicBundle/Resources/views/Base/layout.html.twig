@@ -2,6 +2,25 @@
 {% use 'UniPublicBundle:Base:style.html.twig' %}
 {% use 'UniPublicBundle:Base:script.html.twig' %}
 
+{% block meta %}
+    <meta name="author" content="uniSign - www.unisign.cl">
+
+    <meta name="keywords" content="{{ page.keywords|raw }}">
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="{{ page.socialsharetitle|raw }}" />
+    <meta name="twitter:description" content="{{ page.socialsharedescription|raw }}" />
+    <meta name="twitter:image" content="{{ page.socialshareimage|raw }}" />
+
+    <meta property="fb:app_id" content="{{ page.fbshareappid|raw }}"/>
+    <meta property = "og:type" content="article" />
+    <meta property="og:url" content="{{ page.domain|raw }}" />
+    <meta property="og:site_name" content="{{ page.name|raw }}" />
+    <meta property="og:title" content="{{ page.socialsharetitle|raw }}" />
+    <meta property="og:description" content="{{ page.socialsharedescription|raw }}" />
+    <meta property="og:image" content="{{ page.socialshareimage|raw }}" />
+{% endblock %}
+
 {% block body %}
     {% block page %}{% endblock %}
 {% endblock %}

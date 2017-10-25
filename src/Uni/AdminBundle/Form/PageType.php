@@ -80,12 +80,6 @@ class PageType extends AbstractType
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
                 'translation_domain' => 'UniAdminBundle',
             ))
-            ->add('imagefile', 'file', array(
-                'label' => 'page.form.imagefile',
-                'attr'  => array( 'label_col' => 4, 'widget_col' => 8, 'class' => 'fileinput' ),
-                'translation_domain' => 'UniAdminBundle',
-                'required' => false,
-            ))
             ->add('socialmedia_title', null, array(
                 'label' => 'page.form.socialmedia_title',
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
@@ -123,6 +117,31 @@ class PageType extends AbstractType
             ))
             ->add('socialmedia_title', null, array(
                 'label' => 'page.form.socialmedia_title',
+                'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
+                'translation_domain' => 'UniAdminBundle',
+            ))
+            ->add('keywords', null, array(
+                'label' => 'page.form.keywords',
+                'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
+                'translation_domain' => 'UniAdminBundle',
+            ))
+            ->add('social_share_image', null, array(
+                'label' => 'page.form.social_share_image',
+                'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
+                'translation_domain' => 'UniAdminBundle',
+            ))
+            ->add('social_share_title', null, array(
+                'label' => 'page.form.social_share_title',
+                'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
+                'translation_domain' => 'UniAdminBundle',
+            ))
+            ->add('social_share_description', null, array(
+                'label' => 'page.form.social_share_description',
+                'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
+                'translation_domain' => 'UniAdminBundle',
+            ))
+            ->add('fb_share_appid', null, array(
+                'label' => 'page.form.fb_share_appid',
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
                 'translation_domain' => 'UniAdminBundle',
             ))

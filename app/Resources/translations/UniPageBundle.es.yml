@@ -58,6 +58,11 @@ page:
         contact_email: Email de contacto
         contact_address: Dirección de contacto
         contact_schedule: Horario de atención
+        keywords: Palabras claves
+        social_share_image: Imagen compartida
+        social_share_title: Título compartido
+        social_share_description: Descripción compartida
+        fb_share_appid: ID de la aplicación
     section:
         brand: Marca
         main: Portada
@@ -65,6 +70,7 @@ page:
         feature: Catacterísticas del Negocio
         socialmedia: Redes Sociales
         contact: Información de Contacto
+        seo: Optimización de Motores de Búsqueda
 
 
 feature:

@@ -104,6 +104,23 @@ Uni\AdminBundle\Entity\Page:
             type: string
             length: 50
             nullable: true
+        keywords:
+            type: text
+            nullable: true
+        social_share_image:
+            type: string
+            length: 200
+            nullable: true
+        social_share_title:
+            type: string
+            length: 50
+            nullable: true
+        social_share_description:
+            type: text
+            nullable: true
+        fb_share_appid:
+            type: integer
+            nullable: true
         created_at:
             type: datetime
             gedmo:

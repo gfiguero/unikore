@@ -401,6 +401,41 @@ class Page
     private $socialmedia;
 
     /**
+     * @var string
+     */
+    private $keywords;
+
+    /**
+     * @var string
+     */
+    private $social_share_image;
+
+    /**
+     * @var string
+     */
+    private $social_share_title;
+
+    /**
+     * @var string
+     */
+    private $social_share_description;
+
+    /**
+     * @var integer
+     */
+    private $fb_share_appid;
+
+    /**
+     * @var string
+     */
+    private $fb_share_title;
+
+    /**
+     * @var string
+     */
+    private $fb_share_description;
+
+    /**
      * Set brand
      *
      * @param string $brand
@@ -889,6 +924,127 @@ class Page
     {
         return $this->socialmedia;
     }
+
+    /**
+     * Set keywords
+     *
+     * @param string $keywords
+     *
+     * @return Page
+     */
+    public function setKeywords($keywords)
+    {
+        $this->keywords = $keywords;
+
+        return $this;
+    }
+
+    /**
+     * Get keywords
+     *
+     * @return string
+     */
+    public function getKeywords()
+    {
+        return $this->keywords;
+    }
+
+    /**
+     * Set socialShareImage
+     *
+     * @param string $social_share_image
+     *
+     * @return Page
+     */
+    public function setsocialShareImage($social_share_image)
+    {
+        $this->social_share_image = $social_share_image;
+
+        return $this;
+    }
+
+    /**
+     * Get socialShareImage
+     *
+     * @return string
+     */
+    public function getsocialShareImage()
+    {
+        return $this->social_share_image;
+    }
+
+    /**
+     * Set socialShareTitle
+     *
+     * @param string $social_share_title
+     *
+     * @return Page
+     */
+    public function setsocialShareTitle($social_share_title)
+    {
+        $this->social_share_title = $social_share_title;
+
+        return $this;
+    }
+
+    /**
+     * Get socialShareTitle
+     *
+     * @return string
+     */
+    public function getsocialShareTitle()
+    {
+        return $this->social_share_title;
+    }
+
+    /**
+     * Set socialShareDescription
+     *
+     * @param string $social_share_description
+     *
+     * @return Page
+     */
+    public function setsocialShareDescription($social_share_description)
+    {
+        $this->social_share_description = $social_share_description;
+
+        return $this;
+    }
+
+    /**
+     * Get socialShareDescription
+     *
+     * @return string
+     */
+    public function getsocialShareDescription()
+    {
+        return $this->social_share_description;
+    }
+
+    /**
+     * Set fbShareAppid
+     *
+     * @param integer $fb_share_appid
+     *
+     * @return Page
+     */
+    public function setfbShareAppid($fb_share_appid)
+    {
+        $this->fb_share_appid = $fb_share_appid;
+
+        return $this;
+    }
+
+    /**
+     * Get fbShareAppid
+     *
+     * @return integer
+     */
+    public function getfbShareAppid()
+    {
+        return $this->fb_share_appid;
+    }
+
     /**
      * @var \Doctrine\Common\Collections\Collection
      */
