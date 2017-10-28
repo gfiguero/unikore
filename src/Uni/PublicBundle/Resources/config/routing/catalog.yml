@@ -1,7 +1,3 @@
-public_catalog_index:
-    path:     /
-    defaults: { _controller: UniPublicBundle:Catalog:index }
-
 public_catalog_show:
     path:     /{id}/show
     defaults: { _controller: UniPublicBundle:Catalog:show }

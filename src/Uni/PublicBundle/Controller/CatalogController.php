@@ -10,18 +10,6 @@ use Uni\AdminBundle\Entity\Subcategory;
 
 class CatalogController extends Controller
 {
-    public function indexAction(Request $request)
-    {
-        $em = $this->getDoctrine()->getManager();
-        $catalogs = $em->getRepository('UniAdminBundle:Catalog')->findAll();
-        $page = $em->getRepository('UniAdminBundle:Page')->findOneByDomain($this->getRequest()->getHost());
-
-        return $this->render('UniPublicBundle:Catalog:index.html.twig', array(
-            'catalogs' => $catalogs,
-            'page' => $page,
-        ));
-    }
-
     public function showAction(Request $request, Catalog $catalog)
     {
         $em = $this->getDoctrine()->getManager();
