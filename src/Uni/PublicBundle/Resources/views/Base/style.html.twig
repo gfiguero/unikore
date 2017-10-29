@@ -6,10 +6,6 @@
             {% set photography2 = attribute(photographies, 1) %}
             <style type="text/css">#contact {background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('{{ vich_uploader_asset(photography2, 'imagefile', 'Uni\\AdminBundle\\Entity\\Photography')|imagine_filter('main_photography') }}');}</style>
         {% endif %}
-        {% if photographies|length > 2 %}
-            {% set photography3 = attribute(photographies, 2) %}
-            <style type="text/css">#cataloglinkage {background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('{{ vich_uploader_asset(photography3, 'imagefile', 'Uni\\AdminBundle\\Entity\\Photography')|imagine_filter('main_photography') }}');}</style>
-        {% endif %}
     {% endif %}
     {% if page.brandprimarycolor %}
         <style type="text/css">
