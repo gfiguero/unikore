@@ -1,16 +1,12 @@
 {% block style %}
-    {% if photographies is not empty %}
-        {% set photography1 = attribute(photographies, 0) %}
-        <style type="text/css">#main {background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('{{ vich_uploader_asset(photography1, 'imagefile', 'Uni\\AdminBundle\\Entity\\Photography')|imagine_filter('main_photography') }}');}</style>
-        {% if photographies|length > 1 %}
-            {% set photography2 = attribute(photographies, 1) %}
-            <style type="text/css">#contact {background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('{{ vich_uploader_asset(photography2, 'imagefile', 'Uni\\AdminBundle\\Entity\\Photography')|imagine_filter('main_photography') }}');}</style>
-        {% endif %}
-        {% if photographies|length > 2 %}
-            {% set photography3 = attribute(photographies, 2) %}
-            <style type="text/css">#cataloglinkage {background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('{{ vich_uploader_asset(photography3, 'imagefile', 'Uni\\AdminBundle\\Entity\\Photography')|imagine_filter('main_photography') }}');}</style>
-        {% endif %}
-    {% endif %}
+    <style type="text/css">
+    {% if backgrounds[0] is defined %}#main {background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('{{ vich_uploader_asset(backgrounds[0], 'imagefile')|imagine_filter('main_photography') }}');}{% endif %}
+    {% if backgrounds[1] is defined %}#contact {background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('{{ vich_uploader_asset(backgrounds[1], 'imagefile')|imagine_filter('main_photography') }}');}{% endif %}
+    {% for catalog in catalogs %}
+        {% if backgrounds[loop.index0 + 2] is defined %}#{{ catalog.slug|raw }} {background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('{{ vich_uploader_asset(backgrounds[loop.index0 + 2], 'imagefile')|imagine_filter('main_photography') }}');}{% endif %}
+    {% endfor %}
+    </style>
+
     {% if page.brandprimarycolor %}
         <style type="text/css">
         .navbar-default .navbar-brand {
@@ -136,7 +132,6 @@
                 align-items: center;
                 text-align: left;
                 min-height: 100vh;
-                background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('https://static.pexels.com/photos/483773/pexels-photo-483773.jpeg');
                 background-position: center center;
                 background-size: cover;
                 background-repeat: no-repeat;
