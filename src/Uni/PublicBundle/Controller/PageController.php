@@ -19,7 +19,7 @@ class PageController extends Controller
         $backgrounds = array();
 
         if(!empty($photographies)) {
-            // conteo se secciones
+            // conteo de secciones
             $sections = 0;
             if($page) $sections += 2;
             if(!empty($features)) $sections += 1;

@@ -198,12 +198,37 @@ class PageController extends Controller
         $photographies = $em->getRepository('UniAdminBundle:Photography')->findByPage($page);
         $features = $em->getRepository('UniAdminBundle:Feature')->findByPage($page);
         $socialmedialist = $em->getRepository('UniAdminBundle:Socialmedia')->findByPage($page);
+        $catalogs = $em->getRepository('UniAdminBundle:Catalog')->findByPage($page);
         shuffle($photographies);
+        $backgrounds = array();
+
+        if(!empty($photographies)) {
+            // conteo se secciones
+            $sections = 0;
+            if($page) $sections += 2;
+            if(!empty($features)) $sections += 1;
+            if(!empty($socialmedialist)) $sections += 1;
+            if(!empty($catalogs)) $sections += count($catalogs);
+
+            $currentPhotography = 0;
+            for ($section=0; $section < $sections; $section++) {
+                if (array_key_exists($currentPhotography, $photographies)) {
+                    array_push($backgrounds, $photographies[$currentPhotography]);
+                    $currentPhotography++;
+                } else {
+                    $currentPhotography = 0;
+                    array_push($backgrounds, $photographies[$currentPhotography]);
+                }
+            }
+        }
+        
         return $this->render('UniPageBundle:Page:preview.html.twig', array(
             'features' => $features,
             'photographies' => $photographies,
             'socialmedialist' => $socialmedialist,
             'page' => $page,
+            'catalogs' => $catalogs,
+            'backgrounds' => $backgrounds,
         ));
     }
 }
