@@ -26,8 +26,8 @@ class CatalogItemController extends Controller
         $sort = $request->query->get('sort');
         $direction = $request->query->get('direction');
         $em = $this->getDoctrine()->getManager();
-        if($sort) $catalogitems = $em->getRepository('UniAdminBundle:CatalogItem')->findBy(array(), array($sort => $direction));
-        else $catalogitems = $em->getRepository('UniAdminBundle:CatalogItem')->findBy(array());
+        if($sort) $catalogitems = $em->getRepository('UniAdminBundle:CatalogItem')->findBy(array('account' => $account), array($sort => $direction));
+        else $catalogitems = $em->getRepository('UniAdminBundle:CatalogItem')->findBy(array('account' => $account));
         $paginator = $this->get('knp_paginator');
         $catalogitems = $paginator->paginate($catalogitems, $request->query->getInt('page', 1), 100);
 
@@ -59,6 +59,8 @@ class CatalogItemController extends Controller
 
         if ($newForm->isSubmitted()) {
             if($newForm->isValid()) {
+                $catalogitem->setUser($user);
+                $catalogitem->setAccount($account);
                 $catalogitem->setReferencePrice();
                 $em = $this->getDoctrine()->getManager();
                 $em->persist($catalogitem);
