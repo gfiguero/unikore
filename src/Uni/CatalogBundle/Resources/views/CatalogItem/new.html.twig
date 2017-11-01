@@ -46,12 +46,3 @@
     <!-- /#page-wrapper -->
 
 {% endblock %}
-
-{% block stylesheet %}
-    {% block multiselectcss %}{{ parent() }}{% endblock %}
-{% endblock %}
-
-{% block javascript %}
-    <script src="{{ asset('bundles/unioffer/js/budget.item.js') }}"></script>
-    {% block multiselectjs %}{{ parent() }}{% endblock %}
-{% endblock %}
