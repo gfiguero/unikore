@@ -41,6 +41,7 @@ page:
         created_at: Registro
         updated_at: Actualización
         domain: Dominio
+        imagefile: Logo
         brand: Marca
         brand_primary_color: Color primario
         brand_secondary_color: Color secundario

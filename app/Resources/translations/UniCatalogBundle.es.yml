@@ -30,10 +30,14 @@ catalog:
         title: Nuevo catálogo
         form: Catálogo
         submit: Guardar
+        flash: Nuevo catálogo registrado satisfactoriamente.
     form:
         id: ID
+        page: Página
         name: Nombre de Catálogo
         categories: Categorías
+        catalog_content: Contenido de la sección catálogo
+        catalog_calltoaction: Botón de la sección catálogo
         created_at: Creado
         updated_at: Actualizado
         addcategory: Agregar categoría
@@ -41,6 +45,7 @@ catalog:
         title: Editar catálogo
         form: Catálogo
         submit: Guardar cambios
+        flash: Los cambios en el catálogo fueron registrados satisfactoriamente.
     delete:
         link: Borrar catálogo
         title: Borrado de catálogo
@@ -58,9 +63,11 @@ product:
         title: Nuevo producto
         form: Producto
         submit: Guardar
+        flash: Nuevo producto registrado satisfactoriamente.
     form:
         id: ID
         name: Nombre
+        cost: Costo
         price: Precio
         image: Imagen
         subcategory: Subcategoría
@@ -73,12 +80,16 @@ product:
         submit: Guardar cambios
         title: Editar producto
         form: Producto
+        flash: Los cambios en el producto fueron registrados satisfactoriamente.
     delete:
         link: Borrar producto
         title: Borrado de producto
         message: Los datos borrados no podrán ser recuperados.
         submit: Confirmar borrado
         flash: El producto fue borrado totalmente.
+    section:
+        identification: Identificación del producto
+        trading: Comercialización del producto
 
 category: 
     index: 
