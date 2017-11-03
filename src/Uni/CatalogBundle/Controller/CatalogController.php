@@ -92,6 +92,7 @@ class CatalogController extends Controller
     {
         return $this->createForm(new CatalogType(), $catalog, array(
             'action' => $this->generateUrl('catalog_catalog_new'),
+            'token_storage' => $this->get('security.token_storage'),
         ));
     }
 
@@ -166,6 +167,7 @@ class CatalogController extends Controller
     {
         return $this->createForm(new CatalogType(), $catalog, array(
             'action' => $this->generateUrl('catalog_catalog_edit', array('id' => $catalog->getId())),
+            'token_storage' => $this->get('security.token_storage'),
         ));
     }
 

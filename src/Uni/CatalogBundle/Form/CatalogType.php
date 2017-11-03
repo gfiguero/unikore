@@ -5,6 +5,8 @@ namespace Uni\CatalogBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorage;
+use Doctrine\ORM\EntityRepository;
 
 use Uni\AdminBundle\Entity\Catalog;
 use Uni\CatalogBundle\Form\CategoryType;
@@ -16,12 +18,20 @@ class CatalogType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+        $account = $options['token_storage']->getToken()->getUser()->getAccount();
         $builder
             ->add('page', null, array(
                 'label' => 'catalog.form.page',
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
                 'translation_domain' => 'UniCatalogBundle',
-            )) 
+                'required' => true,
+                'query_builder' => function (EntityRepository $er) use ($account) {
+                    return $er->createQueryBuilder('s')
+                        ->where('s.account = :account')
+                        ->setParameter('account', $account)
+                    ;
+                },
+            ))
             ->add('name', null, array(
                 'label' => 'catalog.form.name',
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
@@ -61,7 +71,8 @@ class CatalogType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => Catalog::class,
+            'data_class' => 'Uni\AdminBundle\Entity\Catalog',
+            'token_storage' => null,
         ));
     }
 
