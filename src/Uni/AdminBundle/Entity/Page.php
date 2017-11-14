@@ -672,7 +672,7 @@ class Page
      */
     public function getImage()
     {
-        if ($this->image) return $this->image; else return NULL;
+        if ($this->image) return $this->image; else return 'default.png';
     }
 
     /**

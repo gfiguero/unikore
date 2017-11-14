@@ -16,19 +16,16 @@ liip_imagine:
                 thumbnail: { size: [160, 120], mode: inset }
         product_export_small:
             quality: 75
-            default_image: default.png
             filters:
                 upscale: { min: [120, 120] }
                 thumbnail: { size: [120, 120], mode: inset }
         product_image_large:
             quality: 75
-            default_image: default.png
             filters:
                 upscale: { min: [900, 900] }
                 thumbnail: { size: [900, 900], mode: outbound }
         product_image:
             quality: 75
-            default_image: default.png
             filters:
                 upscale: { min: [900, 900] }
                 thumbnail: { size: [900, 900], mode: outbound }        
@@ -39,13 +36,11 @@ liip_imagine:
                 thumbnail: { size: [120, 120], mode: outbound }
         product_show_medium:
             quality: 75
-            default_image: default.png
             filters:
                 upscale: { min: [400, 400] }
                 thumbnail: { size: [400, 400], mode: inset }
         product_edit_preview:
             quality: 75
-            default_image: default.png
             filters:
                 upscale: { min: [256, 160] }
                 thumbnail: { size: [256, 160], mode: inset }
@@ -62,7 +57,6 @@ liip_imagine:
                 thumbnail: { size: [240, 120], mode: inset }
         issuer_preview_small:
             quality: 75
-            default_image: default.png
             filters:
                 upscale: { min: [256, 160] }
                 thumbnail: { size: [256, 160], mode: inset }
@@ -74,7 +68,6 @@ liip_imagine:
                 thumbnail: { size: [200], mode: outbound }
         brand_photography_edit_preview:
             quality: 75
-            default_image: default.png
             filters:
                 upscale: { min: [256, 160] }
                 thumbnail: { size: [256, 160], mode: inset }
@@ -86,7 +79,6 @@ liip_imagine:
 
         feature_edit_preview:
             quality: 75
-            default_image: default.png
             filters:
                 upscale: { min: [256, 160] }
                 thumbnail: { size: [256, 160], mode: inset }

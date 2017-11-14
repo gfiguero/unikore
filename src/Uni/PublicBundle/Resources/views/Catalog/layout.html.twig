@@ -24,7 +24,13 @@
         <div class="container-fluid">
             <div class="row">
                 <aside class="col-md-2">
-                    {% if page.image %}<a href="{{ path('public_root') }}"><img src="{{ vich_uploader_asset(page, 'imagefile')|imagine_filter('brand_photography_catalog') }}" class="center-block logo"></a>{% endif %}
+                    {% if page.image != 'default.png' %}
+                        <a href="{{ path('public_root') }}"><img src="{{ vich_uploader_asset(page, 'imagefile')|imagine_filter('brand_photography_catalog') }}" class="center-block logo"></a>
+                    {% else %}
+                        <p>
+                            <a class="btn btn-default btn-block btn-lg" href="{{ path('public_root') }}">{{ icon('home fa-fw') }}&nbsp;{{ page.name }}</a>
+                        </p>
+                    {% endif %}
                     {% block aside %}{{ parent() }}{% endblock %}
                 </aside>
                 <div class="col-md-10">
