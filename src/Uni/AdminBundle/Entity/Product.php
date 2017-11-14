@@ -66,7 +66,7 @@ class Product
      */
     public function getImage()
     {
-        if ($this->image) return $this->image; else return 'default';
+        if ($this->image) return $this->image; else return 'default.png';
     }
 
     /**

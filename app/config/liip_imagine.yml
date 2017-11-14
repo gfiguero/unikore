@@ -22,11 +22,13 @@ liip_imagine:
                 thumbnail: { size: [120, 120], mode: inset }
         product_image_large:
             quality: 75
+            default_image: default.png
             filters:
                 upscale: { min: [900, 900] }
                 thumbnail: { size: [900, 900], mode: outbound }
         product_image:
             quality: 75
+            default_image: default.png
             filters:
                 upscale: { min: [900, 900] }
                 thumbnail: { size: [900, 900], mode: outbound }        
