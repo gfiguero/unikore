@@ -51,6 +51,7 @@ user:
     form:
         name: Nombre
         rut: RUT
+        email: Correo
         phone_number: Teléfono
         address_street: Calle
         address_number: Número

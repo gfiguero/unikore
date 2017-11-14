@@ -1,8 +1,6 @@
 {% extends 'UniPublicBundle:Catalog:layout.html.twig' %}
 
-{% trans_default_domain 'UniPublicBundle' %}
-
-{% block title %}{{ 'catalog.show.title'|trans }}{% endblock %}
+{% block title %}{% if catalog.name %}{{ catalog.name|raw }}{% endif %}{% endblock %}
 
 {% block catalog %}
     <div class="row">
