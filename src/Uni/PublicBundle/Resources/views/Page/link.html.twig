@@ -1,0 +1,26 @@
+{% block link %}
+    {% trans_default_domain 'UniPageBundle' %}
+    {% if page.linktitle and links is not empty %}
+     <section id="link">
+         <div class="container">
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="section-header">
+                        <h1 class="section-title link-title">{{ page.linktitle|raw }}</h1>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row link-row">
+                <div class="col-sm-12">
+                {% for link in links %}
+                    <a type="button" href="{{ link.url }}" class="btn btn-primary btn-lg">{{ link.title }}</a>
+                {% endfor %}
+                </div>
+            </div>
+
+        </div>
+    </section>
+    {% endif %}
+{% endblock %}

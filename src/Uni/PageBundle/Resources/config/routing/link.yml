@@ -1,0 +1,24 @@
+page_link_index:
+    path:     /
+    defaults: { _controller: "UniPageBundle:Link:index" }
+    methods:  GET
+
+page_link_show:
+    path:     /{id}/show
+    defaults: { _controller: "UniPageBundle:Link:show" }
+    methods:  GET
+
+page_link_new:
+    path:     /new
+    defaults: { _controller: "UniPageBundle:Link:new" }
+    methods:  [GET, POST]
+
+page_link_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "UniPageBundle:Link:edit" }
+    methods:  [GET, POST]
+
+page_link_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "UniPageBundle:Link:delete" }
+    methods:  DELETE
