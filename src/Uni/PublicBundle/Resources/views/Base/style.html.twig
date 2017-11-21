@@ -116,6 +116,15 @@
         .feature-thumbnail:hover {
             background-color: {{ color_darken(page.brandprimarycolor, 10) }};
         }
+        .btn-link-interest {
+            background-color: {{ page.brandprimarycolor }};
+        }
+        .btn-link-interest:hover,
+        .btn-link-interest:focus,
+        .btn-link-interest:active:focus,
+        .btn-link-interest:active {
+            background-color: {{ color_darken(page.brandprimarycolor, 20) }};
+        }
         .cataloglink-calltoaction {
             background-color: {{ page.brandprimarycolor }};
         }
@@ -142,6 +151,9 @@
         <style type="text/css">
             .panel-primary-fade {
                 background-color: {{ color_alpha(page.brandsecondarycolor, 50) }};
+            }
+            #link {
+                background-color: {{ page.brandsecondarycolor }};
             }
             #socialmedia {
                 background-color: {{ page.brandsecondarycolor }};
