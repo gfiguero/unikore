@@ -41,6 +41,12 @@ class Builder implements ContainerAwareInterface
             'page_socialmedia_show',
             'page_socialmedia_edit',
         )));
+        $sidemenu->addChild('sidemenu.link.root', array('route' => 'page_link_index'))->setExtras(array('translation_domain' => 'UniPageBundle', 'routes' => array(
+            'page_link_index',
+            'page_link_new',
+            'page_link_show',
+            'page_link_edit',
+        )));
 
         return $sidemenu;
     }

@@ -81,6 +81,11 @@ class PageType extends AbstractType
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8, 'class' => 'wysiwyg' ),
                 'translation_domain' => 'UniPageBundle',
             ))
+            ->add('link_title', null, array(
+                'label' => 'page.form.link_title',
+                'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
+                'translation_domain' => 'UniPageBundle',
+            ))
             ->add('socialmedia_title', null, array(
                 'label' => 'page.form.socialmedia_title',
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),

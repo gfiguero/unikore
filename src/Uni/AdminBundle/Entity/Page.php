@@ -1084,4 +1084,72 @@ class Page
     {
         return $this->catalogs;
     }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $links;
+
+
+    /**
+     * Add link
+     *
+     * @param \Uni\AdminBundle\Entity\Link $link
+     *
+     * @return Page
+     */
+    public function addLink(\Uni\AdminBundle\Entity\Link $link)
+    {
+        $this->links[] = $link;
+
+        return $this;
+    }
+
+    /**
+     * Remove link
+     *
+     * @param \Uni\AdminBundle\Entity\Link $link
+     */
+    public function removeLink(\Uni\AdminBundle\Entity\Link $link)
+    {
+        $this->links->removeElement($link);
+    }
+
+    /**
+     * Get links
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getLinks()
+    {
+        return $this->links;
+    }
+    /**
+     * @var string
+     */
+    private $link_title;
+
+
+    /**
+     * Set linkTitle
+     *
+     * @param string $linkTitle
+     *
+     * @return Page
+     */
+    public function setLinkTitle($linkTitle)
+    {
+        $this->link_title = $linkTitle;
+
+        return $this;
+    }
+
+    /**
+     * Get linkTitle
+     *
+     * @return string
+     */
+    public function getLinkTitle()
+    {
+        return $this->link_title;
+    }
 }

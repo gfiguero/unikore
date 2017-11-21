@@ -6923,6 +6923,21 @@ h2,
 #feature .feature-item-content {
   text-align: center;
 }
+#link .link-title {
+  color: #333333;
+  text-align: center;
+}
+#link .link-row,
+#link .link-col {
+  display: flex;
+}
+#link .link-row {
+  flex-wrap: wrap;
+  justify-content: center;
+}
+#link .link-item-title {
+  text-align: center;
+}
 .cataloglink-title {
   color: white;
   text-shadow: 0 2px 4px #000;

@@ -1140,4 +1140,43 @@ class Account
     {
         return $this->invoiceactions;
     }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $links;
+
+
+    /**
+     * Add link
+     *
+     * @param \Uni\AdminBundle\Entity\Link $link
+     *
+     * @return Account
+     */
+    public function addLink(\Uni\AdminBundle\Entity\Link $link)
+    {
+        $this->links[] = $link;
+
+        return $this;
+    }
+
+    /**
+     * Remove link
+     *
+     * @param \Uni\AdminBundle\Entity\Link $link
+     */
+    public function removeLink(\Uni\AdminBundle\Entity\Link $link)
+    {
+        $this->links->removeElement($link);
+    }
+
+    /**
+     * Get links
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getLinks()
+    {
+        return $this->links;
+    }
 }

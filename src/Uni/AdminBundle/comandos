@@ -14,6 +14,7 @@ php app/console doctrine:generate:entities UniAdminBundle:Page --path=src
 php app/console doctrine:generate:entities UniAdminBundle:Socialmedia --path=src
 php app/console doctrine:generate:entities UniAdminBundle:Catalog --path=src
 php app/console doctrine:generate:entities UniAdminBundle:Feature --path=src
+php app/console doctrine:generate:entities UniAdminBundle:Link --path=src
 php app/console doctrine:generate:entities UniAdminBundle:Photography --path=src
 
 php app/console doctrine:generate:entities UniAdminBundle:Category --path=src

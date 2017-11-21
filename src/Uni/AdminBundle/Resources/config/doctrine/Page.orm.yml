@@ -16,6 +16,9 @@ Uni\AdminBundle\Entity\Page:
         features:
             targetEntity:  Uni\AdminBundle\Entity\Feature
             mappedBy: page
+        links:
+            targetEntity:  Uni\AdminBundle\Entity\Link
+            mappedBy: page
         photographies:
             targetEntity:  Uni\AdminBundle\Entity\Photography
             mappedBy: page
@@ -76,6 +79,10 @@ Uni\AdminBundle\Entity\Page:
             nullable: true
         feature_content:
             type: text
+            nullable: true
+        link_title:
+            type: string
+            length: 40
             nullable: true
         socialmedia_title:
             type: string

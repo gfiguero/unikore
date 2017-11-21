@@ -3,6 +3,8 @@ sidemenu:
         root: Páginas
     feature:
         root: Catacterísticas
+    link:
+        root: Enlaces
     photography:
         root: Fotografías
     socialmedia:
@@ -50,6 +52,7 @@ page:
         main_calltoaction: Botón
         about_title: Título sección acerca de
         about_content: Contenido sección acerca de
+        link_title: Título sección enlaces
         feature_title: Título sección características
         feature_content: Contenido sección características
         socialmedia_title: Título sección redes sociales
@@ -69,6 +72,7 @@ page:
         main: Portada
         about: Sobre Nosotros
         feature: Catacterísticas del Negocio
+        link: Enlaces
         socialmedia: Redes Sociales
         contact: Información de Contacto
         seo: Optimización de Motores de Búsqueda
@@ -112,6 +116,42 @@ feature:
         short: Descripción corta
         description: Descripción de característica
         imagefile: Archivo de imagen
+
+link:
+    index:
+        title: Enlaces
+        list: Lista de enlaces
+        link: Lista de enlaces
+    new:
+        title: Enlaces
+        link: Nuevo enlace
+        form: Formulario de registro de enlace
+        submit: Registrar enlace
+        flash: Nuevo enlace registrado satisfactoriamente.
+    show:
+        title: Enlaces
+        link: Mostrar datos
+        data: Datos de enlace
+    edit:
+        title: Enlaces
+        link: Editar datos
+        form: Formulario de edición de enlace
+        submit: Guardar cambios
+        flash: Los cambios en el enlace fueron registrados satisfactoriamente.
+    delete:
+        link: Borrar enlace
+        title: Borrado de enlace
+        message: Los datos borrados no podrán ser recuperados.
+        submit: Confirmar borrado
+        flash: El enlace fué borrado totalmente.
+    form:
+        id: ID
+        created_at: Registro
+        updated_at: Actualización
+        page: Página
+        name: Nombre de enlace
+        title: Título de enlace
+        url: URL de enlace
 
 photography:
     index:
