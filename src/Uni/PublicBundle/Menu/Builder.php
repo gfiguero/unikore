@@ -24,6 +24,8 @@ class Builder implements ContainerAwareInterface
         if ($page->getAboutTitle()) $aboutLink = $page->getAboutTitle();
         $featureLink = 'Características';
         if ($page->getFeatureTitle()) $featureLink = $page->getFeatureTitle();
+        $linkLink = 'Enlaces';
+        if ($page->getLinkTitle()) $linkLink = $page->getLinkTitle();
         $socialLink = 'Social';
         if ($page->getSocialmediaTitle()) $socialLink = $page->getSocialmediaTitle();
         $contactLink = 'Contacto';
@@ -31,6 +33,7 @@ class Builder implements ContainerAwareInterface
 
         $topmenu->addChild($aboutLink, array('uri' => '#about'))->setLinkAttribute('class', 'page-scroll');
         $topmenu->addChild($featureLink, array('uri' => '#feature'))->setLinkAttribute('class', 'page-scroll');
+        $topmenu->addChild($linkLink, array('uri' => '#link'))->setLinkAttribute('class', 'page-scroll');
         $topmenu->addChild($socialLink, array('uri' => '#socialmedia'))->setLinkAttribute('class', 'page-scroll');
         $topmenu->addChild($contactLink, array('uri' => '#contact'))->setLinkAttribute('class', 'page-scroll');
 
