@@ -73,12 +73,12 @@ page:
         brand: Marca
         main: Portada
         about: Sobre Nosotros
+        team: Equipo
         feature: Catacterísticas del Negocio
         link: Enlaces
         socialmedia: Redes Sociales
         contact: Información de Contacto
         seo: Optimización de Motores de Búsqueda
-
 
 feature:
     index:
