@@ -1,5 +1,6 @@
 {% extends 'UniPublicBundle:Catalog:base.html.twig' %}
 {% use 'UniPublicBundle:Catalog:aside.html.twig' %}
+{% use 'UniPublicBundle:Base:google-analytics.html.twig' %}
 
 {% block meta %}
     <meta name="author" content="uniSign - www.unisign.cl">
@@ -38,4 +39,8 @@
                 </div>
             </div>
         </div>
+{% endblock %}
+
+{% block javascript %}
+    {% block googleanalytics %}{{ parent() }}{% endblock %}
 {% endblock %}
