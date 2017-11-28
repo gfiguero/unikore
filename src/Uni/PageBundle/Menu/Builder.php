@@ -47,6 +47,12 @@ class Builder implements ContainerAwareInterface
             'page_link_show',
             'page_link_edit',
         )));
+        $sidemenu->addChild('sidemenu.team.root', array('route' => 'page_team_index'))->setExtras(array('translation_domain' => 'UniPageBundle', 'routes' => array(
+            'page_team_index',
+            'page_team_new',
+            'page_team_show',
+            'page_team_edit',
+        )));
 
         return $sidemenu;
     }

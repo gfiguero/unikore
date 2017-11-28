@@ -364,6 +364,15 @@ class Page
      */
     private $socialmedia_title;
 
+    /**
+     * @var string
+     */
+    private $team_title;
+
+    /**
+     * @var string
+     */
+    private $team_content;
 
     /**
      * @var string
@@ -745,6 +754,54 @@ class Page
     public function getFeatureContent()
     {
         return $this->feature_content;
+    }
+
+    /**
+     * Set teamTitle
+     *
+     * @param string $teamTitle
+     *
+     * @return Page
+     */
+    public function setTeamTitle($teamTitle)
+    {
+        $this->team_title = $teamTitle;
+
+        return $this;
+    }
+
+    /**
+     * Get teamTitle
+     *
+     * @return string
+     */
+    public function getTeamTitle()
+    {
+        return $this->team_title;
+    }
+
+    /**
+     * Set teamContent
+     *
+     * @param string $teamContent
+     *
+     * @return Page
+     */
+    public function setTeamContent($teamContent)
+    {
+        $this->team_content = $teamContent;
+
+        return $this;
+    }
+
+    /**
+     * Get teamContent
+     *
+     * @return string
+     */
+    public function getTeamContent()
+    {
+        return $this->team_content;
     }
 
     /**

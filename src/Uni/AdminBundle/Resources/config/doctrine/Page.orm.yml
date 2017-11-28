@@ -84,6 +84,13 @@ Uni\AdminBundle\Entity\Page:
             type: string
             length: 40
             nullable: true
+        team_title:
+            type: string
+            length: 20
+            nullable: true
+        team_content:
+            type: text
+            nullable: true
         socialmedia_title:
             type: string
             length: 20

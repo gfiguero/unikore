@@ -26,6 +26,10 @@ uni_admin_photography:
     resource: "@UniAdminBundle/Resources/config/routing/photography.yml"
     prefix:   /photography
 
+uni_admin_team:
+    resource: "@UniAdminBundle/Resources/config/routing/team.yml"
+    prefix:   /team
+
 uni_admin_category:
     resource: "@UniAdminBundle/Resources/config/routing/category.yml"
     prefix:   /category

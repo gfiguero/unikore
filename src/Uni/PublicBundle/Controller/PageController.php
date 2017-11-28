@@ -13,6 +13,7 @@ class PageController extends Controller
         $page = $em->getRepository('UniAdminBundle:Page')->findOneByDomain($this->getRequest()->getHost());
         $photographies = $em->getRepository('UniAdminBundle:Photography')->findByPage($page);
         $features = $em->getRepository('UniAdminBundle:Feature')->findByPage($page);
+        $teams = $em->getRepository('UniAdminBundle:Team')->findByPage($page);
         $links = $em->getRepository('UniAdminBundle:Link')->findByPage($page);
         $socialmedialist = $em->getRepository('UniAdminBundle:Socialmedia')->findByPage($page);
         $catalogs = $em->getRepository('UniAdminBundle:Catalog')->findByPage($page);
@@ -41,6 +42,7 @@ class PageController extends Controller
 
         return $this->render('UniPublicBundle:Page:index.html.twig', array(
             'features' => $features,
+            'teams' => $teams,
             'links' => $links,
             'photographies' => $photographies,
             'socialmedialist' => $socialmedialist,

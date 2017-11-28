@@ -38,6 +38,7 @@
                             <li role="presentation" class="active"><a data-toggle="tab" href="#brand">{{ 'page.section.brand'|trans }}</a></li>
                             <li role="presentation"><a data-toggle="tab" href="#main">{{ 'page.section.main'|trans }}</a></li>
                             <li role="presentation"><a data-toggle="tab" href="#about">{{ 'page.section.about'|trans }}</a></li>
+                            <li role="presentation"><a data-toggle="tab" href="#team">{{ 'page.section.team'|trans }}</a></li>
                             <li role="presentation"><a data-toggle="tab" href="#feature">{{ 'page.section.feature'|trans }}</a></li>
                             <li role="presentation"><a data-toggle="tab" href="#link">{{ 'page.section.link'|trans }}</a></li>
                             <li role="presentation"><a data-toggle="tab" href="#socialmedia">{{ 'page.section.socialmedia'|trans }}</a></li>
@@ -64,6 +65,10 @@
                             <div id="about" class="tab-pane fade" >
                                 {{ form_row(editForm.about_title) }}
                                 {{ form_row(editForm.about_content) }}
+                            </div>
+                            <div id="team" class="tab-pane fade" >
+                                {{ form_row(editForm.team_title) }}
+                                {{ form_row(editForm.team_content) }}
                             </div>
                             <div id="feature" class="tab-pane fade" >
                                 {{ form_row(editForm.feature_title) }}

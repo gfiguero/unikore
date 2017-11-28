@@ -14,6 +14,10 @@ uni_page_link:
     resource: "@UniPageBundle/Resources/config/routing/link.yml"
     prefix:   /link
 
+uni_page_team:
+    resource: "@UniPageBundle/Resources/config/routing/team.yml"
+    prefix:   /team
+
 uni_page_photography:
     resource: "@UniPageBundle/Resources/config/routing/photography.yml"
     prefix:   /photography

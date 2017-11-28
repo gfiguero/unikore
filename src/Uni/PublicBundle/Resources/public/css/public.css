@@ -6906,6 +6906,24 @@ h2,
 #about .about-content {
   text-align: center;
 }
+#team {
+  background-color: #f8f8f8;
+  text-align: center;
+}
+#team .team-title,
+#team .team-name {
+  color: #333333;
+}
+#team .team-content,
+#team .team-labor {
+  color: #777777;
+}
+#team .team-item-image {
+  border-radius: 50%;
+  width: 225px;
+  height: 225px;
+  border: 7px solid white;
+}
 #feature .feature-title,
 #feature .feature-content {
   color: #333333;

@@ -103,9 +103,19 @@ liip_imagine:
             filters:
                 upscale: { min: [120, 120] }
                 thumbnail: { size: [120, 120], mode: outbound }
-
         photography_index_small:
             quality: 75
             filters:
                 upscale: { min: [192, 108] }
                 thumbnail: { size: [192, 108], mode: outbound }
+
+        team_index_small:
+            quality: 75
+            filters:
+                upscale: { min: [192, 108] }
+                thumbnail: { size: [192, 108], mode: outbound }
+        team_image:
+            quality: 75
+            filters:
+                upscale: { min: [225, 225] }
+                thumbnail: { size: [225, 225], mode: outbound }

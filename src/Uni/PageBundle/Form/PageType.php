@@ -71,6 +71,16 @@ class PageType extends AbstractType
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8, 'class' => 'wysiwyg' ),
                 'translation_domain' => 'UniPageBundle',
             ))
+            ->add('team_title', null, array(
+                'label' => 'page.form.team_title',
+                'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
+                'translation_domain' => 'UniPageBundle',
+            ))
+            ->add('team_content', null, array(
+                'label' => 'page.form.team_content',
+                'attr'  => array( 'label_col' => 4, 'widget_col' => 8, 'class' => 'wysiwyg' ),
+                'translation_domain' => 'UniPageBundle',
+            ))
             ->add('feature_title', null, array(
                 'label' => 'page.form.feature_title',
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),

@@ -9,6 +9,8 @@ sidemenu:
         root: Fotografías
     socialmedia:
         root: Redes Sociales
+    team:
+        root: Equipo
 
 page:
     index:
@@ -222,3 +224,40 @@ socialmedia:
         url: URL
         page: Página
         socialnetwork: Red social
+
+team:
+    index:
+        title: Equipos
+        list: Lista de equipos
+        link: Lista de equipos
+    new:
+        title: Equipos
+        link: Nuevo equipo
+        form: Formulario de registro de equipo
+        submit: Registrar equipo
+        flash: Nuevo equipo registrado satisfactoriamente.
+    show:
+        title: Equipos
+        link: Mostrar datos
+        data: Datos de equipo
+    edit:
+        title: Equipos
+        link: Editar datos
+        form: Formulario de edición de equipo
+        submit: Guardar cambios
+        flash: Los cambios en el equipo fueron registrados satisfactoriamente.
+    delete:
+        link: Borrar equipo
+        title: Borrado de equipo
+        message: Los datos borrados no podrán ser recuperados.
+        submit: Confirmar borrado
+        flash: El equipo fué borrado totalmente.
+    form:
+        id: ID
+        created_at: Registro
+        updated_at: Actualización
+        page: Página
+        name: Nombre
+        labor: Cargo
+        image: Imagen
+        imagefile: Archivo de imagen
