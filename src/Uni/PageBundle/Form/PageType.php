@@ -156,6 +156,11 @@ class PageType extends AbstractType
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
                 'translation_domain' => 'UniPageBundle',
             ))
+            ->add('tracking_code', null, array(
+                'label' => 'page.form.tracking_code',
+                'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
+                'translation_domain' => 'UniPageBundle',
+            ))
         ;
     }
     

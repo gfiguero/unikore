@@ -145,6 +145,11 @@ class PageType extends AbstractType
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
                 'translation_domain' => 'UniAdminBundle',
             ))
+            ->add('tracking_code', null, array(
+                'label' => 'page.form.tracking_code',
+                'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
+                'translation_domain' => 'UniAdminBundle',
+            ))
             ->add('account', null, array(
                 'label' => 'page.form.account',
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),

@@ -135,6 +135,10 @@ Uni\AdminBundle\Entity\Page:
         fb_share_appid:
             type: integer
             nullable: true
+        tracking_code:
+            type: string
+            length: 100
+            nullable: true
         created_at:
             type: datetime
             gedmo:

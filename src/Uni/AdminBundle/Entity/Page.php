@@ -437,12 +437,7 @@ class Page
     /**
      * @var string
      */
-    private $fb_share_title;
-
-    /**
-     * @var string
-     */
-    private $fb_share_description;
+    private $tracking_code;
 
     /**
      * Set brand
@@ -1100,6 +1095,30 @@ class Page
     public function getfbShareAppid()
     {
         return $this->fb_share_appid;
+    }
+
+    /**
+     * Set trackingCode
+     *
+     * @param string $tracking_code
+     *
+     * @return Page
+     */
+    public function settrackingCode($tracking_code)
+    {
+        $this->tracking_code = $tracking_code;
+
+        return $this;
+    }
+
+    /**
+     * Get trackingCode
+     *
+     * @return string
+     */
+    public function gettrackingCode()
+    {
+        return $this->tracking_code;
     }
 
     /**
