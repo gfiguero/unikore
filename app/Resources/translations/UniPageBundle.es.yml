@@ -69,6 +69,7 @@ page:
         social_share_title: Título compartido
         social_share_description: Descripción compartida
         fb_share_appid: ID de la aplicación
+        tracking_code: Código de seguimiento
     section:
         brand: Marca
         main: Portada
