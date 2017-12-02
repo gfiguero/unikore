@@ -106,6 +106,10 @@ Uni\AdminBundle\Entity\Page:
             type: string
             length: 20
             nullable: true
+        contact_secondary_phone:
+            type: string
+            length: 20
+            nullable: true
         contact_email:
             type: string
             length: 100
