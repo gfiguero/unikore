@@ -392,6 +392,11 @@ class Page
     /**
      * @var string
      */
+    private $contact_secondary_phone;
+
+    /**
+     * @var string
+     */
     private $contact_email;
 
     /**
@@ -869,6 +874,30 @@ class Page
     public function getContactPhone()
     {
         return $this->contact_phone;
+    }
+
+    /**
+     * Set contactSecondaryPhone
+     *
+     * @param string $contactSecondaryPhone
+     *
+     * @return Page
+     */
+    public function setContactSecondaryPhone($contactSecondaryPhone)
+    {
+        $this->contact_secondary_phone = $contactSecondaryPhone;
+
+        return $this;
+    }
+
+    /**
+     * Get contactSecondaryPhone
+     *
+     * @return string
+     */
+    public function getContactSecondaryPhone()
+    {
+        return $this->contact_secondary_phone;
     }
 
     /**

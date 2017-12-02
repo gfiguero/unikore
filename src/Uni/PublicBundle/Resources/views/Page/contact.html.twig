@@ -21,8 +21,21 @@
                             <div class="panel panel-primary-fade">
                                 <div class="panel-body">
                                     <div class="row">
-                                        <div class="col-xs-3 text-left">{{ icon('phone fa-fw fa-2x') }}</div>
+                                        <div class="col-xs-3 text-left">{{ icon('whatsapp fa-fw fa-2x') }}</div>
                                         <div class="col-xs-9 text-right"><p>{{ '+569' ~ page.contactphone|raw }}</p></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    {% endif %}
+
+                    {% if page.contactsecondaryphone %}
+                        <a href="tel:{{ page.contactsecondaryphone|raw }}">
+                            <div class="panel panel-primary-fade">
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-xs-3 text-left">{{ icon('phone fa-fw fa-2x') }}</div>
+                                        <div class="col-xs-9 text-right"><p>{{ page.contactsecondaryphone|raw }}</p></div>
                                     </div>
                                 </div>
                             </div>

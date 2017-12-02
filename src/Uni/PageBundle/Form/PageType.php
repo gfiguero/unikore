@@ -116,6 +116,11 @@ class PageType extends AbstractType
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
                 'translation_domain' => 'UniPageBundle',
             ))
+            ->add('contact_secondary_phone', null, array(
+                'label' => 'page.form.contact_secondary_phone',
+                'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
+                'translation_domain' => 'UniPageBundle',
+            ))
             ->add('contact_email', null, array(
                 'label' => 'page.form.contact_email',
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
