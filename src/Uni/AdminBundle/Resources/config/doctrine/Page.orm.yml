@@ -116,7 +116,7 @@ Uni\AdminBundle\Entity\Page:
             nullable: true
         contact_schedule:
             type: string
-            length: 50
+            length: 100
             nullable: true
         keywords:
             type: text
