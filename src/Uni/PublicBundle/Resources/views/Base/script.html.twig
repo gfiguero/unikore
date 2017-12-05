@@ -2,7 +2,7 @@
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBvqD3pcje01o5H1x5dD_M04R67pLc01X0&callback=initMap"></script>
     <script>
         function initMap() {
-            var address = '{{ page.contactaddress }}';
+            var address = '{{ page.contactmaplocation }}';
             var geocoder = new google.maps.Geocoder()
             var latlng = new google.maps.LatLng(-33.000, -70.000);
             var mapOptions = { zoom: 8, scrollwheel: false, draggable: false, center: latlng }

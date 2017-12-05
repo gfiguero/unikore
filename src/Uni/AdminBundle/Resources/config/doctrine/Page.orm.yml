@@ -118,6 +118,10 @@ Uni\AdminBundle\Entity\Page:
             type: string
             length: 100
             nullable: true
+        contact_map_location:
+            type: string
+            length: 100
+            nullable: true
         contact_schedule:
             type: string
             length: 100

@@ -66,6 +66,7 @@ page:
         contact_secondary_phone: Teléfono de contacto
         contact_email: Email de contacto
         contact_address: Dirección de contacto
+        contact_map_location: Ubicación del mapa
         contact_schedule: Horario de atención
         keywords: Palabras claves
         social_share_image: Imagen compartida
