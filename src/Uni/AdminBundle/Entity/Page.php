@@ -407,6 +407,11 @@ class Page
     /**
      * @var string
      */
+    private $contact_map_location;
+
+    /**
+     * @var string
+     */
     private $contact_schedule;
 
     /**
@@ -949,6 +954,30 @@ class Page
     }
 
     /**
+     * Set contactMapLocation
+     *
+     * @param string $contactMapLocation
+     *
+     * @return Page
+     */
+    public function setContactMapLocation($contactMapLocation)
+    {
+        $this->contact_map_location = $contactMapLocation;
+
+        return $this;
+    }
+
+    /**
+     * Get contactMapLocation
+     *
+     * @return string
+     */
+    public function getContactMapLocation()
+    {
+        return $this->contact_map_location;
+    }
+
+    /**
      * Set contactSchedule
      *
      * @param string $contactSchedule
@@ -1037,7 +1066,7 @@ class Page
      *
      * @return Page
      */
-    public function setsocialShareImage($social_share_image)
+    public function setSocialShareImage($social_share_image)
     {
         $this->social_share_image = $social_share_image;
 
@@ -1049,7 +1078,7 @@ class Page
      *
      * @return string
      */
-    public function getsocialShareImage()
+    public function getSocialShareImage()
     {
         return $this->social_share_image;
     }
@@ -1061,7 +1090,7 @@ class Page
      *
      * @return Page
      */
-    public function setsocialShareTitle($social_share_title)
+    public function setSocialShareTitle($social_share_title)
     {
         $this->social_share_title = $social_share_title;
 
@@ -1073,7 +1102,7 @@ class Page
      *
      * @return string
      */
-    public function getsocialShareTitle()
+    public function getSocialShareTitle()
     {
         return $this->social_share_title;
     }
@@ -1085,7 +1114,7 @@ class Page
      *
      * @return Page
      */
-    public function setsocialShareDescription($social_share_description)
+    public function setSocialShareDescription($social_share_description)
     {
         $this->social_share_description = $social_share_description;
 
@@ -1097,7 +1126,7 @@ class Page
      *
      * @return string
      */
-    public function getsocialShareDescription()
+    public function getSocialShareDescription()
     {
         return $this->social_share_description;
     }
@@ -1109,7 +1138,7 @@ class Page
      *
      * @return Page
      */
-    public function setfbShareAppid($fb_share_appid)
+    public function setFbShareAppid($fb_share_appid)
     {
         $this->fb_share_appid = $fb_share_appid;
 
@@ -1121,7 +1150,7 @@ class Page
      *
      * @return integer
      */
-    public function getfbShareAppid()
+    public function getFbShareAppid()
     {
         return $this->fb_share_appid;
     }
@@ -1133,7 +1162,7 @@ class Page
      *
      * @return Page
      */
-    public function settrackingCode($tracking_code)
+    public function setTrackingCode($tracking_code)
     {
         $this->tracking_code = $tracking_code;
 
@@ -1145,7 +1174,7 @@ class Page
      *
      * @return string
      */
-    public function gettrackingCode()
+    public function getTrackingCode()
     {
         return $this->tracking_code;
     }

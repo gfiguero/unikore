@@ -115,6 +115,11 @@ class PageType extends AbstractType
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
                 'translation_domain' => 'UniAdminBundle',
             ))
+            ->add('contact_map_location', null, array(
+                'label' => 'page.form.contact_map_location',
+                'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
+                'translation_domain' => 'UniAdminBundle',
+            ))
             ->add('contact_schedule', null, array(
                 'label' => 'page.form.contact_schedule',
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
