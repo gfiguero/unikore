@@ -197,6 +197,7 @@ class PageController extends Controller
         $page = $em->getRepository('UniAdminBundle:Page')->find($page);
         $photographies = $em->getRepository('UniAdminBundle:Photography')->findByPage($page);
         $features = $em->getRepository('UniAdminBundle:Feature')->findByPage($page);
+        $teams = $em->getRepository('UniAdminBundle:Team')->findByPage($page);
         $socialmedialist = $em->getRepository('UniAdminBundle:Socialmedia')->findByPage($page);
         $catalogs = $em->getRepository('UniAdminBundle:Catalog')->findByPage($page);
         shuffle($photographies);
@@ -224,6 +225,7 @@ class PageController extends Controller
         
         return $this->render('UniPageBundle:Page:preview.html.twig', array(
             'features' => $features,
+            'teams' => $teams,
             'photographies' => $photographies,
             'socialmedialist' => $socialmedialist,
             'page' => $page,
