@@ -1,0 +1,24 @@
+admin_portfolio_index:
+    path:     /
+    defaults: { _controller: "UniAdminBundle:Portfolio:index" }
+    methods:  GET
+
+admin_portfolio_show:
+    path:     /{id}/show
+    defaults: { _controller: "UniAdminBundle:Portfolio:show" }
+    methods:  GET
+
+admin_portfolio_new:
+    path:     /new
+    defaults: { _controller: "UniAdminBundle:Portfolio:new" }
+    methods:  [GET, POST]
+
+admin_portfolio_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "UniAdminBundle:Portfolio:edit" }
+    methods:  [GET, POST]
+
+admin_portfolio_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "UniAdminBundle:Portfolio:delete" }
+    methods:  DELETE

@@ -21,6 +21,10 @@ uni_catalog:
     resource: "@UniCatalogBundle/Resources/config/routing.yml"
     prefix:   /backend/catalog
 
+uni_portfolio:
+    resource: "@UniPortfolioBundle/Resources/config/routing.yml"
+    prefix:   /backend/portfolio
+
 uni_page:
     resource: "@UniPageBundle/Resources/config/routing.yml"
     prefix:   /backend/page

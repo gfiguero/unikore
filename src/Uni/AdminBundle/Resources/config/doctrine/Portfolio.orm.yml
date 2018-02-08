@@ -1,0 +1,66 @@
+Uni\AdminBundle\Entity\Portfolio:
+    type: entity
+    table: uni_portfolio
+    repositoryClass:  Uni\AdminBundle\Entity\PortfolioRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    manyToOne:
+        account:
+            targetEntity: Uni\AdminBundle\Entity\Account
+            inversedBy: portfolios
+        page:
+            targetEntity: Uni\AdminBundle\Entity\Page
+            inversedBy: portfolios
+    oneToMany:
+        portfoliocategories:
+            targetEntity:  Uni\AdminBundle\Entity\PortfolioCategory
+            mappedBy: portfolio
+            cascade: ['persist', 'merge']
+    manyToMany:
+        portfoliotags:
+            targetEntity: Uni\AdminBundle\Entity\PortfolioTag
+            idnversedBy: portfolios
+    fields:
+        name:
+            type: string
+            length: 100
+            nullable: true
+        slug:
+          type: string
+          length: 128
+          gedmo:
+            slug:
+              separator: _
+              style: lower
+              fields:
+                - name
+        portfolio_content:
+            type: string
+            length: 100
+            nullable: true
+        portfolio_calltoaction:
+            type: string
+            length: 20
+            nullable: true
+        created_at:
+            type: datetime
+            gedmo:
+                timestampable:
+                    on: create
+        updated_at:
+            type: datetime
+            gedmo:
+                timestampable:
+                    on: update
+        deleted_at:
+            type: datetime
+            nullable: true
+    gedmo:
+        soft_deleteable:
+            field_name: deleted_at
+            time_aware: false
+    lifecycleCallbacks: {  }

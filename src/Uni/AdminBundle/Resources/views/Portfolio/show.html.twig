@@ -1,0 +1,87 @@
+{% extends 'UniAdminBundle:Base:layout.html.twig' %}
+{% use 'UniAdminBundle:Base:icons.html.twig' %}
+{% use 'UniAdminBundle:Base:flashbag.html.twig' %}
+
+{% trans_default_domain 'UniAdminBundle' %}
+
+{% block title %}&nbsp;-&nbsp;{{ 'portfolio.show.title'|trans({'%id%':portfolio.id}) }}{% endblock %}
+
+{% block admin %}
+    <div id="page-wrapper">
+        <div class="row" id="page-header">
+            <div class="col-lg-12">
+                <h1 class="page-header">{% block icons %}{{ parent() }}{% endblock %}{{ 'portfolio.show.title'|trans({'%id%':portfolio.id}) }}</h1>
+                {% block flashbag %}{{ parent() }}{% endblock %}
+            </div>
+        </div>
+        <!-- /#page-header -->
+
+        <div class="row" id="page-toolbar">
+            <div class="col-lg-12">
+                <div class="btn-toolbar">
+                    <a type="button" class="btn btn-default" href="{{ path('admin_portfolio_index') }}">{{ icon('list fa-fw') }}&nbsp;{{ 'portfolio.index.link'|trans }}</a>
+                    <a type="button" class="btn btn-primary" href="{{ path('admin_portfolio_edit', { 'id': portfolio.id }) }}">{{ icon('edit fa-fw') }}&nbsp;{{ 'portfolio.edit.link'|trans }}</a>
+                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalDelete">{{ icon('trash-o fa-fw') }}&nbsp;{{ 'portfolio.delete.link'|trans }}</button>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-toolbar -->
+
+        <div class="row" id="page-show">
+            <div class="col-lg-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">{{ 'portfolio.show.data'|trans }}</h2>
+                    </div>
+                    <div class="panel-body">
+                        <dl class="dl-horizontal">
+                            <dt>{{ 'portfolio.form.id'|trans }}</dt>
+                                <dd>{% if portfolio.id %}{{ portfolio.id }}{% endif %}</dd>
+                            <dt>{{ 'portfolio.form.name'|trans }}</dt>
+                                <dd>{% if portfolio.name %}{{ portfolio.name }}{% endif %}</dd>
+                            <dt>{{ 'portfolio.form.slug'|trans }}</dt>
+                                <dd>{% if portfolio.slug %}{{ portfolio.slug }}{% endif %}</dd>
+                            <dt>{{ 'portfolio.form.portfolio_content'|trans }}</dt>
+                                <dd>{% if portfolio.portfoliocontent %}{{ portfolio.portfoliocontent }}{% endif %}</dd>
+                            <dt>{{ 'portfolio.form.portfolio_calltoaction'|trans }}</dt>
+                                <dd>{% if portfolio.portfoliocalltoaction %}{{ portfolio.portfoliocalltoaction }}{% endif %}</dd>
+                            <dt>{{ 'portfolio.form.created_at'|trans }}</dt>
+                                <dd>{% if portfolio.createdat %}{{ portfolio.createdat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "d 'de' LLLL 'de' y - HH:mm") }}&nbsp;({{ portfolio.createdat|ago }}){% endif %}</dd>
+                            <dt>{{ 'portfolio.form.updated_at'|trans }}</dt>
+                                <dd>{% if portfolio.updatedat %}{{ portfolio.updatedat|localizeddate('full', 'full', 'es_ES', 'America/Santiago', "d 'de' LLLL 'de' y - HH:mm") }}&nbsp;({{ portfolio.updatedat|ago }}){% endif %}</dd>                        </dl>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-show -->
+
+        <div id="page-modal">
+            <div class="modal fade" id="modalDelete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog modal-md" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">{{ icon('times') }}</button>
+                            <h4 class="modal-title" id="myModalLabel">{{ 'portfolio.delete.title'|trans }}</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-xs-2 text-center">{{ icon('exclamation-triangle fa-5x') }}</div>
+                                <div class="col-xs-10"><p>{{ 'portfolio.delete.message'|trans }}</p></div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            {{ form_start(deleteForm) }}
+                                <button type="submit" class="btn btn-danger pull-right">{{ icon('trash-o fa-fw') }}&nbsp;{{ 'portfolio.delete.submit'|trans }}</button>
+                            {{ form_end(deleteForm) }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- /#page-modal -->
+
+    </div>
+    <!-- /#page-wrapper -->
+{% endblock %}
+

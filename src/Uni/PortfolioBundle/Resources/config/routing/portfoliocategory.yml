@@ -1,0 +1,24 @@
+portfolio_portfoliocategory_index:
+    path:     /
+    defaults: { _controller: "UniPortfolioBundle:PortfolioCategory:index" }
+    methods:  GET
+
+portfolio_portfoliocategory_show:
+    path:     /{id}/show
+    defaults: { _controller: "UniPortfolioBundle:PortfolioCategory:show" }
+    methods:  GET
+
+portfolio_portfoliocategory_new:
+    path:     /new
+    defaults: { _controller: "UniPortfolioBundle:PortfolioCategory:new" }
+    methods:  [GET, POST]
+
+portfolio_portfoliocategory_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "UniPortfolioBundle:PortfolioCategory:edit" }
+    methods:  [GET, POST]
+
+portfolio_portfoliocategory_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "UniPortfolioBundle:PortfolioCategory:delete" }
+    methods:  DELETE

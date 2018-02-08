@@ -6,6 +6,7 @@ security:
     role_hierarchy:
         ROLE_PAGE: ROLE_USER
         ROLE_CATALOG: ROLE_USER
+        ROLE_PORTFOLIO: ROLE_USER
         ROLE_OFFER: ROLE_USER
         ROLE_LEADER: ROLE_USER
         ROLE_ADMIN: ROLE_LEADER
@@ -53,3 +54,4 @@ security:
         - { path: ^/backend/offer, roles: [ROLE_OFFER] }
         - { path: ^/backend/page, roles: [ROLE_PAGE] }
         - { path: ^/backend/catalog, roles: [ROLE_CATALOG] }
+        - { path: ^/backend/portfolio, roles: [ROLE_PORTFOLIO] }

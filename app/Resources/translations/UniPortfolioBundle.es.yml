@@ -1,0 +1,116 @@
+sidemenu:
+    dashboard:
+        root: Vista General
+    portfolio:
+        root: Portafolios
+    document:
+        root: Documentos
+    portfolioitem:
+        root: Items
+
+dashboard:
+    index:
+        title: Vista General
+    user:
+        title: Información de Usuario
+    account:
+        title: Información de la Cuenta
+
+portfolio: 
+    index: 
+        title: Portafolios
+        list: Lista de portafolios
+        link: Volver a la lista
+    new:
+        link: Nuevo portafolio
+        title: Nuevo portafolio
+        form: Portafolio
+        submit: Guardar
+        flash: Nuevo portafolio registrado satisfactoriamente.
+    form:
+        id: ID
+        page: Página
+        name: Nombre de Portafolio
+        portfoliocategories: Categorías
+        portfolio_content: Contenido de la sección portafolio
+        portfolio_calltoaction: Botón de la sección portafolio
+        created_at: Creado
+        updated_at: Actualizado
+        addportfoliocategory: Agregar categoría
+    edit:
+        title: Editar portafolio
+        form: Portafolio
+        submit: Guardar cambios
+        flash: Los cambios en el portafolio fueron registrados satisfactoriamente.
+    delete:
+        link: Borrar portafolio
+        title: Borrado de portafolio
+        message: Los datos borrados no podrán ser recuperados.
+        submit: Confirmar borrado
+        flash: El portafolio fue borrado totalmente.
+
+document:
+    index: 
+        title: Documentos
+        list: Lista de documentos
+        link: Volver a la lista
+    new:
+        link: Nuevo documento
+        title: Nuevo documento
+        form: Documento
+        submit: Guardar
+        flash: Nuevo documento registrado satisfactoriamente.
+    form:
+        id: ID
+        name: Nombre
+        image: Imagen
+        created_at: Creado 
+        updated_at: Actualizado 
+        short: Descripción corta
+        description: Descripción
+        imagefile: Imagen
+    edit:
+        submit: Guardar cambios
+        title: Editar documento
+        form: Documento
+        flash: Los cambios en el documento fueron registrados satisfactoriamente.
+    delete:
+        link: Borrar documento
+        title: Borrado de documento
+        message: Los datos borrados no podrán ser recuperados.
+        submit: Confirmar borrado
+        flash: El documento fue borrado totalmente.
+    section:
+        identification: Identificación del documento
+
+portfolioitem:
+    index:
+        title: Items
+        list: Lista de items
+        link: Volver a la lista
+    new:
+        link: Nuevo item
+        title: Nuevo item
+        form: item
+        submit: Guardar
+        flash: Nuevo item registrado satisfactoriamente.
+    form:
+        id: ID
+        portfoliocategory: Categoría
+        document: Documento
+        created_at: Creado
+        updated_at: Actualizado
+    edit: 
+        title: Editar item
+        form: Items
+        submit: Guardar cambios
+        flash: Los cambios en el item fueron registrados satisfactoriamente.
+        link: Editar ítem
+    delete:
+        link: Borrar item
+        title: Borrado de item
+        message: Los datos borrados no podrán ser recuperados.
+        submit: Confirmar borrado
+        flash: El Item fue borrado totalmente.
+    show:
+        title: Ítems

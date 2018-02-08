@@ -70,6 +70,11 @@ class Account
     /**
      * @var \Doctrine\Common\Collections\Collection
      */
+    private $documents;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
     private $notes;
 
     /**
@@ -88,6 +93,7 @@ class Account
         $this->clients = new \Doctrine\Common\Collections\ArrayCollection();
         $this->budgets = new \Doctrine\Common\Collections\ArrayCollection();
         $this->products = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->documents = new \Doctrine\Common\Collections\ArrayCollection();
         $this->notes = new \Doctrine\Common\Collections\ArrayCollection();
         $this->users = new \Doctrine\Common\Collections\ArrayCollection();
     }
@@ -432,6 +438,40 @@ class Account
     }
 
     /**
+     * Add document
+     *
+     * @param \Uni\AdminBundle\Entity\Document $document
+     *
+     * @return Account
+     */
+    public function addDocument(\Uni\AdminBundle\Entity\Document $document)
+    {
+        $this->documents[] = $document;
+
+        return $this;
+    }
+
+    /**
+     * Remove document
+     *
+     * @param \Uni\AdminBundle\Entity\Document $document
+     */
+    public function removeDocument(\Uni\AdminBundle\Entity\Document $document)
+    {
+        $this->documents->removeElement($document);
+    }
+
+    /**
+     * Get documents
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getDocuments()
+    {
+        return $this->documents;
+    }
+
+    /**
      * Add note
      *
      * @param \Uni\AdminBundle\Entity\Note $note
@@ -662,6 +702,11 @@ class Account
     /**
      * @var \Doctrine\Common\Collections\Collection
      */
+    private $portfolios;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
     private $pages;
 
 
@@ -697,6 +742,40 @@ class Account
     public function getCatalogs()
     {
         return $this->catalogs;
+    }
+
+    /**
+     * Add portfolio
+     *
+     * @param \Uni\AdminBundle\Entity\Portfolio $portfolio
+     *
+     * @return Account
+     */
+    public function addPortfolio(\Uni\AdminBundle\Entity\Portfolio $portfolio)
+    {
+        $this->portfolios[] = $portfolio;
+
+        return $this;
+    }
+
+    /**
+     * Remove portfolio
+     *
+     * @param \Uni\AdminBundle\Entity\Portfolio $portfolio
+     */
+    public function removePortfolio(\Uni\AdminBundle\Entity\Portfolio $portfolio)
+    {
+        $this->portfolios->removeElement($portfolio);
+    }
+
+    /**
+     * Get portfolios
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getPortfolios()
+    {
+        return $this->portfolios;
     }
 
     /**

@@ -1,0 +1,41 @@
+{% extends 'UniPortfolioBundle:Base:layout.html.twig' %}
+
+{% trans_default_domain 'UniPortfolioBundle' %}
+
+{% block title %}&nbsp;-&nbsp;{{ 'dashboard.index.title'|trans }}{% endblock %}
+
+{% block portfolio %}
+    <div id="page-wrapper">
+        <div class="row" id="page-header">
+            <div class="col-lg-12">
+                <h1 class="page-header">{% block icons %}{{ parent() }}{% endblock %}{{ 'dashboard.index.title'|trans }}</h1>
+                {% block flashbag %}{{ parent() }}{% endblock %}
+            </div>
+        </div>
+        <!-- /#page-header -->
+
+        <div class="row" id="page-dashboard">
+            <div class="col-md-6">
+                <fieldset>
+                    <legend>{{ 'dashboard.user.title'|trans }}</legend>
+                    <dl class="dl-horizontal">
+                    </dl>
+                </fieldset>
+            </div>
+
+            <div class="col-md-6">
+                <fieldset>
+                    <legend>{{ 'dashboard.account.title'|trans }}</legend>
+                    <dl class="dl-horizontal">
+                    </dl>
+                </fieldset>
+            </div>
+
+        </div>
+        <!-- /#page-dashboard -->
+
+    </div>
+    <!-- /#page-wrapper -->
+
+{% endblock %}
+

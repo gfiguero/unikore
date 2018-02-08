@@ -1,0 +1,77 @@
+{% extends 'UniPortfolioBundle:Base:layout.html.twig' %}
+{% use 'UniPortfolioBundle:Base:wysiwyg.html.twig' %}
+{% use 'UniPortfolioBundle:Base:fileinput.html.twig' %}
+
+{% trans_default_domain 'UniPortfolioBundle' %}
+
+{% block title %}&nbsp;-&nbsp;{{ 'document.new.title'|trans }}{% endblock %}
+
+{% block portfolio %}
+    <div id="page-wrapper">
+        <div class="row" id="page-header">
+            <div class="col-lg-12">
+                <h1 class="page-header">{% block icons %}{{ parent() }}{% endblock %}{{ 'document.new.title'|trans }}</h1>
+                {% block flashbag %}{{ parent() }}{% endblock %}
+            </div>
+        </div>
+        <!-- /#page-header -->
+
+        <div class="row" id="page-toolbar">
+            <div class="col-lg-12">
+                <div class="btn-toolbar">
+                    <a type="button" class="btn btn-default" href="{{ path('portfolio_document_index') }}">{{ icon('list fa-fw') }}&nbsp;{{ 'document.index.link'|trans }}</a>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-toolbar -->
+
+        <div class="row" id="page-new">
+            <div class="col-lg-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">{{ 'document.new.form'|trans }}</h2>
+                    </div>
+
+                    <div class="panel-body">
+                        <ul class="nav nav-pills">
+                            <li role="presentation" class="active"><a data-toggle="tab" href="#identification">{{ 'document.section.identification'|trans }}</a></li>
+                        </ul>
+                    </div>
+                    <div class="panel-body">
+                        {{ form_start(newForm, { 'style': 'horizontal' }) }}
+                        <div class="tab-content">
+                            <div id="identification" class="tab-pane fade in active" >
+                                {{ form_row(newForm.name) }}
+                                {{ form_row(newForm.short) }}
+                                {{ form_row(newForm.description) }}
+                                {{ form_row(newForm.imagefile) }}
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-lg-offset-3 col-lg-9">
+                                <button type="submit" class="btn btn-primary">{{ icon('save fa-fw') }}&nbsp;{{ 'document.new.submit'|trans }}</button>
+                            </div>
+                        </div>
+                        {{ form_end(newForm) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-new -->
+
+    </div>
+    <!-- /#page-wrapper -->
+
+{% endblock %}
+
+{% block stylesheet %}
+    {% block wysiwygcss %}{{ parent() }}{% endblock %}
+    {% block fileinputcss %}{{ parent() }}{% endblock %}
+{% endblock %}
+
+{% block javascript %}
+    {% block wysiwygjs %}{{ parent() }}{% endblock %}
+    {% block fileinputjs %}{{ parent() }}{% endblock %}
+{% endblock %}
+
+

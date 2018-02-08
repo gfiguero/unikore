@@ -1,0 +1,27 @@
+uni_portfolio_dashboard:
+    resource: "@UniPortfolioBundle/Resources/config/routing/dashboard.yml"
+    prefix:   /dashboard
+
+uni_portfolio_portfolio:
+    resource: "@UniPortfolioBundle/Resources/config/routing/portfolio.yml"
+    prefix:   /portfolio
+
+uni_portfolio_portfoliocategory:
+    resource: "@UniPortfolioBundle/Resources/config/routing/portfoliocategory.yml"
+    prefix:   /portfoliocategory
+
+uni_portfolio_portfolioitem:
+    resource: "@UniPortfolioBundle/Resources/config/routing/portfolioitem.yml"
+    prefix:   /portfolioitem
+
+uni_portfolio_portfoliotag:
+    resource: "@UniPortfolioBundle/Resources/config/routing/portfoliotag.yml"
+    prefix:   /portfoliotag
+
+uni_portfolio_document:
+    resource: "@UniPortfolioBundle/Resources/config/routing/document.yml"
+    prefix:   /document
+
+uni_portfolio_root:
+    resource: "@UniPortfolioBundle/Resources/config/routing/root.yml"
+    prefix:   /

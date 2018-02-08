@@ -58,6 +58,11 @@ class User extends BaseUser
     /**
      * @var \Doctrine\Common\Collections\Collection
      */
+    private $documents;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
     private $notes;
 
     /**
@@ -71,6 +76,7 @@ class User extends BaseUser
         $this->clients = new \Doctrine\Common\Collections\ArrayCollection();
         $this->budgets = new \Doctrine\Common\Collections\ArrayCollection();
         $this->products = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->documents = new \Doctrine\Common\Collections\ArrayCollection();
         $this->notes = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
@@ -329,6 +335,40 @@ class User extends BaseUser
     public function getProducts()
     {
         return $this->products;
+    }
+
+    /**
+     * Add document
+     *
+     * @param \Uni\AdminBundle\Entity\Document $document
+     *
+     * @return User
+     */
+    public function adddocument(\Uni\AdminBundle\Entity\Document $document)
+    {
+        $this->documents[] = $document;
+
+        return $this;
+    }
+
+    /**
+     * Remove document
+     *
+     * @param \Uni\AdminBundle\Entity\Document $document
+     */
+    public function removedocument(\Uni\AdminBundle\Entity\document $document)
+    {
+        $this->documents->removeElement($document);
+    }
+
+    /**
+     * Get documents
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getdocuments()
+    {
+        return $this->documents;
     }
 
     /**

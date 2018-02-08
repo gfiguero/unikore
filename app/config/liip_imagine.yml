@@ -45,6 +45,12 @@ liip_imagine:
                 upscale: { min: [256, 160] }
                 thumbnail: { size: [256, 160], mode: inset }
 
+        document_image_small:
+            quality: 75
+            filters:
+                upscale: { min: [120, 120] }
+                thumbnail: { size: [120, 120], mode: outbound }
+
         issuer_export_small:
             quality: 75
             filters:

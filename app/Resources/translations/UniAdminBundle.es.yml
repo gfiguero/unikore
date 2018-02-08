@@ -33,6 +33,8 @@ sidemenu:
         root: Subcategoría
     catalog:
         root: Catálogo
+    portfolio:
+        root: Portafolio
     page:
         root: Página
     socialmedia:

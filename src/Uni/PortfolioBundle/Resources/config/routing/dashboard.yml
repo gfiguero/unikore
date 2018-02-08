@@ -1,0 +1,4 @@
+portfolio_dashboard_index:
+    path:     /
+    defaults: { _controller: "UniPortfolioBundle:Dashboard:index" }
+    methods:  GET

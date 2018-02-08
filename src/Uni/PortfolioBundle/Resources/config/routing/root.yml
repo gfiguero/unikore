@@ -1,0 +1,6 @@
+portfolio_root:
+    path: /
+    defaults:
+        _controller: FrameworkBundle:Redirect:redirect
+        route: portfolio_dashboard_index
+        permanent: true
