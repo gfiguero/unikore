@@ -169,6 +169,12 @@ class Builder implements ContainerAwareInterface
             'admin_catalog_show',
             'admin_catalog_edit',
         )));
+        $sidemenu->addChild('sidemenu.portfolio.root', array('route' => 'admin_portfolio_index'))->setExtras(array('translation_domain' => 'UniAdminBundle', 'routes' => array(
+            'admin_portfolio_index',
+            'admin_portfolio_new',
+            'admin_portfolio_show',
+            'admin_portfolio_edit',
+        )));
         $sidemenu->addChild('sidemenu.page.root', array('route' => 'admin_page_index'))->setExtras(array('translation_domain' => 'UniAdminBundle', 'routes' => array(
             'admin_page_index',
             'admin_page_new',

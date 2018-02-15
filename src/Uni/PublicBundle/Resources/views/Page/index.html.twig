@@ -6,6 +6,7 @@
 {% use 'UniPublicBundle:Page:feature.html.twig' %}
 {% use 'UniPublicBundle:Page:link.html.twig' %}
 {% use 'UniPublicBundle:Page:cataloglink.html.twig' %}
+{% use 'UniPublicBundle:Page:portfoliolink.html.twig' %}
 {% use 'UniPublicBundle:Page:socialmedia.html.twig' %}
 {% use 'UniPublicBundle:Page:location.html.twig' %}
 {% use 'UniPublicBundle:Page:contact.html.twig' %}
@@ -22,6 +23,7 @@
         {% block feature %}{{ parent() }}{% endblock %}
         {% block link %}{{ parent() }}{% endblock %}
         {% block cataloglink %}{{ parent() }}{% endblock %}
+        {% block portfoliolink %}{{ parent() }}{% endblock %}
         {% block socialmedia %}{{ parent() }}{% endblock %}
         {% block location %}{{ parent() }}{% endblock %}
         {% block contact %}{{ parent() }}{% endblock %}

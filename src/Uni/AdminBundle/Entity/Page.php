@@ -1286,4 +1286,44 @@ class Page
     {
         return $this->link_title;
     }
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $portfolios;
+
+
+    /**
+     * Add portfolio
+     *
+     * @param \Uni\AdminBundle\Entity\Portfolio $portfolio
+     *
+     * @return Page
+     */
+    public function addPortfolio(\Uni\AdminBundle\Entity\Portfolio $portfolio)
+    {
+        $this->portfolios[] = $portfolio;
+
+        return $this;
+    }
+
+    /**
+     * Remove portfolio
+     *
+     * @param \Uni\AdminBundle\Entity\Catalog $portfolio
+     */
+    public function removePortfolio(\Uni\AdminBundle\Entity\Portfolio $portfolio)
+    {
+        $this->catalogs->removeElement($portfolio);
+    }
+
+    /**
+     * Get portfolios
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getPortfolios()
+    {
+        return $this->portfolios;
+    }
 }

@@ -33,6 +33,9 @@ Uni\AdminBundle\Entity\User:
         products:
             targetEntity: Uni\AdminBundle\Entity\Product
             mappedBy: user
+        documents:
+            targetEntity: Uni\AdminBundle\Entity\Document
+            mappedBy: user
         notes:
             targetEntity: Uni\AdminBundle\Entity\Note
             mappedBy: user

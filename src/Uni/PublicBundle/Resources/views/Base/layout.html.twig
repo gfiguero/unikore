@@ -1,5 +1,6 @@
 {% extends 'UniPublicBundle:Base:base.html.twig' %}
 {% use 'UniPublicBundle:Base:style.html.twig' %}
+{% use 'UniPublicBundle:Base:wow.html.twig' %}
 {% use 'UniPublicBundle:Base:script.html.twig' %}
 {% use 'UniPublicBundle:Base:google-analytics.html.twig' %}
 
@@ -31,6 +32,7 @@
 {% endblock %}
 
 {% block javascript %}
+    {% block wow %}{{ parent() }}{% endblock %}
     {% block script %}{{ parent() }}{% endblock %}
     {% block googleanalytics %}{{ parent() }}{% endblock %}
 {% endblock %}

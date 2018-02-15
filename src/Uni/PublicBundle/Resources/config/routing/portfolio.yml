@@ -1,0 +1,7 @@
+public_portfolio_show:
+    path:     /{id}/show
+    defaults: { _controller: UniPublicBundle:Portfolio:show }
+
+public_portfolio_portfoliocategory:
+    path:     /{id}/portfoliocategory
+    defaults: { _controller: UniPublicBundle:Portfolio:portfoliocategory }

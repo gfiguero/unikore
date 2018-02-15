@@ -13,11 +13,16 @@ php app/console doctrine:generate:entities UniAdminBundle:Seller --path=src
 php app/console doctrine:generate:entities UniAdminBundle:Page --path=src
 php app/console doctrine:generate:entities UniAdminBundle:Socialmedia --path=src
 php app/console doctrine:generate:entities UniAdminBundle:Catalog --path=src
+php app/console doctrine:generate:entities UniAdminBundle:Portfolio --path=src
 php app/console doctrine:generate:entities UniAdminBundle:Feature --path=src
 php app/console doctrine:generate:entities UniAdminBundle:Link --path=src
 php app/console doctrine:generate:entities UniAdminBundle:Team --path=src
 php app/console doctrine:generate:entities UniAdminBundle:Photography --path=src
 
+php app/console doctrine:generate:entities UniAdminBundle:PortfolioCategory --path=src
+php app/console doctrine:generate:entities UniAdminBundle:PortfolioSubcategory --path=src
+php app/console doctrine:generate:entities UniAdminBundle:PortfolioItem --path=src
+php app/console doctrine:generate:entities UniAdminBundle:Document --path=src
 php app/console doctrine:generate:entities UniAdminBundle:Category --path=src
 php app/console doctrine:generate:entities UniAdminBundle:Subcategory --path=src
 php app/console doctrine:generate:entities UniAdminBundle:CatalogItem --path=src
@@ -57,6 +62,7 @@ php app/console uni:admingenerate:crud --overwrite --format=yml --with-write --n
 php app/console uni:admingenerate:crud --overwrite --format=yml --with-write --no-interaction --entity=UniAdminBundle:Socialmedia --route-prefix=admin_socialmedia
 php app/console uni:admingenerate:crud --overwrite --format=yml --with-write --no-interaction --entity=UniAdminBundle:Socialnetwork --route-prefix=admin_socialnetwork
 php app/console uni:admingenerate:crud --overwrite --format=yml --with-write --no-interaction --entity=UniAdminBundle:Catalog --route-prefix=admin_catalog
+php app/console uni:admingenerate:crud --overwrite --format=yml --with-write --no-interaction --entity=UniAdminBundle:Portfolio --route-prefix=admin_portfolio
 php app/console uni:admingenerate:crud --overwrite --format=yml --with-write --no-interaction --entity=UniAdminBundle:Feature --route-prefix=admin_feature
 php app/console uni:admingenerate:crud --overwrite --format=yml --with-write --no-interaction --entity=UniAdminBundle:Photography --route-prefix=admin_photography
 php app/console uni:admingenerate:crud --overwrite --format=yml --with-write --no-interaction --entity=UniAdminBundle:Category --route-prefix=admin_category

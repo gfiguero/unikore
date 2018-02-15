@@ -6,12 +6,12 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="section-header">
-                        <h1 class="section-title socialmedia-title">{{ page.socialmediatitle|raw }}</h1>
+                        <h1 class="section-title socialmedia-title wow fadeInUp">{{ page.socialmediatitle|raw }}</h1>
                         <div class="section-content socialmedia-content">
                             <ul class="list-inline">
                                 {% for key, socialmedia in socialmedialist %}
                                     <li>
-                                        <a class="socialmedia-link social-{{ socialmedia.socialnetwork.name|lower }}" href="{{ socialmedia.url|raw }}" target="_blank" >{{ icon(socialmedia.socialnetwork.icon) }}</a>
+                                        <a class="socialmedia-link social-{{ socialmedia.socialnetwork.name|lower }} wow flip" href="{{ socialmedia.url|raw }}" target="_blank" >{{ icon(socialmedia.socialnetwork.icon) }}</a>
                                     </li>
                                 {% endfor %}
                             </ul>

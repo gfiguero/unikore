@@ -6,4 +6,4 @@ services:
         class: Uni\CatalogBundle\Form\CatalogItemType
         arguments: ["@security.token_storage"]
         tags:
-            - { name: form.type, alias: uni_catalogbundle_cataloitem }
+            - { name: form.type, alias: uni_catalogbundle_catalogitem }

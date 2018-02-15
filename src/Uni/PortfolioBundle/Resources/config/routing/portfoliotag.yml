@@ -1,0 +1,24 @@
+portfolio_portfoliotag_index:
+    path:     /
+    defaults: { _controller: "UniPortfolioBundle:PortfolioTag:index" }
+    methods:  GET
+
+portfolio_portfoliotag_show:
+    path:     /{id}/show
+    defaults: { _controller: "UniPortfolioBundle:PortfolioTag:show" }
+    methods:  GET
+
+portfolio_portfoliotag_new:
+    path:     /new
+    defaults: { _controller: "UniPortfolioBundle:PortfolioTag:new" }
+    methods:  [GET, POST]
+
+portfolio_portfoliotag_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "UniPortfolioBundle:PortfolioTag:edit" }
+    methods:  [GET, POST]
+
+portfolio_portfoliotag_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "UniPortfolioBundle:PortfolioTag:delete" }
+    methods:  DELETE

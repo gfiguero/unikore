@@ -1,0 +1,24 @@
+portfolio_document_index:
+    path:     /
+    defaults: { _controller: "UniPortfolioBundle:Document:index" }
+    methods:  GET
+
+portfolio_document_show:
+    path:     /{id}/show
+    defaults: { _controller: "UniPortfolioBundle:Document:show" }
+    methods:  GET
+
+portfolio_document_new:
+    path:     /new
+    defaults: { _controller: "UniPortfolioBundle:Document:new" }
+    methods:  [GET, POST]
+
+portfolio_document_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "UniPortfolioBundle:Document:edit" }
+    methods:  [GET, POST]
+
+portfolio_document_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "UniPortfolioBundle:Document:delete" }
+    methods:  DELETE

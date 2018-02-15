@@ -39,6 +39,7 @@ class CatalogController extends Controller
 
         return $this->render('UniPublicBundle:Catalog:subcategory.html.twig', array(
             'catalogs' => $catalogs,
+            'catalog' => $catalog,
             'categories' => $categories,
             'catalogitems' => $catalogitems,
             'page' => $page,

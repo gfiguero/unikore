@@ -67,6 +67,13 @@ assetic:
                 - less
                 - cssrewrite
             output: src/Uni/PublicBundle/Resources/public/css/public-catalog.css
+        uni_public_portfolio_css:
+            inputs:
+                - src/Uni/PublicBundle/Resources/less/build-portfolio.less
+            filters:
+                - less
+                - cssrewrite
+            output: src/Uni/PublicBundle/Resources/public/css/public-portfolio.css
 #        frontend_css:
 #            inputs:
 #                - src/Uni/OfferBundle/Resources/less/build.less

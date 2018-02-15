@@ -7,8 +7,8 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="section-header">
-                            <h1 class="section-title team-title">{{ page.teamtitle|raw }}</h1>
-                            {% if page.teamcontent %}<p class="section-content team-content">{{ page.teamcontent|raw }}</p>{% endif %}
+                            <h1 class="section-title team-title wow fadeInUp">{{ page.teamtitle|raw }}</h1>
+                            {% if page.teamcontent %}<p class="section-content team-content wow fadeInUp">{{ page.teamcontent|raw }}</p>{% endif %}
                         </div>
                     </div>
                 </div>
@@ -19,13 +19,13 @@
                             {% for key, team in teams %}
                                 <li>
                                     {% if team.image != 'default.png' %}
-                                        <img class="team-item-image" src="{{ vich_uploader_asset(team, 'imagefile', 'Uni\\AdminBundle\\Entity\\Team')|imagine_filter('team_image') }}">
+                                        <img class="team-item-image wow fadeInDown" src="{{ vich_uploader_asset(team, 'imagefile', 'Uni\\AdminBundle\\Entity\\Team')|imagine_filter('team_image') }}">
                                     {% endif %}
                                     {% if team.name %}
-                                        <h4 class="team-name">{{ team.name|raw }}</h4>
+                                        <h4 class="team-name wow fadeInUp">{{ team.name|raw }}</h4>
                                     {% endif %}
                                     {% if team.labor %}
-                                        <p class="team-labor">{{ team.labor|raw }}</p>
+                                        <p class="team-labor  wow fadeInUp">{{ team.labor|raw }}</p>
                                     {% endif %}
                                 </li>
                             {% endfor %}

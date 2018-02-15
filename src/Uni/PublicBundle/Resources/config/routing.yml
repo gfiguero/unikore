@@ -16,3 +16,8 @@ uni_public_root:
 uni_public_catalog:
     resource: "@UniPublicBundle/Resources/config/routing/catalog.yml"
     prefix:   /catalog
+
+uni_public_portfolio:
+    resource: "@UniPublicBundle/Resources/config/routing/portfolio.yml"
+    prefix:   /portfolio
+

@@ -46,6 +46,10 @@ class Builder implements ContainerAwareInterface
             $topmenu->addChild('topmenu.catalog', array('route' => 'catalog_root'))->setExtras(array('translation_domain' => 'UniControlPanelBundle'));
         }
 
+        if ($checker->isGranted('ROLE_PORTFOLIO')) {
+            $topmenu->addChild('topmenu.portfolio', array('route' => 'portfolio_root'))->setExtras(array('translation_domain' => 'UniControlPanelBundle'));
+        }
+
         if ($checker->isGranted('ROLE_USER')) {
             $topmenu->addChild('topmenu.controlpanel', array('route' => 'controlpanel_root'))->setExtras(array('translation_domain' => 'UniControlPanelBundle'));
         }

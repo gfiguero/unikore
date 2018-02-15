@@ -1,0 +1,7 @@
+{% block icons %}
+    {% if app.request.attributes.get( '_route' ) starts with 'home' %}{{ icon('home fa-fw') }}
+    {% elseif '_dashboard_' in app.request.attributes.get( '_route' ) %}{{ icon('dashboard fa-fw') }}
+    {% elseif '_account_' in app.request.attributes.get( '_route' ) %}{{ icon('cloud fa-fw') }}
+    {% elseif '_user_' in app.request.attributes.get( '_route' ) %}{{ icon('group fa-fw') }}
+    {% endif %}
+{% endblock %}
