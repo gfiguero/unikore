@@ -29,6 +29,9 @@ Uni\AdminBundle\Entity\Page:
         catalogs:
             targetEntity:  Uni\AdminBundle\Entity\Catalog
             mappedBy: page
+        portfolios:
+            targetEntity:  Uni\AdminBundle\Entity\Portfolio
+            mappedBy: page
     fields:
         name:
             type: string

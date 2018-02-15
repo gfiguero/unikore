@@ -125,7 +125,6 @@ class PortfolioItemController extends Controller
 
         if ($editForm->isSubmitted()) {
             if($editForm->isValid()) {
-                $portfolioitem->setReferencePrice();
                 $em = $this->getDoctrine()->getManager();
                 $em->persist($portfolioitem);
                 $em->flush();

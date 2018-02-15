@@ -2,6 +2,9 @@
 
 namespace Uni\AdminBundle\Entity;
 
+use Gedmo\Mapping\Annotation as Gedmo;
+use Doctrine\ORM\Mapping as ORM;
+
 /**
  * PortfolioCategory
  */
@@ -16,6 +19,12 @@ class PortfolioCategory
      * @var string
      */
     private $name;
+
+    /**
+     * @Gedmo\Slug(fields={"name"},suffix=".html")
+     * @ORM\Column(length=128, unique=true, nullable=true)
+     */
+    private $slug;
 
     /**
      * @var \DateTime
@@ -41,6 +50,11 @@ class PortfolioCategory
      * @var \Uni\AdminBundle\Entity\Portfolio
      */
     private $portfolio;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $portfolioitems;
 
 
     /**
@@ -80,6 +94,30 @@ class PortfolioCategory
     public function __toString()
     {
         return (string) $this->name;
+    }
+
+    /**
+     * Set slug
+     *
+     * @param string $slug
+     *
+     * @return PortfolioCategory
+     */
+    public function setSlug($slug)
+    {
+        $this->slug = $slug;
+
+        return $this;
+    }
+
+    /**
+     * Get slug
+     *
+     * @return string
+     */
+    public function getSlug()
+    {
+        return $this->slug;
     }
 
     /**
@@ -200,5 +238,39 @@ class PortfolioCategory
     public function getPortfolio()
     {
         return $this->portfolio;
+    }
+
+    /**
+     * Add portfolioitem
+     *
+     * @param \Uni\AdminBundle\Entity\PortfolioItem $portfolioitem
+     *
+     * @return PortfolioCategory
+     */
+    public function addPortfolioitem(\Uni\AdminBundle\Entity\PortfolioItem $portfolioitem)
+    {
+        $this->portfolioitems[] = $portfolioitem;
+
+        return $this;
+    }
+
+    /**
+     * Remove portfolioitem
+     *
+     * @param \Uni\AdminBundle\Entity\PortfolioItem $portfolioitem
+     */
+    public function removePortfolioitem(\Uni\AdminBundle\Entity\PortfolioItem $portfolioitem)
+    {
+        $this->portfolioitems->removeElement($portfolioitem);
+    }
+
+    /**
+     * Get portfolioitems
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getPortfolioitems()
+    {
+        return $this->portfolioitems;
     }
 }

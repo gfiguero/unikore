@@ -29,6 +29,11 @@ class DocumentType extends AbstractType
                 'attr'  => array( 'label_col' => 3, 'widget_col' => 9, 'class' => 'wysiwyg' ),
                 'translation_domain' => 'UniPortfolioBundle',
             ))
+            ->add('url', null, array(
+                'label' => 'document.form.url',
+                'attr'  => array( 'label_col' => 3, 'widget_col' => 9 ),
+                'translation_domain' => 'UniPortfolioBundle',
+            )) 
             ->add('imagefile', 'file', array(
                 'label' => 'document.form.imagefile',
                 'attr'  => array( 'label_col' => 3, 'widget_col' => 9, 'class' => 'fileinput' ),

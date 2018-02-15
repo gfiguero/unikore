@@ -5,6 +5,9 @@
     {% for catalog in catalogs %}
         {% if backgrounds[loop.index0 + 2] is defined %}#{{ catalog.slug|raw }} {background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('{{ vich_uploader_asset(backgrounds[loop.index0 + 2], 'imagefile')|imagine_filter('main_photography') }}');}{% endif %}
     {% endfor %}
+    {% for portfolio in portfolios %}
+        {% if backgrounds[loop.index0 + 4] is defined %}#{{ portfolio.slug|raw }} {background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('{{ vich_uploader_asset(backgrounds[loop.index0 + 4], 'imagefile')|imagine_filter('main_photography') }}');}{% endif %}
+    {% endfor %}
     </style>
 
     {% if page.brandprimarycolor %}
@@ -140,6 +143,26 @@
                 justify-content: center;
                 align-items: center;
                 text-align: left;
+                background-position: center center;
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+        {% endfor %}
+        .portfoliolink-calltoaction {
+            background-color: {{ page.brandprimarycolor }};
+        }
+        .portfoliolink-calltoaction:hover,
+        .portfoliolink-calltoaction:focus,
+        .portfoliolink-calltoaction:active:focus,
+        .portfoliolink-calltoaction:active {
+            background-color: {{ color_darken(page.brandprimarycolor, 20) }};
+        }
+        {% for k, portfolio in portfolios %}
+            {{ 'section#' ~ portfolio.slug|raw }} {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-align: right;
                 background-position: center center;
                 background-size: cover;
                 background-repeat: no-repeat;

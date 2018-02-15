@@ -31,6 +31,10 @@ Uni\AdminBundle\Entity\Document:
         description:
             type: text
             nullable: true
+        url:
+            type: string
+            length: 200
+            nullable: true
         image:
             type: string
             length: 200

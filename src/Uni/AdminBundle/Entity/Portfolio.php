@@ -272,6 +272,8 @@ class Portfolio
      */
     public function addPortfoliocategory(\Uni\AdminBundle\Entity\PortfolioCategory $portfoliocategory)
     {
+        $portfoliocategory->setPortfolio($this);
+
         $this->portfoliocategories[] = $portfoliocategory;
 
         return $this;
@@ -292,7 +294,7 @@ class Portfolio
      *
      * @return \Doctrine\Common\Collections\Collection
      */
-    public function getPortfoliocategories()
+    public function getPortfolioCategories()
     {
         return $this->portfoliocategories;
     }

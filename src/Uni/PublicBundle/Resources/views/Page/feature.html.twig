@@ -7,13 +7,13 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="section-header">
-                        <h1 class="section-title feature-title">{{ page.featuretitle|raw }}</h1>
-                        {% if page.featurecontent %}<p class="section-content feature-content">{{ page.featurecontent|raw }}</p>{% endif %}
+                        <h1 class="section-title feature-title  wow fadeInUp">{{ page.featuretitle|raw }}</h1>
+                        {% if page.featurecontent %}<p class="section-content feature-content  wow fadeInUp">{{ page.featurecontent|raw }}</p>{% endif %}
                     </div>
                 </div>
             </div>
 
-            <div class="row feature-row">
+            <div class="row feature-row wow fadeInUp">
                 {% for k, feature in features %}
                 <div class="col-sm-6 col-md-4 feature-col">
                     <div class="thumbnail feature-thumbnail" data-toggle="modal" data-target="#featureModal{{ k }}">

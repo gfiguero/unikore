@@ -23,7 +23,7 @@ Uni\AdminBundle\Entity\Portfolio:
     manyToMany:
         portfoliotags:
             targetEntity: Uni\AdminBundle\Entity\PortfolioTag
-            idnversedBy: portfolios
+            inversedBy: portfolios
     fields:
         name:
             type: string

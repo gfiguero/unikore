@@ -2,3 +2,8 @@ services:
 #    uni_portfolio.example:
 #        class: Uni\PortfolioBundle\Example
 #        arguments: ["@service_id", "plain_value", "%parameter%"]
+    uni_page.form.portfolioitem:
+        class: Uni\PortfolioBundle\Form\PortfolioItemType
+        arguments: ["@security.token_storage"]
+        tags:
+            - { name: form.type, alias: uni_portfoliobundle_portfolioitem }

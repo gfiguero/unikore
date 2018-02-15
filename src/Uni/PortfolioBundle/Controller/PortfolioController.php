@@ -61,6 +61,7 @@ class PortfolioController extends Controller
             if($newForm->isValid()) {
                 foreach ($portfolio->getPortfolioCategories() as $portfoliocategory) {
                     $portfoliocategory->setAccount($account);
+                    $portfoliocategory->setSlug(null);
                 }
                 $portfolio->setUser($user);
                 $portfolio->setAccount($account);
@@ -130,7 +131,8 @@ class PortfolioController extends Controller
         if ($editForm->isSubmitted()) {
             if($editForm->isValid()) {
                 foreach ($portfolio->getPortfolioCategories() as $portfoliocategory) {
-                    $category->setAccount($account);
+                    $portfoliocategory->setAccount($account);
+                    $portfoliocategory->setSlug(null);
                 }
                 $portfolio->setSlug(null);
                 $em = $this->getDoctrine()->getManager();

@@ -6,8 +6,8 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="cataloglink-content">
-                        {% if catalog.catalogcontent %}<h1 class="cataloglink-title">{{ catalog.catalogcontent|raw }}</h1>{% endif %}
-                        {% if catalog.catalogcalltoaction %}<a type="button" href="{{ path('public_catalog_show', {'id': catalog.id}) }}" target="_blank" class="btn btn-primary btn-lg cataloglink-calltoaction">{{ catalog.catalogcalltoaction|raw }}</a>{% endif %}
+                        {% if catalog.catalogcontent %}<h1 class="cataloglink-title wow fadeInUp">{{ catalog.catalogcontent|raw }}</h1>{% endif %}
+                        {% if catalog.catalogcalltoaction %}<a type="button" href="{{ path('public_catalog_show', {'id': catalog.id}) }}" target="_blank" class="btn btn-primary btn-lg cataloglink-calltoaction wow pulse">{{ catalog.catalogcalltoaction|raw }}</a>{% endif %}
                     </div>
                 </div>
             </div>
