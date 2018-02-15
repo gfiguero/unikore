@@ -1,0 +1,45 @@
+@import "../../../../../vendor/bower_components/bootswatch/superhero/variables.less";
+@import "../../../../../vendor/bower_components/bootswatch/superhero/bootswatch.less";
+
+// Bootstrap Extensions
+@import "bootstrap-extensions/modals.less";
+@import "bootstrap-extensions/thumbnails.less";
+@import "bootstrap-extensions/button-groups.less";
+@import "bootstrap-extensions/type.less";
+
+// uniPage unique components
+@import "public/portfolio.less";
+
+section {
+    padding: @section-padding-vertical @section-padding-horizontal;
+}
+
+.section-header {
+    padding: 20px 0 60px;
+}
+
+.section-title:after {
+    content: '';
+    position: relative;
+    display: block;
+    width: 100px;
+    margin: 10px auto 30px;
+    border: 2px solid;
+}
+
+.row-flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col-flex {
+    display: flex;
+}
+
+.nopadding {
+    padding: 0;
+}
+
+body {
+    word-break: break-word;
+}
