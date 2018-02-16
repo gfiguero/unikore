@@ -194,27 +194,22 @@ class PageController extends Controller
     public function previewAction(Page $page)
     {
         $em = $this->getDoctrine()->getManager();
-        $page = $em->getRepository('UniAdminBundle:Page')->findOneByDomain($this->getRequest()->getHost());
+        $page = $em->getRepository('UniAdminBundle:Page')->find($page);
         $photographies = $em->getRepository('UniAdminBundle:Photography')->findByPage($page);
-        $teams = $em->getRepository('UniAdminBundle:Team')->findByPage($page);
         $features = $em->getRepository('UniAdminBundle:Feature')->findByPage($page);
-        $links = $em->getRepository('UniAdminBundle:Link')->findByPage($page);
-        $catalogs = $em->getRepository('UniAdminBundle:Catalog')->findByPage($page);
-        $portfolios = $em->getRepository('UniAdminBundle:Portfolio')->findByPage($page);
+        $teams = $em->getRepository('UniAdminBundle:Team')->findByPage($page);
         $socialmedialist = $em->getRepository('UniAdminBundle:Socialmedia')->findByPage($page);
+        $catalogs = $em->getRepository('UniAdminBundle:Catalog')->findByPage($page);
         shuffle($photographies);
         $backgrounds = array();
 
         if(!empty($photographies)) {
-            // conteo de secciones
+            // conteo se secciones
             $sections = 0;
-            if($page) $sections += 4; // (main, about, location, contact) = 4
-            if(!empty($teams)) $sections += 1;
+            if($page) $sections += 2;
             if(!empty($features)) $sections += 1;
-            if(!empty($links)) $sections += 1;
-            if(!empty($catalogs)) $sections += count($catalogs);
-            if(!empty($portfolios)) $sections += count($portfolios);
             if(!empty($socialmedialist)) $sections += 1;
+            if(!empty($catalogs)) $sections += count($catalogs);
 
             $currentPhotography = 0;
             for ($section=0; $section < $sections; $section++) {
@@ -227,16 +222,14 @@ class PageController extends Controller
                 }
             }
         }
-
+        
         return $this->render('UniPageBundle:Page:preview.html.twig', array(
-            'page' => $page,
-            'photographies' => $photographies,
-            'teams' => $teams,
             'features' => $features,
-            'links' => $links,
-            'catalogs' => $catalogs,
-            'portfolios' => $portfolios,
+            'teams' => $teams,
+            'photographies' => $photographies,
             'socialmedialist' => $socialmedialist,
+            'page' => $page,
+            'catalogs' => $catalogs,
             'backgrounds' => $backgrounds,
         ));
     }
