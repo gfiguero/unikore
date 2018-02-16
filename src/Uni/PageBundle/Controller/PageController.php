@@ -226,12 +226,14 @@ class PageController extends Controller
         }
         
         return $this->render('UniPageBundle:Page:preview.html.twig', array(
-            'features' => $features,
-            'teams' => $teams,
-            'photographies' => $photographies,
-            'socialmedialist' => $socialmedialist,
             'page' => $page,
+            'photographies' => $photographies,
+            'teams' => $teams,
+            'features' => $features,
+            'links' => $links,
             'catalogs' => $catalogs,
+            'portfolios' => $portfolios,
+            'socialmedialist' => $socialmedialist,
             'backgrounds' => $backgrounds,
         ));
     }
