@@ -5,9 +5,15 @@
     {% for catalog in catalogs %}
         {% if backgrounds[loop.index0 + 2] is defined %}#{{ catalog.slug|raw }} {background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('{{ vich_uploader_asset(backgrounds[loop.index0 + 2], 'imagefile')|imagine_filter('main_photography') }}');}{% endif %}
     {% endfor %}
-    {% for portfolio in portfolios %}
-        {% if backgrounds[loop.index0 + 4] is defined %}#{{ portfolio.slug|raw }} {background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('{{ vich_uploader_asset(backgrounds[loop.index0 + 4], 'imagefile')|imagine_filter('main_photography') }}');}{% endif %}
-    {% endfor %}
+    {% if catalog is defined %}
+        {% for portfolio in portfolios %}
+            {% if backgrounds[loop.index0 + 4] is defined %}#{{ portfolio.slug|raw }} {background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('{{ vich_uploader_asset(backgrounds[loop.index0 + 4], 'imagefile')|imagine_filter('main_photography') }}');}{% endif %}
+        {% endfor %}
+    {% else %}
+        {% for portfolio in portfolios %}
+            {% if backgrounds[loop.index0 + 2] is defined %}#{{ portfolio.slug|raw }} {background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('{{ vich_uploader_asset(backgrounds[loop.index0 + 2], 'imagefile')|imagine_filter('main_photography') }}');}{% endif %}
+        {% endfor %}
+    {% endif %}  
     </style>
 
     {% if page.brandprimarycolor %}
