@@ -1,38 +1,37 @@
 .container {
-    .logo {
-        margin-bottom: 20px;
-    }
-    .portfolio-item {
-        overflow: hidden;
-        &:hover {
-            .overlay {
-                opacity: 1;
+    @media (min-width: @screen-sm-min) {    
+        .portfolio-item {
+            overflow: hidden;
+            &:hover {
+                .overlay {
+                    opacity: 1;
+                }
+                img {
+                    transform: rotate(10deg) scale(1.5);
+                    transition: .5s;
+                }
             }
             img {
-                transform: rotate(10deg) scale(1.5);
                 transition: .5s;
             }
+            .overlay-content {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
         }
-        img {
-            transition: .5s;
-        }
-        .overlay-content {
+        .overlay {
             position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            width: 100%;
+            opacity: 0;
+            transition: .5s ease;
         }
-    }
-    .overlay {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        height: 100%;
-        width: 100%;
-        opacity: 0;
-        transition: .5s ease;
     }
     .modal-image { 
         .modal-body {

@@ -7039,38 +7039,37 @@ h2,
     font-size: 32px;
   }
 }
-.container .logo {
-  margin-bottom: 20px;
-}
-.container .portfolio-item {
-  overflow: hidden;
-}
-.container .portfolio-item:hover .overlay {
-  opacity: 1;
-}
-.container .portfolio-item:hover img {
-  transform: rotate(10deg) scale(1.5);
-  transition: .5s;
-}
-.container .portfolio-item img {
-  transition: .5s;
-}
-.container .portfolio-item .overlay-content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-.container .overlay {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  width: 100%;
-  opacity: 0;
-  transition: .5s ease;
+@media (min-width: 768px) {
+  .container .portfolio-item {
+    overflow: hidden;
+  }
+  .container .portfolio-item:hover .overlay {
+    opacity: 1;
+  }
+  .container .portfolio-item:hover img {
+    transform: rotate(10deg) scale(1.5);
+    transition: .5s;
+  }
+  .container .portfolio-item img {
+    transition: .5s;
+  }
+  .container .portfolio-item .overlay-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .container .overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+  }
 }
 .container .modal-image .modal-body {
   padding: 10px;

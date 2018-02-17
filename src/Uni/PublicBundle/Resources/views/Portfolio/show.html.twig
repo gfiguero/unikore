@@ -28,7 +28,7 @@
                                 <div data-toggle="modal" data-target="#documentModal{{ k }}">
                                     {% if portfolioitem.document.image %}
                                         <img class="img-responsive" src="{{ vich_uploader_asset(portfolioitem.document, 'imagefile', 'Uni\\AdminBundle\\Entity\\Document')|imagine_filter('document_image') }}">
-                                        <div class="overlay">
+                                        <div class="overlay hidden-xs">
                                             <div class="overlay-content">{{ icon('plus-circle fa-fw fa-4x') }}</div>
                                         </div>
                                     {% endif %}
