@@ -1,0 +1,48 @@
+Uni\AdminBundle\Entity\Team:
+    type: entity
+    table: uni_team
+    repositoryClass: Uni\AdminBundle\Entity\TeamRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    manyToOne:
+        account:
+            targetEntity: Uni\AdminBundle\Entity\Account
+            inversedBy: teams
+        page:
+            targetEntity: Uni\AdminBundle\Entity\Page
+            inversedBy: teams
+    fields:
+        name:
+            type: string
+            length: 30
+            nullable: true
+        labor:
+            type: string
+            length: 30
+            nullable: true
+        image:
+            type: string
+            length: 80
+            nullable: true
+        created_at:
+            type: datetime
+            gedmo:
+                timestampable:
+                    on: create
+        updated_at:
+            type: datetime
+            gedmo:
+                timestampable:
+                    on: update
+        deleted_at:
+            type: datetime
+            nullable: true
+    gedmo:
+        soft_deleteable:
+            field_name: deleted_at
+            time_aware: false
+    lifecycleCallbacks: {  }

@@ -1,0 +1,59 @@
+Uni\AdminBundle\Entity\Document:
+    type: entity
+    table: uni_document
+    repositoryClass: Uni\AdminBundle\Entity\DocumentRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    manyToOne:
+        user:
+            targetEntity: Uni\AdminBundle\Entity\User
+            inversedBy: documents
+        account:
+            targetEntity: Uni\AdminBundle\Entity\Account
+            inversedBy: documents
+    oneToMany:
+        portfolioitems:
+            targetEntity: Uni\AdminBundle\Entity\PortfolioItem
+            mappedBy: document
+    fields:
+        name:
+            type: string
+            length: 100
+            nullable: true
+        short:
+            type: string
+            length: 200
+            nullable: true
+        description:
+            type: text
+            nullable: true
+        url:
+            type: string
+            length: 200
+            nullable: true
+        image:
+            type: string
+            length: 200
+            nullable: true
+        created_at:
+            type: datetime
+            gedmo:
+                timestampable:
+                    on: create
+        updated_at:
+            type: datetime
+            gedmo:
+                timestampable:
+                    on: update
+        deleted_at:
+            type: datetime
+            nullable: true
+    gedmo:
+        soft_deleteable:
+            field_name: deleted_at
+            time_aware: false
+    lifecycleCallbacks: {  }

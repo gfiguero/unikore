@@ -100,6 +100,11 @@ class PageType extends AbstractType
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
                 'translation_domain' => 'UniAdminBundle',
             ))
+            ->add('contact_secondary_phone', null, array(
+                'label' => 'page.form.contact_secondary_phone',
+                'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
+                'translation_domain' => 'UniAdminBundle',
+            ))
             ->add('contact_email', null, array(
                 'label' => 'page.form.contact_email',
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
@@ -107,6 +112,11 @@ class PageType extends AbstractType
             ))
             ->add('contact_address', null, array(
                 'label' => 'page.form.contact_address',
+                'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
+                'translation_domain' => 'UniAdminBundle',
+            ))
+            ->add('contact_map_location', null, array(
+                'label' => 'page.form.contact_map_location',
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
                 'translation_domain' => 'UniAdminBundle',
             ))
@@ -142,6 +152,11 @@ class PageType extends AbstractType
             ))
             ->add('fb_share_appid', null, array(
                 'label' => 'page.form.fb_share_appid',
+                'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
+                'translation_domain' => 'UniAdminBundle',
+            ))
+            ->add('tracking_code', null, array(
+                'label' => 'page.form.tracking_code',
                 'attr'  => array( 'label_col' => 4, 'widget_col' => 8 ),
                 'translation_domain' => 'UniAdminBundle',
             ))

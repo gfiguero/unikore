@@ -1,0 +1,24 @@
+page_team_index:
+    path:     /
+    defaults: { _controller: "UniPageBundle:Team:index" }
+    methods:  GET
+
+page_team_show:
+    path:     /{id}/show
+    defaults: { _controller: "UniPageBundle:Team:show" }
+    methods:  GET
+
+page_team_new:
+    path:     /new
+    defaults: { _controller: "UniPageBundle:Team:new" }
+    methods:  [GET, POST]
+
+page_team_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "UniPageBundle:Team:edit" }
+    methods:  [GET, POST]
+
+page_team_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "UniPageBundle:Team:delete" }
+    methods:  DELETE

@@ -1,0 +1,24 @@
+{% block isotopelayout %}
+    <script>
+        var $container = $('.portfolio');
+        $container.imagesLoaded( function(){
+            //init Isotope
+            $container.isotope({
+                // options
+                itemSelector: '.portfolio-item',
+                layoutMode: 'fitRows'
+            });
+        });
+
+        //filter items on button click
+        $('.portfolio-filter').on( 'click', 'a', function(e) {
+            e.preventDefault();
+            var filterValue = $(this).attr('data-filter');
+            $container.isotope({ filter: filterValue });
+
+            $('.portfolio-filter li').removeClass('active');
+            $(this).closest('li').addClass('active');
+
+        });
+    </script>
+{% endblock %}

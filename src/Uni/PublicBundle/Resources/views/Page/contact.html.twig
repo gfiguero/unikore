@@ -7,13 +7,13 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="section-header">
-                            <h1 class="section-title contact-title">{{ page.contacttitle|raw }}</h1>
-                            {% if page.contactcontent %}<p class="section-content contact-content">{{ page.contactcontent|raw }}</p>{% endif %}
+                            <h1 class="section-title contact-title wow fadeInUp">{{ page.contacttitle|raw }}</h1>
+                            {% if page.contactcontent %}<p class="section-content contact-content wow fadeInUp">{{ page.contactcontent|raw }}</p>{% endif %}
                         </div>
                     </div>
                 </div>
 
-                <div class="row">
+                <div class="row wow slideInRight">
                     <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
 
                     {% if page.contactphone %}
@@ -21,8 +21,21 @@
                             <div class="panel panel-primary-fade">
                                 <div class="panel-body">
                                     <div class="row">
-                                        <div class="col-xs-3 text-left">{{ icon('phone fa-fw fa-2x') }}</div>
+                                        <div class="col-xs-3 text-left">{{ icon('whatsapp fa-fw fa-2x') }}</div>
                                         <div class="col-xs-9 text-right"><p>{{ '+569' ~ page.contactphone|raw }}</p></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    {% endif %}
+
+                    {% if page.contactsecondaryphone %}
+                        <a href="tel:{{ page.contactsecondaryphone|raw }}">
+                            <div class="panel panel-primary-fade">
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-xs-3 text-left">{{ icon('phone fa-fw fa-2x') }}</div>
+                                        <div class="col-xs-9 text-right"><p>{{ page.contactsecondaryphone|raw }}</p></div>
                                     </div>
                                 </div>
                             </div>

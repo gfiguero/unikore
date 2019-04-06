@@ -1123,4 +1123,33 @@ class Page
     {
         return $this->links;
     }
+    /**
+     * @var string
+     */
+    private $link_title;
+
+
+    /**
+     * Set linkTitle
+     *
+     * @param string $linkTitle
+     *
+     * @return Page
+     */
+    public function setLinkTitle($linkTitle)
+    {
+        $this->link_title = $linkTitle;
+
+        return $this;
+    }
+
+    /**
+     * Get linkTitle
+     *
+     * @return string
+     */
+    public function getLinkTitle()
+    {
+        return $this->link_title;
+    }
 }

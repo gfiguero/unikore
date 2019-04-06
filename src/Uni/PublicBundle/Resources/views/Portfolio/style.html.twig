@@ -1,0 +1,15 @@
+{% block style %}
+    {% if page.brandprimarycolor %}
+        <style type="text/css">
+            .overlay {
+                background-color: {{ color_alpha(page.brandprimarycolor, 50) }};
+            }
+        </style>
+    {% endif %}
+    {% if page.brandsecondarycolor %}
+        <style type="text/css">
+
+        </style>
+    {% endif %}
+        </style>
+{% endblock %}

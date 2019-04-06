@@ -29,6 +29,9 @@ Uni\AdminBundle\Entity\Page:
         catalogs:
             targetEntity:  Uni\AdminBundle\Entity\Catalog
             mappedBy: page
+        portfolios:
+            targetEntity:  Uni\AdminBundle\Entity\Portfolio
+            mappedBy: page
     fields:
         name:
             type: string
@@ -84,6 +87,13 @@ Uni\AdminBundle\Entity\Page:
             type: string
             length: 40
             nullable: true
+        team_title:
+            type: string
+            length: 20
+            nullable: true
+        team_content:
+            type: text
+            nullable: true
         socialmedia_title:
             type: string
             length: 20
@@ -99,6 +109,10 @@ Uni\AdminBundle\Entity\Page:
             type: string
             length: 20
             nullable: true
+        contact_secondary_phone:
+            type: string
+            length: 20
+            nullable: true
         contact_email:
             type: string
             length: 100
@@ -107,9 +121,13 @@ Uni\AdminBundle\Entity\Page:
             type: string
             length: 100
             nullable: true
+        contact_map_location:
+            type: string
+            length: 100
+            nullable: true
         contact_schedule:
             type: string
-            length: 50
+            length: 100
             nullable: true
         keywords:
             type: text
@@ -127,6 +145,10 @@ Uni\AdminBundle\Entity\Page:
             nullable: true
         fb_share_appid:
             type: integer
+            nullable: true
+        tracking_code:
+            type: string
+            length: 100
             nullable: true
         created_at:
             type: datetime

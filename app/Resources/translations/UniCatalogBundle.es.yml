@@ -42,6 +42,7 @@ catalog:
         updated_at: Actualizado
         addcategory: Agregar categoría
     edit:
+        link: Editar catálogo
         title: Editar catálogo
         form: Catálogo
         submit: Guardar cambios
@@ -52,6 +53,9 @@ catalog:
         message: Los datos borrados no podrán ser recuperados.
         submit: Confirmar borrado
         flash: El catálogo fue borrado totalmente.
+    show: 
+        title: Catálogos
+        data: Datos de catálogo
 
 product:
     index: 
@@ -77,6 +81,7 @@ product:
         description: Descripción
         imagefile: Imagen
     edit:
+        link: Editar producto
         submit: Guardar cambios
         title: Editar producto
         form: Producto
@@ -87,6 +92,9 @@ product:
         message: Los datos borrados no podrán ser recuperados.
         submit: Confirmar borrado
         flash: El producto fue borrado totalmente.
+    show:
+        title: Productos
+        data: Datos de producto
     section:
         identification: Identificación del producto
         trading: Comercialización del producto
@@ -103,7 +111,7 @@ category:
         submit: Guardar
     form:
         id: ID
-        name: Nombre de Categoría
+        name: Nombre de categoría
         subcategories: Subcategorías
         created_at: Creado
         updated_at: Actualizado
@@ -131,7 +139,7 @@ subcategory:
         submit: Guardar
     form:
         id: ID
-        name: Nombre de Subcategoría
+        name: Nombre de subcategoría
         created_at: Creado
         updated_at: Actualizado
         category: Categoría
@@ -171,7 +179,7 @@ catalogitem:
         form: Items
         submit: Guardar cambios
         flash: Los cambios en el item fueron registrados satisfactoriamente.
-        link: Editar ítem
+        link: Editar item
     delete:
         link: Borrar item
         title: Borrado de item
@@ -179,4 +187,5 @@ catalogitem:
         submit: Confirmar borrado
         flash: El Item fue borrado totalmente.
     show:
-        title: Ítems
+        title: Items
+        data: Datos de item

@@ -196,9 +196,12 @@ class PageController extends Controller
         $em = $this->getDoctrine()->getManager();
         $page = $em->getRepository('UniAdminBundle:Page')->find($page);
         $photographies = $em->getRepository('UniAdminBundle:Photography')->findByPage($page);
+        $teams = $em->getRepository('UniAdminBundle:Team')->findByPage($page);
         $features = $em->getRepository('UniAdminBundle:Feature')->findByPage($page);
-        $socialmedialist = $em->getRepository('UniAdminBundle:Socialmedia')->findByPage($page);
+        $links = $em->getRepository('UniAdminBundle:Link')->findByPage($page);
         $catalogs = $em->getRepository('UniAdminBundle:Catalog')->findByPage($page);
+        $portfolios = $em->getRepository('UniAdminBundle:Portfolio')->findByPage($page);
+        $socialmedialist = $em->getRepository('UniAdminBundle:Socialmedia')->findByPage($page);
         shuffle($photographies);
         $backgrounds = array();
 
@@ -223,11 +226,14 @@ class PageController extends Controller
         }
         
         return $this->render('UniPageBundle:Page:preview.html.twig', array(
-            'features' => $features,
-            'photographies' => $photographies,
-            'socialmedialist' => $socialmedialist,
             'page' => $page,
+            'photographies' => $photographies,
+            'teams' => $teams,
+            'features' => $features,
+            'links' => $links,
             'catalogs' => $catalogs,
+            'portfolios' => $portfolios,
+            'socialmedialist' => $socialmedialist,
             'backgrounds' => $backgrounds,
         ));
     }

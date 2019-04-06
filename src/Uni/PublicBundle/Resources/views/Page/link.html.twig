@@ -7,11 +7,11 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="section-header">
-                        <h1 class="section-title link-title">{{ page.linktitle|raw }}</h1>
+                        <h1 class="section-title link-title  wow fadeInUp">{{ page.linktitle|raw }}</h1>
                         <ul class="list-inline">
                             {% for link in links %}
                                 <li>
-                                    <a type="button" href="{{ link.url }}" target="_blank" class="btn btn-primary btn-lg btn-link-interest">{{ link.title }}</a>
+                                    <a type="button" href="{{ link.url }}" target="_blank" class="btn btn-primary btn-lg btn-link-interest wow slideInLeft">{{ link.title }}</a>
                                 </li>
                             {% endfor %}
                         </ul>

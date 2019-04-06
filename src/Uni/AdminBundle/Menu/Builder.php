@@ -145,6 +145,12 @@ class Builder implements ContainerAwareInterface
             'admin_photography_show',
             'admin_photography_edit',
         )));
+        $sidemenu->addChild('sidemenu.team.root', array('route' => 'admin_team_index'))->setExtras(array('translation_domain' => 'UniAdminBundle', 'routes' => array(
+            'admin_team_index',
+            'admin_team_new',
+            'admin_team_show',
+            'admin_team_edit',
+        )));
         $sidemenu->addChild('sidemenu.category.root', array('route' => 'admin_category_index'))->setExtras(array('translation_domain' => 'UniAdminBundle', 'routes' => array(
             'admin_category_index',
             'admin_category_new',
@@ -162,6 +168,12 @@ class Builder implements ContainerAwareInterface
             'admin_catalog_new',
             'admin_catalog_show',
             'admin_catalog_edit',
+        )));
+        $sidemenu->addChild('sidemenu.portfolio.root', array('route' => 'admin_portfolio_index'))->setExtras(array('translation_domain' => 'UniAdminBundle', 'routes' => array(
+            'admin_portfolio_index',
+            'admin_portfolio_new',
+            'admin_portfolio_show',
+            'admin_portfolio_edit',
         )));
         $sidemenu->addChild('sidemenu.page.root', array('route' => 'admin_page_index'))->setExtras(array('translation_domain' => 'UniAdminBundle', 'routes' => array(
             'admin_page_index',

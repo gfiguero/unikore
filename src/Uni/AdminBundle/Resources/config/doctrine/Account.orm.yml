@@ -30,6 +30,9 @@ Uni\AdminBundle\Entity\Account:
         products:
             targetEntity: Uni\AdminBundle\Entity\Product
             mappedBy: account
+        documents:
+            targetEntity: Uni\AdminBundle\Entity\Document
+            mappedBy: account
         notes:
             targetEntity: Uni\AdminBundle\Entity\Note
             mappedBy: account
@@ -41,6 +44,9 @@ Uni\AdminBundle\Entity\Account:
             mappedBy: account
         catalogitems:
             targetEntity: Uni\AdminBundle\Entity\CatalogItem
+            mappedBy: account
+        portfolios:
+            targetEntity: Uni\AdminBundle\Entity\Portfolio
             mappedBy: account
         pages:
             targetEntity: Uni\AdminBundle\Entity\Page

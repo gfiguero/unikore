@@ -364,6 +364,15 @@ class Page
      */
     private $socialmedia_title;
 
+    /**
+     * @var string
+     */
+    private $team_title;
+
+    /**
+     * @var string
+     */
+    private $team_content;
 
     /**
      * @var string
@@ -383,12 +392,22 @@ class Page
     /**
      * @var string
      */
+    private $contact_secondary_phone;
+
+    /**
+     * @var string
+     */
     private $contact_email;
 
     /**
      * @var string
      */
     private $contact_address;
+
+    /**
+     * @var string
+     */
+    private $contact_map_location;
 
     /**
      * @var string
@@ -428,12 +447,7 @@ class Page
     /**
      * @var string
      */
-    private $fb_share_title;
-
-    /**
-     * @var string
-     */
-    private $fb_share_description;
+    private $tracking_code;
 
     /**
      * Set brand
@@ -748,6 +762,54 @@ class Page
     }
 
     /**
+     * Set teamTitle
+     *
+     * @param string $teamTitle
+     *
+     * @return Page
+     */
+    public function setTeamTitle($teamTitle)
+    {
+        $this->team_title = $teamTitle;
+
+        return $this;
+    }
+
+    /**
+     * Get teamTitle
+     *
+     * @return string
+     */
+    public function getTeamTitle()
+    {
+        return $this->team_title;
+    }
+
+    /**
+     * Set teamContent
+     *
+     * @param string $teamContent
+     *
+     * @return Page
+     */
+    public function setTeamContent($teamContent)
+    {
+        $this->team_content = $teamContent;
+
+        return $this;
+    }
+
+    /**
+     * Get teamContent
+     *
+     * @return string
+     */
+    public function getTeamContent()
+    {
+        return $this->team_content;
+    }
+
+    /**
      * Set contactTitle
      *
      * @param string $contactTitle
@@ -820,6 +882,30 @@ class Page
     }
 
     /**
+     * Set contactSecondaryPhone
+     *
+     * @param string $contactSecondaryPhone
+     *
+     * @return Page
+     */
+    public function setContactSecondaryPhone($contactSecondaryPhone)
+    {
+        $this->contact_secondary_phone = $contactSecondaryPhone;
+
+        return $this;
+    }
+
+    /**
+     * Get contactSecondaryPhone
+     *
+     * @return string
+     */
+    public function getContactSecondaryPhone()
+    {
+        return $this->contact_secondary_phone;
+    }
+
+    /**
      * Set contactEmail
      *
      * @param string $contactEmail
@@ -865,6 +951,30 @@ class Page
     public function getContactAddress()
     {
         return $this->contact_address;
+    }
+
+    /**
+     * Set contactMapLocation
+     *
+     * @param string $contactMapLocation
+     *
+     * @return Page
+     */
+    public function setContactMapLocation($contactMapLocation)
+    {
+        $this->contact_map_location = $contactMapLocation;
+
+        return $this;
+    }
+
+    /**
+     * Get contactMapLocation
+     *
+     * @return string
+     */
+    public function getContactMapLocation()
+    {
+        return $this->contact_map_location;
     }
 
     /**
@@ -956,7 +1066,7 @@ class Page
      *
      * @return Page
      */
-    public function setsocialShareImage($social_share_image)
+    public function setSocialShareImage($social_share_image)
     {
         $this->social_share_image = $social_share_image;
 
@@ -968,7 +1078,7 @@ class Page
      *
      * @return string
      */
-    public function getsocialShareImage()
+    public function getSocialShareImage()
     {
         return $this->social_share_image;
     }
@@ -980,7 +1090,7 @@ class Page
      *
      * @return Page
      */
-    public function setsocialShareTitle($social_share_title)
+    public function setSocialShareTitle($social_share_title)
     {
         $this->social_share_title = $social_share_title;
 
@@ -992,7 +1102,7 @@ class Page
      *
      * @return string
      */
-    public function getsocialShareTitle()
+    public function getSocialShareTitle()
     {
         return $this->social_share_title;
     }
@@ -1004,7 +1114,7 @@ class Page
      *
      * @return Page
      */
-    public function setsocialShareDescription($social_share_description)
+    public function setSocialShareDescription($social_share_description)
     {
         $this->social_share_description = $social_share_description;
 
@@ -1016,7 +1126,7 @@ class Page
      *
      * @return string
      */
-    public function getsocialShareDescription()
+    public function getSocialShareDescription()
     {
         return $this->social_share_description;
     }
@@ -1028,7 +1138,7 @@ class Page
      *
      * @return Page
      */
-    public function setfbShareAppid($fb_share_appid)
+    public function setFbShareAppid($fb_share_appid)
     {
         $this->fb_share_appid = $fb_share_appid;
 
@@ -1040,9 +1150,33 @@ class Page
      *
      * @return integer
      */
-    public function getfbShareAppid()
+    public function getFbShareAppid()
     {
         return $this->fb_share_appid;
+    }
+
+    /**
+     * Set trackingCode
+     *
+     * @param string $tracking_code
+     *
+     * @return Page
+     */
+    public function setTrackingCode($tracking_code)
+    {
+        $this->tracking_code = $tracking_code;
+
+        return $this;
+    }
+
+    /**
+     * Get trackingCode
+     *
+     * @return string
+     */
+    public function getTrackingCode()
+    {
+        return $this->tracking_code;
     }
 
     /**
@@ -1151,5 +1285,45 @@ class Page
     public function getLinkTitle()
     {
         return $this->link_title;
+    }
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $portfolios;
+
+
+    /**
+     * Add portfolio
+     *
+     * @param \Uni\AdminBundle\Entity\Portfolio $portfolio
+     *
+     * @return Page
+     */
+    public function addPortfolio(\Uni\AdminBundle\Entity\Portfolio $portfolio)
+    {
+        $this->portfolios[] = $portfolio;
+
+        return $this;
+    }
+
+    /**
+     * Remove portfolio
+     *
+     * @param \Uni\AdminBundle\Entity\Catalog $portfolio
+     */
+    public function removePortfolio(\Uni\AdminBundle\Entity\Portfolio $portfolio)
+    {
+        $this->catalogs->removeElement($portfolio);
+    }
+
+    /**
+     * Get portfolios
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getPortfolios()
+    {
+        return $this->portfolios;
     }
 }

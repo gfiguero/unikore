@@ -1,0 +1,24 @@
+admin_team_index:
+    path:     /
+    defaults: { _controller: "UniAdminBundle:Team:index" }
+    methods:  GET
+
+admin_team_show:
+    path:     /{id}/show
+    defaults: { _controller: "UniAdminBundle:Team:show" }
+    methods:  GET
+
+admin_team_new:
+    path:     /new
+    defaults: { _controller: "UniAdminBundle:Team:new" }
+    methods:  [GET, POST]
+
+admin_team_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "UniAdminBundle:Team:edit" }
+    methods:  [GET, POST]
+
+admin_team_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "UniAdminBundle:Team:delete" }
+    methods:  DELETE

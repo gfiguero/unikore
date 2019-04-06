@@ -18,6 +18,10 @@ uni_admin_catalog:
     resource: "@UniAdminBundle/Resources/config/routing/catalog.yml"
     prefix:   /catalog
 
+uni_admin_portfolio:
+    resource: "@UniAdminBundle/Resources/config/routing/portfolio.yml"
+    prefix:   /portfolio
+
 uni_admin_feature:
     resource: "@UniAdminBundle/Resources/config/routing/feature.yml"
     prefix:   /feature
@@ -25,6 +29,10 @@ uni_admin_feature:
 uni_admin_photography:
     resource: "@UniAdminBundle/Resources/config/routing/photography.yml"
     prefix:   /photography
+
+uni_admin_team:
+    resource: "@UniAdminBundle/Resources/config/routing/team.yml"
+    prefix:   /team
 
 uni_admin_category:
     resource: "@UniAdminBundle/Resources/config/routing/category.yml"

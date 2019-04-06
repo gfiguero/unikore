@@ -25,12 +25,16 @@ sidemenu:
         root: Características
     photography:
         root: Fotografías
+    team:
+        root: Equipo
     category:
         root: Categoría
     subcategory:
         root: Subcategoría
     catalog:
         root: Catálogo
+    portfolio:
+        root: Portafolio
     page:
         root: Página
     socialmedia:

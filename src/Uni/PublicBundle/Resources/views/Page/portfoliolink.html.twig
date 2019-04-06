@@ -1,0 +1,18 @@
+{% block portfoliolink %}
+    {% if portfolios is not empty %}
+    {% for k, portfolio in portfolios %}
+    <section id="{{ portfolio.slug|raw }}">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="portfoliolink-content">
+                        {% if portfolio.portfoliocontent %}<h1 class="portfoliolink-title wow fadeInUp">{{ portfolio.portfoliocontent|raw }}</h1>{% endif %}
+                        {% if portfolio.portfoliocalltoaction %}<a type="button" href="{{ path('public_portfolio_show', {'id': portfolio.id}) }}" target="_blank" class="btn btn-primary btn-lg portfoliolink-calltoaction wow pulse">{{ portfolio.portfoliocalltoaction|raw }}</a>{% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% endfor %}
+    {% endif %}
+{% endblock %}
