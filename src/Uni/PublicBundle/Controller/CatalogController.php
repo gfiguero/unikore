@@ -17,6 +17,7 @@ class CatalogController extends Controller
         $catalogs = $em->getRepository('UniAdminBundle:Catalog')->findByPage($page);
         $categories = $em->getRepository('UniAdminBundle:Category')->findBy(array('catalog' => $catalog));
         $catalogitems = $em->getRepository('UniAdminBundle:CatalogItem')->findByCatalog($catalog);
+        $socialmedialist = $em->getRepository('UniAdminBundle:Socialmedia')->findByPage($page);
 
         return $this->render('UniPublicBundle:Catalog:show.html.twig', array(
             'catalog' => $catalog,
@@ -24,6 +25,7 @@ class CatalogController extends Controller
             'categories' => $categories,
             'catalogitems' => $catalogitems,
             'page' => $page,
+            'socialmedialist' => $socialmedialist,
         ));
     }
 

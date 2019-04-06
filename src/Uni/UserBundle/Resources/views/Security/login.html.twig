@@ -2,7 +2,7 @@
 
 {% trans_default_domain 'UniUserBundle' %}
 
-{% block title %}&nbsp;-&nbsp;{{ 'security.login.title'|trans }}{% endblock %}
+{% block title %}{{ 'security.login.title'|trans }}{% endblock %}
 
 {% block user %}
     <section id="user">
@@ -57,7 +57,7 @@
 {#}
                         <div class="panel-footer">
                             <div class="text-center">
-                                <a href="{{ path("fos_user_registration_register") }}">{{ 'registration.register.link'|trans }}</a>&nbsp;-&nbsp;
+                                <a href="{{ path("fos_user_registration_register") }}">{{ 'registration.register.link'|trans }}</a>
                                 <a href="{{ path("fos_user_resetting_request") }}">{{ 'resetting.request.link'|trans }}</a>
                             </div>
                         </div>

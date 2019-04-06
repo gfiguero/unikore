@@ -1,0 +1,8 @@
+{% block cart %}
+    <div id="sidemenu">
+        {% if categories is defined %}{% if categories is not empty %}
+            {% set sideMenu = knp_menu_get( 'UniPublicBundle:CatalogBuilder:sideMenu' , [], {categories: categories}) %}
+            {{ knp_menu_render(sideMenu) }}
+        {% endif %}{% endif %}
+    </div>
+{% endblock %}

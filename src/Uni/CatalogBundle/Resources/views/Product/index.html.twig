@@ -2,7 +2,7 @@
 
 {% trans_default_domain 'UniCatalogBundle' %}
 
-{% block title %}&nbsp;-&nbsp;{{ 'product.index.title'|trans }}{% endblock %}
+{% block title %}{{ 'product.index.title'|trans }}{% endblock %}
 
 {% block catalog %}
     <div id="page-wrapper">
@@ -38,10 +38,9 @@
                                         <div class="btn-group" role="group"><a type="button" class="btn btn-xs btn-default disabled">{{ icon('edit fa-fw') }}</a></div>
                                         <div class="btn-group" role="group"><a type="button" class="btn btn-xs btn-default disabled">{{ icon('trash fa-fw') }}</a></div>
                                     </th>
-                                    <th>{{ knp_pagination_sortable(products, 'product.form.id'|trans, 'id') }}{% if sort == 'id' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
+                                    <th>{{ 'product.form.image'|trans }}</th>
                                     <th>{{ knp_pagination_sortable(products, 'product.form.name'|trans, 'name') }}{% if sort == 'name' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
                                     <th>{{ knp_pagination_sortable(products, 'product.form.price'|trans, 'price') }}{% if sort == 'price' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
-                                    <th>{{ knp_pagination_sortable(products, 'product.form.image'|trans, 'image') }}{% if sort == 'image' %}{% if direction == 'desc' %}{{ icon('caret-down') }}{% else %}{{ icon('caret-up') }}{% endif %}{% endif %}</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -52,10 +51,9 @@
                                         <div class="btn-group" role="group"><a type="button" class="btn btn-xs btn-primary" href="{{ path('catalog_product_edit', { 'id': product.id }) }}">{{ icon('edit fa-fw') }}</a></div>
                                         <div class="btn-group" role="group"><button type="button" class="btn btn-xs btn-danger" data-toggle="modal" data-target="#modalDelete{{ product.id }}">{{ icon('trash fa-fw') }}</button></div>
                                     </td>
-                                    <td>{% if product.id %}{{ product.id }}{% endif %}</td>
-                                    <td>{% if product.name %}{{ product.name }}{% endif %}</td>
-                                    <td>{% if product.price %}{{ product.price|raw|number_format(0, ',', '.') }}{% endif %}</td>
                                     <td>{% if product.image %}<img class="product-item-image" src="{{ vich_uploader_asset(product, 'imagefile')|imagine_filter('product_image_small') }}">{% endif %}</td>
+                                    <td>{% if product.name %}{{ product.name }}{% endif %}</td>
+                                    <td>{% if product.price %}{{ icon('dollar') }}&nbsp;{{ product.price|raw|number_format(0, ',', '.') }}{% endif %}</td>
                                 </tr>
                             {% endfor %}
                             </tbody>

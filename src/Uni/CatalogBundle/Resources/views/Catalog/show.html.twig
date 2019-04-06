@@ -2,7 +2,7 @@
 
 {% trans_default_domain 'UniCatalogBundle' %}
 
-{% block title %}&nbsp;-&nbsp;{{ 'catalog.show.title'|trans({'%id%':catalog.id}) }}{% endblock %}
+{% block title %}{{ 'catalog.show.title'|trans({'%id%':catalog.id}) }}{% endblock %}
 
 {% block catalog %}
     <div id="page-wrapper">

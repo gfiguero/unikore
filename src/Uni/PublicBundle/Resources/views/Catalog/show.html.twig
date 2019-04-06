@@ -2,12 +2,16 @@
 
 {% block title %}{% if catalog.name %}{{ catalog.name|raw }}{% endif %}{% endblock %}
 
+{% block stylesheet %}
+    <link rel="stylesheet" href="{{ asset('bundles/unipublic/css/public-catalog.css') }}">
+{% endblock %}
+
 {% block catalog %}
     <div class="row">
         <div class="col-md-12">
             <div class="row row-flex">
                 {% for k, catalogitem in catalogitems %}
-                    <div class="col-sm-4 col-md-2 col-flex">
+                    <div class="col-sm-4 col-md-3 col-flex">
                         <div class="thumbnail" data-toggle="modal" data-target="#productModal{{ k }}">
                             {% if catalogitem.product.image %}
                                 <img class="product-item-image" src="{{ vich_uploader_asset(catalogitem.product, 'imagefile', 'Uni\\AdminBundle\\Entity\\Product')|imagine_filter('product_image') }}">

@@ -12,7 +12,7 @@
 
 {% block title %}{% if page and page.brand %}{{ page.brand|raw }}{% endif %}{% endblock %}
 
-{% block page %}
+{% block public %}
     {% if page %}
         {% block header %}{{ parent() }}{% endblock %}
         {% block main %}{{ parent() }}{% endblock %}

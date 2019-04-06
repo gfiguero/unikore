@@ -47,5 +47,5 @@ find src/Kore/AgentBundle/Form/* -type f -print0 | xargs -0 sed -i 's/Admin/Agen
 find src/Kore/AgentBundle/Controller/* -type f -print0 | xargs -0 sed -i 's/KoreAdminBundle/KoreAgentBundle/g'
 find src/Kore/AgentBundle/Controller/* -type f -print0 | xargs -0 sed -i "s/render('KoreAdminBundle:/render('KoreAgentBundle:/g"
 
-find . -type f -print0 | xargs -0 sed -i 's/Kore/Uni/g'
-find . -type f -print0 | xargs -0 sed -i 's/kore/uni/g'
+find . -type f -print0 | xargs -0 sed -i 's/&nbsp;-&nbsp;//g'
+find . -type f -print0 | xargs -0 sed -i 's/&nbsp;-&nbsp;//g'

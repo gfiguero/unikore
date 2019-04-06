@@ -1,6 +1,8 @@
-{% extends 'UniPublicBundle:Catalog:base.html.twig' %}
+{% extends 'UniPublicBundle:Base:layout.html.twig' %}
 {% use 'UniPublicBundle:Catalog:aside.html.twig' %}
+{% use 'UniPublicBundle:Catalog:cart.html.twig' %}
 
+{#}
 {% block meta %}
     <meta name="author" content="uniSign - www.unisign.cl">
 
@@ -19,23 +21,27 @@
     <meta property="og:description" content="{{ page.socialsharedescription|raw }}" />
     <meta property="og:image" content="{{ page.socialshareimage|raw }}" />
 {% endblock %}
+{#}
 
-{% block body %}
-        <div class="container-fluid">
-            <div class="row">
-                <aside class="col-md-2">
-                    {% if page.image != 'default.png' %}
-                        <a href="{{ path('public_root') }}"><img src="{{ vich_uploader_asset(page, 'imagefile')|imagine_filter('brand_photography_catalog') }}" class="center-block logo"></a>
-                    {% else %}
-                        <p>
-                            <a class="btn btn-default btn-block btn-lg" href="{{ path('public_root') }}">{{ icon('home fa-fw') }}&nbsp;{{ page.name }}</a>
-                        </p>
-                    {% endif %}
-                    {% block aside %}{{ parent() }}{% endblock %}
-                </aside>
-                <div class="col-md-10">
-                    {% block catalog %}{% endblock %}
-                </div>
+{% block public %}
+    <div class="container-fluid">
+        <div class="row">
+            <aside class="col-md-2">
+                {% if page.image != 'default.png' %}
+                    <a href="{{ path('public_root') }}"><img src="{{ vich_uploader_asset(page, 'imagefile')|imagine_filter('brand_photography_catalog') }}" class="center-block logo"></a>
+                {% else %}
+                    <p>
+                        <a class="btn btn-default btn-block btn-lg" href="{{ path('public_root') }}">{{ icon('home fa-fw') }}&nbsp;{{ page.name }}</a>
+                    </p>
+                {% endif %}
+                {% block aside %}{{ parent() }}{% endblock %}
+            </aside>
+            <div class="col-md-8">
+                {% block catalog %}{% endblock %}
+            </div>
+            <div class="col-md-2">
+                {% block cart %}{{ parent() }}{% endblock %}
             </div>
         </div>
+    </div>
 {% endblock %}

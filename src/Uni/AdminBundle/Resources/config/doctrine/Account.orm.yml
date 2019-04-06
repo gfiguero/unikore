@@ -39,6 +39,9 @@ Uni\AdminBundle\Entity\Account:
         catalogs:
             targetEntity: Uni\AdminBundle\Entity\Catalog
             mappedBy: account
+        catalogitems:
+            targetEntity: Uni\AdminBundle\Entity\CatalogItem
+            mappedBy: account
         pages:
             targetEntity: Uni\AdminBundle\Entity\Page
             mappedBy: account
