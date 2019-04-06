@@ -95,7 +95,7 @@
                             <th>{{ 'product.form.dimensions'|trans }}</th>
                             <th width="90">{{ 'item.form.quantity'|trans }}</th>
                             <th width="90">{{ 'product.form.netprice'|trans }}</th>
-                            <th width="90">{{ 'item.form.discountprice'|trans }}</th>
+                            <th width="100" style="white-space: nowrap;">{{ 'item.form.discountprice'|trans }}</th>
                             <th width="90">{{ 'item.form.totalnetprice'|trans }}</th>
                         </tr>
                     </thead>
@@ -112,8 +112,8 @@
                             </td>
 
                             <td class="text-right">{{ item.quantity }}</td>
-                            <td class="text-right">{{ icon('dollar fa-fw') }}{{ item.totalnormalfullprice|number_format(0, ',', '.') }}</td>
-                            <td class="text-right">{{ icon('dollar fa-fw') }}{{ item.totaldiscountprice|number_format(0, ',', '.') }}</td>
+                            <td class="text-right">{{ icon('dollar fa-fw') }}{{ item.netprice|number_format(0, ',', '.') }}</td>
+                            <td class="text-right">{{ icon('dollar fa-fw') }}{{ item.discountprice|number_format(0, ',', '.') }}</td>
                             <td class="text-right">{{ icon('dollar fa-fw') }}{{ item.totalnetprice|number_format(0, ',', '.') }}</td>
                         </tr>
                     {% endfor %}

@@ -260,7 +260,7 @@ product:
         diameter: Diámetro [cm]
         cost: Costo
         price: Precio
-        netprice: Neto
+        netprice: Neto (U)
         newnetprice: Neto
         code: Código
         cm_code: Código CM
@@ -328,7 +328,7 @@ item:
         quantity: Cantidad
         discount: Descuento
         surcharge: Recargo
-        discountprice: Descuento
+        discountprice: Descuento (U)
         totaldiscountprice: Descuento
         price: Precio
         netprice: Neto
@@ -405,7 +405,7 @@ budget:
         totalcost: Costo
         totalmarginamount: Margen
         totalfullprice: Precio Normal
-        totaldiscountprice: Descuento
+        totaldiscountprice: Descuento Total
         totalnetprice: Neto Final
         totaliva: IVA
         total: Total

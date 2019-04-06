@@ -44,7 +44,7 @@ Uni\AdminBundle\Entity\Client:
             nullable: true
         email:
             type: string
-            length: 30
+            length: 100
             nullable: true
         address_street:
             type: string
